@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>IT-термины перед C#</title>
+    <meta
+      name="description"
+      content="Карточки, тесты и справочник по базовым IT-терминам для студентов перед изучением C#."
+    >
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <button class="brand" type="button" data-screen-link="home" aria-label="На главный экран">
+          <span class="brand-mark" aria-hidden="true">C#</span>
+          <span>
+            <strong>IT-термины</strong>
+            <small>перед первым Hello World</small>
+          </span>
+        </button>
+
+        <nav class="topnav" aria-label="Основная навигация">
+          <button type="button" class="nav-link is-active" data-screen-link="home">Меню</button>
+          <button type="button" class="nav-link" data-screen-link="cards">Карточки</button>
+          <button type="button" class="nav-link" data-screen-link="quiz">Тест</button>
+          <button type="button" class="nav-link" data-screen-link="reference">Справочник</button>
+        </nav>
+
+        <button class="icon-button" id="themeToggle" type="button" title="Переключить тему" aria-label="Переключить тему">
+          <span class="theme-icon" aria-hidden="true"></span>
+        </button>
+      </header>
+
+      <main>
+        <section class="screen is-visible" id="homeScreen" data-screen="home">
+          <section class="menu-banner">
+            <div class="intro-panel">
+              <div class="intro-art" aria-hidden="true">
+                <div class="code-window">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <pre>Console.WriteLine("Hello, World!");</pre>
+                </div>
+              </div>
+              <div class="intro-copy">
+                <p class="eyebrow">База перед C#</p>
+                <h1>Сначала слова. Потом код.</h1>
+                <p>
+                  Короткие колоды помогают разобраться с IT-терминами, без которых первое знакомство
+                  с C#, .NET, Git и IDE быстро превращается в туман.
+                </p>
+                <div class="quote-ticker" aria-live="polite">
+                  <span class="quote-label">Фраза занятия</span>
+                  <blockquote id="dailyQuote"></blockquote>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="mode-grid" aria-label="Режимы">
+            <button class="mode-card" type="button" data-screen-link="cards">
+              <span class="mode-icon">01</span>
+              <strong>Карточки</strong>
+              <small>Переворачивай карточку. Если смысл не закрепился, отправляй ее в конец колоды.</small>
+            </button>
+            <button class="mode-card" type="button" data-screen-link="quiz">
+              <span class="mode-icon">02</span>
+              <strong>Тест</strong>
+              <small>Вопросы идут в обе стороны: термин к пояснению и пояснение к термину.</small>
+            </button>
+            <button class="mode-card" type="button" data-screen-link="reference">
+              <span class="mode-icon">03</span>
+              <strong>Справочник</strong>
+              <small>Все термины открыто: поиск, сортировка и фильтрация по темам и колодам.</small>
+            </button>
+          </section>
+        </section>
+
+        <section class="screen" id="cardsScreen" data-screen="cards">
+          <div class="workspace">
+            <aside class="settings-panel">
+              <div class="section-heading">
+                <p class="eyebrow">Тренировка</p>
+                <h2>Карточки</h2>
+              </div>
+              <label>
+                Тема
+                <select id="cardTopicSelect"></select>
+              </label>
+              <label>
+                Колода
+                <select id="cardDeckSelect"></select>
+              </label>
+              <div class="setting-row">
+                <span>Порядок</span>
+                <button class="pill-toggle is-active" id="shuffleCardsToggle" type="button" aria-pressed="true">
+                  Перемешать
+                </button>
+              </div>
+              <button class="primary-button" id="startCardsBtn" type="button">Начать карточки</button>
+              <button class="ghost-button" type="button" data-exit-mode>Выйти в меню</button>
+            </aside>
+
+            <section class="study-panel">
+              <div class="session-bar">
+                <span id="cardProgress">Выберите колоду</span>
+                <div class="progress-track" aria-hidden="true">
+                  <span id="cardProgressFill"></span>
+                </div>
+              </div>
+
+              <button class="flashcard" id="flashcard" type="button" aria-label="Перевернуть карточку">
+                <span class="flashcard-hint">Нажмите, чтобы перевернуть</span>
+                <strong id="flashcardTitle">Карточки ждут</strong>
+                <span id="flashcardText">Выберите тему и колоду, затем начните тренировку.</span>
+              </button>
+
+              <div class="action-row">
+                <button class="secondary-button" id="repeatCardBtn" type="button" disabled>Повторить позже</button>
+                <button class="secondary-button" id="knowCardBtn" type="button" disabled>Понял</button>
+              </div>
+
+              <div class="session-note" id="cardSessionNote">
+                Результат тренировки не сохраняется. Это место для спокойного повторения перед практикой и защитой лабораторных работ.
+              </div>
+            </section>
+          </div>
+        </section>
+
+        <section class="screen" id="quizScreen" data-screen="quiz">
+          <div class="workspace">
+            <aside class="settings-panel">
+              <div class="section-heading">
+                <p class="eyebrow">Проверка</p>
+                <h2>Тест</h2>
+              </div>
+              <label>
+                Тема
+                <select id="quizTopicSelect"></select>
+              </label>
+              <label>
+                Колода
+                <select id="quizDeckSelect"></select>
+              </label>
+              <div class="segmented" role="group" aria-label="Тип вопросов">
+                <button class="is-active" type="button" data-quiz-mode="mixed">Смешано</button>
+                <button type="button" data-quiz-mode="term">Термин</button>
+                <button type="button" data-quiz-mode="definition">Пояснение</button>
+              </div>
+              <button class="primary-button" id="startQuizBtn" type="button">Начать тест</button>
+              <button class="ghost-button" type="button" data-exit-mode>Выйти в меню</button>
+            </aside>
+
+            <section class="study-panel">
+              <div class="session-bar">
+                <span id="quizProgress">Выберите колоду</span>
+                <div class="progress-track" aria-hidden="true">
+                  <span id="quizProgressFill"></span>
+                </div>
+              </div>
+
+              <article class="quiz-card">
+                <span class="quiz-type" id="quizType">Тест не начат</span>
+                <h2 id="quizQuestion">Нажмите «Начать тест», когда будете готовы.</h2>
+                <div class="answer-grid" id="answerGrid"></div>
+                <p class="feedback" id="quizFeedback"></p>
+              </article>
+            </section>
+          </div>
+        </section>
+
+        <section class="screen" id="referenceScreen" data-screen="reference">
+          <div class="reference-layout">
+            <div class="section-heading">
+              <p class="eyebrow">Открытый режим</p>
+              <h2>Справочник</h2>
+            </div>
+
+            <div class="reference-tools">
+              <label class="search-box">
+                Поиск
+                <input id="searchInput" type="search" placeholder="Например: git, компилятор, байт">
+              </label>
+              <label>
+                Тема
+                <select id="referenceTopicSelect"></select>
+              </label>
+              <label>
+                Колода
+                <select id="referenceDeckSelect"></select>
+              </label>
+              <label>
+                Сортировка
+                <select id="sortSelect">
+                  <option value="term-asc">Термин А-Я</option>
+                  <option value="term-desc">Термин Я-А</option>
+                  <option value="deck">По колодам</option>
+                </select>
+              </label>
+            </div>
+
+            <div class="reference-meta" id="referenceMeta"></div>
+            <div class="reference-list" id="referenceList"></div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <dialog id="exitDialog">
+      <form method="dialog">
+        <h2>Выйти из режима?</h2>
+        <p>Текущая тренировка завершится, а результат не сохранится.</p>
+        <div class="dialog-actions">
+          <button class="ghost-button" value="cancel" type="submit">Остаться</button>
+          <button class="primary-button" value="confirm" type="submit">Выйти</button>
+        </div>
+      </form>
+    </dialog>
+
+    <script src="app.js"></script>
+  </body>
+</html>

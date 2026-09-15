@@ -763,7 +763,6 @@ dialog::backdrop {
 }
 
 @media (max-width: 880px) {
-  .topbar,
   .intro-panel,
   .workspace,
   .reference-tools {
@@ -771,23 +770,53 @@ dialog::backdrop {
   }
 
   .topbar {
-    position: static;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+
+  .topbar .icon-button {
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: end;
   }
 
   .topnav {
-    overflow-x: auto;
+    grid-column: 1 / -1;
+    grid-row: 2;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
   .mode-grid {
     grid-template-columns: 1fr;
   }
 
+  .mode-card {
+    grid-template-columns: 44px minmax(0, 1fr);
+    min-height: 112px;
+    align-items: center;
+  }
+
+  .mode-card small {
+    grid-column: 2;
+  }
+
   .settings-panel {
     position: static;
+    box-shadow: none;
   }
 
   .intro-panel {
     min-height: auto;
+  }
+
+  .reference-tools {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .search-box {
+    grid-column: 1 / -1;
   }
 }
 
@@ -802,9 +831,161 @@ dialog::backdrop {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .brand small {
+    display: none;
+  }
+
+  .brand-mark {
+    flex-basis: 38px;
+    width: 38px;
+    height: 38px;
+  }
+
   .nav-link,
   .segmented button {
     padding: 0 8px;
+  }
+
+  .menu-banner,
+  .settings-panel,
+  .study-panel,
+  .reference-layout {
+    border-radius: 6px;
+  }
+
+  .intro-panel {
+    gap: 18px;
+    padding: 18px;
+  }
+
+  .intro-art {
+    display: none;
+  }
+
+  h1 {
+    font-size: clamp(2.05rem, 12vw, 3rem);
+    line-height: 1;
+  }
+
+  h2 {
+    font-size: 1.35rem;
+  }
+
+  .quote-ticker {
+    margin-top: 18px;
+    padding: 12px;
+  }
+
+  .quote-ticker blockquote {
+    min-height: 48px;
+    font-size: 0.98rem;
+  }
+
+  .mode-card {
+    grid-template-columns: 38px minmax(0, 1fr);
+    min-height: 96px;
+    padding: 14px;
+  }
+
+  .mode-icon {
+    width: 34px;
+    height: 34px;
+  }
+
+  .mode-card strong {
+    font-size: 1.12rem;
+  }
+
+  .mode-card small {
+    font-size: 0.9rem;
+  }
+
+  .settings-panel {
+    gap: 10px;
+    padding: 14px;
+  }
+
+  .section-heading {
+    margin-bottom: 8px;
+  }
+
+  select,
+  input,
+  .primary-button,
+  .secondary-button,
+  .ghost-button,
+  .pill-toggle {
+    min-height: 42px;
+  }
+
+  .study-panel {
+    padding: 14px;
+  }
+
+  .session-bar {
+    margin-bottom: 12px;
+  }
+
+  .flashcard {
+    min-height: 250px;
+    padding: 20px 14px;
+  }
+
+  .flashcard strong {
+    font-size: clamp(1.6rem, 10vw, 2.45rem);
+  }
+
+  .flashcard span:last-child {
+    font-size: 0.98rem;
+  }
+
+  #cardsScreen .action-row {
+    position: sticky;
+    bottom: 10px;
+    z-index: 4;
+    padding: 8px;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: color-mix(in srgb, var(--surface) 88%, transparent);
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(14px);
+  }
+
+  .quiz-card {
+    padding: 14px;
+  }
+
+  .quiz-card h2 {
+    min-height: auto;
+    font-size: 1.18rem;
+    line-height: 1.28;
+  }
+
+  .answer-option {
+    min-height: 54px;
+    padding: 12px;
+  }
+
+  .reference-layout {
+    padding: 14px;
+  }
+
+  .reference-tools {
+    grid-template-columns: 1fr;
+  }
+
+  .search-box {
+    grid-column: auto;
+  }
+
+  .term-item summary {
+    grid-template-columns: 1fr;
+    gap: 4px;
+    padding: 14px;
+  }
+
+  .term-body {
+    padding: 0 14px 14px;
   }
 
   .segmented,

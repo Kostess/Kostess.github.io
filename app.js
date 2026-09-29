@@ -1208,6 +1208,7 @@ function fillReferenceTagSelect() {
     {
       label: "Лабораторные",
       values: [...new Set(allTerms.flatMap((item) => item.chips.filter((chip) => chip.kind === "lab").map((chip) => chip.value)))]
+        .sort((a, b) => Number(a.replace(/\D/g, "")) - Number(b.replace(/\D/g, "")))
     },
     {
       label: "Темы",

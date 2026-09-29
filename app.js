@@ -984,7 +984,7 @@ function fillReferenceTagSelect() {
   ];
 
   els.referenceTagSelect.innerHTML = [
-    '<option value="all">Все чипы</option>',
+    '<option value="all">Все метки</option>',
     ...groups
       .filter((group) => group.values.length)
       .map(

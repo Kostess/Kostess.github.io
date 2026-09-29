@@ -356,7 +356,7 @@ const topics = [
               "Подход, при котором типы значений проверяются до запуска программы, во время сборки."
           },
           {
-            term: "Строгая типизация",
+            term: "Сильная / строгая типизация",
             definition:
               "Подход, при котором язык не позволяет свободно смешивать несовместимые виды значений без явного преобразования."
           },
@@ -470,6 +470,267 @@ const topics = [
         ]
       }
     ]
+  },
+  {
+    id: "csharp-programming-basics",
+    title: "Основы программирования C#",
+    description: "Термины из лабораторных про переменные, типы данных, ввод, арифметику и преобразования.",
+    decks: [
+      {
+        id: "variables-values",
+        title: "Колода 9: переменные и значения",
+        terms: [
+          {
+            term: "Переменная",
+            definition:
+              "Именованное место для хранения значения во время работы программы."
+          },
+          {
+            term: "Значение",
+            definition:
+              "Конкретные данные, которые хранятся или используются в выражении: число, текст, символ или логический ответ."
+          },
+          {
+            term: "Объявление переменной",
+            definition:
+              "Запись, которая сообщает программе имя и тип нового места для хранения данных."
+          },
+          {
+            term: "Инициализация",
+            definition:
+              "Первое задание значения при создании переменной."
+          },
+          {
+            term: "Присваивание",
+            definition:
+              "Запись нового значения в уже существующую переменную."
+          },
+          {
+            term: "Оператор присваивания",
+            definition:
+              "Знак =, который помещает результат справа в переменную слева."
+          },
+          {
+            term: "Идентификатор",
+            definition:
+              "Имя, которое программист дает переменной, методу, классу или другому элементу кода."
+          },
+          {
+            term: "camelCase",
+            definition:
+              "Стиль записи имен, где первое слово начинается со строчной буквы, а следующие слова пишутся с прописной."
+          },
+          {
+            term: "Ключевое слово",
+            definition:
+              "Слово, зарезервированное языком программирования. Его нельзя использовать как обычное имя переменной."
+          },
+          {
+            term: "Литерал",
+            definition:
+              "Значение, записанное прямо в коде: например 10, \"текст\", 'A', true или 3.14m."
+          }
+        ]
+      },
+      {
+        id: "csharp-data-types",
+        title: "Колода 10: типы данных C#",
+        terms: [
+          {
+            term: "Значимый тип",
+            definition:
+              "Тип, переменная которого обычно хранит само значение. При копировании получается независимая копия."
+          },
+          {
+            term: "Ссылочный тип",
+            definition:
+              "Тип, переменная которого хранит адрес объекта. Несколько переменных могут указывать на один и тот же объект."
+          },
+          {
+            term: "Ссылка",
+            definition:
+              "Значение, которое указывает, где находится объект в памяти."
+          },
+          {
+            term: "int",
+            definition:
+              "Целочисленный тип для обычных целых чисел без дробной части."
+          },
+          {
+            term: "long",
+            definition:
+              "Целочисленный тип для больших целых чисел, когда диапазона int недостаточно."
+          },
+          {
+            term: "float",
+            definition:
+              "Тип для дробных чисел одинарной точности. Для записи литерала обычно добавляют суффикс f."
+          },
+          {
+            term: "double",
+            definition:
+              "Тип для дробных чисел двойной точности. Часто используется по умолчанию для вещественных вычислений."
+          },
+          {
+            term: "decimal",
+            definition:
+              "Тип для точных десятичных вычислений, особенно удобный для денег и сумм."
+          },
+          {
+            term: "bool",
+            definition:
+              "Логический тип, который хранит только true или false."
+          },
+          {
+            term: "char",
+            definition:
+              "Тип для одного символа. Значение записывают в одинарных кавычках."
+          },
+          {
+            term: "string",
+            definition:
+              "Тип для текста. Значение записывают в двойных кавычках."
+          },
+          {
+            term: "object",
+            definition:
+              "Базовый тип, от которого в C# наследуются остальные типы."
+          }
+        ]
+      },
+      {
+        id: "typing-and-output",
+        title: "Колода 11: типизация и вывод",
+        terms: [
+          {
+            term: "var",
+            definition:
+              "Ключевое слово для неявного указания типа. Конкретный тип определяет компилятор по начальному значению."
+          },
+          {
+            term: "dynamic",
+            definition:
+              "Ключевое слово для значения, у которого часть проверок переносится с этапа компиляции на время выполнения."
+          },
+          {
+            term: "Явное указание типа",
+            definition:
+              "Запись, где программист сам указывает тип переменной в коде."
+          },
+          {
+            term: "Неявное указание типа",
+            definition:
+              "Запись, где тип выводится компилятором по начальному значению, например при использовании var."
+          },
+          {
+            term: "Динамическая типизация",
+            definition:
+              "Подход, при котором проверки типа могут выполняться во время работы программы."
+          },
+          {
+            term: "Несовместимость типов",
+            definition:
+              "Ситуация, когда значение одного типа нельзя напрямую использовать там, где ожидается другой."
+          },
+          {
+            term: "Console.WriteLine",
+            definition:
+              "Команда для вывода текста или значения в консоль с переходом на новую строку."
+          },
+          {
+            term: "Строковая интерполяция",
+            definition:
+              "Способ вставлять значения переменных прямо внутрь текста с помощью $ и фигурных скобок."
+          },
+          {
+            term: "Суффикс литерала",
+            definition:
+              "Символ после значения в коде, который уточняет его тип, например f для float или m для decimal."
+          },
+          {
+            term: "Диапазон типа",
+            definition:
+              "Минимальные и максимальные значения, которые может хранить конкретный тип данных."
+          }
+        ]
+      },
+      {
+        id: "input-operations-conversions",
+        title: "Колода 12: ввод, операции и преобразования",
+        terms: [
+          {
+            term: "Console.ReadLine",
+            definition:
+              "Команда для чтения строки текста, которую пользователь ввел с клавиатуры."
+          },
+          {
+            term: "Преобразование типов",
+            definition:
+              "Получение значения одного типа на основе значения другого типа."
+          },
+          {
+            term: "Явное преобразование",
+            definition:
+              "Преобразование, которое программист записывает явно, например через запись вида (int)."
+          },
+          {
+            term: "Неявное преобразование",
+            definition:
+              "Преобразование, которое компилятор может выполнить сам, когда оно безопасно и разрешено языком."
+          },
+          {
+            term: "Арифметический оператор",
+            definition:
+              "Знак операции над числами: сложение, вычитание, умножение, деление или получение остатка."
+          },
+          {
+            term: "Операнд",
+            definition:
+              "Значение или выражение, над которым выполняется операция."
+          },
+          {
+            term: "Выражение",
+            definition:
+              "Фрагмент кода, который вычисляется и дает результат."
+          },
+          {
+            term: "Целочисленное деление",
+            definition:
+              "Деление целых чисел, при котором дробная часть результата отбрасывается."
+          },
+          {
+            term: "Остаток от деления",
+            definition:
+              "Часть числа, которая остается после деления нацело. В C# для этого используют знак %."
+          },
+          {
+            term: "Потеря данных",
+            definition:
+              "Ситуация, когда при преобразовании часть информации исчезает, например дробная часть при переводе в int."
+          },
+          {
+            term: "Форматирование вывода",
+            definition:
+              "Настройка внешнего вида значения при показе пользователю, например количество знаков после запятой."
+          },
+          {
+            term: "Исключение",
+            definition:
+              "Ошибка во время работы программы, которая прерывает обычное выполнение, если ее не обработать."
+          },
+          {
+            term: "Некорректный ввод",
+            definition:
+              "Данные от пользователя, которые программа не может использовать в ожидаемом виде."
+          },
+          {
+            term: "Десятичный разделитель",
+            definition:
+              "Символ, который отделяет целую часть числа от дробной: в разных настройках это может быть точка или запятая."
+          }
+        ]
+      }
+    ]
   }
 ];
 
@@ -501,6 +762,17 @@ const menuQuotes = [
 ];
 
 const QUOTE_ROTATION_MS = 60000;
+
+const deckLabTags = {
+  "dotnet-runtime": ["ЛБ 3"],
+  "csharp-under-hood": ["ЛБ 3"],
+  "project-build-files": ["ЛБ 3"],
+  "oop-preview": ["ЛБ 3"],
+  "variables-values": ["ЛБ 4"],
+  "csharp-data-types": ["ЛБ 4"],
+  "typing-and-output": ["ЛБ 4"],
+  "input-operations-conversions": ["ЛБ 5"]
+};
 
 const state = {
   screen: "home",
@@ -545,6 +817,7 @@ const els = {
   quizFeedback: document.querySelector("#quizFeedback"),
   referenceTopicSelect: document.querySelector("#referenceTopicSelect"),
   referenceDeckSelect: document.querySelector("#referenceDeckSelect"),
+  referenceTagSelect: document.querySelector("#referenceTagSelect"),
   searchInput: document.querySelector("#searchInput"),
   sortSelect: document.querySelector("#sortSelect"),
   referenceMeta: document.querySelector("#referenceMeta"),
@@ -558,10 +831,24 @@ const allTerms = topics.flatMap((topic) =>
       topicId: topic.id,
       topicTitle: topic.title,
       deckId: deck.id,
-      deckTitle: deck.title
+      deckTitle: deck.title,
+      chips: buildChips(topic, deck)
     }))
   )
 );
+
+function buildChips(topic, deck) {
+  const labChips = (deckLabTags[deck.id] || []).map((label) => ({
+    kind: "lab",
+    label,
+    value: label
+  }));
+  return [
+    { kind: "topic", label: topic.title, value: `Тема: ${topic.title}` },
+    { kind: "deck", label: deck.title.replace("Колода ", ""), value: deck.title },
+    ...labChips
+  ];
+}
 
 function shuffle(items) {
   const copy = [...items];
@@ -677,6 +964,36 @@ function fillReferenceDeckSelect() {
   els.referenceDeckSelect.innerHTML = [
     '<option value="all">Все колоды темы</option>',
     ...topic.decks.map((deck) => `<option value="${deck.id}">${deck.title}</option>`)
+  ].join("");
+}
+
+function fillReferenceTagSelect() {
+  const groups = [
+    {
+      label: "Лабораторные",
+      values: [...new Set(allTerms.flatMap((item) => item.chips.filter((chip) => chip.kind === "lab").map((chip) => chip.value)))]
+    },
+    {
+      label: "Темы",
+      values: topics.map((topic) => `Тема: ${topic.title}`)
+    },
+    {
+      label: "Колоды",
+      values: topics.flatMap((topic) => topic.decks.map((deck) => deck.title))
+    }
+  ];
+
+  els.referenceTagSelect.innerHTML = [
+    '<option value="all">Все чипы</option>',
+    ...groups
+      .filter((group) => group.values.length)
+      .map(
+        (group) => `
+          <optgroup label="${group.label}">
+            ${group.values.map((value) => `<option value="${escapeAttribute(value)}">${value}</option>`).join("")}
+          </optgroup>
+        `
+      )
   ].join("");
 }
 
@@ -924,6 +1241,7 @@ function escapeAttribute(value) {
 function getReferenceTerms() {
   const topicId = els.referenceTopicSelect.value;
   const deckId = els.referenceDeckSelect.value;
+  const tag = els.referenceTagSelect.value;
   const query = els.searchInput.value.trim().toLowerCase();
   let terms = allTerms;
 
@@ -933,9 +1251,12 @@ function getReferenceTerms() {
   if (deckId !== "all") {
     terms = terms.filter((item) => item.deckId === deckId);
   }
+  if (tag !== "all") {
+    terms = terms.filter((item) => item.chips.some((chip) => chip.value === tag));
+  }
   if (query) {
     terms = terms.filter((item) =>
-      [item.term, item.definition, item.topicTitle, item.deckTitle].some((value) =>
+      [item.term, item.definition, item.topicTitle, item.deckTitle, ...item.chips.map((chip) => chip.label)].some((value) =>
         value.toLowerCase().includes(query)
       )
     );
@@ -969,7 +1290,12 @@ function renderReference() {
                 <strong>${item.term}</strong>
                 <span>${item.topicTitle} · ${item.deckTitle.replace("Колода ", "")}</span>
               </summary>
-              <div class="term-body">${item.definition}</div>
+              <div class="term-body">
+                <div class="chip-row">
+                  ${item.chips.map((chip) => `<span class="term-chip term-chip--${chip.kind}">${chip.label}</span>`).join("")}
+                </div>
+                <p>${item.definition}</p>
+              </div>
             </details>
           `
         )
@@ -997,6 +1323,7 @@ function wireEvents() {
     renderReference();
   });
   els.referenceDeckSelect.addEventListener("change", renderReference);
+  els.referenceTagSelect.addEventListener("change", renderReference);
   els.searchInput.addEventListener("input", renderReference);
   els.sortSelect.addEventListener("change", renderReference);
 
@@ -1064,6 +1391,7 @@ function init() {
   fillDeckSelect(els.quizTopicSelect, els.quizDeckSelect);
   fillTopicSelect(els.referenceTopicSelect, true);
   fillReferenceDeckSelect();
+  fillReferenceTagSelect();
   renderReference();
   wireEvents();
 }

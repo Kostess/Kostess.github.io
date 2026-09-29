@@ -696,7 +696,7 @@ button:focus-visible {
 
 .reference-tools {
   display: grid;
-  grid-template-columns: minmax(220px, 1fr) repeat(3, minmax(150px, 210px));
+  grid-template-columns: minmax(220px, 1fr) repeat(4, minmax(140px, 190px));
   gap: 12px;
   align-items: end;
 }
@@ -741,6 +741,47 @@ button:focus-visible {
   padding: 0 16px 16px;
   color: var(--muted);
   line-height: 1.65;
+}
+
+.term-body p {
+  margin: 10px 0 0;
+}
+
+.chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.term-chip {
+  display: inline-flex;
+  align-items: center;
+  min-height: 26px;
+  max-width: 100%;
+  padding: 3px 9px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.term-chip--topic {
+  border-color: color-mix(in srgb, var(--accent) 34%, transparent);
+  background: var(--accent-soft);
+  color: var(--accent-strong);
+}
+
+.term-chip--deck {
+  border-color: color-mix(in srgb, #537fe7 34%, transparent);
+  background: color-mix(in srgb, #537fe7 14%, var(--surface));
+  color: color-mix(in srgb, #537fe7 82%, var(--text));
+}
+
+.term-chip--lab {
+  border-color: color-mix(in srgb, var(--warn) 42%, transparent);
+  background: color-mix(in srgb, var(--warn) 18%, var(--surface));
+  color: var(--warn);
 }
 
 dialog {
@@ -986,6 +1027,11 @@ dialog::backdrop {
 
   .term-body {
     padding: 0 14px 14px;
+  }
+
+  .term-chip {
+    min-height: 24px;
+    font-size: 0.74rem;
   }
 
   .segmented,

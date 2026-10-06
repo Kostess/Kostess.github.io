@@ -1016,6 +1016,7 @@ const state = {
   quizMode: "mixed",
   cardSession: null,
   quizSession: null,
+  codeSession: null,
   quoteIndex: 0,
   quoteIntervalId: null,
   quoteFadeTimeoutId: null
@@ -1037,6 +1038,7 @@ const els = {
   flashcard: document.querySelector("#flashcard"),
   flashcardTitle: document.querySelector("#flashcardTitle"),
   flashcardText: document.querySelector("#flashcardText"),
+  flashcardExample: document.querySelector("#flashcardExample"),
   repeatCardBtn: document.querySelector("#repeatCardBtn"),
   knowCardBtn: document.querySelector("#knowCardBtn"),
   cardSessionNote: document.querySelector("#cardSessionNote"),
@@ -1050,6 +1052,18 @@ const els = {
   quizQuestion: document.querySelector("#quizQuestion"),
   answerGrid: document.querySelector("#answerGrid"),
   quizFeedback: document.querySelector("#quizFeedback"),
+  codeLabSelect: document.querySelector("#codeLabSelect"),
+  startCodeBtn: document.querySelector("#startCodeBtn"),
+  codeProgress: document.querySelector("#codeProgress"),
+  codeProgressFill: document.querySelector("#codeProgressFill"),
+  codeType: document.querySelector("#codeType"),
+  codeQuestion: document.querySelector("#codeQuestion"),
+  codeSnippet: document.querySelector("#codeSnippet"),
+  codeText: document.querySelector("#codeText"),
+  codeInput: document.querySelector("#codeInput"),
+  codeAnswerGrid: document.querySelector("#codeAnswerGrid"),
+  codeFeedback: document.querySelector("#codeFeedback"),
+  nextCodeBtn: document.querySelector("#nextCodeBtn"),
   referenceTopicSelect: document.querySelector("#referenceTopicSelect"),
   referenceDeckSelect: document.querySelector("#referenceDeckSelect"),
   referenceTagSelect: document.querySelector("#referenceTagSelect"),
@@ -1071,6 +1085,8 @@ const allTerms = topics.flatMap((topic) =>
     }))
   )
 );
+
+const codeLessonByTerm = new Map(codeLessons.map((lesson) => [`${lesson.deckId}:${lesson.term}`, lesson]));
 
 function buildChips(topic, deck) {
   const labChips = (deckLabTags[deck.id] || []).map((label) => ({
@@ -1246,8 +1262,10 @@ function resetMode() {
   state.activeMode = null;
   state.cardSession = null;
   state.quizSession = null;
+  state.codeSession = null;
   resetCardsUi();
   resetQuizUi();
+  resetCodeUi();
 }
 
 function goToScreen(screen, force = false) {
@@ -1274,6 +1292,8 @@ function resetCardsUi() {
   els.flashcard.classList.remove("is-flipped");
   els.flashcardTitle.textContent = "Карточки ждут";
   els.flashcardText.textContent = "Выберите тему и колоду, затем начните тренировку.";
+  els.flashcardExample.hidden = true;
+  els.flashcardExample.textContent = "";
   els.repeatCardBtn.disabled = true;
   els.knowCardBtn.disabled = true;
   els.cardSessionNote.textContent =
@@ -1320,6 +1340,11 @@ function renderCurrentCard() {
   els.flashcardText.textContent = session.flipped
     ? "Нажмите еще раз, чтобы вернуться к термину."
     : "Сначала попробуйте объяснить своими словами. Если не вышло, переверните и отправьте в повтор.";
+  const lesson = codeLessonByTerm.get(`${card.deckId}:${card.term}`);
+  els.flashcardExample.hidden = !session.flipped || !lesson;
+  els.flashcardExample.textContent = lesson
+    ? `Пример C#:\n${lesson.exampleCode}\nРезультат: ${lesson.exampleResult}`
+    : "";
 }
 
 function finishCards() {
@@ -1329,6 +1354,7 @@ function finishCards() {
   els.flashcard.classList.remove("is-flipped");
   els.flashcardTitle.textContent = "Готово";
   els.flashcardText.textContent = `Понятно: ${session.known}. На повторение: ${session.repeated}. Результат не сохранен.`;
+  els.flashcardExample.hidden = true;
   els.repeatCardBtn.disabled = true;
   els.knowCardBtn.disabled = true;
   els.cardSessionNote.textContent = randomItem(positivePhrases);
@@ -1470,8 +1496,107 @@ function finishQuiz() {
   state.quizSession = null;
 }
 
+function resetCodeUi() {
+  els.codeProgress.textContent = "Выберите подборку";
+  els.codeProgressFill.style.width = "0%";
+  els.codeType.textContent = "Практика не начата";
+  els.codeQuestion.textContent = "Нажмите «Начать практику», когда будете готовы.";
+  els.codeSnippet.hidden = true;
+  els.codeAnswerGrid.replaceChildren();
+  els.codeFeedback.textContent = "";
+  els.nextCodeBtn.hidden = true;
+}
+
+function startCode() {
+  const lab = els.codeLabSelect.value;
+  const questions = shuffle(codeLessons.filter((lesson) =>
+    lab === "all" || (deckLabTags[lesson.deckId] || []).includes(lab)
+  ));
+  state.activeMode = "code";
+  state.codeSession = { questions, index: 0, correct: 0, answered: false };
+  renderCodeQuestion();
+}
+
+function renderCodeQuestion() {
+  const session = state.codeSession;
+  if (!session) {
+    resetCodeUi();
+    return;
+  }
+  if (session.index >= session.questions.length) {
+    finishCode();
+    return;
+  }
+
+  const question = session.questions[session.index];
+  session.answered = false;
+  els.codeProgress.textContent = `Задание ${session.index + 1} из ${session.questions.length}`;
+  els.codeProgressFill.style.width = `${Math.round(session.index / session.questions.length * 100)}%`;
+  els.codeType.textContent = `${question.kind} · ${question.term}`;
+  els.codeQuestion.textContent = question.prompt;
+  els.codeSnippet.hidden = false;
+  els.codeText.textContent = question.challengeCode;
+  els.codeInput.hidden = !question.challengeInput;
+  els.codeInput.textContent = question.challengeInput ? `Ввод: ${question.challengeInput}` : "";
+  els.codeFeedback.textContent = "";
+  els.nextCodeBtn.hidden = true;
+  els.codeAnswerGrid.replaceChildren();
+
+  question.options.forEach((option, index) => {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "answer-option";
+    button.textContent = option;
+    button.addEventListener("click", () => handleCodeAnswer(index));
+    els.codeAnswerGrid.append(button);
+  });
+}
+
+function handleCodeAnswer(index) {
+  const session = state.codeSession;
+  if (!session || session.answered) {
+    return;
+  }
+  const question = session.questions[session.index];
+  session.answered = true;
+  const isCorrect = index === question.correctIndex;
+  if (isCorrect) {
+    session.correct += 1;
+  }
+
+  [...els.codeAnswerGrid.children].forEach((button, optionIndex) => {
+    button.disabled = true;
+    button.classList.toggle("is-correct", optionIndex === question.correctIndex);
+    button.classList.toggle("is-wrong", optionIndex === index && !isCorrect);
+  });
+  els.codeFeedback.textContent = `${isCorrect ? "Верно." : `Правильный ответ: ${question.options[question.correctIndex]}.`} ${question.explanation}`;
+  els.nextCodeBtn.textContent = session.index === session.questions.length - 1 ? "Показать итог" : "Следующее задание";
+  els.nextCodeBtn.hidden = false;
+}
+
+function finishCode() {
+  const session = state.codeSession;
+  const percent = Math.round(session.correct / session.questions.length * 100);
+  els.codeProgress.textContent = "Практика завершена";
+  els.codeProgressFill.style.width = "100%";
+  els.codeType.textContent = "Итог";
+  els.codeQuestion.textContent = `${session.correct} из ${session.questions.length} правильных ответов (${percent}%).`;
+  els.codeSnippet.hidden = true;
+  els.codeAnswerGrid.replaceChildren();
+  els.codeFeedback.textContent = percent >= 80
+    ? "Хорошо! Теперь попробуйте объяснить эти примеры своими словами."
+    : "Откройте примеры в справочнике и пройдите подборку ещё раз.";
+  els.nextCodeBtn.hidden = true;
+  state.activeMode = null;
+  state.codeSession = null;
+}
+
 function escapeAttribute(value) {
   return value.replaceAll("&", "&amp;").replaceAll('"', "&quot;").replaceAll("<", "&lt;");
+}
+
+function escapeHtml(value) {
+  return value.replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll('"', "&quot;");
 }
 
 function getReferenceTerms() {
@@ -1492,7 +1617,9 @@ function getReferenceTerms() {
   }
   if (query) {
     terms = terms.filter((item) =>
-      [item.term, item.definition, item.topicTitle, item.deckTitle, ...item.chips.map((chip) => chip.label)].some((value) =>
+      [item.term, item.definition, item.topicTitle, item.deckTitle,
+        codeLessonByTerm.get(`${item.deckId}:${item.term}`)?.exampleCode || "",
+        ...item.chips.map((chip) => chip.label)].some((value) =>
         value.toLowerCase().includes(query)
       )
     );
@@ -1531,12 +1658,29 @@ function renderReference() {
                   ${item.chips.map((chip) => `<span class="term-chip term-chip--${chip.kind}">${chip.label}</span>`).join("")}
                 </div>
                 <p>${item.definition}</p>
+                ${renderReferenceExample(item)}
               </div>
             </details>
           `
         )
         .join("")
     : '<p class="session-note">Ничего не найдено. Попробуйте другое слово или сбросьте фильтр.</p>';
+}
+
+function renderReferenceExample(item) {
+  const lesson = codeLessonByTerm.get(`${item.deckId}:${item.term}`);
+  if (!lesson) {
+    return "";
+  }
+  return `
+    <div class="reference-example">
+      <strong>Пример C#</strong>
+      <pre><code>${escapeHtml(lesson.exampleCode)}</code></pre>
+      ${lesson.exampleInput ? `<p><strong>Ввод:</strong> ${escapeHtml(lesson.exampleInput)}</p>` : ""}
+      <p><strong>Результат:</strong> <span class="example-result">${escapeHtml(lesson.exampleResult)}</span></p>
+      <p>${escapeHtml(lesson.exampleNote)}</p>
+    </div>
+  `;
 }
 
 function wireEvents() {
@@ -1586,6 +1730,14 @@ function wireEvents() {
     });
   });
   els.startQuizBtn.addEventListener("click", startQuiz);
+  els.startCodeBtn.addEventListener("click", startCode);
+  els.nextCodeBtn.addEventListener("click", () => {
+    if (!state.codeSession || !state.codeSession.answered) {
+      return;
+    }
+    state.codeSession.index += 1;
+    renderCodeQuestion();
+  });
 
   document.querySelectorAll("[data-exit-mode]").forEach((button) => {
     button.addEventListener("click", () => {

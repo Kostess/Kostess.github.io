@@ -25,6 +25,7 @@
           <button type="button" class="nav-link is-active" data-screen-link="home">Меню</button>
           <button type="button" class="nav-link" data-screen-link="cards">Карточки</button>
           <button type="button" class="nav-link" data-screen-link="quiz">Тест</button>
+          <button type="button" class="nav-link" data-screen-link="code">Понимаю код</button>
           <button type="button" class="nav-link" data-screen-link="reference">Справочник</button>
         </nav>
 
@@ -76,6 +77,11 @@
               <strong>Справочник</strong>
               <small>Все термины открыто: поиск, сортировка и фильтрация по темам и колодам.</small>
             </button>
+            <button class="mode-card" type="button" data-screen-link="code">
+              <span class="mode-icon">04</span>
+              <strong>Понимаю код</strong>
+              <small>Посмотри на C# и выбери результат или причину ошибки. После ответа будет объяснение.</small>
+            </button>
           </section>
         </section>
 
@@ -116,6 +122,7 @@
                 <span class="flashcard-hint">Нажмите, чтобы перевернуть</span>
                 <strong id="flashcardTitle">Карточки ждут</strong>
                 <span id="flashcardText">Выберите тему и колоду, затем начните тренировку.</span>
+                <span class="flashcard-example" id="flashcardExample" hidden></span>
               </button>
 
               <div class="action-row">
@@ -167,6 +174,47 @@
                 <h2 id="quizQuestion">Нажмите «Начать тест», когда будете готовы.</h2>
                 <div class="answer-grid" id="answerGrid"></div>
                 <p class="feedback" id="quizFeedback"></p>
+              </article>
+            </section>
+          </div>
+        </section>
+
+        <section class="screen" id="codeScreen" data-screen="code">
+          <div class="workspace">
+            <aside class="settings-panel">
+              <div class="section-heading">
+                <p class="eyebrow">Практика</p>
+                <h2>Понимаю код</h2>
+              </div>
+              <p class="settings-description">Короткие задачи по примерам из ЛБ 4–5. Код показан как текст и не запускается на сайте.</p>
+              <label>
+                Подборка
+                <select id="codeLabSelect">
+                  <option value="all">Все задания</option>
+                  <option value="ЛБ 4">ЛБ 4: переменные и типы</option>
+                  <option value="ЛБ 5">ЛБ 5: ввод и операции</option>
+                </select>
+              </label>
+              <button class="primary-button" id="startCodeBtn" type="button">Начать практику</button>
+              <button class="ghost-button" type="button" data-exit-mode>Выйти в меню</button>
+            </aside>
+
+            <section class="study-panel">
+              <div class="session-bar">
+                <span id="codeProgress">Выберите подборку</span>
+                <div class="progress-track" aria-hidden="true"><span id="codeProgressFill"></span></div>
+              </div>
+              <article class="quiz-card">
+                <span class="quiz-type" id="codeType">Практика не начата</span>
+                <h2 id="codeQuestion">Нажмите «Начать практику», когда будете готовы.</h2>
+                <div id="codeSnippet" class="code-snippet" hidden>
+                  <span class="code-label">C#</span>
+                  <pre><code id="codeText"></code></pre>
+                  <p id="codeInput" hidden></p>
+                </div>
+                <div class="answer-grid" id="codeAnswerGrid"></div>
+                <p class="feedback code-feedback" id="codeFeedback" aria-live="polite"></p>
+                <button class="primary-button" id="nextCodeBtn" type="button" hidden>Следующее задание</button>
               </article>
             </section>
           </div>
@@ -224,6 +272,7 @@
       </form>
     </dialog>
 
+    <script src="code-content.js"></script>
     <script src="app.js"></script>
   </body>
 </html>

@@ -156,6 +156,19 @@ test("practice lab and deck selectors restrict a session to the selected 5–10 
   }
 });
 
+test("choosing an alternative and shuffling answers preserves grading, explanation and glossary link", () => {
+  const app = setup();
+  const before = app.run('JSON.stringify(codeLessons[0])');
+  app.run('randomItem = items => items[1]; shuffle = items => [...items].reverse();');
+  app.run('const generated = createCodeQuestion(codeLessons[0]);');
+  assert.equal(app.run('generated.challengeCode'), app.run('codeLessons[0].variants[0].challengeCode'));
+  assert.equal(app.run('generated.options[generated.correctIndex]'), app.run('codeLessons[0].variants[0].challengeResult'));
+  assert.equal(app.run('generated.correctIndex'), 3);
+  assert.equal(app.run('generated.explanation'), app.run('codeLessons[0].variants[0].explanation'));
+  assert.equal(app.run('progressKey("code", generated)'), app.run('progressKey("code", codeLessons[0])'));
+  assert.equal(app.run('JSON.stringify(codeLessons[0])'), before);
+});
+
 test("corrupt or unavailable storage does not stop training", () => {
   for (const saved of ["{broken", "null", '{"quiz:fake":{"attempts":-1}}']) {
     const app = setup(new Map([["terms-progress-v1", saved]]));

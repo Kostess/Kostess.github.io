@@ -693,6 +693,20 @@ function fillCodeDeckSelect() {
   }).join("");
 }
 
+function createCodeQuestion(lesson) {
+  const variant = randomItem([lesson, ...(lesson.variants || [])]);
+  const options = shuffle(variant.options.map((text, index) => ({
+    text,
+    correct: index === variant.correctIndex
+  })));
+  return {
+    ...lesson,
+    ...variant,
+    options: options.map(option => option.text),
+    correctIndex: options.findIndex(option => option.correct)
+  };
+}
+
 function startCode() {
   const lab = els.codeLabSelect.value;
   const questions = shuffle(codeLessons.filter((lesson) =>
@@ -705,7 +719,7 @@ function startCode() {
     return;
   }
   state.activeMode = "code";
-  state.codeSession = { questions, index: 0, correct: 0, answered: false };
+  state.codeSession = { questions: questions.map(createCodeQuestion), index: 0, correct: 0, answered: false };
   renderCodeQuestion();
 }
 

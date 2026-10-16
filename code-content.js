@@ -66,7 +66,33 @@ const codeLessons = [
     ],
     "correctIndex": 0,
     "explanation": "В lives хранится число 3. Console.WriteLine выводит значение переменной, а не её имя.",
-    "codeDeckId": "lab4-variables-values"
+    "codeDeckId": "lab4-variables-values",
+    "variants": [
+      {
+        "challengeCode": "int lives = 5;\nConsole.WriteLine(lives);",
+        "options": [
+          "5",
+          "6",
+          "4",
+          "lives"
+        ],
+        "correctIndex": 0,
+        "challengeResult": "5",
+        "explanation": "Переменная lives хранит 5; это значение и выводится."
+      },
+      {
+        "challengeCode": "int lives = 8;\nConsole.WriteLine(lives);",
+        "options": [
+          "8",
+          "9",
+          "7",
+          "lives"
+        ],
+        "correctIndex": 0,
+        "challengeResult": "8",
+        "explanation": "Переменная lives хранит 8; это значение и выводится."
+      }
+    ]
   },
   {
     "id": "initialization",
@@ -106,7 +132,33 @@ const codeLessons = [
     ],
     "correctIndex": 2,
     "explanation": "Сначала count равен 1. Выражение count + 2 даёт 3, и это значение сохраняется в count.",
-    "codeDeckId": "lab4-variables-values"
+    "codeDeckId": "lab4-variables-values",
+    "variants": [
+      {
+        "challengeCode": "int count = 4;\ncount = count + 3;\nConsole.WriteLine(count);",
+        "options": [
+          "7",
+          "4",
+          "3",
+          "12"
+        ],
+        "correctIndex": 0,
+        "challengeResult": "7",
+        "explanation": "К 4 прибавляется 3: получается 7."
+      },
+      {
+        "challengeCode": "int count = 6;\ncount = count + 2;\nConsole.WriteLine(count);",
+        "options": [
+          "8",
+          "6",
+          "2",
+          "12"
+        ],
+        "correctIndex": 0,
+        "challengeResult": "8",
+        "explanation": "К 6 прибавляется 2: получается 8."
+      }
+    ]
   },
   {
     "id": "int",
@@ -136,17 +188,18 @@ const codeLessons = [
     "exampleResult": "True",
     "exampleNote": "bool хранит логическое значение true или false. В консоли оно выводится с прописной буквы.",
     "kind": "Что выведет код?",
-    "challengeCode": "bool isAdult = 17 >= 18;\nConsole.WriteLine(isAdult);",
+    "challengeCode": "bool isReady = false;\nConsole.WriteLine(isReady);",
     "prompt": "Что появится в консоли?",
     "options": [
       "True",
       "False",
-      "17",
+      "false;",
       "Ошибка компиляции"
     ],
     "correctIndex": 1,
-    "explanation": "17 не больше и не равно 18, поэтому сравнение даёт false; в консоли появится False.",
-    "codeDeckId": "lab4-csharp-data-types"
+    "explanation": "В переменной хранится false; Console.WriteLine выводит False.",
+    "codeDeckId": "lab4-csharp-data-types",
+    "challengeResult": "False"
   },
   {
     "id": "string",
@@ -172,9 +225,9 @@ const codeLessons = [
     "id": "decimal",
     "deckId": "csharp-data-types",
     "term": "decimal",
-    "exampleCode": "decimal price = 12.5m;\nConsole.WriteLine(price > 10m);",
-    "exampleResult": "True",
-    "exampleNote": "Суффикс m обозначает литерал decimal. Сравнение даёт логический результат.",
+    "exampleCode": "decimal price = 3m;\nConsole.WriteLine(price + 2m);",
+    "exampleResult": "5",
+    "exampleNote": "Суффикс m задаёт тип decimal. Здесь складываются два значения этого типа.",
     "kind": "Где ошибка?",
     "challengeCode": "decimal price = 12.5;\nConsole.WriteLine(price);",
     "prompt": "Почему этот код не соберётся?",
@@ -252,12 +305,12 @@ const codeLessons = [
     "id": "read-line",
     "deckId": "input-operations-conversions",
     "term": "Console.ReadLine",
-    "exampleCode": "string? name = Console.ReadLine();\nConsole.WriteLine($\"Привет, {name}!\");",
+    "exampleCode": "string name = Console.ReadLine();\nConsole.WriteLine($\"Привет, {name}!\");",
     "exampleInput": "Мира",
     "exampleResult": "Привет, Мира!",
-    "exampleNote": "Console.ReadLine читает введённый текст как строку. Знак ? допускает отсутствие ввода.",
+    "exampleNote": "Console.ReadLine читает введённый текст как строку. Предполагается, что пользователь ввёл указанное имя.",
     "kind": "Что выведет код?",
-    "challengeCode": "string? city = Console.ReadLine();\nConsole.WriteLine($\"Город: {city}\");",
+    "challengeCode": "string city = Console.ReadLine();\nConsole.WriteLine($\"Город: {city}\");",
     "challengeInput": "Омск",
     "prompt": "Что появится в консоли после ввода?",
     "options": [
@@ -288,7 +341,33 @@ const codeLessons = [
     ],
     "correctIndex": 0,
     "explanation": "11 / 4 при целочисленном делении даёт 2. Дробная часть 0.75 отбрасывается.",
-    "codeDeckId": "lab5-operations-output"
+    "codeDeckId": "lab5-operations-output",
+    "variants": [
+      {
+        "challengeCode": "Console.WriteLine(17 / 5);",
+        "options": [
+          "3",
+          "2",
+          "17",
+          "5"
+        ],
+        "correctIndex": 0,
+        "challengeResult": "3",
+        "explanation": "Целочисленное деление даёт 3; дробная часть отбрасывается."
+      },
+      {
+        "challengeCode": "Console.WriteLine(19 / 4);",
+        "options": [
+          "4",
+          "3",
+          "19",
+          "Ничего"
+        ],
+        "correctIndex": 0,
+        "challengeResult": "4",
+        "explanation": "Целочисленное деление даёт 4; дробная часть отбрасывается."
+      }
+    ]
   },
   {
     "id": "remainder",
@@ -308,7 +387,33 @@ const codeLessons = [
     ],
     "correctIndex": 1,
     "explanation": "14 = 5 × 2 + 4. Оператор % возвращает остаток 4.",
-    "codeDeckId": "lab5-operations-output"
+    "codeDeckId": "lab5-operations-output",
+    "variants": [
+      {
+        "challengeCode": "Console.WriteLine(17 % 5);",
+        "options": [
+          "2",
+          "3",
+          "17",
+          "5"
+        ],
+        "correctIndex": 0,
+        "challengeResult": "2",
+        "explanation": "17 = 5 × 3 + 2; остаток равен 2."
+      },
+      {
+        "challengeCode": "Console.WriteLine(19 % 4);",
+        "options": [
+          "3",
+          "4",
+          "19",
+          "Ничего"
+        ],
+        "correctIndex": 0,
+        "challengeResult": "3",
+        "explanation": "19 = 4 × 4 + 3; остаток равен 3."
+      }
+    ]
   },
   {
     "id": "explicit-conversion",
@@ -333,24 +438,25 @@ const codeLessons = [
   {
     "id": "invalid-input",
     "deckId": "input-operations-conversions",
-    "term": "Некорректный ввод",
-    "exampleCode": "string? text = Console.ReadLine();\nif (int.TryParse(text, out int number))\n    Console.WriteLine(number);\nelse\n    Console.WriteLine(\"Введите число\");",
-    "exampleInput": "кот",
-    "exampleResult": "Введите число",
-    "exampleNote": "TryParse проверяет ввод без исключения. Слово «кот» нельзя преобразовать в int.",
+    "term": "Ввод целого числа",
+    "exampleCode": "string text = Console.ReadLine();\nint number = int.Parse(text);\nConsole.WriteLine(number + 1);",
+    "exampleInput": "7",
+    "exampleResult": "8",
+    "exampleNote": "Пользователь вводит корректную запись целого числа. Parse преобразует строку в int.",
     "kind": "Что выведет код?",
-    "challengeCode": "string? text = Console.ReadLine();\nif (int.TryParse(text, out int number))\n    Console.WriteLine(number);\nelse\n    Console.WriteLine(\"Ошибка ввода\");",
-    "challengeInput": "12кг",
+    "challengeCode": "string text = Console.ReadLine();\nint number = int.Parse(text);\nConsole.WriteLine(number * 2);",
+    "challengeInput": "6",
     "prompt": "Что появится в консоли после ввода?",
     "options": [
+      "6",
       "12",
-      "12кг",
-      "Ошибка ввода",
-      "Программа завершится с исключением"
+      "62",
+      "Ошибка компиляции"
     ],
-    "correctIndex": 2,
-    "explanation": "Строка «12кг» целиком не является целым числом. TryParse вернёт false, поэтому выполнится ветка else.",
-    "codeDeckId": "lab5-input-conversion"
+    "correctIndex": 1,
+    "explanation": "Ввод 6 преобразуется в число; затем 6 * 2 = 12.",
+    "codeDeckId": "lab5-input-conversion",
+    "challengeResult": "12"
   },
   {
     "id": "lab6-equality",
@@ -590,7 +696,33 @@ const codeLessons = [
     ],
     "correctIndex": 1,
     "explanation": "Условие равно false, поэтому оператор ?: выбирает выражение после двоеточия.",
-    "codeDeckId": "practice-branching-menu"
+    "codeDeckId": "practice-branching-menu",
+    "variants": [
+      {
+        "challengeCode": "int score = 59;\nConsole.WriteLine(score >= 60 ? \"Зачёт\" : \"Повторить\");",
+        "options": [
+          "Повторить",
+          "Зачёт",
+          "True",
+          "False"
+        ],
+        "correctIndex": 0,
+        "challengeResult": "Повторить",
+        "explanation": "Условие 59 >= 60 — ложь; выбирается «Повторить»."
+      },
+      {
+        "challengeCode": "int score = 75;\nConsole.WriteLine(score >= 60 ? \"Зачёт\" : \"Повторить\");",
+        "options": [
+          "Зачёт",
+          "Повторить",
+          "True",
+          "False"
+        ],
+        "correctIndex": 0,
+        "challengeResult": "Зачёт",
+        "explanation": "Условие 75 >= 60 — истина; выбирается «Зачёт»."
+      }
+    ]
   },
   {
     "id": "lab6-switch",
@@ -671,7 +803,33 @@ const codeLessons = [
     "correctIndex": 1,
     "explanation": "После объявления level получает значение 4; оно и выводится.",
     "challengeResult": "4",
-    "codeDeckId": "lab4-variables-values"
+    "codeDeckId": "lab4-variables-values",
+    "variants": [
+      {
+        "challengeCode": "int level = 5;\nConsole.WriteLine(level);",
+        "options": [
+          "5",
+          "6",
+          "4",
+          "level"
+        ],
+        "correctIndex": 0,
+        "challengeResult": "5",
+        "explanation": "Переменная level хранит 5; это значение и выводится."
+      },
+      {
+        "challengeCode": "int level = 8;\nConsole.WriteLine(level);",
+        "options": [
+          "8",
+          "9",
+          "7",
+          "level"
+        ],
+        "correctIndex": 0,
+        "challengeResult": "8",
+        "explanation": "Переменная level хранит 8; это значение и выводится."
+      }
+    ]
   },
   {
     "id": "lab4-literal",
@@ -692,7 +850,33 @@ const codeLessons = [
     "correctIndex": 2,
     "explanation": "С числами + складывает, со строками соединяет текст.",
     "challengeResult": "5\n23",
-    "codeDeckId": "lab4-variables-values"
+    "codeDeckId": "lab4-variables-values",
+    "variants": [
+      {
+        "challengeCode": "Console.WriteLine(4 + 2);\nConsole.WriteLine(\"4\" + \"2\");",
+        "options": [
+          "6\n42",
+          "42\n6",
+          "6\n6",
+          "42\n42"
+        ],
+        "correctIndex": 0,
+        "challengeResult": "6\n42",
+        "explanation": "Числа складываются (6), строки соединяются (42)."
+      },
+      {
+        "challengeCode": "Console.WriteLine(5 + 3);\nConsole.WriteLine(\"5\" + \"3\");",
+        "options": [
+          "8\n53",
+          "53\n8",
+          "8\n8",
+          "53\n53"
+        ],
+        "correctIndex": 0,
+        "challengeResult": "8\n53",
+        "explanation": "Числа складываются (8), строки соединяются (53)."
+      }
+    ]
   },
   {
     "id": "lab4-long",
@@ -719,43 +903,43 @@ const codeLessons = [
     "id": "lab4-float",
     "deckId": "csharp-data-types",
     "term": "float",
-    "exampleCode": "float temperature = 12.5f;\nConsole.WriteLine(temperature > 12f);",
-    "exampleResult": "True",
-    "exampleNote": "Суффикс f задаёт литерал float. Сравнение выводит логический результат.",
+    "exampleCode": "float value = 1.5f;\nConsole.WriteLine(value * 2f);",
+    "exampleResult": "3",
+    "exampleNote": "Суффикс f задаёт float. Умножение 1.5 на 2 даёт 3.",
     "kind": "Что выведет код?",
-    "challengeCode": "float x = 1.5f;\nConsole.WriteLine(x * 2f == 3f);",
+    "challengeCode": "float value = 2.5f;\nConsole.WriteLine(value * 2f);",
     "prompt": "Что появится в консоли?",
     "options": [
-      "False",
-      "3",
-      "True",
+      "2",
+      "4",
+      "5",
       "Ошибка компиляции"
     ],
     "correctIndex": 2,
-    "explanation": "1.5 × 2 равно 3; эти значения точно представимы в float.",
-    "challengeResult": "True",
-    "codeDeckId": "lab4-csharp-data-types"
+    "explanation": "2.5 умножается на 2: результат 5.",
+    "codeDeckId": "lab4-csharp-data-types",
+    "challengeResult": "5"
   },
   {
     "id": "lab4-double",
     "deckId": "csharp-data-types",
     "term": "double",
-    "exampleCode": "double half = 5.0 / 2;\nConsole.WriteLine(half == 2.5);",
-    "exampleResult": "True",
-    "exampleNote": "Литерал 5.0 имеет тип double: деление сохраняет дробную часть.",
+    "exampleCode": "double value = 6.0 / 2;\nConsole.WriteLine(value);",
+    "exampleResult": "3",
+    "exampleNote": "Литерал 6.0 имеет тип double. Деление даёт 3.",
     "kind": "Что выведет код?",
-    "challengeCode": "double value = 9.0 / 2;\nConsole.WriteLine(value > 4);",
+    "challengeCode": "double value = 8.0 / 2;\nConsole.WriteLine(value);",
     "prompt": "Что появится в консоли?",
     "options": [
-      "True",
-      "False",
       "4",
+      "8",
+      "2",
       "Ошибка компиляции"
     ],
     "correctIndex": 0,
-    "explanation": "9.0 / 2 даёт 4.5, а 4.5 больше 4.",
-    "challengeResult": "True",
-    "codeDeckId": "lab4-csharp-data-types"
+    "explanation": "8.0 / 2 равно 4.",
+    "codeDeckId": "lab4-csharp-data-types",
+    "challengeResult": "4"
   },
   {
     "id": "lab4-char",
@@ -803,9 +987,9 @@ const codeLessons = [
     "id": "lab4-inferred-type",
     "deckId": "typing-and-output",
     "term": "Неявное указание типа",
-    "exampleCode": "var count = 3;\nConsole.WriteLine(count.GetType().Name);",
-    "exampleResult": "Int32",
-    "exampleNote": "var выводит тип int по начальному значению 3.",
+    "exampleCode": "var count = 3;\nConsole.WriteLine(count);",
+    "exampleResult": "3",
+    "exampleNote": "По начальному значению 3 компилятор определяет тип int. Выводится значение переменной.",
     "kind": "Что выведет код?",
     "challengeCode": "var value = \"7\";\nConsole.WriteLine(value + 2);",
     "prompt": "Что появится в консоли?",
@@ -817,8 +1001,8 @@ const codeLessons = [
     ],
     "correctIndex": 1,
     "explanation": "Начальное значение в кавычках задаёт тип string; результат соединения — 72.",
-    "challengeResult": "72",
-    "codeDeckId": "lab4-typing-and-output"
+    "codeDeckId": "lab4-typing-and-output",
+    "challengeResult": "72"
   },
   {
     "id": "lab4-suffix",
@@ -828,18 +1012,18 @@ const codeLessons = [
     "exampleResult": "5",
     "exampleNote": "m задаёт тип decimal даже для литерала без дробной части.",
     "kind": "Что выведет код?",
-    "challengeCode": "float speed = 2f;\nConsole.WriteLine(speed == 2f);",
+    "challengeCode": "float speed = 2f;\nConsole.WriteLine(speed + 3f);",
     "prompt": "Что появится в консоли?",
     "options": [
       "2f",
-      "False",
-      "True",
+      "5",
+      "23",
       "Ошибка компиляции"
     ],
-    "correctIndex": 2,
-    "explanation": "Оба значения равны 2 и имеют тип float; сравнение истинно.",
-    "challengeResult": "True",
-    "codeDeckId": "lab4-typing-and-output"
+    "correctIndex": 1,
+    "explanation": "Складываются числа 2 и 3 типа float; результат 5.",
+    "codeDeckId": "lab4-typing-and-output",
+    "challengeResult": "5"
   },
   {
     "id": "lab4-type-range",
@@ -849,18 +1033,18 @@ const codeLessons = [
     "exampleResult": "2147483647",
     "exampleNote": "MaxValue показывает верхнюю границу типа int.",
     "kind": "Что выведет код?",
-    "challengeCode": "Console.WriteLine(int.MaxValue > 1000);",
+    "challengeCode": "Console.WriteLine(int.MinValue);",
     "prompt": "Что появится в консоли?",
     "options": [
-      "False",
-      "True",
-      "1000",
+      "0",
+      "-2147483648",
+      "2147483647",
       "Ошибка компиляции"
     ],
     "correctIndex": 1,
-    "explanation": "Максимальное значение int равно 2147483647, что больше 1000.",
-    "challengeResult": "True",
-    "codeDeckId": "lab4-typing-and-output"
+    "explanation": "MinValue — минимальное значение int: -2147483648.",
+    "codeDeckId": "lab4-typing-and-output",
+    "challengeResult": "-2147483648"
   },
   {
     "id": "lab5-conversion",
@@ -887,9 +1071,9 @@ const codeLessons = [
     "id": "lab5-implicit",
     "deckId": "input-operations-conversions",
     "term": "Неявное преобразование",
-    "exampleCode": "int count = 5;\ndouble value = count;\nConsole.WriteLine(value == 5.0);",
-    "exampleResult": "True",
-    "exampleNote": "Преобразование int в double разрешено без явного приведения.",
+    "exampleCode": "int count = 5;\ndouble value = count;\nConsole.WriteLine(value);",
+    "exampleResult": "5",
+    "exampleNote": "Значение int можно присвоить double без явного приведения.",
     "kind": "Что выведет код?",
     "challengeCode": "int count = 7;\nlong total = count;\nConsole.WriteLine(total + 3);",
     "prompt": "Что появится в консоли?",
@@ -901,8 +1085,8 @@ const codeLessons = [
     ],
     "correctIndex": 2,
     "explanation": "int неявно преобразуется в long, затем выполняется сложение.",
-    "challengeResult": "10",
-    "codeDeckId": "lab5-input-conversion"
+    "codeDeckId": "lab5-input-conversion",
+    "challengeResult": "10"
   },
   {
     "id": "lab5-arithmetic",
@@ -923,7 +1107,33 @@ const codeLessons = [
     "correctIndex": 1,
     "explanation": "Скобки заставляют сначала сложить 2 и 3; 5 × 4 = 20.",
     "challengeResult": "20",
-    "codeDeckId": "lab5-operations-output"
+    "codeDeckId": "lab5-operations-output",
+    "variants": [
+      {
+        "challengeCode": "Console.WriteLine(3 + 2 * 5);",
+        "options": [
+          "13",
+          "25",
+          "10",
+          "30"
+        ],
+        "correctIndex": 0,
+        "challengeResult": "13",
+        "explanation": "Сначала 2 * 5, затем прибавление 3; ответ 13."
+      },
+      {
+        "challengeCode": "Console.WriteLine(4 + 3 * 2);",
+        "options": [
+          "10",
+          "14",
+          "9",
+          "24"
+        ],
+        "correctIndex": 0,
+        "challengeResult": "10",
+        "explanation": "Сначала 3 * 2, затем прибавление 4; ответ 10."
+      }
+    ]
   },
   {
     "id": "lab5-operand",
@@ -965,7 +1175,33 @@ const codeLessons = [
     "correctIndex": 0,
     "explanation": "Сначала 4 × 4 = 16, затем 16 - 1 = 15.",
     "challengeResult": "15",
-    "codeDeckId": "lab5-operations-output"
+    "codeDeckId": "lab5-operations-output",
+    "variants": [
+      {
+        "challengeCode": "int x = 3;\nConsole.WriteLine(x * x - 1);",
+        "options": [
+          "8",
+          "9",
+          "2",
+          "6"
+        ],
+        "correctIndex": 0,
+        "challengeResult": "8",
+        "explanation": "3 * 3 - 1 = 8."
+      },
+      {
+        "challengeCode": "int x = 5;\nConsole.WriteLine(x * x - 1);",
+        "options": [
+          "24",
+          "25",
+          "4",
+          "20"
+        ],
+        "correctIndex": 0,
+        "challengeResult": "24",
+        "explanation": "5 * 5 - 1 = 24."
+      }
+    ]
   },
   {
     "id": "lab5-data-loss",
@@ -991,65 +1227,143 @@ const codeLessons = [
   {
     "id": "lab5-format",
     "deckId": "input-operations-conversions",
-    "term": "Форматирование вывода",
-    "exampleCode": "int number = 7;\nConsole.WriteLine($\"{number:D3}\");",
-    "exampleResult": "007",
-    "exampleNote": "D3 выводит целое минимум с тремя цифрами, дополняя нулями слева.",
+    "term": "Составное присваивание",
+    "exampleCode": "int score = 5;\nscore += 3;\nConsole.WriteLine(score);",
+    "exampleResult": "8",
+    "exampleNote": "Для int запись score += 3 означает score = score + 3.",
     "kind": "Что выведет код?",
-    "challengeCode": "int number = 12;\nConsole.WriteLine($\"{number:D4}\");",
+    "challengeCode": "int score = 10;\nscore -= 4;\nConsole.WriteLine(score);",
     "prompt": "Что появится в консоли?",
     "options": [
-      "12",
-      "1200",
-      "0012",
-      "D412"
+      "14",
+      "4",
+      "6",
+      "10"
     ],
     "correctIndex": 2,
-    "explanation": "D4 требует минимум четыре цифры, поэтому слева добавляются два нуля.",
-    "challengeResult": "0012",
-    "codeDeckId": "lab5-operations-output"
+    "explanation": "Прежнее значение 10 уменьшается на 4: результат 6.",
+    "codeDeckId": "lab5-operations-output",
+    "challengeResult": "6",
+    "variants": [
+      {
+        "challengeCode": "int score = 7;\nscore += 2;\nConsole.WriteLine(score);",
+        "options": [
+          "9",
+          "7",
+          "2",
+          "5"
+        ],
+        "correctIndex": 0,
+        "challengeResult": "9",
+        "explanation": "К 7 прибавляется 2; результат 9."
+      },
+      {
+        "challengeCode": "int score = 12;\nscore += 5;\nConsole.WriteLine(score);",
+        "options": [
+          "17",
+          "12",
+          "5",
+          "7"
+        ],
+        "correctIndex": 0,
+        "challengeResult": "17",
+        "explanation": "К 12 прибавляется 5; результат 17."
+      }
+    ]
   },
   {
     "id": "lab5-exception",
     "deckId": "input-operations-conversions",
-    "term": "Исключение",
-    "exampleCode": "try\n{\n    Console.WriteLine(int.Parse(\"кот\"));\n}\ncatch (FormatException)\n{\n    Console.WriteLine(\"Не число\");\n}",
-    "exampleResult": "Не число",
-    "exampleNote": "Неверный числовой формат вызывает FormatException; catch обрабатывает его.",
+    "term": "Приоритет операций",
+    "exampleCode": "Console.WriteLine(10 - 2 * 3);",
+    "exampleResult": "4",
+    "exampleNote": "Умножение выполняется раньше вычитания: сначала 2 * 3, затем 10 - 6.",
     "kind": "Что выведет код?",
-    "challengeCode": "try\n{\n    Console.WriteLine(int.Parse(\"12кг\"));\n}\ncatch (FormatException)\n{\n    Console.WriteLine(\"Ошибка\");\n}",
+    "challengeCode": "Console.WriteLine(12 - 3 * 2);",
     "prompt": "Что появится в консоли?",
     "options": [
-      "12",
-      "12кг",
-      "Ошибка",
-      "Ничего"
+      "18",
+      "6",
+      "9",
+      "24"
     ],
-    "correctIndex": 2,
-    "explanation": "Parse не может разобрать всю строку как int, поэтому выполняется catch.",
-    "challengeResult": "Ошибка",
-    "codeDeckId": "lab5-input-conversion"
+    "correctIndex": 1,
+    "explanation": "Сначала 3 * 2 = 6, затем 12 - 6 = 6.",
+    "codeDeckId": "lab5-input-conversion",
+    "challengeResult": "6",
+    "variants": [
+      {
+        "challengeCode": "Console.WriteLine(15 - 4 * 2);",
+        "options": [
+          "7",
+          "22",
+          "9",
+          "23"
+        ],
+        "correctIndex": 0,
+        "challengeResult": "7",
+        "explanation": "Сначала умножение, затем вычитание; ответ 7."
+      },
+      {
+        "challengeCode": "Console.WriteLine(20 - 3 * 4);",
+        "options": [
+          "8",
+          "68",
+          "13",
+          "32"
+        ],
+        "correctIndex": 0,
+        "challengeResult": "8",
+        "explanation": "Сначала умножение, затем вычитание; ответ 8."
+      }
+    ]
   },
   {
     "id": "lab5-decimal-separator",
     "deckId": "input-operations-conversions",
-    "term": "Десятичный разделитель",
-    "exampleCode": "double value = double.Parse(\"2.5\", System.Globalization.CultureInfo.InvariantCulture);\nConsole.WriteLine(value > 2);",
-    "exampleResult": "True",
-    "exampleNote": "InvariantCulture явно задаёт точку как десятичный разделитель, независимо от настроек компьютера.",
+    "term": "Скобки в выражении",
+    "exampleCode": "Console.WriteLine((10 - 2) * 3);",
+    "exampleResult": "24",
+    "exampleNote": "Сначала вычисляется выражение в скобках: 10 - 2, затем умножение на 3.",
     "kind": "Что выведет код?",
-    "challengeCode": "double value = double.Parse(\"3.5\", System.Globalization.CultureInfo.InvariantCulture);\nConsole.WriteLine(value < 4);",
+    "challengeCode": "Console.WriteLine((12 - 3) * 2);",
     "prompt": "Что появится в консоли?",
     "options": [
-      "True",
-      "False",
-      "35",
-      "Ошибка компиляции"
+      "6",
+      "9",
+      "18",
+      "24"
     ],
-    "correctIndex": 0,
-    "explanation": "При InvariantCulture строка 3.5 означает три с половиной; это меньше 4.",
-    "challengeResult": "True",
-    "codeDeckId": "lab5-operations-output"
+    "correctIndex": 2,
+    "explanation": "В скобках 12 - 3 = 9, затем 9 * 2 = 18.",
+    "codeDeckId": "lab5-operations-output",
+    "challengeResult": "18",
+    "variants": [
+      {
+        "challengeCode": "Console.WriteLine((15 - 4) * 2);",
+        "options": [
+          "22",
+          "7",
+          "9",
+          "23"
+        ],
+        "correctIndex": 0,
+        "challengeResult": "22",
+        "explanation": "Сначала скобки, затем умножение; ответ 22."
+      },
+      {
+        "challengeCode": "Console.WriteLine((20 - 3) * 4);",
+        "options": [
+          "68",
+          "8",
+          "13",
+          "32"
+        ],
+        "correctIndex": 0,
+        "challengeResult": "68",
+        "explanation": "Сначала скобки, затем умножение; ответ 68."
+      }
+    ]
   },
   {
     "id": "lab6-condition",
@@ -1091,7 +1405,33 @@ const codeLessons = [
     "correctIndex": 2,
     "explanation": "Строгое сравнение > не включает равенство: 5 не больше 5.",
     "challengeResult": "False",
-    "codeDeckId": "practice-conditions-logic"
+    "codeDeckId": "practice-conditions-logic",
+    "variants": [
+      {
+        "challengeCode": "Console.WriteLine(7 >= 7);",
+        "options": [
+          "True",
+          "False",
+          "7",
+          "Ошибка компиляции"
+        ],
+        "correctIndex": 0,
+        "challengeResult": "True",
+        "explanation": "Сравнение 7 >= 7 даёт True."
+      },
+      {
+        "challengeCode": "Console.WriteLine(7 > 8);",
+        "options": [
+          "False",
+          "True",
+          "7",
+          "Ошибка компиляции"
+        ],
+        "correctIndex": 0,
+        "challengeResult": "False",
+        "explanation": "Сравнение 7 > 8 даёт False."
+      }
+    ]
   },
   {
     "id": "lab6-inequality",
@@ -1112,7 +1452,33 @@ const codeLessons = [
     "correctIndex": 1,
     "explanation": "Значения равны, поэтому проверка неравенства ложна.",
     "challengeResult": "False",
-    "codeDeckId": "practice-conditions-logic"
+    "codeDeckId": "practice-conditions-logic",
+    "variants": [
+      {
+        "challengeCode": "int debtCount = 2;\nConsole.WriteLine(debtCount != 0);",
+        "options": [
+          "True",
+          "False",
+          "2",
+          "Ошибка компиляции"
+        ],
+        "correctIndex": 0,
+        "challengeResult": "True",
+        "explanation": "Проверяем отличие 2 от нуля; результат True."
+      },
+      {
+        "challengeCode": "int debtCount = 0;\nConsole.WriteLine(debtCount != 0);",
+        "options": [
+          "False",
+          "True",
+          "0",
+          "Ошибка компиляции"
+        ],
+        "correctIndex": 0,
+        "challengeResult": "False",
+        "explanation": "Проверяем отличие 0 от нуля; результат False."
+      }
+    ]
   },
   {
     "id": "lab6-else",
@@ -1133,7 +1499,33 @@ const codeLessons = [
     "correctIndex": 2,
     "explanation": "Условие истинно, поэтому выполняется if, а ветка else пропускается.",
     "challengeResult": "Да",
-    "codeDeckId": "practice-branching-menu"
+    "codeDeckId": "practice-branching-menu",
+    "variants": [
+      {
+        "challengeCode": "int score = 45;\nif (score >= 60)\n{\n    Console.WriteLine(\"Да\");\n}\nelse\n{\n    Console.WriteLine(\"Нет\");\n}",
+        "options": [
+          "Нет",
+          "Да",
+          "Да\nНет",
+          "Ничего"
+        ],
+        "correctIndex": 0,
+        "challengeResult": "Нет",
+        "explanation": "Условие 45 >= 60 — ложь; выводится «Нет»."
+      },
+      {
+        "challengeCode": "int score = 80;\nif (score >= 60)\n{\n    Console.WriteLine(\"Да\");\n}\nelse\n{\n    Console.WriteLine(\"Нет\");\n}",
+        "options": [
+          "Да",
+          "Нет",
+          "Да\nНет",
+          "Ничего"
+        ],
+        "correctIndex": 0,
+        "challengeResult": "Да",
+        "explanation": "Условие 80 >= 60 — истина; выводится «Да»."
+      }
+    ]
   },
   {
     "id": "lab6-case",
@@ -1175,7 +1567,33 @@ const codeLessons = [
     "correctIndex": 2,
     "explanation": "Счётчик принимает значения 0, 1, 2, 3: четыре повторения.",
     "challengeResult": "XXXX",
-    "codeDeckId": "practice-loops-basics"
+    "codeDeckId": "practice-loops-basics",
+    "variants": [
+      {
+        "challengeCode": "for (int i = 0; i < 2; i++)\n{\n    Console.Write(\"X\");\n}",
+        "options": [
+          "XX",
+          "X",
+          "XXX",
+          "Ничего"
+        ],
+        "correctIndex": 0,
+        "challengeResult": "XX",
+        "explanation": "От 0 до 1 — 2 итераций, выводится 2 букв X."
+      },
+      {
+        "challengeCode": "for (int i = 0; i < 5; i++)\n{\n    Console.Write(\"X\");\n}",
+        "options": [
+          "XXXXX",
+          "XXXX",
+          "XXXXXX",
+          "Ничего"
+        ],
+        "correctIndex": 0,
+        "challengeResult": "XXXXX",
+        "explanation": "От 0 до 4 — 5 итераций, выводится 5 букв X."
+      }
+    ]
   },
   {
     "id": "lab7-iteration",
@@ -1259,7 +1677,33 @@ const codeLessons = [
     "correctIndex": 1,
     "explanation": "Граница строгая: тело выполняется только для 1 и 2.",
     "challengeResult": "12",
-    "codeDeckId": "practice-loops-basics"
+    "codeDeckId": "practice-loops-basics",
+    "variants": [
+      {
+        "challengeCode": "for (int i = 2; i < 5; i++)\n{\n    Console.Write(i);\n}",
+        "options": [
+          "234",
+          "2345",
+          "34",
+          "5"
+        ],
+        "correctIndex": 0,
+        "challengeResult": "234",
+        "explanation": "Выводятся числа от 2 до 4; граница 5 не включается."
+      },
+      {
+        "challengeCode": "for (int i = 3; i < 6; i++)\n{\n    Console.Write(i);\n}",
+        "options": [
+          "345",
+          "3456",
+          "45",
+          "6"
+        ],
+        "correctIndex": 0,
+        "challengeResult": "345",
+        "explanation": "Выводятся числа от 3 до 5; граница 6 не включается."
+      }
+    ]
   },
   {
     "id": "lab7-while",
@@ -1280,7 +1724,33 @@ const codeLessons = [
     "correctIndex": 0,
     "explanation": "Тело выводит 2, 3 и 4. Затем i = 5 и условие ложно.",
     "challengeResult": "234",
-    "codeDeckId": "practice-loops-basics"
+    "codeDeckId": "practice-loops-basics",
+    "variants": [
+      {
+        "challengeCode": "int i = 3;\nwhile (i <= 5)\n{\n    Console.Write(i);\n    i++;\n}",
+        "options": [
+          "345",
+          "34",
+          "3456",
+          "5"
+        ],
+        "correctIndex": 0,
+        "challengeResult": "345",
+        "explanation": "Выводятся числа от 3 до 5 включительно."
+      },
+      {
+        "challengeCode": "int i = 4;\nwhile (i <= 6)\n{\n    Console.Write(i);\n    i++;\n}",
+        "options": [
+          "456",
+          "45",
+          "4567",
+          "6"
+        ],
+        "correctIndex": 0,
+        "challengeResult": "456",
+        "explanation": "Выводятся числа от 4 до 6 включительно."
+      }
+    ]
   },
   {
     "id": "lab7-do-while",
@@ -1385,17 +1855,43 @@ const codeLessons = [
     "correctIndex": 2,
     "explanation": "Счётчик принимает значения 4, 3, 2. Граница 2 включена, а 1 уже не подходит.",
     "challengeResult": "432",
-    "codeDeckId": "practice-loops-control"
+    "codeDeckId": "practice-loops-control",
+    "variants": [
+      {
+        "challengeCode": "for (int i = 5; i >= 3; i--)\n{\n    Console.Write(i);\n}",
+        "options": [
+          "543",
+          "54",
+          "345",
+          "5"
+        ],
+        "correctIndex": 0,
+        "challengeResult": "543",
+        "explanation": "Счётчик уменьшается от 5 до 3 включительно."
+      },
+      {
+        "challengeCode": "for (int i = 6; i >= 4; i--)\n{\n    Console.Write(i);\n}",
+        "options": [
+          "654",
+          "65",
+          "456",
+          "6"
+        ],
+        "correctIndex": 0,
+        "challengeResult": "654",
+        "explanation": "Счётчик уменьшается от 6 до 4 включительно."
+      }
+    ]
   },
   {
     "id": "lab7-repeat-input",
     "deckId": "loops-control",
     "term": "Повторный ввод",
-    "exampleCode": "string? text = Console.ReadLine();\nwhile (text != null && text != \"стоп\")\n{\n    Console.WriteLine(text);\n    text = Console.ReadLine();\n}",
+    "exampleCode": "string text = Console.ReadLine();\nwhile (text != \"стоп\")\n{\n    Console.WriteLine(text);\n    text = Console.ReadLine();\n}",
     "exampleResult": "да",
-    "exampleNote": "На каждой итерации читается новая строка. Команда стоп и конец ввода завершают цикл.",
+    "exampleNote": "В каждой итерации читается новая строка. Пользователь завершает ввод командой стоп.",
     "kind": "Что выведет код?",
-    "challengeCode": "int count = 0;\nstring? text = Console.ReadLine();\nwhile (text != null && text != \"0\")\n{\n    count++;\n    text = Console.ReadLine();\n}\nConsole.WriteLine(count);",
+    "challengeCode": "int count = 0;\nstring text = Console.ReadLine();\nwhile (text != \"0\")\n{\n    count++;\n    text = Console.ReadLine();\n}\nConsole.WriteLine(count);",
     "prompt": "Что появится в консоли?",
     "options": [
       "0",
@@ -1405,10 +1901,10 @@ const codeLessons = [
     ],
     "correctIndex": 2,
     "explanation": "Строки 5 и 7 увеличивают счётчик. Строка 0 завершает цикл и не учитывается.",
-    "challengeResult": "2",
     "codeDeckId": "practice-loops-control",
     "exampleInput": "да\nстоп",
-    "challengeInput": "5\n7\n0"
+    "challengeInput": "5\n7\n0",
+    "challengeResult": "2"
   },
   {
     "id": "lab7-break",
@@ -1429,7 +1925,33 @@ const codeLessons = [
     "correctIndex": 2,
     "explanation": "Выводятся 1, 2, 3. При i = 4 цикл прекращается до Console.Write.",
     "challengeResult": "123",
-    "codeDeckId": "practice-loops-control"
+    "codeDeckId": "practice-loops-control",
+    "variants": [
+      {
+        "challengeCode": "for (int i = 1; i <= 6; i++)\n{\n    if (i == 2)\n    {\n        break;\n    }\n    Console.Write(i);\n}",
+        "options": [
+          "1",
+          "12",
+          "123456",
+          "2"
+        ],
+        "correctIndex": 0,
+        "challengeResult": "1",
+        "explanation": "При i = 2 цикл завершается до вывода; успевают вывестись числа 1–1."
+      },
+      {
+        "challengeCode": "for (int i = 1; i <= 6; i++)\n{\n    if (i == 5)\n    {\n        break;\n    }\n    Console.Write(i);\n}",
+        "options": [
+          "1234",
+          "12345",
+          "123456",
+          "5"
+        ],
+        "correctIndex": 0,
+        "challengeResult": "1234",
+        "explanation": "При i = 5 цикл завершается до вывода; успевают вывестись числа 1–4."
+      }
+    ]
   },
   {
     "id": "lab7-continue",
@@ -1450,17 +1972,43 @@ const codeLessons = [
     "correctIndex": 2,
     "explanation": "Пропускается только вывод 3. Цикл продолжает работу и выводит 4.",
     "challengeResult": "124",
-    "codeDeckId": "practice-loops-control"
+    "codeDeckId": "practice-loops-control",
+    "variants": [
+      {
+        "challengeCode": "for (int i = 1; i <= 5; i++)\n{\n    if (i == 2)\n    {\n        continue;\n    }\n    Console.Write(i);\n}",
+        "options": [
+          "1345",
+          "12345",
+          "1",
+          "2"
+        ],
+        "correctIndex": 0,
+        "challengeResult": "1345",
+        "explanation": "continue пропускает только вывод 2; остальные итерации выполняются."
+      },
+      {
+        "challengeCode": "for (int i = 1; i <= 5; i++)\n{\n    if (i == 4)\n    {\n        continue;\n    }\n    Console.Write(i);\n}",
+        "options": [
+          "1235",
+          "12345",
+          "123",
+          "4"
+        ],
+        "correctIndex": 0,
+        "challengeResult": "1235",
+        "explanation": "continue пропускает только вывод 4; остальные итерации выполняются."
+      }
+    ]
   },
   {
     "id": "lab7-nested",
     "deckId": "loops-control",
     "term": "Вложенный цикл",
-    "exampleCode": "for (int row = 1; row <= 2; row++)\n{\n    for (int col = 1; col <= 3; col++)\n        Console.Write(\"*\");\n    Console.WriteLine();\n}",
+    "exampleCode": "for (int row = 1; row <= 2; row++)\n{\n    for (int col = 1; col <= 3; col++)\n    {\n        Console.Write(\"*\");\n    }\n    Console.WriteLine();\n}",
     "exampleResult": "***\n***",
     "exampleNote": "Внутренний цикл выполняет три вывода для каждой из двух строк.",
     "kind": "Что выведет код?",
-    "challengeCode": "int count = 0;\nfor (int row = 0; row < 3; row++)\n    for (int col = 0; col < 2; col++)\n        count++;\nConsole.WriteLine(count);",
+    "challengeCode": "int count = 0;\nfor (int row = 0; row < 3; row++)\n{\n    for (int col = 0; col < 2; col++)\n    {\n        count++;\n    }\n}\nConsole.WriteLine(count);",
     "prompt": "Что появится в консоли?",
     "options": [
       "2",
@@ -1470,8 +2018,34 @@ const codeLessons = [
     ],
     "correctIndex": 3,
     "explanation": "Три внешние итерации по две внутренние: 3 × 2 = 6.",
+    "codeDeckId": "practice-loops-control",
     "challengeResult": "6",
-    "codeDeckId": "practice-loops-control"
+    "variants": [
+      {
+        "challengeCode": "int count = 0;\nfor (int row = 0; row < 2; row++)\n{\n    for (int col = 0; col < 4; col++)\n    {\n        count++;\n    }\n}\nConsole.WriteLine(count);",
+        "options": [
+          "8",
+          "6",
+          "2",
+          "4"
+        ],
+        "correctIndex": 0,
+        "challengeResult": "8",
+        "explanation": "2 внешние итерации по 4 внутренние: счётчик увеличится 8 раз."
+      },
+      {
+        "challengeCode": "int count = 0;\nfor (int row = 0; row < 3; row++)\n{\n    for (int col = 0; col < 4; col++)\n    {\n        count++;\n    }\n}\nConsole.WriteLine(count);",
+        "options": [
+          "12",
+          "7",
+          "3",
+          "4"
+        ],
+        "correctIndex": 0,
+        "challengeResult": "12",
+        "explanation": "3 внешние итерации по 4 внутренние: счётчик увеличится 12 раз."
+      }
+    ]
   },
   {
     "id": "lab7-accumulator",
@@ -1492,7 +2066,33 @@ const codeLessons = [
     "correctIndex": 2,
     "explanation": "В накопителе складываются 1 + 2 + 3 + 4 = 10.",
     "challengeResult": "10",
-    "codeDeckId": "practice-loops-control"
+    "codeDeckId": "practice-loops-control",
+    "variants": [
+      {
+        "challengeCode": "int sum = 0;\nfor (int i = 1; i <= 3; i++)\n{\n    sum += i;\n}\nConsole.WriteLine(sum);",
+        "options": [
+          "6",
+          "3",
+          "9",
+          "Ничего"
+        ],
+        "correctIndex": 0,
+        "challengeResult": "6",
+        "explanation": "Сумма чисел от 1 до 3 равна 6."
+      },
+      {
+        "challengeCode": "int sum = 0;\nfor (int i = 1; i <= 5; i++)\n{\n    sum += i;\n}\nConsole.WriteLine(sum);",
+        "options": [
+          "15",
+          "5",
+          "25",
+          "10"
+        ],
+        "correctIndex": 0,
+        "challengeResult": "15",
+        "explanation": "Сумма чисел от 1 до 5 равна 15."
+      }
+    ]
   },
   {
     "id": "lab7-precondition",
@@ -1576,6 +2176,32 @@ const codeLessons = [
     "correctIndex": 2,
     "explanation": "Значения 0, 1, 2, 3, 4 дают пять итераций. Для четырёх нужна граница i < 4.",
     "challengeResult": "5",
-    "codeDeckId": "practice-loops-control"
+    "codeDeckId": "practice-loops-control",
+    "variants": [
+      {
+        "challengeCode": "int count = 0;\nfor (int i = 0; i <= 2; i++)\n{\n    count++;\n}\nConsole.WriteLine(count);",
+        "options": [
+          "3",
+          "2",
+          "1",
+          "4"
+        ],
+        "correctIndex": 0,
+        "challengeResult": "3",
+        "explanation": "От 0 до 2 включительно — 3 значений, поэтому 3 итераций."
+      },
+      {
+        "challengeCode": "int count = 0;\nfor (int i = 0; i <= 5; i++)\n{\n    count++;\n}\nConsole.WriteLine(count);",
+        "options": [
+          "6",
+          "5",
+          "4",
+          "7"
+        ],
+        "correctIndex": 0,
+        "challengeResult": "6",
+        "explanation": "От 0 до 5 включительно — 6 значений, поэтому 6 итераций."
+      }
+    ]
   }
 ];

@@ -41,6 +41,7 @@ function setup() {
     CODE_ANSWER_TIME_MS: 90_000,
     state: { codeSession: null, codeTimerId: null }, els,
     codeLessons: [question, question], deckLabTags: {}, shuffle: items => items,
+    randomItem: items => items[0],
     codeDecks: [{ id: "test-deck", lab: "ЛБ 7", title: "Циклы" }],
     recordLearningAnswer() {}, needsReview: () => false,
     Date: { now: () => now }, document: { createElement: element },

@@ -69,3 +69,34 @@ test("each practice deck has 5–10 examples, one lab, and every lesson belongs 
     }
   }
 });
+
+test("practice only uses introduced syntax and early labs have no branching", () => {
+  for (const lesson of lessons) {
+    const versions = [lesson, ...(lesson.variants || [])];
+    for (const version of versions) {
+      const code = [lesson.exampleCode, version.challengeCode].join("\n");
+      assert.doesNotMatch(code, /string\?|\bnull\b|\btry\b|\bcatch\b|TryParse|GetType|InvariantCulture|:D\d/, lesson.id);
+      if (["lab4-variables-values", "lab4-csharp-data-types", "lab4-typing-and-output", "lab5-input-conversion", "lab5-operations-output"].includes(lesson.codeDeckId)) {
+        assert.doesNotMatch(code, /\bif\b|\belse\b|\bswitch\b|\?/, lesson.id);
+      }
+    }
+  }
+});
+
+test("alternative questions have distinct code, four unique options, and verified result metadata", () => {
+  assert.equal(lessons.filter(lesson => lesson.variants?.length).length, 24);
+  let alternatives = 0;
+  for (const lesson of lessons) {
+    const codes = new Set([lesson.challengeCode]);
+    for (const variant of lesson.variants || []) {
+      alternatives++;
+      assert.ok(!codes.has(variant.challengeCode), lesson.id);
+      codes.add(variant.challengeCode);
+      assert.equal(variant.options.length, 4, lesson.id);
+      assert.equal(new Set(variant.options).size, 4, lesson.id);
+      assert.equal(variant.options[variant.correctIndex], variant.challengeResult, lesson.id);
+      assert.ok(variant.explanation, lesson.id);
+    }
+  }
+  assert.equal(alternatives, 48);
+});

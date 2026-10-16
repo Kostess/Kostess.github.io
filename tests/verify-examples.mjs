@@ -19,7 +19,7 @@ try {
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>net${sdkMajor}.0</TargetFramework>
-    <Nullable>enable</Nullable>
+    <Nullable>disable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 </Project>
@@ -30,7 +30,11 @@ try {
     ...(lesson.challengeResult === undefined ? [] : [{
       id: `${lesson.id}:challenge`, code: lesson.challengeCode,
       result: lesson.challengeResult, input: lesson.challengeInput
-    }])
+    }]),
+    ...(lesson.variants || []).map((variant, index) => ({
+      id: `${lesson.id}:variant-${index + 1}`, code: variant.challengeCode,
+      result: variant.challengeResult, input: variant.challengeInput ?? lesson.challengeInput
+    }))
   ]);
   const calls = checks.map((check) => `
 Check(${JSON.stringify(check.id)}, ${JSON.stringify(check.result)}, ${JSON.stringify(check.input || "")}, () => {

@@ -25,9 +25,16 @@ try {
 </Project>
 `);
 
-  const calls = lessons.map((lesson) => `
-Check(${JSON.stringify(lesson.id)}, ${JSON.stringify(lesson.exampleResult)}, ${JSON.stringify(lesson.exampleInput || "")}, () => {
-${lesson.exampleCode}
+  const checks = lessons.flatMap(lesson => [
+    { id: lesson.id, code: lesson.exampleCode, result: lesson.exampleResult, input: lesson.exampleInput },
+    ...(lesson.challengeResult === undefined ? [] : [{
+      id: `${lesson.id}:challenge`, code: lesson.challengeCode,
+      result: lesson.challengeResult, input: lesson.challengeInput
+    }])
+  ]);
+  const calls = checks.map((check) => `
+Check(${JSON.stringify(check.id)}, ${JSON.stringify(check.result)}, ${JSON.stringify(check.input || "")}, () => {
+${check.code}
 });`).join("\n");
 
   writeFileSync(join(scratch, "Program.cs"), `
@@ -56,7 +63,7 @@ void Check(string id, string expected, string input, Action example)
         throw new Exception($"{id}: expected [{expected}], got [{actual}]");
 }
 ${calls}
-Console.WriteLine("Verified ${lessons.length} C# examples.");
+Console.WriteLine("Verified ${lessons.length} C# examples and ${checks.length - lessons.length} practice answers.");
 `);
 
   const result = spawnSync("dotnet", ["run", "--project", scratch, "--configuration", "Release", "--verbosity", "quiet"], {

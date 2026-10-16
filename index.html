@@ -61,6 +61,16 @@
             </div>
           </section>
 
+          <section class="progress-panel" aria-label="Мой прогресс">
+            <h2>Мой прогресс</h2>
+            <p id="learningSummary"></p>
+            <p id="storageStatus" role="status"></p>
+            <details>
+              <summary>Что стоит повторить</summary>
+              <ul id="mistakeList"></ul>
+            </details>
+          </section>
+
           <section class="mode-grid" aria-label="Режимы">
             <button class="mode-card" type="button" data-screen-link="cards">
               <span class="mode-icon">01</span>
@@ -107,6 +117,7 @@
                 </button>
               </div>
               <button class="primary-button" id="startCardsBtn" type="button">Начать карточки</button>
+              <label class="review-setting"><input id="cardMistakesOnly" type="checkbox"> Только на повторение</label>
               <button class="ghost-button" type="button" data-exit-mode>Выйти в меню</button>
             </aside>
 
@@ -131,7 +142,7 @@
               </div>
 
               <div class="session-note" id="cardSessionNote">
-                Результат тренировки не сохраняется. Это место для спокойного повторения перед практикой и защитой лабораторных работ.
+                Ответы и термины для повторения сохраняются в этом браузере после каждой карточки.
               </div>
             </section>
           </div>
@@ -158,6 +169,7 @@
                 <button type="button" data-quiz-mode="definition">Пояснение</button>
               </div>
               <button class="primary-button" id="startQuizBtn" type="button">Начать тест</button>
+              <label class="review-setting"><input id="quizMistakesOnly" type="checkbox"> Только ошибки теста</label>
               <button class="ghost-button" type="button" data-exit-mode>Выйти в меню</button>
             </aside>
 
@@ -173,7 +185,8 @@
                 <span class="quiz-type" id="quizType">Тест не начат</span>
                 <h2 id="quizQuestion">Нажмите «Начать тест», когда будете готовы.</h2>
                 <div class="answer-grid" id="answerGrid"></div>
-                <p class="feedback" id="quizFeedback"></p>
+                <p class="feedback" id="quizFeedback" aria-live="polite"></p>
+                <button class="primary-button" id="nextQuizBtn" type="button" hidden>Далее</button>
               </article>
             </section>
           </div>
@@ -186,17 +199,23 @@
                 <p class="eyebrow">Практика</p>
                 <h2>Понимаю код</h2>
               </div>
-              <p class="settings-description">Короткие задачи по примерам из ЛБ 4–6. Код показан как текст и не запускается на сайте.</p>
+              <p class="settings-description">Примеры из ЛБ 4–7 собраны в колоды по 5–10 заданий. На каждый ответ — 90 секунд. Если время вышло, задание засчитывается без правильного ответа. Код показан как текст и не запускается на сайте.</p>
               <label>
-                Подборка
+                Лабораторная работа
                 <select id="codeLabSelect">
-                  <option value="all">Все задания</option>
+                  <option value="all">Все лабораторные</option>
                   <option value="ЛБ 4">ЛБ 4: переменные и типы</option>
                   <option value="ЛБ 5">ЛБ 5: ввод и операции</option>
                   <option value="ЛБ 6">ЛБ 6: условия и ветвление</option>
+                  <option value="ЛБ 7">ЛБ 7: циклы в C#</option>
                 </select>
               </label>
+              <label>
+                Колода примеров
+                <select id="codeDeckSelect"></select>
+              </label>
               <button class="primary-button" id="startCodeBtn" type="button">Начать практику</button>
+              <label class="review-setting"><input id="codeMistakesOnly" type="checkbox"> Только ошибки практики</label>
               <button class="ghost-button" type="button" data-exit-mode>Выйти в меню</button>
             </aside>
 
@@ -207,6 +226,7 @@
               </div>
               <article class="quiz-card">
                 <span class="quiz-type" id="codeType">Практика не начата</span>
+                <p class="code-timer" id="codeTimer" role="timer" aria-label="Время на ответ" hidden></p>
                 <h2 id="codeQuestion">Нажмите «Начать практику», когда будете готовы.</h2>
                 <div id="codeSnippet" class="code-snippet" hidden>
                   <span class="code-label">C#</span>
@@ -265,7 +285,7 @@
     <dialog id="exitDialog">
       <form method="dialog">
         <h2>Выйти из режима?</h2>
-        <p>Текущая тренировка завершится, а результат не сохранится.</p>
+        <p>Текущая тренировка завершится. Уже данные ответы и ошибки останутся в прогрессе этого браузера.</p>
         <div class="dialog-actions">
           <button class="ghost-button" value="cancel" type="submit">Остаться</button>
           <button class="primary-button" value="confirm" type="submit">Выйти</button>
@@ -273,6 +293,7 @@
       </form>
     </dialog>
 
+    <script src="terms-content.js"></script>
     <script src="code-content.js"></script>
     <script src="app.js"></script>
   </body>

@@ -1144,6 +1144,38 @@ dialog::backdrop {
   }
 }
 
+.progress-panel {
+  margin-bottom: 24px;
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+.progress-panel h2 { margin-top: 0; }
+.progress-panel li { margin-bottom: 12px; }
+#storageStatus { color: var(--muted); }
+.review-setting {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.review-setting input { width: auto; min-height: auto; }
+
+.code-timer {
+  width: fit-content;
+  padding: 8px 12px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.code-timer.is-urgent {
+  border-color: currentColor;
+  color: var(--danger, #c0392b);
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

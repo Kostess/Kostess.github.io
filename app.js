@@ -43,7 +43,10 @@ const deckLabTags = {
   "conditions-logic": ["ЛБ 6"],
   "branching-menu": ["ЛБ 6"],
   "loops-basics": ["ЛБ 7"],
-  "loops-control": ["ЛБ 7"]
+  "loops-control": ["ЛБ 7"],
+  "arrays-basics": ["ЛБ 8"],
+  "arrays-traversal": ["ЛБ 8"],
+  "arrays-analysis": ["ЛБ 8"]
 };
 
 const CODE_ANSWER_TIME_MS = 90_000;

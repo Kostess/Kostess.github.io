@@ -140,7 +140,7 @@ test("cards record repeat and known decisions; quiz mistakes are available as ca
 
 test("practice lab and deck selectors restrict a session to the selected 5–10 examples", () => {
   const app = setup();
-  for (const lab of ["ЛБ 4", "ЛБ 5", "ЛБ 6", "ЛБ 7"]) {
+  for (const lab of ["ЛБ 4", "ЛБ 5", "ЛБ 6", "ЛБ 7", "ЛБ 8"]) {
     app.elements.get("#codeLabSelect").value = lab;
     app.run('fillCodeDeckSelect()');
     const deckIds = app.run(`codeDecks.filter(deck => deck.lab === ${JSON.stringify(lab)}).map(deck => deck.id)`);

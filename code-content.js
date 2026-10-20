@@ -84,6 +84,26 @@ const codeDecks = [
     "id": "lab7-tracing-and-accumulation",
     "lab": "ЛБ 7",
     "title": "Трассировка и накопление результата"
+  },
+  {
+    "id": "lab8-array-basics",
+    "lab": "ЛБ 8",
+    "title": "Массив, индекс и длина"
+  },
+  {
+    "id": "lab8-traversal-update",
+    "lab": "ЛБ 8",
+    "title": "Обход и изменение элементов"
+  },
+  {
+    "id": "lab8-search-summary",
+    "lab": "ЛБ 8",
+    "title": "Сумма, минимум, максимум и поиск"
+  },
+  {
+    "id": "lab8-input-journal",
+    "lab": "ЛБ 8",
+    "title": "Проверка ввода и журнал группы"
   }
 ];
 
@@ -3845,5 +3865,1107 @@ const codeLessons = [
     "correctIndex": 0,
     "explanation": "do…while сначала выполняет тело, потом проверяет условие. Даже при начальном x = 0 происходит одна итерация.",
     "challengeResult": "1"
+  },
+  {
+    "id": "lab8-array",
+    "codeDeckId": "lab8-array-basics",
+    "deckId": "arrays-basics",
+    "term": "Массив",
+    "exampleCode": "int[] scores = { 10, 20, 30 };\nConsole.WriteLine(scores[0]);",
+    "exampleResult": "10",
+    "exampleNote": "Массив объединяет числа; первый элемент имеет индекс 0.",
+    "kind": "Что выведет код?",
+    "challengeCode": "int[] scores = { 15, 25, 35 };\nConsole.WriteLine(scores[1]);",
+    "prompt": "Что появится в консоли?",
+    "options": [
+      "25",
+      "15",
+      "35",
+      "1"
+    ],
+    "correctIndex": 0,
+    "explanation": "Индекс 1 обозначает второй элемент массива, то есть 25.",
+    "challengeResult": "25",
+    "variants": [
+      {
+        "challengeCode": "int[] scores = { 11, 22, 33 };\nConsole.WriteLine(scores[2]);",
+        "options": [
+          "33",
+          "11",
+          "22",
+          "2"
+        ],
+        "correctIndex": 0,
+        "challengeResult": "33",
+        "explanation": "Индекс 2 выбирает третий элемент, то есть 33."
+      },
+      {
+        "challengeCode": "int[] scores = { 8, 16, 24 };\nConsole.WriteLine(scores[2]);",
+        "options": [
+          "24",
+          "8",
+          "16",
+          "2"
+        ],
+        "correctIndex": 0,
+        "challengeResult": "24",
+        "explanation": "Индекс 2 выбирает третий элемент, то есть 24."
+      }
+    ]
+  },
+  {
+    "id": "lab8-one-dimensional",
+    "codeDeckId": "lab8-array-basics",
+    "deckId": "arrays-basics",
+    "term": "Одномерный массив",
+    "exampleCode": "int[] values = { 4, 8, 12 };\nint index = 2;\nConsole.WriteLine(values[index]);",
+    "exampleResult": "12",
+    "exampleNote": "Для выбора элемента одномерного массива достаточно одного индекса.",
+    "kind": "Что выведет код?",
+    "challengeCode": "int[] values = { 3, 6, 9, 12 };\nint index = 2;\nConsole.WriteLine(values[index]);",
+    "prompt": "Что появится в консоли?",
+    "options": [
+      "9",
+      "2",
+      "6",
+      "12"
+    ],
+    "correctIndex": 0,
+    "explanation": "В index хранится 2, поэтому выбирается третий элемент — 9.",
+    "challengeResult": "9",
+    "variants": [
+      {
+        "challengeCode": "int[] values = { 2, 5, 8 };\nint index = 1;\nConsole.WriteLine(values[index]);",
+        "options": [
+          "5",
+          "2",
+          "8",
+          "1"
+        ],
+        "correctIndex": 0,
+        "challengeResult": "5",
+        "explanation": "В index хранится 1; это второй элемент со значением 5."
+      },
+      {
+        "challengeCode": "int[] values = { 4, 7, 10 };\nint index = 1;\nConsole.WriteLine(values[index]);",
+        "options": [
+          "7",
+          "4",
+          "10",
+          "1"
+        ],
+        "correctIndex": 0,
+        "challengeResult": "7",
+        "explanation": "В index хранится 1; это второй элемент со значением 7."
+      }
+    ]
+  },
+  {
+    "id": "lab8-element",
+    "codeDeckId": "lab8-array-basics",
+    "deckId": "arrays-basics",
+    "term": "Элемент массива",
+    "exampleCode": "int[] values = { 4, 7 };\nConsole.WriteLine(values[0] + values[1]);",
+    "exampleResult": "11",
+    "exampleNote": "Каждая ячейка int[] содержит число; с выбранными значениями можно выполнять арифметику.",
+    "kind": "Что выведет код?",
+    "challengeCode": "int[] values = { 5, 9 };\nConsole.WriteLine(values[1] - values[0]);",
+    "prompt": "Что появится в консоли?",
+    "options": [
+      "4",
+      "-4",
+      "14",
+      "9"
+    ],
+    "correctIndex": 0,
+    "explanation": "Из второго элемента 9 вычитается первый 5; получается 4.",
+    "challengeResult": "4"
+  },
+  {
+    "id": "lab8-array-type",
+    "codeDeckId": "lab8-array-basics",
+    "deckId": "arrays-basics",
+    "term": "int[]",
+    "exampleCode": "int[] values = { 2, 4 };\nConsole.WriteLine(values[1]);",
+    "exampleResult": "4",
+    "exampleNote": "int[] обозначает массив целых чисел.",
+    "kind": "Заполните пропуск",
+    "challengeCode": "/* ??? */ values = { 3, 8 };\nConsole.WriteLine(values[0]);",
+    "prompt": "Что поставить вместо /* ??? */, чтобы получить результат: 3?",
+    "options": [
+      "int[]",
+      "int",
+      "bool",
+      "string"
+    ],
+    "correctIndex": 0,
+    "explanation": "Нужен тип int[]: он позволяет инициализировать массив целых чисел списком значений.",
+    "solutionResult": "3"
+  },
+  {
+    "id": "lab8-create",
+    "codeDeckId": "lab8-array-basics",
+    "deckId": "arrays-basics",
+    "term": "Создание массива",
+    "exampleCode": "int[] values = new int[3];\nConsole.WriteLine(values.Length);",
+    "exampleResult": "3",
+    "exampleNote": "Число после new int задаёт количество ячеек.",
+    "kind": "Что выведет код?",
+    "challengeCode": "int size = 4;\nint[] values = new int[size];\nConsole.WriteLine(values.Length);",
+    "prompt": "Что появится в консоли?",
+    "options": [
+      "4",
+      "0",
+      "3",
+      "5"
+    ],
+    "correctIndex": 0,
+    "explanation": "При создании используется size = 4, значит длина массива равна 4.",
+    "challengeResult": "4"
+  },
+  {
+    "id": "lab8-initializer",
+    "codeDeckId": "lab8-array-basics",
+    "deckId": "arrays-basics",
+    "term": "Инициализатор массива",
+    "exampleCode": "int[] values = { 5, 10, 15 };\nConsole.WriteLine(values.Length);",
+    "exampleResult": "3",
+    "exampleNote": "Длина массива со списком значений равна количеству значений, а не их сумме.",
+    "kind": "Что выведет код?",
+    "challengeCode": "int[] values = { 2, 4, 6, 8 };\nConsole.WriteLine(values.Length);",
+    "prompt": "Что появится в консоли?",
+    "options": [
+      "4",
+      "8",
+      "20",
+      "3"
+    ],
+    "correctIndex": 0,
+    "explanation": "В инициализаторе четыре числа, поэтому Length равно 4.",
+    "challengeResult": "4"
+  },
+  {
+    "id": "lab8-index",
+    "codeDeckId": "lab8-array-basics",
+    "deckId": "arrays-basics",
+    "term": "Индекс массива",
+    "exampleCode": "int[] values = { 5, 10, 15, 20 };\nvalues[1] = 99;\nConsole.WriteLine(values[1]);",
+    "exampleResult": "99",
+    "exampleNote": "Индекс 1 выбирает второй элемент; присваивание заменяет его значение.",
+    "kind": "Что выведет код?",
+    "challengeCode": "int[] values = { 3, 8, 2 };\nvalues[0] = 7;\nConsole.WriteLine(values[1]);",
+    "prompt": "Что появится в консоли?",
+    "options": [
+      "8",
+      "7",
+      "3",
+      "2"
+    ],
+    "correctIndex": 0,
+    "explanation": "Изменён элемент с индексом 0. Элемент с индексом 1 остался равен 8.",
+    "challengeResult": "8"
+  },
+  {
+    "id": "lab8-length",
+    "codeDeckId": "lab8-array-basics",
+    "deckId": "arrays-basics",
+    "term": "Длина массива Length",
+    "exampleCode": "int[] values = { 10, 20, 30 };\nvalues[0] = 100;\nConsole.WriteLine(values.Length);",
+    "exampleResult": "3",
+    "exampleNote": "Изменение значения элемента не меняет число элементов.",
+    "kind": "Что выведет код?",
+    "challengeCode": "int[] values = { 1, 2, 3, 4 };\nvalues[2] = 90;\nConsole.WriteLine(values.Length);",
+    "prompt": "Что появится в консоли?",
+    "options": [
+      "4",
+      "90",
+      "3",
+      "5"
+    ],
+    "correctIndex": 0,
+    "explanation": "Length остаётся 4: изменился балл, а не количество ячеек.",
+    "challengeResult": "4"
+  },
+  {
+    "id": "lab8-last-index",
+    "codeDeckId": "lab8-array-basics",
+    "deckId": "arrays-basics",
+    "term": "Последний индекс",
+    "exampleCode": "int[] values = { 5, 10, 15 };\nConsole.WriteLine(values[values.Length - 1]);",
+    "exampleResult": "15",
+    "exampleNote": "Последний допустимый индекс непустого массива равен Length - 1.",
+    "kind": "Заполните пропуск",
+    "challengeCode": "int[] values = { 4, 8, 12 };\nConsole.WriteLine(values[/* ??? */]);",
+    "prompt": "Что поставить вместо /* ??? */, чтобы получить результат: 12?",
+    "options": [
+      "values.Length - 1",
+      "0",
+      "1",
+      "values.Length"
+    ],
+    "correctIndex": 0,
+    "explanation": "Length равно 3, поэтому последний индекс — 2. Индекс 3 уже выходит за границы.",
+    "solutionResult": "12"
+  },
+  {
+    "id": "lab8-default",
+    "codeDeckId": "lab8-array-basics",
+    "deckId": "arrays-basics",
+    "term": "Значение по умолчанию",
+    "exampleCode": "int[] values = new int[4];\nConsole.WriteLine(values[2]);",
+    "exampleResult": "0",
+    "exampleNote": "В новом int[] все элементы изначально нулевые.",
+    "kind": "Что выведет код?",
+    "challengeCode": "int[] values = new int[3];\nvalues[0] = 8;\nConsole.WriteLine(values[1]);",
+    "prompt": "Что появится в консоли?",
+    "options": [
+      "0",
+      "8",
+      "1",
+      "3"
+    ],
+    "correctIndex": 0,
+    "explanation": "Задан только первый элемент. Второй сохранил начальное значение 0.",
+    "challengeResult": "0",
+    "variants": [
+      {
+        "challengeCode": "int[] values = new int[4];\nvalues[0] = 12;\nConsole.WriteLine(values[3]);",
+        "options": [
+          "0",
+          "12",
+          "4",
+          "3"
+        ],
+        "correctIndex": 0,
+        "challengeResult": "0",
+        "explanation": "Изменён только первый элемент; последний сохранил начальный ноль."
+      },
+      {
+        "challengeCode": "int[] values = new int[5];\nvalues[0] = 15;\nConsole.WriteLine(values[4]);",
+        "options": [
+          "0",
+          "15",
+          "5",
+          "4"
+        ],
+        "correctIndex": 0,
+        "challengeResult": "0",
+        "explanation": "Изменён только первый элемент; последний сохранил начальный ноль."
+      }
+    ]
+  },
+  {
+    "id": "lab8-for",
+    "codeDeckId": "lab8-traversal-update",
+    "deckId": "arrays-traversal",
+    "term": "Перебор массива",
+    "exampleCode": "int[] values = { 3, 6 };\nfor (int i = 0; i < values.Length; i++)\n{\n    Console.WriteLine(values[i]);\n}",
+    "exampleResult": "3\n6",
+    "exampleNote": "for перебирает индексы, по которым можно получить элементы.",
+    "kind": "Что выведет код?",
+    "challengeCode": "int[] values = { 4, 7 };\nfor (int i = 0; i < values.Length; i++)\n{\n    Console.WriteLine(values[i]);\n}",
+    "prompt": "Что появится в консоли?",
+    "options": [
+      "4\n7",
+      "0\n1",
+      "1\n2",
+      "7\n4"
+    ],
+    "correctIndex": 0,
+    "explanation": "В i последовательно 0 и 1; выводятся значения массива, а не индексы.",
+    "challengeResult": "4\n7"
+  },
+  {
+    "id": "lab8-foreach",
+    "codeDeckId": "lab8-traversal-update",
+    "deckId": "arrays-traversal",
+    "term": "foreach",
+    "exampleCode": "int[] values = { 4, 9 };\nforeach (int value in values)\n{\n    Console.WriteLine(value);\n}",
+    "exampleResult": "4\n9",
+    "exampleNote": "foreach получает очередное значение массива в порядке хранения.",
+    "kind": "Что выведет код?",
+    "challengeCode": "int[] values = { 8, 3, 8 };\nforeach (int value in values)\n{\n    Console.Write(value);\n}",
+    "prompt": "Что появится в консоли?",
+    "options": [
+      "838",
+      "012",
+      "123",
+      "388"
+    ],
+    "correctIndex": 0,
+    "explanation": "foreach выдаёт значения 8, 3, 8. Повторяющиеся элементы не пропускаются.",
+    "challengeResult": "838",
+    "variants": [
+      {
+        "challengeCode": "int[] values = { 1, 4, 1 };\nforeach (int value in values)\n{\n    Console.Write(value);\n}",
+        "options": [
+          "141",
+          "114",
+          "012",
+          "123"
+        ],
+        "correctIndex": 0,
+        "challengeResult": "141",
+        "explanation": "foreach выводит значения в порядке хранения: 1, 4, 1."
+      },
+      {
+        "challengeCode": "int[] values = { 6, 2, 6 };\nforeach (int value in values)\n{\n    Console.Write(value);\n}",
+        "options": [
+          "626",
+          "662",
+          "012",
+          "123"
+        ],
+        "correctIndex": 0,
+        "challengeResult": "626",
+        "explanation": "foreach выводит значения в порядке хранения: 6, 2, 6."
+      }
+    ]
+  },
+  {
+    "id": "lab8-iteration-value",
+    "codeDeckId": "lab8-traversal-update",
+    "deckId": "arrays-traversal",
+    "term": "Переменная перебора",
+    "exampleCode": "int[] values = { 5, 10 };\nforeach (int value in values)\n{\n    Console.WriteLine(value + 1);\n}",
+    "exampleResult": "6\n11",
+    "exampleNote": "value — значение текущего элемента. Вычисление value + 1 само по себе массив не меняет.",
+    "kind": "Что выведет код?",
+    "challengeCode": "int[] values = { 2, 5 };\nforeach (int value in values)\n{\n    Console.Write(value + 1);\n}\nConsole.WriteLine();\nConsole.WriteLine(values[0]);",
+    "prompt": "Что появится в консоли?",
+    "options": [
+      "36\n2",
+      "36\n3",
+      "25\n2",
+      "01\n2"
+    ],
+    "correctIndex": 0,
+    "explanation": "Цикл выводит 3 и 6. Присваивания ячейкам нет, поэтому первый элемент остаётся 2.",
+    "challengeResult": "36\n2"
+  },
+  {
+    "id": "lab8-replace",
+    "codeDeckId": "lab8-traversal-update",
+    "deckId": "arrays-traversal",
+    "term": "Изменение элемента",
+    "exampleCode": "int[] scores = { 59, 60, 95 };\nscores[0] = 100;\nConsole.WriteLine(scores[0]);",
+    "exampleResult": "100",
+    "exampleNote": "Изменение выбранной ячейки сохраняется в том же массиве.",
+    "kind": "Что выведет код?",
+    "challengeCode": "int[] scores = { 59, 60, 95 };\nint old = scores[1];\nscores[1] = 75;\nConsole.WriteLine($\"{old} {scores[1]}\");",
+    "prompt": "Что появится в консоли?",
+    "options": [
+      "60 75",
+      "75 75",
+      "60 60",
+      "59 75"
+    ],
+    "correctIndex": 0,
+    "explanation": "В old скопировано прежнее значение 60. После замены выбранный элемент равен 75.",
+    "challengeResult": "60 75"
+  },
+  {
+    "id": "lab8-fill-for",
+    "codeDeckId": "lab8-traversal-update",
+    "deckId": "arrays-traversal",
+    "term": "Заполнение массива",
+    "exampleCode": "int[] values = new int[3];\nfor (int i = 0; i < values.Length; i++)\n{\n    values[i] = i + 1;\n}\nConsole.WriteLine(values[2]);",
+    "exampleResult": "3",
+    "exampleNote": "Цикл записывает значение в каждую ячейку; выражение i + 1 начинает значения с 1.",
+    "kind": "Что выведет код?",
+    "challengeCode": "int[] values = new int[4];\nfor (int i = 0; i < values.Length; i++)\n{\n    values[i] = (i + 1) * 10;\n}\nConsole.WriteLine(values[2]);",
+    "prompt": "Что появится в консоли?",
+    "options": [
+      "30",
+      "20",
+      "40",
+      "2"
+    ],
+    "correctIndex": 0,
+    "explanation": "При i = 2 записывается (2 + 1) * 10 = 30.",
+    "challengeResult": "30"
+  },
+  {
+    "id": "lab8-number-index",
+    "codeDeckId": "lab8-traversal-update",
+    "deckId": "arrays-traversal",
+    "term": "Номер и индекс",
+    "exampleCode": "int[] scores = { 20, 40, 60 };\nint number = 2;\nConsole.WriteLine(scores[number - 1]);",
+    "exampleResult": "40",
+    "exampleNote": "Номер студента начинается с 1, индекс — с 0.",
+    "kind": "Что выведет код?",
+    "challengeCode": "int[] scores = { 15, 35, 55, 75 };\nint number = 3;\nConsole.WriteLine(scores[number - 1]);",
+    "prompt": "Что появится в консоли?",
+    "options": [
+      "55",
+      "35",
+      "75",
+      "3"
+    ],
+    "correctIndex": 0,
+    "explanation": "Номер 3 соответствует индексу 2; в нём хранится 55.",
+    "challengeResult": "55",
+    "variants": [
+      {
+        "challengeCode": "int[] scores = { 10, 30, 50 };\nint number = 2;\nConsole.WriteLine(scores[number - 1]);",
+        "options": [
+          "30",
+          "2",
+          "0",
+          "99"
+        ],
+        "correctIndex": 0,
+        "challengeResult": "30",
+        "explanation": "Номер 2 превращается в индекс 1. Выбирается значение 30."
+      },
+      {
+        "challengeCode": "int[] scores = { 12, 24, 36 };\nint number = 3;\nConsole.WriteLine(scores[number - 1]);",
+        "options": [
+          "36",
+          "3",
+          "0",
+          "99"
+        ],
+        "correctIndex": 0,
+        "challengeResult": "36",
+        "explanation": "Номер 3 превращается в индекс 2. Выбирается значение 36."
+      }
+    ]
+  },
+  {
+    "id": "lab8-validate-number",
+    "codeDeckId": "lab8-traversal-update",
+    "deckId": "arrays-traversal",
+    "term": "Проверка номера",
+    "exampleCode": "int[] scores = { 10, 20 };\nint number = 2;\nif (number >= 1 && number <= scores.Length)\n{\n    Console.WriteLine(scores[number - 1]);\n}",
+    "exampleResult": "20",
+    "exampleNote": "Сначала проверяют допустимость номера, затем обращаются по индексу number - 1.",
+    "kind": "Заполните пропуск",
+    "challengeCode": "int[] scores = { 10, 20, 30 };\nint number = 3;\nif (/* ??? */)\n{\n    Console.WriteLine(scores[number - 1]);\n}",
+    "prompt": "Что поставить вместо /* ??? */, чтобы получить результат: 30?",
+    "options": [
+      "number >= 1 && number <= scores.Length",
+      "number < scores.Length",
+      "number > scores.Length",
+      "number == 0"
+    ],
+    "correctIndex": 0,
+    "explanation": "Последний номер допустим: нужен включённый верхний предел <= Length.",
+    "solutionResult": "30"
+  },
+  {
+    "id": "lab8-loop-boundary",
+    "codeDeckId": "lab8-traversal-update",
+    "deckId": "arrays-traversal",
+    "term": "Граница обхода",
+    "exampleCode": "int[] values = { 4, 7 };\nfor (int i = 0; i < values.Length; i++)\n{\n    Console.Write(values[i]);\n}",
+    "exampleResult": "47",
+    "exampleNote": "Условие i < Length включает все допустимые индексы и исключает Length.",
+    "kind": "Заполните пропуск",
+    "challengeCode": "int[] values = { 2, 6 };\nfor (int i = 0; i /* ??? */ values.Length; i++)\n{\n    Console.Write(values[i]);\n}",
+    "prompt": "Что поставить вместо /* ??? */, чтобы получить результат: 26?",
+    "options": [
+      "<",
+      "<=",
+      ">",
+      ">="
+    ],
+    "correctIndex": 0,
+    "explanation": "Нужен строгий знак <. <= попытался бы обратиться к несуществующему элементу с индексом Length.",
+    "solutionResult": "26"
+  },
+  {
+    "id": "lab8-fixed-size",
+    "codeDeckId": "lab8-traversal-update",
+    "deckId": "arrays-traversal",
+    "term": "Фиксированная длина",
+    "exampleCode": "int[] values = new int[2];\nvalues[1] = 80;\nConsole.WriteLine(values.Length);",
+    "exampleResult": "2",
+    "exampleNote": "Замена значения не создаёт дополнительные ячейки.",
+    "kind": "Что выведет код?",
+    "challengeCode": "int size = 3;\nint[] values = new int[size];\nsize = 5;\nConsole.WriteLine(values.Length);",
+    "prompt": "Что появится в консоли?",
+    "options": [
+      "3",
+      "5",
+      "0",
+      "2"
+    ],
+    "correctIndex": 0,
+    "explanation": "Массив уже создан длиной 3. Изменение переменной size не меняет созданный массив.",
+    "challengeResult": "3"
+  },
+  {
+    "id": "lab8-preserve-array",
+    "codeDeckId": "lab8-traversal-update",
+    "deckId": "arrays-traversal",
+    "term": "Сохранение данных массива",
+    "exampleCode": "int[] scores = { 10, 20 };\nscores[0] = 75;\nConsole.WriteLine(scores[0]);",
+    "exampleResult": "75",
+    "exampleNote": "Пока не создан другой массив, изменение остаётся в той же ячейке.",
+    "kind": "Что выведет код?",
+    "challengeCode": "int[] scores = { 10, 20 };\nscores[0] = 75;\nscores = new int[2];\nConsole.WriteLine(scores[0]);",
+    "prompt": "Что появится в консоли?",
+    "options": [
+      "0",
+      "75",
+      "10",
+      "2"
+    ],
+    "correctIndex": 0,
+    "explanation": "Последнее new создаёт другой массив с нулями. Поэтому при повторе меню массив нельзя создавать заново.",
+    "challengeResult": "0"
+  },
+  {
+    "id": "lab8-sum",
+    "codeDeckId": "lab8-search-summary",
+    "deckId": "arrays-analysis",
+    "term": "Сумма элементов",
+    "exampleCode": "int[] values = { 4, -2, 7, 0 };\nint sum = 0;\nforeach (int value in values)\n{\n    sum += value;\n}\nConsole.WriteLine(sum);",
+    "exampleResult": "9",
+    "exampleNote": "Сумму начинают с 0 и прибавляют каждый элемент, включая отрицательные и нулевые.",
+    "kind": "Что выведет код?",
+    "challengeCode": "int[] values = { 5, -3, 8 };\nint sum = 0;\nforeach (int value in values)\n{\n    sum += value;\n}\nConsole.WriteLine(sum);",
+    "prompt": "Что появится в консоли?",
+    "options": [
+      "10",
+      "16",
+      "8",
+      "5"
+    ],
+    "correctIndex": 0,
+    "explanation": "5 + (-3) + 8 = 10. Начальное значение суммы равно 0.",
+    "challengeResult": "10",
+    "variants": [
+      {
+        "challengeCode": "int[] values = { 2, -1, 6 };\nint sum = 0;\nforeach (int value in values)\n{\n    sum += value;\n}\nConsole.WriteLine(sum);",
+        "options": [
+          "7",
+          "0",
+          "6",
+          "8"
+        ],
+        "correctIndex": 0,
+        "challengeResult": "7",
+        "explanation": "Все элементы прибавляются к нулевому накопителю; сумма равна 7."
+      },
+      {
+        "challengeCode": "int[] values = { 5, 0, 4 };\nint sum = 0;\nforeach (int value in values)\n{\n    sum += value;\n}\nConsole.WriteLine(sum);",
+        "options": [
+          "9",
+          "0",
+          "8",
+          "10"
+        ],
+        "correctIndex": 0,
+        "challengeResult": "9",
+        "explanation": "Все элементы прибавляются к нулевому накопителю; сумма равна 9."
+      }
+    ]
+  },
+  {
+    "id": "lab8-min",
+    "codeDeckId": "lab8-search-summary",
+    "deckId": "arrays-analysis",
+    "term": "Минимум массива",
+    "exampleCode": "int[] values = { 9, 4, 7 };\nint min = values[0];\nfor (int i = 1; i < values.Length; i++)\n{\n    if (values[i] < min)\n    {\n        min = values[i];\n    }\n}\nConsole.WriteLine(min);",
+    "exampleResult": "4",
+    "exampleNote": "Минимум непустого массива начинают с первого элемента, затем заменяют меньшими найденными значениями.",
+    "kind": "Что выведет код?",
+    "challengeCode": "int[] values = { 8, 3, 6, 4 };\nint min = values[0];\nfor (int i = 1; i < values.Length; i++)\n{\n    if (values[i] < min)\n    {\n        min = values[i];\n    }\n}\nConsole.WriteLine(min);",
+    "prompt": "Что появится в консоли?",
+    "options": [
+      "3",
+      "0",
+      "4",
+      "8"
+    ],
+    "correctIndex": 0,
+    "explanation": "Начальный минимум 8 заменяется на 3; меньших значений дальше нет.",
+    "challengeResult": "3"
+  },
+  {
+    "id": "lab8-max-negative",
+    "codeDeckId": "lab8-search-summary",
+    "deckId": "arrays-analysis",
+    "term": "Максимум массива",
+    "exampleCode": "int[] values = { -8, -3, -11 };\nint max = values[0];\nforeach (int value in values)\n{\n    if (value > max)\n    {\n        max = value;\n    }\n}\nConsole.WriteLine(max);",
+    "exampleResult": "-3",
+    "exampleNote": "При отрицательных числах максимум тоже отрицателен; старт с 0 дал бы неправильный ответ.",
+    "kind": "Что выведет код?",
+    "challengeCode": "int[] values = { -9, -4, -7 };\nint max = values[0];\nforeach (int value in values)\n{\n    if (value > max)\n    {\n        max = value;\n    }\n}\nConsole.WriteLine(max);",
+    "prompt": "Что появится в консоли?",
+    "options": [
+      "-4",
+      "0",
+      "-9",
+      "-7"
+    ],
+    "correctIndex": 0,
+    "explanation": "Из -9, -4, -7 наибольшее число -4. Начальное значение взято из массива, а не равно 0.",
+    "challengeResult": "-4",
+    "variants": [
+      {
+        "challengeCode": "int[] values = { -6, -2, -9 };\nint max = values[0];\nforeach (int value in values)\n{\n    if (value > max)\n    {\n        max = value;\n    }\n}\nConsole.WriteLine(max);",
+        "options": [
+          "-2",
+          "0",
+          "-99",
+          "-3"
+        ],
+        "correctIndex": 0,
+        "challengeResult": "-2",
+        "explanation": "Наибольшее из данных отрицательных чисел — -2. Максимум начинают с элемента массива."
+      },
+      {
+        "challengeCode": "int[] values = { -12, -5, -8 };\nint max = values[0];\nforeach (int value in values)\n{\n    if (value > max)\n    {\n        max = value;\n    }\n}\nConsole.WriteLine(max);",
+        "options": [
+          "-5",
+          "0",
+          "-99",
+          "-6"
+        ],
+        "correctIndex": 0,
+        "challengeResult": "-5",
+        "explanation": "Наибольшее из данных отрицательных чисел — -5. Максимум начинают с элемента массива."
+      }
+    ]
+  },
+  {
+    "id": "lab8-count",
+    "codeDeckId": "lab8-search-summary",
+    "deckId": "arrays-analysis",
+    "term": "Подсчёт по условию",
+    "exampleCode": "int[] scores = { 59, 60, 0, 100, 45 };\nint count = 0;\nforeach (int score in scores)\n{\n    if (score < 60)\n    {\n        count++;\n    }\n}\nConsole.WriteLine(count);",
+    "exampleResult": "3",
+    "exampleNote": "Порог 60 включён в успешные результаты. Считаются только значения строго ниже 60.",
+    "kind": "Что выведет код?",
+    "challengeCode": "int[] scores = { 60, 59, 95, 0 };\nint count = 0;\nforeach (int score in scores)\n{\n    if (score < 60)\n    {\n        count++;\n    }\n}\nConsole.WriteLine(count);",
+    "prompt": "Что появится в консоли?",
+    "options": [
+      "2",
+      "1",
+      "3",
+      "4"
+    ],
+    "correctIndex": 0,
+    "explanation": "Ниже 60 только 59 и 0. Сам балл 60 не попадает в счётчик.",
+    "challengeResult": "2",
+    "variants": [
+      {
+        "challengeCode": "int[] scores = { 60, 60, 59 };\nint count = 0;\nforeach (int score in scores)\n{\n    if (score < 60)\n    {\n        count++;\n    }\n}\nConsole.WriteLine(count);",
+        "options": [
+          "1",
+          "0",
+          "2",
+          "5"
+        ],
+        "correctIndex": 0,
+        "challengeResult": "1",
+        "explanation": "Считаются только значения строго ниже 60; их 1. Значение 60 не учитывается."
+      },
+      {
+        "challengeCode": "int[] scores = { 0, 58, 60, 45 };\nint count = 0;\nforeach (int score in scores)\n{\n    if (score < 60)\n    {\n        count++;\n    }\n}\nConsole.WriteLine(count);",
+        "options": [
+          "3",
+          "0",
+          "4",
+          "5"
+        ],
+        "correctIndex": 0,
+        "challengeResult": "3",
+        "explanation": "Считаются только значения строго ниже 60; их 3. Значение 60 не учитывается."
+      }
+    ]
+  },
+  {
+    "id": "lab8-search-numbers",
+    "codeDeckId": "lab8-search-summary",
+    "deckId": "arrays-analysis",
+    "term": "Поиск по условию",
+    "exampleCode": "int[] scores = { 59, 60, 45 };\nfor (int i = 0; i < scores.Length; i++)\n{\n    if (scores[i] < 60)\n    {\n        Console.WriteLine(i + 1);\n    }\n}",
+    "exampleResult": "1\n3",
+    "exampleNote": "Для вывода номера используют индекс + 1, а не само значение балла.",
+    "kind": "Что выведет код?",
+    "challengeCode": "int[] scores = { 70, 40, 60, 50 };\nfor (int i = 0; i < scores.Length; i++)\n{\n    if (scores[i] < 60)\n    {\n        Console.WriteLine(i + 1);\n    }\n}",
+    "prompt": "Что появится в консоли?",
+    "options": [
+      "2\n4",
+      "1\n3",
+      "40\n50",
+      "2\n3\n4"
+    ],
+    "correctIndex": 0,
+    "explanation": "Условие выполняется для индексов 1 и 3. Их номера — 2 и 4.",
+    "challengeResult": "2\n4"
+  },
+  {
+    "id": "lab8-all-matches",
+    "codeDeckId": "lab8-search-summary",
+    "deckId": "arrays-analysis",
+    "term": "Все совпадения",
+    "exampleCode": "int[] values = { 7, 3, 7, 9, 7 };\nfor (int i = 0; i < values.Length; i++)\n{\n    if (values[i] == 7)\n    {\n        Console.WriteLine(i + 1);\n    }\n}",
+    "exampleResult": "1\n3\n5",
+    "exampleNote": "Поиск всех совпадений продолжают до конца массива, без break после первого.",
+    "kind": "Что выведет код?",
+    "challengeCode": "int[] values = { 5, 2, 5, 5 };\nfor (int i = 0; i < values.Length; i++)\n{\n    if (values[i] == 5)\n    {\n        Console.WriteLine(i + 1);\n    }\n}",
+    "prompt": "Что появится в консоли?",
+    "options": [
+      "1\n3\n4",
+      "1",
+      "0\n2\n3",
+      "5\n5\n5"
+    ],
+    "correctIndex": 0,
+    "explanation": "Совпадения расположены на позициях 1, 3 и 4. Цикл выводит все номера.",
+    "challengeResult": "1\n3\n4"
+  },
+  {
+    "id": "lab8-two-passes",
+    "codeDeckId": "lab8-search-summary",
+    "deckId": "arrays-analysis",
+    "term": "Два прохода",
+    "exampleCode": "int[] scores = { 59, 60, 95, 95 };\nint max = scores[0];\nforeach (int score in scores)\n{\n    if (score > max)\n    {\n        max = score;\n    }\n}\nfor (int i = 0; i < scores.Length; i++)\n{\n    if (scores[i] == max)\n    {\n        Console.WriteLine(i + 1);\n    }\n}",
+    "exampleResult": "3\n4",
+    "exampleNote": "Первый проход определяет максимум, второй выводит все номера с этим результатом.",
+    "kind": "Что выведет код?",
+    "challengeCode": "int[] scores = { 80, 90, 90 };\nint max = scores[0];\nforeach (int score in scores)\n{\n    if (score > max)\n    {\n        max = score;\n    }\n}\nfor (int i = 0; i < scores.Length; i++)\n{\n    if (scores[i] == max)\n    {\n        Console.WriteLine(i + 1);\n    }\n}",
+    "prompt": "Что появится в консоли?",
+    "options": [
+      "2\n3",
+      "2",
+      "90",
+      "1\n2"
+    ],
+    "correctIndex": 0,
+    "explanation": "Максимум равен 90. Во втором проходе подходят оба студента с номерами 2 и 3.",
+    "challengeResult": "2\n3",
+    "variants": [
+      {
+        "challengeCode": "int[] scores = { 60, 60, 60 };\nint max = scores[0];\nforeach (int score in scores)\n{\n    if (score > max)\n    {\n        max = score;\n    }\n}\nfor (int i = 0; i < scores.Length; i++)\n{\n    if (scores[i] == max)\n    {\n        Console.WriteLine(i + 1);\n    }\n}",
+        "options": [
+          "1\n2\n3",
+          "1",
+          "60",
+          "0\n1\n2"
+        ],
+        "correctIndex": 0,
+        "challengeResult": "1\n2\n3",
+        "explanation": "Все три балла равны максимуму 60. Второй проход выводит всех студентов с номерами 1, 2, 3."
+      },
+      {
+        "challengeCode": "int[] scores = { 0 };\nint max = scores[0];\nforeach (int score in scores)\n{\n    if (score > max)\n    {\n        max = score;\n    }\n}\nfor (int i = 0; i < scores.Length; i++)\n{\n    if (scores[i] == max)\n    {\n        Console.WriteLine(i + 1);\n    }\n}",
+        "options": [
+          "1",
+          "0",
+          "Ничего",
+          "Ошибка выхода за границы"
+        ],
+        "correctIndex": 0,
+        "challengeResult": "1",
+        "explanation": "В массиве один элемент. Он одновременно минимум и максимум; его номер 1, хотя индекс равен 0."
+      }
+    ]
+  },
+  {
+    "id": "lab8-recalculate",
+    "codeDeckId": "lab8-search-summary",
+    "deckId": "arrays-analysis",
+    "term": "Пересчёт результатов",
+    "exampleCode": "int[] scores = { 10, 20 };\nint sum = 0;\nforeach (int score in scores)\n{\n    sum += score;\n}\nscores[0] = 50;\nConsole.WriteLine(sum);",
+    "exampleResult": "30",
+    "exampleNote": "Переменная sum хранит результат предыдущего расчёта. Изменение массива само её не пересчитывает.",
+    "kind": "Что выведет код?",
+    "challengeCode": "int[] scores = { 20, 30 };\nint sum = 0;\nforeach (int score in scores)\n{\n    sum += score;\n}\nscores[1] = 80;\nConsole.WriteLine(sum);",
+    "prompt": "Что появится в консоли?",
+    "options": [
+      "50",
+      "100",
+      "80",
+      "20"
+    ],
+    "correctIndex": 0,
+    "explanation": "sum уже вычислена как 20 + 30 = 50. После изменения балла нужен новый расчёт.",
+    "challengeResult": "50"
+  },
+  {
+    "id": "lab8-no-match",
+    "codeDeckId": "lab8-search-summary",
+    "deckId": "arrays-analysis",
+    "term": "Все совпадения",
+    "exampleCode": "int[] values = { 2, 4 };\nbool found = false;\nforeach (int value in values)\n{\n    if (value == 7)\n    {\n        found = true;\n    }\n}\nif (!found)\n{\n    Console.WriteLine(\"Не найдено\");\n}",
+    "exampleResult": "Не найдено",
+    "exampleNote": "Флаг found помогает сообщить об отсутствии совпадений после полного обхода.",
+    "kind": "Что выведет код?",
+    "challengeCode": "int[] values = { 3, 6, 9 };\nbool found = false;\nforeach (int value in values)\n{\n    if (value == 7)\n    {\n        found = true;\n    }\n}\nif (!found)\n{\n    Console.WriteLine(\"Не найдено\");\n}",
+    "prompt": "Что появится в консоли?",
+    "options": [
+      "Не найдено",
+      "7",
+      "True",
+      "Ничего"
+    ],
+    "correctIndex": 0,
+    "explanation": "В массиве нет 7; found остаётся false, поэтому !found истинно.",
+    "challengeResult": "Не найдено"
+  },
+  {
+    "id": "lab8-max-start",
+    "codeDeckId": "lab8-search-summary",
+    "deckId": "arrays-analysis",
+    "term": "Максимум массива",
+    "exampleCode": "int[] values = { -5, -2 };\nint max = values[0];\nforeach (int value in values)\n{\n    if (value > max)\n    {\n        max = value;\n    }\n}\nConsole.WriteLine(max);",
+    "exampleResult": "-2",
+    "exampleNote": "Начальное значение максимума берут из непустого массива, чтобы учитывать отрицательные числа.",
+    "kind": "Заполните пропуск",
+    "challengeCode": "int[] values = { -8, -3, -11 };\nint max = /* ??? */;\nforeach (int value in values)\n{\n    if (value > max)\n    {\n        max = value;\n    }\n}\nConsole.WriteLine(max);",
+    "prompt": "Что поставить вместо /* ??? */, чтобы получить результат: -3?",
+    "options": [
+      "values[0]",
+      "0",
+      "1",
+      "values.Length"
+    ],
+    "correctIndex": 0,
+    "explanation": "Первый элемент — корректное начальное значение. Остальные варианты не меньше всех отрицательных элементов и дадут неправильный максимум.",
+    "solutionResult": "-3"
+  },
+  {
+    "id": "lab8-tryparse",
+    "codeDeckId": "lab8-input-journal",
+    "deckId": "arrays-analysis",
+    "term": "int.TryParse",
+    "exampleCode": "bool ok = int.TryParse(\"75\", out int score);\nConsole.WriteLine(ok);\nConsole.WriteLine(score);",
+    "exampleResult": "True\n75",
+    "exampleNote": "TryParse возвращает bool и отдельно записывает полученное число в out-переменную.",
+    "kind": "Что выведет код?",
+    "challengeCode": "bool ok = int.TryParse(\"60\", out int score);\nConsole.WriteLine(ok);\nConsole.WriteLine(score);",
+    "prompt": "Что появится в консоли?",
+    "options": [
+      "True\n60",
+      "60\nTrue",
+      "False\n0",
+      "True\n0"
+    ],
+    "correctIndex": 0,
+    "explanation": "Строка корректна: ok равно true, score получает число 60.",
+    "challengeResult": "True\n60",
+    "variants": [
+      {
+        "challengeCode": "bool ok = int.TryParse(\"42\", out int score);\nConsole.WriteLine(ok);\nConsole.WriteLine(score);",
+        "options": [
+          "True\n42",
+          "False\n42",
+          "True\n0",
+          "False\n0"
+        ],
+        "correctIndex": 0,
+        "challengeResult": "True\n42",
+        "explanation": "Строка корректна; результат True, а в score записано 42."
+      },
+      {
+        "challengeCode": "bool ok = int.TryParse(\"95\", out int score);\nConsole.WriteLine(ok);\nConsole.WriteLine(score);",
+        "options": [
+          "True\n95",
+          "False\n95",
+          "True\n0",
+          "False\n0"
+        ],
+        "correctIndex": 0,
+        "challengeResult": "True\n95",
+        "explanation": "Строка корректна; результат True, а в score записано 95."
+      }
+    ]
+  },
+  {
+    "id": "lab8-out",
+    "codeDeckId": "lab8-input-journal",
+    "deckId": "arrays-analysis",
+    "term": "Выходной параметр out",
+    "exampleCode": "int number;\nbool ok = int.TryParse(\"42\", out number);\nConsole.WriteLine(number);",
+    "exampleResult": "42",
+    "exampleNote": "Через out TryParse записывает число в указанную переменную.",
+    "kind": "Что выведет код?",
+    "challengeCode": "int score;\nbool ok = int.TryParse(\"85\", out score);\nif (ok)\n{\n    Console.WriteLine(score);\n}",
+    "prompt": "Что появится в консоли?",
+    "options": [
+      "85",
+      "True",
+      "0",
+      "Ничего"
+    ],
+    "correctIndex": 0,
+    "explanation": "Преобразование успешно, out записывает 85 в score, а if выполняет вывод.",
+    "challengeResult": "85"
+  },
+  {
+    "id": "lab8-invalid-text",
+    "codeDeckId": "lab8-input-journal",
+    "deckId": "arrays-analysis",
+    "term": "int.TryParse",
+    "exampleCode": "if (int.TryParse(\"кот\", out int score))\n{\n    Console.WriteLine(score);\n}\nelse\n{\n    Console.WriteLine(\"Ошибка ввода\");\n}",
+    "exampleResult": "Ошибка ввода",
+    "exampleNote": "При неподходящем тексте TryParse возвращает false. Программа может повторить запрос без обработки исключений.",
+    "kind": "Что выведет код?",
+    "challengeCode": "if (int.TryParse(\"12кг\", out int score))\n{\n    Console.WriteLine(score);\n}\nelse\n{\n    Console.WriteLine(\"Ошибка ввода\");\n}",
+    "prompt": "Что появится в консоли?",
+    "options": [
+      "Ошибка ввода",
+      "12",
+      "12кг",
+      "Ничего"
+    ],
+    "correctIndex": 0,
+    "explanation": "Вся строка 12кг не является целым числом. Выполняется ветка else.",
+    "challengeResult": "Ошибка ввода"
+  },
+  {
+    "id": "lab8-range-after-parse",
+    "codeDeckId": "lab8-input-journal",
+    "deckId": "arrays-analysis",
+    "term": "int.TryParse",
+    "exampleCode": "bool ok = int.TryParse(\"101\", out int score);\nConsole.WriteLine(ok);\nConsole.WriteLine(score >= 0 && score <= 100);",
+    "exampleResult": "True\nFalse",
+    "exampleNote": "Успешное преобразование не означает допустимый балл. Диапазон проверяется отдельно.",
+    "kind": "Что выведет код?",
+    "challengeCode": "bool ok = int.TryParse(\"-1\", out int score);\nConsole.WriteLine(ok);\nConsole.WriteLine(score >= 0 && score <= 100);",
+    "prompt": "Что появится в консоли?",
+    "options": [
+      "True\nFalse",
+      "False\nFalse",
+      "True\nTrue",
+      "False\nTrue"
+    ],
+    "correctIndex": 0,
+    "explanation": "-1 — корректное целое число, но балл выходит за диапазон 0–100.",
+    "challengeResult": "True\nFalse"
+  },
+  {
+    "id": "lab8-retry-input",
+    "codeDeckId": "lab8-input-journal",
+    "deckId": "arrays-analysis",
+    "term": "int.TryParse",
+    "exampleCode": "int score;\nwhile (!int.TryParse(Console.ReadLine(), out score) || score < 0 || score > 100)\n{\n    Console.WriteLine(\"Повторите\");\n}\nConsole.WriteLine(score);",
+    "exampleResult": "Повторите\nПовторите\n75",
+    "exampleNote": "Повторный ввод продолжается, пока преобразование не удалось или число вне допустимого диапазона.",
+    "kind": "Что выведет код?",
+    "challengeCode": "int score;\nwhile (!int.TryParse(Console.ReadLine(), out score) || score < 0 || score > 100)\n{\n    Console.WriteLine(\"Повторите\");\n}\nConsole.WriteLine(score);",
+    "prompt": "Что появится в консоли?",
+    "options": [
+      "Повторите\nПовторите\n59",
+      "59",
+      "Повторите\n59",
+      "101"
+    ],
+    "correctIndex": 0,
+    "explanation": "Текст не проходит преобразование, 101 не проходит диапазон. Ввод 59 завершает цикл.",
+    "challengeResult": "Повторите\nПовторите\n59",
+    "exampleInput": "текст\n-5\n75",
+    "challengeInput": "текст\n101\n59"
+  },
+  {
+    "id": "lab8-invalid-number",
+    "codeDeckId": "lab8-input-journal",
+    "deckId": "arrays-traversal",
+    "term": "Проверка номера",
+    "exampleCode": "int[] scores = { 10, 20 };\nint number = 0;\nif (number >= 1 && number <= scores.Length)\n{\n    scores[number - 1] = 0;\n}\nelse\n{\n    Console.WriteLine(\"Неверный номер\");\n}",
+    "exampleResult": "Неверный номер",
+    "exampleNote": "Неверный номер проверяют до вычисления и использования индекса, поэтому массив не затрагивается.",
+    "kind": "Что выведет код?",
+    "challengeCode": "int[] scores = { 10, 20, 30 };\nint number = 4;\nif (number >= 1 && number <= scores.Length)\n{\n    scores[number - 1] = 0;\n}\nelse\n{\n    Console.WriteLine(\"Неверный номер\");\n}\nConsole.WriteLine(scores[2]);",
+    "prompt": "Что появится в консоли?",
+    "options": [
+      "Неверный номер\n30",
+      "Неверный номер\n0",
+      "0",
+      "Ошибка выхода за границы"
+    ],
+    "correctIndex": 0,
+    "explanation": "Номер 4 больше длины 3. Запись пропускается, последний балл остаётся 30.",
+    "challengeResult": "Неверный номер\n30"
+  },
+  {
+    "id": "lab8-valid-update",
+    "codeDeckId": "lab8-input-journal",
+    "deckId": "arrays-traversal",
+    "term": "Изменение элемента",
+    "exampleCode": "int[] scores = { 20, 40, 60 };\nint number = 1;\nif (number >= 1 && number <= scores.Length)\n{\n    scores[number - 1] = 0;\n}\nConsole.WriteLine(scores[0]);",
+    "exampleResult": "0",
+    "exampleNote": "Для допустимого номера используется индекс number - 1.",
+    "kind": "Что выведет код?",
+    "challengeCode": "int[] scores = { 20, 40, 60 };\nint number = 3;\nif (number >= 1 && number <= scores.Length)\n{\n    scores[number - 1] = 0;\n}\nConsole.WriteLine(scores[2]);",
+    "prompt": "Что появится в консоли?",
+    "options": [
+      "0",
+      "60",
+      "40",
+      "3"
+    ],
+    "correctIndex": 0,
+    "explanation": "Последний номер 3 допустим. Он соответствует индексу 2; в эту ячейку записывается 0.",
+    "challengeResult": "0"
+  },
+  {
+    "id": "lab8-recompute-after-update",
+    "codeDeckId": "lab8-input-journal",
+    "deckId": "arrays-analysis",
+    "term": "Пересчёт результатов",
+    "exampleCode": "int[] scores = { 10, 20 };\nscores[0] = 50;\nint sum = 0;\nforeach (int score in scores)\n{\n    sum += score;\n}\nConsole.WriteLine(sum);",
+    "exampleResult": "70",
+    "exampleNote": "После изменения обходят актуальные значения массива, начиная накопление заново.",
+    "kind": "Что выведет код?",
+    "challengeCode": "int[] scores = { 59, 60, 95, 95 };\nscores[0] = 100;\nint sum = 0;\nforeach (int score in scores)\n{\n    sum += score;\n}\nConsole.WriteLine(sum);",
+    "prompt": "Что появится в консоли?",
+    "options": [
+      "350",
+      "309",
+      "100",
+      "349"
+    ],
+    "correctIndex": 0,
+    "explanation": "Новая сумма равна 100 + 60 + 95 + 95 = 350.",
+    "challengeResult": "350"
+  },
+  {
+    "id": "lab8-reset-count",
+    "codeDeckId": "lab8-input-journal",
+    "deckId": "arrays-analysis",
+    "term": "Подсчёт по условию",
+    "exampleCode": "int[] scores = { 50, 70 };\nfor (int pass = 0; pass < 2; pass++)\n{\n    int count = 0;\n    foreach (int score in scores)\n    {\n        if (score < 60)\n        {\n            count++;\n        }\n    }\n    Console.WriteLine(count);\n}",
+    "exampleResult": "1\n1",
+    "exampleNote": "При каждом повторном расчёте счётчик обнуляют. Иначе поиск накопит результат предыдущего запуска.",
+    "kind": "Что выведет код?",
+    "challengeCode": "int[] scores = { 59, 60, 40 };\nfor (int pass = 0; pass < 2; pass++)\n{\n    int count = 0;\n    foreach (int score in scores)\n    {\n        if (score < 60)\n        {\n            count++;\n        }\n    }\n    Console.WriteLine(count);\n}",
+    "prompt": "Что появится в консоли?",
+    "options": [
+      "2\n2",
+      "2\n4",
+      "4\n4",
+      "3\n3"
+    ],
+    "correctIndex": 0,
+    "explanation": "Счётчик создаётся с нулём внутри каждого прохода. При неизменных баллах оба расчёта дают 2.",
+    "challengeResult": "2\n2"
+  },
+  {
+    "id": "lab8-student-number",
+    "codeDeckId": "lab8-input-journal",
+    "deckId": "arrays-traversal",
+    "term": "Номер и индекс",
+    "exampleCode": "int[] scores = { 20, 40 };\nfor (int i = 0; i < scores.Length; i++)\n{\n    Console.WriteLine($\"{i + 1}: {scores[i]}\");\n}",
+    "exampleResult": "1: 20\n2: 40",
+    "exampleNote": "Для журнала номер студента равен индексу плюс один.",
+    "kind": "Заполните пропуск",
+    "challengeCode": "int[] scores = { 50, 70 };\nfor (int i = 0; i < scores.Length; i++)\n{\n    Console.WriteLine($\"{/* ??? */}: {scores[i]}\");\n}",
+    "prompt": "Что поставить вместо /* ??? */, чтобы получить результат: 1: 50\n2: 70?",
+    "options": [
+      "i + 1",
+      "i",
+      "i - 1",
+      "scores[i]"
+    ],
+    "correctIndex": 0,
+    "explanation": "При индексах 0 и 1 выражение i + 1 выводит номера 1 и 2; сами баллы используются отдельно.",
+    "solutionResult": "1: 50\n2: 70"
   }
 ];

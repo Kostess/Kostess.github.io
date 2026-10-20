@@ -181,3 +181,30 @@ test("corrupt or unavailable storage does not stop training", () => {
   assert.equal(blocked.run('Object.keys(learningProgress).length'), 1);
   assert.match(blocked.elements.get("#storageStatus").textContent, /Хранилище недоступно/);
 });
+
+test("legacy practice progress migrates only to the original lesson", () => {
+  const app = setup(new Map([["terms-progress-v1", JSON.stringify({
+    "code:variables-values:Переменная": { attempts: 3, correct: 1, needsReview: true }
+  })]]));
+  assert.equal(app.run('needsReview("code", codeLessons.find(lesson => lesson.id === "variable"))'), true);
+  assert.equal(app.run('needsReview("code", codeLessons.find(lesson => lesson.id === "more4-overwrite"))'), false);
+  assert.equal(app.run('Object.values(learningProgress).reduce((sum, item) => sum + item.attempts, 0)'), 3);
+  app.run('recordLearningAnswer("code", codeLessons.find(lesson => lesson.id === "variable"), true)');
+  const reloaded = setup(app.storage);
+  assert.equal(reloaded.run('Object.values(learningProgress).reduce((sum, item) => sum + item.attempts, 0)'), 4);
+  assert.equal(reloaded.run('needsReview("code", codeLessons.find(lesson => lesson.id === "variable"))'), false);
+});
+
+test("two lessons about one term retain independent mistakes and all worked examples appear in the reference", () => {
+  const app = setup();
+  app.run('const originalLesson = codeLessons.find(lesson => lesson.id === "variable"); const newLesson = codeLessons.find(lesson => lesson.id === "more4-overwrite");');
+  app.run('recordLearningAnswer("code", originalLesson, false); recordLearningAnswer("code", newLesson, false); recordLearningAnswer("code", originalLesson, true)');
+  assert.equal(app.run('needsReview("code", originalLesson)'), false);
+  assert.equal(app.run('needsReview("code", newLesson)'), true);
+  assert.equal(app.run('needsReview("code", {deckId: originalLesson.deckId, term: originalLesson.term})'), true);
+  const reference = app.run('renderReferenceExample(originalLesson)');
+  assert.ok(reference.includes(app.run('escapeHtml(originalLesson.exampleCode)')));
+  assert.ok(reference.includes(app.run('escapeHtml(newLesson.exampleCode)')));
+  const reloaded = setup(app.storage);
+  assert.equal(reloaded.run('needsReview("code", codeLessons.find(lesson => lesson.id === "more4-overwrite"))'), true);
+});

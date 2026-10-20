@@ -135,16 +135,26 @@ const allTerms = topics.flatMap((topic) =>
   )
 );
 
-const codeLessonByTerm = new Map(codeLessons.map((lesson) => [`${lesson.deckId}:${lesson.term}`, lesson]));
+const codeLessonsByTerm = new Map();
+for (const lesson of codeLessons) {
+  const key = `${lesson.deckId}:${lesson.term}`;
+  if (!codeLessonsByTerm.has(key)) codeLessonsByTerm.set(key, []);
+  codeLessonsByTerm.get(key).push(lesson);
+}
+const codeLessonByTerm = new Map([...codeLessonsByTerm].map(([key, lessons]) => [key, lessons[0]]));
 
 const PROGRESS_KEY = "terms-progress-v1";
 let learningProgress = {};
 
 function progressKey(mode, item) {
+  if (mode === "code" && item.id) return `code:${item.id}`;
   return `${mode}:${item.deckId}:${item.term}`;
 }
 
 function needsReview(mode, item) {
+  if (mode === "code" && !item.id) {
+    return (codeLessonsByTerm.get(`${item.deckId}:${item.term}`) || []).some(lesson => needsReview("code", lesson));
+  }
   return learningProgress[progressKey(mode, item)]?.needsReview === true;
 }
 
@@ -159,7 +169,9 @@ function loadLearningProgress() {
       const items = mode === "code" ? codeLessons : allTerms;
       for (const item of items) {
         const key = progressKey(mode, item);
-        const record = saved[key];
+        const legacyKey = `${mode}:${item.deckId}:${item.term}`;
+        const isOriginal = mode === "code" && codeLessonByTerm.get(`${item.deckId}:${item.term}`) === item;
+        const record = saved[key] || (isOriginal ? saved[legacyKey] : undefined);
         if (record && Number.isSafeInteger(record.attempts) && record.attempts > 0 &&
             Number.isSafeInteger(record.correct) && record.correct >= 0 && record.correct <= record.attempts &&
             typeof record.needsReview === "boolean") {
@@ -192,8 +204,9 @@ function recordLearningAnswer(mode, item, correct) {
 }
 
 function renderLearningProgress() {
-  const studied = allTerms.filter(item => ["cards", "quiz", "code"].some(mode =>
-    learningProgress[progressKey(mode, item)]));
+  const studied = allTerms.filter(item => ["cards", "quiz"].some(mode =>
+    learningProgress[progressKey(mode, item)]) ||
+    (codeLessonsByTerm.get(`${item.deckId}:${item.term}`) || []).some(lesson => learningProgress[progressKey("code", lesson)]));
   const mistakes = [];
   for (const [mode, label] of [["cards", "Карточки"], ["quiz", "Тест"], ["code", "Понимаю код"]]) {
     for (const item of mode === "code" ? codeLessons : allTerms) {
@@ -211,7 +224,13 @@ function renderLearningProgress() {
   for (const { item, label } of mistakes) {
     const li = document.createElement("li");
     const term = allTerms.find(term => term.deckId === item.deckId && term.term === item.term);
-    li.textContent = `${label} · ${item.term}: ${term?.definition || ""}`;
+    const deck = item.id ? codeDecks.find(deck => deck.id === item.codeDeckId) : undefined;
+    li.textContent = `${label}${deck ? ` · ${deck.title}` : ""} · ${item.term}: ${term?.definition || ""}`;
+    if (item.challengeCode) {
+      const snippet = document.createElement("pre");
+      snippet.textContent = `Пример задания:\n${item.challengeCode}`;
+      li.append(snippet);
+    }
     els.mistakeList.append(li);
   }
 }
@@ -834,7 +853,7 @@ function getReferenceTerms() {
   if (query) {
     terms = terms.filter((item) =>
       [item.term, item.definition, item.topicTitle, item.deckTitle,
-        codeLessonByTerm.get(`${item.deckId}:${item.term}`)?.exampleCode || "",
+        ...(codeLessonsByTerm.get(`${item.deckId}:${item.term}`) || []).map(lesson => lesson.exampleCode),
         ...item.chips.map((chip) => chip.label)].some((value) =>
         value.toLowerCase().includes(query)
       )
@@ -884,19 +903,16 @@ function renderReference() {
 }
 
 function renderReferenceExample(item) {
-  const lesson = codeLessonByTerm.get(`${item.deckId}:${item.term}`);
-  if (!lesson) {
-    return "";
-  }
-  return `
+  const lessons = codeLessonsByTerm.get(`${item.deckId}:${item.term}`) || [];
+  return lessons.map((lesson, index) => `
     <div class="reference-example">
-      <strong>Пример C#</strong>
+      <strong>Пример C# ${index + 1} из ${lessons.length}</strong>
       <pre><code>${escapeHtml(lesson.exampleCode)}</code></pre>
       ${lesson.exampleInput ? `<p><strong>Ввод:</strong> ${escapeHtml(lesson.exampleInput)}</p>` : ""}
       <p><strong>Результат:</strong> <span class="example-result">${escapeHtml(lesson.exampleResult)}</span></p>
       <p>${escapeHtml(lesson.exampleNote)}</p>
     </div>
-  `;
+  `).join("");
 }
 
 function wireEvents() {

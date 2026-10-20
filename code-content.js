@@ -1,4 +1,4 @@
-// deckId + term links a glossary entry; codeDeckId selects the practice deck.
+// deckId + term links glossary entries; codeDeckId selects a practice deck.
 const codeDecks = [
   {
     "id": "lab4-variables-values",
@@ -44,6 +44,46 @@ const codeDecks = [
     "id": "practice-loops-control",
     "lab": "ЛБ 7",
     "title": "Управление циклами и повторный ввод"
+  },
+  {
+    "id": "lab4-assignment-reading",
+    "lab": "ЛБ 4",
+    "title": "Читаем присваивания"
+  },
+  {
+    "id": "lab4-text-output-reading",
+    "lab": "ЛБ 4",
+    "title": "Типы, строки и порядок вывода"
+  },
+  {
+    "id": "lab5-division-and-casts",
+    "lab": "ЛБ 5",
+    "title": "Деление и преобразования"
+  },
+  {
+    "id": "lab5-operation-order",
+    "lab": "ЛБ 5",
+    "title": "Порядок операций и изменение значений"
+  },
+  {
+    "id": "lab5-input-and-text",
+    "lab": "ЛБ 5",
+    "title": "Числа и текст после ввода"
+  },
+  {
+    "id": "lab6-combine-conditions",
+    "lab": "ЛБ 6",
+    "title": "Составные условия и границы"
+  },
+  {
+    "id": "lab6-reading-branches",
+    "lab": "ЛБ 6",
+    "title": "Читаем ветвления"
+  },
+  {
+    "id": "lab7-tracing-and-accumulation",
+    "lab": "ЛБ 7",
+    "title": "Трассировка и накопление результата"
   }
 ];
 
@@ -2203,5 +2243,1607 @@ const codeLessons = [
         "explanation": "От 0 до 5 включительно — 6 значений, поэтому 6 итераций."
       }
     ]
+  },
+  {
+    "id": "more4-copy",
+    "codeDeckId": "lab4-assignment-reading",
+    "deckId": "variables-values",
+    "term": "Присваивание",
+    "exampleCode": "int a = 3;\nint b = a;\na = 8;\nConsole.WriteLine(b);",
+    "exampleResult": "3",
+    "exampleNote": "В b копируется текущее число из a. Позднее изменение a не меняет уже сохранённое b.",
+    "kind": "Что выведет код?",
+    "challengeCode": "int a = 4;\nint b = a;\na = 9;\nConsole.WriteLine(b);",
+    "prompt": "Что появится в консоли?",
+    "options": [
+      "4",
+      "9",
+      "0",
+      "13"
+    ],
+    "correctIndex": 0,
+    "explanation": "В b копируется текущее число из a. Позднее изменение a не меняет уже сохранённое b.",
+    "challengeResult": "4"
+  },
+  {
+    "id": "more4-swap",
+    "codeDeckId": "lab4-assignment-reading",
+    "deckId": "variables-values",
+    "term": "Значение",
+    "exampleCode": "int a = 2;\nint b = 7;\nint temp = a;\na = b;\nb = temp;\nConsole.WriteLine($\"{a} {b}\");",
+    "exampleResult": "7 2",
+    "exampleNote": "Временная переменная сохраняет прежнее a. После двух присваиваний значения a и b меняются местами.",
+    "kind": "Что выведет код?",
+    "challengeCode": "int a = 3;\nint b = 8;\nint temp = a;\na = b;\nb = temp;\nConsole.WriteLine($\"{a} {b}\");",
+    "prompt": "Что появится в консоли?",
+    "options": [
+      "8 3",
+      "3 8",
+      "8 8",
+      "3 3"
+    ],
+    "correctIndex": 0,
+    "explanation": "Временная переменная сохраняет прежнее a. После двух присваиваний значения a и b меняются местами.",
+    "challengeResult": "8 3"
+  },
+  {
+    "id": "more4-overwrite",
+    "codeDeckId": "lab4-assignment-reading",
+    "deckId": "variables-values",
+    "term": "Переменная",
+    "exampleCode": "int number = 2;\nnumber = 9;\nnumber = 4;\nConsole.WriteLine(number);",
+    "exampleResult": "4",
+    "exampleNote": "Каждое присваивание заменяет прежнее значение. Выводится число из последнего присваивания.",
+    "kind": "Что выведет код?",
+    "challengeCode": "int number = 1;\nnumber = 8;\nnumber = 6;\nConsole.WriteLine(number);",
+    "prompt": "Что появится в консоли?",
+    "options": [
+      "6",
+      "1",
+      "8",
+      "15"
+    ],
+    "correctIndex": 0,
+    "explanation": "Каждое присваивание заменяет прежнее значение. Выводится число из последнего присваивания.",
+    "challengeResult": "6"
+  },
+  {
+    "id": "more4-case-sensitive",
+    "codeDeckId": "lab4-assignment-reading",
+    "deckId": "variables-values",
+    "term": "Идентификатор",
+    "exampleCode": "int value = 2;\nint Value = 5;\nConsole.WriteLine(value);",
+    "exampleResult": "2",
+    "exampleNote": "Имена с разным регистром обозначают разные переменные. При чтении Console.WriteLine важно проверить точное написание имени.",
+    "kind": "Что выведет код?",
+    "challengeCode": "int score = 3;\nint Score = 7;\nConsole.WriteLine(Score);",
+    "prompt": "Что появится в консоли?",
+    "options": [
+      "7",
+      "3",
+      "10",
+      "Ошибка компиляции"
+    ],
+    "correctIndex": 0,
+    "explanation": "Регистр имеет значение: score и Score — два разных имени. Выводится именно указанная переменная.",
+    "challengeResult": "7"
+  },
+  {
+    "id": "more4-assignment-order",
+    "codeDeckId": "lab4-assignment-reading",
+    "deckId": "variables-values",
+    "term": "Оператор присваивания",
+    "exampleCode": "int a = 2;\nint b = 6;\na = b;\nb = a;\nConsole.WriteLine($\"{a} {b}\");",
+    "exampleResult": "6 6",
+    "exampleNote": "После a = b прежнее a потеряно. Следующее b = a копирует уже новое значение; обмена здесь нет.",
+    "kind": "Что выведет код?",
+    "challengeCode": "int a = 4;\nint b = 9;\na = b;\nb = a;\nConsole.WriteLine($\"{a} {b}\");",
+    "prompt": "Что появится в консоли?",
+    "options": [
+      "9 9",
+      "4 9",
+      "9 4",
+      "4 4"
+    ],
+    "correctIndex": 0,
+    "explanation": "После a = b прежнее a потеряно. Следующее b = a копирует уже новое значение; обмена здесь нет.",
+    "challengeResult": "9 9"
+  },
+  {
+    "id": "more4-string-copy",
+    "codeDeckId": "lab4-assignment-reading",
+    "deckId": "csharp-data-types",
+    "term": "string",
+    "exampleCode": "string a = \"кот\";\nstring b = a;\na = \"пёс\";\nConsole.WriteLine(b);",
+    "exampleResult": "кот",
+    "exampleNote": "Переприсваивание a не переприсваивает b. В b остаётся первоначальная строка.",
+    "kind": "Что выведет код?",
+    "challengeCode": "string a = \"дом\";\nstring b = a;\na = \"лес\";\nConsole.WriteLine(b);",
+    "prompt": "Что появится в консоли?",
+    "options": [
+      "дом",
+      "лес",
+      "домлес",
+      "Ошибка компиляции"
+    ],
+    "correctIndex": 0,
+    "explanation": "Переприсваивание a не переприсваивает b. В b остаётся первоначальная строка.",
+    "challengeResult": "дом"
+  },
+  {
+    "id": "more4-char-type",
+    "codeDeckId": "lab4-assignment-reading",
+    "deckId": "csharp-data-types",
+    "term": "char",
+    "exampleCode": "char letter = 'Q';\nConsole.WriteLine(letter);",
+    "exampleResult": "Q",
+    "exampleNote": "Символ в одинарных кавычках сохраняется в char и выводится без кавычек.",
+    "kind": "Заполните пропуск",
+    "challengeCode": "/* ??? */ letter = 'Z';\nConsole.WriteLine(letter);",
+    "prompt": "Что поставить вместо /* ??? */, чтобы получить результат: Z?",
+    "options": [
+      "char",
+      "string",
+      "bool",
+      "int"
+    ],
+    "correctIndex": 0,
+    "explanation": "Один символ в одинарных кавычках можно сохранить в char. Тип string требует строку в двойных кавычках.",
+    "solutionResult": "Z"
+  },
+  {
+    "id": "more4-var-initial",
+    "codeDeckId": "lab4-assignment-reading",
+    "deckId": "typing-and-output",
+    "term": "var",
+    "exampleCode": "var count = 6;\nConsole.WriteLine(count);",
+    "exampleResult": "6",
+    "exampleNote": "var выводит тип по начальному значению. При Console.WriteLine выводится само сохранённое значение.",
+    "kind": "Заполните пропуск",
+    "challengeCode": "var count = /* ??? */;\nConsole.WriteLine(count);",
+    "prompt": "Что поставить вместо /* ??? */, чтобы получить результат: 9?",
+    "options": [
+      "9",
+      "6",
+      "0",
+      "1"
+    ],
+    "correctIndex": 0,
+    "explanation": "Начальное значение задаёт и тип, и содержимое переменной. Чтобы вывести 9, нужно присвоить 9.",
+    "solutionResult": "9"
+  },
+  {
+    "id": "more4-decimal-suffix",
+    "codeDeckId": "lab4-assignment-reading",
+    "deckId": "typing-and-output",
+    "term": "Суффикс литерала",
+    "exampleCode": "decimal price = 6m;\nConsole.WriteLine(price);",
+    "exampleResult": "6",
+    "exampleNote": "Суффикс m задаёт литерал decimal. При выводе суффикс не показывается.",
+    "kind": "Заполните пропуск",
+    "challengeCode": "decimal price = /* ??? */;\nConsole.WriteLine(price);",
+    "prompt": "Что поставить вместо /* ??? */, чтобы получить результат: 8?",
+    "options": [
+      "8m",
+      "6m",
+      "0m",
+      "1m"
+    ],
+    "correctIndex": 0,
+    "explanation": "Литерал 8m задаёт значение 8 типа decimal; суффикс m сохраняется.",
+    "solutionResult": "8"
+  },
+  {
+    "id": "more4-long-literal",
+    "codeDeckId": "lab4-assignment-reading",
+    "deckId": "csharp-data-types",
+    "term": "long",
+    "exampleCode": "long total = 4_000_000_000L;\nConsole.WriteLine(total);",
+    "exampleResult": "4000000000",
+    "exampleNote": "Подчёркивания отделяют разряды только в записи кода. L обозначает long; при выводе ни подчёркивания, ни суффикс не показываются.",
+    "kind": "Заполните пропуск",
+    "challengeCode": "long total = /* ??? */;\nConsole.WriteLine(total);",
+    "prompt": "Что поставить вместо /* ??? */, чтобы получить результат: 5000000000?",
+    "options": [
+      "5_000_000_000L",
+      "4_000_000_000L",
+      "5L",
+      "500L"
+    ],
+    "correctIndex": 0,
+    "explanation": "Подчёркивания разделяют разряды для чтения, L обозначает long. Нужна запись пяти миллиардов.",
+    "solutionResult": "5000000000"
+  },
+  {
+    "id": "more4-write-lines",
+    "codeDeckId": "lab4-text-output-reading",
+    "deckId": "typing-and-output",
+    "term": "Console.WriteLine",
+    "exampleCode": "Console.Write(\"A\");\nConsole.WriteLine(\"B\");\nConsole.Write(\"C\");",
+    "exampleResult": "AB\nC",
+    "exampleNote": "Write не добавляет перенос; WriteLine добавляет его после своего значения. Поэтому первые два значения стоят на одной строке.",
+    "kind": "Что выведет код?",
+    "challengeCode": "Console.Write(\"1\");\nConsole.WriteLine(\"2\");\nConsole.Write(\"3\");",
+    "prompt": "Что появится в консоли?",
+    "options": [
+      "12\n3",
+      "1\n2\n3",
+      "123",
+      "1\n23"
+    ],
+    "correctIndex": 0,
+    "explanation": "Write не добавляет перенос; WriteLine добавляет его после своего значения. Поэтому первые два значения стоят на одной строке.",
+    "challengeResult": "12\n3"
+  },
+  {
+    "id": "more4-interpolation-current",
+    "codeDeckId": "lab4-text-output-reading",
+    "deckId": "typing-and-output",
+    "term": "Строковая интерполяция",
+    "exampleCode": "int count = 2;\nstring text = $\"Число: {count}\";\ncount = 5;\nConsole.WriteLine(text);",
+    "exampleResult": "Число: 2",
+    "exampleNote": "Интерполяция выполняется при создании строки. Уже готовый text не пересчитывается после изменения count.",
+    "kind": "Что выведет код?",
+    "challengeCode": "int count = 3;\nstring text = $\"Число: {count}\";\ncount = 7;\nConsole.WriteLine(text);",
+    "prompt": "Что появится в консоли?",
+    "options": [
+      "Число: 3",
+      "Число: 7",
+      "Число: count",
+      "Число: {count}"
+    ],
+    "correctIndex": 0,
+    "explanation": "Интерполяция выполняется при создании строки. Уже готовый text не пересчитывается после изменения count.",
+    "challengeResult": "Число: 3"
+  },
+  {
+    "id": "more4-no-dollar",
+    "codeDeckId": "lab4-text-output-reading",
+    "deckId": "typing-and-output",
+    "term": "Строковая интерполяция",
+    "exampleCode": "int age = 16;\nConsole.WriteLine(\"Возраст: {age}\");",
+    "exampleResult": "Возраст: {age}",
+    "exampleNote": "Без знака $ фигурные скобки и имя остаются обычным текстом. Значение переменной не подставляется.",
+    "kind": "Что выведет код?",
+    "challengeCode": "int score = 8;\nConsole.WriteLine(\"Баллы: {score}\");",
+    "prompt": "Что появится в консоли?",
+    "options": [
+      "Баллы: {score}",
+      "Баллы: 8",
+      "Баллы: score",
+      "Ошибка компиляции"
+    ],
+    "correctIndex": 0,
+    "explanation": "Без знака $ фигурные скобки и имя остаются обычным текстом. Значение переменной не подставляется.",
+    "challengeResult": "Баллы: {score}"
+  },
+  {
+    "id": "more4-text-and-number",
+    "codeDeckId": "lab4-text-output-reading",
+    "deckId": "csharp-data-types",
+    "term": "string",
+    "exampleCode": "Console.WriteLine(\"4\" + 2);",
+    "exampleResult": "42",
+    "exampleNote": "Если один из этих операндов строка, + соединяет текст. Получается строка 73, а не сумма 10.",
+    "kind": "Что выведет код?",
+    "challengeCode": "Console.WriteLine(\"7\" + 3);",
+    "prompt": "Что появится в консоли?",
+    "options": [
+      "73",
+      "10",
+      "21",
+      "7"
+    ],
+    "correctIndex": 0,
+    "explanation": "Если один из этих операндов строка, + соединяет текст. Получается строка 73, а не сумма 10.",
+    "challengeResult": "73"
+  },
+  {
+    "id": "more4-bool-value",
+    "codeDeckId": "lab4-text-output-reading",
+    "deckId": "csharp-data-types",
+    "term": "bool",
+    "exampleCode": "bool ready = false;\nready = true;\nConsole.WriteLine(ready);",
+    "exampleResult": "True",
+    "exampleNote": "Выводится значение после последнего присваивания. Логические значения показываются как True и False.",
+    "kind": "Что выведет код?",
+    "challengeCode": "bool ready = true;\nready = false;\nConsole.WriteLine(ready);",
+    "prompt": "Что появится в консоли?",
+    "options": [
+      "False",
+      "True",
+      "ready",
+      "Ошибка компиляции"
+    ],
+    "correctIndex": 0,
+    "explanation": "Последнее присваивание задаёт false. При выводе bool используется написание False.",
+    "challengeResult": "False"
+  },
+  {
+    "id": "more4-char-text",
+    "codeDeckId": "lab4-text-output-reading",
+    "deckId": "csharp-data-types",
+    "term": "char",
+    "exampleCode": "char mark = '?';\nConsole.WriteLine($\"Готов{mark}\");",
+    "exampleResult": "Готов?",
+    "exampleNote": "Строковая интерполяция подставляет сначала текст word, затем символ mark.",
+    "kind": "Что выведет код?",
+    "challengeCode": "char mark = '!';\nstring word = \"Да\";\nConsole.WriteLine($\"{word}{mark}\");",
+    "prompt": "Что появится в консоли?",
+    "options": [
+      "Да!",
+      "!Да",
+      "Даmark",
+      "word!"
+    ],
+    "correctIndex": 0,
+    "explanation": "Строковая интерполяция подставляет сначала текст word, затем символ mark.",
+    "challengeResult": "Да!"
+  },
+  {
+    "id": "more4-double-variable",
+    "codeDeckId": "lab4-text-output-reading",
+    "deckId": "csharp-data-types",
+    "term": "double",
+    "exampleCode": "double value = 4.0;\nConsole.WriteLine(value);",
+    "exampleResult": "4",
+    "exampleNote": "Переменная double может хранить дробное значение. В этом примере выводится сохранённое целое по величине число.",
+    "kind": "Заполните пропуск",
+    "challengeCode": "/* ??? */ value = 2.5;\nConsole.WriteLine(value * 2);",
+    "prompt": "Что поставить вместо /* ??? */, чтобы получить результат: 5?",
+    "options": [
+      "double",
+      "int",
+      "bool",
+      "char"
+    ],
+    "correctIndex": 0,
+    "explanation": "2.5 — литерал double. int, bool и char не принимают его напрямую; после умножения на 2 получится 5.",
+    "solutionResult": "5"
+  },
+  {
+    "id": "more4-interpolation-name",
+    "codeDeckId": "lab4-text-output-reading",
+    "deckId": "typing-and-output",
+    "term": "Строковая интерполяция",
+    "exampleCode": "int width = 4;\nConsole.WriteLine($\"Ширина: {width}\");",
+    "exampleResult": "Ширина: 4",
+    "exampleNote": "В фигурных скобках интерполяции указывают нужную переменную; её текущее значение подставляется в строку.",
+    "kind": "Заполните пропуск",
+    "challengeCode": "int width = 6;\nint height = 9;\nConsole.WriteLine($\"Размер: {/* ??? */}\");",
+    "prompt": "Что поставить вместо /* ??? */, чтобы получить результат: Размер: 9?",
+    "options": [
+      "height",
+      "width",
+      "0",
+      "1"
+    ],
+    "correctIndex": 0,
+    "explanation": "Нужно подставить переменную height, в которой хранится 9. width содержит 6.",
+    "solutionResult": "Размер: 9"
+  },
+  {
+    "id": "more4-empty-string",
+    "codeDeckId": "lab4-text-output-reading",
+    "deckId": "csharp-data-types",
+    "term": "string",
+    "exampleCode": "string text = \"\";\nConsole.WriteLine(\"[\" + text + \"]\");",
+    "exampleResult": "[]",
+    "exampleNote": "Строка из одного пробела не пуста: пробел остаётся между квадратными скобками.",
+    "kind": "Что выведет код?",
+    "challengeCode": "string text = \" \";\nConsole.WriteLine(\"[\" + text + \"]\");",
+    "prompt": "Что появится в консоли?",
+    "options": [
+      "[ ]",
+      "[]",
+      "[text]",
+      "Ошибка компиляции"
+    ],
+    "correctIndex": 0,
+    "explanation": "Строка из одного пробела не пуста: пробел остаётся между квадратными скобками.",
+    "challengeResult": "[ ]"
+  },
+  {
+    "id": "more4-reassign-name",
+    "codeDeckId": "lab4-text-output-reading",
+    "deckId": "variables-values",
+    "term": "Присваивание",
+    "exampleCode": "int first = 3;\nint second = 6;\nfirst = second;\nConsole.WriteLine(first);",
+    "exampleResult": "6",
+    "exampleNote": "Значение справа от = записывается в переменную слева. Другая переменная от этого присваивания не меняется.",
+    "kind": "Заполните пропуск",
+    "challengeCode": "int first = 4;\nint second = 8;\n/* ??? */ = second;\nConsole.WriteLine(first);",
+    "prompt": "Что поставить вместо /* ??? */, чтобы получить результат: 8?",
+    "options": [
+      "first",
+      "second",
+      "third",
+      "First"
+    ],
+    "correctIndex": 0,
+    "explanation": "Чтобы first стало равно 8, присваивание должно записать значение second именно в first. Имена third и First здесь не объявлены.",
+    "solutionResult": "8"
+  },
+  {
+    "id": "more5-div-before-cast",
+    "codeDeckId": "lab5-division-and-casts",
+    "deckId": "input-operations-conversions",
+    "term": "Явное преобразование",
+    "exampleCode": "int a = 7;\nConsole.WriteLine((double)(a / 2) * 2);",
+    "exampleResult": "6",
+    "exampleNote": "Сначала выполняется целочисленное деление в скобках. Дробная часть уже потеряна; последующее приведение её не восстанавливает.",
+    "kind": "Что выведет код?",
+    "challengeCode": "int a = 9;\nConsole.WriteLine((double)(a / 2) * 2);",
+    "prompt": "Что появится в консоли?",
+    "options": [
+      "8",
+      "9",
+      "4",
+      "18"
+    ],
+    "correctIndex": 0,
+    "explanation": "Сначала выполняется целочисленное деление в скобках. Дробная часть уже потеряна; последующее приведение её не восстанавливает.",
+    "challengeResult": "8"
+  },
+  {
+    "id": "more5-cast-before-div",
+    "codeDeckId": "lab5-division-and-casts",
+    "deckId": "input-operations-conversions",
+    "term": "Явное преобразование",
+    "exampleCode": "int a = 7;\nConsole.WriteLine((double)a / 2 * 2);",
+    "exampleResult": "7",
+    "exampleNote": "Приведение происходит до деления. Деление double сохраняет половину, а умножение на 2 возвращает исходное число.",
+    "kind": "Что выведет код?",
+    "challengeCode": "int a = 9;\nConsole.WriteLine((double)a / 2 * 2);",
+    "prompt": "Что появится в консоли?",
+    "options": [
+      "9",
+      "8",
+      "4",
+      "18"
+    ],
+    "correctIndex": 0,
+    "explanation": "Приведение происходит до деления. Деление double сохраняет половину, а умножение на 2 возвращает исходное число.",
+    "challengeResult": "9"
+  },
+  {
+    "id": "more5-double-after-int",
+    "codeDeckId": "lab5-division-and-casts",
+    "deckId": "input-operations-conversions",
+    "term": "Потеря данных",
+    "exampleCode": "double result = 7 / 2;\nConsole.WriteLine(result);",
+    "exampleResult": "3",
+    "exampleNote": "Тип переменной слева не меняет деление справа. Оба операнда целые; в double записывается уже целый результат.",
+    "kind": "Что выведет код?",
+    "challengeCode": "double result = 9 / 2;\nConsole.WriteLine(result);",
+    "prompt": "Что появится в консоли?",
+    "options": [
+      "4",
+      "9",
+      "5",
+      "Ошибка компиляции"
+    ],
+    "correctIndex": 0,
+    "explanation": "Тип переменной слева не меняет деление справа. Оба операнда целые; в double записывается уже целый результат.",
+    "challengeResult": "4"
+  },
+  {
+    "id": "more5-negative-div",
+    "codeDeckId": "lab5-division-and-casts",
+    "deckId": "input-operations-conversions",
+    "term": "Целочисленное деление",
+    "exampleCode": "Console.WriteLine(-7 / 2);",
+    "exampleResult": "-3",
+    "exampleNote": "При делении целых чисел дробная часть отбрасывается в направлении нуля, в том числе у отрицательных результатов.",
+    "kind": "Что выведет код?",
+    "challengeCode": "Console.WriteLine(-11 / 3);",
+    "prompt": "Что появится в консоли?",
+    "options": [
+      "-3",
+      "-4",
+      "3",
+      "-2"
+    ],
+    "correctIndex": 0,
+    "explanation": "Целочисленное деление отбрасывает дробную часть в направлении нуля. Получается -3, а не -4.",
+    "challengeResult": "-3"
+  },
+  {
+    "id": "more5-remainder-sign",
+    "codeDeckId": "lab5-division-and-casts",
+    "deckId": "input-operations-conversions",
+    "term": "Остаток от деления",
+    "exampleCode": "Console.WriteLine(-7 % 3);",
+    "exampleResult": "-1",
+    "exampleNote": "При целочисленном остатке знак ненулевого результата совпадает со знаком делимого.",
+    "kind": "Что выведет код?",
+    "challengeCode": "Console.WriteLine(-11 % 4);",
+    "prompt": "Что появится в консоли?",
+    "options": [
+      "-3",
+      "3",
+      "-2",
+      "1"
+    ],
+    "correctIndex": 0,
+    "explanation": "Для целых чисел знак ненулевого остатка совпадает со знаком делимого: -11 = 4 * (-2) + (-3).",
+    "challengeResult": "-3"
+  },
+  {
+    "id": "more5-cast-location",
+    "codeDeckId": "lab5-division-and-casts",
+    "deckId": "input-operations-conversions",
+    "term": "Явное преобразование",
+    "exampleCode": "int value = 7;\nConsole.WriteLine((double)value / 2 * 2);",
+    "exampleResult": "7",
+    "exampleNote": "Приведение к double перед делением позволяет сохранить дробную часть промежуточного результата.",
+    "kind": "Заполните пропуск",
+    "challengeCode": "int value = 5;\nConsole.WriteLine(/* ??? */ / 2 * 2);",
+    "prompt": "Что поставить вместо /* ??? */, чтобы получить результат: 5?",
+    "options": [
+      "(double)value",
+      "value",
+      "(int)value",
+      "4"
+    ],
+    "correctIndex": 0,
+    "explanation": "Нужно перейти к double до деления. Целочисленное 5 / 2 * 2 даст 4, а не 5.",
+    "solutionResult": "5"
+  },
+  {
+    "id": "more5-truncate-before-add",
+    "codeDeckId": "lab5-division-and-casts",
+    "deckId": "input-operations-conversions",
+    "term": "Потеря данных",
+    "exampleCode": "double value = 4.8;\nint result = (int)value + 1;\nConsole.WriteLine(result);",
+    "exampleResult": "5",
+    "exampleNote": "Сначала приведение отбрасывает дробную часть, затем к целому результату прибавляется указанное число.",
+    "kind": "Что выведет код?",
+    "challengeCode": "double value = 6.9;\nint result = (int)value + 2;\nConsole.WriteLine(result);",
+    "prompt": "Что появится в консоли?",
+    "options": [
+      "8",
+      "9",
+      "6",
+      "7"
+    ],
+    "correctIndex": 0,
+    "explanation": "Сначала приведение отбрасывает дробную часть, затем к целому результату прибавляется указанное число.",
+    "challengeResult": "8"
+  },
+  {
+    "id": "more5-parse-then-add",
+    "codeDeckId": "lab5-division-and-casts",
+    "deckId": "input-operations-conversions",
+    "term": "Преобразование типов",
+    "exampleCode": "string text = \"6\";\nConsole.WriteLine(int.Parse(text) + 2);",
+    "exampleResult": "8",
+    "exampleNote": "После int.Parse строка становится числом. Следующий + выполняет числовое сложение.",
+    "kind": "Заполните пропуск",
+    "challengeCode": "string text = \"9\";\nConsole.WriteLine(/* ??? */ + 1);",
+    "prompt": "Что поставить вместо /* ??? */, чтобы получить результат: 10?",
+    "options": [
+      "int.Parse(text)",
+      "text",
+      "9 / 2",
+      "1"
+    ],
+    "correctIndex": 0,
+    "explanation": "int.Parse превращает строку в число. Без преобразования text + 1 соединит текст и даст 91.",
+    "solutionResult": "10"
+  },
+  {
+    "id": "more5-left-associative",
+    "codeDeckId": "lab5-operation-order",
+    "deckId": "input-operations-conversions",
+    "term": "Арифметический оператор",
+    "exampleCode": "Console.WriteLine(12 / 3 * 2);",
+    "exampleResult": "8",
+    "exampleNote": "Деление и умножение имеют одинаковый приоритет и здесь выполняются слева направо.",
+    "kind": "Что выведет код?",
+    "challengeCode": "Console.WriteLine(18 / 3 * 2);",
+    "prompt": "Что появится в консоли?",
+    "options": [
+      "12",
+      "3",
+      "6",
+      "9"
+    ],
+    "correctIndex": 0,
+    "explanation": "Деление и умножение имеют одинаковый приоритет и здесь выполняются слева направо.",
+    "challengeResult": "12"
+  },
+  {
+    "id": "more5-subtraction-order",
+    "codeDeckId": "lab5-operation-order",
+    "deckId": "input-operations-conversions",
+    "term": "Выражение",
+    "exampleCode": "Console.WriteLine(12 - 4 - 2);",
+    "exampleResult": "6",
+    "exampleNote": "Несколько вычитаний без скобок выполняются слева направо.",
+    "kind": "Что выведет код?",
+    "challengeCode": "Console.WriteLine(20 - 6 - 3);",
+    "prompt": "Что появится в консоли?",
+    "options": [
+      "11",
+      "17",
+      "23",
+      "9"
+    ],
+    "correctIndex": 0,
+    "explanation": "Вычитания выполняются слева направо: сначала вычитается 6, затем ещё 3.",
+    "challengeResult": "11"
+  },
+  {
+    "id": "more5-mod-priority",
+    "codeDeckId": "lab5-operation-order",
+    "deckId": "input-operations-conversions",
+    "term": "Приоритет операций",
+    "exampleCode": "Console.WriteLine(2 + 11 % 4);",
+    "exampleResult": "5",
+    "exampleNote": "Остаток от деления имеет более высокий приоритет, чем сложение.",
+    "kind": "Что выведет код?",
+    "challengeCode": "Console.WriteLine(3 + 14 % 5);",
+    "prompt": "Что появится в консоли?",
+    "options": [
+      "7",
+      "2",
+      "17",
+      "12"
+    ],
+    "correctIndex": 0,
+    "explanation": "Остаток вычисляется раньше сложения: сначала 14 % 5 = 4, затем 3 + 4.",
+    "challengeResult": "7"
+  },
+  {
+    "id": "more5-compound-multiply",
+    "codeDeckId": "lab5-operation-order",
+    "deckId": "input-operations-conversions",
+    "term": "Составное присваивание",
+    "exampleCode": "int x = 4;\nx *= 3;\nConsole.WriteLine(x);",
+    "exampleResult": "12",
+    "exampleNote": "Для int запись x *= число заменяет x произведением его прежнего значения и этого числа.",
+    "kind": "Что выведет код?",
+    "challengeCode": "int x = 5;\nx *= 4;\nConsole.WriteLine(x);",
+    "prompt": "Что появится в консоли?",
+    "options": [
+      "20",
+      "9",
+      "5",
+      "4"
+    ],
+    "correctIndex": 0,
+    "explanation": "Для int запись x *= 4 означает x = x * 4. Используется прежнее значение x.",
+    "challengeResult": "20"
+  },
+  {
+    "id": "more5-compound-divide",
+    "codeDeckId": "lab5-operation-order",
+    "deckId": "input-operations-conversions",
+    "term": "Составное присваивание",
+    "exampleCode": "int x = 9;\nx /= 2;\nConsole.WriteLine(x);",
+    "exampleResult": "4",
+    "exampleNote": "При составном делении переменной int дробная часть результата отбрасывается.",
+    "kind": "Что выведет код?",
+    "challengeCode": "int x = 13;\nx /= 3;\nConsole.WriteLine(x);",
+    "prompt": "Что появится в консоли?",
+    "options": [
+      "4",
+      "5",
+      "13",
+      "3"
+    ],
+    "correctIndex": 0,
+    "explanation": "x имеет тип int. Составное деление использует целочисленный результат: 13 / 3 = 4.",
+    "challengeResult": "4"
+  },
+  {
+    "id": "more5-compound-chain",
+    "codeDeckId": "lab5-operation-order",
+    "deckId": "input-operations-conversions",
+    "term": "Составное присваивание",
+    "exampleCode": "int x = 2;\nx += 3;\nx *= 2;\nConsole.WriteLine(x);",
+    "exampleResult": "10",
+    "exampleNote": "Команды выполняются последовательно: сначала значение увеличивается, затем новое значение умножается.",
+    "kind": "Что выведет код?",
+    "challengeCode": "int x = 3;\nx += 4;\nx *= 2;\nConsole.WriteLine(x);",
+    "prompt": "Что появится в консоли?",
+    "options": [
+      "14",
+      "11",
+      "10",
+      "24"
+    ],
+    "correctIndex": 0,
+    "explanation": "Команды выполняются последовательно: сначала значение увеличивается, затем новое значение умножается.",
+    "challengeResult": "14"
+  },
+  {
+    "id": "more5-operator-choice",
+    "codeDeckId": "lab5-operation-order",
+    "deckId": "input-operations-conversions",
+    "term": "Остаток от деления",
+    "exampleCode": "Console.WriteLine(13 % 5);",
+    "exampleResult": "3",
+    "exampleNote": "Оператор % возвращает остаток от деления, а не частное.",
+    "kind": "Заполните пропуск",
+    "challengeCode": "Console.WriteLine(17 /* ??? */ 5);",
+    "prompt": "Что поставить вместо /* ??? */, чтобы получить результат: 2?",
+    "options": [
+      "%",
+      "+",
+      "-",
+      "*"
+    ],
+    "correctIndex": 0,
+    "explanation": "17 % 5 даёт остаток 2. Другие предложенные операции дают 22, 12 и 85.",
+    "solutionResult": "2"
+  },
+  {
+    "id": "more5-parenthesis-choice",
+    "codeDeckId": "lab5-operation-order",
+    "deckId": "input-operations-conversions",
+    "term": "Скобки в выражении",
+    "exampleCode": "Console.WriteLine((3 + 4) * 2);",
+    "exampleResult": "14",
+    "exampleNote": "Сначала вычисляется сумма в скобках, затем вся сумма умножается на число после скобок.",
+    "kind": "Заполните пропуск",
+    "challengeCode": "Console.WriteLine(/* ??? */);",
+    "prompt": "Что поставить вместо /* ??? */, чтобы получить результат: 18?",
+    "options": [
+      "(4 + 5) * 2",
+      "4 + 5 * 2",
+      "4 * 5 + 2",
+      "4 + 5 + 2"
+    ],
+    "correctIndex": 0,
+    "explanation": "Чтобы умножить всю сумму, её нужно заключить в скобки. (4 + 5) * 2 даёт 18.",
+    "solutionResult": "18"
+  },
+  {
+    "id": "more5-expression-reuse",
+    "codeDeckId": "lab5-operation-order",
+    "deckId": "input-operations-conversions",
+    "term": "Выражение",
+    "exampleCode": "int x = 3;\nint y = x * 2;\nx = 8;\nConsole.WriteLine(y);",
+    "exampleResult": "6",
+    "exampleNote": "Выражение вычисляется при присваивании y. Позднее изменение x не пересчитывает y автоматически.",
+    "kind": "Что выведет код?",
+    "challengeCode": "int x = 4;\nint y = x * 3;\nx = 9;\nConsole.WriteLine(y);",
+    "prompt": "Что появится в консоли?",
+    "options": [
+      "12",
+      "27",
+      "9",
+      "4"
+    ],
+    "correctIndex": 0,
+    "explanation": "Выражение вычисляется при присваивании y. Позднее изменение x не пересчитывает y автоматически.",
+    "challengeResult": "12"
+  },
+  {
+    "id": "more5-two-inputs",
+    "codeDeckId": "lab5-input-and-text",
+    "deckId": "input-operations-conversions",
+    "term": "Ввод целого числа",
+    "exampleCode": "int a = int.Parse(Console.ReadLine());\nint b = int.Parse(Console.ReadLine());\nConsole.WriteLine(a + b);",
+    "exampleResult": "9",
+    "exampleNote": "Каждый ReadLine читает отдельную строку. После Parse складываются числа, а не текст.",
+    "kind": "Что выведет код?",
+    "challengeCode": "int a = int.Parse(Console.ReadLine());\nint b = int.Parse(Console.ReadLine());\nConsole.WriteLine(a + b);",
+    "prompt": "Что появится в консоли?",
+    "options": [
+      "13",
+      "58",
+      "3",
+      "40"
+    ],
+    "correctIndex": 0,
+    "explanation": "Каждый ReadLine читает отдельную строку. После Parse складываются числа, а не текст.",
+    "challengeResult": "13",
+    "challengeInput": "5\n8",
+    "exampleInput": "2\n7"
+  },
+  {
+    "id": "more5-text-inputs",
+    "codeDeckId": "lab5-input-and-text",
+    "deckId": "input-operations-conversions",
+    "term": "Console.ReadLine",
+    "exampleCode": "string a = Console.ReadLine();\nstring b = Console.ReadLine();\nConsole.WriteLine(a + b);",
+    "exampleResult": "27",
+    "exampleNote": "Без Parse введённые данные остаются строками. + соединяет их в порядке чтения.",
+    "kind": "Что выведет код?",
+    "challengeCode": "string a = Console.ReadLine();\nstring b = Console.ReadLine();\nConsole.WriteLine(a + b);",
+    "prompt": "Что появится в консоли?",
+    "options": [
+      "58",
+      "13",
+      "3",
+      "40"
+    ],
+    "correctIndex": 0,
+    "explanation": "Без Parse введённые данные остаются строками. + соединяет их в порядке чтения.",
+    "challengeResult": "58",
+    "challengeInput": "5\n8",
+    "exampleInput": "2\n7"
+  },
+  {
+    "id": "more5-string-left",
+    "codeDeckId": "lab5-input-and-text",
+    "deckId": "input-operations-conversions",
+    "term": "Операнд",
+    "exampleCode": "Console.WriteLine(\"Сумма: \" + 2 + 3);",
+    "exampleResult": "Сумма: 23",
+    "exampleNote": "Слева уже есть строка. Сначала к ней присоединяется первое число, затем второе.",
+    "kind": "Что выведет код?",
+    "challengeCode": "Console.WriteLine(\"Сумма: \" + 4 + 5);",
+    "prompt": "Что появится в консоли?",
+    "options": [
+      "Сумма: 45",
+      "Сумма: 9",
+      "9",
+      "Сумма: 20"
+    ],
+    "correctIndex": 0,
+    "explanation": "Слева уже есть строка. Сначала к ней присоединяется первое число, затем второе.",
+    "challengeResult": "Сумма: 45"
+  },
+  {
+    "id": "more5-string-parenthesis",
+    "codeDeckId": "lab5-input-and-text",
+    "deckId": "input-operations-conversions",
+    "term": "Скобки в выражении",
+    "exampleCode": "Console.WriteLine(\"Сумма: \" + (2 + 3));",
+    "exampleResult": "Сумма: 5",
+    "exampleNote": "Скобки сначала вычисляют сумму чисел. Затем готовое число присоединяется к строке.",
+    "kind": "Что выведет код?",
+    "challengeCode": "Console.WriteLine(\"Сумма: \" + (4 + 5));",
+    "prompt": "Что появится в консоли?",
+    "options": [
+      "Сумма: 9",
+      "Сумма: 45",
+      "45",
+      "Сумма: 20"
+    ],
+    "correctIndex": 0,
+    "explanation": "Скобки сначала вычисляют сумму чисел. Затем готовое число присоединяется к строке.",
+    "challengeResult": "Сумма: 9"
+  },
+  {
+    "id": "more5-number-left",
+    "codeDeckId": "lab5-input-and-text",
+    "deckId": "input-operations-conversions",
+    "term": "Операнд",
+    "exampleCode": "Console.WriteLine(2 + 3 + \" шт.\");",
+    "exampleResult": "5 шт.",
+    "exampleNote": "Сначала складываются два числа слева, затем к результату присоединяется строка.",
+    "kind": "Что выведет код?",
+    "challengeCode": "Console.WriteLine(4 + 5 + \" шт.\");",
+    "prompt": "Что появится в консоли?",
+    "options": [
+      "9 шт.",
+      "45 шт.",
+      "20 шт.",
+      "Ошибка компиляции"
+    ],
+    "correctIndex": 0,
+    "explanation": "Сначала складываются два числа слева, затем к результату присоединяется строка.",
+    "challengeResult": "9 шт."
+  },
+  {
+    "id": "more5-seconds",
+    "codeDeckId": "lab5-input-and-text",
+    "deckId": "input-operations-conversions",
+    "term": "Целочисленное деление",
+    "exampleCode": "int seconds = 125;\nConsole.WriteLine($\"{seconds / 60}:{seconds % 60}\");",
+    "exampleResult": "2:5",
+    "exampleNote": "Деление на 60 даёт полные минуты, остаток — оставшиеся секунды. Обычная интерполяция не добавляет ноль перед 5.",
+    "kind": "Что выведет код?",
+    "challengeCode": "int seconds = 185;\nConsole.WriteLine($\"{seconds / 60}:{seconds % 60}\");",
+    "prompt": "Что появится в консоли?",
+    "options": [
+      "3:5",
+      "3:05",
+      "2:65",
+      "185:60"
+    ],
+    "correctIndex": 0,
+    "explanation": "Деление на 60 даёт полные минуты, остаток — оставшиеся секунды. Обычная интерполяция не добавляет ноль перед 5.",
+    "challengeResult": "3:5"
+  },
+  {
+    "id": "more5-input-difference",
+    "codeDeckId": "lab5-input-and-text",
+    "deckId": "input-operations-conversions",
+    "term": "Ввод целого числа",
+    "exampleCode": "int number = int.Parse(Console.ReadLine());\nConsole.WriteLine(number - 2);",
+    "exampleResult": "6",
+    "exampleNote": "ReadLine получает строку ввода, Parse превращает её в число, затем выполняется вычитание.",
+    "kind": "Заполните пропуск",
+    "challengeCode": "int number = int.Parse(Console.ReadLine());\nConsole.WriteLine(number /* ??? */ 3);",
+    "prompt": "Что поставить вместо /* ??? */, чтобы получить результат: 5?",
+    "options": [
+      "-",
+      "+",
+      "*",
+      "%"
+    ],
+    "correctIndex": 0,
+    "explanation": "При вводе 8 только вычитание 3 даёт 5. Остаток 8 % 3 равен 2.",
+    "solutionResult": "5",
+    "challengeInput": "8",
+    "exampleInput": "8"
+  },
+  {
+    "id": "more5-conversion-independent",
+    "codeDeckId": "lab5-input-and-text",
+    "deckId": "input-operations-conversions",
+    "term": "Неявное преобразование",
+    "exampleCode": "int a = 4;\nlong b = a;\na = 7;\nConsole.WriteLine(b);",
+    "exampleResult": "4",
+    "exampleNote": "Преобразованное значение копируется при присваивании. b не связано с последующими изменениями a.",
+    "kind": "Что выведет код?",
+    "challengeCode": "int a = 6;\ndouble b = a;\na = 9;\nConsole.WriteLine(b);",
+    "prompt": "Что появится в консоли?",
+    "options": [
+      "6",
+      "9",
+      "15",
+      "Ошибка компиляции"
+    ],
+    "correctIndex": 0,
+    "explanation": "Преобразованное значение копируется при присваивании. b не связано с последующими изменениями a.",
+    "challengeResult": "6"
+  },
+  {
+    "id": "more5-division-remainder",
+    "codeDeckId": "lab5-input-and-text",
+    "deckId": "input-operations-conversions",
+    "term": "Арифметический оператор",
+    "exampleCode": "int n = 17;\nConsole.WriteLine(n / 10 + n % 10);",
+    "exampleResult": "8",
+    "exampleNote": "Для положительного двузначного числа деление на 10 даёт десятки, остаток от деления на 10 — единицы.",
+    "kind": "Заполните пропуск",
+    "challengeCode": "int n = 24;\nConsole.WriteLine(/* ??? */);",
+    "prompt": "Что поставить вместо /* ??? */, чтобы получить результат: 6?",
+    "options": [
+      "n / 10 + n % 10",
+      "n / 10",
+      "n % 10",
+      "n + 10"
+    ],
+    "correctIndex": 0,
+    "explanation": "Для двузначного 24 деление на 10 даёт 2, остаток 4. Сумма цифр — 6.",
+    "solutionResult": "6"
+  },
+  {
+    "id": "more6-boundary-exclusive",
+    "codeDeckId": "lab6-combine-conditions",
+    "deckId": "conditions-logic",
+    "term": "Проверка диапазона",
+    "exampleCode": "int x = 10;\nConsole.WriteLine(x > 0 && x < 10);",
+    "exampleResult": "False",
+    "exampleNote": "Строгий знак < исключает верхнюю границу. При x, равном границе, вторая проверка ложна.",
+    "kind": "Что выведет код?",
+    "challengeCode": "int x = 5;\nConsole.WriteLine(x > 0 && x < 5);",
+    "prompt": "Что появится в консоли?",
+    "options": [
+      "False",
+      "True",
+      "5",
+      "Ошибка компиляции"
+    ],
+    "correctIndex": 0,
+    "explanation": "Строгий знак < исключает верхнюю границу. При x, равном границе, вторая проверка ложна.",
+    "challengeResult": "False"
+  },
+  {
+    "id": "more6-boundary-inclusive",
+    "codeDeckId": "lab6-combine-conditions",
+    "deckId": "conditions-logic",
+    "term": "Проверка диапазона",
+    "exampleCode": "int x = 10;\nConsole.WriteLine(x >= 0 && x <= 10);",
+    "exampleResult": "True",
+    "exampleNote": "Знаки >= и <= включают обе границы, поэтому граничное значение допустимо.",
+    "kind": "Что выведет код?",
+    "challengeCode": "int x = 5;\nConsole.WriteLine(x >= 0 && x <= 5);",
+    "prompt": "Что появится в консоли?",
+    "options": [
+      "True",
+      "False",
+      "5",
+      "Ошибка компиляции"
+    ],
+    "correctIndex": 0,
+    "explanation": "Знаки >= и <= включают обе границы, поэтому граничное значение допустимо.",
+    "challengeResult": "True"
+  },
+  {
+    "id": "more6-outside-range",
+    "codeDeckId": "lab6-combine-conditions",
+    "deckId": "conditions-logic",
+    "term": "Логическое ИЛИ ||",
+    "exampleCode": "int x = -2;\nConsole.WriteLine(x < 0 || x > 10);",
+    "exampleResult": "True",
+    "exampleNote": "Для выхода за диапазон достаточно нарушить одну границу. Поэтому проверки соединены через ||.",
+    "kind": "Что выведет код?",
+    "challengeCode": "int x = 11;\nConsole.WriteLine(x < 0 || x > 10);",
+    "prompt": "Что появится в консоли?",
+    "options": [
+      "True",
+      "False",
+      "11",
+      "Ошибка компиляции"
+    ],
+    "correctIndex": 0,
+    "explanation": "Для выхода за диапазон достаточно нарушить одну границу. Поэтому проверки соединены через ||.",
+    "challengeResult": "True"
+  },
+  {
+    "id": "more6-and-before-or",
+    "codeDeckId": "lab6-combine-conditions",
+    "deckId": "conditions-logic",
+    "term": "Приоритет логических операторов",
+    "exampleCode": "Console.WriteLine(true || false && false);",
+    "exampleResult": "True",
+    "exampleNote": "Без скобок сначала вычисляется &&, а затем ||. Это может отличаться от простого чтения слева направо.",
+    "kind": "Что выведет код?",
+    "challengeCode": "Console.WriteLine(false && true || true);",
+    "prompt": "Что появится в консоли?",
+    "options": [
+      "True",
+      "False",
+      "truefalse",
+      "Ошибка компиляции"
+    ],
+    "correctIndex": 0,
+    "explanation": "&& выполняется раньше ||. В задании сначала false && true, затем false || true.",
+    "challengeResult": "True"
+  },
+  {
+    "id": "more6-logic-parentheses",
+    "codeDeckId": "lab6-combine-conditions",
+    "deckId": "conditions-logic",
+    "term": "Приоритет логических операторов",
+    "exampleCode": "Console.WriteLine((true || false) && false);",
+    "exampleResult": "False",
+    "exampleNote": "Скобки заставляют вычислить выражение с || раньше внешней операции &&.",
+    "kind": "Что выведет код?",
+    "challengeCode": "Console.WriteLine((false || true) && false);",
+    "prompt": "Что появится в консоли?",
+    "options": [
+      "False",
+      "True",
+      "0",
+      "Ошибка компиляции"
+    ],
+    "correctIndex": 0,
+    "explanation": "Скобки заставляют сначала вычислить ||. Полученное true затем соединяется через && с false.",
+    "challengeResult": "False"
+  },
+  {
+    "id": "more6-negate-comparison",
+    "codeDeckId": "lab6-combine-conditions",
+    "deckId": "conditions-logic",
+    "term": "Логическое НЕ !",
+    "exampleCode": "int score = 40;\nConsole.WriteLine(!(score >= 60));",
+    "exampleResult": "True",
+    "exampleNote": "Сначала вычисляется сравнение в скобках, затем ! меняет его логическое значение на противоположное.",
+    "kind": "Что выведет код?",
+    "challengeCode": "int score = 75;\nConsole.WriteLine(!(score >= 60));",
+    "prompt": "Что появится в консоли?",
+    "options": [
+      "False",
+      "True",
+      "75",
+      "Ошибка компиляции"
+    ],
+    "correctIndex": 0,
+    "explanation": "Сначала вычисляется сравнение в скобках, затем ! меняет его логическое значение на противоположное.",
+    "challengeResult": "False"
+  },
+  {
+    "id": "more6-double-negation",
+    "codeDeckId": "lab6-combine-conditions",
+    "deckId": "conditions-logic",
+    "term": "Логическое НЕ !",
+    "exampleCode": "bool ready = true;\nConsole.WriteLine(!!ready);",
+    "exampleResult": "True",
+    "exampleNote": "Два отрицания возвращают исходное логическое значение: !false — true, а !true — false.",
+    "kind": "Что выведет код?",
+    "challengeCode": "bool ready = false;\nConsole.WriteLine(!!ready);",
+    "prompt": "Что появится в консоли?",
+    "options": [
+      "False",
+      "True",
+      "ready",
+      "Ошибка компиляции"
+    ],
+    "correctIndex": 0,
+    "explanation": "Два отрицания возвращают исходное логическое значение: !false — true, а !true — false.",
+    "challengeResult": "False"
+  },
+  {
+    "id": "more6-range-operator",
+    "codeDeckId": "lab6-combine-conditions",
+    "deckId": "conditions-logic",
+    "term": "Проверка диапазона",
+    "exampleCode": "int x = 4;\nConsole.WriteLine(x >= 0 && x <= 10);",
+    "exampleResult": "True",
+    "exampleNote": "Условие принадлежности диапазону требует одновременного выполнения обеих проверок и записывается с &&.",
+    "kind": "Заполните пропуск",
+    "challengeCode": "int x = -2;\nConsole.WriteLine(/* ??? */);",
+    "prompt": "Что поставить вместо /* ??? */, чтобы получить результат: False?",
+    "options": [
+      "x >= 0 && x <= 10",
+      "x < 0 || x > 10",
+      "x <= 10",
+      "x < 0"
+    ],
+    "correctIndex": 0,
+    "explanation": "Левая проверка ложна, правая истинна. && требует истинности обеих частей; для проверки диапазона нужен именно он.",
+    "solutionResult": "False"
+  },
+  {
+    "id": "more6-even-condition",
+    "codeDeckId": "lab6-combine-conditions",
+    "deckId": "conditions-logic",
+    "term": "Условие",
+    "exampleCode": "int number = 8;\nConsole.WriteLine(number % 2 == 0);",
+    "exampleResult": "True",
+    "exampleNote": "У чётного числа остаток от деления на 2 равен нулю; сравнение с нулём проверяет чётность.",
+    "kind": "Что выведет код?",
+    "challengeCode": "int number = 9;\nConsole.WriteLine(number % 2 == 0);",
+    "prompt": "Что появится в консоли?",
+    "options": [
+      "False",
+      "True",
+      "1",
+      "9"
+    ],
+    "correctIndex": 0,
+    "explanation": "Остаток от деления чётного числа на 2 равен нулю. У 9 остаток 1, поэтому сравнение ложно.",
+    "challengeResult": "False"
+  },
+  {
+    "id": "more6-equality-assignment",
+    "codeDeckId": "lab6-combine-conditions",
+    "deckId": "conditions-logic",
+    "term": "Равенство ==",
+    "exampleCode": "int x = 4;\nConsole.WriteLine(x == 4);",
+    "exampleResult": "True",
+    "exampleNote": "Оператор == сравнивает значения и даёт True, если они равны.",
+    "kind": "Заполните пропуск",
+    "challengeCode": "int x = 6;\nConsole.WriteLine(x /* ??? */ 6);",
+    "prompt": "Что поставить вместо /* ??? */, чтобы получить результат: True?",
+    "options": [
+      "==",
+      "!=",
+      ">",
+      "<"
+    ],
+    "correctIndex": 0,
+    "explanation": "Нужен оператор равенства ==. При одинаковых значениях !=, > и < дают False.",
+    "solutionResult": "True"
+  },
+  {
+    "id": "more6-nested-if",
+    "codeDeckId": "lab6-reading-branches",
+    "deckId": "branching-menu",
+    "term": "if",
+    "exampleCode": "int score = 80;\nint debts = 0;\nif (score >= 60)\n{\n    if (debts == 0)\n    {\n        Console.WriteLine(\"Допуск\");\n    }\n    else\n    {\n        Console.WriteLine(\"Долги\");\n    }\n}",
+    "exampleResult": "Допуск",
+    "exampleNote": "Внутреннее ветвление выполняется только после прохода внешней проверки. Скобки показывают, к какому if относится else.",
+    "kind": "Что выведет код?",
+    "challengeCode": "int score = 80;\nint debts = 2;\nif (score >= 60)\n{\n    if (debts == 0)\n    {\n        Console.WriteLine(\"Допуск\");\n    }\n    else\n    {\n        Console.WriteLine(\"Долги\");\n    }\n}",
+    "prompt": "Что появится в консоли?",
+    "options": [
+      "Долги",
+      "Допуск",
+      "Ничего",
+      "Допуск\nДолги"
+    ],
+    "correctIndex": 0,
+    "explanation": "Внешняя проверка проходит, поэтому выполняется внутренняя. Здесь задолженности есть, и выбирается внутренний else.",
+    "challengeResult": "Долги"
+  },
+  {
+    "id": "more6-independent-update",
+    "codeDeckId": "lab6-reading-branches",
+    "deckId": "branching-menu",
+    "term": "Независимые if",
+    "exampleCode": "int x = 3;\nif (x < 5)\n{\n    x = 8;\n}\nif (x > 5)\n{\n    Console.WriteLine(\"Больше\");\n}",
+    "exampleResult": "Больше",
+    "exampleNote": "Вторая независимая проверка видит уже изменённое значение x, а не первоначальное.",
+    "kind": "Что выведет код?",
+    "challengeCode": "int x = 2;\nif (x < 4)\n{\n    x = 7;\n}\nif (x > 4)\n{\n    Console.WriteLine(x);\n}",
+    "prompt": "Что появится в консоли?",
+    "options": [
+      "7",
+      "2",
+      "Ничего",
+      "4"
+    ],
+    "correctIndex": 0,
+    "explanation": "Вторая независимая проверка видит уже изменённое значение x, а не первоначальное.",
+    "challengeResult": "7"
+  },
+  {
+    "id": "more6-else-if-update",
+    "codeDeckId": "lab6-reading-branches",
+    "deckId": "branching-menu",
+    "term": "else if",
+    "exampleCode": "int x = 3;\nif (x < 5)\n{\n    x = 8;\n}\nelse if (x > 5)\n{\n    Console.WriteLine(\"Больше\");\n}\nConsole.WriteLine(x);",
+    "exampleResult": "8",
+    "exampleNote": "После выполненной первой ветки оставшиеся else if этой цепочки пропускаются. Команда после цепочки выполняется.",
+    "kind": "Что выведет код?",
+    "challengeCode": "int x = 2;\nif (x < 4)\n{\n    x = 7;\n}\nelse if (x > 4)\n{\n    Console.WriteLine(\"Больше\");\n}\nConsole.WriteLine(x);",
+    "prompt": "Что появится в консоли?",
+    "options": [
+      "7",
+      "Больше\n7",
+      "2",
+      "Ничего"
+    ],
+    "correctIndex": 0,
+    "explanation": "Если первая ветка if выполнена, следующие else if этой цепочки пропускаются даже после изменения x.",
+    "challengeResult": "7"
+  },
+  {
+    "id": "more6-after-branch",
+    "codeDeckId": "lab6-reading-branches",
+    "deckId": "branching-menu",
+    "term": "else",
+    "exampleCode": "int x = 2;\nif (x > 5)\n{\n    Console.WriteLine(\"A\");\n}\nelse\n{\n    Console.WriteLine(\"B\");\n}\nConsole.WriteLine(\"C\");",
+    "exampleResult": "B\nC",
+    "exampleNote": "После выбранной ветки программа продолжает выполнять команды за пределами if / else.",
+    "kind": "Что выведет код?",
+    "challengeCode": "int x = 8;\nif (x > 5)\n{\n    Console.WriteLine(\"A\");\n}\nelse\n{\n    Console.WriteLine(\"B\");\n}\nConsole.WriteLine(\"C\");",
+    "prompt": "Что появится в консоли?",
+    "options": [
+      "A\nC",
+      "A",
+      "B\nC",
+      "A\nB\nC"
+    ],
+    "correctIndex": 0,
+    "explanation": "После выбранной ветки программа продолжает выполнять команды за пределами if / else.",
+    "challengeResult": "A\nC"
+  },
+  {
+    "id": "more6-ternary-number",
+    "codeDeckId": "lab6-reading-branches",
+    "deckId": "branching-menu",
+    "term": "Условный оператор ?:",
+    "exampleCode": "int a = 4;\nint b = 7;\nint max = a > b ? a : b;\nConsole.WriteLine(max);",
+    "exampleResult": "7",
+    "exampleNote": "Условный оператор выбирает одно из двух чисел: при true — до двоеточия, при false — после.",
+    "kind": "Что выведет код?",
+    "challengeCode": "int a = 9;\nint b = 6;\nint max = a > b ? a : b;\nConsole.WriteLine(max);",
+    "prompt": "Что появится в консоли?",
+    "options": [
+      "9",
+      "6",
+      "True",
+      "15"
+    ],
+    "correctIndex": 0,
+    "explanation": "При истинном a > b выбирается значение до двоеточия, то есть a. Иначе выбирается b.",
+    "challengeResult": "9"
+  },
+  {
+    "id": "more6-switch-continues",
+    "codeDeckId": "lab6-reading-branches",
+    "deckId": "branching-menu",
+    "term": "break",
+    "exampleCode": "int action = 2;\nswitch (action)\n{\n    case 1: Console.Write(\"A\"); break;\n    case 2: Console.Write(\"B\"); break;\n    default: Console.Write(\"X\"); break;\n}\nConsole.Write(\"Z\");",
+    "exampleResult": "BZ",
+    "exampleNote": "break завершает switch, но не всю программу. После выбранной ветки выводится Z.",
+    "kind": "Что выведет код?",
+    "challengeCode": "int action = 1;\nswitch (action)\n{\n    case 1: Console.Write(\"A\"); break;\n    case 2: Console.Write(\"B\"); break;\n    default: Console.Write(\"X\"); break;\n}\nConsole.Write(\"Z\");",
+    "prompt": "Что появится в консоли?",
+    "options": [
+      "AZ",
+      "A",
+      "ABZ",
+      "XZ"
+    ],
+    "correctIndex": 0,
+    "explanation": "break завершает switch, но не всю программу. После выбранной ветки выводится Z.",
+    "challengeResult": "AZ"
+  },
+  {
+    "id": "more6-switch-no-match",
+    "codeDeckId": "lab6-reading-branches",
+    "deckId": "branching-menu",
+    "term": "switch",
+    "exampleCode": "int action = 3;\nswitch (action)\n{\n    case 1: Console.Write(\"A\"); break;\n    case 2: Console.Write(\"B\"); break;\n}\nConsole.Write(\"Z\");",
+    "exampleResult": "Z",
+    "exampleNote": "Если совпадения нет и default отсутствует, switch не выполняет ни одной ветки. Код после него всё равно выполняется.",
+    "kind": "Что выведет код?",
+    "challengeCode": "int action = 4;\nswitch (action)\n{\n    case 1: Console.Write(\"A\"); break;\n    case 2: Console.Write(\"B\"); break;\n}\nConsole.Write(\"Z\");",
+    "prompt": "Что появится в консоли?",
+    "options": [
+      "Z",
+      "AZ",
+      "BZ",
+      "Ошибка компиляции"
+    ],
+    "correctIndex": 0,
+    "explanation": "Если совпадения нет и default отсутствует, switch не выполняет ни одной ветки. Код после него всё равно выполняется.",
+    "challengeResult": "Z"
+  },
+  {
+    "id": "more6-condition-direction",
+    "codeDeckId": "lab6-reading-branches",
+    "deckId": "branching-menu",
+    "term": "if",
+    "exampleCode": "int age = 20;\nif (age >= 18)\n{\n    Console.WriteLine(\"Взрослый\");\n}\nelse\n{\n    Console.WriteLine(\"Ребёнок\");\n}",
+    "exampleResult": "Взрослый",
+    "exampleNote": "При включённой границе используется >=. В примере совершеннолетний возраст выбирает первую ветку.",
+    "kind": "Заполните пропуск",
+    "challengeCode": "int age = 18;\nif (/* ??? */)\n{\n    Console.WriteLine(\"Взрослый\");\n}\nelse\n{\n    Console.WriteLine(\"Ребёнок\");\n}",
+    "prompt": "Что поставить вместо /* ??? */, чтобы получить результат: Взрослый?",
+    "options": [
+      "age >= 18",
+      "age > 18",
+      "age < 18",
+      "age != 18"
+    ],
+    "correctIndex": 0,
+    "explanation": "Граница 18 должна включаться: при age = 18 условие >= истинно, остальные предложенные условия ложны.",
+    "solutionResult": "Взрослый"
+  },
+  {
+    "id": "more6-negative-zero",
+    "codeDeckId": "lab6-reading-branches",
+    "deckId": "branching-menu",
+    "term": "else if",
+    "exampleCode": "int x = 0;\nif (x > 0)\n{\n    Console.WriteLine(\"Плюс\");\n}\nelse if (x < 0)\n{\n    Console.WriteLine(\"Минус\");\n}\nelse\n{\n    Console.WriteLine(\"Ноль\");\n}",
+    "exampleResult": "Ноль",
+    "exampleNote": "Последовательные проверки отличают положительное число, отрицательное и ноль. Выполняется одна ветка.",
+    "kind": "Что выведет код?",
+    "challengeCode": "int x = -2;\nif (x > 0)\n{\n    Console.WriteLine(\"Плюс\");\n}\nelse if (x < 0)\n{\n    Console.WriteLine(\"Минус\");\n}\nelse\n{\n    Console.WriteLine(\"Ноль\");\n}",
+    "prompt": "Что появится в консоли?",
+    "options": [
+      "Минус",
+      "Ноль",
+      "Плюс",
+      "Плюс\nМинус"
+    ],
+    "correctIndex": 0,
+    "explanation": "Отрицательное число не проходит первую проверку, но проходит вторую. Выполняется ровно одна ветка цепочки.",
+    "challengeResult": "Минус"
+  },
+  {
+    "id": "more6-ternary-branches",
+    "codeDeckId": "lab6-reading-branches",
+    "deckId": "branching-menu",
+    "term": "Условный оператор ?:",
+    "exampleCode": "bool ready = true;\nConsole.WriteLine(ready ? \"Да\" : \"Нет\");",
+    "exampleResult": "Да",
+    "exampleNote": "При истинном условии ?: выбирает первую строку, а при ложном — вторую.",
+    "kind": "Заполните пропуск",
+    "challengeCode": "bool ready = false;\nConsole.WriteLine(ready ? \"Да\" : /* ??? */);",
+    "prompt": "Что поставить вместо /* ??? */, чтобы получить результат: Нет?",
+    "options": [
+      "\"Нет\"",
+      "\"Да\"",
+      "\"ready\"",
+      "\"False\""
+    ],
+    "correctIndex": 0,
+    "explanation": "При false выбирается выражение после двоеточия. Чтобы получить Нет, там нужна строка \"Нет\".",
+    "solutionResult": "Нет"
+  },
+  {
+    "id": "more7-count-step",
+    "codeDeckId": "lab7-tracing-and-accumulation",
+    "deckId": "loops-basics",
+    "term": "Итерация",
+    "exampleCode": "int count = 0;\nfor (int i = 1; i < 8; i += 2)\n{\n    count++;\n}\nConsole.WriteLine(count);",
+    "exampleResult": "4",
+    "exampleNote": "Число итераций считают по подходящим значениям i; шаг больше единицы пропускает часть чисел.",
+    "kind": "Сколько итераций?",
+    "challengeCode": "int count = 0;\nfor (int i = 2; i < 10; i += 3)\n{\n    count++;\n}\nConsole.WriteLine(count);",
+    "prompt": "Сколько раз выполнится тело цикла (и какое число выведется)?",
+    "options": [
+      "3",
+      "2",
+      "4",
+      "8"
+    ],
+    "correctIndex": 0,
+    "explanation": "Счётчик i принимает значения 2, 5, 8. Это три итерации; значение i не равно числу повторений.",
+    "challengeResult": "3"
+  },
+  {
+    "id": "more7-product",
+    "codeDeckId": "lab7-tracing-and-accumulation",
+    "deckId": "loops-control",
+    "term": "Накопитель",
+    "exampleCode": "int product = 1;\nfor (int i = 1; i <= 3; i++)\n{\n    product *= i;\n}\nConsole.WriteLine(product);",
+    "exampleResult": "6",
+    "exampleNote": "Для накопления произведения начальное значение берут равным 1, затем умножают его на каждый очередной множитель.",
+    "kind": "Что выведет код?",
+    "challengeCode": "int product = 1;\nfor (int i = 1; i <= 4; i++)\n{\n    product *= i;\n}\nConsole.WriteLine(product);",
+    "prompt": "Что появится в консоли?",
+    "options": [
+      "24",
+      "10",
+      "0",
+      "4"
+    ],
+    "correctIndex": 0,
+    "explanation": "Накопление произведения начинается с 1, затем умножаются 1, 2, 3, 4. При старте с 0 всё произведение осталось бы нулём.",
+    "challengeResult": "24"
+  },
+  {
+    "id": "more7-reset-accumulator",
+    "codeDeckId": "lab7-tracing-and-accumulation",
+    "deckId": "loops-control",
+    "term": "Накопитель",
+    "exampleCode": "int sum = 0;\nfor (int i = 1; i <= 3; i++)\n{\n    sum = 0;\n    sum += i;\n}\nConsole.WriteLine(sum);",
+    "exampleResult": "3",
+    "exampleNote": "В теле sum каждый раз сбрасывается в 0. Поэтому сохраняется только последнее i, а не сумма всех значений.",
+    "kind": "Что выведет код?",
+    "challengeCode": "int sum = 0;\nfor (int i = 1; i <= 4; i++)\n{\n    sum = 0;\n    sum += i;\n}\nConsole.WriteLine(sum);",
+    "prompt": "Что появится в консоли?",
+    "options": [
+      "4",
+      "10",
+      "0",
+      "6"
+    ],
+    "correctIndex": 0,
+    "explanation": "В теле sum каждый раз сбрасывается в 0. Поэтому сохраняется только последнее i, а не сумма всех значений.",
+    "challengeResult": "4"
+  },
+  {
+    "id": "more7-continue-sum",
+    "codeDeckId": "lab7-tracing-and-accumulation",
+    "deckId": "loops-control",
+    "term": "continue",
+    "exampleCode": "int sum = 0;\nfor (int i = 1; i <= 4; i++)\n{\n    if (i == 2)\n    {\n        continue;\n    }\n    sum += i;\n}\nConsole.WriteLine(sum);",
+    "exampleResult": "8",
+    "exampleNote": "continue пропускает остаток текущей итерации, включая прибавление её i к сумме.",
+    "kind": "Что выведет код?",
+    "challengeCode": "int sum = 0;\nfor (int i = 1; i <= 5; i++)\n{\n    if (i == 3)\n    {\n        continue;\n    }\n    sum += i;\n}\nConsole.WriteLine(sum);",
+    "prompt": "Что появится в консоли?",
+    "options": [
+      "12",
+      "15",
+      "3",
+      "10"
+    ],
+    "correctIndex": 0,
+    "explanation": "continue пропускает прибавление 3. В сумму входят 1, 2, 4 и 5, всего 12.",
+    "challengeResult": "12"
+  },
+  {
+    "id": "more7-break-sum",
+    "codeDeckId": "lab7-tracing-and-accumulation",
+    "deckId": "loops-control",
+    "term": "break в цикле",
+    "exampleCode": "int sum = 0;\nfor (int i = 1; i <= 5; i++)\n{\n    if (i == 3)\n    {\n        break;\n    }\n    sum += i;\n}\nConsole.WriteLine(sum);",
+    "exampleResult": "3",
+    "exampleNote": "break завершает цикл до прибавления текущего i. В сумму входят только предыдущие значения.",
+    "kind": "Что выведет код?",
+    "challengeCode": "int sum = 0;\nfor (int i = 1; i <= 6; i++)\n{\n    if (i == 4)\n    {\n        break;\n    }\n    sum += i;\n}\nConsole.WriteLine(sum);",
+    "prompt": "Что появится в консоли?",
+    "options": [
+      "6",
+      "10",
+      "21",
+      "4"
+    ],
+    "correctIndex": 0,
+    "explanation": "При i = 4 цикл прекращается до прибавления. В сумму входят только 1, 2, 3.",
+    "challengeResult": "6"
+  },
+  {
+    "id": "more7-while-step",
+    "codeDeckId": "lab7-tracing-and-accumulation",
+    "deckId": "loops-basics",
+    "term": "while",
+    "exampleCode": "int x = 1;\nint count = 0;\nwhile (x < 10)\n{\n    x *= 2;\n    count++;\n}\nConsole.WriteLine(count);",
+    "exampleResult": "4",
+    "exampleNote": "Удвоение постепенно приближает x к границе. Счётчик count хранит число выполненных итераций, а не значение x.",
+    "kind": "Сколько итераций?",
+    "challengeCode": "int x = 2;\nint count = 0;\nwhile (x < 20)\n{\n    x *= 2;\n    count++;\n}\nConsole.WriteLine(count);",
+    "prompt": "Сколько итераций выполнится до завершения цикла?",
+    "options": [
+      "4",
+      "3",
+      "5",
+      "32"
+    ],
+    "correctIndex": 0,
+    "explanation": "Значение x после итераций: 4, 8, 16, 32. Четвёртая итерация делает следующую проверку ложной.",
+    "challengeResult": "4"
+  },
+  {
+    "id": "more7-nested-break",
+    "codeDeckId": "lab7-tracing-and-accumulation",
+    "deckId": "loops-control",
+    "term": "Вложенный цикл",
+    "exampleCode": "int count = 0;\nfor (int row = 0; row < 2; row++)\n{\n    for (int col = 0; col < 4; col++)\n    {\n        if (col == 2)\n        {\n            break;\n        }\n        count++;\n    }\n}\nConsole.WriteLine(count);",
+    "exampleResult": "4",
+    "exampleNote": "break завершает только внутренний цикл. Внешний цикл продолжает работу и заново запускает внутренний.",
+    "kind": "Что выведет код?",
+    "challengeCode": "int count = 0;\nfor (int row = 0; row < 3; row++)\n{\n    for (int col = 0; col < 5; col++)\n    {\n        if (col == 2)\n        {\n            break;\n        }\n        count++;\n    }\n}\nConsole.WriteLine(count);",
+    "prompt": "Что появится в консоли?",
+    "options": [
+      "6",
+      "2",
+      "3",
+      "15"
+    ],
+    "correctIndex": 0,
+    "explanation": "break завершает ближайший внутренний цикл. В каждой из трёх внешних итераций count увеличивается дважды.",
+    "challengeResult": "6"
+  },
+  {
+    "id": "more7-product-start",
+    "codeDeckId": "lab7-tracing-and-accumulation",
+    "deckId": "loops-control",
+    "term": "Накопитель",
+    "exampleCode": "int product = 1;\nfor (int i = 1; i <= 3; i++)\n{\n    product *= i;\n}\nConsole.WriteLine(product);",
+    "exampleResult": "6",
+    "exampleNote": "Нейтральное начальное значение для произведения равно 1: оно не меняет результат последующих умножений.",
+    "kind": "Заполните пропуск",
+    "challengeCode": "int product = /* ??? */;\nfor (int i = 1; i <= 4; i++)\n{\n    product *= i;\n}\nConsole.WriteLine(product);",
+    "prompt": "Что поставить вместо /* ??? */, чтобы получить результат: 24?",
+    "options": [
+      "1",
+      "0",
+      "2",
+      "4"
+    ],
+    "correctIndex": 0,
+    "explanation": "Для произведения начальное значение 1 не меняет результат. Ноль обнулит произведение; 2 и 4 увеличат его в соответствующее число раз.",
+    "solutionResult": "24"
+  },
+  {
+    "id": "more7-boundary-fill",
+    "codeDeckId": "lab7-tracing-and-accumulation",
+    "deckId": "loops-control",
+    "term": "Ошибка на единицу",
+    "exampleCode": "int count = 0;\nfor (int i = 0; i < 3; i++)\n{\n    count++;\n}\nConsole.WriteLine(count);",
+    "exampleResult": "3",
+    "exampleNote": "При старте с нуля строгая верхняя граница исключается, поэтому количество итераций равно этой границе.",
+    "kind": "Заполните пропуск",
+    "challengeCode": "int count = 0;\nfor (int i = 0; i /* ??? */ 4; i++)\n{\n    count++;\n}\nConsole.WriteLine(count);",
+    "prompt": "Что поставить вместо /* ??? */, чтобы получить результат: 4?",
+    "options": [
+      "<",
+      "<=",
+      ">",
+      ">="
+    ],
+    "correctIndex": 0,
+    "explanation": "Для четырёх итераций от нуля нужны значения 0, 1, 2, 3. Строгое < исключает 4; <= даст пять итераций.",
+    "solutionResult": "4"
+  },
+  {
+    "id": "more7-do-count",
+    "codeDeckId": "lab7-tracing-and-accumulation",
+    "deckId": "loops-basics",
+    "term": "do…while",
+    "exampleCode": "int count = 0;\nint x = 3;\ndo\n{\n    count++;\n    x--;\n} while (x > 0);\nConsole.WriteLine(count);",
+    "exampleResult": "3",
+    "exampleNote": "do…while проверяет условие после тела. Счётчик итераций увеличивается при каждом входе в тело.",
+    "kind": "Что выведет код?",
+    "challengeCode": "int count = 0;\nint x = 0;\ndo\n{\n    count++;\n    x--;\n} while (x > 0);\nConsole.WriteLine(count);",
+    "prompt": "Что появится в консоли?",
+    "options": [
+      "1",
+      "0",
+      "-1",
+      "2"
+    ],
+    "correctIndex": 0,
+    "explanation": "do…while сначала выполняет тело, потом проверяет условие. Даже при начальном x = 0 происходит одна итерация.",
+    "challengeResult": "1"
   }
 ];

@@ -16,11 +16,10 @@ const terms = new Set(topics.flatMap((topic) =>
   topic.decks.flatMap((deck) => deck.terms.map((item) => `${deck.id}:${item.term}`))
 ));
 
-test("all 74 code lessons link to real glossary terms", () => {
+test("all 150 code lessons link to real glossary terms", () => {
   assert.equal(terms.size, 209);
-  assert.equal(lessons.length, 74);
+  assert.equal(lessons.length, 150);
   assert.equal(new Set(lessons.map((lesson) => lesson.id)).size, lessons.length);
-  assert.equal(new Set(lessons.map((lesson) => `${lesson.deckId}:${lesson.term}`)).size, lessons.length);
   for (const lesson of lessons) {
     assert.ok(terms.has(`${lesson.deckId}:${lesson.term}`), `${lesson.id} is not linked to a term`);
     assert.ok(lesson.exampleCode && lesson.exampleResult && lesson.exampleNote);
@@ -36,10 +35,10 @@ test("labs 4 through 7 have separate practice questions", () => {
   const lab5 = lessons.filter((lesson) => lesson.deckId === "input-operations-conversions");
   const lab6 = lessons.filter((lesson) => ["conditions-logic", "branching-menu"].includes(lesson.deckId));
   const lab7 = lessons.filter(lesson => ["loops-basics", "loops-control"].includes(lesson.deckId));
-  assert.equal(lab4.length, 20);
-  assert.equal(lab5.length, 14);
-  assert.equal(lab6.length, 20);
-  assert.equal(lab7.length, 20);
+  assert.equal(lab4.length, 40);
+  assert.equal(lab5.length, 40);
+  assert.equal(lab6.length, 40);
+  assert.equal(lab7.length, 30);
   assert.deepEqual(Array.from(tags["conditions-logic"]), ["ЛБ 6"]);
   assert.deepEqual(Array.from(tags["branching-menu"]), ["ЛБ 6"]);
   assert.deepEqual(Array.from(tags["loops-basics"]), ["ЛБ 7"]);
@@ -53,7 +52,7 @@ test("labs 4 through 7 have separate practice questions", () => {
 });
 
 test("each practice deck has 5–10 examples, one lab, and every lesson belongs to exactly one deck", () => {
-  assert.equal(codeDecks.length, 9);
+  assert.equal(codeDecks.length, 17);
   assert.equal(new Set(codeDecks.map(deck => deck.id)).size, codeDecks.length);
   for (const deck of codeDecks) {
     const members = lessons.filter(lesson => lesson.codeDeckId === deck.id);
@@ -76,10 +75,23 @@ test("practice only uses introduced syntax and early labs have no branching", ()
     for (const version of versions) {
       const code = [lesson.exampleCode, version.challengeCode].join("\n");
       assert.doesNotMatch(code, /string\?|\bnull\b|\btry\b|\bcatch\b|TryParse|GetType|InvariantCulture|:D\d/, lesson.id);
-      if (["lab4-variables-values", "lab4-csharp-data-types", "lab4-typing-and-output", "lab5-input-conversion", "lab5-operations-output"].includes(lesson.codeDeckId)) {
-        assert.doesNotMatch(code, /\bif\b|\belse\b|\bswitch\b|\?/, lesson.id);
+      const lab = codeDecks.find(deck => deck.id === lesson.codeDeckId).lab;
+      assert.doesNotMatch(code, /\bforeach\b|\bMath\.|\bnew\s+\w+\s*\[/, lesson.id);
+      if (["ЛБ 4", "ЛБ 5"].includes(lab)) {
+        const syntax = code.replaceAll("/* ??? */", "").replace(/"(?:\\.|[^"\\])*"|'(?:\\.|[^'\\])*'/g, "");
+        assert.doesNotMatch(syntax, /\bif\b|\belse\b|\bswitch\b|\?/, lesson.id);
       }
     }
+  }
+});
+
+test("fill-in questions have a single placeholder, four choices and an executable solution", () => {
+  const questions = lessons.filter(lesson => lesson.kind === "Заполните пропуск");
+  assert.ok(questions.length >= 15);
+  for (const lesson of questions) {
+    assert.equal(lesson.challengeCode.split("/* ??? */").length, 2, lesson.id);
+    assert.ok(lesson.solutionResult !== undefined, lesson.id);
+    assert.ok(lesson.prompt.includes(lesson.solutionResult), lesson.id);
   }
 });
 

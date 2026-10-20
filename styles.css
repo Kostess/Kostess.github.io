@@ -1154,6 +1154,7 @@ dialog::backdrop {
 
 .progress-panel h2 { margin-top: 0; }
 .progress-panel li { margin-bottom: 12px; }
+.progress-panel pre { white-space: pre-wrap; overflow-wrap: anywhere; }
 #storageStatus { color: var(--muted); }
 .review-setting {
   display: flex;

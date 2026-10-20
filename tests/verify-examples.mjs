@@ -31,6 +31,11 @@ try {
       id: `${lesson.id}:challenge`, code: lesson.challengeCode,
       result: lesson.challengeResult, input: lesson.challengeInput
     }]),
+    ...(lesson.solutionResult === undefined ? [] : [{
+      id: `${lesson.id}:solution`,
+      code: lesson.challengeCode.replace("/* ??? */", lesson.options[lesson.correctIndex]),
+      result: lesson.solutionResult, input: lesson.challengeInput
+    }]),
     ...(lesson.variants || []).map((variant, index) => ({
       id: `${lesson.id}:variant-${index + 1}`, code: variant.challengeCode,
       result: variant.challengeResult, input: variant.challengeInput ?? lesson.challengeInput
@@ -75,7 +80,7 @@ Console.WriteLine("Verified ${lessons.length} C# examples and ${checks.length - 
     timeout: 120000
   });
   if (result.error || result.status !== 0) {
-    throw new Error(result.error?.message || result.stderr || result.stdout);
+    throw new Error(result.error?.message || [result.stdout, result.stderr].filter(Boolean).join("\n"));
   }
   process.stdout.write(result.stdout);
 } finally {

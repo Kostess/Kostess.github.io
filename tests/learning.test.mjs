@@ -208,3 +208,20 @@ test("two lessons about one term retain independent mistakes and all worked exam
   const reloaded = setup(app.storage);
   assert.equal(reloaded.run('needsReview("code", codeLessons.find(lesson => lesson.id === "more4-overwrite"))'), true);
 });
+
+test("lab 9 is available in cards, quiz and the reference, not only in code practice", () => {
+  const app = setup();
+  for (const selector of ["#cardTopicSelect", "#quizTopicSelect", "#referenceTopicSelect"]) {
+    assert.ok(app.elements.get(selector).innerHTML.includes('value="csharp-methods"'));
+  }
+  assert.ok(app.elements.get("#referenceTagSelect").innerHTML.includes('value="ЛБ 9"'));
+  app.elements.get("#cardTopicSelect").value = "csharp-methods";
+  app.run('fillDeckSelect(els.cardTopicSelect, els.cardDeckSelect); startCards()');
+  assert.equal(app.run('state.cardSession.cards.length'), 30);
+  app.run('resetMode()');
+  app.elements.get("#quizTopicSelect").value = "csharp-methods";
+  app.run('fillDeckSelect(els.quizTopicSelect, els.quizDeckSelect); startQuiz()');
+  assert.equal(app.run('state.quizSession.questions.length'), 30);
+  app.elements.get("#referenceTagSelect").value = "ЛБ 9";
+  assert.equal(app.run('getReferenceTerms().length'), 30);
+});

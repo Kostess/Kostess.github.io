@@ -104,6 +104,26 @@ const codeDecks = [
     "id": "lab8-input-journal",
     "lab": "ЛБ 8",
     "title": "Проверка ввода и журнал группы"
+  },
+  {
+    "id": "lab9-calls-parameters",
+    "lab": "ЛБ 9",
+    "title": "Объявление, вызов и аргументы"
+  },
+  {
+    "id": "lab9-return-scope",
+    "lab": "ЛБ 9",
+    "title": "return, void и локальные переменные"
+  },
+  {
+    "id": "lab9-small-methods",
+    "lab": "ЛБ 9",
+    "title": "Короткие методы для практики"
+  },
+  {
+    "id": "lab9-purchase",
+    "lab": "ЛБ 9",
+    "title": "Стоимость покупки и скидка"
   }
 ];
 
@@ -4967,5 +4987,1105 @@ const codeLessons = [
     "correctIndex": 0,
     "explanation": "При индексах 0 и 1 выражение i + 1 выводит номера 1 и 2; сами баллы используются отдельно.",
     "solutionResult": "1: 50\n2: 70"
+  },
+  {
+    "id": "lab9-method",
+    "codeDeckId": "lab9-calls-parameters",
+    "deckId": "methods-basics",
+    "term": "Метод",
+    "exampleCode": "Console.WriteLine(Square(3));\nint Square(int number)\n{\n    return number * number;\n}",
+    "exampleResult": "9",
+    "exampleNote": "Метод получает число и возвращает его квадрат.",
+    "kind": "Что выведет код?",
+    "challengeCode": "Console.WriteLine(Square(5));\nint Square(int number)\n{\n    return number * number;\n}",
+    "prompt": "Что появится в консоли?",
+    "options": [
+      "25",
+      "5",
+      "10",
+      "Ничего"
+    ],
+    "correctIndex": 0,
+    "explanation": "Square умножает аргумент 5 на себя и возвращает 25; Console.WriteLine печатает результат.",
+    "challengeResult": "25",
+    "variants": [
+      {
+        "challengeCode": "Console.WriteLine(Square(6));\nint Square(int number)\n{\n    return number * number;\n}",
+        "options": [
+          "36",
+          "6",
+          "12",
+          "7"
+        ],
+        "correctIndex": 0,
+        "challengeResult": "36",
+        "explanation": "Square(6) возвращает 6 * 6 = 36."
+      },
+      {
+        "challengeCode": "Console.WriteLine(Square(7));\nint Square(int number)\n{\n    return number * number;\n}",
+        "options": [
+          "49",
+          "7",
+          "14",
+          "8"
+        ],
+        "correctIndex": 0,
+        "challengeResult": "49",
+        "explanation": "Square(7) возвращает 7 * 7 = 49."
+      }
+    ]
+  },
+  {
+    "id": "lab9-local-function",
+    "codeDeckId": "lab9-calls-parameters",
+    "deckId": "methods-basics",
+    "term": "Локальная функция",
+    "exampleCode": "int answer = Square(2);\nConsole.WriteLine(answer);\nint Square(int number)\n{\n    return number * number;\n}",
+    "exampleResult": "4",
+    "exampleNote": "В Program.cs функцию можно объявить ниже вызова.",
+    "kind": "Что выведет код?",
+    "challengeCode": "int answer = Square(4);\nConsole.WriteLine(answer);\nint Square(int number)\n{\n    return number * number;\n}",
+    "prompt": "Что появится в консоли?",
+    "options": [
+      "16",
+      "4",
+      "8",
+      "Ошибка компиляции"
+    ],
+    "correctIndex": 0,
+    "explanation": "Размещение объявления ниже вызова допустимо для локальной функции. Результат Square(4) равен 16.",
+    "challengeResult": "16"
+  },
+  {
+    "id": "lab9-declaration-not-call",
+    "codeDeckId": "lab9-calls-parameters",
+    "deckId": "methods-basics",
+    "term": "Объявление метода",
+    "exampleCode": "void ShowMessage()\n{\n    Console.WriteLine(\"Привет\");\n}\nShowMessage();",
+    "exampleResult": "Привет",
+    "exampleNote": "Для выполнения тела нужен вызов. Само объявление действий не выполняет.",
+    "kind": "Что выведет код?",
+    "challengeCode": "void ShowMessage()\n{\n    Console.WriteLine(\"Привет\");\n}\nConsole.WriteLine(\"Конец\");",
+    "prompt": "Что появится в консоли?",
+    "options": [
+      "Конец",
+      "Привет",
+      "Привет\nКонец",
+      "Ничего"
+    ],
+    "correctIndex": 0,
+    "explanation": "ShowMessage объявлена, но не вызвана. Выполняется только вывод Конец.",
+    "challengeResult": "Конец"
+  },
+  {
+    "id": "lab9-call-twice",
+    "codeDeckId": "lab9-calls-parameters",
+    "deckId": "methods-basics",
+    "term": "Вызов метода",
+    "exampleCode": "Console.WriteLine(Square(2));\nConsole.WriteLine(Square(3));\nint Square(int number)\n{\n    return number * number;\n}",
+    "exampleResult": "4\n9",
+    "exampleNote": "Каждый вызов выполняет расчёт с собственным аргументом.",
+    "kind": "Что выведет код?",
+    "challengeCode": "Console.WriteLine(Square(3));\nConsole.WriteLine(Square(4));\nint Square(int number)\n{\n    return number * number;\n}",
+    "prompt": "Что появится в консоли?",
+    "options": [
+      "9\n16",
+      "3\n4",
+      "9\n9",
+      "25"
+    ],
+    "correctIndex": 0,
+    "explanation": "Два вызова возвращают квадраты 3 и 4 независимо друг от друга.",
+    "challengeResult": "9\n16"
+  },
+  {
+    "id": "lab9-argument-expression",
+    "codeDeckId": "lab9-calls-parameters",
+    "deckId": "methods-basics",
+    "term": "Аргумент метода",
+    "exampleCode": "Console.WriteLine(Square(1 + 2));\nint Square(int number)\n{\n    return number * number;\n}",
+    "exampleResult": "9",
+    "exampleNote": "Выражение аргумента вычисляется до передачи значения параметру.",
+    "kind": "Что выведет код?",
+    "challengeCode": "Console.WriteLine(Square(2 + 3));\nint Square(int number)\n{\n    return number * number;\n}",
+    "prompt": "Что появится в консоли?",
+    "options": [
+      "25",
+      "13",
+      "10",
+      "5"
+    ],
+    "correctIndex": 0,
+    "explanation": "Сначала вычисляется 2 + 3 = 5. В Square передаётся 5, а не два отдельных числа.",
+    "challengeResult": "25"
+  },
+  {
+    "id": "lab9-parameter-value",
+    "codeDeckId": "lab9-calls-parameters",
+    "deckId": "methods-basics",
+    "term": "Параметр метода",
+    "exampleCode": "int value = 4;\nConsole.WriteLine(Double(value));\nint Double(int number)\n{\n    return number * 2;\n}",
+    "exampleResult": "8",
+    "exampleNote": "Параметр number получает текущее значение аргумента value.",
+    "kind": "Что выведет код?",
+    "challengeCode": "int value = 6;\nConsole.WriteLine(Double(value));\nint Double(int number)\n{\n    return number * 2;\n}",
+    "prompt": "Что появится в консоли?",
+    "options": [
+      "12",
+      "6",
+      "2",
+      "Ошибка компиляции"
+    ],
+    "correctIndex": 0,
+    "explanation": "Параметр number получает 6. Метод возвращает 6 * 2 = 12.",
+    "challengeResult": "12"
+  },
+  {
+    "id": "lab9-argument-order",
+    "codeDeckId": "lab9-calls-parameters",
+    "deckId": "methods-basics",
+    "term": "Порядок аргументов",
+    "exampleCode": "Console.WriteLine(Subtract(8, 3));\nint Subtract(int first, int second)\n{\n    return first - second;\n}",
+    "exampleResult": "5",
+    "exampleNote": "Первый аргумент попадает в first, второй — в second.",
+    "kind": "Что выведет код?",
+    "challengeCode": "Console.WriteLine(Subtract(3, 8));\nint Subtract(int first, int second)\n{\n    return first - second;\n}",
+    "prompt": "Что появится в консоли?",
+    "options": [
+      "-5",
+      "5",
+      "11",
+      "8"
+    ],
+    "correctIndex": 0,
+    "explanation": "first получает 3, second — 8. Результат 3 - 8 равен -5.",
+    "challengeResult": "-5",
+    "variants": [
+      {
+        "challengeCode": "Console.WriteLine(Subtract(10, 4));\nint Subtract(int first, int second)\n{\n    return first - second;\n}",
+        "options": [
+          "6",
+          "-6",
+          "14",
+          "40"
+        ],
+        "correctIndex": 0,
+        "challengeResult": "6",
+        "explanation": "first получает 10, second — 4; результат 6."
+      },
+      {
+        "challengeCode": "Console.WriteLine(Subtract(2, 9));\nint Subtract(int first, int second)\n{\n    return first - second;\n}",
+        "options": [
+          "-7",
+          "7",
+          "11",
+          "18"
+        ],
+        "correctIndex": 0,
+        "challengeResult": "-7",
+        "explanation": "first получает 2, second — 9; результат -7."
+      }
+    ]
+  },
+  {
+    "id": "lab9-no-parameters",
+    "codeDeckId": "lab9-calls-parameters",
+    "deckId": "methods-return-scope",
+    "term": "Метод без параметров",
+    "exampleCode": "ShowMessage();\nvoid ShowMessage()\n{\n    Console.WriteLine(\"Готово\");\n}",
+    "exampleResult": "Готово",
+    "exampleNote": "Отсутствие параметров не отменяет круглые скобки при вызове.",
+    "kind": "Что выведет код?",
+    "challengeCode": "ShowMessage();\nShowMessage();\nvoid ShowMessage()\n{\n    Console.WriteLine(\"Да\");\n}",
+    "prompt": "Что появится в консоли?",
+    "options": [
+      "Да\nДа",
+      "Да",
+      "Ничего",
+      "Ошибка компиляции"
+    ],
+    "correctIndex": 0,
+    "explanation": "Метод без параметров вызывается дважды, поэтому сообщение выводится два раза.",
+    "challengeResult": "Да\nДа"
+  },
+  {
+    "id": "lab9-call-fill",
+    "codeDeckId": "lab9-calls-parameters",
+    "deckId": "methods-basics",
+    "term": "Имя метода",
+    "exampleCode": "Console.WriteLine(Double(3));\nint Double(int number)\n{\n    return number * 2;\n}",
+    "exampleResult": "6",
+    "exampleNote": "Для вызова используют объявленное имя метода и скобки с аргументом.",
+    "kind": "Заполните пропуск",
+    "challengeCode": "Console.WriteLine(/* ??? */);\nint Double(int number)\n{\n    return number * 2;\n}",
+    "prompt": "Что поставить вместо /* ??? */, чтобы получить результат: 10?",
+    "options": [
+      "Double(5)",
+      "Double(3)",
+      "5",
+      "Double(1)"
+    ],
+    "correctIndex": 0,
+    "explanation": "Double(5) передаёт 5 в метод и получает 10. Остальные варианты дают другие числа.",
+    "solutionResult": "10"
+  },
+  {
+    "id": "lab9-return-type",
+    "codeDeckId": "lab9-calls-parameters",
+    "deckId": "methods-return-scope",
+    "term": "Тип возвращаемого значения",
+    "exampleCode": "Console.WriteLine(Square(3));\nint Square(int number)\n{\n    return number * number;\n}",
+    "exampleResult": "9",
+    "exampleNote": "Тип int перед именем задаёт целочисленный результат.",
+    "kind": "Заполните пропуск",
+    "challengeCode": "Console.WriteLine(Square(4));\n/* ??? */ Square(int number)\n{\n    return number * number;\n}",
+    "prompt": "Что поставить вместо /* ??? */, чтобы получить результат: 16?",
+    "options": [
+      "int",
+      "void",
+      "bool",
+      "string"
+    ],
+    "correctIndex": 0,
+    "explanation": "Выражение number * number имеет тип int. Метод должен возвращать int; void не возвращает значения.",
+    "solutionResult": "16"
+  },
+  {
+    "id": "lab9-return-not-print",
+    "codeDeckId": "lab9-return-scope",
+    "deckId": "methods-return-scope",
+    "term": "return",
+    "exampleCode": "int result = Double(3);\nConsole.WriteLine(result);\nint Double(int number)\n{\n    return number * 2;\n}",
+    "exampleResult": "6",
+    "exampleNote": "return передаёт результат, но сам не печатает его.",
+    "kind": "Что выведет код?",
+    "challengeCode": "Double(4);\nConsole.WriteLine(\"Конец\");\nint Double(int number)\n{\n    return number * 2;\n}",
+    "prompt": "Что появится в консоли?",
+    "options": [
+      "Конец",
+      "8",
+      "8\nКонец",
+      "Ничего"
+    ],
+    "correctIndex": 0,
+    "explanation": "Результат Double(4) не сохранён и не выведен. Метод не содержит печати, поэтому видно только Конец.",
+    "challengeResult": "Конец"
+  },
+  {
+    "id": "lab9-save-result",
+    "codeDeckId": "lab9-return-scope",
+    "deckId": "methods-return-scope",
+    "term": "Возвращаемое значение",
+    "exampleCode": "int answer = Square(3);\nConsole.WriteLine(answer + 1);\nint Square(int number)\n{\n    return number * number;\n}",
+    "exampleResult": "10",
+    "exampleNote": "Результат вызова можно сохранить, затем использовать в выражении.",
+    "kind": "Что выведет код?",
+    "challengeCode": "int answer = Square(4);\nConsole.WriteLine(answer + 2);\nint Square(int number)\n{\n    return number * number;\n}",
+    "prompt": "Что появится в консоли?",
+    "options": [
+      "18",
+      "16",
+      "6",
+      "36"
+    ],
+    "correctIndex": 0,
+    "explanation": "Square(4) возвращает 16, затем основной код прибавляет 2.",
+    "challengeResult": "18"
+  },
+  {
+    "id": "lab9-void-output",
+    "codeDeckId": "lab9-return-scope",
+    "deckId": "methods-return-scope",
+    "term": "void",
+    "exampleCode": "ShowResult(7);\nvoid ShowResult(int value)\n{\n    Console.WriteLine($\"Результат: {value}\");\n}",
+    "exampleResult": "Результат: 7",
+    "exampleNote": "void-метод выполняет вывод как действие; числового результата вызова у него нет.",
+    "kind": "Что выведет код?",
+    "challengeCode": "ShowResult(9);\nConsole.WriteLine(\"Готово\");\nvoid ShowResult(int value)\n{\n    Console.WriteLine($\"Результат: {value}\");\n}",
+    "prompt": "Что появится в консоли?",
+    "options": [
+      "Результат: 9\nГотово",
+      "9",
+      "Готово",
+      "Ошибка компиляции"
+    ],
+    "correctIndex": 0,
+    "explanation": "Сначала void-метод выводит переданное значение, затем основной код печатает Готово.",
+    "challengeResult": "Результат: 9\nГотово"
+  },
+  {
+    "id": "lab9-local-reset",
+    "codeDeckId": "lab9-return-scope",
+    "deckId": "methods-return-scope",
+    "term": "Локальная переменная метода",
+    "exampleCode": "Console.WriteLine(AddOne(3));\nConsole.WriteLine(AddOne(3));\nint AddOne(int number)\n{\n    int result = 0;\n    result = number + 1;\n    return result;\n}",
+    "exampleResult": "4\n4",
+    "exampleNote": "Локальная result заново получает начальное значение при каждом вызове.",
+    "kind": "Что выведет код?",
+    "challengeCode": "Console.WriteLine(AddOne(5));\nConsole.WriteLine(AddOne(5));\nint AddOne(int number)\n{\n    int result = 0;\n    result = number + 1;\n    return result;\n}",
+    "prompt": "Что появится в консоли?",
+    "options": [
+      "6\n6",
+      "6\n7",
+      "5\n5",
+      "12"
+    ],
+    "correctIndex": 0,
+    "explanation": "Вызовы независимы. В обоих случаях result вычисляется как 5 + 1.",
+    "challengeResult": "6\n6"
+  },
+  {
+    "id": "lab9-copy-int",
+    "codeDeckId": "lab9-return-scope",
+    "deckId": "methods-return-scope",
+    "term": "Передача по значению",
+    "exampleCode": "int value = 3;\nChange(value);\nConsole.WriteLine(value);\nvoid Change(int number)\n{\n    number = 20;\n}",
+    "exampleResult": "3",
+    "exampleNote": "Изменяется копия int в параметре, а не переменная вызывающего кода.",
+    "kind": "Что выведет код?",
+    "challengeCode": "int value = 5;\nChange(value);\nConsole.WriteLine(value);\nvoid Change(int number)\n{\n    number = 30;\n}",
+    "prompt": "Что появится в консоли?",
+    "options": [
+      "5",
+      "30",
+      "0",
+      "Ошибка компиляции"
+    ],
+    "correctIndex": 0,
+    "explanation": "Присваивание number = 30 не меняет value, переданное обычным способом.",
+    "challengeResult": "5",
+    "variants": [
+      {
+        "challengeCode": "int value = 8;\nChange(value);\nConsole.WriteLine(value);\nvoid Change(int number)\n{\n    number = 40;\n}",
+        "options": [
+          "8",
+          "40",
+          "0",
+          "9"
+        ],
+        "correctIndex": 0,
+        "challengeResult": "8",
+        "explanation": "Изменение копии параметра не меняет исходный value."
+      },
+      {
+        "challengeCode": "int value = 12;\nChange(value);\nConsole.WriteLine(value);\nvoid Change(int number)\n{\n    number = 40;\n}",
+        "options": [
+          "12",
+          "40",
+          "0",
+          "13"
+        ],
+        "correctIndex": 0,
+        "challengeResult": "12",
+        "explanation": "Изменение копии параметра не меняет исходный value."
+      }
+    ]
+  },
+  {
+    "id": "lab9-copy-with-return",
+    "codeDeckId": "lab9-return-scope",
+    "deckId": "methods-return-scope",
+    "term": "Передача по значению",
+    "exampleCode": "int value = 3;\nint result = Increase(value);\nConsole.WriteLine($\"{value} {result}\");\nint Increase(int number)\n{\n    number += 2;\n    return number;\n}",
+    "exampleResult": "3 5",
+    "exampleNote": "Исходное значение и возвращённый результат — разные значения.",
+    "kind": "Что выведет код?",
+    "challengeCode": "int value = 4;\nint result = Increase(value);\nConsole.WriteLine($\"{value} {result}\");\nint Increase(int number)\n{\n    number += 3;\n    return number;\n}",
+    "prompt": "Что появится в консоли?",
+    "options": [
+      "4 7",
+      "7 7",
+      "4 4",
+      "7 4"
+    ],
+    "correctIndex": 0,
+    "explanation": "Копия параметра увеличивается до 7 и возвращается. Исходный value остаётся равен 4.",
+    "challengeResult": "4 7"
+  },
+  {
+    "id": "lab9-result-reassignment",
+    "codeDeckId": "lab9-return-scope",
+    "deckId": "methods-return-scope",
+    "term": "Возвращаемое значение",
+    "exampleCode": "int value = 3;\nvalue = Double(value);\nConsole.WriteLine(value);\nint Double(int number)\n{\n    return number * 2;\n}",
+    "exampleResult": "6",
+    "exampleNote": "Чтобы изменить переменную снаружи, основной код присваивает ей результат вызова.",
+    "kind": "Что выведет код?",
+    "challengeCode": "int value = 5;\nvalue = Double(value);\nConsole.WriteLine(value);\nint Double(int number)\n{\n    return number * 2;\n}",
+    "prompt": "Что появится в консоли?",
+    "options": [
+      "10",
+      "5",
+      "2",
+      "25"
+    ],
+    "correctIndex": 0,
+    "explanation": "Здесь основной код явно записывает результат 10 обратно в value.",
+    "challengeResult": "10"
+  },
+  {
+    "id": "lab9-return-fill",
+    "codeDeckId": "lab9-return-scope",
+    "deckId": "methods-return-scope",
+    "term": "return",
+    "exampleCode": "Console.WriteLine(Double(2));\nint Double(int number)\n{\n    return number * 2;\n}",
+    "exampleResult": "4",
+    "exampleNote": "Расчётный метод передаёт результат вызывающему коду через return.",
+    "kind": "Заполните пропуск",
+    "challengeCode": "Console.WriteLine(Triple(3));\nint Triple(int number)\n{\n    /* ??? */ number * 3;\n}",
+    "prompt": "Что поставить вместо /* ??? */, чтобы получить результат: 9?",
+    "options": [
+      "return",
+      "Console.WriteLine",
+      "int",
+      "void"
+    ],
+    "correctIndex": 0,
+    "explanation": "Перед выражением требуется return. Вывод на экран не заменяет возврат значения из int-метода.",
+    "solutionResult": "9"
+  },
+  {
+    "id": "lab9-return-exit",
+    "codeDeckId": "lab9-return-scope",
+    "deckId": "methods-return-scope",
+    "term": "return",
+    "exampleCode": "Console.WriteLine(Max(3, 7));\nint Max(int first, int second)\n{\n    if (first > second)\n    {\n        return first;\n    }\n    return second;\n}",
+    "exampleResult": "7",
+    "exampleNote": "После return текущий вызов завершается и не выполняет следующие команды тела.",
+    "kind": "Что выведет код?",
+    "challengeCode": "Console.WriteLine(Max(9, 4));\nint Max(int first, int second)\n{\n    if (first > second)\n    {\n        return first;\n    }\n    return second;\n}",
+    "prompt": "Что появится в консоли?",
+    "options": [
+      "9",
+      "4",
+      "13",
+      "9\n4"
+    ],
+    "correctIndex": 0,
+    "explanation": "Условие истинно, return first возвращает 9 и завершает вызов до второго return.",
+    "challengeResult": "9"
+  },
+  {
+    "id": "lab9-scope",
+    "codeDeckId": "lab9-return-scope",
+    "deckId": "methods-return-scope",
+    "term": "Область видимости метода",
+    "exampleCode": "int result = GetValue();\nConsole.WriteLine(result);\nint GetValue()\n{\n    int local = 7;\n    return local;\n}",
+    "exampleResult": "7",
+    "exampleNote": "Основной код получает локальную переменную через возвращаемое значение.",
+    "kind": "Что выведет код?",
+    "challengeCode": "int local = 3;\nint result = GetValue();\nConsole.WriteLine($\"{local} {result}\");\nint GetValue()\n{\n    int inner = 8;\n    return inner;\n}",
+    "prompt": "Что появится в консоли?",
+    "options": [
+      "3 8",
+      "8 8",
+      "3 3",
+      "Ошибка компиляции"
+    ],
+    "correctIndex": 0,
+    "explanation": "inner существует внутри функции. Она возвращает 8, не изменяя внешнюю переменную local.",
+    "challengeResult": "3 8"
+  },
+  {
+    "id": "lab9-square-expression",
+    "codeDeckId": "lab9-small-methods",
+    "deckId": "methods-purchase",
+    "term": "Расчётный метод",
+    "exampleCode": "Console.WriteLine(Square(2) + Square(3));\nint Square(int number)\n{\n    return number * number;\n}",
+    "exampleResult": "13",
+    "exampleNote": "Результаты нескольких вызовов могут участвовать в одном выражении.",
+    "kind": "Что выведет код?",
+    "challengeCode": "Console.WriteLine(Square(3) + Square(4));\nint Square(int number)\n{\n    return number * number;\n}",
+    "prompt": "Что появится в консоли?",
+    "options": [
+      "25",
+      "49",
+      "7",
+      "12"
+    ],
+    "correctIndex": 0,
+    "explanation": "Вызовы возвращают 9 и 16; затем складываются эти два результата.",
+    "challengeResult": "25"
+  },
+  {
+    "id": "lab9-max",
+    "codeDeckId": "lab9-small-methods",
+    "deckId": "methods-purchase",
+    "term": "Расчётный метод",
+    "exampleCode": "Console.WriteLine(Max(4, 9));\nint Max(int first, int second)\n{\n    if (first > second)\n    {\n        return first;\n    }\n    return second;\n}",
+    "exampleResult": "9",
+    "exampleNote": "Max выбирает и возвращает большее из двух переданных чисел.",
+    "kind": "Что выведет код?",
+    "challengeCode": "Console.WriteLine(Max(-3, -8));\nint Max(int first, int second)\n{\n    if (first > second)\n    {\n        return first;\n    }\n    return second;\n}",
+    "prompt": "Что появится в консоли?",
+    "options": [
+      "-3",
+      "0",
+      "-8",
+      "5"
+    ],
+    "correctIndex": 0,
+    "explanation": "Среди -3 и -8 больше -3. Метод возвращает одно из переданных значений.",
+    "challengeResult": "-3",
+    "variants": [
+      {
+        "challengeCode": "Console.WriteLine(Max(-4, -9));\nint Max(int first, int second)\n{\n    if (first > second)\n    {\n        return first;\n    }\n    return second;\n}",
+        "options": [
+          "-4",
+          "0",
+          "-13",
+          "36"
+        ],
+        "correctIndex": 0,
+        "challengeResult": "-4",
+        "explanation": "Max возвращает большее значение; при равенстве результат равен обоим аргументам: -4."
+      },
+      {
+        "challengeCode": "Console.WriteLine(Max(5, 5));\nint Max(int first, int second)\n{\n    if (first > second)\n    {\n        return first;\n    }\n    return second;\n}",
+        "options": [
+          "5",
+          "0",
+          "10",
+          "25"
+        ],
+        "correctIndex": 0,
+        "challengeResult": "5",
+        "explanation": "Max возвращает большее значение; при равенстве результат равен обоим аргументам: 5."
+      }
+    ]
+  },
+  {
+    "id": "lab9-is-even",
+    "codeDeckId": "lab9-small-methods",
+    "deckId": "methods-purchase",
+    "term": "Расчётный метод",
+    "exampleCode": "if (IsEven(6))\n{\n    Console.WriteLine(\"Чётное\");\n}\nelse\n{\n    Console.WriteLine(\"Нечётное\");\n}\nbool IsEven(int number)\n{\n    return number % 2 == 0;\n}",
+    "exampleResult": "Чётное",
+    "exampleNote": "bool-результат метода можно использовать как условие if.",
+    "kind": "Что выведет код?",
+    "challengeCode": "if (IsEven(7))\n{\n    Console.WriteLine(\"Чётное\");\n}\nelse\n{\n    Console.WriteLine(\"Нечётное\");\n}\nbool IsEven(int number)\n{\n    return number % 2 == 0;\n}",
+    "prompt": "Что появится в консоли?",
+    "options": [
+      "Нечётное",
+      "Чётное",
+      "False",
+      "Ничего"
+    ],
+    "correctIndex": 0,
+    "explanation": "7 % 2 не равно 0, метод возвращает false и выполняется else.",
+    "challengeResult": "Нечётное",
+    "variants": [
+      {
+        "challengeCode": "if (IsEven(8))\n{\n    Console.WriteLine(\"Чётное\");\n}\nelse\n{\n    Console.WriteLine(\"Нечётное\");\n}\nbool IsEven(int number)\n{\n    return number % 2 == 0;\n}",
+        "options": [
+          "Чётное",
+          "Нечётное",
+          "True",
+          "False"
+        ],
+        "correctIndex": 0,
+        "challengeResult": "Чётное",
+        "explanation": "IsEven проверяет остаток 8 % 2. Выбирается сообщение «Чётное»."
+      },
+      {
+        "challengeCode": "if (IsEven(9))\n{\n    Console.WriteLine(\"Чётное\");\n}\nelse\n{\n    Console.WriteLine(\"Нечётное\");\n}\nbool IsEven(int number)\n{\n    return number % 2 == 0;\n}",
+        "options": [
+          "Нечётное",
+          "Чётное",
+          "True",
+          "False"
+        ],
+        "correctIndex": 0,
+        "challengeResult": "Нечётное",
+        "explanation": "IsEven проверяет остаток 9 % 2. Выбирается сообщение «Нечётное»."
+      }
+    ]
+  },
+  {
+    "id": "lab9-print-line",
+    "codeDeckId": "lab9-small-methods",
+    "deckId": "methods-purchase",
+    "term": "Метод вывода",
+    "exampleCode": "PrintLine(\"Да\", 2);\nvoid PrintLine(string text, int count)\n{\n    for (int i = 0; i < count; i++)\n    {\n        Console.WriteLine(text);\n    }\n}",
+    "exampleResult": "Да\nДа",
+    "exampleNote": "Метод получает отдельно текст и число повторений.",
+    "kind": "Что выведет код?",
+    "challengeCode": "PrintLine(\"Код\", 3);\nvoid PrintLine(string text, int count)\n{\n    for (int i = 0; i < count; i++)\n    {\n        Console.WriteLine(text);\n    }\n}",
+    "prompt": "Что появится в консоли?",
+    "options": [
+      "Код\nКод\nКод",
+      "Код",
+      "КодКодКод",
+      "3"
+    ],
+    "correctIndex": 0,
+    "explanation": "Цикл выполняется три раза; WriteLine каждый раз добавляет перевод строки.",
+    "challengeResult": "Код\nКод\nКод"
+  },
+  {
+    "id": "lab9-average",
+    "codeDeckId": "lab9-small-methods",
+    "deckId": "methods-purchase",
+    "term": "Расчётный метод",
+    "exampleCode": "Console.WriteLine(Average(2, 4));\ndouble Average(int first, int second)\n{\n    return (first + second) / 2.0;\n}",
+    "exampleResult": "3",
+    "exampleNote": "Делитель 2.0 задаёт вещественное деление и сохраняет дробную часть.",
+    "kind": "Что выведет код?",
+    "challengeCode": "Console.WriteLine(Average(3, 4));\ndouble Average(int first, int second)\n{\n    return (first + second) / 2.0;\n}",
+    "prompt": "Какое число выведется? Точка обозначает десятичный разделитель; на компьютере возможна запятая.",
+    "options": [
+      "3.5",
+      "3",
+      "7",
+      "4"
+    ],
+    "correctIndex": 0,
+    "explanation": "(3 + 4) / 2.0 равно 3.5. В вопросе точка обозначает десятичный разделитель.",
+    "challengeResult": "3.5"
+  },
+  {
+    "id": "lab9-is-positive",
+    "codeDeckId": "lab9-small-methods",
+    "deckId": "methods-purchase",
+    "term": "Расчётный метод",
+    "exampleCode": "Console.WriteLine(IsPositive(5));\nbool IsPositive(int number)\n{\n    return number > 0;\n}",
+    "exampleResult": "True",
+    "exampleNote": "Положительные числа строго больше нуля. Ноль не считается положительным.",
+    "kind": "Что выведет код?",
+    "challengeCode": "Console.WriteLine(IsPositive(0));\nbool IsPositive(int number)\n{\n    return number > 0;\n}",
+    "prompt": "Что появится в консоли?",
+    "options": [
+      "False",
+      "True",
+      "0",
+      "Ничего"
+    ],
+    "correctIndex": 0,
+    "explanation": "Метод проверяет 0 > 0; это ложное условие.",
+    "challengeResult": "False"
+  },
+  {
+    "id": "lab9-sum-to",
+    "codeDeckId": "lab9-small-methods",
+    "deckId": "methods-purchase",
+    "term": "Расчётный метод",
+    "exampleCode": "Console.WriteLine(SumTo(3));\nint SumTo(int n)\n{\n    int sum = 0;\n    for (int i = 1; i <= n; i++)\n    {\n        sum += i;\n    }\n    return sum;\n}",
+    "exampleResult": "6",
+    "exampleNote": "Локальный накопитель складывает числа от 1 до переданного n включительно.",
+    "kind": "Что выведет код?",
+    "challengeCode": "Console.WriteLine(SumTo(5));\nint SumTo(int n)\n{\n    int sum = 0;\n    for (int i = 1; i <= n; i++)\n    {\n        sum += i;\n    }\n    return sum;\n}",
+    "prompt": "Что появится в консоли?",
+    "options": [
+      "15",
+      "5",
+      "10",
+      "25"
+    ],
+    "correctIndex": 0,
+    "explanation": "Сумма равна 1 + 2 + 3 + 4 + 5 = 15.",
+    "challengeResult": "15",
+    "variants": [
+      {
+        "challengeCode": "Console.WriteLine(SumTo(4));\nint SumTo(int n)\n{\n    int sum = 0;\n    for (int i = 1; i <= n; i++)\n    {\n        sum += i;\n    }\n    return sum;\n}",
+        "options": [
+          "10",
+          "4",
+          "16",
+          "6"
+        ],
+        "correctIndex": 0,
+        "challengeResult": "10",
+        "explanation": "Сумма чисел от 1 до 4 включительно равна 10."
+      },
+      {
+        "challengeCode": "Console.WriteLine(SumTo(6));\nint SumTo(int n)\n{\n    int sum = 0;\n    for (int i = 1; i <= n; i++)\n    {\n        sum += i;\n    }\n    return sum;\n}",
+        "options": [
+          "21",
+          "6",
+          "36",
+          "15"
+        ],
+        "correctIndex": 0,
+        "challengeResult": "21",
+        "explanation": "Сумма чисел от 1 до 6 включительно равна 21."
+      }
+    ]
+  },
+  {
+    "id": "lab9-print-range",
+    "codeDeckId": "lab9-small-methods",
+    "deckId": "methods-purchase",
+    "term": "Метод вывода",
+    "exampleCode": "PrintRange(2, 4);\nvoid PrintRange(int start, int end)\n{\n    for (int i = start; i <= end; i++)\n    {\n        Console.WriteLine(i);\n    }\n}",
+    "exampleResult": "2\n3\n4",
+    "exampleNote": "Два параметра задают включённые границы вывода.",
+    "kind": "Что выведет код?",
+    "challengeCode": "PrintRange(3, 5);\nvoid PrintRange(int start, int end)\n{\n    for (int i = start; i <= end; i++)\n    {\n        Console.WriteLine(i);\n    }\n}",
+    "prompt": "Что появится в консоли?",
+    "options": [
+      "3\n4\n5",
+      "3\n4",
+      "0\n1\n2",
+      "5\n4\n3"
+    ],
+    "correctIndex": 0,
+    "explanation": "Цикл начинается с start = 3 и включает end = 5.",
+    "challengeResult": "3\n4\n5"
+  },
+  {
+    "id": "lab9-average-fill",
+    "codeDeckId": "lab9-small-methods",
+    "deckId": "methods-purchase",
+    "term": "Расчётный метод",
+    "exampleCode": "Console.WriteLine(Average(3, 4));\ndouble Average(int first, int second)\n{\n    return (first + second) / 2.0;\n}",
+    "exampleResult": "3.5",
+    "exampleNote": "Нужен вещественный делитель, чтобы не отбросить дробную часть.",
+    "kind": "Заполните пропуск",
+    "challengeCode": "Console.WriteLine(Average(4, 5));\ndouble Average(int first, int second)\n{\n    return (first + second) / /* ??? */;\n}",
+    "prompt": "Что поставить вместо /* ??? */, чтобы получить результат: 4.5?",
+    "options": [
+      "2.0",
+      "2",
+      "3",
+      "1"
+    ],
+    "correctIndex": 0,
+    "explanation": "Делитель 2.0 даёт 4.5. Деление двух int на 2 сначала даст 4; последующее преобразование в double не вернёт потерянную половину.",
+    "solutionResult": "4.5"
+  },
+  {
+    "id": "lab9-positive-fill",
+    "codeDeckId": "lab9-small-methods",
+    "deckId": "methods-purchase",
+    "term": "Расчётный метод",
+    "exampleCode": "Console.WriteLine(IsPositive(1));\nbool IsPositive(int number)\n{\n    return number > 0;\n}",
+    "exampleResult": "True",
+    "exampleNote": "Расчётный bool-метод возвращает результат сравнения.",
+    "kind": "Заполните пропуск",
+    "challengeCode": "Console.WriteLine(IsPositive(0));\nbool IsPositive(int number)\n{\n    return /* ??? */;\n}",
+    "prompt": "Что поставить вместо /* ??? */, чтобы получить результат: False?",
+    "options": [
+      "number > 0",
+      "number >= 0",
+      "number == 0",
+      "true"
+    ],
+    "correctIndex": 0,
+    "explanation": "Для положительности нужно строгое > 0. При нуле остальные предложенные условия дают True.",
+    "solutionResult": "False"
+  },
+  {
+    "id": "lab9-cost",
+    "codeDeckId": "lab9-purchase",
+    "deckId": "methods-purchase",
+    "term": "CalculateCost",
+    "exampleCode": "decimal cost = CalculateCost(200m, 3);\nConsole.WriteLine($\"{cost:F2}\");\ndecimal CalculateCost(decimal unitPrice, int quantity)\n{\n    return unitPrice * quantity;\n}",
+    "exampleResult": "600.00",
+    "exampleNote": "Метод умножает цену на количество; F2 показывает два знака после разделителя.",
+    "kind": "Что выведет код?",
+    "challengeCode": "decimal cost = CalculateCost(150m, 2);\nConsole.WriteLine($\"{cost:F2}\");\ndecimal CalculateCost(decimal unitPrice, int quantity)\n{\n    return unitPrice * quantity;\n}",
+    "prompt": "Что выведется? Для F2 точка обозначает десятичный разделитель; на компьютере возможна запятая.",
+    "options": [
+      "300.00",
+      "150.00",
+      "152.00",
+      "75.00"
+    ],
+    "correctIndex": 0,
+    "explanation": "150 * 2 = 300. Формат F2 показывает 300.00.",
+    "challengeResult": "300.00",
+    "variants": [
+      {
+        "challengeCode": "decimal cost = CalculateCost(80m, 5);\nConsole.WriteLine($\"{cost:F2}\");\ndecimal CalculateCost(decimal unitPrice, int quantity)\n{\n    return unitPrice * quantity;\n}",
+        "options": [
+          "400.00",
+          "80.00",
+          "85.00",
+          "5.00"
+        ],
+        "correctIndex": 0,
+        "challengeResult": "400.00",
+        "explanation": "Цена 80 умножается на количество 5: стоимость 400. F2 выводит два знака."
+      },
+      {
+        "challengeCode": "decimal cost = CalculateCost(120m, 3);\nConsole.WriteLine($\"{cost:F2}\");\ndecimal CalculateCost(decimal unitPrice, int quantity)\n{\n    return unitPrice * quantity;\n}",
+        "options": [
+          "360.00",
+          "120.00",
+          "123.00",
+          "3.00"
+        ],
+        "correctIndex": 0,
+        "challengeResult": "360.00",
+        "explanation": "Цена 120 умножается на количество 3: стоимость 360. F2 выводит два знака."
+      }
+    ]
+  },
+  {
+    "id": "lab9-discount",
+    "codeDeckId": "lab9-purchase",
+    "deckId": "methods-purchase",
+    "term": "CalculateDiscount",
+    "exampleCode": "decimal discount = CalculateDiscount(600m, 10);\nConsole.WriteLine($\"{discount:F2}\");\ndecimal CalculateDiscount(decimal cost, int discountPercent)\n{\n    return cost * discountPercent / 100;\n}",
+    "exampleResult": "60.00",
+    "exampleNote": "Скидка в деньгах равна стоимости, умноженной на процент и делённой на 100.",
+    "kind": "Что выведет код?",
+    "challengeCode": "decimal discount = CalculateDiscount(400m, 25);\nConsole.WriteLine($\"{discount:F2}\");\ndecimal CalculateDiscount(decimal cost, int discountPercent)\n{\n    return cost * discountPercent / 100;\n}",
+    "prompt": "Что выведется? Для F2 точка обозначает десятичный разделитель; на компьютере возможна запятая.",
+    "options": [
+      "100.00",
+      "300.00",
+      "25.00",
+      "400.00"
+    ],
+    "correctIndex": 0,
+    "explanation": "25% от 400 — это 100. Метод возвращает размер скидки, а не остаток к оплате.",
+    "challengeResult": "100.00",
+    "variants": [
+      {
+        "challengeCode": "decimal discount = CalculateDiscount(300m, 0);\nConsole.WriteLine($\"{discount:F2}\");\ndecimal CalculateDiscount(decimal cost, int discountPercent)\n{\n    return cost * discountPercent / 100;\n}",
+        "options": [
+          "0.00",
+          "300.00",
+          "301.00",
+          "1.00"
+        ],
+        "correctIndex": 0,
+        "challengeResult": "0.00",
+        "explanation": "Скидка в деньгах равна 300 * 0 / 100 = 0."
+      },
+      {
+        "challengeCode": "decimal discount = CalculateDiscount(250m, 20);\nConsole.WriteLine($\"{discount:F2}\");\ndecimal CalculateDiscount(decimal cost, int discountPercent)\n{\n    return cost * discountPercent / 100;\n}",
+        "options": [
+          "50.00",
+          "250.00",
+          "251.00",
+          "51.00"
+        ],
+        "correctIndex": 0,
+        "challengeResult": "50.00",
+        "explanation": "Скидка в деньгах равна 250 * 20 / 100 = 50."
+      }
+    ]
+  },
+  {
+    "id": "lab9-total",
+    "codeDeckId": "lab9-purchase",
+    "deckId": "methods-purchase",
+    "term": "Итоговая сумма",
+    "exampleCode": "decimal cost = CalculateCost(12.50m, 4);\ndecimal discount = CalculateDiscount(cost, 10);\ndecimal totalCost = cost - discount;\nConsole.WriteLine($\"{totalCost:F2}\");\ndecimal CalculateCost(decimal unitPrice, int quantity)\n{\n    return unitPrice * quantity;\n}\ndecimal CalculateDiscount(decimal cost, int discountPercent)\n{\n    return cost * discountPercent / 100;\n}",
+    "exampleResult": "45.00",
+    "exampleNote": "Основная часть использует результаты двух расчётных методов и вычитает скидку.",
+    "kind": "Что выведет код?",
+    "challengeCode": "decimal cost = CalculateCost(200m, 3);\ndecimal discount = CalculateDiscount(cost, 10);\ndecimal totalCost = cost - discount;\nConsole.WriteLine($\"{totalCost:F2}\");\ndecimal CalculateCost(decimal unitPrice, int quantity)\n{\n    return unitPrice * quantity;\n}\ndecimal CalculateDiscount(decimal cost, int discountPercent)\n{\n    return cost * discountPercent / 100;\n}",
+    "prompt": "Что выведется? Для F2 точка обозначает десятичный разделитель; на компьютере возможна запятая.",
+    "options": [
+      "540.00",
+      "600.00",
+      "60.00",
+      "594.00"
+    ],
+    "correctIndex": 0,
+    "explanation": "Стоимость 600, скидка 60, итоговая сумма 540.",
+    "challengeResult": "540.00",
+    "variants": [
+      {
+        "challengeCode": "decimal cost = CalculateCost(80m, 5);\ndecimal discount = CalculateDiscount(cost, 100);\ndecimal totalCost = cost - discount;\nConsole.WriteLine($\"{totalCost:F2}\");\ndecimal CalculateCost(decimal unitPrice, int quantity)\n{\n    return unitPrice * quantity;\n}\ndecimal CalculateDiscount(decimal cost, int discountPercent)\n{\n    return cost * discountPercent / 100;\n}",
+        "options": [
+          "0.00",
+          "1.00",
+          "2.00",
+          "10.00"
+        ],
+        "correctIndex": 0,
+        "challengeResult": "0.00",
+        "explanation": "Сначала вычисляются стоимость и скидка; их разность равна 0."
+      },
+      {
+        "challengeCode": "decimal cost = CalculateCost(12.5m, 4);\ndecimal discount = CalculateDiscount(cost, 10);\ndecimal totalCost = cost - discount;\nConsole.WriteLine($\"{totalCost:F2}\");\ndecimal CalculateCost(decimal unitPrice, int quantity)\n{\n    return unitPrice * quantity;\n}\ndecimal CalculateDiscount(decimal cost, int discountPercent)\n{\n    return cost * discountPercent / 100;\n}",
+        "options": [
+          "45.00",
+          "46.00",
+          "47.00",
+          "55.00"
+        ],
+        "correctIndex": 0,
+        "challengeResult": "45.00",
+        "explanation": "Сначала вычисляются стоимость и скидка; их разность равна 45."
+      }
+    ]
+  },
+  {
+    "id": "lab9-print-result",
+    "codeDeckId": "lab9-purchase",
+    "deckId": "methods-purchase",
+    "term": "PrintResult",
+    "exampleCode": "PrintResult(100m, 10m, 90m);\nvoid PrintResult(decimal cost, decimal discount, decimal totalCost)\n{\n    Console.WriteLine($\"До скидки: {cost:F2}\");\n    Console.WriteLine($\"Скидка: {discount:F2}\");\n    Console.WriteLine($\"К оплате: {totalCost:F2}\");\n}",
+    "exampleResult": "До скидки: 100.00\nСкидка: 10.00\nК оплате: 90.00",
+    "exampleNote": "PrintResult получает готовые значения; он не спрашивает ввод и не пересчитывает их.",
+    "kind": "Что выведет код?",
+    "challengeCode": "PrintResult(300m, 0m, 300m);\nvoid PrintResult(decimal cost, decimal discount, decimal totalCost)\n{\n    Console.WriteLine($\"До скидки: {cost:F2}\");\n    Console.WriteLine($\"Скидка: {discount:F2}\");\n    Console.WriteLine($\"К оплате: {totalCost:F2}\");\n}",
+    "prompt": "Что выведется? Для F2 точка обозначает десятичный разделитель; на компьютере возможна запятая.",
+    "options": [
+      "До скидки: 300.00\nСкидка: 0.00\nК оплате: 300.00",
+      "До скидки: 300.00\nСкидка: 300.00\nК оплате: 0.00",
+      "300.00",
+      "Ничего"
+    ],
+    "correctIndex": 0,
+    "explanation": "Аргументы передаются параметрам по порядку: стоимость 300, скидка 0, итог 300.",
+    "challengeResult": "До скидки: 300.00\nСкидка: 0.00\nК оплате: 300.00"
+  },
+  {
+    "id": "lab9-full-discount",
+    "codeDeckId": "lab9-purchase",
+    "deckId": "methods-purchase",
+    "term": "Скидка в деньгах",
+    "exampleCode": "decimal cost = CalculateCost(80m, 5);\ndecimal discount = CalculateDiscount(cost, 100);\nConsole.WriteLine($\"{cost - discount:F2}\");\ndecimal CalculateCost(decimal unitPrice, int quantity)\n{\n    return unitPrice * quantity;\n}\ndecimal CalculateDiscount(decimal cost, int discountPercent)\n{\n    return cost * discountPercent / 100;\n}",
+    "exampleResult": "0.00",
+    "exampleNote": "Скидка 100% равна всей стоимости; сумма к оплате нулевая.",
+    "kind": "Что выведет код?",
+    "challengeCode": "decimal cost = CalculateCost(50m, 2);\ndecimal discount = CalculateDiscount(cost, 100);\nConsole.WriteLine($\"{cost - discount:F2}\");\ndecimal CalculateCost(decimal unitPrice, int quantity)\n{\n    return unitPrice * quantity;\n}\ndecimal CalculateDiscount(decimal cost, int discountPercent)\n{\n    return cost * discountPercent / 100;\n}",
+    "prompt": "Что выведется? Для F2 точка обозначает десятичный разделитель; на компьютере возможна запятая.",
+    "options": [
+      "0.00",
+      "100.00",
+      "50.00",
+      "1.00"
+    ],
+    "correctIndex": 0,
+    "explanation": "Стоимость 100 и скидка 100. После вычитания остаётся 0.",
+    "challengeResult": "0.00"
+  },
+  {
+    "id": "lab9-zero-price",
+    "codeDeckId": "lab9-purchase",
+    "deckId": "methods-purchase",
+    "term": "Стоимость до скидки",
+    "exampleCode": "decimal cost = CalculateCost(0m, 2);\nConsole.WriteLine($\"{cost:F2}\");\ndecimal CalculateCost(decimal unitPrice, int quantity)\n{\n    return unitPrice * quantity;\n}",
+    "exampleResult": "0.00",
+    "exampleNote": "Нулевая цена допустима по условию лабораторной; количество при этом положительное.",
+    "kind": "Что выведет код?",
+    "challengeCode": "decimal cost = CalculateCost(0m, 5);\nConsole.WriteLine($\"{cost:F2}\");\ndecimal CalculateCost(decimal unitPrice, int quantity)\n{\n    return unitPrice * quantity;\n}",
+    "prompt": "Что выведется? Для F2 точка обозначает десятичный разделитель; на компьютере возможна запятая.",
+    "options": [
+      "0.00",
+      "5.00",
+      "1.00",
+      "Ошибка компиляции"
+    ],
+    "correctIndex": 0,
+    "explanation": "0 * 5 = 0; нулевая цена не является ошибкой диапазона.",
+    "challengeResult": "0.00"
+  },
+  {
+    "id": "lab9-decimal-parse",
+    "codeDeckId": "lab9-purchase",
+    "deckId": "methods-purchase",
+    "term": "decimal.TryParse",
+    "exampleCode": "bool ok = decimal.TryParse(\"150\", out decimal price);\nConsole.WriteLine(ok);\nConsole.WriteLine(price >= 0m);",
+    "exampleResult": "True\nTrue",
+    "exampleNote": "Формат и диапазон цены проверяются отдельно. Отрицательная цена может успешно преобразоваться в число.",
+    "kind": "Что выведет код?",
+    "challengeCode": "bool ok = decimal.TryParse(\"-10\", out decimal price);\nConsole.WriteLine(ok);\nConsole.WriteLine(price >= 0m);",
+    "prompt": "Что появится в консоли?",
+    "options": [
+      "True\nFalse",
+      "False\nFalse",
+      "True\nTrue",
+      "False\nTrue"
+    ],
+    "correctIndex": 0,
+    "explanation": "-10 — корректная числовая запись, поэтому TryParse возвращает true. Но цена меньше нуля недопустима.",
+    "challengeResult": "True\nFalse"
+  },
+  {
+    "id": "lab9-f2",
+    "codeDeckId": "lab9-purchase",
+    "deckId": "methods-purchase",
+    "term": "Формат F2",
+    "exampleCode": "decimal totalCost = 45m;\nConsole.WriteLine($\"{totalCost:F2}\");",
+    "exampleResult": "45.00",
+    "exampleNote": "F2 показывает ровно два знака после десятичного разделителя.",
+    "kind": "Что выведет код?",
+    "challengeCode": "decimal totalCost = 12.5m;\nConsole.WriteLine($\"{totalCost:F2}\");",
+    "prompt": "Что выведется? Для F2 точка обозначает десятичный разделитель; на компьютере возможна запятая.",
+    "options": [
+      "12.50",
+      "12.5",
+      "12.00",
+      "1250.00"
+    ],
+    "correctIndex": 0,
+    "explanation": "F2 дописывает недостающий ноль. Само значение totalCost от форматирования не меняется.",
+    "challengeResult": "12.50",
+    "variants": [
+      {
+        "challengeCode": "decimal totalCost = 7m;\nConsole.WriteLine($\"{totalCost:F2}\");",
+        "options": [
+          "7.00",
+          "700",
+          "7.000",
+          "0.00"
+        ],
+        "correctIndex": 0,
+        "challengeResult": "7.00",
+        "explanation": "F2 показывает два знака после десятичного разделителя. В вопросе используется точка."
+      },
+      {
+        "challengeCode": "decimal totalCost = 8.5m;\nConsole.WriteLine($\"{totalCost:F2}\");",
+        "options": [
+          "8.50",
+          "850",
+          "8.500",
+          "0.00"
+        ],
+        "correctIndex": 0,
+        "challengeResult": "8.50",
+        "explanation": "F2 показывает два знака после десятичного разделителя. В вопросе используется точка."
+      }
+    ]
+  },
+  {
+    "id": "lab9-cost-fill",
+    "codeDeckId": "lab9-purchase",
+    "deckId": "methods-purchase",
+    "term": "CalculateCost",
+    "exampleCode": "Console.WriteLine(CalculateCost(20m, 3));\ndecimal CalculateCost(decimal unitPrice, int quantity)\n{\n    return unitPrice * quantity;\n}",
+    "exampleResult": "60",
+    "exampleNote": "Расчётный метод возвращает произведение цены и количества.",
+    "kind": "Заполните пропуск",
+    "challengeCode": "Console.WriteLine(CalculateCost(30m, 2));\ndecimal CalculateCost(decimal unitPrice, int quantity)\n{\n    return /* ??? */;\n}",
+    "prompt": "Что поставить вместо /* ??? */, чтобы получить результат: 60?",
+    "options": [
+      "unitPrice * quantity",
+      "unitPrice + quantity",
+      "unitPrice / quantity",
+      "quantity"
+    ],
+    "correctIndex": 0,
+    "explanation": "Требуется умножить цену 30 на количество 2. Остальные варианты дают 32, 15 и 2.",
+    "solutionResult": "60"
+  },
+  {
+    "id": "lab9-discount-order",
+    "codeDeckId": "lab9-purchase",
+    "deckId": "methods-purchase",
+    "term": "CalculateDiscount",
+    "exampleCode": "Console.WriteLine(CalculateDiscount(200m, 10));\ndecimal CalculateDiscount(decimal cost, int discountPercent)\n{\n    return cost * discountPercent / 100;\n}",
+    "exampleResult": "20",
+    "exampleNote": "Умножение стоимости decimal на процент происходит до деления на 100.",
+    "kind": "Заполните пропуск",
+    "challengeCode": "Console.WriteLine(CalculateDiscount(150m, 10));\ndecimal CalculateDiscount(decimal cost, int discountPercent)\n{\n    return /* ??? */;\n}",
+    "prompt": "Что поставить вместо /* ??? */, чтобы получить результат: 15?",
+    "options": [
+      "cost * discountPercent / 100",
+      "cost * (discountPercent / 100)",
+      "cost - discountPercent",
+      "discountPercent"
+    ],
+    "correctIndex": 0,
+    "explanation": "Правильная формула даёт 15. В discountPercent / 100 оба операнда int: 10 / 100 равно 0, что обнуляет скидку.",
+    "solutionResult": "15"
   }
 ];

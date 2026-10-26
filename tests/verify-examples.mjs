@@ -49,23 +49,27 @@ ${check.code}
   writeFileSync(join(scratch, "Program.cs"), `
 using System;
 using System.IO;
+using System.Globalization;
 
 void Check(string id, string expected, string input, Action example)
 {
     var previousOut = Console.Out;
     var previousIn = Console.In;
-    using var output = new StringWriter();
+    var previousCulture = CultureInfo.CurrentCulture;
+    using var output = new StringWriter(CultureInfo.InvariantCulture);
     using var inputReader = new StringReader(input + "\\n");
     try
     {
         Console.SetOut(output);
         Console.SetIn(inputReader);
+        CultureInfo.CurrentCulture = CultureInfo.InvariantCulture;
         example();
     }
     finally
     {
         Console.SetOut(previousOut);
         Console.SetIn(previousIn);
+        CultureInfo.CurrentCulture = previousCulture;
     }
     var actual = output.ToString().TrimEnd('\\r', '\\n').Replace("\\r\\n", "\\n");
     if (actual != expected)

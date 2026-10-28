@@ -8,7 +8,7 @@
       name="description"
       content="Карточки, тесты и справочник по базовым IT-терминам для студентов перед изучением C#."
     >
-    <link rel="stylesheet" href="styles.css?v=308989f6d4fd">
+    <link rel="stylesheet" href="styles.css?v=563a633cbca8">
   </head>
   <body>
     <div class="app-shell">
@@ -26,6 +26,7 @@
           <button type="button" class="nav-link" data-screen-link="cards">Карточки</button>
           <button type="button" class="nav-link" data-screen-link="quiz">Тест</button>
           <button type="button" class="nav-link" data-screen-link="code">Понимаю код</button>
+          <button type="button" class="nav-link" data-screen-link="bugs">Найди ошибку</button>
           <button type="button" class="nav-link" data-screen-link="reference">Справочник</button>
         </nav>
 
@@ -91,6 +92,11 @@
               <span class="mode-icon">04</span>
               <strong>Понимаю код</strong>
               <small>Посмотри на C# и выбери результат или причину ошибки. После ответа будет объяснение.</small>
+            </button>
+            <button class="mode-card" type="button" data-screen-link="bugs">
+              <span class="mode-icon">05</span>
+              <strong>Найди ошибку</strong>
+              <small>Найди одну ошибку в коде. На обороте — исправление и объяснение. Без таймера.</small>
             </button>
           </section>
         </section>
@@ -243,6 +249,61 @@
           </div>
         </section>
 
+        <section class="screen" id="bugsScreen" data-screen="bugs">
+          <div class="workspace">
+            <aside class="settings-panel">
+              <div class="section-heading">
+                <p class="eyebrow">Читаем и исправляем</p>
+                <h2>Найди ошибку</h2>
+              </div>
+              <p class="settings-description">В каждой карточке одна намеренная ошибка. Найдите её и сформулируйте исправление, затем откройте решение. Код показан как текст; таймера нет.</p>
+              <label>
+                Лабораторная работа
+                <select id="bugLabSelect">
+                  <option value="ЛБ 4">ЛБ 4: переменные и типы</option>
+                  <option value="ЛБ 5">ЛБ 5: преобразования и арифметика</option>
+                  <option value="ЛБ 6">ЛБ 6: условия и ветвление</option>
+                  <option value="ЛБ 7">ЛБ 7: циклы</option>
+                  <option value="ЛБ 8">ЛБ 8: массивы</option>
+                  <option value="ЛБ 9">ЛБ 9: методы</option>
+                </select>
+              </label>
+              <label class="review-setting"><input id="bugMistakesOnly" type="checkbox"> Только на повторение</label>
+              <button class="primary-button" id="startBugsBtn" type="button">Начать поиск ошибок</button>
+              <button class="ghost-button" type="button" data-exit-mode>Выйти в меню</button>
+            </aside>
+            <section class="study-panel">
+              <div class="session-bar">
+                <span id="bugProgress">Выберите лабораторную</span>
+                <div class="progress-track" aria-hidden="true"><span id="bugProgressFill"></span></div>
+              </div>
+              <article class="quiz-card bug-card">
+                <h2 id="bugTitle">Карточки с ошибками ждут</h2>
+                <p id="bugPrompt">Выберите лабораторную и начните тренировку.</p>
+                <div class="code-snippet" id="bugBroken" hidden>
+                  <span class="code-label">Код с ошибкой · C#</span>
+                  <pre><code id="bugBrokenCode"></code></pre>
+                </div>
+                <div id="bugSolution" hidden>
+                  <div class="code-snippet">
+                    <span class="code-label">Исправленный код · выделена изменённая строка</span>
+                    <pre><code id="bugFixedCode"></code></pre>
+                  </div>
+                  <p id="bugExplanation"></p>
+                  <p><strong>Ожидаемый результат:</strong></p>
+                  <pre class="bug-result" id="bugExpected"></pre>
+                </div>
+                <button class="primary-button" id="flipBugBtn" type="button" aria-expanded="false" aria-controls="bugSolution" disabled>Показать решение</button>
+              </article>
+              <div class="action-row">
+                <button class="secondary-button" id="bugKnownBtn" type="button" disabled>Нашёл сам</button>
+                <button class="secondary-button" id="bugRepeatBtn" type="button" disabled>Нужно повторить</button>
+              </div>
+              <p class="session-note" id="bugSessionNote" role="status">Оцените своё решение после просмотра оборота. Результат сохраняется в этом браузере.</p>
+            </section>
+          </div>
+        </section>
+
         <section class="screen" id="referenceScreen" data-screen="reference">
           <div class="reference-layout">
             <div class="section-heading">
@@ -295,8 +356,9 @@
       </form>
     </dialog>
 
-    <script src="terms-content.js?v=308989f6d4fd"></script>
-    <script src="code-content.js?v=308989f6d4fd"></script>
-    <script src="app.js?v=308989f6d4fd"></script>
+    <script src="terms-content.js?v=563a633cbca8"></script>
+    <script src="code-content.js?v=563a633cbca8"></script>
+    <script src="bug-content.js?v=563a633cbca8"></script>
+    <script src="app.js?v=563a633cbca8"></script>
   </body>
 </html>

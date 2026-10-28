@@ -32,7 +32,7 @@ function element() {
       });
     },
     get innerHTML() { return markup; },
-    replaceChildren() { this.children = []; },
+    replaceChildren() { this.children = []; markup = ""; this.textContent = ""; },
     append(child) { this.children.push(child); },
     querySelectorAll() { return this.children; },
     setAttribute() {},
@@ -45,6 +45,7 @@ function setup(storage = new Map(), blocked = false) {
   const elements = new Map([...html.matchAll(/id="([^"]+)"/g)].map(match => [`#${match[1]}`, element()]));
   const root = element();
   elements.get("#codeLabSelect").value = "all";
+  elements.get("#bugLabSelect").value = "ЛБ 4";
   let id = 0;
   const intervals = new Map();
   const context = vm.createContext({
@@ -67,10 +68,64 @@ function setup(storage = new Map(), blocked = false) {
       setItem(key, value) { if (blocked) throw new Error("Blocked"); storage.set(key, value); }
     }
   });
-  vm.runInContext(`${read("terms-content.js")}\n${read("code-content.js")}\n${read("app.js")}`, context);
+  vm.runInContext(`${read("terms-content.js")}\n${read("code-content.js")}\n${read("bug-content.js")}\n${read("app.js")}`, context);
   const run = code => vm.runInContext(code, context);
   return { elements, run, storage, intervals };
 }
+
+test("error cards reveal corrections on demand and require a reveal before grading", () => {
+  const app = setup();
+  const intervalsBefore = app.intervals.size;
+  app.elements.get("#startBugsBtn").click();
+  assert.equal(app.run('state.bugSession.cards.length'), 5);
+  assert.equal(app.intervals.size, intervalsBefore);
+  assert.equal(app.elements.get("#bugSolution").hidden, true);
+  assert.equal(app.elements.get("#bugFixedCode").innerHTML, "");
+  app.run('markBugCard(true)');
+  assert.equal(app.run('state.bugSession.index'), 0);
+  assert.equal(app.run('Object.keys(learningProgress).length'), 0);
+  app.elements.get("#flipBugBtn").click();
+  assert.equal(app.elements.get("#bugSolution").hidden, false);
+  assert.equal((app.elements.get("#bugFixedCode").innerHTML.match(/is-corrected/g) || []).length, 1);
+  assert.equal(app.elements.get("#bugExpected").textContent, app.run('state.bugSession.cards[0].expectedResult'));
+  app.elements.get("#bugRepeatBtn").click();
+  assert.equal(app.run('state.bugSession.index'), 1);
+  assert.equal(app.elements.get("#bugFixedCode").innerHTML, "");
+  app.run('markBugCard(false)');
+  assert.equal(app.run('Object.values(learningProgress)[0].attempts'), 1);
+  for (let i = 0; i < 4; i++) {
+    app.elements.get("#flipBugBtn").click();
+    app.elements.get("#bugKnownBtn").click();
+  }
+  assert.equal(app.run('state.bugSession'), null);
+  assert.equal(app.run('state.activeMode'), null);
+  assert.equal(app.elements.get("#bugProgressFill").style.width, "100%");
+  assert.match(app.elements.get("#bugPrompt").textContent, /нашёл сам — 4, нужно повторить — 1/);
+  const reload = setup(app.storage);
+  reload.elements.get("#bugMistakesOnly").checked = true;
+  reload.run('startBugs()');
+  assert.equal(reload.run('state.bugSession.cards.length'), 1);
+  reload.run('flipBugCard(); markBugCard(true)');
+  assert.equal(reload.run('Object.values(learningProgress).filter(item => item.needsReview).length'), 0);
+});
+
+test("error mode clears revealed answers on exit and safely handles an empty review list", () => {
+  const app = setup();
+  app.elements.get("#bugMistakesOnly").checked = true;
+  app.run('startBugs()');
+  assert.equal(app.run('state.bugSession'), null);
+  assert.match(app.elements.get("#bugSessionNote").textContent, /нет карточек/);
+  app.elements.get("#bugMistakesOnly").checked = false;
+  app.elements.get("#bugLabSelect").value = "ЛБ 9";
+  app.run('recordLearningAnswer("code", codeLessons[0], false); startBugs()');
+  assert.equal(app.run('state.bugSession.cards.every(card => card.lab === "ЛБ 9")'), true);
+  app.run('flipBugCard(); resetMode(); flipBugCard(); markBugCard(true)');
+  assert.equal(app.run('state.bugSession'), null);
+  assert.equal(app.elements.get("#bugSolution").hidden, true);
+  assert.equal(app.elements.get("#bugFixedCode").innerHTML, "");
+  assert.equal(app.run('Object.keys(learningProgress).length'), 1);
+  assert.equal(app.run('needsReview("code", codeLessons[0])'), true);
+});
 
 test("answers persist after reload and a later correct answer resolves the review flag", () => {
   const app = setup();

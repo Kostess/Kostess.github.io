@@ -62,6 +62,7 @@ const state = {
   cardSession: null,
   quizSession: null,
   codeSession: null,
+  bugSession: null,
   codeTimerId: null,
   quoteIndex: 0,
   quoteIntervalId: null,
@@ -113,6 +114,23 @@ const els = {
   codeFeedback: document.querySelector("#codeFeedback"),
   nextCodeBtn: document.querySelector("#nextCodeBtn"),
   nextQuizBtn: document.querySelector("#nextQuizBtn"),
+  bugLabSelect: document.querySelector("#bugLabSelect"),
+  bugMistakesOnly: document.querySelector("#bugMistakesOnly"),
+  startBugsBtn: document.querySelector("#startBugsBtn"),
+  bugProgress: document.querySelector("#bugProgress"),
+  bugProgressFill: document.querySelector("#bugProgressFill"),
+  bugTitle: document.querySelector("#bugTitle"),
+  bugPrompt: document.querySelector("#bugPrompt"),
+  bugBroken: document.querySelector("#bugBroken"),
+  bugBrokenCode: document.querySelector("#bugBrokenCode"),
+  bugSolution: document.querySelector("#bugSolution"),
+  bugFixedCode: document.querySelector("#bugFixedCode"),
+  bugExplanation: document.querySelector("#bugExplanation"),
+  bugExpected: document.querySelector("#bugExpected"),
+  flipBugBtn: document.querySelector("#flipBugBtn"),
+  bugKnownBtn: document.querySelector("#bugKnownBtn"),
+  bugRepeatBtn: document.querySelector("#bugRepeatBtn"),
+  bugSessionNote: document.querySelector("#bugSessionNote"),
   cardMistakesOnly: document.querySelector("#cardMistakesOnly"),
   quizMistakesOnly: document.querySelector("#quizMistakesOnly"),
   codeMistakesOnly: document.querySelector("#codeMistakesOnly"),
@@ -153,15 +171,22 @@ const PROGRESS_KEY = "terms-progress-v1";
 let learningProgress = {};
 
 function progressKey(mode, item) {
-  if (mode === "code" && item.id) return `code:${item.id}`;
+  if (["code", "bugs"].includes(mode) && item.id) return `${mode}:${item.id}`;
   return `${mode}:${item.deckId}:${item.term}`;
 }
 
 function needsReview(mode, item) {
+  if (mode === "bugs" && !item.id) {
+    return bugCards.some(card => card.deckId === item.deckId && card.term === item.term && needsReview("bugs", card));
+  }
   if (mode === "code" && !item.id) {
     return (codeLessonsByTerm.get(`${item.deckId}:${item.term}`) || []).some(lesson => needsReview("code", lesson));
   }
   return learningProgress[progressKey(mode, item)]?.needsReview === true;
+}
+
+function getLearningItems(mode) {
+  return mode === "code" ? codeLessons : mode === "bugs" ? bugCards : allTerms;
 }
 
 function loadLearningProgress() {
@@ -171,8 +196,8 @@ function loadLearningProgress() {
       throw new Error("Invalid progress");
     }
     learningProgress = {};
-    for (const mode of ["cards", "quiz", "code"]) {
-      const items = mode === "code" ? codeLessons : allTerms;
+    for (const mode of ["cards", "quiz", "code", "bugs"]) {
+      const items = getLearningItems(mode);
       for (const item of items) {
         const key = progressKey(mode, item);
         const legacyKey = `${mode}:${item.deckId}:${item.term}`;
@@ -212,10 +237,11 @@ function recordLearningAnswer(mode, item, correct) {
 function renderLearningProgress() {
   const studied = allTerms.filter(item => ["cards", "quiz"].some(mode =>
     learningProgress[progressKey(mode, item)]) ||
-    (codeLessonsByTerm.get(`${item.deckId}:${item.term}`) || []).some(lesson => learningProgress[progressKey("code", lesson)]));
+    (codeLessonsByTerm.get(`${item.deckId}:${item.term}`) || []).some(lesson => learningProgress[progressKey("code", lesson)]) ||
+    bugCards.some(card => card.deckId === item.deckId && card.term === item.term && learningProgress[progressKey("bugs", card)]));
   const mistakes = [];
-  for (const [mode, label] of [["cards", "Карточки"], ["quiz", "Тест"], ["code", "Понимаю код"]]) {
-    for (const item of mode === "code" ? codeLessons : allTerms) {
+  for (const [mode, label] of [["cards", "Карточки"], ["quiz", "Тест"], ["code", "Понимаю код"], ["bugs", "Найди ошибку"]]) {
+    for (const item of getLearningItems(mode)) {
       if (needsReview(mode, item)) mistakes.push({ item, label });
     }
   }
@@ -231,10 +257,10 @@ function renderLearningProgress() {
     const li = document.createElement("li");
     const term = allTerms.find(term => term.deckId === item.deckId && term.term === item.term);
     const deck = item.id ? codeDecks.find(deck => deck.id === item.codeDeckId) : undefined;
-    li.textContent = `${label}${deck ? ` · ${deck.title}` : ""} · ${item.term}: ${term?.definition || ""}`;
-    if (item.challengeCode) {
+    li.textContent = `${label}${deck ? ` · ${deck.title}` : ""}${item.title ? ` · ${item.lab} · ${item.title}` : ""} · ${item.term}: ${term?.definition || ""}`;
+    if (item.challengeCode || item.brokenCode) {
       const snippet = document.createElement("pre");
-      snippet.textContent = `Пример задания:\n${item.challengeCode}`;
+      snippet.textContent = `Пример задания:\n${item.challengeCode || item.brokenCode}`;
       li.append(snippet);
     }
     els.mistakeList.append(li);
@@ -417,9 +443,11 @@ function resetMode() {
   state.cardSession = null;
   state.quizSession = null;
   state.codeSession = null;
+  state.bugSession = null;
   resetCardsUi();
   resetQuizUi();
   resetCodeUi();
+  resetBugsUi();
 }
 
 function goToScreen(screen, force = false) {
@@ -458,7 +486,7 @@ function startCards() {
   const topicId = els.cardTopicSelect.value;
   const deckId = els.cardDeckSelect.value;
   const sourceTerms = getTerms(topicId, deckId).filter(item => !els.cardMistakesOnly.checked ||
-    ["cards", "quiz", "code"].some(mode => needsReview(mode, item)));
+    ["cards", "quiz", "code", "bugs"].some(mode => needsReview(mode, item)));
   if (!sourceTerms.length) {
     els.cardSessionNote.textContent = "В выбранной колоде нет терминов для повторения. Снимите фильтр или выберите другую колоду.";
     return;
@@ -832,6 +860,95 @@ function finishCode() {
   state.codeSession = null;
 }
 
+function resetBugsUi() {
+  els.bugProgress.textContent = "Выберите лабораторную";
+  els.bugProgressFill.style.width = "0%";
+  els.bugTitle.textContent = "Карточки с ошибками ждут";
+  els.bugPrompt.textContent = "Выберите лабораторную и начните тренировку.";
+  els.bugBroken.hidden = true;
+  els.bugBrokenCode.textContent = "";
+  els.bugSolution.hidden = true;
+  els.bugFixedCode.replaceChildren();
+  els.bugExplanation.textContent = "";
+  els.bugExpected.textContent = "";
+  els.flipBugBtn.disabled = true;
+  els.flipBugBtn.textContent = "Показать решение";
+  els.flipBugBtn.setAttribute("aria-expanded", "false");
+  els.bugKnownBtn.disabled = true;
+  els.bugRepeatBtn.disabled = true;
+  els.bugSessionNote.textContent = "Оцените своё решение после просмотра оборота. Результат сохраняется в этом браузере.";
+}
+
+function startBugs() {
+  const cards = shuffle(bugCards.filter(card => card.lab === els.bugLabSelect.value &&
+    (!els.bugMistakesOnly.checked || needsReview("bugs", card))));
+  if (!cards.length) {
+    els.bugSessionNote.textContent = "В выбранной лабораторной нет карточек для повторения. Снимите фильтр или выберите другую лабораторную.";
+    return;
+  }
+  state.activeMode = "bugs";
+  state.bugSession = { cards, index: 0, known: 0, repeated: 0, flipped: false };
+  renderBugCard();
+}
+
+function renderBugCard() {
+  const session = state.bugSession;
+  if (!session) return resetBugsUi();
+  if (session.index >= session.cards.length) return finishBugs();
+  const card = session.cards[session.index];
+  els.bugProgress.textContent = `${card.lab} · Карточка ${session.index + 1} из ${session.cards.length}`;
+  els.bugProgressFill.style.width = `${Math.round(session.index / session.cards.length * 100)}%`;
+  els.bugTitle.textContent = card.title;
+  els.bugPrompt.textContent = card.prompt;
+  els.bugBroken.hidden = session.flipped;
+  els.bugBrokenCode.textContent = card.brokenCode;
+  els.bugSolution.hidden = !session.flipped;
+  // Populate the answer only when the user opens it.
+  els.bugFixedCode.innerHTML = session.flipped ? card.fixedCode.split("\n").map((line, index) =>
+    `<span class="bug-code-line${index + 1 === card.changedLine ? " is-corrected" : ""}"><span class="bug-line-number" aria-hidden="true">${index + 1}</span>${escapeHtml(line) || " "}</span>`
+  ).join("") : "";
+  const types = { compile: "Код не собирается.", runtime: "Ошибка при выполнении.", logic: "Неверный результат." };
+  els.bugExplanation.textContent = session.flipped ? `${types[card.kind]} ${card.explanation}` : "";
+  els.bugExpected.textContent = session.flipped ? card.expectedResult : "";
+  els.flipBugBtn.disabled = false;
+  els.flipBugBtn.textContent = session.flipped ? "Показать код с ошибкой" : "Показать решение";
+  els.flipBugBtn.setAttribute("aria-expanded", String(session.flipped));
+  els.bugKnownBtn.disabled = !session.flipped;
+  els.bugRepeatBtn.disabled = !session.flipped;
+  els.bugSessionNote.textContent = session.flipped
+    ? "Сравните со своим решением и оцените себя. Трудные карточки сохранятся для следующего повторения."
+    : "Найдите ошибку и сформулируйте исправление своими словами. Здесь нет таймера.";
+}
+
+function flipBugCard() {
+  if (!state.bugSession) return;
+  state.bugSession.flipped = !state.bugSession.flipped;
+  renderBugCard();
+}
+
+function markBugCard(known) {
+  const session = state.bugSession;
+  if (!session || !session.flipped) return;
+  recordLearningAnswer("bugs", session.cards[session.index], known);
+  if (known) session.known++;
+  else session.repeated++;
+  session.index++;
+  session.flipped = false;
+  renderBugCard();
+}
+
+function finishBugs() {
+  const session = state.bugSession;
+  resetBugsUi();
+  els.bugProgress.textContent = "Тренировка завершена";
+  els.bugProgressFill.style.width = "100%";
+  els.bugTitle.textContent = "Готово";
+  els.bugPrompt.textContent = `По вашей оценке: нашёл сам — ${session.known}, нужно повторить — ${session.repeated}.`;
+  els.bugSessionNote.textContent = "Ответы учтены в прогрессе. Для повторения включите фильтр «Только на повторение».";
+  state.activeMode = null;
+  state.bugSession = null;
+}
+
 function escapeAttribute(value) {
   return value.replaceAll("&", "&amp;").replaceAll('"', "&quot;").replaceAll("<", "&lt;");
 }
@@ -970,6 +1087,10 @@ function wireEvents() {
   els.startQuizBtn.addEventListener("click", startQuiz);
   els.nextQuizBtn.addEventListener("click", nextQuizQuestion);
   els.startCodeBtn.addEventListener("click", startCode);
+  els.startBugsBtn.addEventListener("click", startBugs);
+  els.flipBugBtn.addEventListener("click", flipBugCard);
+  els.bugKnownBtn.addEventListener("click", () => markBugCard(true));
+  els.bugRepeatBtn.addEventListener("click", () => markBugCard(false));
   els.codeLabSelect.addEventListener("change", fillCodeDeckSelect);
   els.nextCodeBtn.addEventListener("click", () => {
     if (!state.codeSession || !state.codeSession.answered) {

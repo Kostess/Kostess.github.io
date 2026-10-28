@@ -921,7 +921,7 @@ dialog::backdrop {
     grid-column: 1 / -1;
     grid-row: 2;
     display: grid;
-    grid-template-columns: repeat(5, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .mode-grid {
@@ -965,10 +965,6 @@ dialog::backdrop {
   .topnav {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .topnav .nav-link:last-child {
-    grid-column: 1 / -1;
   }
 
   .brand small {
@@ -1162,6 +1158,19 @@ dialog::backdrop {
   gap: 8px;
 }
 .review-setting input { width: auto; min-height: auto; }
+
+.bug-code-line { display: block; white-space: pre; }
+.bug-line-number { display: inline-block; width: 3ch; margin-right: 1ch; color: #8ca499; user-select: none; }
+.bug-code-line.is-corrected { background: #234f3a; box-shadow: inset 3px 0 #8be6c0; }
+.bug-result { padding: 12px; border: 1px solid var(--line); border-radius: var(--radius); white-space: pre-wrap; overflow-wrap: anywhere; }
+.bug-card [hidden] { display: none; }
+.bug-card h2 { min-height: auto; }
+
+@media (min-width: 881px) and (max-width: 1100px) {
+  .topbar { grid-template-columns: minmax(0, 1fr) auto; }
+  .topbar .icon-button { grid-column: 2; grid-row: 1; }
+  .topnav { grid-column: 1 / -1; justify-content: center; }
+}
 
 .code-timer {
   width: fit-content;

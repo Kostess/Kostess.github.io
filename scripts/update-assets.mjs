@@ -3,7 +3,7 @@ import { readFileSync, writeFileSync } from "node:fs";
 import { resolve, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 
-const assets = ["styles.css", "terms-content.js", "code-content.js", "app.js"];
+const assets = ["styles.css", "terms-content.js", "code-content.js", "bug-content.js", "app.js"];
 
 export function updateAssetVersions(root, check = false) {
   const hash = createHash("sha256");
@@ -15,7 +15,7 @@ export function updateAssetVersions(root, check = false) {
   const path = resolve(root, "index.html");
   const html = readFileSync(path, "utf8");
   const counts = new Map(assets.map(name => [name, 0]));
-  const updated = html.replace(/\b(src|href)="(styles\.css|terms-content\.js|code-content\.js|app\.js)(?:\?[^"\s]*)?"/g,
+  const updated = html.replace(/\b(src|href)="(styles\.css|terms-content\.js|code-content\.js|bug-content\.js|app\.js)(?:\?[^"\s]*)?"/g,
     (_, attribute, name) => {
       counts.set(name, counts.get(name) + 1);
       return `${attribute}="${name}?v=${version}"`;

@@ -546,7 +546,7 @@ const codeLessons = [
     "exampleResult": "True",
     "exampleNote": "Два знака == сравнивают значения. Один знак = присваивает значение переменной.",
     "kind": "Что выведет код?",
-    "challengeCode": "int debts = 1;\nConsole.WriteLine(debts == 0);",
+    "challengeCode": "int debts = 0;\nConsole.WriteLine(debts == 0);",
     "prompt": "Что появится в консоли?",
     "options": [
       "True",
@@ -554,8 +554,9 @@ const codeLessons = [
       "1",
       "Ошибка компиляции"
     ],
-    "correctIndex": 1,
-    "explanation": "1 не равно 0, поэтому сравнение даёт false; Console.WriteLine выводит False.",
+    "correctIndex": 0,
+    "explanation": "debts равно 0. Сравнение 0 == 0 истинно; Console.WriteLine выводит True.",
+    "challengeResult": "True",
     "codeDeckId": "practice-conditions-logic"
   },
   {
@@ -586,7 +587,7 @@ const codeLessons = [
     "exampleResult": "True",
     "exampleNote": "Консультация нужна из-за задолженности. Для || достаточно одного верного условия.",
     "kind": "Что выведет код?",
-    "challengeCode": "int score = 60;\nint debts = 0;\nConsole.WriteLine(score < 60 || debts > 0);",
+    "challengeCode": "int score = 59;\nint debts = 0;\nConsole.WriteLine(score < 60 || debts > 0);",
     "prompt": "Нужна ли консультация по этим правилам? Что выведет код?",
     "options": [
       "True",
@@ -594,8 +595,9 @@ const codeLessons = [
       "60",
       "Ошибка компиляции"
     ],
-    "correctIndex": 1,
-    "explanation": "Баллы не меньше 60 и задолженностей нет. Обе части || ложны.",
+    "correctIndex": 0,
+    "explanation": "59 меньше 60, поэтому консультация нужна. Для || достаточно истинности первой проверки, даже когда задолженностей нет.",
+    "challengeResult": "True",
     "codeDeckId": "practice-conditions-logic"
   },
   {
@@ -1453,7 +1455,7 @@ const codeLessons = [
     "exampleResult": "True",
     "exampleNote": "Условие вычисляется в true или false.",
     "kind": "Что выведет код?",
-    "challengeCode": "int score = 59;\nConsole.WriteLine(score >= 60);",
+    "challengeCode": "int score = 60;\nConsole.WriteLine(score >= 60);",
     "prompt": "Что появится в консоли?",
     "options": [
       "True",
@@ -1461,9 +1463,9 @@ const codeLessons = [
       "59",
       "Ошибка компиляции"
     ],
-    "correctIndex": 1,
-    "explanation": "59 меньше 60, поэтому условие ложно.",
-    "challengeResult": "False",
+    "correctIndex": 0,
+    "explanation": "Оператор >= включает равенство. При score = 60 условие 60 >= 60 истинно; выводится True.",
+    "challengeResult": "True",
     "codeDeckId": "practice-conditions-logic"
   },
   {

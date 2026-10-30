@@ -61,6 +61,17 @@ test("labs 4 through 9 have separate practice questions", () => {
   }
 });
 
+test("lab 6 first deck balances boolean answers in base questions and across alternatives", () => {
+  const deck = lessons.filter(lesson => lesson.codeDeckId === "practice-conditions-logic");
+  for (const versions of [deck, deck.flatMap(lesson => [lesson, ...(lesson.variants || [])])]) {
+    const answers = versions.map(version => version.options[version.correctIndex]);
+    const trueCount = answers.filter(answer => answer === "True").length;
+    const falseCount = answers.filter(answer => answer === "False").length;
+    assert.ok(trueCount > 0 && falseCount > 0);
+    assert.ok(Math.abs(trueCount - falseCount) <= 1, `${trueCount} True / ${falseCount} False`);
+  }
+});
+
 test("each practice deck has 5–10 examples, one lab, and every lesson belongs to exactly one deck", () => {
   assert.equal(codeDecks.length, 25);
   assert.equal(new Set(codeDecks.map(deck => deck.id)).size, codeDecks.length);

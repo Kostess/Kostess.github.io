@@ -49,7 +49,9 @@ const deckLabTags = {
   "arrays-analysis": ["ЛБ 8"],
   "methods-basics": ["ЛБ 9"],
   "methods-return-scope": ["ЛБ 9"],
-  "methods-purchase": ["ЛБ 9"]
+  "methods-purchase": ["ЛБ 9"],
+  "methods-overloads": ["ЛБ 10"],
+  "array-processing": ["ЛБ 10"]
 };
 
 const CODE_ANSWER_TIME_MS = 90_000;

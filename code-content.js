@@ -124,6 +124,16 @@ const codeDecks = [
     "id": "lab9-purchase",
     "lab": "ЛБ 9",
     "title": "Стоимость покупки и скидка"
+  },
+  {
+    "id": "lab10-method-overloads",
+    "lab": "ЛБ 10",
+    "title": "Сигнатуры, перегрузки и аргументы"
+  },
+  {
+    "id": "lab10-array-operations",
+    "lab": "ЛБ 10",
+    "title": "Копирование, сортировка и поиск"
   }
 ];
 
@@ -6089,5 +6099,253 @@ const codeLessons = [
     "correctIndex": 0,
     "explanation": "Правильная формула даёт 15. В discountPercent / 100 оба операнда int: 10 / 100 равно 0, что обнуляет скидку.",
     "solutionResult": "15"
+  },
+  {
+    "id": "lab10-static",
+    "deckId": "methods-overloads",
+    "term": "Статический метод",
+    "exampleCode": "Console.WriteLine(string.Concat(\"За\", \"мер\"));",
+    "exampleResult": "Замер",
+    "exampleNote": "Статический метод Concat вызывается через имя типа string.",
+    "kind": "Разберите вызов",
+    "challengeCode": "int[] times = { 320, 180 };\nArray.Sort(times);",
+    "prompt": "Как здесь вызывается метод Sort?",
+    "options": [
+      "По имени массива times",
+      "По имени класса Array",
+      "Через создание нового объекта",
+      "Через свойство массива"
+    ],
+    "correctIndex": 1,
+    "explanation": "Sort — статический метод класса Array. Массив times передаётся как аргумент.",
+    "codeDeckId": "lab10-method-overloads"
+  },
+  {
+    "id": "lab10-signature",
+    "deckId": "methods-overloads",
+    "term": "Сигнатура метода",
+    "exampleCode": "static int Scale(int value, int factor) => value * factor;\nConsole.WriteLine(Scale(3, 2));",
+    "exampleResult": "6",
+    "exampleNote": "У метода имя Scale и два параметра типа int. Тип результата не нужен для выбора перегрузки.",
+    "kind": "Разберите вызов",
+    "challengeCode": "static int Scale(int value, int factor) => value * factor;\nConsole.WriteLine(Scale(4, 2));",
+    "prompt": "Какое изменение объявления Scale даст другую сигнатуру?",
+    "options": [
+      "Переименовать value в number",
+      "Поменять только тип результата на double",
+      "Изменить тип первого параметра на double",
+      "Переставить имена двух параметров типа int"
+    ],
+    "correctIndex": 2,
+    "explanation": "Сигнатура изменится с Scale(int, int) на Scale(double, int). Имена параметров и тип результата на неё не влияют.",
+    "codeDeckId": "lab10-method-overloads"
+  },
+  {
+    "id": "lab10-overload",
+    "deckId": "methods-overloads",
+    "term": "Перегрузка метода",
+    "exampleCode": "Console.WriteLine(string.Concat(\"За\", \"мер\"));\nConsole.WriteLine(string.Concat(\"За\", \"мер\", \"ы\"));",
+    "exampleResult": "Замер\nЗамеры",
+    "exampleNote": "Один вызов выбирает перегрузку Concat с двумя строками, другой — с тремя.",
+    "kind": "Разберите вызов",
+    "challengeCode": "using System;\n\nclass Program\n{\n    static void Main()\n    {\n        Console.WriteLine(Describe(3.5));\n    }\n\n    static string Describe(int value) => \"int\";\n    static string Describe(double value) => \"double\";\n}",
+    "prompt": "Какую перегрузку выберет компилятор?",
+    "options": [
+      "Describe(int)",
+      "Describe(double)",
+      "Обе перегрузки",
+      "Вызов неоднозначен"
+    ],
+    "correctIndex": 1,
+    "explanation": "Литерал 3.5 имеет тип double, поэтому подходит перегрузка Describe(double).",
+    "codeDeckId": "lab10-method-overloads"
+  },
+  {
+    "id": "lab10-argument",
+    "deckId": "methods-overloads",
+    "term": "Необязательный параметр",
+    "exampleCode": "static int AddDelay(int time, int delay = 20) => time + delay;\nConsole.WriteLine(AddDelay(180));",
+    "exampleResult": "200",
+    "exampleNote": "Параметр delay необязательный: вызов без второго аргумента использует 20.",
+    "kind": "Что выведет код?",
+    "challengeCode": "static int AddDelay(int time, int delay = 20) => time + delay;\nConsole.WriteLine(AddDelay(250, 15));",
+    "prompt": "Что появится в консоли, если передать второй аргумент явно?",
+    "options": [
+      "250",
+      "270",
+      "265",
+      "Ошибка компиляции"
+    ],
+    "correctIndex": 2,
+    "explanation": "Явно переданное значение 15 используется вместо 20. Результат равен 265.",
+    "codeDeckId": "lab10-method-overloads",
+    "challengeResult": "265"
+  },
+  {
+    "id": "lab10-default-value",
+    "deckId": "methods-overloads",
+    "term": "Значение аргумента по умолчанию",
+    "exampleCode": "static int Multiply(int value, int factor = 2) => value * factor;\nConsole.WriteLine(Multiply(3));",
+    "exampleResult": "6",
+    "exampleNote": "Второй аргумент пропущен, поэтому factor получает значение 2.",
+    "kind": "Что выведет код?",
+    "challengeCode": "static int Multiply(int value, int factor = 2) => value * factor;\nConsole.WriteLine(Multiply(5));",
+    "prompt": "Что появится в консоли?",
+    "options": [
+      "5",
+      "7",
+      "10",
+      "Ошибка компиляции"
+    ],
+    "correctIndex": 2,
+    "explanation": "Аргумент для factor не передан. Используется значение 2, поэтому результат равен 10.",
+    "codeDeckId": "lab10-method-overloads",
+    "challengeResult": "10"
+  },
+  {
+    "id": "lab10-named-argument",
+    "deckId": "methods-overloads",
+    "term": "Именованный аргумент",
+    "exampleCode": "static int Multiply(int value, int factor = 2) => value * factor;\nConsole.WriteLine(Multiply(3, factor: 4));",
+    "exampleResult": "12",
+    "exampleNote": "Запись factor: 4 передаёт параметру factor значение 4.",
+    "kind": "Что выведет код?",
+    "challengeCode": "static int Subtract(int value, int amount) => value - amount;\nConsole.WriteLine(Subtract(amount: 3, value: 10));",
+    "prompt": "Что появится в консоли?",
+    "options": [
+      "-7",
+      "7",
+      "13",
+      "Ошибка компиляции"
+    ],
+    "correctIndex": 1,
+    "explanation": "Имена связывают 10 с value, а 3 с amount. Метод вычисляет 10 - 3.",
+    "codeDeckId": "lab10-method-overloads",
+    "challengeResult": "7"
+  },
+  {
+    "id": "lab10-zero-index",
+    "deckId": "array-processing",
+    "term": "Признак отсутствия совпадения",
+    "exampleCode": "int[] times = { 320, 180, 250 };\nConsole.WriteLine(Array.IndexOf(times, 999));",
+    "exampleResult": "-1",
+    "exampleNote": "Замера 999 в массиве нет, поэтому поиск возвращает -1.",
+    "kind": "Что выведет код?",
+    "challengeCode": "int[] times = { 320, 180, 250 };\nConsole.WriteLine(Array.IndexOf(times, 320));",
+    "prompt": "Какой индекс вернёт поиск 320?",
+    "options": [
+      "-1",
+      "0",
+      "1",
+      "320"
+    ],
+    "correctIndex": 1,
+    "explanation": "Замер 320 находится на первой позиции с индексом 0. Результат -1 означал бы отсутствие совпадения.",
+    "codeDeckId": "lab10-array-operations",
+    "challengeResult": "0"
+  },
+  {
+    "id": "lab10-copy",
+    "deckId": "array-processing",
+    "term": "Array.Copy",
+    "exampleCode": "int[] times = { 320, 180, 250 };\nint[] copy = new int[times.Length];\nArray.Copy(times, copy, times.Length);\nConsole.WriteLine(string.Join(\" \", copy));",
+    "exampleResult": "320 180 250",
+    "exampleNote": "В новом массиве находятся те же числа в исходном порядке.",
+    "kind": "Что выведет код?",
+    "challengeCode": "int[] times = { 320, 180, 250 };\nint[] copy = new int[times.Length];\nArray.Copy(times, copy, times.Length);\ncopy[0] = 999;\nConsole.WriteLine(times[0]);",
+    "prompt": "Какое значение осталось в первом элементе times?",
+    "options": [
+      "999",
+      "180",
+      "0",
+      "320"
+    ],
+    "correctIndex": 3,
+    "explanation": "Для int[] копируются значения элементов. Запись в copy[0] не меняет times[0].",
+    "codeDeckId": "lab10-array-operations",
+    "challengeResult": "320"
+  },
+  {
+    "id": "lab10-sort",
+    "deckId": "array-processing",
+    "term": "Array.Sort",
+    "exampleCode": "int[] times = { 320, 180, 250 };\nArray.Sort(times);\nConsole.WriteLine(string.Join(\" \", times));",
+    "exampleResult": "180 250 320",
+    "exampleNote": "Array.Sort меняет порядок элементов в переданном массиве.",
+    "kind": "Что выведет код?",
+    "challengeCode": "int[] times = { 320, 180, 250, 180 };\nArray.Sort(times);\nConsole.WriteLine(string.Join(\" \", times));",
+    "prompt": "В каком порядке будут выведены элементы?",
+    "options": [
+      "180 250 320",
+      "320 250 180 180",
+      "180 180 250 320",
+      "320 180 250 180"
+    ],
+    "correctIndex": 2,
+    "explanation": "Числа сортируются по возрастанию. Оба элемента со значением 180 остаются в массиве.",
+    "codeDeckId": "lab10-array-operations",
+    "challengeResult": "180 180 250 320"
+  },
+  {
+    "id": "lab10-reverse",
+    "deckId": "array-processing",
+    "term": "Array.Reverse",
+    "exampleCode": "int[] times = { 180, 250, 320 };\nArray.Reverse(times);\nConsole.WriteLine(string.Join(\" \", times));",
+    "exampleResult": "320 250 180",
+    "exampleNote": "Массив был отсортирован по возрастанию. После разворота порядок стал убывающим.",
+    "kind": "Что выведет код?",
+    "challengeCode": "int[] times = { 320, 180, 250 };\nArray.Reverse(times);\nConsole.WriteLine(string.Join(\" \", times));",
+    "prompt": "В каком порядке будут выведены элементы?",
+    "options": [
+      "320 250 180",
+      "180 250 320",
+      "320 180 250",
+      "250 180 320"
+    ],
+    "correctIndex": 3,
+    "explanation": "Array.Reverse разворачивает текущий порядок. Чтобы получить убывающий порядок из произвольного массива, сначала нужна сортировка.",
+    "codeDeckId": "lab10-array-operations",
+    "challengeResult": "250 180 320"
+  },
+  {
+    "id": "lab10-index-of",
+    "deckId": "array-processing",
+    "term": "Array.IndexOf",
+    "exampleCode": "int[] times = { 320, 180, 250, 180 };\nConsole.WriteLine(Array.IndexOf(times, 180));",
+    "exampleResult": "1",
+    "exampleNote": "Число 180 встречается дважды. Array.IndexOf возвращает индекс первого совпадения.",
+    "kind": "Разберите вызов",
+    "challengeCode": "int[] times = { 320, 180, 250 };\nint index = Array.IndexOf(times, 320);\nif (index > 0)\n{\n    Console.WriteLine(index);\n}",
+    "prompt": "Как исправить условие, чтобы найти и первый элемент?",
+    "options": [
+      "index >= 0",
+      "index == -1",
+      "index > 1",
+      "index != 0"
+    ],
+    "correctIndex": 0,
+    "explanation": "Для 320 метод возвращает индекс 0. Условие index >= 0 включает первый элемент и исключает -1.",
+    "codeDeckId": "lab10-array-operations"
+  },
+  {
+    "id": "lab10-sorted-copy",
+    "deckId": "array-processing",
+    "term": "Отсортированная копия",
+    "exampleCode": "int[] times = { 320, 180, 250 };\nint[] copy = new int[times.Length];\nArray.Copy(times, copy, times.Length);\nArray.Sort(copy);\nConsole.WriteLine(string.Join(\" \", copy));\nConsole.WriteLine(string.Join(\" \", times));",
+    "exampleResult": "180 250 320\n320 180 250",
+    "exampleNote": "Сортируется отдельный массив. Порядок исходных замеров сохраняется.",
+    "kind": "Что выведет код?",
+    "challengeCode": "int[] times = { 320, 180, 250 };\nint[] copy = times;\nArray.Sort(copy);\nConsole.WriteLine(string.Join(\" \", times));",
+    "prompt": "Что выведет этот фрагмент?",
+    "options": [
+      "320 180 250",
+      "180 250 320",
+      "320 250 180",
+      "Ошибка компиляции"
+    ],
+    "correctIndex": 1,
+    "explanation": "Присваивание copy = times не создаёт новый массив. Обе переменные ссылаются на один массив, поэтому сортировка через copy меняет порядок в times.",
+    "codeDeckId": "lab10-array-operations",
+    "challengeResult": "180 250 320"
   }
 ];

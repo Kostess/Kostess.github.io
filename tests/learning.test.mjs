@@ -53,6 +53,7 @@ function setup(storage = new Map(), blocked = false) {
   let id = 0;
   const intervals = new Map();
   const context = vm.createContext({
+    TextEncoder,
     document: {
       documentElement: root,
       querySelector(selector) {
@@ -146,6 +147,52 @@ test("terminal teaches the state of Git before and after fetch, pull and selecti
   ui.command('git commit -m "Document setup"');
   assert.match(ui.command("git status"), /Untracked files:\n  draft.txt/);
   assert.equal(ui.get("Progress").textContent, "Урок завершён");
+});
+
+test("terminal listing separates supported flags, unknown flags, and literal paths", () => {
+  const ui = terminal(setup());
+  ui.select("Track", "sandbox");
+  assert.doesNotMatch(ui.command("Get-ChildItem"), /\.env\.example/);
+  assert.equal(ui.command("Get-ChildItem -Force -Name -File"), ".env.example\nREADME.md");
+  assert.match(ui.command("ls -la"), /Учебный режим: распознаны флаги GNU ls/);
+  assert.match(ui.command("Get-ChildItem -la"), /Флаг «-la».*не поддерживается/);
+  assert.match(ui.command("Get-ChildItem -LiteralPath"), /нужно указать значение/);
+
+  ui.select("Shell", "bash");
+  assert.equal(ui.command("ls"), "README.md");
+  assert.equal(ui.command("ls -a"), ".\n..\n.env.example\nREADME.md");
+  assert.match(ui.command("ls -lha ."), /^drwxr-xr-x +0 +\.\n[\s\S]+-rw-r--r-- +10 +\.env\.example/m);
+  assert.equal(ui.command("ls -A"), ".env.example\nREADME.md");
+  assert.match(ui.command("ls -laz"), /Флаг «-laz».*не поддерживается/);
+  assert.match(ui.command("ls missing -z"), /Флаг «-z».*не поддерживается/);
+  assert.match(ui.command("ls -a missing"), /Путь не найден: missing/);
+  ui.command("touch -- -la");
+  assert.equal(ui.command("ls -- -la"), "-la");
+  assert.match(ui.command("git add -la"), /Флаг «-la».*не поддерживается/);
+  ui.command("git add -- -la");
+  assert.match(ui.command("git status"), /new file: -la/);
+});
+
+test("terminal applies shell flags to virtual files and avoids mutation on errors or previews", () => {
+  const ui = terminal(setup());
+  ui.select("Track", "sandbox");
+  assert.equal(ui.command("Get-Content -TotalCount 1 -LiteralPath README.md"), "# Notes");
+  assert.equal(ui.command("Get-Content README.md -Tail 1"), "Project workspace");
+  assert.match(ui.command("Remove-Item -WhatIf -Path README.md"), /What if:/);
+  assert.match(ui.command("Get-Content README.md"), /Project workspace/);
+  ui.command('Set-Content -Value "-a" -Path notes.txt');
+  assert.equal(ui.command("Get-Content notes.txt -TotalCount 1"), "-a");
+
+  ui.select("Shell", "bash");
+  assert.match(ui.command('mkdir -pv "my notes/reports"'), /Создана папка: .*my notes\/reports/);
+  assert.equal(ui.command('ls "my notes"'), "reports");
+  assert.match(ui.command("cat -n README.md"), /1\s+# Notes\n\s+2\s+Project workspace/);
+  assert.equal(ui.command('grep -in "notes" README.md'), "1:# Notes");
+  assert.equal(ui.command('grep -vc "Notes" README.md'), "1");
+  ui.command('echo "Keep this" > copy.txt');
+  assert.match(ui.command("cp -nv README.md copy.txt"), /Изменения пропущены/);
+  assert.match(ui.command("rm -rf copy.txt"), /Флаг «-rf».*не поддерживается/);
+  assert.match(ui.command("cat copy.txt"), /Keep this/);
 });
 
 test("sandbox keeps file changes and command history until its environment is reset", () => {

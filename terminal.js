@@ -4,6 +4,7 @@
   const notes = "TODO update documentation\nDONE create folder\nTODO add examples\n";
   const remote = "https://example.test/student/notes.git";
   const baseline = { "README.md": readme };
+  const sandboxFiles = { ...baseline, ".env.example": "MODE=demo\n" };
   const initial = [["Start notes project", baseline]];
   const repo = (files = baseline, settings = {}) => ({ files, git: { commits: initial, ...settings } });
   const step = (event, task, powershell, bash = powershell, check) => ({ event, task, powershell, bash, check });
@@ -125,8 +126,9 @@
       "fetch обновляет сведения об удалённой ветке. pull получает изменения и применяет их к локальной ветке.")
     ],
     sandbox: [
-      lesson("sandbox", "Свободная практика", "В песочнице уже есть учебный репозиторий. Меняй файлы и пробуй команды в любом порядке.", [],
-        repo(baseline, { remote, upstream: true }), "")
+      lesson("sandbox", "Свободная практика", "В песочнице есть учебный репозиторий и скрытый файл .env.example. Пробуй команды в любом порядке.", [],
+        { ...repo(sandboxFiles, { commits: [["Start notes project", sandboxFiles]], remote, upstream: true }),
+          hidden: [".env.example"] }, "")
     ]
   };
 
@@ -186,8 +188,25 @@
   function renderHelp() {
     const windows = shellSelect.value === "powershell";
     $("ShellHelp").textContent = windows
-      ? "Get-Location · Get-ChildItem [путь] · Set-Location / cd\nNew-Item -ItemType File|Directory путь · Get-Content файл\nSet-Content файл текст · Select-String -Pattern текст -Path файл -SimpleMatch\nCopy-Item · Move-Item · Remove-Item · Clear-Host"
-      : "pwd · ls [путь] · cd · mkdir папка · touch файл\ncat файл · echo текст > файл · grep -F текст файл\ncp · mv · rm · clear";
+      ? [
+        "Get-Location · Set-Location / cd",
+        "Get-ChildItem [путь] [-Force] [-Name] [-File | -Directory]",
+        "New-Item -ItemType File|Directory -Path путь",
+        "Get-Content файл [-TotalCount N | -Tail N] · Set-Content файл текст",
+        "Select-String -Pattern текст -Path файл [-SimpleMatch] [-CaseSensitive] [-NotMatch]",
+        "Copy-Item / Move-Item / Remove-Item [-WhatIf] · Clear-Host",
+        "Для путей доступны -Path и -LiteralPath у команд, которые их принимают.",
+        "ls -a и ls -la доступны как учебная совместимость с GNU ls."
+      ].join("\n")
+      : [
+        "pwd · cd · ls [-aAlh1F] [путь]",
+        "mkdir [-pv] папка · touch файл · cat [-n] файл",
+        "echo текст > файл · grep [-Finvc] текст файл",
+        "cp [-nv] источник назначение · mv [-nv] источник назначение",
+        "rm [-fv] файл · clear",
+        "Флаги можно объединять, например ls -la или grep -in TODO notes.txt.",
+        "Два дефиса отделяют имя файла от флагов, например ls -- -notes."
+      ].join("\n");
   }
 
   function hideHint() {

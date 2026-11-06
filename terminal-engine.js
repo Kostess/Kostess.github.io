@@ -12,10 +12,97 @@ const createTerminalEnvironment = (() => {
 
   function tokenize(raw) {
     const parts = raw.match(/(?:"[^"]*"|'[^']*'|[^\s"']+)(?:\s+|$)/g);
-    return parts?.join("") === raw
-      ? parts.map(part => part.trim().replace(/^["']|["']$/g, ""))
-      : null;
+    return parts?.join("") === raw ? parts.map(part => part.trim()) : null;
   }
+
+  const unquote = token => token.replace(/^["']|["']$/g, "");
+  const unsupportedFlag = (command, token) => "Флаг «" + token + "» для команды «" + command +
+    "» не поддерживается в бета-версии тренажёра. Список доступных флагов — в справке.";
+
+  const pathOptions = { "-path": "path", "-literalpath": "path" };
+  const fileOptions = { ...pathOptions, "-destination": "destination" };
+  const bashOptions = {
+    pwd: { short: "LP" },
+    ls: { short: "aAlh1F", switches: { "--all": "a", "--almost-all": "A", "--human-readable": "h", "--classify": "F" } },
+    mkdir: { short: "pv", switches: { "--parents": "p", "--verbose": "v" } },
+    cat: { short: "n", switches: { "--number": "n" } },
+    search: { short: "Finvc", switches: {
+      "--fixed-strings": "F", "--ignore-case": "i", "--line-number": "n",
+      "--invert-match": "v", "--count": "c"
+    }, values: { "-e": "pattern", "--regexp": "pattern" } },
+    cp: { short: "nv", switches: { "--no-clobber": "n", "--verbose": "v" } },
+    mv: { short: "nv", switches: { "--no-clobber": "n", "--verbose": "v" } },
+    rm: { short: "fv", switches: { "--force": "f", "--verbose": "v" } }
+  };
+  const powershellOptions = {
+    cd: { values: pathOptions },
+    ls: { values: pathOptions, switches: { "-force": "hidden", "-name": "name", "-file": "file", "-directory": "directory" } },
+    "new-item": { values: { "-path": "path", "-itemtype": "type" } },
+    cat: { values: { ...pathOptions, "-totalcount": "first", "-tail": "last" } },
+    write: { values: { ...pathOptions, "-value": "content" } },
+    search: { values: { ...pathOptions, "-pattern": "pattern" }, switches: {
+      "-simplematch": "F", "-casesensitive": "case-sensitive", "-notmatch": "v"
+    } },
+    cp: { values: fileOptions, switches: { "-whatif": "preview" } },
+    mv: { values: fileOptions, switches: { "-whatif": "preview" } },
+    rm: { values: pathOptions, switches: { "-whatif": "preview" } }
+  };
+
+  function parseOptions(command, action, tokens, windows) {
+    const { short = "", switches = {}, values = {} } =
+      (windows ? powershellOptions : bashOptions)[action] ?? {};
+    const shortFlags = windows && command === "ls" ? bashOptions.ls.short : short;
+    const namedFlags = windows && command === "ls" ? { ...bashOptions.ls.switches, ...switches } : switches;
+    const flags = new Set();
+    const named = {};
+    const operands = [];
+    let endOfOptions = false;
+    for (let i = 0; i < tokens.length; i++) {
+      const token = unquote(tokens[i]);
+      if (!windows && !endOfOptions && token === "--") {
+        endOfOptions = true;
+        continue;
+      }
+      if (endOfOptions || token === "-" || !token.startsWith("-") || (windows && /^["']/.test(tokens[i]))) {
+        operands.push(token);
+        continue;
+      }
+      const option = windows ? token.toLowerCase() : token;
+      if (Object.hasOwn(namedFlags, option)) {
+        flags.add(namedFlags[option]);
+      } else if (Object.hasOwn(values, option)) {
+        const key = values[option];
+        if (Object.hasOwn(named, key)) return { problem: "Параметр «" + token + "» указан повторно." };
+        const next = tokens[i + 1];
+        const value = next === undefined ? undefined : unquote(next);
+        if (value === undefined || (next.startsWith("-") && value !== "-" && option !== "-e" && option !== "--regexp")) {
+          return { problem: "Для параметра «" + token + "» нужно указать значение." };
+        }
+        named[key] = value;
+        i++;
+      } else if (/^-[a-zA-Z1]+$/.test(token) && [...token.slice(1)].every(flag => shortFlags.includes(flag))) {
+        for (const flag of token.slice(1)) flags.add(flag);
+      } else {
+        return { problem: unsupportedFlag(command, token) };
+      }
+    }
+    return { flags, named, operands };
+  }
+
+  function fileSize(content, humanReadable) {
+    const bytes = new TextEncoder().encode(content).length;
+    if (!humanReadable || bytes < 1024) return String(bytes);
+    const units = ["K", "M", "G"];
+    let size = bytes / 1024;
+    let index = 0;
+    while (size >= 1024 && index < units.length - 1) {
+      size /= 1024;
+      index++;
+    }
+    return (size < 10 ? size.toFixed(1) : Math.ceil(size)) + units[index];
+  }
+
+  const fileLines = text => text ? text.replace(/\r?\n$/, "").split(/\r?\n/) : [];
 
   function diffText(left, right) {
     return changed(left, right).map(path => {
@@ -45,6 +132,7 @@ const createTerminalEnvironment = (() => {
     const base = windows ? "C:/Users/student/Workshop" : "/home/student/workshop";
     const files = new Map(Object.entries(scenario.files ?? {}));
     const folders = new Set(["", ...(scenario.folders ?? [])]);
+    const hiddenPaths = new Set(scenario.hidden ?? []);
     let cwd = scenario.cwd ?? "";
     let serial = 0;
     let repo = null;
@@ -188,8 +276,11 @@ const createTerminalEnvironment = (() => {
         return { ...result(text ? staged ? "git:staged" : "git:diff" : null, text || "(вывода нет)"),
           paths: changed(left, right) };
       }
-      if (command === "add" && options.length === 1) {
-        const path = resolvePath(options[0]);
+      if (command === "add") {
+        const args = options[0] === "--" ? options.slice(1) : options;
+        if (args === options && args[0]?.startsWith("-")) return error(unsupportedFlag("git add", args[0]));
+        if (args.length !== 1) return error("Укажи один файл или папку для git add.");
+        const path = resolvePath(args[0]);
         if (path === null || !inside(path, repo.root)) return error("Укажи путь внутри репозитория.");
         const relative = repo.root ? path.slice(repo.root.length + 1) : path;
         const work = workingFiles();
@@ -205,8 +296,11 @@ const createTerminalEnvironment = (() => {
       }
       if (command === "restore") {
         const staged = options[0] === "--staged";
-        if (options.length !== (staged ? 2 : 1)) return error("Укажи один файл для git restore.");
-        const path = resolvePath(options.at(-1));
+        const rest = staged ? options.slice(1) : options;
+        const args = rest[0] === "--" ? rest.slice(1) : rest;
+        if (args === rest && args[0]?.startsWith("-")) return error(unsupportedFlag("git restore", args[0]));
+        if (args.length !== 1) return error("Укажи один файл для git restore.");
+        const path = resolvePath(args[0]);
         if (path === null || !inside(path, repo.root)) return error("Укажи путь внутри репозитория.");
         const relative = repo.root ? path.slice(repo.root.length + 1) : path;
         if (staged && !head()) return error("Для git restore --staged в этом уроке нужен первый коммит.");
@@ -333,84 +427,151 @@ const createTerminalEnvironment = (() => {
     function execute(raw) {
       const tokens = tokenize(raw.trim());
       if (!tokens) return error("Проверь кавычки и пробелы между аргументами.");
-      const [typed, ...args] = tokens;
-      const command = windows ? typed.toLowerCase() : typed;
-      if (command === "git") return git(args);
-      if (command === "help" && !args.length) return result("help", "Открой справку под консолью, чтобы увидеть доступные команды.");
-      if (command === "dotnet" && args.join(" ") === "run") {
+      const [typed, ...argumentTokens] = tokens;
+      const rawArgs = argumentTokens.map(unquote);
+      const command = windows ? unquote(typed).toLowerCase() : unquote(typed);
+      if (command === "git") return git(rawArgs);
+      if (command === "help" && !rawArgs.length) return result("help", "Открой справку под консолью, чтобы увидеть доступные команды.");
+      if (command === "dotnet" && rawArgs[0] === "run") {
+        const flag = rawArgs.slice(1).find(arg => arg.startsWith("-"));
+        if (flag) return error(unsupportedFlag("dotnet run", flag));
+        if (rawArgs.length !== 1) return error("В тренажёре dotnet run запускает проект из текущей папки.");
         const hasProject = [...files.keys()].some(path => parent(path) === cwd && path.endsWith(".csproj"));
         return hasProject
           ? result("run", scenario.runOutput ?? "Учебный проект запущен.")
           : error("Couldn't find a project to run.\nВ текущей папке нет файла .csproj.");
       }
       const action = Object.hasOwn(shellAliases, command) ? shellAliases[command] : undefined;
+      if (!action) return error("Команда недоступна в симуляторе. Проверь оболочку и справку.");
+      // В учебной форме echo текст > файл текст является данными, в том числе если он начинается с дефиса.
+      const redirect = action === "echo" && rawArgs.length === 3 && rawArgs[1] === ">";
+      const { flags, named, operands: args, problem } = parseOptions(command, action, redirect ? [] : argumentTokens, windows);
+      if (problem) return error(problem);
       if (action === "pwd" && !args.length) return result("pwd", displayPath(cwd));
       if (action === "clear" && !args.length) return result("clear");
-      if (action === "cd" && args.length <= 1) {
-        const path = resolvePath(args[0] ?? "~");
-        if (!folders.has(path)) return error("Папка не найдена: " + (args[0] ?? "~"));
+      if (action === "cd" && args.length <= (named.path === undefined ? 1 : 0)) {
+        const target = named.path ?? args[0] ?? "~";
+        const path = resolvePath(target);
+        if (!folders.has(path)) return error("Папка не найдена: " + target);
         cwd = path;
         return result("cd:" + cwd);
       }
-      if (action === "ls" && args.length <= 1) {
-        const path = args.length ? resolvePath(args[0]) : cwd;
-        if (!folders.has(path)) return error("Папка не найдена: " + args[0]);
-        const listed = [...folders, ...files.keys()].filter(item => item && parent(item) === path)
-          .map(item => name(item) + (folders.has(item) ? "/" : "")).sort();
-        return result("ls:" + path, listed.join("\n") || "(папка пуста)");
+      if (action === "ls" && args.length <= (named.path === undefined ? 1 : 0)) {
+        const target = named.path ?? args[0];
+        const path = target === undefined ? cwd : resolvePath(target);
+        if (!folders.has(path) && !files.has(path)) return error("Путь не найден: " + target);
+        if (flags.has("file") && flags.has("directory")) return error("Выбери один фильтр: -File или -Directory.");
+        const hidden = ["a", "A", "hidden"].some(flag => flags.has(flag));
+        const gnuStyle = !windows || [...flags].some(flag => bashOptions.ls.short.includes(flag));
+        const entries = folders.has(path) ? [...folders, ...files.keys()]
+          .filter(item => item && parent(item) === path &&
+            (hidden || !(gnuStyle ? name(item).startsWith(".") : hiddenPaths.has(item)))) : [path];
+        const listed = entries.filter(item => (!flags.has("file") || files.has(item)) &&
+          (!flags.has("directory") || folders.has(item))).sort().map(item => ({
+          name: name(item),
+          directory: folders.has(item),
+          content: files.get(item) ?? ""
+        }));
+        if (folders.has(path) && flags.has("a") && !flags.has("file")) {
+          listed.unshift({ name: ".", directory: true, content: "" }, { name: "..", directory: true, content: "" });
+        }
+        const lines = listed.map(item => {
+          const label = item.name + (item.directory && flags.has("F") ? "/" : "");
+          if (!flags.has("l") || flags.has("name")) return label;
+          return (item.directory ? "drwxr-xr-x" : "-rw-r--r--") + "  " +
+            fileSize(item.content, flags.has("h")).padStart(5) + "  " + label;
+        });
+        const compatibility = windows && gnuStyle
+          ? "\n\nУчебный режим: распознаны флаги GNU ls. В PowerShell для скрытых элементов используй Get-ChildItem -Force." : "";
+        return result("ls:" + path, (lines.join("\n") || "(нет подходящих элементов)") + compatibility);
       }
-      if ((action === "mkdir" || action === "touch") && args.length === 1 ||
-          action === "new-item" && args.length === 3 && args[0].toLowerCase() === "-itemtype" &&
-          ["directory", "file"].includes(args[1].toLowerCase())) {
-        const directory = action === "mkdir" || args[1]?.toLowerCase() === "directory";
-        const path = resolvePath(args.at(-1));
-        if (!path || !folders.has(parent(path))) return error("Родительская папка не найдена.");
-        if (folders.has(path) || files.has(path) && (directory || action === "new-item")) return error("Такой путь уже существует.");
-        if (directory) folders.add(path);
-        else if (!files.has(path)) files.set(path, "");
-        return result((directory ? "mkdir:" : "touch:") + path);
+      if (["mkdir", "touch", "new-item"].includes(action)) {
+        const target = named.path ?? args[0];
+        const type = named.type?.toLowerCase();
+        if (!target || args.length > (named.path === undefined ? 1 : 0) ||
+            (action === "new-item" && !["directory", "file"].includes(type))) {
+          return error(action === "new-item" ? "Укажи путь и тип элемента: -ItemType File или -ItemType Directory." : "Укажи один путь.");
+        }
+        const directory = action === "mkdir" || type === "directory";
+        const path = resolvePath(target);
+        if (path === null || (!path && !flags.has("p"))) return error("Укажи путь внутри учебной папки.");
+        if (!flags.has("p") && !folders.has(parent(path))) return error("Родительская папка не найдена.");
+        if (folders.has(path) && !flags.has("p") || files.has(path) && (directory || action === "new-item")) return error("Такой путь уже существует.");
+        if (directory) {
+          const missing = [];
+          for (let folder = path; !folders.has(folder); folder = parent(folder)) {
+            if (files.has(folder)) return error("Часть пути уже занята файлом: " + name(folder));
+            missing.unshift(folder);
+          }
+          missing.forEach(folder => folders.add(folder));
+          return result("mkdir:" + path, flags.has("v") ? missing.map(folder => "Создана папка: " + displayPath(folder)).join("\n") : "");
+        }
+        if (!files.has(path)) files.set(path, "");
+        return result("touch:" + path);
       }
-      if (action === "write" && args.length === 2 || action === "echo" && args.length === 3 && args[1] === ">") {
-        const path = resolvePath(action === "write" ? args[0] : args[2]);
-        const content = action === "write" ? args[1] : args[0];
+      if (action === "write" || redirect) {
+        const path = resolvePath(redirect ? rawArgs[2] : named.path ?? args.shift());
+        const content = redirect ? rawArgs[0] : named.content ?? args.shift();
+        if (content === undefined || args.length) return error("Укажи файл и текст для записи.");
         if (!path || folders.has(path) || !folders.has(parent(path))) return error("Укажи файл в существующей папке.");
         files.set(path, content + "\n");
         return result("write:" + path);
       }
-      if (action === "cat" && args.length === 1) {
-        const path = resolvePath(args[0]);
-        return files.has(path) ? result("cat:" + path, files.get(path) || "(файл пуст)") : error("Файл не найден.");
+      if (action === "cat" && args.length === (named.path === undefined ? 1 : 0)) {
+        const path = resolvePath(named.path ?? args[0]);
+        if (!files.has(path)) return error("Файл не найден.");
+        if (named.first !== undefined && named.last !== undefined) return error("Выбери -TotalCount или -Tail.");
+        const count = named.first ?? named.last;
+        if (count !== undefined && (!/^\d+$/.test(count) || !Number.isSafeInteger(Number(count)))) {
+          return error("Количество строк должно быть целым неотрицательным числом.");
+        }
+        const content = files.get(path);
+        const lines = fileLines(content);
+        const selected = named.first !== undefined ? lines.slice(0, Number(count))
+          : named.last !== undefined ? lines.slice(Math.max(0, lines.length - Number(count))) : lines;
+        const output = flags.has("n") ? selected.map((line, index) => String(index + 1).padStart(6) + "\t" + line).join("\n")
+          : count === undefined ? content : selected.join("\n");
+        return result("cat:" + path, output || "(нет строк для вывода)");
       }
       if (action === "search") {
-        if (windows && args.at(-1)?.toLowerCase() === "-simplematch") args.pop();
-        if (!windows && args[0] === "-F") args.shift();
-        const valid = windows
-          ? args.length === 4 && args[0].toLowerCase() === "-pattern" && args[2].toLowerCase() === "-path"
-          : args.length === 2;
-        if (!valid) return error(windows ? "Формат: Select-String -Pattern текст -Path файл" : "Формат: grep текст файл");
-        const pattern = windows ? args[1] : args[0];
-        const path = resolvePath(args.at(-1));
+        const pattern = named.pattern ?? args.shift();
+        const target = named.path ?? args.shift();
+        if (pattern === undefined || !target || args.length) return error(windows ? "Формат: Select-String -Pattern текст -Path файл" : "Формат: grep текст файл");
+        const path = resolvePath(target);
         if (!files.has(path)) return error("Файл не найден.");
-        const compare = text => windows ? text.toLowerCase() : text;
-        const hits = files.get(path).split("\n").filter(line => compare(line).includes(compare(pattern)));
-        return result(hits.length ? "search:" + path + ":" + compare(pattern) : null, hits.join("\n") || "(совпадений нет)");
+        const ignoreCase = windows ? !flags.has("case-sensitive") : flags.has("i");
+        const compare = text => ignoreCase ? text.toLowerCase() : text;
+        const hits = fileLines(files.get(path)).map((line, index) => ({ line, number: index + 1 }))
+          .filter(({ line }) => compare(line).includes(compare(pattern)) !== flags.has("v"));
+        const output = flags.has("c") ? String(hits.length) : hits.map(({ line, number }) =>
+          flags.has("n") ? number + ":" + line : line).join("\n");
+        return result(hits.length ? "search:" + path + ":" + compare(pattern) : null, output || "(совпадений нет)");
       }
-      if (["cp", "mv"].includes(action) && args.length === 2) {
-        const from = resolvePath(args[0]);
-        let to = resolvePath(args[1]);
-        if (!files.has(from) || to === null) return error("Укажи исходный файл и путь назначения.");
+      if (["cp", "mv"].includes(action)) {
+        const from = resolvePath(named.path ?? args.shift());
+        let to = resolvePath(named.destination ?? args.shift());
+        if (!files.has(from) || to === null || args.length) return error("Укажи исходный файл и путь назначения.");
         if (folders.has(to)) to = (to ? to + "/" : "") + name(from);
         to = resolvePath("~/" + to);
         if (to === from || folders.has(to) || !folders.has(parent(to))) return error("Проверь путь назначения.");
+        if (flags.has("preview")) return result(null, "What if: " + command + " " + displayPath(from) + " → " + displayPath(to));
+        if (flags.has("n") && files.has(to)) return result(null, "Файл уже существует. Изменения пропущены.");
         files.set(to, files.get(from));
-        if (action === "mv") files.delete(from);
-        return result(action + ":" + from + ":" + to);
+        if (hiddenPaths.has(from)) hiddenPaths.add(to);
+        if (action === "mv") {
+          files.delete(from);
+          hiddenPaths.delete(from);
+        }
+        return result(action + ":" + from + ":" + to, flags.has("v") ? displayPath(from) + " → " + displayPath(to) : "");
       }
-      if (action === "rm" && args.length === 1) {
-        const path = resolvePath(args[0]);
-        if (!files.has(path)) return error("Укажи существующий файл. Удаление папок в тренажёре отключено.");
+      if (action === "rm" && args.length === (named.path === undefined ? 1 : 0)) {
+        const path = resolvePath(named.path ?? args[0]);
+        if (folders.has(path)) return error("Удаление папок в тренажёре отключено.");
+        if (!files.has(path)) return flags.has("f") ? result(null) : error("Укажи существующий файл.");
+        if (flags.has("preview")) return result(null, "What if: " + command + " " + displayPath(path));
         files.delete(path);
-        return result("rm:" + path);
+        hiddenPaths.delete(path);
+        return result("rm:" + path, flags.has("v") ? "Удалён файл: " + displayPath(path) : "");
       }
       return error("Команда или её параметры недоступны в симуляторе. Проверь оболочку и справку.");
     }

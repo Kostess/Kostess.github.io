@@ -51,7 +51,8 @@ const deckLabTags = {
   "methods-return-scope": ["ЛБ 9"],
   "methods-purchase": ["ЛБ 9"],
   "methods-overloads": ["ЛБ 10"],
-  "array-processing": ["ЛБ 10"]
+  "array-processing": ["ЛБ 10"],
+  "methods-refactoring": ["ЛБ 10"]
 };
 
 const CODE_ANSWER_TIME_MS = 90_000;
@@ -103,6 +104,7 @@ const els = {
   quizFeedback: document.querySelector("#quizFeedback"),
   codeLabSelect: document.querySelector("#codeLabSelect"),
   codeDeckSelect: document.querySelector("#codeDeckSelect"),
+  codeRefactorTask: document.querySelector("#codeRefactorTask"),
   startCodeBtn: document.querySelector("#startCodeBtn"),
   codeProgress: document.querySelector("#codeProgress"),
   codeTimer: document.querySelector("#codeTimer"),
@@ -737,6 +739,11 @@ function resetCodeUi() {
   els.codeAnswerGrid.replaceChildren();
   els.codeFeedback.textContent = "";
   els.nextCodeBtn.hidden = true;
+  updateCodeRefactorTask();
+}
+
+function updateCodeRefactorTask() {
+  els.codeRefactorTask.hidden = Boolean(state.codeSession) || els.codeDeckSelect.value !== "lab10-method-refactoring";
 }
 
 function fillCodeDeckSelect() {
@@ -746,6 +753,7 @@ function fillCodeDeckSelect() {
     const count = codeLessons.filter(lesson => lesson.codeDeckId === deck.id).length;
     return `<option value="${escapeAttribute(deck.id)}">${escapeHtml(deck.lab)} · ${escapeHtml(deck.title)} (${count})</option>`;
   }).join("");
+  updateCodeRefactorTask();
 }
 
 function createCodeQuestion(lesson) {
@@ -775,6 +783,7 @@ function startCode() {
   }
   state.activeMode = "code";
   state.codeSession = { questions: questions.map(createCodeQuestion), index: 0, correct: 0, answered: false };
+  updateCodeRefactorTask();
   renderCodeQuestion();
 }
 
@@ -860,6 +869,7 @@ function finishCode() {
   els.nextCodeBtn.hidden = true;
   state.activeMode = null;
   state.codeSession = null;
+  updateCodeRefactorTask();
 }
 
 function resetBugsUi() {
@@ -1094,6 +1104,7 @@ function wireEvents() {
   els.bugKnownBtn.addEventListener("click", () => markBugCard(true));
   els.bugRepeatBtn.addEventListener("click", () => markBugCard(false));
   els.codeLabSelect.addEventListener("change", fillCodeDeckSelect);
+  els.codeDeckSelect.addEventListener("change", updateCodeRefactorTask);
   els.nextCodeBtn.addEventListener("click", () => {
     if (!state.codeSession || !state.codeSession.answered) {
       return;

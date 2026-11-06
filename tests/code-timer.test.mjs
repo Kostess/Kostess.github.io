@@ -27,7 +27,7 @@ function setup() {
   const els = Object.fromEntries([
     "codeLabSelect", "codeTimer", "codeProgress", "codeProgressFill", "codeType",
     "codeQuestion", "codeSnippet", "codeText", "codeInput", "codeAnswerGrid",
-    "codeFeedback", "nextCodeBtn", "codeMistakesOnly", "codeDeckSelect"
+    "codeFeedback", "nextCodeBtn", "codeMistakesOnly", "codeDeckSelect", "codeRefactorTask"
   ].map(key => [key, element()]));
   els.codeLabSelect.value = "all";
   els.codeDeckSelect.value = "test-deck";

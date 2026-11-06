@@ -309,6 +309,24 @@ test("practice lab and deck selectors restrict a session to the selected 5–10 
   }
 });
 
+test("open refactoring task appears for the selected deck outside the timed session", () => {
+  const app = setup();
+  const task = app.elements.get("#codeRefactorTask");
+  const select = app.elements.get("#codeDeckSelect");
+  assert.equal(task.hidden, true);
+  select.value = "lab10-method-refactoring";
+  select.dispatch("change");
+  assert.equal(task.hidden, false);
+  app.run("startCode()");
+  assert.equal(task.hidden, true);
+  assert.equal(app.run("state.codeSession.questions.length"), 6);
+  app.run("resetMode()");
+  assert.equal(task.hidden, false);
+  select.value = "lab10-array-operations";
+  select.dispatch("change");
+  assert.equal(task.hidden, true);
+});
+
 test("choosing an alternative and shuffling answers preserves grading, explanation and glossary link", () => {
   const app = setup();
   const before = app.run('JSON.stringify(codeLessons[0])');

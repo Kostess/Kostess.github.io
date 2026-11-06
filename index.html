@@ -14,7 +14,7 @@
       name="description"
       content="Карточки, тесты и справочник по базовым IT-терминам для студентов перед изучением C#."
     >
-    <link rel="stylesheet" href="styles.css?v=36e0368a986f">
+    <link rel="stylesheet" href="styles.css?v=b2817ee1ddbc">
   </head>
   <body>
     <div class="app-shell">
@@ -228,7 +228,7 @@
                   <option value="ЛБ 7">ЛБ 7: циклы в C#</option>
                   <option value="ЛБ 8">ЛБ 8: одномерные массивы</option>
                   <option value="ЛБ 9">ЛБ 9: методы</option>
-                  <option value="ЛБ 10">ЛБ 10: перегрузки и обработка массивов</option>
+                  <option value="ЛБ 10">ЛБ 10: организация программы</option>
                 </select>
               </label>
               <label>
@@ -258,6 +258,52 @@
                 <p class="feedback code-feedback" id="codeFeedback" aria-live="polite"></p>
                 <button class="primary-button" id="nextCodeBtn" type="button" hidden>Следующее задание</button>
               </article>
+              <details id="codeRefactorTask" class="code-refactor-task" hidden>
+                <summary>Открытое задание · Разбей Main на методы</summary>
+                <p>Скопируй программу в отдельный проект и сначала запусти её как есть. Затем выдели метод подсчёта и метод вывода отчёта. После изменений в Main должно быть видно, какие данные проверяются и в каком порядке выводятся результаты.</p>
+                <div class="code-snippet">
+                  <span class="code-label">Program.cs</span>
+                  <pre><code>using System;
+
+class Program
+{
+    static void Main()
+    {
+        int[] morning = { 180, 250, 320 };
+        int[] evening = { 250, 410, 480 };
+        int limit = 250;
+
+        int morningCount = 0;
+        foreach (int time in morning)
+        {
+            if (time &gt; limit)
+            {
+                morningCount++;
+            }
+        }
+        Console.WriteLine($"Утро: выше {limit} мс — {morningCount}");
+
+        int eveningCount = 0;
+        foreach (int time in evening)
+        {
+            if (time &gt; limit)
+            {
+                eveningCount++;
+            }
+        }
+        Console.WriteLine($"Вечер: выше {limit} мс — {eveningCount}");
+    }
+}</code></pre>
+                </div>
+                <p><strong>Сверь вывод после рефакторинга</strong></p>
+                <pre class="refactor-output">Утро: выше 250 мс — 1
+Вечер: выше 250 мс — 2</pre>
+                <ul>
+                  <li>Один метод считает для обоих массивов. Он принимает массив и порог, возвращает число и оставляет массив без изменений.</li>
+                  <li>Другой метод выводит готовый результат с подписью.</li>
+                  <li>Замер, равный порогу, по-прежнему не учитывается. Объясни, где это проверяется и почему ты выделил именно эти два метода.</li>
+                </ul>
+              </details>
             </section>
           </div>
         </section>
@@ -441,11 +487,11 @@ git push · git fetch origin · git pull --ff-only</pre>
       </form>
     </dialog>
 
-    <script src="terms-content.js?v=36e0368a986f"></script>
-    <script src="code-content.js?v=36e0368a986f"></script>
-    <script src="bug-content.js?v=36e0368a986f"></script>
-    <script src="terminal-engine.js?v=36e0368a986f"></script>
-    <script src="terminal.js?v=36e0368a986f"></script>
-    <script src="app.js?v=36e0368a986f"></script>
+    <script src="terms-content.js?v=b2817ee1ddbc"></script>
+    <script src="code-content.js?v=b2817ee1ddbc"></script>
+    <script src="bug-content.js?v=b2817ee1ddbc"></script>
+    <script src="terminal-engine.js?v=b2817ee1ddbc"></script>
+    <script src="terminal.js?v=b2817ee1ddbc"></script>
+    <script src="app.js?v=b2817ee1ddbc"></script>
   </body>
 </html>

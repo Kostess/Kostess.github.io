@@ -17,8 +17,8 @@ const terms = new Set(topics.flatMap((topic) =>
 ));
 
 test("all code lessons link to real glossary terms", () => {
-  assert.equal(terms.size, 282);
-  assert.equal(lessons.length, 242);
+  assert.equal(terms.size, 286);
+  assert.equal(lessons.length, 248);
   assert.equal(new Set(lessons.map((lesson) => lesson.id)).size, lessons.length);
   for (const lesson of lessons) {
     assert.ok(terms.has(`${lesson.deckId}:${lesson.term}`), `${lesson.id} is not linked to a term`);
@@ -41,7 +41,7 @@ test("labs 4 through 10 have separate practice questions", () => {
   assert.equal(lab7.length, 30);
   assert.equal(lessons.filter(lesson => lesson.codeDeckId.startsWith("lab8-")).length, 40);
   assert.equal(lessons.filter(lesson => lesson.codeDeckId.startsWith("lab9-")).length, 40);
-  assert.equal(lessons.filter(lesson => lesson.codeDeckId.startsWith("lab10-")).length, 12);
+  assert.equal(lessons.filter(lesson => lesson.codeDeckId.startsWith("lab10-")).length, 18);
   assert.deepEqual(Array.from(tags["conditions-logic"]), ["ЛБ 6"]);
   assert.deepEqual(Array.from(tags["branching-menu"]), ["ЛБ 6"]);
   assert.deepEqual(Array.from(tags["loops-basics"]), ["ЛБ 7"]);
@@ -57,7 +57,7 @@ test("labs 4 through 10 have separate practice questions", () => {
   }
   assert.match(htmlSource, /<option value="ЛБ 8">ЛБ 8: одномерные массивы<\/option>/);
   assert.match(htmlSource, /<option value="ЛБ 9">ЛБ 9: методы<\/option>/);
-  assert.match(htmlSource, /<option value="ЛБ 10">ЛБ 10: перегрузки и обработка массивов<\/option>/);
+  assert.match(htmlSource, /<option value="ЛБ 10">ЛБ 10: организация программы<\/option>/);
   for (const id of ["methods-basics", "methods-return-scope", "methods-purchase"]) {
     assert.deepEqual(Array.from(tags[id]), ["ЛБ 9"]);
   }
@@ -75,7 +75,7 @@ test("lab 6 first deck balances boolean answers in base questions and across alt
 });
 
 test("each practice deck has 5–10 examples, one lab, and every lesson belongs to exactly one deck", () => {
-  assert.equal(codeDecks.length, 27);
+  assert.equal(codeDecks.length, 28);
   assert.equal(new Set(codeDecks.map(deck => deck.id)).size, codeDecks.length);
   for (const deck of codeDecks) {
     const members = lessons.filter(lesson => lesson.codeDeckId === deck.id);

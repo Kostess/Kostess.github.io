@@ -766,6 +766,27 @@ button:focus-visible {
   min-height: 1.6em;
 }
 
+.code-refactor-task {
+  margin-top: 16px;
+  padding: 14px 16px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface-2);
+}
+
+.code-refactor-task summary { cursor: pointer; font-weight: 700; }
+.code-refactor-task p { margin: 12px 0; }
+.code-refactor-task li + li { margin-top: 6px; }
+
+.refactor-output {
+  margin: 0;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
 #nextCodeBtn {
   margin-top: 8px;
 }

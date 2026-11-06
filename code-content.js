@@ -134,6 +134,11 @@ const codeDecks = [
     "id": "lab10-array-operations",
     "lab": "ЛБ 10",
     "title": "Копирование, сортировка и поиск"
+  },
+  {
+    "id": "lab10-method-refactoring",
+    "lab": "ЛБ 10",
+    "title": "Как разделить программу на методы"
   }
 ];
 
@@ -6347,5 +6352,127 @@ const codeLessons = [
     "explanation": "Присваивание copy = times не создаёт новый массив. Обе переменные ссылаются на один массив, поэтому сортировка через copy меняет порядок в times.",
     "codeDeckId": "lab10-array-operations",
     "challengeResult": "180 250 320"
+  },
+  {
+    "id": "lab10-extract-formatting",
+    "deckId": "methods-refactoring",
+    "term": "Извлечение метода",
+    "exampleCode": "static string FormatCount(string label, int count)\n{\n    return $\"{label}: {count}\";\n}\nConsole.WriteLine(FormatCount(\"Утро\", 1));\nConsole.WriteLine(FormatCount(\"Вечер\", 2));",
+    "exampleResult": "Утро: 1\nВечер: 2",
+    "exampleNote": "Один метод отвечает за формат строки. Подпись и число приходят через параметры.",
+    "kind": "Выберите границу метода",
+    "challengeCode": "int[] times = { 320, 180, 250 };\nint[] sorted = { 180, 250, 320 };\nConsole.WriteLine(\"Исходные: \" + string.Join(\" \", times));\nConsole.WriteLine(\"По возрастанию: \" + string.Join(\" \", sorted));\nint index = Array.IndexOf(times, 180);\nConsole.WriteLine(index);",
+    "prompt": "Какой блок полезнее выделить в первую очередь, чтобы убрать повторение?",
+    "options": [
+      "Форматирование и вывод массива с подписью в PrintMeasurements(string label, int[] values)",
+      "Вызов Array.IndexOf в метод без параметров",
+      "Объявление times в метод, который печатает индекс",
+      "Каждую строку в отдельный метод без параметров"
+    ],
+    "correctIndex": 0,
+    "explanation": "Две строки выводят массив одинаковым способом. Метод с подписью и массивом уберёт повторение, а одиночный вызов Array.IndexOf уже выражает своё действие.",
+    "codeDeckId": "lab10-method-refactoring"
+  },
+  {
+    "id": "lab10-refactor-boundary",
+    "deckId": "methods-refactoring",
+    "term": "Рефакторинг",
+    "exampleCode": "int[] times = { 180, 250, 320 };\nint limit = 250;\nint count = 0;\nforeach (int time in times)\n{\n    if (time > limit)\n    {\n        count++;\n    }\n}\nConsole.WriteLine(count);",
+    "exampleResult": "1",
+    "exampleNote": "Исходный цикл считает только значения строго выше порога. При переносе цикла в метод это условие нужно сохранить.",
+    "kind": "Заполните пропуск",
+    "challengeCode": "static int CountOverLimit(int[] times, int limit)\n{\n    int count = 0;\n    foreach (int time in times)\n    {\n        if (/* ??? */)\n        {\n            count++;\n        }\n    }\n    return count;\n}\n\nConsole.WriteLine(CountOverLimit(new int[] { 180, 250, 320, 410 }, 250));",
+    "prompt": "После извлечения метода должен сохраниться результат 2. Какое условие сохраняет правило «строго выше порога»?",
+    "options": [
+      "time >= limit",
+      "time > limit",
+      "time == limit",
+      "time < limit"
+    ],
+    "correctIndex": 1,
+    "solutionResult": "2",
+    "explanation": "Условие time > limit сохраняет исходное правило. 320 и 410 учитываются, а 250, равное порогу, пропускается.",
+    "codeDeckId": "lab10-method-refactoring"
+  },
+  {
+    "id": "lab10-pure-count",
+    "deckId": "methods-refactoring",
+    "term": "Чистая функция",
+    "exampleCode": "static int CountOverLimit(int[] times, int limit)\n{\n    int count = 0;\n    foreach (int time in times)\n    {\n        if (time > limit)\n        {\n            count++;\n        }\n    }\n    return count;\n}\nConsole.WriteLine(CountOverLimit(new int[] { 180, 250, 320 }, 250));",
+    "exampleResult": "1",
+    "exampleNote": "Метод использует только параметры, меняет свой локальный счётчик и возвращает число. За вывод отвечает вызывающий код.",
+    "kind": "Проверьте чистоту функции",
+    "challengeCode": "static int CountOverLimit(int[] times, int limit)\n{\n    int count = 0;\n    foreach (int time in times)\n    {\n        if (time > limit)\n        {\n            count++;\n        }\n    }\n    return count;\n}\nint[] times = { 250, 320, 410 };\nConsole.WriteLine(CountOverLimit(times, 250));\nConsole.WriteLine(CountOverLimit(times, 250));",
+    "prompt": "Почему CountOverLimit можно назвать чистой функцией?",
+    "options": [
+      "Внутри метода объявлен счётчик",
+      "Метод объявлен с ключевым словом static",
+      "Метод читает только входные данные, возвращает число и не меняет исходный массив",
+      "Вызывающий код печатает оба результата"
+    ],
+    "correctIndex": 2,
+    "explanation": "Оба вызова вернут 2. Метод меняет только свой локальный счётчик. Вывод делает вызывающий код, а не CountOverLimit.",
+    "codeDeckId": "lab10-method-refactoring"
+  },
+  {
+    "id": "lab10-mutates-input",
+    "deckId": "methods-refactoring",
+    "term": "Побочный эффект",
+    "exampleCode": "static int FirstAfterSorting(int[] values)\n{\n    Array.Sort(values);\n    return values[0];\n}\nint[] times = { 320, 180, 250 };\nConsole.WriteLine(FirstAfterSorting(times));\nConsole.WriteLine(string.Join(\" \", times));",
+    "exampleResult": "180\n180 250 320",
+    "exampleNote": "Метод возвращает первое число после сортировки и при этом меняет порядок во входном массиве.",
+    "kind": "Что выведет код?",
+    "challengeCode": "static int LastAfterReversing(int[] values)\n{\n    Array.Reverse(values);\n    return values[values.Length - 1];\n}\nint[] times = { 320, 180, 250 };\nLastAfterReversing(times);\nConsole.WriteLine(string.Join(\" \", times));",
+    "prompt": "Что останется в times после вызова, если возвращённое число нигде не используется?",
+    "options": [
+      "320 180 250",
+      "180 250 320",
+      "320",
+      "250 180 320"
+    ],
+    "correctIndex": 3,
+    "challengeResult": "250 180 320",
+    "explanation": "Array.Reverse меняет переданный массив на месте. Игнорирование возвращённого числа не отменяет это изменение.",
+    "codeDeckId": "lab10-method-refactoring"
+  },
+  {
+    "id": "lab10-separate-output",
+    "deckId": "methods-refactoring",
+    "term": "Извлечение метода",
+    "exampleCode": "static int CalculateTotal(int price, int quantity)\n{\n    return price * quantity;\n}\nstatic void PrintTotal(int total)\n{\n    Console.WriteLine($\"Итого: {total}\");\n}\nint total = CalculateTotal(50, 3);\nPrintTotal(total);\nConsole.WriteLine(total + 20);",
+    "exampleResult": "Итого: 150\n170",
+    "exampleNote": "Результат расчёта можно вывести и использовать дальше. PrintTotal отвечает только за вывод.",
+    "kind": "Выберите границу метода",
+    "challengeCode": "static int CalculateTotal(int price, int quantity)\n{\n    int total = price * quantity;\n    Console.WriteLine($\"Итого: {total}\");\n    return total;\n}\nint total = CalculateTotal(50, 3);\nConsole.WriteLine(total + 20);",
+    "prompt": "Как выделить чистый расчёт и сохранить обе строки вывода?",
+    "options": [
+      "Удалить обе команды Console.WriteLine",
+      "Перенести печать итога из CalculateTotal в вызывающий код и вывести возвращённое число перед total + 20",
+      "Заменить return total на Console.WriteLine(total)",
+      "Хранить total в общей переменной и менять её внутри CalculateTotal"
+    ],
+    "correctIndex": 1,
+    "explanation": "Расчёт возвращает 150. Вызывающий код по-прежнему выводит «Итого: 150», а затем 170. Тот же расчёт можно вызвать там, где вывод вообще не нужен.",
+    "codeDeckId": "lab10-method-refactoring"
+  },
+  {
+    "id": "lab10-pure-sorted-copy",
+    "deckId": "methods-refactoring",
+    "term": "Чистая функция",
+    "exampleCode": "static int[] CreateSortedCopy(int[] values)\n{\n    int[] copy = new int[values.Length];\n    Array.Copy(values, copy, values.Length);\n    Array.Sort(copy);\n    return copy;\n}\nint[] times = { 320, 180, 250 };\nConsole.WriteLine(string.Join(\" \", CreateSortedCopy(times)));\nConsole.WriteLine(string.Join(\" \", times));",
+    "exampleResult": "180 250 320\n320 180 250",
+    "exampleNote": "Array.Sort меняет только созданный внутри метода массив. Исходные данные остаются прежними.",
+    "kind": "Проверьте чистоту функции",
+    "challengeCode": "static int[] CreateSortedCopy(int[] values)\n{\n    int[] copy = new int[values.Length];\n    Array.Copy(values, copy, values.Length);\n    Array.Sort(copy);\n    return copy;\n}",
+    "prompt": "Почему CreateSortedCopy остаётся чистой функцией, хотя Array.Sort меняет массив?",
+    "options": [
+      "Array.Sort никогда не меняет переданный массив",
+      "Массивы в C# копируются автоматически при вызове метода",
+      "В чистой функции нельзя менять даже локальные переменные",
+      "Сортируется новая локальная копия, а переданный массив не меняется"
+    ],
+    "correctIndex": 3,
+    "explanation": "Снаружи виден только возвращённый массив. Изменение новой локальной копии внутри метода не меняет исходный массив и не создаёт наблюдаемого побочного эффекта.",
+    "codeDeckId": "lab10-method-refactoring"
   }
 ];

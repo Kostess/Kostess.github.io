@@ -38,7 +38,7 @@ function element() {
     setAttribute() {},
     focus() {},
     addEventListener(name, callback) { listeners[name] = callback; },
-    dispatch(name) { listeners[name]?.({ preventDefault() {} }); },
+    dispatch(name, event = {}) { listeners[name]?.({ preventDefault() {}, ...event }); },
     click() { this.dispatch("click"); }
   };
 }
@@ -49,7 +49,7 @@ function setup(storage = new Map(), blocked = false) {
   elements.get("#codeLabSelect").value = "all";
   elements.get("#bugLabSelect").value = "ЛБ 4";
   elements.get("#terminalShell").value = "powershell";
-  elements.get("#terminalLesson").value = "navigate";
+  elements.get("#terminalTrack").value = "shell";
   let id = 0;
   const intervals = new Map();
   const context = vm.createContext({
@@ -73,7 +73,7 @@ function setup(storage = new Map(), blocked = false) {
     }
   });
   vm.runInContext(`${read("terms-content.js")}\n${read("code-content.js")}\n${read("bug-content.js")}\n${read("app.js")}`, context);
-  vm.runInContext(read("terminal.js"), context);
+  vm.runInContext(read("terminal-engine.js") + "\n" + read("terminal.js"), context);
   const run = code => vm.runInContext(code, context);
   return { elements, run, storage, intervals };
 }
@@ -94,51 +94,81 @@ function terminal(app) {
   };
 }
 
-test("terminal teaches navigation and C# launch in PowerShell and Bash", () => {
-  const ui = terminal(setup());
-  for (const [shell, location, list, projects] of [
-    ["powershell", "Get-Location", "Get-ChildItem", "C:\\Users\\student\\Projects"],
-    ["bash", "pwd", "ls", "/home/student/Projects"]
-  ]) {
+test("all 20 terminal lessons can be completed from their hints in both shells", () => {
+  const app = setup();
+  const ui = terminal(app);
+  for (const shell of ["powershell", "bash"]) {
     ui.select("Shell", shell);
-    ui.select("Lesson", "navigate");
-    ui.get("HintButton").click();
-    assert.equal(ui.get("Hint").textContent, location);
-    assert.equal(ui.command(location), projects);
-    assert.match(ui.command(list), /Lab10/);
-    ui.command("cd Lab10");
-    assert.match(ui.command(list), /Lab10\.csproj/);
-    assert.equal(ui.get("Progress").textContent, "Урок завершён");
-
-    ui.select("Lesson", "run");
-    assert.match(ui.command("dotnet run"), /нет файла \.csproj/);
-    assert.equal(ui.get("Progress").textContent, "Шаг 1 из 3");
-    ui.command("cd ..");
-    ui.command("cd Lab10");
-    assert.match(ui.command("dotnet run"), /Исходные замеры/);
-    assert.equal(ui.get("Progress").textContent, "Урок завершён");
+    let count = 0;
+    for (const track of ["shell", "git"]) {
+      ui.select("Track", track);
+      const lessons = ui.get("Lesson").children.map(option => option.value);
+      for (const id of lessons) {
+        ui.select("Lesson", id);
+        let steps = 0;
+        while (!ui.get("HintButton").hidden && steps++ < 12) {
+          ui.get("HintButton").click();
+          const command = ui.get("Hint").textContent;
+          const before = ui.get("Progress").textContent;
+          const output = ui.command(command);
+          assert.notEqual(ui.get("Progress").textContent, before,
+            [shell, id, before, command, output].join(" | "));
+        }
+        assert.equal(ui.get("Progress").textContent, "Урок завершён", id);
+        count++;
+      }
+    }
+    assert.equal(count, 20);
+    assert.match(ui.get("Completed").textContent, /20 из 20/);
   }
+  assert.match(terminal(setup(app.storage)).get("Completed").textContent, /20 из 20/);
 });
 
-test("terminal Git distinguishes staged changes, a local commit, and a pushed commit", () => {
+test("terminal teaches the state of Git before and after fetch, pull and selective staging", () => {
   const ui = terminal(setup());
-  ui.select("Lesson", "git");
-  assert.match(ui.command("git push"), /сначала выполни текущий шаг/);
-  assert.match(ui.command("git status"), /Changes not staged/);
-  assert.match(ui.command("git diff"), /\+var sorted/);
-  ui.command("git add Program.cs");
-  assert.match(ui.command("git status"), /Changes to be committed/);
-  assert.match(ui.command("git diff --staged"), /\+var sorted/);
-  assert.match(ui.command('git commit -m "missing'), /Проверь кавычки/);
-  assert.match(ui.command('git commit -m "Sort timings"'), /\[main a1b2c3d\] Sort timings/);
-  assert.match(ui.command("git status"), /ahead of 'origin\/main' by 1 commit/);
-  assert.match(ui.command("git push"), /main -> main/);
-  assert.match(ui.command("git log --oneline"), /HEAD -> main, origin\/main/);
+  ui.select("Track", "git");
+  ui.select("Lesson", "sync");
+  assert.doesNotMatch(ui.command("Get-Content README.md"), /Setup instructions/);
+  ui.command("git fetch");
+  assert.match(ui.command("git status"), /behind.*1 commit/);
+  assert.doesNotMatch(ui.command("Get-Content README.md"), /Setup instructions/);
+  assert.match(ui.command("git pull --ff-only"), /Fast-forward/);
+  assert.match(ui.command("Get-Content README.md"), /Setup instructions/);
   assert.equal(ui.get("Progress").textContent, "Урок завершён");
 
+  ui.select("Lesson", "stage");
+  ui.command("git add README.md");
+  ui.command("git add draft.txt");
+  assert.match(ui.command("git diff --cached"), /результат пока не соответствует/);
+  assert.equal(ui.get("Progress").textContent, "Шаг 2 из 3");
+  ui.command("git restore --staged draft.txt");
+  assert.doesNotMatch(ui.command("git diff --cached"), /draft.txt/);
+  ui.command('git commit -m "Document setup"');
+  assert.match(ui.command("git status"), /Untracked files:\n  draft.txt/);
+  assert.equal(ui.get("Progress").textContent, "Урок завершён");
+});
+
+test("sandbox keeps file changes and command history until its environment is reset", () => {
+  const ui = terminal(setup());
+  ui.select("Track", "sandbox");
   ui.select("Shell", "bash");
-  assert.match(ui.get("Prompt").textContent, /^student@linux:/);
-  assert.match(ui.command("git status"), /Changes not staged/);
+  assert.equal(ui.get("LessonField").hidden, true);
+  ui.command('echo "Test note" > note.txt');
+  assert.match(ui.command("cat note.txt"), /Test note/);
+  assert.match(ui.command('git commit -m "missing'), /Проверь кавычки/);
+  const input = ui.get("Command");
+  input.value = "draft input";
+  input.dispatch("keydown", { key: "ArrowUp" });
+  input.dispatch("keydown", { key: "ArrowUp" });
+  assert.equal(input.value, "cat note.txt");
+  input.dispatch("keydown", { key: "ArrowDown" });
+  input.dispatch("keydown", { key: "ArrowDown" });
+  assert.equal(input.value, "draft input");
+  ui.get("Clear").click();
+  assert.equal(ui.get("Log").children.length, 0);
+  assert.match(ui.command("cat note.txt"), /Test note/);
+  ui.get("Restart").click();
+  assert.match(ui.command("cat note.txt"), /Файл не найден/);
 });
 
 test("error cards reveal corrections on demand and require a reveal before grading", () => {

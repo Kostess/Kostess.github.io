@@ -14,7 +14,7 @@
       name="description"
       content="Карточки, тесты и справочник по базовым IT-терминам для студентов перед изучением C#."
     >
-    <link rel="stylesheet" href="styles.css?v=878d7a6e11eb">
+    <link rel="stylesheet" href="styles.css?v=36e0368a986f">
   </head>
   <body>
     <div class="app-shell">
@@ -108,7 +108,7 @@
             <button class="mode-card" type="button" data-screen-link="terminal">
               <span class="mode-icon">06</span>
               <strong>Учим терминал</strong>
-              <small>Найди и запусти проект ЛБ 10, затем отправь коммит в учебном репозитории.</small>
+              <small>Работай с файлами в PowerShell и Bash, изучай Git и пробуй команды в песочнице.</small>
             </button>
           </section>
         </section>
@@ -321,7 +321,7 @@
           <div class="workspace">
             <aside class="settings-panel">
               <div class="section-heading">
-                <p class="eyebrow">Практика ЛБ 10</p>
+                <p class="eyebrow">Самостоятельный тренажёр</p>
                 <h2>Учим терминал</h2>
               </div>
               <p class="settings-description">Это симулятор. Команды работают с учебными файлами и репозиторием внутри страницы.</p>
@@ -333,26 +333,35 @@
                 </select>
               </label>
               <label>
-                Урок
-                <select id="terminalLesson">
-                  <optgroup label="Терминал и C#">
-                    <option value="navigate">Найди папку ЛБ 10</option>
-                    <option value="run">Запусти ЛБ 10</option>
-                  </optgroup>
-                  <optgroup label="Git">
-                    <option value="git">Сохрани и отправь изменение</option>
-                  </optgroup>
+                Раздел
+                <select id="terminalTrack">
+                  <option value="shell">Терминал и файлы</option>
+                  <option value="git">Git и репозитории</option>
+                  <option value="sandbox">Песочница</option>
                 </select>
               </label>
-              <button class="ghost-button" id="terminalRestart" type="button">Начать урок заново</button>
+              <label id="terminalLessonField">
+                Урок
+                <select id="terminalLesson"></select>
+              </label>
+              <p class="settings-description" id="terminalCompleted" role="status"></p>
+              <button class="ghost-button" id="terminalRestart" type="button">Сбросить среду</button>
             </aside>
             <section class="study-panel terminal-panel" aria-label="Учебный терминал">
               <p class="quiz-type" id="terminalProgress"></p>
               <h2 id="terminalTitle"></h2>
               <p id="terminalTask" role="status"></p>
-              <button class="secondary-button" id="terminalHintButton" type="button" aria-controls="terminalHint" aria-expanded="false">Показать подсказку</button>
+              <ol class="terminal-steps" id="terminalSteps" aria-label="Шаги урока"></ol>
+              <div class="terminal-actions">
+                <button class="secondary-button" id="terminalHintButton" type="button" aria-controls="terminalHint" aria-expanded="false">Показать подсказку</button>
+                <button class="primary-button" id="terminalNext" type="button" hidden>Следующий урок</button>
+              </div>
               <p class="terminal-hint" id="terminalHint" role="status" hidden></p>
               <div class="terminal-console">
+                <div class="terminal-tools">
+                  <span>↑ ↓ История команд</span>
+                  <button class="ghost-button" id="terminalClear" type="button">Очистить вывод</button>
+                </div>
                 <div class="terminal-log" id="terminalLog" role="log" aria-label="Вывод команд" tabindex="0"></div>
                 <form id="terminalForm">
                   <label for="terminalCommand" id="terminalPrompt"></label>
@@ -363,6 +372,19 @@
                   </div>
                 </form>
               </div>
+              <details class="terminal-reference" id="terminalReference">
+                <summary>Команды тренажёра</summary>
+                <h3>Команды оболочки</h3>
+                <pre id="terminalShellHelp"></pre>
+                <h3>Git</h3>
+                <pre>git init -b main · git status · git diff · git diff --cached
+git add файл · git add . · git restore файл · git restore --staged файл
+git commit -m "сообщение" · git log --oneline
+git branch · git switch ветка · git switch -c ветка · git merge ветка
+git remote -v · git remote add origin адрес · git push -u origin main
+git push · git fetch origin · git pull --ff-only</pre>
+                <p>Для запуска учебного проекта доступна команда <code>dotnet run</code>. В Git поддерживается слияние fast-forward.</p>
+              </details>
             </section>
           </div>
         </section>
@@ -419,10 +441,11 @@
       </form>
     </dialog>
 
-    <script src="terms-content.js?v=878d7a6e11eb"></script>
-    <script src="code-content.js?v=878d7a6e11eb"></script>
-    <script src="bug-content.js?v=878d7a6e11eb"></script>
-    <script src="terminal.js?v=878d7a6e11eb"></script>
-    <script src="app.js?v=878d7a6e11eb"></script>
+    <script src="terms-content.js?v=36e0368a986f"></script>
+    <script src="code-content.js?v=36e0368a986f"></script>
+    <script src="bug-content.js?v=36e0368a986f"></script>
+    <script src="terminal-engine.js?v=36e0368a986f"></script>
+    <script src="terminal.js?v=36e0368a986f"></script>
+    <script src="app.js?v=36e0368a986f"></script>
   </body>
 </html>

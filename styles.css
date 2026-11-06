@@ -1171,10 +1171,29 @@ dialog::backdrop {
   min-height: auto;
 }
 
+#terminalScreen [hidden] { display: none; }
+
 .terminal-hint {
   margin: 12px 0 0;
   color: var(--accent-strong);
   overflow-wrap: anywhere;
+}
+
+.terminal-steps {
+  margin: 12px 0 16px;
+  padding: 10px 14px 10px 36px;
+  border-radius: var(--radius);
+  background: var(--surface-2);
+  color: var(--muted);
+}
+
+.terminal-steps li { padding: 3px 0; }
+.terminal-steps [aria-current="step"] { color: var(--text); font-weight: 700; }
+
+.terminal-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
 }
 
 .terminal-console {
@@ -1185,6 +1204,20 @@ dialog::backdrop {
   color: #d6f8e8;
   font: 0.95rem/1.55 "Cascadia Code", Consolas, monospace;
 }
+
+.terminal-tools {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding-bottom: 10px;
+  margin-bottom: 12px;
+  border-bottom: 1px solid #40554a;
+  color: #a7c6b7;
+}
+
+.terminal-tools button { min-height: 34px; border-color: #40554a; color: inherit; }
 
 .terminal-log {
   min-height: 9rem;
@@ -1219,6 +1252,19 @@ dialog::backdrop {
 }
 
 .terminal-input-row button { font-family: inherit; }
+
+.terminal-reference { margin-top: 16px; }
+.terminal-reference summary { cursor: pointer; font-weight: 700; }
+.terminal-reference h3 { margin: 14px 0 6px; font-size: 1rem; }
+.terminal-reference pre {
+  margin: 0;
+  padding: 10px 12px;
+  border-radius: var(--radius);
+  background: var(--surface-2);
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.terminal-reference p { margin-bottom: 0; color: var(--muted); }
 
 @media (max-width: 450px) {
   .terminal-input-row { grid-template-columns: minmax(0, 1fr); }

@@ -749,7 +749,7 @@ function updateCodeRefactorTask() {
 function fillCodeDeckSelect() {
   const lab = els.codeLabSelect.value;
   const decks = codeDecks.filter(deck => lab === "all" || deck.lab === lab);
-  els.codeDeckSelect.innerHTML = decks.map(deck => {
+  els.codeDeckSelect.innerHTML = '<option value="all">Все колоды лабораторной</option>' + decks.map(deck => {
     const count = codeLessons.filter(lesson => lesson.codeDeckId === deck.id).length;
     return `<option value="${escapeAttribute(deck.id)}">${escapeHtml(deck.lab)} · ${escapeHtml(deck.title)} (${count})</option>`;
   }).join("");
@@ -806,9 +806,9 @@ function startCode() {
   const lab = els.codeLabSelect.value;
   const questions = shuffle(codeLessons.filter((lesson) =>
     (lab === "all" || (deckLabTags[lesson.deckId] || []).includes(lab)) &&
-    lesson.codeDeckId === els.codeDeckSelect.value &&
+    (els.codeDeckSelect.value === "all" || lesson.codeDeckId === els.codeDeckSelect.value) &&
     (!els.codeMistakesOnly.checked || needsReview("code", lesson))
-  ));
+  )).slice(0, 10);
   if (!questions.length) {
     els.codeFeedback.textContent = "В выбранной подборке нет ошибок для повторения. Снимите фильтр или выберите другую подборку.";
     return;
@@ -925,7 +925,7 @@ function resetBugsUi() {
 
 function startBugs() {
   const cards = shuffle(bugCards.filter(card => card.lab === els.bugLabSelect.value &&
-    (!els.bugMistakesOnly.checked || needsReview("bugs", card))));
+    (!els.bugMistakesOnly.checked || needsReview("bugs", card)))).slice(0, 5);
   if (!cards.length) {
     els.bugSessionNote.textContent = "В выбранной лабораторной нет карточек для повторения. Снимите фильтр или выберите другую лабораторную.";
     return;

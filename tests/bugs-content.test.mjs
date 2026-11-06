@@ -9,11 +9,11 @@ const topics = vm.runInNewContext(`${read("terms-content.js")}\ntopics`);
 const terms = new Set(topics.flatMap(topic => topic.decks.flatMap(deck =>
   deck.terms.map(item => `${deck.id}:${item.term}`))));
 
-test("90 error cards have stable IDs, glossary links, and fifteen cards per lab", () => {
-  assert.equal(cards.length, 90);
-  assert.equal(new Set(cards.map(card => card.id)).size, 90);
+test("150 error cards have stable IDs, glossary links, and twenty-five cards per lab", () => {
+  assert.equal(cards.length, 150);
+  assert.equal(new Set(cards.map(card => card.id)).size, 150);
   for (let lab = 4; lab <= 9; lab++) {
-    assert.equal(cards.filter(card => card.lab === `ЛБ ${lab}`).length, 15);
+    assert.equal(cards.filter(card => card.lab === `ЛБ ${lab}`).length, 25);
   }
   for (const card of cards) {
     assert.ok(terms.has(`${card.deckId}:${card.term}`), card.id);

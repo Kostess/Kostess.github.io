@@ -18,7 +18,7 @@ const terms = new Set(topics.flatMap((topic) =>
 
 test("all code lessons link to real glossary terms", () => {
   assert.equal(terms.size, 286);
-  assert.equal(lessons.length, 308);
+  assert.equal(lessons.length, 368);
   assert.equal(new Set(lessons.map((lesson) => lesson.id)).size, lessons.length);
   for (const lesson of lessons) {
     assert.ok(terms.has(`${lesson.deckId}:${lesson.term}`), `${lesson.id} is not linked to a term`);
@@ -35,12 +35,12 @@ test("labs 4 through 10 have separate practice questions", () => {
   const lab5 = lessons.filter((lesson) => lesson.deckId === "input-operations-conversions");
   const lab6 = lessons.filter((lesson) => ["conditions-logic", "branching-menu"].includes(lesson.deckId));
   const lab7 = lessons.filter(lesson => ["loops-basics", "loops-control"].includes(lesson.deckId));
-  assert.equal(lab4.length, 50);
-  assert.equal(lab5.length, 50);
-  assert.equal(lab6.length, 50);
-  assert.equal(lab7.length, 40);
-  assert.equal(lessons.filter(lesson => lesson.codeDeckId.startsWith("lab8-")).length, 50);
-  assert.equal(lessons.filter(lesson => lesson.codeDeckId.startsWith("lab9-")).length, 50);
+  assert.equal(lab4.length, 60);
+  assert.equal(lab5.length, 60);
+  assert.equal(lab6.length, 60);
+  assert.equal(lab7.length, 50);
+  assert.equal(lessons.filter(lesson => lesson.codeDeckId.startsWith("lab8-")).length, 60);
+  assert.equal(lessons.filter(lesson => lesson.codeDeckId.startsWith("lab9-")).length, 60);
   assert.equal(lessons.filter(lesson => lesson.codeDeckId.startsWith("lab10-")).length, 18);
   assert.deepEqual(Array.from(tags["conditions-logic"]), ["ЛБ 6"]);
   assert.deepEqual(Array.from(tags["branching-menu"]), ["ЛБ 6"]);
@@ -75,7 +75,7 @@ test("lab 6 first deck balances boolean answers in base questions and across alt
 });
 
 test("each practice deck has 5–10 examples, one lab, and every lesson belongs to exactly one deck", () => {
-  assert.equal(codeDecks.length, 34);
+  assert.equal(codeDecks.length, 40);
   assert.equal(new Set(codeDecks.map(deck => deck.id)).size, codeDecks.length);
   for (const deck of codeDecks) {
     const members = lessons.filter(lesson => lesson.codeDeckId === deck.id);
@@ -123,7 +123,7 @@ test("fill-in questions have a single placeholder, four choices and an executabl
 });
 
 test("alternative questions have distinct code, four unique options, and verified result metadata", () => {
-  assert.equal(lessons.filter(lesson => lesson.variants?.length).length, 104);
+  assert.equal(lessons.filter(lesson => lesson.variants?.length).length, 164);
   let alternatives = 0;
   for (const lesson of lessons) {
     const versionKey = version => JSON.stringify([version.challengeCode, version.challengeInput ?? lesson.challengeInput ?? ""]);
@@ -138,7 +138,7 @@ test("alternative questions have distinct code, four unique options, and verifie
       assert.ok(variant.explanation, lesson.id);
     }
   }
-  assert.equal(alternatives, 832);
+  assert.equal(alternatives, 1492);
 });
 
 test("new mixed decks change results and keep eight hidden versions per question", () => {
@@ -146,6 +146,15 @@ test("new mixed decks change results and keep eight hidden versions per question
     assert.equal(lesson.variants.length, 8, lesson.id);
     const results = new Set([lesson, ...lesson.variants].map(version => version.challengeResult));
     assert.ok(results.size >= 2, `${lesson.id}: every version gives the same answer`);
+  }
+});
+
+test("additional bank questions keep eleven distinct hidden versions with different results", () => {
+  const bank = lessons.filter(lesson => lesson.id.startsWith("bank-"));
+  assert.equal(bank.length, 60);
+  for (const lesson of bank) {
+    assert.equal(lesson.variants.length, 11, lesson.id);
+    assert.ok(new Set([lesson, ...lesson.variants].map(version => version.challengeResult)).size >= 2, lesson.id);
   }
 });
 
@@ -173,7 +182,7 @@ test("lab 9 covers methods and the purchase assignment without advanced method s
   }
   const lab9 = lessons.filter(lesson => lesson.codeDeckId.startsWith("lab9-"));
   assert.equal(lab9.filter(lesson => lesson.kind === "Заполните пропуск").length, 7);
-  assert.equal(lab9.flatMap(lesson => lesson.variants || []).length, 160);
+  assert.equal(lab9.flatMap(lesson => lesson.variants || []).length, 270);
   for (const lesson of lab9) {
     assert.doesNotMatch([lesson.exampleCode, lesson.challengeCode].join("\n"), /\bclass\b|\bMain\s*\(|\bref\b|\bparams\b|\basync\b|\bFunc</, lesson.id);
   }

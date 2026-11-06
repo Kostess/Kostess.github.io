@@ -14,7 +14,7 @@
       name="description"
       content="Карточки, тесты и справочник по базовым IT-терминам для студентов перед изучением C#."
     >
-    <link rel="stylesheet" href="styles.css?v=d8f0e6569712">
+    <link rel="stylesheet" href="styles.css?v=234498040e98">
   </head>
   <body>
     <div class="app-shell">
@@ -217,11 +217,10 @@
                 <p class="eyebrow">Практика</p>
                 <h2>Понимаю код</h2>
               </div>
-              <p class="settings-description">Примеры из ЛБ 4–10 собраны в колоды по 5–10 заданий. На каждый ответ — 90 секунд. Если время вышло, задание засчитывается без правильного ответа. Код показан как текст и не запускается на сайте.</p>
+              <p class="settings-description">В тренировке — 10 случайных вопросов из всех колод выбранной лабораторной. Можно выбрать отдельную колоду. Если в подборке или списке ошибок меньше вопросов, покажем все. На каждый ответ — 90 секунд. Код показан как текст и не запускается на сайте.</p>
               <label>
                 Лабораторная работа
                 <select id="codeLabSelect">
-                  <option value="all">Все лабораторные</option>
                   <option value="ЛБ 4">ЛБ 4: переменные и типы</option>
                   <option value="ЛБ 5">ЛБ 5: ввод и операции</option>
                   <option value="ЛБ 6">ЛБ 6: условия и ветвление</option>
@@ -232,7 +231,7 @@
                 </select>
               </label>
               <label>
-                Колода примеров
+                Колода примеров (необязательно)
                 <select id="codeDeckSelect"></select>
               </label>
               <button class="primary-button" id="startCodeBtn" type="button">Начать практику</button>
@@ -315,7 +314,7 @@ class Program
                 <p class="eyebrow">Читаем и исправляем</p>
                 <h2>Найди ошибку</h2>
               </div>
-              <p class="settings-description">В каждой карточке одна намеренная ошибка. Найдите её и сформулируйте исправление, затем откройте решение. Код показан как текст; таймера нет.</p>
+              <p class="settings-description">В тренировке — 5 случайных карточек из запаса выбранной лабораторной. В каждой одна намеренная ошибка. Найдите её и сформулируйте исправление, затем откройте решение. В режиме повторения карточек может быть меньше. Таймера нет.</p>
               <label>
                 Лабораторная работа
                 <select id="bugLabSelect">
@@ -487,11 +486,11 @@ git push · git fetch origin · git pull --ff-only</pre>
       </form>
     </dialog>
 
-    <script src="terms-content.js?v=d8f0e6569712"></script>
-    <script src="code-content.js?v=d8f0e6569712"></script>
-    <script src="bug-content.js?v=d8f0e6569712"></script>
-    <script src="terminal-engine.js?v=d8f0e6569712"></script>
-    <script src="terminal.js?v=d8f0e6569712"></script>
-    <script src="app.js?v=d8f0e6569712"></script>
+    <script src="terms-content.js?v=234498040e98"></script>
+    <script src="code-content.js?v=234498040e98"></script>
+    <script src="bug-content.js?v=234498040e98"></script>
+    <script src="terminal-engine.js?v=234498040e98"></script>
+    <script src="terminal.js?v=234498040e98"></script>
+    <script src="app.js?v=234498040e98"></script>
   </body>
 </html>

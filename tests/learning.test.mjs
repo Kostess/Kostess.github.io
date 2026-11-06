@@ -46,7 +46,7 @@ function element() {
 function setup(storage = new Map(), blocked = false) {
   const elements = new Map([...html.matchAll(/id="([^"]+)"/g)].map(match => [`#${match[1]}`, element()]));
   const root = element();
-  elements.get("#codeLabSelect").value = "all";
+  elements.get("#codeLabSelect").value = "ЛБ 4";
   elements.get("#bugLabSelect").value = "ЛБ 4";
   elements.get("#terminalShell").value = "powershell";
   elements.get("#terminalTrack").value = "shell";
@@ -222,7 +222,7 @@ test("error cards reveal corrections on demand and require a reveal before gradi
   const app = setup();
   const intervalsBefore = app.intervals.size;
   app.elements.get("#startBugsBtn").click();
-  assert.equal(app.run('state.bugSession.cards.length'), 15);
+  assert.equal(app.run('state.bugSession.cards.length'), 5);
   assert.equal(app.intervals.size, intervalsBefore);
   assert.equal(app.elements.get("#bugSolution").hidden, true);
   assert.equal(app.elements.get("#bugFixedCode").innerHTML, "");
@@ -238,14 +238,14 @@ test("error cards reveal corrections on demand and require a reveal before gradi
   assert.equal(app.elements.get("#bugFixedCode").innerHTML, "");
   app.run('markBugCard(false)');
   assert.equal(app.run('Object.values(learningProgress)[0].attempts'), 1);
-  for (let i = 0; i < 14; i++) {
+  for (let i = 0; i < 4; i++) {
     app.elements.get("#flipBugBtn").click();
     app.elements.get("#bugKnownBtn").click();
   }
   assert.equal(app.run('state.bugSession'), null);
   assert.equal(app.run('state.activeMode'), null);
   assert.equal(app.elements.get("#bugProgressFill").style.width, "100%");
-  assert.match(app.elements.get("#bugPrompt").textContent, /нашёл сам — 14, нужно повторить — 1/);
+  assert.match(app.elements.get("#bugPrompt").textContent, /нашёл сам — 4, нужно повторить — 1/);
   const reload = setup(app.storage);
   reload.elements.get("#bugMistakesOnly").checked = true;
   reload.run('startBugs()');
@@ -338,6 +338,36 @@ test("cards record repeat and known decisions; quiz mistakes are available as ca
   assert.equal(app.run('needsReview("quiz", allTerms[0])'), true);
 });
 
+test("mixed lab practice draws ten distinct questions across decks without lengthening the session", () => {
+  const app = setup();
+  app.run('shuffle = items => items.map((_, i) => items[(i * 7) % items.length]);');
+  for (let lab = 4; lab <= 10; lab++) {
+    app.elements.get("#codeLabSelect").value = `ЛБ ${lab}`;
+    app.run('fillCodeDeckSelect()');
+    assert.equal(app.elements.get("#codeDeckSelect").value, "all");
+    app.run('startCode()');
+    assert.equal(app.run('state.codeSession.questions.length'), 10);
+    assert.equal(app.run('new Set(state.codeSession.questions.map(question => question.id)).size'), 10);
+    assert.ok(app.run('new Set(state.codeSession.questions.map(question => question.codeDeckId)).size') >= 2);
+    assert.equal(app.run('state.codeSession.questions.every(question => deckLabTags[question.deckId].includes(els.codeLabSelect.value))'), true);
+    app.run('resetMode()');
+  }
+});
+
+test("error mode draws only five distinct cards from the full selected lab bank", () => {
+  const app = setup();
+  app.run('shuffle = items => [...items].reverse();');
+  for (let lab = 4; lab <= 9; lab++) {
+    app.elements.get("#bugLabSelect").value = `ЛБ ${lab}`;
+    app.run('startBugs()');
+    assert.equal(app.run('state.bugSession.cards.length'), 5);
+    assert.equal(app.run('new Set(state.bugSession.cards.map(card => card.id)).size'), 5);
+    assert.equal(app.run('state.bugSession.cards.every(card => card.lab === els.bugLabSelect.value)'), true);
+    assert.ok(app.run('state.bugSession.cards.some(card => card.id.startsWith("bank-"))'));
+    app.run('resetMode()');
+  }
+});
+
 test("practice lab and deck selectors restrict a session to the selected 5–10 examples", () => {
   const app = setup();
   for (const lab of ["ЛБ 4", "ЛБ 5", "ЛБ 6", "ЛБ 7", "ЛБ 8", "ЛБ 9", "ЛБ 10"]) {
@@ -361,6 +391,8 @@ test("open refactoring task appears for the selected deck outside the timed sess
   const task = app.elements.get("#codeRefactorTask");
   const select = app.elements.get("#codeDeckSelect");
   assert.equal(task.hidden, true);
+  app.elements.get("#codeLabSelect").value = "ЛБ 10";
+  app.run("fillCodeDeckSelect()");
   select.value = "lab10-method-refactoring";
   select.dispatch("change");
   assert.equal(task.hidden, false);

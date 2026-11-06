@@ -756,8 +756,40 @@ function fillCodeDeckSelect() {
   updateCodeRefactorTask();
 }
 
+let codeVersionHistory = null;
+
+function chooseCodeVersion(lesson) {
+  const versions = [lesson, ...(lesson.variants || [])];
+  if (versions.length === 1) return lesson;
+  if (codeVersionHistory === null) {
+    try {
+      const saved = JSON.parse(localStorage.getItem("code-version-history-v1") || "{}");
+      codeVersionHistory = saved && typeof saved === "object" && !Array.isArray(saved) ? saved : {};
+    } catch {
+      codeVersionHistory = {};
+    }
+  }
+  let used = Array.isArray(codeVersionHistory[lesson.id])
+    ? [...new Set(codeVersionHistory[lesson.id].filter(index => Number.isInteger(index) && index >= 0 && index < versions.length))]
+    : [];
+  let candidates = versions.map((version, index) => ({ version, index })).filter(item => !used.includes(item.index));
+  if (!candidates.length) {
+    // Start a new round without immediately repeating the last version of the old round.
+    candidates = versions.map((version, index) => ({ version, index })).filter(item => item.index !== used.at(-1));
+    used = [];
+  }
+  const selected = randomItem(candidates);
+  codeVersionHistory[lesson.id] = [...used, selected.index];
+  try {
+    localStorage.setItem("code-version-history-v1", JSON.stringify(codeVersionHistory));
+  } catch {
+    // Rotation still works during this visit when browser storage is unavailable.
+  }
+  return selected.version;
+}
+
 function createCodeQuestion(lesson) {
-  const variant = randomItem([lesson, ...(lesson.variants || [])]);
+  const variant = chooseCodeVersion(lesson);
   const options = shuffle(variant.options.map((text, index) => ({
     text,
     correct: index === variant.correctIndex

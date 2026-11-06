@@ -222,7 +222,7 @@ test("error cards reveal corrections on demand and require a reveal before gradi
   const app = setup();
   const intervalsBefore = app.intervals.size;
   app.elements.get("#startBugsBtn").click();
-  assert.equal(app.run('state.bugSession.cards.length'), 5);
+  assert.equal(app.run('state.bugSession.cards.length'), 15);
   assert.equal(app.intervals.size, intervalsBefore);
   assert.equal(app.elements.get("#bugSolution").hidden, true);
   assert.equal(app.elements.get("#bugFixedCode").innerHTML, "");
@@ -238,14 +238,14 @@ test("error cards reveal corrections on demand and require a reveal before gradi
   assert.equal(app.elements.get("#bugFixedCode").innerHTML, "");
   app.run('markBugCard(false)');
   assert.equal(app.run('Object.values(learningProgress)[0].attempts'), 1);
-  for (let i = 0; i < 4; i++) {
+  for (let i = 0; i < 14; i++) {
     app.elements.get("#flipBugBtn").click();
     app.elements.get("#bugKnownBtn").click();
   }
   assert.equal(app.run('state.bugSession'), null);
   assert.equal(app.run('state.activeMode'), null);
   assert.equal(app.elements.get("#bugProgressFill").style.width, "100%");
-  assert.match(app.elements.get("#bugPrompt").textContent, /нашёл сам — 4, нужно повторить — 1/);
+  assert.match(app.elements.get("#bugPrompt").textContent, /нашёл сам — 14, нужно повторить — 1/);
   const reload = setup(app.storage);
   reload.elements.get("#bugMistakesOnly").checked = true;
   reload.run('startBugs()');
@@ -372,6 +372,31 @@ test("open refactoring task appears for the selected deck outside the timed sess
   select.value = "lab10-array-operations";
   select.dispatch("change");
   assert.equal(task.hidden, true);
+});
+
+test("question versions rotate without repeats across reloads and cycle boundaries", () => {
+  let app = setup();
+  const seen = new Set();
+  const count = app.run('1 + codeLessons[0].variants.length');
+  let last;
+  for (let i = 0; i < count; i++) {
+    app.run('randomItem = items => items[0];');
+    const code = app.run('createCodeQuestion(codeLessons[0]).challengeCode');
+    assert.ok(!seen.has(code));
+    seen.add(code);
+    last = code;
+    app = setup(app.storage);
+  }
+  assert.equal(seen.size, count);
+  app.run('randomItem = items => items[items.length - 1];');
+  assert.notEqual(app.run('createCodeQuestion(codeLessons[0]).challengeCode'), last);
+  for (const raw of ['null', '[]', '{broken', '{"variable":[-1,9999,"0"]}']) {
+    const broken = setup(new Map([["code-version-history-v1", raw]]));
+    assert.ok(broken.run('createCodeQuestion(codeLessons[0]).challengeCode'));
+  }
+  const blocked = setup(new Map(), true);
+  blocked.run('randomItem = items => items[0];');
+  assert.notEqual(blocked.run('createCodeQuestion(codeLessons[0]).challengeCode'), blocked.run('createCodeQuestion(codeLessons[0]).challengeCode'));
 });
 
 test("choosing an alternative and shuffling answers preserves grading, explanation and glossary link", () => {

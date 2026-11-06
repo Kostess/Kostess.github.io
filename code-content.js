@@ -139,6 +139,36 @@ const codeDecks = [
     "id": "lab10-method-refactoring",
     "lab": "ЛБ 10",
     "title": "Как разделить программу на методы"
+  },
+  {
+    "id": "lab4-mixed-reading",
+    "lab": "ЛБ 4",
+    "title": "Разбираем порядок выполнения"
+  },
+  {
+    "id": "lab5-mixed-reading",
+    "lab": "ЛБ 5",
+    "title": "Разбираем порядок выполнения"
+  },
+  {
+    "id": "lab6-mixed-reading",
+    "lab": "ЛБ 6",
+    "title": "Разбираем порядок выполнения"
+  },
+  {
+    "id": "lab7-mixed-reading",
+    "lab": "ЛБ 7",
+    "title": "Разбираем порядок выполнения"
+  },
+  {
+    "id": "lab8-mixed-reading",
+    "lab": "ЛБ 8",
+    "title": "Разбираем порядок выполнения"
+  },
+  {
+    "id": "lab9-mixed-reading",
+    "lab": "ЛБ 9",
+    "title": "Разбираем порядок выполнения"
   }
 ];
 
@@ -186,6 +216,90 @@ const codeLessons = [
         "correctIndex": 0,
         "challengeResult": "8",
         "explanation": "Переменная lives хранит 8; это значение и выводится."
+      },
+      {
+        "challengeCode": "int first = 4;\nint second = first;\nfirst = 10;\nint third = second;\nConsole.WriteLine($\"{second} {third}\");",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Присваивание копирует текущее значение. Последующие изменения исходной переменной не пересчитывают копию.",
+        "challengeResult": "4 4",
+        "options": [
+          "4 4",
+          "5 5",
+          "Ничего",
+          "Ошибка компиляции"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int first = 5;\nint second = first;\nfirst = 11;\nint third = first;\nConsole.WriteLine($\"{second} {third}\");",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Присваивание копирует текущее значение. Последующие изменения исходной переменной не пересчитывают копию.",
+        "challengeResult": "5 11",
+        "options": [
+          "5 11",
+          "6 12",
+          "11 5",
+          "Ничего"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int first = 6;\nint second = first;\nfirst = 12;\nint third = second;\nConsole.WriteLine($\"{second} {third}\");",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Присваивание копирует текущее значение. Последующие изменения исходной переменной не пересчитывают копию.",
+        "challengeResult": "6 6",
+        "options": [
+          "6 6",
+          "7 7",
+          "Ничего",
+          "Ошибка компиляции"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int first = 7;\nint second = first;\nfirst = 13;\nint third = first;\nConsole.WriteLine($\"{second} {third}\");",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Присваивание копирует текущее значение. Последующие изменения исходной переменной не пересчитывают копию.",
+        "challengeResult": "7 13",
+        "options": [
+          "7 13",
+          "8 14",
+          "31 7",
+          "Ничего"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int first = 8;\nint second = first;\nfirst = 14;\nint third = second;\nConsole.WriteLine($\"{second} {third}\");",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Присваивание копирует текущее значение. Последующие изменения исходной переменной не пересчитывают копию.",
+        "challengeResult": "8 8",
+        "options": [
+          "8 8",
+          "9 9",
+          "Ничего",
+          "Ошибка компиляции"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int first = 9;\nint second = first;\nfirst = 15;\nint third = first;\nConsole.WriteLine($\"{second} {third}\");",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Присваивание копирует текущее значение. Последующие изменения исходной переменной не пересчитывают копию.",
+        "challengeResult": "9 15",
+        "options": [
+          "9 15",
+          "10 16",
+          "51 9",
+          "Ничего"
+        ],
+        "correctIndex": 0
       }
     ]
   },
@@ -252,6 +366,90 @@ const codeLessons = [
         "correctIndex": 0,
         "challengeResult": "8",
         "explanation": "К 6 прибавляется 2: получается 8."
+      },
+      {
+        "challengeCode": "int first = 4;\nint second = first;\nfirst = 10;\nint third = second;\nConsole.WriteLine($\"{second} {third}\");",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Присваивание копирует текущее значение. Последующие изменения исходной переменной не пересчитывают копию.",
+        "challengeResult": "4 4",
+        "options": [
+          "4 4",
+          "5 5",
+          "Ничего",
+          "Ошибка компиляции"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int first = 5;\nint second = first;\nfirst = 11;\nint third = first;\nConsole.WriteLine($\"{second} {third}\");",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Присваивание копирует текущее значение. Последующие изменения исходной переменной не пересчитывают копию.",
+        "challengeResult": "5 11",
+        "options": [
+          "5 11",
+          "6 12",
+          "11 5",
+          "Ничего"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int first = 6;\nint second = first;\nfirst = 12;\nint third = second;\nConsole.WriteLine($\"{second} {third}\");",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Присваивание копирует текущее значение. Последующие изменения исходной переменной не пересчитывают копию.",
+        "challengeResult": "6 6",
+        "options": [
+          "6 6",
+          "7 7",
+          "Ничего",
+          "Ошибка компиляции"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int first = 7;\nint second = first;\nfirst = 13;\nint third = first;\nConsole.WriteLine($\"{second} {third}\");",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Присваивание копирует текущее значение. Последующие изменения исходной переменной не пересчитывают копию.",
+        "challengeResult": "7 13",
+        "options": [
+          "7 13",
+          "8 14",
+          "31 7",
+          "Ничего"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int first = 8;\nint second = first;\nfirst = 14;\nint third = second;\nConsole.WriteLine($\"{second} {third}\");",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Присваивание копирует текущее значение. Последующие изменения исходной переменной не пересчитывают копию.",
+        "challengeResult": "8 8",
+        "options": [
+          "8 8",
+          "9 9",
+          "Ничего",
+          "Ошибка компиляции"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int first = 9;\nint second = first;\nfirst = 15;\nint third = first;\nConsole.WriteLine($\"{second} {third}\");",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Присваивание копирует текущее значение. Последующие изменения исходной переменной не пересчитывают копию.",
+        "challengeResult": "9 15",
+        "options": [
+          "9 15",
+          "10 16",
+          "51 9",
+          "Ничего"
+        ],
+        "correctIndex": 0
       }
     ]
   },
@@ -461,6 +659,90 @@ const codeLessons = [
         "correctIndex": 0,
         "challengeResult": "4",
         "explanation": "Целочисленное деление даёт 4; дробная часть отбрасывается."
+      },
+      {
+        "challengeCode": "int left = 1 * 17;\nint right = 4;\nConsole.WriteLine(left / right);\nConsole.WriteLine(left % right);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Целочисленное деление отбрасывает дробную часть в направлении нуля. Знак определяется знаками операндов.",
+        "challengeResult": "4\n1",
+        "options": [
+          "4\n1",
+          "1\n4",
+          "5\n2",
+          "41"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int left = -1 * 20;\nint right = 2;\nConsole.WriteLine(left / right);\nConsole.WriteLine(left % right);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Целочисленное деление отбрасывает дробную часть в направлении нуля. Знак определяется знаками операндов.",
+        "challengeResult": "-10\n0",
+        "options": [
+          "-10\n0",
+          "0\n-10",
+          "-11\n1",
+          "-100"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int left = 1 * 23;\nint right = 3;\nConsole.WriteLine(left / right);\nConsole.WriteLine(left % right);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Целочисленное деление отбрасывает дробную часть в направлении нуля. Знак определяется знаками операндов.",
+        "challengeResult": "7\n2",
+        "options": [
+          "7\n2",
+          "2\n7",
+          "8\n3",
+          "72"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int left = -1 * 26;\nint right = 4;\nConsole.WriteLine(left / right);\nConsole.WriteLine(left % right);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Целочисленное деление отбрасывает дробную часть в направлении нуля. Знак определяется знаками операндов.",
+        "challengeResult": "-6\n-2",
+        "options": [
+          "-6\n-2",
+          "-2\n-6",
+          "-7\n-3",
+          "-6-2"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int left = 1 * 29;\nint right = 2;\nConsole.WriteLine(left / right);\nConsole.WriteLine(left % right);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Целочисленное деление отбрасывает дробную часть в направлении нуля. Знак определяется знаками операндов.",
+        "challengeResult": "14\n1",
+        "options": [
+          "14\n1",
+          "1\n14",
+          "15\n2",
+          "141"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int left = -1 * 32;\nint right = 3;\nConsole.WriteLine(left / right);\nConsole.WriteLine(left % right);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Целочисленное деление отбрасывает дробную часть в направлении нуля. Знак определяется знаками операндов.",
+        "challengeResult": "-10\n-2",
+        "options": [
+          "-10\n-2",
+          "-2\n-10",
+          "-11\n-3",
+          "-10-2"
+        ],
+        "correctIndex": 0
       }
     ]
   },
@@ -507,6 +789,90 @@ const codeLessons = [
         "correctIndex": 0,
         "challengeResult": "3",
         "explanation": "19 = 4 × 4 + 3; остаток равен 3."
+      },
+      {
+        "challengeCode": "int value = 16;\nConsole.WriteLine(value + 3 % 5);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Остаток вычисляется раньше сложения. Скобки могут изменить делимое и итоговый результат.",
+        "challengeResult": "19",
+        "options": [
+          "19",
+          "20",
+          "18",
+          "21"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int value = 17;\nConsole.WriteLine((value + 3) % 5);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Остаток вычисляется раньше сложения. Скобки могут изменить делимое и итоговый результат.",
+        "challengeResult": "0",
+        "options": [
+          "0",
+          "1",
+          "-1",
+          "2"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int value = 18;\nConsole.WriteLine(value + 3 % 5);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Остаток вычисляется раньше сложения. Скобки могут изменить делимое и итоговый результат.",
+        "challengeResult": "21",
+        "options": [
+          "21",
+          "22",
+          "20",
+          "23"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int value = 19;\nConsole.WriteLine((value + 3) % 5);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Остаток вычисляется раньше сложения. Скобки могут изменить делимое и итоговый результат.",
+        "challengeResult": "2",
+        "options": [
+          "2",
+          "3",
+          "1",
+          "4"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int value = 20;\nConsole.WriteLine(value + 3 % 5);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Остаток вычисляется раньше сложения. Скобки могут изменить делимое и итоговый результат.",
+        "challengeResult": "23",
+        "options": [
+          "23",
+          "24",
+          "22",
+          "25"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int value = 21;\nConsole.WriteLine((value + 3) % 5);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Остаток вычисляется раньше сложения. Скобки могут изменить делимое и итоговый результат.",
+        "challengeResult": "4",
+        "options": [
+          "4",
+          "5",
+          "3",
+          "6"
+        ],
+        "correctIndex": 0
       }
     ]
   },
@@ -818,6 +1184,90 @@ const codeLessons = [
         "correctIndex": 0,
         "challengeResult": "Зачёт",
         "explanation": "Условие 75 >= 60 — истина; выбирается «Зачёт»."
+      },
+      {
+        "challengeCode": "int first = 5;\nint second = 10;\nint result = first > second ? first : second;\nConsole.WriteLine(result);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Условный оператор выбирает значение до двоеточия при true, после — при false.",
+        "challengeResult": "10",
+        "options": [
+          "10",
+          "11",
+          "9",
+          "12"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int first = 6;\nint second = 9;\nint result = first < second ? first : second;\nConsole.WriteLine(result);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Условный оператор выбирает значение до двоеточия при true, после — при false.",
+        "challengeResult": "6",
+        "options": [
+          "6",
+          "7",
+          "5",
+          "8"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int first = 7;\nint second = 8;\nint result = first > second ? first : second;\nConsole.WriteLine(result);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Условный оператор выбирает значение до двоеточия при true, после — при false.",
+        "challengeResult": "8",
+        "options": [
+          "8",
+          "9",
+          "7",
+          "10"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int first = 8;\nint second = 7;\nint result = first < second ? first : second;\nConsole.WriteLine(result);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Условный оператор выбирает значение до двоеточия при true, после — при false.",
+        "challengeResult": "7",
+        "options": [
+          "7",
+          "8",
+          "6",
+          "9"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int first = 9;\nint second = 6;\nint result = first > second ? first : second;\nConsole.WriteLine(result);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Условный оператор выбирает значение до двоеточия при true, после — при false.",
+        "challengeResult": "9",
+        "options": [
+          "9",
+          "10",
+          "8",
+          "11"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int first = 10;\nint second = 5;\nint result = first < second ? first : second;\nConsole.WriteLine(result);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Условный оператор выбирает значение до двоеточия при true, после — при false.",
+        "challengeResult": "5",
+        "options": [
+          "5",
+          "6",
+          "4",
+          "7"
+        ],
+        "correctIndex": 0
       }
     ]
   },
@@ -925,6 +1375,90 @@ const codeLessons = [
         "correctIndex": 0,
         "challengeResult": "8",
         "explanation": "Переменная level хранит 8; это значение и выводится."
+      },
+      {
+        "challengeCode": "int first = 4;\nint second = first;\nfirst = 10;\nint third = second;\nConsole.WriteLine($\"{second} {third}\");",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Присваивание копирует текущее значение. Последующие изменения исходной переменной не пересчитывают копию.",
+        "challengeResult": "4 4",
+        "options": [
+          "4 4",
+          "5 5",
+          "Ничего",
+          "Ошибка компиляции"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int first = 5;\nint second = first;\nfirst = 11;\nint third = first;\nConsole.WriteLine($\"{second} {third}\");",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Присваивание копирует текущее значение. Последующие изменения исходной переменной не пересчитывают копию.",
+        "challengeResult": "5 11",
+        "options": [
+          "5 11",
+          "6 12",
+          "11 5",
+          "Ничего"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int first = 6;\nint second = first;\nfirst = 12;\nint third = second;\nConsole.WriteLine($\"{second} {third}\");",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Присваивание копирует текущее значение. Последующие изменения исходной переменной не пересчитывают копию.",
+        "challengeResult": "6 6",
+        "options": [
+          "6 6",
+          "7 7",
+          "Ничего",
+          "Ошибка компиляции"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int first = 7;\nint second = first;\nfirst = 13;\nint third = first;\nConsole.WriteLine($\"{second} {third}\");",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Присваивание копирует текущее значение. Последующие изменения исходной переменной не пересчитывают копию.",
+        "challengeResult": "7 13",
+        "options": [
+          "7 13",
+          "8 14",
+          "31 7",
+          "Ничего"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int first = 8;\nint second = first;\nfirst = 14;\nint third = second;\nConsole.WriteLine($\"{second} {third}\");",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Присваивание копирует текущее значение. Последующие изменения исходной переменной не пересчитывают копию.",
+        "challengeResult": "8 8",
+        "options": [
+          "8 8",
+          "9 9",
+          "Ничего",
+          "Ошибка компиляции"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int first = 9;\nint second = first;\nfirst = 15;\nint third = first;\nConsole.WriteLine($\"{second} {third}\");",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Присваивание копирует текущее значение. Последующие изменения исходной переменной не пересчитывают копию.",
+        "challengeResult": "9 15",
+        "options": [
+          "9 15",
+          "10 16",
+          "51 9",
+          "Ничего"
+        ],
+        "correctIndex": 0
       }
     ]
   },
@@ -972,6 +1506,90 @@ const codeLessons = [
         "correctIndex": 0,
         "challengeResult": "8\n53",
         "explanation": "Числа складываются (8), строки соединяются (53)."
+      },
+      {
+        "challengeCode": "Console.WriteLine(\"Ответ: \" + 4 + 6);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Скобки определяют, сложатся ли числовые литералы до соединения со строкой.",
+        "challengeResult": "Ответ: 46",
+        "options": [
+          "Ответ: 46",
+          "Ответ: 47",
+          "64 :тевтО",
+          "Ничего"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "Console.WriteLine(\"Ответ: \" + (5 + 7));",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Скобки определяют, сложатся ли числовые литералы до соединения со строкой.",
+        "challengeResult": "Ответ: 12",
+        "options": [
+          "Ответ: 12",
+          "Ответ: 13",
+          "21 :тевтО",
+          "Ничего"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "Console.WriteLine(\"Ответ: \" + 6 + 8);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Скобки определяют, сложатся ли числовые литералы до соединения со строкой.",
+        "challengeResult": "Ответ: 68",
+        "options": [
+          "Ответ: 68",
+          "Ответ: 69",
+          "86 :тевтО",
+          "Ничего"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "Console.WriteLine(\"Ответ: \" + (7 + 9));",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Скобки определяют, сложатся ли числовые литералы до соединения со строкой.",
+        "challengeResult": "Ответ: 16",
+        "options": [
+          "Ответ: 16",
+          "Ответ: 17",
+          "61 :тевтО",
+          "Ничего"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "Console.WriteLine(\"Ответ: \" + 8 + 10);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Скобки определяют, сложатся ли числовые литералы до соединения со строкой.",
+        "challengeResult": "Ответ: 810",
+        "options": [
+          "Ответ: 810",
+          "Ответ: 811",
+          "018 :тевтО",
+          "Ничего"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "Console.WriteLine(\"Ответ: \" + (9 + 11));",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Скобки определяют, сложатся ли числовые литералы до соединения со строкой.",
+        "challengeResult": "Ответ: 20",
+        "options": [
+          "Ответ: 20",
+          "Ответ: 21",
+          "02 :тевтО",
+          "Ничего"
+        ],
+        "correctIndex": 0
       }
     ]
   },
@@ -1229,6 +1847,90 @@ const codeLessons = [
         "correctIndex": 0,
         "challengeResult": "10",
         "explanation": "Сначала 3 * 2, затем прибавление 4; ответ 10."
+      },
+      {
+        "challengeCode": "int number = 35;\nint tens = number / 10;\nint ones = number % 10;\nConsole.WriteLine(tens + ones);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "У положительного двузначного числа деление на 10 даёт десятки, а остаток — единицы.",
+        "challengeResult": "8",
+        "options": [
+          "8",
+          "9",
+          "7",
+          "10"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int number = 42;\nint tens = number / 10;\nint ones = number % 10;\nConsole.WriteLine(tens * ones);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "У положительного двузначного числа деление на 10 даёт десятки, а остаток — единицы.",
+        "challengeResult": "8",
+        "options": [
+          "8",
+          "9",
+          "7",
+          "10"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int number = 49;\nint tens = number / 10;\nint ones = number % 10;\nConsole.WriteLine(tens + ones);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "У положительного двузначного числа деление на 10 даёт десятки, а остаток — единицы.",
+        "challengeResult": "13",
+        "options": [
+          "13",
+          "14",
+          "12",
+          "15"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int number = 56;\nint tens = number / 10;\nint ones = number % 10;\nConsole.WriteLine(tens * ones);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "У положительного двузначного числа деление на 10 даёт десятки, а остаток — единицы.",
+        "challengeResult": "30",
+        "options": [
+          "30",
+          "31",
+          "29",
+          "32"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int number = 63;\nint tens = number / 10;\nint ones = number % 10;\nConsole.WriteLine(tens + ones);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "У положительного двузначного числа деление на 10 даёт десятки, а остаток — единицы.",
+        "challengeResult": "9",
+        "options": [
+          "9",
+          "10",
+          "8",
+          "11"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int number = 70;\nint tens = number / 10;\nint ones = number % 10;\nConsole.WriteLine(tens * ones);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "У положительного двузначного числа деление на 10 даёт десятки, а остаток — единицы.",
+        "challengeResult": "0",
+        "options": [
+          "0",
+          "1",
+          "-1",
+          "2"
+        ],
+        "correctIndex": 0
       }
     ]
   },
@@ -1297,6 +1999,90 @@ const codeLessons = [
         "correctIndex": 0,
         "challengeResult": "24",
         "explanation": "5 * 5 - 1 = 24."
+      },
+      {
+        "challengeCode": "int x = 4;\nint saved = x * 3;\nx *= 2;\nConsole.WriteLine(saved);\nConsole.WriteLine(x);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Результат выражения сохраняется при присваивании и не пересчитывается автоматически.",
+        "challengeResult": "12\n8",
+        "options": [
+          "12\n8",
+          "8\n12",
+          "13\n9",
+          "128"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int x = 5;\nint saved = x * 3;\nx += 2;\nConsole.WriteLine(saved);\nConsole.WriteLine(x);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Результат выражения сохраняется при присваивании и не пересчитывается автоматически.",
+        "challengeResult": "15\n7",
+        "options": [
+          "15\n7",
+          "7\n15",
+          "16\n8",
+          "157"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int x = 6;\nint saved = x * 3;\nx *= 2;\nConsole.WriteLine(saved);\nConsole.WriteLine(x);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Результат выражения сохраняется при присваивании и не пересчитывается автоматически.",
+        "challengeResult": "18\n12",
+        "options": [
+          "18\n12",
+          "12\n18",
+          "19\n13",
+          "1812"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int x = 7;\nint saved = x * 3;\nx += 2;\nConsole.WriteLine(saved);\nConsole.WriteLine(x);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Результат выражения сохраняется при присваивании и не пересчитывается автоматически.",
+        "challengeResult": "21\n9",
+        "options": [
+          "21\n9",
+          "9\n21",
+          "22\n10",
+          "219"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int x = 8;\nint saved = x * 3;\nx *= 2;\nConsole.WriteLine(saved);\nConsole.WriteLine(x);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Результат выражения сохраняется при присваивании и не пересчитывается автоматически.",
+        "challengeResult": "24\n16",
+        "options": [
+          "24\n16",
+          "16\n24",
+          "25\n17",
+          "2416"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int x = 9;\nint saved = x * 3;\nx += 2;\nConsole.WriteLine(saved);\nConsole.WriteLine(x);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Результат выражения сохраняется при присваивании и не пересчитывается автоматически.",
+        "challengeResult": "27\n11",
+        "options": [
+          "27\n11",
+          "11\n27",
+          "28\n12",
+          "2711"
+        ],
+        "correctIndex": 0
       }
     ]
   },
@@ -1365,6 +2151,90 @@ const codeLessons = [
         "correctIndex": 0,
         "challengeResult": "17",
         "explanation": "К 12 прибавляется 5; результат 17."
+      },
+      {
+        "challengeCode": "int value = 5;\nvalue += 3;\nvalue *= 2;\nConsole.WriteLine(value);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Каждая операция использует результат предыдущей строки. Умножение до прибавления и после него даёт разные результаты.",
+        "challengeResult": "16",
+        "options": [
+          "16",
+          "17",
+          "15",
+          "18"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int value = 6;\nvalue *= 2;\nvalue += 3;\nConsole.WriteLine(value);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Каждая операция использует результат предыдущей строки. Умножение до прибавления и после него даёт разные результаты.",
+        "challengeResult": "15",
+        "options": [
+          "15",
+          "16",
+          "14",
+          "17"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int value = 7;\nvalue += 3;\nvalue *= 2;\nConsole.WriteLine(value);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Каждая операция использует результат предыдущей строки. Умножение до прибавления и после него даёт разные результаты.",
+        "challengeResult": "20",
+        "options": [
+          "20",
+          "21",
+          "19",
+          "22"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int value = 8;\nvalue *= 2;\nvalue += 3;\nConsole.WriteLine(value);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Каждая операция использует результат предыдущей строки. Умножение до прибавления и после него даёт разные результаты.",
+        "challengeResult": "19",
+        "options": [
+          "19",
+          "20",
+          "18",
+          "21"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int value = 9;\nvalue += 3;\nvalue *= 2;\nConsole.WriteLine(value);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Каждая операция использует результат предыдущей строки. Умножение до прибавления и после него даёт разные результаты.",
+        "challengeResult": "24",
+        "options": [
+          "24",
+          "25",
+          "23",
+          "26"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int value = 10;\nvalue *= 2;\nvalue += 3;\nConsole.WriteLine(value);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Каждая операция использует результат предыдущей строки. Умножение до прибавления и после него даёт разные результаты.",
+        "challengeResult": "23",
+        "options": [
+          "23",
+          "24",
+          "22",
+          "25"
+        ],
+        "correctIndex": 0
       }
     ]
   },
@@ -1412,6 +2282,90 @@ const codeLessons = [
         "correctIndex": 0,
         "challengeResult": "8",
         "explanation": "Сначала умножение, затем вычитание; ответ 8."
+      },
+      {
+        "challengeCode": "int a = 4;\nint b = 6;\nConsole.WriteLine((a + b) * 3);\nConsole.WriteLine(a + b);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Сначала вычисляют скобки, затем умножение и деление. Операции одного приоритета выполняются слева направо.",
+        "challengeResult": "30\n10",
+        "options": [
+          "30\n10",
+          "10\n30",
+          "31\n11",
+          "3010"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int a = 5;\nint b = 7;\nConsole.WriteLine(a + b * 3);\nConsole.WriteLine(a + b);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Сначала вычисляют скобки, затем умножение и деление. Операции одного приоритета выполняются слева направо.",
+        "challengeResult": "26\n12",
+        "options": [
+          "26\n12",
+          "12\n26",
+          "27\n13",
+          "2612"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int a = 6;\nint b = 8;\nConsole.WriteLine((a + b) * 3);\nConsole.WriteLine(a + b);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Сначала вычисляют скобки, затем умножение и деление. Операции одного приоритета выполняются слева направо.",
+        "challengeResult": "42\n14",
+        "options": [
+          "42\n14",
+          "14\n42",
+          "43\n15",
+          "4214"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int a = 7;\nint b = 9;\nConsole.WriteLine(a + b * 3);\nConsole.WriteLine(a + b);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Сначала вычисляют скобки, затем умножение и деление. Операции одного приоритета выполняются слева направо.",
+        "challengeResult": "34\n16",
+        "options": [
+          "34\n16",
+          "16\n34",
+          "35\n17",
+          "3416"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int a = 8;\nint b = 10;\nConsole.WriteLine((a + b) * 3);\nConsole.WriteLine(a + b);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Сначала вычисляют скобки, затем умножение и деление. Операции одного приоритета выполняются слева направо.",
+        "challengeResult": "54\n18",
+        "options": [
+          "54\n18",
+          "18\n54",
+          "55\n19",
+          "5418"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int a = 9;\nint b = 11;\nConsole.WriteLine(a + b * 3);\nConsole.WriteLine(a + b);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Сначала вычисляют скобки, затем умножение и деление. Операции одного приоритета выполняются слева направо.",
+        "challengeResult": "42\n20",
+        "options": [
+          "42\n20",
+          "20\n42",
+          "43\n21",
+          "4220"
+        ],
+        "correctIndex": 0
       }
     ]
   },
@@ -1459,6 +2413,90 @@ const codeLessons = [
         "correctIndex": 0,
         "challengeResult": "68",
         "explanation": "Сначала скобки, затем умножение; ответ 68."
+      },
+      {
+        "challengeCode": "int a = 4;\nint b = 6;\nConsole.WriteLine((a + b) * 3);\nConsole.WriteLine(a + b);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Сначала вычисляют скобки, затем умножение и деление. Операции одного приоритета выполняются слева направо.",
+        "challengeResult": "30\n10",
+        "options": [
+          "30\n10",
+          "10\n30",
+          "31\n11",
+          "3010"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int a = 5;\nint b = 7;\nConsole.WriteLine(a + b * 3);\nConsole.WriteLine(a + b);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Сначала вычисляют скобки, затем умножение и деление. Операции одного приоритета выполняются слева направо.",
+        "challengeResult": "26\n12",
+        "options": [
+          "26\n12",
+          "12\n26",
+          "27\n13",
+          "2612"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int a = 6;\nint b = 8;\nConsole.WriteLine((a + b) * 3);\nConsole.WriteLine(a + b);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Сначала вычисляют скобки, затем умножение и деление. Операции одного приоритета выполняются слева направо.",
+        "challengeResult": "42\n14",
+        "options": [
+          "42\n14",
+          "14\n42",
+          "43\n15",
+          "4214"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int a = 7;\nint b = 9;\nConsole.WriteLine(a + b * 3);\nConsole.WriteLine(a + b);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Сначала вычисляют скобки, затем умножение и деление. Операции одного приоритета выполняются слева направо.",
+        "challengeResult": "34\n16",
+        "options": [
+          "34\n16",
+          "16\n34",
+          "35\n17",
+          "3416"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int a = 8;\nint b = 10;\nConsole.WriteLine((a + b) * 3);\nConsole.WriteLine(a + b);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Сначала вычисляют скобки, затем умножение и деление. Операции одного приоритета выполняются слева направо.",
+        "challengeResult": "54\n18",
+        "options": [
+          "54\n18",
+          "18\n54",
+          "55\n19",
+          "5418"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int a = 9;\nint b = 11;\nConsole.WriteLine(a + b * 3);\nConsole.WriteLine(a + b);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Сначала вычисляют скобки, затем умножение и деление. Операции одного приоритета выполняются слева направо.",
+        "challengeResult": "42\n20",
+        "options": [
+          "42\n20",
+          "20\n42",
+          "43\n21",
+          "4220"
+        ],
+        "correctIndex": 0
       }
     ]
   },
@@ -1527,6 +2565,90 @@ const codeLessons = [
         "correctIndex": 0,
         "challengeResult": "False",
         "explanation": "Сравнение 7 > 8 даёт False."
+      },
+      {
+        "challengeCode": "int score = 63;\nbool passed = score >= 62;\nConsole.WriteLine(passed);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Проверьте строгость границы: >= включает равенство, а > его исключает.",
+        "challengeResult": "True",
+        "options": [
+          "True",
+          "False",
+          "0",
+          "Ошибка компиляции"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int score = 62;\nbool passed = score > 63;\nConsole.WriteLine(passed);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Проверьте строгость границы: >= включает равенство, а > его исключает.",
+        "challengeResult": "False",
+        "options": [
+          "False",
+          "True",
+          "0",
+          "Ошибка компиляции"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int score = 64;\nbool passed = score >= 64;\nConsole.WriteLine(passed);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Проверьте строгость границы: >= включает равенство, а > его исключает.",
+        "challengeResult": "True",
+        "options": [
+          "True",
+          "False",
+          "0",
+          "Ошибка компиляции"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int score = 66;\nbool passed = score > 65;\nConsole.WriteLine(passed);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Проверьте строгость границы: >= включает равенство, а > его исключает.",
+        "challengeResult": "True",
+        "options": [
+          "True",
+          "False",
+          "0",
+          "Ошибка компиляции"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int score = 65;\nbool passed = score >= 66;\nConsole.WriteLine(passed);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Проверьте строгость границы: >= включает равенство, а > его исключает.",
+        "challengeResult": "False",
+        "options": [
+          "False",
+          "True",
+          "0",
+          "Ошибка компиляции"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int score = 67;\nbool passed = score > 67;\nConsole.WriteLine(passed);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Проверьте строгость границы: >= включает равенство, а > его исключает.",
+        "challengeResult": "False",
+        "options": [
+          "False",
+          "True",
+          "0",
+          "Ошибка компиляции"
+        ],
+        "correctIndex": 0
       }
     ]
   },
@@ -1574,6 +2696,90 @@ const codeLessons = [
         "correctIndex": 0,
         "challengeResult": "False",
         "explanation": "Проверяем отличие 0 от нуля; результат False."
+      },
+      {
+        "challengeCode": "int expected = 4;\nint actual = 4;\nConsole.WriteLine(actual != expected);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "!= проверяет различие значений. Сравните фактические значения после присваивания.",
+        "challengeResult": "False",
+        "options": [
+          "False",
+          "True",
+          "0",
+          "Ошибка компиляции"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int expected = 5;\nint actual = 6;\nConsole.WriteLine(actual != expected);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "!= проверяет различие значений. Сравните фактические значения после присваивания.",
+        "challengeResult": "True",
+        "options": [
+          "True",
+          "False",
+          "0",
+          "Ошибка компиляции"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int expected = 6;\nint actual = 6;\nConsole.WriteLine(actual != expected);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "!= проверяет различие значений. Сравните фактические значения после присваивания.",
+        "challengeResult": "False",
+        "options": [
+          "False",
+          "True",
+          "0",
+          "Ошибка компиляции"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int expected = 7;\nint actual = 8;\nConsole.WriteLine(actual != expected);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "!= проверяет различие значений. Сравните фактические значения после присваивания.",
+        "challengeResult": "True",
+        "options": [
+          "True",
+          "False",
+          "0",
+          "Ошибка компиляции"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int expected = 8;\nint actual = 8;\nConsole.WriteLine(actual != expected);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "!= проверяет различие значений. Сравните фактические значения после присваивания.",
+        "challengeResult": "False",
+        "options": [
+          "False",
+          "True",
+          "0",
+          "Ошибка компиляции"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int expected = 9;\nint actual = 10;\nConsole.WriteLine(actual != expected);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "!= проверяет различие значений. Сравните фактические значения после присваивания.",
+        "challengeResult": "True",
+        "options": [
+          "True",
+          "False",
+          "0",
+          "Ошибка компиляции"
+        ],
+        "correctIndex": 0
       }
     ]
   },
@@ -1621,6 +2827,90 @@ const codeLessons = [
         "correctIndex": 0,
         "challengeResult": "Да",
         "explanation": "Условие 80 >= 60 — истина; выводится «Да»."
+      },
+      {
+        "challengeCode": "int score = 60;\nif (score >= 90)\n{\n    Console.WriteLine(5);\n}\nelse if (score >= 60)\n{\n    Console.WriteLine(3);\n}\nelse\n{\n    Console.WriteLine(2);\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "В цепочке выбирается первая истинная ветка. Более широкий порог раньше узкого может изменить результат.",
+        "challengeResult": "3",
+        "options": [
+          "3",
+          "4",
+          "2",
+          "5"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int score = 59;\nif (score >= 60)\n{\n    Console.WriteLine(5);\n}\nelse if (score >= 90)\n{\n    Console.WriteLine(3);\n}\nelse\n{\n    Console.WriteLine(2);\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "В цепочке выбирается первая истинная ветка. Более широкий порог раньше узкого может изменить результат.",
+        "challengeResult": "2",
+        "options": [
+          "2",
+          "3",
+          "1",
+          "4"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int score = 90;\nif (score >= 90)\n{\n    Console.WriteLine(5);\n}\nelse if (score >= 60)\n{\n    Console.WriteLine(3);\n}\nelse\n{\n    Console.WriteLine(2);\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "В цепочке выбирается первая истинная ветка. Более широкий порог раньше узкого может изменить результат.",
+        "challengeResult": "5",
+        "options": [
+          "5",
+          "6",
+          "4",
+          "7"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int score = 75;\nif (score >= 60)\n{\n    Console.WriteLine(5);\n}\nelse if (score >= 90)\n{\n    Console.WriteLine(3);\n}\nelse\n{\n    Console.WriteLine(2);\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "В цепочке выбирается первая истинная ветка. Более широкий порог раньше узкого может изменить результат.",
+        "challengeResult": "5",
+        "options": [
+          "5",
+          "6",
+          "4",
+          "7"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int score = 80;\nif (score >= 90)\n{\n    Console.WriteLine(5);\n}\nelse if (score >= 60)\n{\n    Console.WriteLine(3);\n}\nelse\n{\n    Console.WriteLine(2);\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "В цепочке выбирается первая истинная ветка. Более широкий порог раньше узкого может изменить результат.",
+        "challengeResult": "3",
+        "options": [
+          "3",
+          "4",
+          "2",
+          "5"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int score = 40;\nif (score >= 60)\n{\n    Console.WriteLine(5);\n}\nelse if (score >= 90)\n{\n    Console.WriteLine(3);\n}\nelse\n{\n    Console.WriteLine(2);\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "В цепочке выбирается первая истинная ветка. Более широкий порог раньше узкого может изменить результат.",
+        "challengeResult": "2",
+        "options": [
+          "2",
+          "3",
+          "1",
+          "4"
+        ],
+        "correctIndex": 0
       }
     ]
   },
@@ -1689,6 +2979,90 @@ const codeLessons = [
         "correctIndex": 0,
         "challengeResult": "XXXXX",
         "explanation": "От 0 до 4 — 5 итераций, выводится 5 букв X."
+      },
+      {
+        "challengeCode": "int count = 0;\nfor (int i = 2; i < 8; i += 3)\n{\n    count++;\n}\nConsole.WriteLine(count);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Выпишите значения счётчика с заданным шагом до нарушения границы. Считается выполнение тела, а не последнее значение счётчика.",
+        "challengeResult": "2",
+        "options": [
+          "2",
+          "3",
+          "1",
+          "4"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int count = 0;\nfor (int i = 0; i <= 9; i += 1)\n{\n    count++;\n}\nConsole.WriteLine(count);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Выпишите значения счётчика с заданным шагом до нарушения границы. Считается выполнение тела, а не последнее значение счётчика.",
+        "challengeResult": "10",
+        "options": [
+          "10",
+          "11",
+          "9",
+          "12"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int count = 0;\nfor (int i = 1; i < 10; i += 2)\n{\n    count++;\n}\nConsole.WriteLine(count);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Выпишите значения счётчика с заданным шагом до нарушения границы. Считается выполнение тела, а не последнее значение счётчика.",
+        "challengeResult": "5",
+        "options": [
+          "5",
+          "6",
+          "4",
+          "7"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int count = 0;\nfor (int i = 2; i <= 11; i += 3)\n{\n    count++;\n}\nConsole.WriteLine(count);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Выпишите значения счётчика с заданным шагом до нарушения границы. Считается выполнение тела, а не последнее значение счётчика.",
+        "challengeResult": "4",
+        "options": [
+          "4",
+          "5",
+          "3",
+          "6"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int count = 0;\nfor (int i = 0; i < 12; i += 1)\n{\n    count++;\n}\nConsole.WriteLine(count);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Выпишите значения счётчика с заданным шагом до нарушения границы. Считается выполнение тела, а не последнее значение счётчика.",
+        "challengeResult": "12",
+        "options": [
+          "12",
+          "13",
+          "11",
+          "14"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int count = 0;\nfor (int i = 1; i <= 13; i += 2)\n{\n    count++;\n}\nConsole.WriteLine(count);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Выпишите значения счётчика с заданным шагом до нарушения границы. Считается выполнение тела, а не последнее значение счётчика.",
+        "challengeResult": "7",
+        "options": [
+          "7",
+          "8",
+          "6",
+          "9"
+        ],
+        "correctIndex": 0
       }
     ]
   },
@@ -1799,6 +3173,90 @@ const codeLessons = [
         "correctIndex": 0,
         "challengeResult": "345",
         "explanation": "Выводятся числа от 3 до 5; граница 6 не включается."
+      },
+      {
+        "challengeCode": "int count = 0;\nfor (int i = 2; i < 8; i += 3)\n{\n    count++;\n}\nConsole.WriteLine(count);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Выпишите значения счётчика с заданным шагом до нарушения границы. Считается выполнение тела, а не последнее значение счётчика.",
+        "challengeResult": "2",
+        "options": [
+          "2",
+          "3",
+          "1",
+          "4"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int count = 0;\nfor (int i = 0; i <= 9; i += 1)\n{\n    count++;\n}\nConsole.WriteLine(count);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Выпишите значения счётчика с заданным шагом до нарушения границы. Считается выполнение тела, а не последнее значение счётчика.",
+        "challengeResult": "10",
+        "options": [
+          "10",
+          "11",
+          "9",
+          "12"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int count = 0;\nfor (int i = 1; i < 10; i += 2)\n{\n    count++;\n}\nConsole.WriteLine(count);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Выпишите значения счётчика с заданным шагом до нарушения границы. Считается выполнение тела, а не последнее значение счётчика.",
+        "challengeResult": "5",
+        "options": [
+          "5",
+          "6",
+          "4",
+          "7"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int count = 0;\nfor (int i = 2; i <= 11; i += 3)\n{\n    count++;\n}\nConsole.WriteLine(count);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Выпишите значения счётчика с заданным шагом до нарушения границы. Считается выполнение тела, а не последнее значение счётчика.",
+        "challengeResult": "4",
+        "options": [
+          "4",
+          "5",
+          "3",
+          "6"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int count = 0;\nfor (int i = 0; i < 12; i += 1)\n{\n    count++;\n}\nConsole.WriteLine(count);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Выпишите значения счётчика с заданным шагом до нарушения границы. Считается выполнение тела, а не последнее значение счётчика.",
+        "challengeResult": "12",
+        "options": [
+          "12",
+          "13",
+          "11",
+          "14"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int count = 0;\nfor (int i = 1; i <= 13; i += 2)\n{\n    count++;\n}\nConsole.WriteLine(count);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Выпишите значения счётчика с заданным шагом до нарушения границы. Считается выполнение тела, а не последнее значение счётчика.",
+        "challengeResult": "7",
+        "options": [
+          "7",
+          "8",
+          "6",
+          "9"
+        ],
+        "correctIndex": 0
       }
     ]
   },
@@ -1846,6 +3304,90 @@ const codeLessons = [
         "correctIndex": 0,
         "challengeResult": "456",
         "explanation": "Выводятся числа от 4 до 6 включительно."
+      },
+      {
+        "challengeCode": "int value = 3;\nint count = 0;\nwhile (value < 18)\n{\n    value += 3;\n    count++;\n}\nConsole.WriteLine(count);\nConsole.WriteLine(value);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Условие проверяется перед телом. Сначала изменяется value, затем увеличивается счётчик выполненных итераций.",
+        "challengeResult": "5\n18",
+        "options": [
+          "5\n18",
+          "18\n5",
+          "6\n19",
+          "518"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int value = 1;\nint count = 0;\nwhile (value < 21)\n{\n    value *= 2;\n    count++;\n}\nConsole.WriteLine(count);\nConsole.WriteLine(value);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Условие проверяется перед телом. Сначала изменяется value, затем увеличивается счётчик выполненных итераций.",
+        "challengeResult": "5\n32",
+        "options": [
+          "5\n32",
+          "32\n5",
+          "6\n33",
+          "532"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int value = 2;\nint count = 0;\nwhile (value < 24)\n{\n    value += 3;\n    count++;\n}\nConsole.WriteLine(count);\nConsole.WriteLine(value);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Условие проверяется перед телом. Сначала изменяется value, затем увеличивается счётчик выполненных итераций.",
+        "challengeResult": "8\n26",
+        "options": [
+          "8\n26",
+          "26\n8",
+          "9\n27",
+          "826"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int value = 3;\nint count = 0;\nwhile (value < 27)\n{\n    value *= 2;\n    count++;\n}\nConsole.WriteLine(count);\nConsole.WriteLine(value);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Условие проверяется перед телом. Сначала изменяется value, затем увеличивается счётчик выполненных итераций.",
+        "challengeResult": "4\n48",
+        "options": [
+          "4\n48",
+          "48\n4",
+          "5\n49",
+          "448"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int value = 1;\nint count = 0;\nwhile (value < 30)\n{\n    value += 3;\n    count++;\n}\nConsole.WriteLine(count);\nConsole.WriteLine(value);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Условие проверяется перед телом. Сначала изменяется value, затем увеличивается счётчик выполненных итераций.",
+        "challengeResult": "10\n31",
+        "options": [
+          "10\n31",
+          "31\n10",
+          "11\n32",
+          "1031"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int value = 2;\nint count = 0;\nwhile (value < 33)\n{\n    value *= 2;\n    count++;\n}\nConsole.WriteLine(count);\nConsole.WriteLine(value);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Условие проверяется перед телом. Сначала изменяется value, затем увеличивается счётчик выполненных итераций.",
+        "challengeResult": "5\n64",
+        "options": [
+          "5\n64",
+          "64\n5",
+          "6\n65",
+          "564"
+        ],
+        "correctIndex": 0
       }
     ]
   },
@@ -1977,6 +3519,90 @@ const codeLessons = [
         "correctIndex": 0,
         "challengeResult": "654",
         "explanation": "Счётчик уменьшается от 6 до 4 включительно."
+      },
+      {
+        "challengeCode": "int sum = 0;\nfor (int i = 8; i > 2; i -= 1)\n{\n    sum += i;\n}\nConsole.WriteLine(sum);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Убывающий счётчик проходит только значения, удовлетворяющие границе. Шаг может пропускать числа.",
+        "challengeResult": "33",
+        "options": [
+          "33",
+          "34",
+          "32",
+          "35"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int sum = 0;\nfor (int i = 9; i > 0; i -= 2)\n{\n    sum += i;\n}\nConsole.WriteLine(sum);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Убывающий счётчик проходит только значения, удовлетворяющие границе. Шаг может пропускать числа.",
+        "challengeResult": "25",
+        "options": [
+          "25",
+          "26",
+          "24",
+          "27"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int sum = 0;\nfor (int i = 10; i > 1; i -= 1)\n{\n    sum += i;\n}\nConsole.WriteLine(sum);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Убывающий счётчик проходит только значения, удовлетворяющие границе. Шаг может пропускать числа.",
+        "challengeResult": "54",
+        "options": [
+          "54",
+          "55",
+          "53",
+          "56"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int sum = 0;\nfor (int i = 11; i > 2; i -= 2)\n{\n    sum += i;\n}\nConsole.WriteLine(sum);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Убывающий счётчик проходит только значения, удовлетворяющие границе. Шаг может пропускать числа.",
+        "challengeResult": "35",
+        "options": [
+          "35",
+          "36",
+          "34",
+          "37"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int sum = 0;\nfor (int i = 12; i > 0; i -= 1)\n{\n    sum += i;\n}\nConsole.WriteLine(sum);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Убывающий счётчик проходит только значения, удовлетворяющие границе. Шаг может пропускать числа.",
+        "challengeResult": "78",
+        "options": [
+          "78",
+          "79",
+          "77",
+          "80"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int sum = 0;\nfor (int i = 13; i > 1; i -= 2)\n{\n    sum += i;\n}\nConsole.WriteLine(sum);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Убывающий счётчик проходит только значения, удовлетворяющие границе. Шаг может пропускать числа.",
+        "challengeResult": "48",
+        "options": [
+          "48",
+          "49",
+          "47",
+          "50"
+        ],
+        "correctIndex": 0
       }
     ]
   },
@@ -2047,6 +3673,90 @@ const codeLessons = [
         "correctIndex": 0,
         "challengeResult": "1234",
         "explanation": "При i = 5 цикл завершается до вывода; успевают вывестись числа 1–4."
+      },
+      {
+        "challengeCode": "int sum = 0;\nfor (int i = 1; i <= 8; i++)\n{\n    if (i == 5)\n    {\n        break;\n    }\n    sum += i;\n}\nConsole.WriteLine(sum);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Выход по break прекращает ближайший цикл. Прибавление до проверки включает граничное i, после проверки — исключает.",
+        "challengeResult": "10",
+        "options": [
+          "10",
+          "11",
+          "9",
+          "12"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int sum = 0;\nfor (int i = 1; i <= 9; i++)\n{\n    sum += i;\n    if (i == 6)\n    {\n        break;\n    }\n    \n}\nConsole.WriteLine(sum);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Выход по break прекращает ближайший цикл. Прибавление до проверки включает граничное i, после проверки — исключает.",
+        "challengeResult": "21",
+        "options": [
+          "21",
+          "22",
+          "20",
+          "23"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int sum = 0;\nfor (int i = 1; i <= 10; i++)\n{\n    if (i == 7)\n    {\n        break;\n    }\n    sum += i;\n}\nConsole.WriteLine(sum);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Выход по break прекращает ближайший цикл. Прибавление до проверки включает граничное i, после проверки — исключает.",
+        "challengeResult": "21",
+        "options": [
+          "21",
+          "22",
+          "20",
+          "23"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int sum = 0;\nfor (int i = 1; i <= 11; i++)\n{\n    sum += i;\n    if (i == 8)\n    {\n        break;\n    }\n    \n}\nConsole.WriteLine(sum);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Выход по break прекращает ближайший цикл. Прибавление до проверки включает граничное i, после проверки — исключает.",
+        "challengeResult": "36",
+        "options": [
+          "36",
+          "37",
+          "35",
+          "38"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int sum = 0;\nfor (int i = 1; i <= 12; i++)\n{\n    if (i == 9)\n    {\n        break;\n    }\n    sum += i;\n}\nConsole.WriteLine(sum);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Выход по break прекращает ближайший цикл. Прибавление до проверки включает граничное i, после проверки — исключает.",
+        "challengeResult": "36",
+        "options": [
+          "36",
+          "37",
+          "35",
+          "38"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int sum = 0;\nfor (int i = 1; i <= 13; i++)\n{\n    sum += i;\n    if (i == 10)\n    {\n        break;\n    }\n    \n}\nConsole.WriteLine(sum);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Выход по break прекращает ближайший цикл. Прибавление до проверки включает граничное i, после проверки — исключает.",
+        "challengeResult": "55",
+        "options": [
+          "55",
+          "56",
+          "54",
+          "57"
+        ],
+        "correctIndex": 0
       }
     ]
   },
@@ -2094,6 +3804,90 @@ const codeLessons = [
         "correctIndex": 0,
         "challengeResult": "1235",
         "explanation": "continue пропускает только вывод 4; остальные итерации выполняются."
+      },
+      {
+        "challengeCode": "int sum = 0;\nfor (int i = 1; i <= 6; i++)\n{\n    if (i % 2 == 0)\n    {\n        continue;\n    }\n    sum += i;\n}\nConsole.WriteLine(sum);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Команды до continue уже выполнятся. После continue остаток текущей итерации пропускается.",
+        "challengeResult": "9",
+        "options": [
+          "9",
+          "10",
+          "8",
+          "11"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int sum = 0;\nfor (int i = 1; i <= 7; i++)\n{\n    sum += i;\n    if (i % 2 == 0)\n    {\n        continue;\n    }\n    sum++;\n}\nConsole.WriteLine(sum);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Команды до continue уже выполнятся. После continue остаток текущей итерации пропускается.",
+        "challengeResult": "32",
+        "options": [
+          "32",
+          "33",
+          "31",
+          "34"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int sum = 0;\nfor (int i = 1; i <= 8; i++)\n{\n    if (i % 2 == 0)\n    {\n        continue;\n    }\n    sum += i;\n}\nConsole.WriteLine(sum);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Команды до continue уже выполнятся. После continue остаток текущей итерации пропускается.",
+        "challengeResult": "16",
+        "options": [
+          "16",
+          "17",
+          "15",
+          "18"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int sum = 0;\nfor (int i = 1; i <= 9; i++)\n{\n    sum += i;\n    if (i % 2 == 0)\n    {\n        continue;\n    }\n    sum++;\n}\nConsole.WriteLine(sum);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Команды до continue уже выполнятся. После continue остаток текущей итерации пропускается.",
+        "challengeResult": "50",
+        "options": [
+          "50",
+          "51",
+          "49",
+          "52"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int sum = 0;\nfor (int i = 1; i <= 10; i++)\n{\n    if (i % 2 == 0)\n    {\n        continue;\n    }\n    sum += i;\n}\nConsole.WriteLine(sum);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Команды до continue уже выполнятся. После continue остаток текущей итерации пропускается.",
+        "challengeResult": "25",
+        "options": [
+          "25",
+          "26",
+          "24",
+          "27"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int sum = 0;\nfor (int i = 1; i <= 11; i++)\n{\n    sum += i;\n    if (i % 2 == 0)\n    {\n        continue;\n    }\n    sum++;\n}\nConsole.WriteLine(sum);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Команды до continue уже выполнятся. После continue остаток текущей итерации пропускается.",
+        "challengeResult": "72",
+        "options": [
+          "72",
+          "73",
+          "71",
+          "74"
+        ],
+        "correctIndex": 0
       }
     ]
   },
@@ -2141,6 +3935,90 @@ const codeLessons = [
         "correctIndex": 0,
         "challengeResult": "12",
         "explanation": "3 внешние итерации по 4 внутренние: счётчик увеличится 12 раз."
+      },
+      {
+        "challengeCode": "int count = 0;\nfor (int row = 1; row <= 4; row++)\n{\n    for (int col = 0; col < row; col++)\n    {\n        count++;\n    }\n}\nConsole.WriteLine(count);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Внутренняя граница зависит от row. Для каждой внешней итерации число внутренних повторений нужно посчитать отдельно.",
+        "challengeResult": "10",
+        "options": [
+          "10",
+          "11",
+          "9",
+          "12"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int count = 0;\nfor (int row = 1; row <= 5; row++)\n{\n    for (int col = 0; col <= row; col++)\n    {\n        count++;\n    }\n}\nConsole.WriteLine(count);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Внутренняя граница зависит от row. Для каждой внешней итерации число внутренних повторений нужно посчитать отдельно.",
+        "challengeResult": "20",
+        "options": [
+          "20",
+          "21",
+          "19",
+          "22"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int count = 0;\nfor (int row = 1; row <= 6; row++)\n{\n    for (int col = 0; col < row; col++)\n    {\n        count++;\n    }\n}\nConsole.WriteLine(count);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Внутренняя граница зависит от row. Для каждой внешней итерации число внутренних повторений нужно посчитать отдельно.",
+        "challengeResult": "21",
+        "options": [
+          "21",
+          "22",
+          "20",
+          "23"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int count = 0;\nfor (int row = 1; row <= 2; row++)\n{\n    for (int col = 0; col <= row; col++)\n    {\n        count++;\n    }\n}\nConsole.WriteLine(count);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Внутренняя граница зависит от row. Для каждой внешней итерации число внутренних повторений нужно посчитать отдельно.",
+        "challengeResult": "5",
+        "options": [
+          "5",
+          "6",
+          "4",
+          "7"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int count = 0;\nfor (int row = 1; row <= 3; row++)\n{\n    for (int col = 0; col < row; col++)\n    {\n        count++;\n    }\n}\nConsole.WriteLine(count);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Внутренняя граница зависит от row. Для каждой внешней итерации число внутренних повторений нужно посчитать отдельно.",
+        "challengeResult": "6",
+        "options": [
+          "6",
+          "7",
+          "5",
+          "8"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int count = 0;\nfor (int row = 1; row <= 4; row++)\n{\n    for (int col = 0; col <= row; col++)\n    {\n        count++;\n    }\n}\nConsole.WriteLine(count);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Внутренняя граница зависит от row. Для каждой внешней итерации число внутренних повторений нужно посчитать отдельно.",
+        "challengeResult": "14",
+        "options": [
+          "14",
+          "15",
+          "13",
+          "16"
+        ],
+        "correctIndex": 0
       }
     ]
   },
@@ -2188,6 +4066,90 @@ const codeLessons = [
         "correctIndex": 0,
         "challengeResult": "15",
         "explanation": "Сумма чисел от 1 до 5 равна 15."
+      },
+      {
+        "challengeCode": "int sum = 0;\nfor (int i = 1; i <= 5; i++)\n{\n    sum += i * 2;\n}\nConsole.WriteLine(sum);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Обнуление внутри тела уничтожает результат предыдущих итераций. Без обнуления значения накапливаются.",
+        "challengeResult": "30",
+        "options": [
+          "30",
+          "31",
+          "29",
+          "32"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int sum = 0;\nfor (int i = 1; i <= 6; i++)\n{\n    sum = 0;\n    sum += i * 2;\n}\nConsole.WriteLine(sum);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Обнуление внутри тела уничтожает результат предыдущих итераций. Без обнуления значения накапливаются.",
+        "challengeResult": "12",
+        "options": [
+          "12",
+          "13",
+          "11",
+          "14"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int sum = 0;\nfor (int i = 1; i <= 7; i++)\n{\n    sum += i * 2;\n}\nConsole.WriteLine(sum);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Обнуление внутри тела уничтожает результат предыдущих итераций. Без обнуления значения накапливаются.",
+        "challengeResult": "56",
+        "options": [
+          "56",
+          "57",
+          "55",
+          "58"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int sum = 0;\nfor (int i = 1; i <= 8; i++)\n{\n    sum = 0;\n    sum += i * 2;\n}\nConsole.WriteLine(sum);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Обнуление внутри тела уничтожает результат предыдущих итераций. Без обнуления значения накапливаются.",
+        "challengeResult": "16",
+        "options": [
+          "16",
+          "17",
+          "15",
+          "18"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int sum = 0;\nfor (int i = 1; i <= 9; i++)\n{\n    sum += i * 2;\n}\nConsole.WriteLine(sum);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Обнуление внутри тела уничтожает результат предыдущих итераций. Без обнуления значения накапливаются.",
+        "challengeResult": "90",
+        "options": [
+          "90",
+          "91",
+          "89",
+          "92"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int sum = 0;\nfor (int i = 1; i <= 10; i++)\n{\n    sum = 0;\n    sum += i * 2;\n}\nConsole.WriteLine(sum);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Обнуление внутри тела уничтожает результат предыдущих итераций. Без обнуления значения накапливаются.",
+        "challengeResult": "20",
+        "options": [
+          "20",
+          "21",
+          "19",
+          "22"
+        ],
+        "correctIndex": 0
       }
     ]
   },
@@ -2298,6 +4260,90 @@ const codeLessons = [
         "correctIndex": 0,
         "challengeResult": "6",
         "explanation": "От 0 до 5 включительно — 6 значений, поэтому 6 итераций."
+      },
+      {
+        "challengeCode": "int i;\nfor (i = 0; i < 7; i += 3)\n{\n}\nConsole.WriteLine(i);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "После последней итерации for выполняет шаг, затем ложная проверка завершает цикл. Переменная объявлена вне for.",
+        "challengeResult": "9",
+        "options": [
+          "9",
+          "10",
+          "8",
+          "11"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int i;\nfor (i = 1; i < 8; i += 1)\n{\n}\nConsole.WriteLine(i);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "После последней итерации for выполняет шаг, затем ложная проверка завершает цикл. Переменная объявлена вне for.",
+        "challengeResult": "8",
+        "options": [
+          "8",
+          "9",
+          "7",
+          "10"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int i;\nfor (i = 0; i < 9; i += 2)\n{\n}\nConsole.WriteLine(i);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "После последней итерации for выполняет шаг, затем ложная проверка завершает цикл. Переменная объявлена вне for.",
+        "challengeResult": "10",
+        "options": [
+          "10",
+          "11",
+          "9",
+          "12"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int i;\nfor (i = 1; i < 10; i += 3)\n{\n}\nConsole.WriteLine(i);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "После последней итерации for выполняет шаг, затем ложная проверка завершает цикл. Переменная объявлена вне for.",
+        "challengeResult": "10",
+        "options": [
+          "10",
+          "11",
+          "9",
+          "12"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int i;\nfor (i = 0; i < 11; i += 1)\n{\n}\nConsole.WriteLine(i);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "После последней итерации for выполняет шаг, затем ложная проверка завершает цикл. Переменная объявлена вне for.",
+        "challengeResult": "11",
+        "options": [
+          "11",
+          "12",
+          "10",
+          "13"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int i;\nfor (i = 1; i < 12; i += 2)\n{\n}\nConsole.WriteLine(i);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "После последней итерации for выполняет шаг, затем ложная проверка завершает цикл. Переменная объявлена вне for.",
+        "challengeResult": "13",
+        "options": [
+          "13",
+          "14",
+          "12",
+          "15"
+        ],
+        "correctIndex": 0
       }
     ]
   },
@@ -2581,7 +4627,7 @@ const codeLessons = [
     "term": "string",
     "exampleCode": "Console.WriteLine(\"4\" + 2);",
     "exampleResult": "42",
-    "exampleNote": "Если один из этих операндов строка, + соединяет текст. Получается строка 73, а не сумма 10.",
+    "exampleNote": "Строковый операнд превращает + в соединение текста. В этом примере получается 42, а не сумма 6.",
     "kind": "Что выведет код?",
     "challengeCode": "Console.WriteLine(\"7\" + 3);",
     "prompt": "Что появится в консоли?",
@@ -2623,7 +4669,7 @@ const codeLessons = [
     "term": "char",
     "exampleCode": "char mark = '?';\nConsole.WriteLine($\"Готов{mark}\");",
     "exampleResult": "Готов?",
-    "exampleNote": "Строковая интерполяция подставляет сначала текст word, затем символ mark.",
+    "exampleNote": "В строке Готов{mark} интерполяция заменяет mark символом ?, поэтому получается Готов?.",
     "kind": "Что выведет код?",
     "challengeCode": "char mark = '!';\nstring word = \"Да\";\nConsole.WriteLine($\"{word}{mark}\");",
     "prompt": "Что появится в консоли?",
@@ -2686,7 +4732,7 @@ const codeLessons = [
     "term": "string",
     "exampleCode": "string text = \"\";\nConsole.WriteLine(\"[\" + text + \"]\");",
     "exampleResult": "[]",
-    "exampleNote": "Строка из одного пробела не пуста: пробел остаётся между квадратными скобками.",
+    "exampleNote": "В text находится пустая строка: между квадратными скобками ничего нет, получается [].",
     "kind": "Что выведет код?",
     "challengeCode": "string text = \" \";\nConsole.WriteLine(\"[\" + text + \"]\");",
     "prompt": "Что появится в консоли?",
@@ -3343,7 +5389,7 @@ const codeLessons = [
     "term": "Приоритет логических операторов",
     "exampleCode": "Console.WriteLine(true || false && false);",
     "exampleResult": "True",
-    "exampleNote": "Без скобок сначала вычисляется &&, а затем ||. Это может отличаться от простого чтения слева направо.",
+    "exampleNote": "&& имеет больший приоритет, чем ||: выражение группируется как true || (false && false). Первая часть || уже true, поэтому правая часть не вычисляется.",
     "kind": "Что выведет код?",
     "challengeCode": "Console.WriteLine(false && true || true);",
     "prompt": "Что появится в консоли?",
@@ -3947,6 +5993,90 @@ const codeLessons = [
         "correctIndex": 0,
         "challengeResult": "24",
         "explanation": "Индекс 2 выбирает третий элемент, то есть 24."
+      },
+      {
+        "challengeCode": "int[] values = { 4, 7, 10 };\nint saved = values[2];\nvalues[2] = 22;\nConsole.WriteLine(saved);\nConsole.WriteLine(values[2]);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Переменная int хранит копию выбранного элемента. Последующая запись в массив не меняет эту копию.",
+        "challengeResult": "10\n22",
+        "options": [
+          "10\n22",
+          "22\n10",
+          "11\n23",
+          "1022"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int[] values = { 5, 8, 11 };\nint saved = values[0];\nvalues[0] = 23;\nConsole.WriteLine(saved);\nConsole.WriteLine(values[0]);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Переменная int хранит копию выбранного элемента. Последующая запись в массив не меняет эту копию.",
+        "challengeResult": "5\n23",
+        "options": [
+          "5\n23",
+          "23\n5",
+          "6\n24",
+          "523"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int[] values = { 6, 9, 12 };\nint saved = values[1];\nvalues[1] = 24;\nConsole.WriteLine(saved);\nConsole.WriteLine(values[1]);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Переменная int хранит копию выбранного элемента. Последующая запись в массив не меняет эту копию.",
+        "challengeResult": "9\n24",
+        "options": [
+          "9\n24",
+          "24\n9",
+          "10\n25",
+          "924"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int[] values = { 7, 10, 13 };\nint saved = values[2];\nvalues[2] = 25;\nConsole.WriteLine(saved);\nConsole.WriteLine(values[2]);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Переменная int хранит копию выбранного элемента. Последующая запись в массив не меняет эту копию.",
+        "challengeResult": "13\n25",
+        "options": [
+          "13\n25",
+          "25\n13",
+          "14\n26",
+          "1325"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int[] values = { 8, 11, 14 };\nint saved = values[0];\nvalues[0] = 26;\nConsole.WriteLine(saved);\nConsole.WriteLine(values[0]);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Переменная int хранит копию выбранного элемента. Последующая запись в массив не меняет эту копию.",
+        "challengeResult": "8\n26",
+        "options": [
+          "8\n26",
+          "26\n8",
+          "9\n27",
+          "826"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int[] values = { 9, 12, 15 };\nint saved = values[1];\nvalues[1] = 27;\nConsole.WriteLine(saved);\nConsole.WriteLine(values[1]);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Переменная int хранит копию выбранного элемента. Последующая запись в массив не меняет эту копию.",
+        "challengeResult": "12\n27",
+        "options": [
+          "12\n27",
+          "27\n12",
+          "13\n28",
+          "1227"
+        ],
+        "correctIndex": 0
       }
     ]
   },
@@ -3994,6 +6124,90 @@ const codeLessons = [
         "correctIndex": 0,
         "challengeResult": "7",
         "explanation": "В index хранится 1; это второй элемент со значением 7."
+      },
+      {
+        "challengeCode": "int[] values = { 3, 5, 8 };\nvalues[1] = values[0] + values[2];\nvalues[0] = values[2];\nConsole.WriteLine($\"{values[0]} {values[1]}\");",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Каждая следующая запись использует уже изменённые элементы массива. Порядок присваиваний влияет на результат.",
+        "challengeResult": "8 11",
+        "options": [
+          "8 11",
+          "9 12",
+          "11 8",
+          "Ничего"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int[] values = { 4, 6, 9 };\nvalues[1] = values[0] + values[2];\nvalues[0] = values[1];\nConsole.WriteLine($\"{values[0]} {values[1]}\");",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Каждая следующая запись использует уже изменённые элементы массива. Порядок присваиваний влияет на результат.",
+        "challengeResult": "13 13",
+        "options": [
+          "13 13",
+          "14 14",
+          "31 31",
+          "Ничего"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int[] values = { 5, 7, 10 };\nvalues[1] = values[0] + values[2];\nvalues[0] = values[2];\nConsole.WriteLine($\"{values[0]} {values[1]}\");",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Каждая следующая запись использует уже изменённые элементы массива. Порядок присваиваний влияет на результат.",
+        "challengeResult": "10 15",
+        "options": [
+          "10 15",
+          "11 16",
+          "51 01",
+          "Ничего"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int[] values = { 6, 8, 11 };\nvalues[1] = values[0] + values[2];\nvalues[0] = values[1];\nConsole.WriteLine($\"{values[0]} {values[1]}\");",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Каждая следующая запись использует уже изменённые элементы массива. Порядок присваиваний влияет на результат.",
+        "challengeResult": "17 17",
+        "options": [
+          "17 17",
+          "18 18",
+          "71 71",
+          "Ничего"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int[] values = { 7, 9, 12 };\nvalues[1] = values[0] + values[2];\nvalues[0] = values[2];\nConsole.WriteLine($\"{values[0]} {values[1]}\");",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Каждая следующая запись использует уже изменённые элементы массива. Порядок присваиваний влияет на результат.",
+        "challengeResult": "12 19",
+        "options": [
+          "12 19",
+          "13 20",
+          "91 21",
+          "Ничего"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int[] values = { 8, 10, 13 };\nvalues[1] = values[0] + values[2];\nvalues[0] = values[1];\nConsole.WriteLine($\"{values[0]} {values[1]}\");",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Каждая следующая запись использует уже изменённые элементы массива. Порядок присваиваний влияет на результат.",
+        "challengeResult": "21 21",
+        "options": [
+          "21 21",
+          "22 22",
+          "12 12",
+          "Ничего"
+        ],
+        "correctIndex": 0
       }
     ]
   },
@@ -4188,6 +6402,90 @@ const codeLessons = [
         "correctIndex": 0,
         "challengeResult": "0",
         "explanation": "Изменён только первый элемент; последний сохранил начальный ноль."
+      },
+      {
+        "challengeCode": "int[] values = new int[5];\nvalues[0] = 6;\nvalues[1] += 4;\nConsole.WriteLine(values[2]);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Незаполненные элементы int[] равны нулю. Прибавление к ячейке сохраняет результат именно в ней.",
+        "challengeResult": "0",
+        "options": [
+          "0",
+          "1",
+          "-1",
+          "2"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int[] values = new int[3];\nvalues[0] = 7;\nvalues[2] += 5;\nConsole.WriteLine(values[0]);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Незаполненные элементы int[] равны нулю. Прибавление к ячейке сохраняет результат именно в ней.",
+        "challengeResult": "7",
+        "options": [
+          "7",
+          "8",
+          "6",
+          "9"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int[] values = new int[4];\nvalues[0] = 8;\nvalues[1] += 6;\nConsole.WriteLine(values[1]);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Незаполненные элементы int[] равны нулю. Прибавление к ячейке сохраняет результат именно в ней.",
+        "challengeResult": "6",
+        "options": [
+          "6",
+          "7",
+          "5",
+          "8"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int[] values = new int[5];\nvalues[0] = 9;\nvalues[2] += 7;\nConsole.WriteLine(values[2]);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Незаполненные элементы int[] равны нулю. Прибавление к ячейке сохраняет результат именно в ней.",
+        "challengeResult": "7",
+        "options": [
+          "7",
+          "8",
+          "6",
+          "9"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int[] values = new int[3];\nvalues[0] = 10;\nvalues[1] += 8;\nConsole.WriteLine(values[0]);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Незаполненные элементы int[] равны нулю. Прибавление к ячейке сохраняет результат именно в ней.",
+        "challengeResult": "10",
+        "options": [
+          "10",
+          "11",
+          "9",
+          "12"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int[] values = new int[4];\nvalues[0] = 11;\nvalues[2] += 9;\nConsole.WriteLine(values[1]);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Незаполненные элементы int[] равны нулю. Прибавление к ячейке сохраняет результат именно в ней.",
+        "challengeResult": "0",
+        "options": [
+          "0",
+          "1",
+          "-1",
+          "2"
+        ],
+        "correctIndex": 0
       }
     ]
   },
@@ -4256,6 +6554,84 @@ const codeLessons = [
         "correctIndex": 0,
         "challengeResult": "626",
         "explanation": "foreach выводит значения в порядке хранения: 6, 2, 6."
+      },
+      {
+        "challengeCode": "int[] values = { 2, 5, 2 };\nforeach (int value in values)\n{\n    Console.WriteLine(value + 1);\n}",
+        "explanation": "foreach получает значения в порядке хранения. Арифметика при выводе не изменяет массив.",
+        "prompt": "Что появится в консоли?",
+        "challengeResult": "3\n6\n3",
+        "options": [
+          "3\n6\n3",
+          "4\n7\n4",
+          "363",
+          "Ничего"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int[] values = { 3, 6, 3 };\nforeach (int value in values)\n{\n    Console.WriteLine(value - 1);\n}",
+        "explanation": "foreach получает значения в порядке хранения. Арифметика при выводе не изменяет массив.",
+        "prompt": "Что появится в консоли?",
+        "challengeResult": "2\n5\n2",
+        "options": [
+          "2\n5\n2",
+          "3\n6\n3",
+          "252",
+          "Ничего"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int[] values = { 4, 7, 4 };\nforeach (int value in values)\n{\n    Console.WriteLine(value + 1);\n}",
+        "explanation": "foreach получает значения в порядке хранения. Арифметика при выводе не изменяет массив.",
+        "prompt": "Что появится в консоли?",
+        "challengeResult": "5\n8\n5",
+        "options": [
+          "5\n8\n5",
+          "6\n9\n6",
+          "585",
+          "Ничего"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int[] values = { 5, 8, 5 };\nforeach (int value in values)\n{\n    Console.WriteLine(value - 1);\n}",
+        "explanation": "foreach получает значения в порядке хранения. Арифметика при выводе не изменяет массив.",
+        "prompt": "Что появится в консоли?",
+        "challengeResult": "4\n7\n4",
+        "options": [
+          "4\n7\n4",
+          "5\n8\n5",
+          "474",
+          "Ничего"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int[] values = { 6, 9, 6 };\nforeach (int value in values)\n{\n    Console.WriteLine(value + 1);\n}",
+        "explanation": "foreach получает значения в порядке хранения. Арифметика при выводе не изменяет массив.",
+        "prompt": "Что появится в консоли?",
+        "challengeResult": "7\n10\n7",
+        "options": [
+          "7\n10\n7",
+          "8\n11\n8",
+          "7107",
+          "7\n01\n7"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int[] values = { 7, 10, 7 };\nforeach (int value in values)\n{\n    Console.WriteLine(value - 1);\n}",
+        "explanation": "foreach получает значения в порядке хранения. Арифметика при выводе не изменяет массив.",
+        "prompt": "Что появится в консоли?",
+        "challengeResult": "6\n9\n6",
+        "options": [
+          "6\n9\n6",
+          "7\n10\n7",
+          "696",
+          "Ничего"
+        ],
+        "correctIndex": 0
       }
     ]
   },
@@ -4366,6 +6742,84 @@ const codeLessons = [
         "correctIndex": 0,
         "challengeResult": "36",
         "explanation": "Номер 3 превращается в индекс 2. Выбирается значение 36."
+      },
+      {
+        "challengeCode": "int[] scores = { 11, 22, 33 };\nint number = 1;\nConsole.WriteLine(scores[number - 1]);",
+        "explanation": "Нумерация начинается с 1, индексы — с 0. Для выбора ячейки нужно вычесть 1 из номера.",
+        "prompt": "Что появится в консоли?",
+        "challengeResult": "11",
+        "options": [
+          "11",
+          "12",
+          "10",
+          "13"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int[] scores = { 12, 23, 34 };\nint number = 2;\nConsole.WriteLine(scores[number - 1]);",
+        "explanation": "Нумерация начинается с 1, индексы — с 0. Для выбора ячейки нужно вычесть 1 из номера.",
+        "prompt": "Что появится в консоли?",
+        "challengeResult": "23",
+        "options": [
+          "23",
+          "24",
+          "22",
+          "25"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int[] scores = { 13, 24, 35 };\nint number = 3;\nConsole.WriteLine(scores[number - 1]);",
+        "explanation": "Нумерация начинается с 1, индексы — с 0. Для выбора ячейки нужно вычесть 1 из номера.",
+        "prompt": "Что появится в консоли?",
+        "challengeResult": "35",
+        "options": [
+          "35",
+          "36",
+          "34",
+          "37"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int[] scores = { 14, 25, 36 };\nint number = 1;\nConsole.WriteLine(scores[number - 1]);",
+        "explanation": "Нумерация начинается с 1, индексы — с 0. Для выбора ячейки нужно вычесть 1 из номера.",
+        "prompt": "Что появится в консоли?",
+        "challengeResult": "14",
+        "options": [
+          "14",
+          "15",
+          "13",
+          "16"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int[] scores = { 15, 26, 37 };\nint number = 2;\nConsole.WriteLine(scores[number - 1]);",
+        "explanation": "Нумерация начинается с 1, индексы — с 0. Для выбора ячейки нужно вычесть 1 из номера.",
+        "prompt": "Что появится в консоли?",
+        "challengeResult": "26",
+        "options": [
+          "26",
+          "27",
+          "25",
+          "28"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int[] scores = { 16, 27, 38 };\nint number = 3;\nConsole.WriteLine(scores[number - 1]);",
+        "explanation": "Нумерация начинается с 1, индексы — с 0. Для выбора ячейки нужно вычесть 1 из номера.",
+        "prompt": "Что появится в консоли?",
+        "challengeResult": "38",
+        "options": [
+          "38",
+          "39",
+          "37",
+          "40"
+        ],
+        "correctIndex": 0
       }
     ]
   },
@@ -4497,6 +6951,90 @@ const codeLessons = [
         "correctIndex": 0,
         "challengeResult": "9",
         "explanation": "Все элементы прибавляются к нулевому накопителю; сумма равна 9."
+      },
+      {
+        "challengeCode": "int[] values = { -2, 4, -3, 7 };\nint sum = 0;\nfor (int i = 0; i < values.Length; i++)\n{\n    if (values[i] >= 0)\n    {\n        sum += values[i];\n    }\n}\nConsole.WriteLine(sum);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "В сумму входят только элементы, прошедшие проверку. Условие проверяет значение ячейки, а не её индекс.",
+        "challengeResult": "11",
+        "options": [
+          "11",
+          "12",
+          "10",
+          "13"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int[] values = { -1, 5, -3, 8 };\nint sum = 0;\nfor (int i = 0; i < values.Length; i++)\n{\n    if (values[i] < 0)\n    {\n        sum += values[i];\n    }\n}\nConsole.WriteLine(sum);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "В сумму входят только элементы, прошедшие проверку. Условие проверяет значение ячейки, а не её индекс.",
+        "challengeResult": "-4",
+        "options": [
+          "-4",
+          "-3",
+          "-5",
+          "-2"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int[] values = { 0, 6, -3, 9 };\nint sum = 0;\nfor (int i = 0; i < values.Length; i++)\n{\n    if (values[i] >= 0)\n    {\n        sum += values[i];\n    }\n}\nConsole.WriteLine(sum);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "В сумму входят только элементы, прошедшие проверку. Условие проверяет значение ячейки, а не её индекс.",
+        "challengeResult": "15",
+        "options": [
+          "15",
+          "16",
+          "14",
+          "17"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int[] values = { 1, 7, -3, 10 };\nint sum = 0;\nfor (int i = 0; i < values.Length; i++)\n{\n    if (values[i] < 0)\n    {\n        sum += values[i];\n    }\n}\nConsole.WriteLine(sum);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "В сумму входят только элементы, прошедшие проверку. Условие проверяет значение ячейки, а не её индекс.",
+        "challengeResult": "-3",
+        "options": [
+          "-3",
+          "-2",
+          "-4",
+          "-1"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int[] values = { 2, 8, -3, 11 };\nint sum = 0;\nfor (int i = 0; i < values.Length; i++)\n{\n    if (values[i] >= 0)\n    {\n        sum += values[i];\n    }\n}\nConsole.WriteLine(sum);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "В сумму входят только элементы, прошедшие проверку. Условие проверяет значение ячейки, а не её индекс.",
+        "challengeResult": "21",
+        "options": [
+          "21",
+          "22",
+          "20",
+          "23"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int[] values = { 3, 9, -3, 12 };\nint sum = 0;\nfor (int i = 0; i < values.Length; i++)\n{\n    if (values[i] < 0)\n    {\n        sum += values[i];\n    }\n}\nConsole.WriteLine(sum);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "В сумму входят только элементы, прошедшие проверку. Условие проверяет значение ячейки, а не её индекс.",
+        "challengeResult": "-3",
+        "options": [
+          "-3",
+          "-2",
+          "-4",
+          "-1"
+        ],
+        "correctIndex": 0
       }
     ]
   },
@@ -4565,6 +7103,90 @@ const codeLessons = [
         "correctIndex": 0,
         "challengeResult": "-5",
         "explanation": "Наибольшее из данных отрицательных чисел — -5. Максимум начинают с элемента массива."
+      },
+      {
+        "challengeCode": "int[] values = { 4, 10, 5, 10 };\nint best = 0;\nfor (int i = 1; i < values.Length; i++)\n{\n    if (values[i] > values[best])\n    {\n        best = i;\n    }\n}\nConsole.WriteLine(best);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "При строгом > сохраняется индекс первого максимума, при >= — последнего. Сам максимум при этом одинаков.",
+        "challengeResult": "1",
+        "options": [
+          "1",
+          "2",
+          "0",
+          "3"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int[] values = { 5, 11, 6, 11 };\nint best = 0;\nfor (int i = 1; i < values.Length; i++)\n{\n    if (values[i] >= values[best])\n    {\n        best = i;\n    }\n}\nConsole.WriteLine(best);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "При строгом > сохраняется индекс первого максимума, при >= — последнего. Сам максимум при этом одинаков.",
+        "challengeResult": "3",
+        "options": [
+          "3",
+          "4",
+          "2",
+          "5"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int[] values = { 6, 12, 7, 12 };\nint best = 0;\nfor (int i = 1; i < values.Length; i++)\n{\n    if (values[i] > values[best])\n    {\n        best = i;\n    }\n}\nConsole.WriteLine(best);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "При строгом > сохраняется индекс первого максимума, при >= — последнего. Сам максимум при этом одинаков.",
+        "challengeResult": "1",
+        "options": [
+          "1",
+          "2",
+          "0",
+          "3"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int[] values = { 7, 13, 8, 13 };\nint best = 0;\nfor (int i = 1; i < values.Length; i++)\n{\n    if (values[i] >= values[best])\n    {\n        best = i;\n    }\n}\nConsole.WriteLine(best);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "При строгом > сохраняется индекс первого максимума, при >= — последнего. Сам максимум при этом одинаков.",
+        "challengeResult": "3",
+        "options": [
+          "3",
+          "4",
+          "2",
+          "5"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int[] values = { 8, 14, 9, 14 };\nint best = 0;\nfor (int i = 1; i < values.Length; i++)\n{\n    if (values[i] > values[best])\n    {\n        best = i;\n    }\n}\nConsole.WriteLine(best);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "При строгом > сохраняется индекс первого максимума, при >= — последнего. Сам максимум при этом одинаков.",
+        "challengeResult": "1",
+        "options": [
+          "1",
+          "2",
+          "0",
+          "3"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int[] values = { 9, 15, 10, 15 };\nint best = 0;\nfor (int i = 1; i < values.Length; i++)\n{\n    if (values[i] >= values[best])\n    {\n        best = i;\n    }\n}\nConsole.WriteLine(best);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "При строгом > сохраняется индекс первого максимума, при >= — последнего. Сам максимум при этом одинаков.",
+        "challengeResult": "3",
+        "options": [
+          "3",
+          "4",
+          "2",
+          "5"
+        ],
+        "correctIndex": 0
       }
     ]
   },
@@ -4612,6 +7234,90 @@ const codeLessons = [
         "correctIndex": 0,
         "challengeResult": "3",
         "explanation": "Считаются только значения строго ниже 60; их 3. Значение 60 не учитывается."
+      },
+      {
+        "challengeCode": "int[] values = { 0, 4, 0 };\nint count = 0;\nfor (int pass = 0; pass < 2; pass++)\n{\n    for (int i = 0; i < values.Length; i++)\n    {\n        if (values[i] == 0)\n        {\n            count++;\n        }\n    }\n}\nConsole.WriteLine(count);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Счётчик должен учитывать только подходящие значения. При повторном обходе учтите, обнуляется ли он.",
+        "challengeResult": "4",
+        "options": [
+          "4",
+          "5",
+          "3",
+          "6"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int[] values = { 1, 5, 0 };\nint count = 0;\nfor (int pass = 0; pass < 2; pass++)\n{\n    count = 0;\n    for (int i = 0; i < values.Length; i++)\n    {\n        if (values[i] == 0)\n        {\n            count++;\n        }\n    }\n}\nConsole.WriteLine(count);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Счётчик должен учитывать только подходящие значения. При повторном обходе учтите, обнуляется ли он.",
+        "challengeResult": "1",
+        "options": [
+          "1",
+          "2",
+          "0",
+          "3"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int[] values = { 0, 6, 0 };\nint count = 0;\nfor (int pass = 0; pass < 2; pass++)\n{\n    for (int i = 0; i < values.Length; i++)\n    {\n        if (values[i] == 0)\n        {\n            count++;\n        }\n    }\n}\nConsole.WriteLine(count);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Счётчик должен учитывать только подходящие значения. При повторном обходе учтите, обнуляется ли он.",
+        "challengeResult": "4",
+        "options": [
+          "4",
+          "5",
+          "3",
+          "6"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int[] values = { 1, 7, 0 };\nint count = 0;\nfor (int pass = 0; pass < 2; pass++)\n{\n    count = 0;\n    for (int i = 0; i < values.Length; i++)\n    {\n        if (values[i] == 0)\n        {\n            count++;\n        }\n    }\n}\nConsole.WriteLine(count);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Счётчик должен учитывать только подходящие значения. При повторном обходе учтите, обнуляется ли он.",
+        "challengeResult": "1",
+        "options": [
+          "1",
+          "2",
+          "0",
+          "3"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int[] values = { 0, 8, 0 };\nint count = 0;\nfor (int pass = 0; pass < 2; pass++)\n{\n    for (int i = 0; i < values.Length; i++)\n    {\n        if (values[i] == 0)\n        {\n            count++;\n        }\n    }\n}\nConsole.WriteLine(count);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Счётчик должен учитывать только подходящие значения. При повторном обходе учтите, обнуляется ли он.",
+        "challengeResult": "4",
+        "options": [
+          "4",
+          "5",
+          "3",
+          "6"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int[] values = { 1, 9, 0 };\nint count = 0;\nfor (int pass = 0; pass < 2; pass++)\n{\n    count = 0;\n    for (int i = 0; i < values.Length; i++)\n    {\n        if (values[i] == 0)\n        {\n            count++;\n        }\n    }\n}\nConsole.WriteLine(count);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Счётчик должен учитывать только подходящие значения. При повторном обходе учтите, обнуляется ли он.",
+        "challengeResult": "1",
+        "options": [
+          "1",
+          "2",
+          "0",
+          "3"
+        ],
+        "correctIndex": 0
       }
     ]
   },
@@ -4701,6 +7407,84 @@ const codeLessons = [
         "correctIndex": 0,
         "challengeResult": "1",
         "explanation": "В массиве один элемент. Он одновременно минимум и максимум; его номер 1, хотя индекс равен 0."
+      },
+      {
+        "challengeCode": "int[] values = { 8, 2, 8, 1 };\nint max = values[0];\nfor (int i = 1; i < values.Length; i++)\n{\n    if (values[i] > max)\n    {\n        max = values[i];\n    }\n}\nfor (int i = 0; i < values.Length; i++)\n{\n    if (values[i] == max)\n    {\n        Console.WriteLine(i + 1);\n    }\n}",
+        "explanation": "Первый проход определяет максимум. Во втором проходе выводятся все совпадения; различайте индекс i и номер i + 1.",
+        "prompt": "Что появится в консоли?",
+        "challengeResult": "1\n3",
+        "options": [
+          "1\n3",
+          "3\n1",
+          "2\n4",
+          "13"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int[] values = { 9, 3, 9, 2 };\nint max = values[0];\nfor (int i = 1; i < values.Length; i++)\n{\n    if (values[i] > max)\n    {\n        max = values[i];\n    }\n}\nfor (int i = 0; i < values.Length; i++)\n{\n    if (values[i] == max)\n    {\n        Console.WriteLine(i);\n    }\n}",
+        "explanation": "Первый проход определяет максимум. Во втором проходе выводятся все совпадения; различайте индекс i и номер i + 1.",
+        "prompt": "Что появится в консоли?",
+        "challengeResult": "0\n2",
+        "options": [
+          "0\n2",
+          "2\n0",
+          "1\n3",
+          "02"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int[] values = { 10, 4, 10, 3 };\nint max = values[0];\nfor (int i = 1; i < values.Length; i++)\n{\n    if (values[i] > max)\n    {\n        max = values[i];\n    }\n}\nfor (int i = 0; i < values.Length; i++)\n{\n    if (values[i] == max)\n    {\n        Console.WriteLine(i + 1);\n    }\n}",
+        "explanation": "Первый проход определяет максимум. Во втором проходе выводятся все совпадения; различайте индекс i и номер i + 1.",
+        "prompt": "Что появится в консоли?",
+        "challengeResult": "1\n3",
+        "options": [
+          "1\n3",
+          "3\n1",
+          "2\n4",
+          "13"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int[] values = { 11, 5, 11, 4 };\nint max = values[0];\nfor (int i = 1; i < values.Length; i++)\n{\n    if (values[i] > max)\n    {\n        max = values[i];\n    }\n}\nfor (int i = 0; i < values.Length; i++)\n{\n    if (values[i] == max)\n    {\n        Console.WriteLine(i);\n    }\n}",
+        "explanation": "Первый проход определяет максимум. Во втором проходе выводятся все совпадения; различайте индекс i и номер i + 1.",
+        "prompt": "Что появится в консоли?",
+        "challengeResult": "0\n2",
+        "options": [
+          "0\n2",
+          "2\n0",
+          "1\n3",
+          "02"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int[] values = { 12, 6, 12, 5 };\nint max = values[0];\nfor (int i = 1; i < values.Length; i++)\n{\n    if (values[i] > max)\n    {\n        max = values[i];\n    }\n}\nfor (int i = 0; i < values.Length; i++)\n{\n    if (values[i] == max)\n    {\n        Console.WriteLine(i + 1);\n    }\n}",
+        "explanation": "Первый проход определяет максимум. Во втором проходе выводятся все совпадения; различайте индекс i и номер i + 1.",
+        "prompt": "Что появится в консоли?",
+        "challengeResult": "1\n3",
+        "options": [
+          "1\n3",
+          "3\n1",
+          "2\n4",
+          "13"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int[] values = { 13, 7, 13, 6 };\nint max = values[0];\nfor (int i = 1; i < values.Length; i++)\n{\n    if (values[i] > max)\n    {\n        max = values[i];\n    }\n}\nfor (int i = 0; i < values.Length; i++)\n{\n    if (values[i] == max)\n    {\n        Console.WriteLine(i);\n    }\n}",
+        "explanation": "Первый проход определяет максимум. Во втором проходе выводятся все совпадения; различайте индекс i и номер i + 1.",
+        "prompt": "Что появится в консоли?",
+        "challengeResult": "0\n2",
+        "options": [
+          "0\n2",
+          "2\n0",
+          "1\n3",
+          "02"
+        ],
+        "correctIndex": 0
       }
     ]
   },
@@ -4811,6 +7595,84 @@ const codeLessons = [
         "correctIndex": 0,
         "challengeResult": "True\n95",
         "explanation": "Строка корректна; результат True, а в score записано 95."
+      },
+      {
+        "challengeCode": "bool ok = int.TryParse(\"13\", out int value);\nConsole.WriteLine(ok);\nConsole.WriteLine(value);",
+        "explanation": "При успешном TryParse out получает число; при неудаче — ноль. Возвращаемый bool сообщает об успехе.",
+        "prompt": "Что появится в консоли?",
+        "challengeResult": "True\n13",
+        "options": [
+          "True\n13",
+          "13\nTrue",
+          "True\n14",
+          "True13"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "bool ok = int.TryParse(\"текст1\", out int value);\nConsole.WriteLine(ok);\nConsole.WriteLine(value);",
+        "explanation": "При успешном TryParse out получает число; при неудаче — ноль. Возвращаемый bool сообщает об успехе.",
+        "prompt": "Что появится в консоли?",
+        "challengeResult": "False\n0",
+        "options": [
+          "False\n0",
+          "0\nFalse",
+          "False\n1",
+          "False0"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "bool ok = int.TryParse(\"15\", out int value);\nConsole.WriteLine(ok);\nConsole.WriteLine(value);",
+        "explanation": "При успешном TryParse out получает число; при неудаче — ноль. Возвращаемый bool сообщает об успехе.",
+        "prompt": "Что появится в консоли?",
+        "challengeResult": "True\n15",
+        "options": [
+          "True\n15",
+          "15\nTrue",
+          "True\n16",
+          "True15"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "bool ok = int.TryParse(\"текст3\", out int value);\nConsole.WriteLine(ok);\nConsole.WriteLine(value);",
+        "explanation": "При успешном TryParse out получает число; при неудаче — ноль. Возвращаемый bool сообщает об успехе.",
+        "prompt": "Что появится в консоли?",
+        "challengeResult": "False\n0",
+        "options": [
+          "False\n0",
+          "0\nFalse",
+          "False\n1",
+          "False0"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "bool ok = int.TryParse(\"17\", out int value);\nConsole.WriteLine(ok);\nConsole.WriteLine(value);",
+        "explanation": "При успешном TryParse out получает число; при неудаче — ноль. Возвращаемый bool сообщает об успехе.",
+        "prompt": "Что появится в консоли?",
+        "challengeResult": "True\n17",
+        "options": [
+          "True\n17",
+          "17\nTrue",
+          "True\n18",
+          "True17"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "bool ok = int.TryParse(\"текст5\", out int value);\nConsole.WriteLine(ok);\nConsole.WriteLine(value);",
+        "explanation": "При успешном TryParse out получает число; при неудаче — ноль. Возвращаемый bool сообщает об успехе.",
+        "prompt": "Что появится в консоли?",
+        "challengeResult": "False\n0",
+        "options": [
+          "False\n0",
+          "0\nFalse",
+          "False\n1",
+          "False0"
+        ],
+        "correctIndex": 0
       }
     ]
   },
@@ -5049,6 +7911,90 @@ const codeLessons = [
         "correctIndex": 0,
         "challengeResult": "49",
         "explanation": "Square(7) возвращает 7 * 7 = 49."
+      },
+      {
+        "challengeCode": "Console.WriteLine(Add(4, Double(3)));\nint Add(int first, int second)\n{\n    return first + second;\n}\nint Double(int number)\n{\n    return number * 2;\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Сначала вычисляется внутренний вызов, его результат становится аргументом внешнего вызова.",
+        "challengeResult": "10",
+        "options": [
+          "10",
+          "11",
+          "9",
+          "12"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "Console.WriteLine(Add(Double(5), 3));\nint Add(int first, int second)\n{\n    return first + second;\n}\nint Double(int number)\n{\n    return number * 2;\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Сначала вычисляется внутренний вызов, его результат становится аргументом внешнего вызова.",
+        "challengeResult": "13",
+        "options": [
+          "13",
+          "14",
+          "12",
+          "15"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "Console.WriteLine(Add(6, Double(3)));\nint Add(int first, int second)\n{\n    return first + second;\n}\nint Double(int number)\n{\n    return number * 2;\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Сначала вычисляется внутренний вызов, его результат становится аргументом внешнего вызова.",
+        "challengeResult": "12",
+        "options": [
+          "12",
+          "13",
+          "11",
+          "14"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "Console.WriteLine(Add(Double(7), 3));\nint Add(int first, int second)\n{\n    return first + second;\n}\nint Double(int number)\n{\n    return number * 2;\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Сначала вычисляется внутренний вызов, его результат становится аргументом внешнего вызова.",
+        "challengeResult": "17",
+        "options": [
+          "17",
+          "18",
+          "16",
+          "19"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "Console.WriteLine(Add(8, Double(3)));\nint Add(int first, int second)\n{\n    return first + second;\n}\nint Double(int number)\n{\n    return number * 2;\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Сначала вычисляется внутренний вызов, его результат становится аргументом внешнего вызова.",
+        "challengeResult": "14",
+        "options": [
+          "14",
+          "15",
+          "13",
+          "16"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "Console.WriteLine(Add(Double(9), 3));\nint Add(int first, int second)\n{\n    return first + second;\n}\nint Double(int number)\n{\n    return number * 2;\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Сначала вычисляется внутренний вызов, его результат становится аргументом внешнего вызова.",
+        "challengeResult": "21",
+        "options": [
+          "21",
+          "22",
+          "20",
+          "23"
+        ],
+        "correctIndex": 0
       }
     ]
   },
@@ -5201,6 +8147,90 @@ const codeLessons = [
         "correctIndex": 0,
         "challengeResult": "-7",
         "explanation": "first получает 2, second — 9; результат -7."
+      },
+      {
+        "challengeCode": "int a = 10;\nint b = 4;\nConsole.WriteLine(Difference(a, b));\nint Difference(int first, int second)\n{\n    return first - second;\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Позиционные аргументы передаются по порядку. Перестановка аргументов у вычитания меняет результат.",
+        "challengeResult": "6",
+        "options": [
+          "6",
+          "7",
+          "5",
+          "8"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int a = 11;\nint b = 5;\nConsole.WriteLine(Difference(b, a));\nint Difference(int first, int second)\n{\n    return first - second;\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Позиционные аргументы передаются по порядку. Перестановка аргументов у вычитания меняет результат.",
+        "challengeResult": "-6",
+        "options": [
+          "-6",
+          "-5",
+          "-7",
+          "-4"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int a = 12;\nint b = 6;\nConsole.WriteLine(Difference(a, b));\nint Difference(int first, int second)\n{\n    return first - second;\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Позиционные аргументы передаются по порядку. Перестановка аргументов у вычитания меняет результат.",
+        "challengeResult": "6",
+        "options": [
+          "6",
+          "7",
+          "5",
+          "8"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int a = 13;\nint b = 7;\nConsole.WriteLine(Difference(b, a));\nint Difference(int first, int second)\n{\n    return first - second;\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Позиционные аргументы передаются по порядку. Перестановка аргументов у вычитания меняет результат.",
+        "challengeResult": "-6",
+        "options": [
+          "-6",
+          "-5",
+          "-7",
+          "-4"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int a = 14;\nint b = 8;\nConsole.WriteLine(Difference(a, b));\nint Difference(int first, int second)\n{\n    return first - second;\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Позиционные аргументы передаются по порядку. Перестановка аргументов у вычитания меняет результат.",
+        "challengeResult": "6",
+        "options": [
+          "6",
+          "7",
+          "5",
+          "8"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int a = 15;\nint b = 9;\nConsole.WriteLine(Difference(b, a));\nint Difference(int first, int second)\n{\n    return first - second;\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Позиционные аргументы передаются по порядку. Перестановка аргументов у вычитания меняет результат.",
+        "challengeResult": "-6",
+        "options": [
+          "-6",
+          "-5",
+          "-7",
+          "-4"
+        ],
+        "correctIndex": 0
       }
     ]
   },
@@ -5395,6 +8425,90 @@ const codeLessons = [
         "correctIndex": 0,
         "challengeResult": "12",
         "explanation": "Изменение копии параметра не меняет исходный value."
+      },
+      {
+        "challengeCode": "int value = 6;\nint result = Change(value);\nConsole.WriteLine($\"{value} {result}\");\nint Change(int number)\n{\n    number += 3;\n    return number;\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Параметр int получает копию значения. Изменение параметра не переприсваивает аргумент снаружи.",
+        "challengeResult": "6 9",
+        "options": [
+          "6 9",
+          "7 10",
+          "9 6",
+          "Ничего"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int value = 7;\nint result = Change(value);\nConsole.WriteLine($\"{value} {result}\");\nint Change(int number)\n{\n    number *= 3;\n    return number;\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Параметр int получает копию значения. Изменение параметра не переприсваивает аргумент снаружи.",
+        "challengeResult": "7 21",
+        "options": [
+          "7 21",
+          "8 22",
+          "12 7",
+          "Ничего"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int value = 8;\nint result = Change(value);\nConsole.WriteLine($\"{value} {result}\");\nint Change(int number)\n{\n    number += 3;\n    return number;\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Параметр int получает копию значения. Изменение параметра не переприсваивает аргумент снаружи.",
+        "challengeResult": "8 11",
+        "options": [
+          "8 11",
+          "9 12",
+          "11 8",
+          "Ничего"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int value = 9;\nint result = Change(value);\nConsole.WriteLine($\"{value} {result}\");\nint Change(int number)\n{\n    number *= 3;\n    return number;\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Параметр int получает копию значения. Изменение параметра не переприсваивает аргумент снаружи.",
+        "challengeResult": "9 27",
+        "options": [
+          "9 27",
+          "10 28",
+          "72 9",
+          "Ничего"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int value = 10;\nint result = Change(value);\nConsole.WriteLine($\"{value} {result}\");\nint Change(int number)\n{\n    number += 3;\n    return number;\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Параметр int получает копию значения. Изменение параметра не переприсваивает аргумент снаружи.",
+        "challengeResult": "10 13",
+        "options": [
+          "10 13",
+          "11 14",
+          "31 01",
+          "Ничего"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int value = 11;\nint result = Change(value);\nConsole.WriteLine($\"{value} {result}\");\nint Change(int number)\n{\n    number *= 3;\n    return number;\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Параметр int получает копию значения. Изменение параметра не переприсваивает аргумент снаружи.",
+        "challengeResult": "11 33",
+        "options": [
+          "11 33",
+          "12 34",
+          "33 11",
+          "Ничего"
+        ],
+        "correctIndex": 0
       }
     ]
   },
@@ -5555,7 +8669,7 @@ const codeLessons = [
         ],
         "correctIndex": 0,
         "challengeResult": "-4",
-        "explanation": "Max возвращает большее значение; при равенстве результат равен обоим аргументам: -4."
+        "explanation": "Из -4 и -9 больше -4. Метод возвращает первый аргумент."
       },
       {
         "challengeCode": "Console.WriteLine(Max(5, 5));\nint Max(int first, int second)\n{\n    if (first > second)\n    {\n        return first;\n    }\n    return second;\n}",
@@ -5568,6 +8682,84 @@ const codeLessons = [
         "correctIndex": 0,
         "challengeResult": "5",
         "explanation": "Max возвращает большее значение; при равенстве результат равен обоим аргументам: 5."
+      },
+      {
+        "challengeCode": "Console.WriteLine(Max(-6, -8));\nint Max(int first, int second)\n{\n    if (first > second)\n    {\n        return first;\n    }\n    return second;\n}",
+        "explanation": "Метод сравнивает аргументы и возвращает большее число, включая отрицательные значения.",
+        "prompt": "Что появится в консоли?",
+        "challengeResult": "-6",
+        "options": [
+          "-6",
+          "-5",
+          "-7",
+          "-4"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "Console.WriteLine(Max(-5, -1));\nint Max(int first, int second)\n{\n    if (first > second)\n    {\n        return first;\n    }\n    return second;\n}",
+        "explanation": "Метод сравнивает аргументы и возвращает большее число, включая отрицательные значения.",
+        "prompt": "Что появится в консоли?",
+        "challengeResult": "-1",
+        "options": [
+          "-1",
+          "0",
+          "-2",
+          "1"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "Console.WriteLine(Max(-4, -6));\nint Max(int first, int second)\n{\n    if (first > second)\n    {\n        return first;\n    }\n    return second;\n}",
+        "explanation": "Метод сравнивает аргументы и возвращает большее число, включая отрицательные значения.",
+        "prompt": "Что появится в консоли?",
+        "challengeResult": "-4",
+        "options": [
+          "-4",
+          "-3",
+          "-5",
+          "-2"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "Console.WriteLine(Max(-3, 1));\nint Max(int first, int second)\n{\n    if (first > second)\n    {\n        return first;\n    }\n    return second;\n}",
+        "explanation": "Метод сравнивает аргументы и возвращает большее число, включая отрицательные значения.",
+        "prompt": "Что появится в консоли?",
+        "challengeResult": "1",
+        "options": [
+          "1",
+          "2",
+          "0",
+          "3"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "Console.WriteLine(Max(-2, -4));\nint Max(int first, int second)\n{\n    if (first > second)\n    {\n        return first;\n    }\n    return second;\n}",
+        "explanation": "Метод сравнивает аргументы и возвращает большее число, включая отрицательные значения.",
+        "prompt": "Что появится в консоли?",
+        "challengeResult": "-2",
+        "options": [
+          "-2",
+          "-1",
+          "-3",
+          "0"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "Console.WriteLine(Max(-1, 3));\nint Max(int first, int second)\n{\n    if (first > second)\n    {\n        return first;\n    }\n    return second;\n}",
+        "explanation": "Метод сравнивает аргументы и возвращает большее число, включая отрицательные значения.",
+        "prompt": "Что появится в консоли?",
+        "challengeResult": "3",
+        "options": [
+          "3",
+          "4",
+          "2",
+          "5"
+        ],
+        "correctIndex": 0
       }
     ]
   },
@@ -5615,6 +8807,90 @@ const codeLessons = [
         "correctIndex": 0,
         "challengeResult": "Нечётное",
         "explanation": "IsEven проверяет остаток 9 % 2. Выбирается сообщение «Нечётное»."
+      },
+      {
+        "challengeCode": "Console.WriteLine(Sum(6));\nint Sum(int limit)\n{\n    int sum = 0;\n    for (int i = 1; i <= limit; i++)\n    {\n        if (i % 2 == 0)\n        {\n            sum += i;\n        }\n    }\n    return sum;\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Метод суммирует только значения, подходящие под условие. Начальное значение накопителя задаётся для каждого вызова.",
+        "challengeResult": "12",
+        "options": [
+          "12",
+          "13",
+          "11",
+          "14"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "Console.WriteLine(Sum(7));\nint Sum(int limit)\n{\n    int sum = 0;\n    for (int i = 1; i <= limit; i++)\n    {\n        if (i % 2 == 1)\n        {\n            sum += i;\n        }\n    }\n    return sum;\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Метод суммирует только значения, подходящие под условие. Начальное значение накопителя задаётся для каждого вызова.",
+        "challengeResult": "16",
+        "options": [
+          "16",
+          "17",
+          "15",
+          "18"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "Console.WriteLine(Sum(8));\nint Sum(int limit)\n{\n    int sum = 0;\n    for (int i = 1; i <= limit; i++)\n    {\n        if (i % 2 == 0)\n        {\n            sum += i;\n        }\n    }\n    return sum;\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Метод суммирует только значения, подходящие под условие. Начальное значение накопителя задаётся для каждого вызова.",
+        "challengeResult": "20",
+        "options": [
+          "20",
+          "21",
+          "19",
+          "22"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "Console.WriteLine(Sum(9));\nint Sum(int limit)\n{\n    int sum = 0;\n    for (int i = 1; i <= limit; i++)\n    {\n        if (i % 2 == 1)\n        {\n            sum += i;\n        }\n    }\n    return sum;\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Метод суммирует только значения, подходящие под условие. Начальное значение накопителя задаётся для каждого вызова.",
+        "challengeResult": "25",
+        "options": [
+          "25",
+          "26",
+          "24",
+          "27"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "Console.WriteLine(Sum(10));\nint Sum(int limit)\n{\n    int sum = 0;\n    for (int i = 1; i <= limit; i++)\n    {\n        if (i % 2 == 0)\n        {\n            sum += i;\n        }\n    }\n    return sum;\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Метод суммирует только значения, подходящие под условие. Начальное значение накопителя задаётся для каждого вызова.",
+        "challengeResult": "30",
+        "options": [
+          "30",
+          "31",
+          "29",
+          "32"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "Console.WriteLine(Sum(11));\nint Sum(int limit)\n{\n    int sum = 0;\n    for (int i = 1; i <= limit; i++)\n    {\n        if (i % 2 == 1)\n        {\n            sum += i;\n        }\n    }\n    return sum;\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Метод суммирует только значения, подходящие под условие. Начальное значение накопителя задаётся для каждого вызова.",
+        "challengeResult": "36",
+        "options": [
+          "36",
+          "37",
+          "35",
+          "38"
+        ],
+        "correctIndex": 0
       }
     ]
   },
@@ -5725,6 +9001,90 @@ const codeLessons = [
         "correctIndex": 0,
         "challengeResult": "21",
         "explanation": "Сумма чисел от 1 до 6 включительно равна 21."
+      },
+      {
+        "challengeCode": "Console.WriteLine(Sum(6));\nint Sum(int limit)\n{\n    int sum = 0;\n    for (int i = 1; i <= limit; i++)\n    {\n        if (i % 2 == 0)\n        {\n            sum += i;\n        }\n    }\n    return sum;\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Метод суммирует только значения, подходящие под условие. Начальное значение накопителя задаётся для каждого вызова.",
+        "challengeResult": "12",
+        "options": [
+          "12",
+          "13",
+          "11",
+          "14"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "Console.WriteLine(Sum(7));\nint Sum(int limit)\n{\n    int sum = 0;\n    for (int i = 1; i <= limit; i++)\n    {\n        if (i % 2 == 1)\n        {\n            sum += i;\n        }\n    }\n    return sum;\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Метод суммирует только значения, подходящие под условие. Начальное значение накопителя задаётся для каждого вызова.",
+        "challengeResult": "16",
+        "options": [
+          "16",
+          "17",
+          "15",
+          "18"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "Console.WriteLine(Sum(8));\nint Sum(int limit)\n{\n    int sum = 0;\n    for (int i = 1; i <= limit; i++)\n    {\n        if (i % 2 == 0)\n        {\n            sum += i;\n        }\n    }\n    return sum;\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Метод суммирует только значения, подходящие под условие. Начальное значение накопителя задаётся для каждого вызова.",
+        "challengeResult": "20",
+        "options": [
+          "20",
+          "21",
+          "19",
+          "22"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "Console.WriteLine(Sum(9));\nint Sum(int limit)\n{\n    int sum = 0;\n    for (int i = 1; i <= limit; i++)\n    {\n        if (i % 2 == 1)\n        {\n            sum += i;\n        }\n    }\n    return sum;\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Метод суммирует только значения, подходящие под условие. Начальное значение накопителя задаётся для каждого вызова.",
+        "challengeResult": "25",
+        "options": [
+          "25",
+          "26",
+          "24",
+          "27"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "Console.WriteLine(Sum(10));\nint Sum(int limit)\n{\n    int sum = 0;\n    for (int i = 1; i <= limit; i++)\n    {\n        if (i % 2 == 0)\n        {\n            sum += i;\n        }\n    }\n    return sum;\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Метод суммирует только значения, подходящие под условие. Начальное значение накопителя задаётся для каждого вызова.",
+        "challengeResult": "30",
+        "options": [
+          "30",
+          "31",
+          "29",
+          "32"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "Console.WriteLine(Sum(11));\nint Sum(int limit)\n{\n    int sum = 0;\n    for (int i = 1; i <= limit; i++)\n    {\n        if (i % 2 == 1)\n        {\n            sum += i;\n        }\n    }\n    return sum;\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Метод суммирует только значения, подходящие под условие. Начальное значение накопителя задаётся для каждого вызова.",
+        "challengeResult": "36",
+        "options": [
+          "36",
+          "37",
+          "35",
+          "38"
+        ],
+        "correctIndex": 0
       }
     ]
   },
@@ -5835,6 +9195,90 @@ const codeLessons = [
         "correctIndex": 0,
         "challengeResult": "360.00",
         "explanation": "Цена 120 умножается на количество 3: стоимость 360. F2 выводит два знака."
+      },
+      {
+        "challengeCode": "int quantity = 4;\ndecimal cost = Cost(12m, quantity);\nquantity += 1;\nConsole.WriteLine(cost);\nConsole.WriteLine(quantity);\ndecimal Cost(decimal price, int count)\n{\n    return price * count;\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Метод получает текущие значения аргументов при вызове. Изменение количества после расчёта не меняет сохранённую стоимость.",
+        "challengeResult": "48\n5",
+        "options": [
+          "48\n5",
+          "5\n48",
+          "49\n6",
+          "485"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int quantity = 2;\ndecimal cost = Cost(13m, quantity);\nquantity += 2;\nConsole.WriteLine(cost);\nConsole.WriteLine(quantity);\ndecimal Cost(decimal price, int count)\n{\n    return price * count;\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Метод получает текущие значения аргументов при вызове. Изменение количества после расчёта не меняет сохранённую стоимость.",
+        "challengeResult": "26\n4",
+        "options": [
+          "26\n4",
+          "4\n26",
+          "27\n5",
+          "264"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int quantity = 3;\ndecimal cost = Cost(14m, quantity);\nquantity += 1;\nConsole.WriteLine(cost);\nConsole.WriteLine(quantity);\ndecimal Cost(decimal price, int count)\n{\n    return price * count;\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Метод получает текущие значения аргументов при вызове. Изменение количества после расчёта не меняет сохранённую стоимость.",
+        "challengeResult": "42\n4",
+        "options": [
+          "42\n4",
+          "4\n42",
+          "43\n5",
+          "424"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int quantity = 4;\ndecimal cost = Cost(15m, quantity);\nquantity += 2;\nConsole.WriteLine(cost);\nConsole.WriteLine(quantity);\ndecimal Cost(decimal price, int count)\n{\n    return price * count;\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Метод получает текущие значения аргументов при вызове. Изменение количества после расчёта не меняет сохранённую стоимость.",
+        "challengeResult": "60\n6",
+        "options": [
+          "60\n6",
+          "6\n60",
+          "61\n7",
+          "606"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int quantity = 2;\ndecimal cost = Cost(16m, quantity);\nquantity += 1;\nConsole.WriteLine(cost);\nConsole.WriteLine(quantity);\ndecimal Cost(decimal price, int count)\n{\n    return price * count;\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Метод получает текущие значения аргументов при вызове. Изменение количества после расчёта не меняет сохранённую стоимость.",
+        "challengeResult": "32\n3",
+        "options": [
+          "32\n3",
+          "3\n32",
+          "33\n4",
+          "323"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int quantity = 3;\ndecimal cost = Cost(17m, quantity);\nquantity += 2;\nConsole.WriteLine(cost);\nConsole.WriteLine(quantity);\ndecimal Cost(decimal price, int count)\n{\n    return price * count;\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Метод получает текущие значения аргументов при вызове. Изменение количества после расчёта не меняет сохранённую стоимость.",
+        "challengeResult": "51\n5",
+        "options": [
+          "51\n5",
+          "5\n51",
+          "52\n6",
+          "515"
+        ],
+        "correctIndex": 0
       }
     ]
   },
@@ -5882,6 +9326,90 @@ const codeLessons = [
         "correctIndex": 0,
         "challengeResult": "50.00",
         "explanation": "Скидка в деньгах равна 250 * 20 / 100 = 50."
+      },
+      {
+        "challengeCode": "decimal cost = 140m;\ndecimal first = Discount(cost, 10);\ndecimal second = Discount(cost, 20);\nConsole.WriteLine(cost - first - second);\ndecimal Discount(decimal cost, int percent)\n{\n    return cost * percent / 100;\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Метод возвращает размер скидки. Сравните, от какой суммы вычисляется каждый следующий процент.",
+        "challengeResult": "98",
+        "options": [
+          "98",
+          "99",
+          "97",
+          "100"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "decimal cost = 160m;\ndecimal first = Discount(cost, 10);\ndecimal second = Discount(cost - first, 20);\nConsole.WriteLine(cost - first - second);\ndecimal Discount(decimal cost, int percent)\n{\n    return cost * percent / 100;\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли? Точка обозначает десятичный разделитель; при запуске возможна запятая.",
+        "explanation": "Метод возвращает размер скидки. Сравните, от какой суммы вычисляется каждый следующий процент.",
+        "challengeResult": "115.2",
+        "options": [
+          "115.2",
+          "116.3",
+          "2.511",
+          "Ничего"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "decimal cost = 180m;\ndecimal first = Discount(cost, 10);\ndecimal second = Discount(cost, 20);\nConsole.WriteLine(cost - first - second);\ndecimal Discount(decimal cost, int percent)\n{\n    return cost * percent / 100;\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Метод возвращает размер скидки. Сравните, от какой суммы вычисляется каждый следующий процент.",
+        "challengeResult": "126",
+        "options": [
+          "126",
+          "127",
+          "125",
+          "128"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "decimal cost = 200m;\ndecimal first = Discount(cost, 10);\ndecimal second = Discount(cost - first, 20);\nConsole.WriteLine(cost - first - second);\ndecimal Discount(decimal cost, int percent)\n{\n    return cost * percent / 100;\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Метод возвращает размер скидки. Сравните, от какой суммы вычисляется каждый следующий процент.",
+        "challengeResult": "144",
+        "options": [
+          "144",
+          "145",
+          "143",
+          "146"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "decimal cost = 220m;\ndecimal first = Discount(cost, 10);\ndecimal second = Discount(cost, 20);\nConsole.WriteLine(cost - first - second);\ndecimal Discount(decimal cost, int percent)\n{\n    return cost * percent / 100;\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Метод возвращает размер скидки. Сравните, от какой суммы вычисляется каждый следующий процент.",
+        "challengeResult": "154",
+        "options": [
+          "154",
+          "155",
+          "153",
+          "156"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "decimal cost = 240m;\ndecimal first = Discount(cost, 10);\ndecimal second = Discount(cost - first, 20);\nConsole.WriteLine(cost - first - second);\ndecimal Discount(decimal cost, int percent)\n{\n    return cost * percent / 100;\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли? Точка обозначает десятичный разделитель; при запуске возможна запятая.",
+        "explanation": "Метод возвращает размер скидки. Сравните, от какой суммы вычисляется каждый следующий процент.",
+        "challengeResult": "172.8",
+        "options": [
+          "172.8",
+          "173.9",
+          "8.271",
+          "Ничего"
+        ],
+        "correctIndex": 0
       }
     ]
   },
@@ -5929,6 +9457,90 @@ const codeLessons = [
         "correctIndex": 0,
         "challengeResult": "45.00",
         "explanation": "Сначала вычисляются стоимость и скидка; их разность равна 45."
+      },
+      {
+        "challengeCode": "decimal cost = 140m;\ndecimal first = Discount(cost, 10);\ndecimal second = Discount(cost, 20);\nConsole.WriteLine(cost - first - second);\ndecimal Discount(decimal cost, int percent)\n{\n    return cost * percent / 100;\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Метод возвращает размер скидки. Сравните, от какой суммы вычисляется каждый следующий процент.",
+        "challengeResult": "98",
+        "options": [
+          "98",
+          "99",
+          "97",
+          "100"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "decimal cost = 160m;\ndecimal first = Discount(cost, 10);\ndecimal second = Discount(cost - first, 20);\nConsole.WriteLine(cost - first - second);\ndecimal Discount(decimal cost, int percent)\n{\n    return cost * percent / 100;\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли? Точка обозначает десятичный разделитель; при запуске возможна запятая.",
+        "explanation": "Метод возвращает размер скидки. Сравните, от какой суммы вычисляется каждый следующий процент.",
+        "challengeResult": "115.2",
+        "options": [
+          "115.2",
+          "116.3",
+          "2.511",
+          "Ничего"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "decimal cost = 180m;\ndecimal first = Discount(cost, 10);\ndecimal second = Discount(cost, 20);\nConsole.WriteLine(cost - first - second);\ndecimal Discount(decimal cost, int percent)\n{\n    return cost * percent / 100;\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Метод возвращает размер скидки. Сравните, от какой суммы вычисляется каждый следующий процент.",
+        "challengeResult": "126",
+        "options": [
+          "126",
+          "127",
+          "125",
+          "128"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "decimal cost = 200m;\ndecimal first = Discount(cost, 10);\ndecimal second = Discount(cost - first, 20);\nConsole.WriteLine(cost - first - second);\ndecimal Discount(decimal cost, int percent)\n{\n    return cost * percent / 100;\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Метод возвращает размер скидки. Сравните, от какой суммы вычисляется каждый следующий процент.",
+        "challengeResult": "144",
+        "options": [
+          "144",
+          "145",
+          "143",
+          "146"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "decimal cost = 220m;\ndecimal first = Discount(cost, 10);\ndecimal second = Discount(cost, 20);\nConsole.WriteLine(cost - first - second);\ndecimal Discount(decimal cost, int percent)\n{\n    return cost * percent / 100;\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Метод возвращает размер скидки. Сравните, от какой суммы вычисляется каждый следующий процент.",
+        "challengeResult": "154",
+        "options": [
+          "154",
+          "155",
+          "153",
+          "156"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "decimal cost = 240m;\ndecimal first = Discount(cost, 10);\ndecimal second = Discount(cost - first, 20);\nConsole.WriteLine(cost - first - second);\ndecimal Discount(decimal cost, int percent)\n{\n    return cost * percent / 100;\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли? Точка обозначает десятичный разделитель; при запуске возможна запятая.",
+        "explanation": "Метод возвращает размер скидки. Сравните, от какой суммы вычисляется каждый следующий процент.",
+        "challengeResult": "172.8",
+        "options": [
+          "172.8",
+          "173.9",
+          "8.271",
+          "Ничего"
+        ],
+        "correctIndex": 0
       }
     ]
   },
@@ -6060,6 +9672,84 @@ const codeLessons = [
         "correctIndex": 0,
         "challengeResult": "8.50",
         "explanation": "F2 показывает два знака после десятичного разделителя. В вопросе используется точка."
+      },
+      {
+        "challengeCode": "decimal value = 3.5m;\nConsole.WriteLine($\"{value * 2:F2}\");",
+        "prompt": "Что выведется? Точка обозначает десятичный разделитель; на компьютере возможна запятая.",
+        "explanation": "Сначала вычисляется выражение, затем F2 показывает результат с двумя знаками после разделителя.",
+        "challengeResult": "7.00",
+        "options": [
+          "7.00",
+          "8.1",
+          "00.7",
+          "Ничего"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "decimal value = 4.5m;\nConsole.WriteLine($\"{value + 2:F2}\");",
+        "prompt": "Что выведется? Точка обозначает десятичный разделитель; на компьютере возможна запятая.",
+        "explanation": "Сначала вычисляется выражение, затем F2 показывает результат с двумя знаками после разделителя.",
+        "challengeResult": "6.50",
+        "options": [
+          "6.50",
+          "7.51",
+          "05.6",
+          "Ничего"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "decimal value = 5.5m;\nConsole.WriteLine($\"{value * 2:F2}\");",
+        "prompt": "Что выведется? Точка обозначает десятичный разделитель; на компьютере возможна запятая.",
+        "explanation": "Сначала вычисляется выражение, затем F2 показывает результат с двумя знаками после разделителя.",
+        "challengeResult": "11.00",
+        "options": [
+          "11.00",
+          "12.1",
+          "00.11",
+          "Ничего"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "decimal value = 6.5m;\nConsole.WriteLine($\"{value + 2:F2}\");",
+        "prompt": "Что выведется? Точка обозначает десятичный разделитель; на компьютере возможна запятая.",
+        "explanation": "Сначала вычисляется выражение, затем F2 показывает результат с двумя знаками после разделителя.",
+        "challengeResult": "8.50",
+        "options": [
+          "8.50",
+          "9.51",
+          "05.8",
+          "Ничего"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "decimal value = 7.5m;\nConsole.WriteLine($\"{value * 2:F2}\");",
+        "prompt": "Что выведется? Точка обозначает десятичный разделитель; на компьютере возможна запятая.",
+        "explanation": "Сначала вычисляется выражение, затем F2 показывает результат с двумя знаками после разделителя.",
+        "challengeResult": "15.00",
+        "options": [
+          "15.00",
+          "16.1",
+          "00.51",
+          "Ничего"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "decimal value = 8.5m;\nConsole.WriteLine($\"{value + 2:F2}\");",
+        "prompt": "Что выведется? Точка обозначает десятичный разделитель; на компьютере возможна запятая.",
+        "explanation": "Сначала вычисляется выражение, затем F2 показывает результат с двумя знаками после разделителя.",
+        "challengeResult": "10.50",
+        "options": [
+          "10.50",
+          "11.51",
+          "05.01",
+          "Ничего"
+        ],
+        "correctIndex": 0
       }
     ]
   },
@@ -6474,5 +10164,8166 @@ const codeLessons = [
     "correctIndex": 3,
     "explanation": "Снаружи виден только возвращённый массив. Изменение новой локальной копии внутри метода не меняет исходный массив и не создаёт наблюдаемого побочного эффекта.",
     "codeDeckId": "lab10-method-refactoring"
+  },
+  {
+    "id": "expand-4-copy-chain",
+    "codeDeckId": "lab4-mixed-reading",
+    "deckId": "variables-values",
+    "term": "Присваивание",
+    "exampleCode": "int first = 10;\nint second = first;\nfirst = 16;\nint third = second;\nConsole.WriteLine($\"{second} {third}\");",
+    "exampleNote": "Присваивание копирует текущее значение. Последующие изменения исходной переменной не пересчитывают копию.",
+    "kind": "Что выведет код?",
+    "challengeCode": "int first = 2;\nint second = first;\nfirst = 8;\nint third = second;\nConsole.WriteLine($\"{second} {third}\");",
+    "challengeInput": "",
+    "prompt": "Что появится в консоли?",
+    "explanation": "Присваивание копирует текущее значение. Последующие изменения исходной переменной не пересчитывают копию.",
+    "variants": [
+      {
+        "challengeCode": "int first = 3;\nint second = first;\nfirst = 9;\nint third = first;\nConsole.WriteLine($\"{second} {third}\");",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Присваивание копирует текущее значение. Последующие изменения исходной переменной не пересчитывают копию.",
+        "challengeResult": "3 9",
+        "options": [
+          "3 9",
+          "4 10",
+          "9 3",
+          "Ничего"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int first = 4;\nint second = first;\nfirst = 10;\nint third = second;\nConsole.WriteLine($\"{second} {third}\");",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Присваивание копирует текущее значение. Последующие изменения исходной переменной не пересчитывают копию.",
+        "challengeResult": "4 4",
+        "options": [
+          "4 4",
+          "5 5",
+          "Ничего",
+          "Ошибка компиляции"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int first = 5;\nint second = first;\nfirst = 11;\nint third = first;\nConsole.WriteLine($\"{second} {third}\");",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Присваивание копирует текущее значение. Последующие изменения исходной переменной не пересчитывают копию.",
+        "challengeResult": "5 11",
+        "options": [
+          "5 11",
+          "6 12",
+          "11 5",
+          "Ничего"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int first = 6;\nint second = first;\nfirst = 12;\nint third = second;\nConsole.WriteLine($\"{second} {third}\");",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Присваивание копирует текущее значение. Последующие изменения исходной переменной не пересчитывают копию.",
+        "challengeResult": "6 6",
+        "options": [
+          "6 6",
+          "7 7",
+          "Ничего",
+          "Ошибка компиляции"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int first = 7;\nint second = first;\nfirst = 13;\nint third = first;\nConsole.WriteLine($\"{second} {third}\");",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Присваивание копирует текущее значение. Последующие изменения исходной переменной не пересчитывают копию.",
+        "challengeResult": "7 13",
+        "options": [
+          "7 13",
+          "8 14",
+          "31 7",
+          "Ничего"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int first = 8;\nint second = first;\nfirst = 14;\nint third = second;\nConsole.WriteLine($\"{second} {third}\");",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Присваивание копирует текущее значение. Последующие изменения исходной переменной не пересчитывают копию.",
+        "challengeResult": "8 8",
+        "options": [
+          "8 8",
+          "9 9",
+          "Ничего",
+          "Ошибка компиляции"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int first = 9;\nint second = first;\nfirst = 15;\nint third = first;\nConsole.WriteLine($\"{second} {third}\");",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Присваивание копирует текущее значение. Последующие изменения исходной переменной не пересчитывают копию.",
+        "challengeResult": "9 15",
+        "options": [
+          "9 15",
+          "10 16",
+          "51 9",
+          "Ничего"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int first = 10;\nint second = first;\nfirst = 16;\nint third = second;\nConsole.WriteLine($\"{second} {third}\");",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Присваивание копирует текущее значение. Последующие изменения исходной переменной не пересчитывают копию.",
+        "challengeResult": "10 10",
+        "options": [
+          "10 10",
+          "11 11",
+          "01 01",
+          "Ничего"
+        ],
+        "correctIndex": 0
+      }
+    ],
+    "challengeResult": "2 2",
+    "options": [
+      "2 2",
+      "3 3",
+      "Ничего",
+      "Ошибка компиляции"
+    ],
+    "correctIndex": 0,
+    "exampleResult": "10 10"
+  },
+  {
+    "id": "expand-4-swap-order",
+    "codeDeckId": "lab4-mixed-reading",
+    "deckId": "variables-values",
+    "term": "Присваивание",
+    "exampleCode": "int left = 9;\nint right = 14;\nint temp = left;\nleft = right;\nright = temp;\nConsole.WriteLine($\"{left} {right}\");",
+    "exampleNote": "Проследите присваивания по порядку. В temp сохраняется значение на момент выполнения этой строки.",
+    "kind": "Что выведет код?",
+    "challengeCode": "int left = 1;\nint right = 6;\nint temp = left;\nleft = right;\nright = temp;\nConsole.WriteLine($\"{left} {right}\");",
+    "challengeInput": "",
+    "prompt": "Что появится в консоли?",
+    "explanation": "Проследите присваивания по порядку. В temp сохраняется значение на момент выполнения этой строки.",
+    "variants": [
+      {
+        "challengeCode": "int left = 2;\nint right = 7;\nint temp = right;\nleft = right;\nright = temp;\nConsole.WriteLine($\"{left} {right}\");",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Проследите присваивания по порядку. В temp сохраняется значение на момент выполнения этой строки.",
+        "challengeResult": "7 7",
+        "options": [
+          "7 7",
+          "8 8",
+          "Ничего",
+          "Ошибка компиляции"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int left = 3;\nint right = 8;\nint temp = left;\nleft = right;\nright = temp;\nConsole.WriteLine($\"{left} {right}\");",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Проследите присваивания по порядку. В temp сохраняется значение на момент выполнения этой строки.",
+        "challengeResult": "8 3",
+        "options": [
+          "8 3",
+          "9 4",
+          "3 8",
+          "Ничего"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int left = 4;\nint right = 9;\nint temp = right;\nleft = right;\nright = temp;\nConsole.WriteLine($\"{left} {right}\");",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Проследите присваивания по порядку. В temp сохраняется значение на момент выполнения этой строки.",
+        "challengeResult": "9 9",
+        "options": [
+          "9 9",
+          "10 10",
+          "Ничего",
+          "Ошибка компиляции"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int left = 5;\nint right = 10;\nint temp = left;\nleft = right;\nright = temp;\nConsole.WriteLine($\"{left} {right}\");",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Проследите присваивания по порядку. В temp сохраняется значение на момент выполнения этой строки.",
+        "challengeResult": "10 5",
+        "options": [
+          "10 5",
+          "11 6",
+          "5 01",
+          "Ничего"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int left = 6;\nint right = 11;\nint temp = right;\nleft = right;\nright = temp;\nConsole.WriteLine($\"{left} {right}\");",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Проследите присваивания по порядку. В temp сохраняется значение на момент выполнения этой строки.",
+        "challengeResult": "11 11",
+        "options": [
+          "11 11",
+          "12 12",
+          "Ничего",
+          "Ошибка компиляции"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int left = 7;\nint right = 12;\nint temp = left;\nleft = right;\nright = temp;\nConsole.WriteLine($\"{left} {right}\");",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Проследите присваивания по порядку. В temp сохраняется значение на момент выполнения этой строки.",
+        "challengeResult": "12 7",
+        "options": [
+          "12 7",
+          "13 8",
+          "7 21",
+          "Ничего"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int left = 8;\nint right = 13;\nint temp = right;\nleft = right;\nright = temp;\nConsole.WriteLine($\"{left} {right}\");",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Проследите присваивания по порядку. В temp сохраняется значение на момент выполнения этой строки.",
+        "challengeResult": "13 13",
+        "options": [
+          "13 13",
+          "14 14",
+          "31 31",
+          "Ничего"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int left = 9;\nint right = 14;\nint temp = left;\nleft = right;\nright = temp;\nConsole.WriteLine($\"{left} {right}\");",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Проследите присваивания по порядку. В temp сохраняется значение на момент выполнения этой строки.",
+        "challengeResult": "14 9",
+        "options": [
+          "14 9",
+          "15 10",
+          "9 41",
+          "Ничего"
+        ],
+        "correctIndex": 0
+      }
+    ],
+    "challengeResult": "6 1",
+    "options": [
+      "6 1",
+      "7 2",
+      "1 6",
+      "Ничего"
+    ],
+    "correctIndex": 0,
+    "exampleResult": "14 9"
+  },
+  {
+    "id": "expand-4-text-capture",
+    "codeDeckId": "lab4-mixed-reading",
+    "deckId": "typing-and-output",
+    "term": "Строковая интерполяция",
+    "exampleCode": "int count = 10;\nstring before = $\"Число: {count}\";\ncount = 17;\nstring after = $\"Число: {count}\";\nConsole.WriteLine(before);",
+    "exampleNote": "Строка формируется при присваивании. Изменение переменной после этого не изменяет уже созданную строку.",
+    "kind": "Что выведет код?",
+    "challengeCode": "int count = 2;\nstring before = $\"Число: {count}\";\ncount = 9;\nstring after = $\"Число: {count}\";\nConsole.WriteLine(before);",
+    "challengeInput": "",
+    "prompt": "Что появится в консоли?",
+    "explanation": "Строка формируется при присваивании. Изменение переменной после этого не изменяет уже созданную строку.",
+    "variants": [
+      {
+        "challengeCode": "int count = 3;\nstring before = $\"Число: {count}\";\ncount = 10;\nstring after = $\"Число: {count}\";\nConsole.WriteLine(after);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Строка формируется при присваивании. Изменение переменной после этого не изменяет уже созданную строку.",
+        "challengeResult": "Число: 10",
+        "options": [
+          "Число: 10",
+          "Число: 11",
+          "01 :олсиЧ",
+          "Ничего"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int count = 4;\nstring before = $\"Число: {count}\";\ncount = 11;\nstring after = $\"Число: {count}\";\nConsole.WriteLine(before);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Строка формируется при присваивании. Изменение переменной после этого не изменяет уже созданную строку.",
+        "challengeResult": "Число: 4",
+        "options": [
+          "Число: 4",
+          "Число: 5",
+          "4 :олсиЧ",
+          "Ничего"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int count = 5;\nstring before = $\"Число: {count}\";\ncount = 12;\nstring after = $\"Число: {count}\";\nConsole.WriteLine(after);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Строка формируется при присваивании. Изменение переменной после этого не изменяет уже созданную строку.",
+        "challengeResult": "Число: 12",
+        "options": [
+          "Число: 12",
+          "Число: 13",
+          "21 :олсиЧ",
+          "Ничего"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int count = 6;\nstring before = $\"Число: {count}\";\ncount = 13;\nstring after = $\"Число: {count}\";\nConsole.WriteLine(before);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Строка формируется при присваивании. Изменение переменной после этого не изменяет уже созданную строку.",
+        "challengeResult": "Число: 6",
+        "options": [
+          "Число: 6",
+          "Число: 7",
+          "6 :олсиЧ",
+          "Ничего"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int count = 7;\nstring before = $\"Число: {count}\";\ncount = 14;\nstring after = $\"Число: {count}\";\nConsole.WriteLine(after);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Строка формируется при присваивании. Изменение переменной после этого не изменяет уже созданную строку.",
+        "challengeResult": "Число: 14",
+        "options": [
+          "Число: 14",
+          "Число: 15",
+          "41 :олсиЧ",
+          "Ничего"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int count = 8;\nstring before = $\"Число: {count}\";\ncount = 15;\nstring after = $\"Число: {count}\";\nConsole.WriteLine(before);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Строка формируется при присваивании. Изменение переменной после этого не изменяет уже созданную строку.",
+        "challengeResult": "Число: 8",
+        "options": [
+          "Число: 8",
+          "Число: 9",
+          "8 :олсиЧ",
+          "Ничего"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int count = 9;\nstring before = $\"Число: {count}\";\ncount = 16;\nstring after = $\"Число: {count}\";\nConsole.WriteLine(after);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Строка формируется при присваивании. Изменение переменной после этого не изменяет уже созданную строку.",
+        "challengeResult": "Число: 16",
+        "options": [
+          "Число: 16",
+          "Число: 17",
+          "61 :олсиЧ",
+          "Ничего"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int count = 10;\nstring before = $\"Число: {count}\";\ncount = 17;\nstring after = $\"Число: {count}\";\nConsole.WriteLine(before);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Строка формируется при присваивании. Изменение переменной после этого не изменяет уже созданную строку.",
+        "challengeResult": "Число: 10",
+        "options": [
+          "Число: 10",
+          "Число: 11",
+          "01 :олсиЧ",
+          "Ничего"
+        ],
+        "correctIndex": 0
+      }
+    ],
+    "challengeResult": "Число: 2",
+    "options": [
+      "Число: 2",
+      "Число: 3",
+      "2 :олсиЧ",
+      "Ничего"
+    ],
+    "correctIndex": 0,
+    "exampleResult": "Число: 10"
+  },
+  {
+    "id": "expand-4-text-order",
+    "codeDeckId": "lab4-mixed-reading",
+    "deckId": "csharp-data-types",
+    "term": "string",
+    "exampleCode": "Console.WriteLine(10 + 11 + \"9\");",
+    "exampleNote": "Числа до первого строкового операнда складываются. После появления строки оператор + соединяет текст.",
+    "kind": "Что выведет код?",
+    "challengeCode": "Console.WriteLine(2 + 3 + \"1\");",
+    "challengeInput": "",
+    "prompt": "Что появится в консоли?",
+    "explanation": "Числа до первого строкового операнда складываются. После появления строки оператор + соединяет текст.",
+    "variants": [
+      {
+        "challengeCode": "Console.WriteLine(\"3\" + 4 + 2);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Числа до первого строкового операнда складываются. После появления строки оператор + соединяет текст.",
+        "challengeResult": "342",
+        "options": [
+          "342",
+          "343",
+          "341",
+          "344"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "Console.WriteLine(4 + 5 + \"3\");",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Числа до первого строкового операнда складываются. После появления строки оператор + соединяет текст.",
+        "challengeResult": "93",
+        "options": [
+          "93",
+          "94",
+          "92",
+          "95"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "Console.WriteLine(\"5\" + 6 + 4);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Числа до первого строкового операнда складываются. После появления строки оператор + соединяет текст.",
+        "challengeResult": "564",
+        "options": [
+          "564",
+          "565",
+          "563",
+          "566"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "Console.WriteLine(6 + 7 + \"5\");",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Числа до первого строкового операнда складываются. После появления строки оператор + соединяет текст.",
+        "challengeResult": "135",
+        "options": [
+          "135",
+          "136",
+          "134",
+          "137"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "Console.WriteLine(\"7\" + 8 + 6);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Числа до первого строкового операнда складываются. После появления строки оператор + соединяет текст.",
+        "challengeResult": "786",
+        "options": [
+          "786",
+          "787",
+          "785",
+          "788"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "Console.WriteLine(8 + 9 + \"7\");",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Числа до первого строкового операнда складываются. После появления строки оператор + соединяет текст.",
+        "challengeResult": "177",
+        "options": [
+          "177",
+          "178",
+          "176",
+          "179"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "Console.WriteLine(\"9\" + 10 + 8);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Числа до первого строкового операнда складываются. После появления строки оператор + соединяет текст.",
+        "challengeResult": "9108",
+        "options": [
+          "9108",
+          "9109",
+          "9107",
+          "9110"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "Console.WriteLine(10 + 11 + \"9\");",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Числа до первого строкового операнда складываются. После появления строки оператор + соединяет текст.",
+        "challengeResult": "219",
+        "options": [
+          "219",
+          "220",
+          "218",
+          "221"
+        ],
+        "correctIndex": 0
+      }
+    ],
+    "challengeResult": "51",
+    "options": [
+      "51",
+      "52",
+      "50",
+      "53"
+    ],
+    "correctIndex": 0,
+    "exampleResult": "219"
+  },
+  {
+    "id": "expand-4-name-case",
+    "codeDeckId": "lab4-mixed-reading",
+    "deckId": "variables-values",
+    "term": "Идентификатор",
+    "exampleCode": "int value = 10;\nint Value = 15;\nvalue = value;\nConsole.WriteLine($\"{value} {Value}\");",
+    "exampleNote": "Регистр входит в имя переменной. Проверьте точное имя справа и слева каждого присваивания.",
+    "kind": "Что выведет код?",
+    "challengeCode": "int value = 2;\nint Value = 7;\nvalue = value;\nConsole.WriteLine($\"{value} {Value}\");",
+    "challengeInput": "",
+    "prompt": "Что появится в консоли?",
+    "explanation": "Регистр входит в имя переменной. Проверьте точное имя справа и слева каждого присваивания.",
+    "variants": [
+      {
+        "challengeCode": "int value = 3;\nint Value = 8;\nvalue = Value;\nConsole.WriteLine($\"{value} {Value}\");",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Регистр входит в имя переменной. Проверьте точное имя справа и слева каждого присваивания.",
+        "challengeResult": "8 8",
+        "options": [
+          "8 8",
+          "9 9",
+          "Ничего",
+          "Ошибка компиляции"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int value = 4;\nint Value = 9;\nvalue = value;\nConsole.WriteLine($\"{value} {Value}\");",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Регистр входит в имя переменной. Проверьте точное имя справа и слева каждого присваивания.",
+        "challengeResult": "4 9",
+        "options": [
+          "4 9",
+          "5 10",
+          "9 4",
+          "Ничего"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int value = 5;\nint Value = 10;\nvalue = Value;\nConsole.WriteLine($\"{value} {Value}\");",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Регистр входит в имя переменной. Проверьте точное имя справа и слева каждого присваивания.",
+        "challengeResult": "10 10",
+        "options": [
+          "10 10",
+          "11 11",
+          "01 01",
+          "Ничего"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int value = 6;\nint Value = 11;\nvalue = value;\nConsole.WriteLine($\"{value} {Value}\");",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Регистр входит в имя переменной. Проверьте точное имя справа и слева каждого присваивания.",
+        "challengeResult": "6 11",
+        "options": [
+          "6 11",
+          "7 12",
+          "11 6",
+          "Ничего"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int value = 7;\nint Value = 12;\nvalue = Value;\nConsole.WriteLine($\"{value} {Value}\");",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Регистр входит в имя переменной. Проверьте точное имя справа и слева каждого присваивания.",
+        "challengeResult": "12 12",
+        "options": [
+          "12 12",
+          "13 13",
+          "21 21",
+          "Ничего"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int value = 8;\nint Value = 13;\nvalue = value;\nConsole.WriteLine($\"{value} {Value}\");",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Регистр входит в имя переменной. Проверьте точное имя справа и слева каждого присваивания.",
+        "challengeResult": "8 13",
+        "options": [
+          "8 13",
+          "9 14",
+          "31 8",
+          "Ничего"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int value = 9;\nint Value = 14;\nvalue = Value;\nConsole.WriteLine($\"{value} {Value}\");",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Регистр входит в имя переменной. Проверьте точное имя справа и слева каждого присваивания.",
+        "challengeResult": "14 14",
+        "options": [
+          "14 14",
+          "15 15",
+          "41 41",
+          "Ничего"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int value = 10;\nint Value = 15;\nvalue = value;\nConsole.WriteLine($\"{value} {Value}\");",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Регистр входит в имя переменной. Проверьте точное имя справа и слева каждого присваивания.",
+        "challengeResult": "10 15",
+        "options": [
+          "10 15",
+          "11 16",
+          "51 01",
+          "Ничего"
+        ],
+        "correctIndex": 0
+      }
+    ],
+    "challengeResult": "2 7",
+    "options": [
+      "2 7",
+      "3 8",
+      "7 2",
+      "Ничего"
+    ],
+    "correctIndex": 0,
+    "exampleResult": "10 15"
+  },
+  {
+    "id": "expand-4-bool-copy",
+    "codeDeckId": "lab4-mixed-reading",
+    "deckId": "csharp-data-types",
+    "term": "bool",
+    "exampleCode": "bool ready = true;\nbool saved = ready;\nready = true;\nConsole.WriteLine(10);\nConsole.WriteLine(saved);\nConsole.WriteLine(ready);",
+    "exampleNote": "Копия bool сохраняет значение на момент присваивания. Выводятся значения выбранных переменных, а не их имена.",
+    "kind": "Что выведет код?",
+    "challengeCode": "bool ready = true;\nbool saved = ready;\nready = false;\nConsole.WriteLine(2);\nConsole.WriteLine(saved);\nConsole.WriteLine(ready);",
+    "challengeInput": "",
+    "prompt": "Что появится в консоли?",
+    "explanation": "Копия bool сохраняет значение на момент присваивания. Выводятся значения выбранных переменных, а не их имена.",
+    "variants": [
+      {
+        "challengeCode": "bool ready = false;\nbool saved = ready;\nready = true;\nConsole.WriteLine(3);\nConsole.WriteLine(ready);\nConsole.WriteLine(saved);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Копия bool сохраняет значение на момент присваивания. Выводятся значения выбранных переменных, а не их имена.",
+        "challengeResult": "3\nTrue\nFalse",
+        "options": [
+          "3\nTrue\nFalse",
+          "False\nTrue\n3",
+          "4\nTrue\nFalse",
+          "3TrueFalse"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "bool ready = true;\nbool saved = ready;\nready = true;\nConsole.WriteLine(4);\nConsole.WriteLine(saved);\nConsole.WriteLine(ready);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Копия bool сохраняет значение на момент присваивания. Выводятся значения выбранных переменных, а не их имена.",
+        "challengeResult": "4\nTrue\nTrue",
+        "options": [
+          "4\nTrue\nTrue",
+          "True\nTrue\n4",
+          "5\nTrue\nTrue",
+          "4TrueTrue"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "bool ready = false;\nbool saved = ready;\nready = false;\nConsole.WriteLine(5);\nConsole.WriteLine(ready);\nConsole.WriteLine(saved);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Копия bool сохраняет значение на момент присваивания. Выводятся значения выбранных переменных, а не их имена.",
+        "challengeResult": "5\nFalse\nFalse",
+        "options": [
+          "5\nFalse\nFalse",
+          "False\nFalse\n5",
+          "6\nFalse\nFalse",
+          "5FalseFalse"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "bool ready = true;\nbool saved = ready;\nready = true;\nConsole.WriteLine(6);\nConsole.WriteLine(saved);\nConsole.WriteLine(ready);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Копия bool сохраняет значение на момент присваивания. Выводятся значения выбранных переменных, а не их имена.",
+        "challengeResult": "6\nTrue\nTrue",
+        "options": [
+          "6\nTrue\nTrue",
+          "True\nTrue\n6",
+          "7\nTrue\nTrue",
+          "6TrueTrue"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "bool ready = false;\nbool saved = ready;\nready = true;\nConsole.WriteLine(7);\nConsole.WriteLine(ready);\nConsole.WriteLine(saved);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Копия bool сохраняет значение на момент присваивания. Выводятся значения выбранных переменных, а не их имена.",
+        "challengeResult": "7\nTrue\nFalse",
+        "options": [
+          "7\nTrue\nFalse",
+          "False\nTrue\n7",
+          "8\nTrue\nFalse",
+          "7TrueFalse"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "bool ready = true;\nbool saved = ready;\nready = false;\nConsole.WriteLine(8);\nConsole.WriteLine(saved);\nConsole.WriteLine(ready);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Копия bool сохраняет значение на момент присваивания. Выводятся значения выбранных переменных, а не их имена.",
+        "challengeResult": "8\nTrue\nFalse",
+        "options": [
+          "8\nTrue\nFalse",
+          "False\nTrue\n8",
+          "9\nTrue\nFalse",
+          "8TrueFalse"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "bool ready = false;\nbool saved = ready;\nready = true;\nConsole.WriteLine(9);\nConsole.WriteLine(ready);\nConsole.WriteLine(saved);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Копия bool сохраняет значение на момент присваивания. Выводятся значения выбранных переменных, а не их имена.",
+        "challengeResult": "9\nTrue\nFalse",
+        "options": [
+          "9\nTrue\nFalse",
+          "False\nTrue\n9",
+          "10\nTrue\nFalse",
+          "9TrueFalse"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "bool ready = true;\nbool saved = ready;\nready = true;\nConsole.WriteLine(10);\nConsole.WriteLine(saved);\nConsole.WriteLine(ready);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Копия bool сохраняет значение на момент присваивания. Выводятся значения выбранных переменных, а не их имена.",
+        "challengeResult": "10\nTrue\nTrue",
+        "options": [
+          "10\nTrue\nTrue",
+          "True\nTrue\n10",
+          "11\nTrue\nTrue",
+          "10TrueTrue"
+        ],
+        "correctIndex": 0
+      }
+    ],
+    "challengeResult": "2\nTrue\nFalse",
+    "options": [
+      "2\nTrue\nFalse",
+      "False\nTrue\n2",
+      "3\nTrue\nFalse",
+      "2TrueFalse"
+    ],
+    "correctIndex": 0,
+    "exampleResult": "10\nTrue\nTrue"
+  },
+  {
+    "id": "expand-4-char-position",
+    "codeDeckId": "lab4-mixed-reading",
+    "deckId": "csharp-data-types",
+    "term": "char",
+    "exampleCode": "char first = 'I';\nchar second = 'S';\nConsole.WriteLine($\"{first}:{second}\");",
+    "exampleNote": "Символ подставляется в место интерполяции. Порядок символов задаётся порядком вставок в строке.",
+    "kind": "Что выведет код?",
+    "challengeCode": "char first = 'A';\nchar second = 'K';\nConsole.WriteLine($\"{first}:{second}\");",
+    "challengeInput": "",
+    "prompt": "Что появится в консоли?",
+    "explanation": "Символ подставляется в место интерполяции. Порядок символов задаётся порядком вставок в строке.",
+    "variants": [
+      {
+        "challengeCode": "char first = 'B';\nchar second = 'L';\nConsole.WriteLine($\"{second}:{first}\");",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Символ подставляется в место интерполяции. Порядок символов задаётся порядком вставок в строке.",
+        "challengeResult": "L:B",
+        "options": [
+          "L:B",
+          "B:L",
+          "Ничего",
+          "Ошибка компиляции"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "char first = 'C';\nchar second = 'M';\nConsole.WriteLine($\"{first}:{second}\");",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Символ подставляется в место интерполяции. Порядок символов задаётся порядком вставок в строке.",
+        "challengeResult": "C:M",
+        "options": [
+          "C:M",
+          "M:C",
+          "Ничего",
+          "Ошибка компиляции"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "char first = 'D';\nchar second = 'N';\nConsole.WriteLine($\"{second}:{first}\");",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Символ подставляется в место интерполяции. Порядок символов задаётся порядком вставок в строке.",
+        "challengeResult": "N:D",
+        "options": [
+          "N:D",
+          "D:N",
+          "Ничего",
+          "Ошибка компиляции"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "char first = 'E';\nchar second = 'O';\nConsole.WriteLine($\"{first}:{second}\");",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Символ подставляется в место интерполяции. Порядок символов задаётся порядком вставок в строке.",
+        "challengeResult": "E:O",
+        "options": [
+          "E:O",
+          "O:E",
+          "Ничего",
+          "Ошибка компиляции"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "char first = 'F';\nchar second = 'P';\nConsole.WriteLine($\"{second}:{first}\");",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Символ подставляется в место интерполяции. Порядок символов задаётся порядком вставок в строке.",
+        "challengeResult": "P:F",
+        "options": [
+          "P:F",
+          "F:P",
+          "Ничего",
+          "Ошибка компиляции"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "char first = 'G';\nchar second = 'Q';\nConsole.WriteLine($\"{first}:{second}\");",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Символ подставляется в место интерполяции. Порядок символов задаётся порядком вставок в строке.",
+        "challengeResult": "G:Q",
+        "options": [
+          "G:Q",
+          "Q:G",
+          "Ничего",
+          "Ошибка компиляции"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "char first = 'H';\nchar second = 'R';\nConsole.WriteLine($\"{second}:{first}\");",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Символ подставляется в место интерполяции. Порядок символов задаётся порядком вставок в строке.",
+        "challengeResult": "R:H",
+        "options": [
+          "R:H",
+          "H:R",
+          "Ничего",
+          "Ошибка компиляции"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "char first = 'I';\nchar second = 'S';\nConsole.WriteLine($\"{first}:{second}\");",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Символ подставляется в место интерполяции. Порядок символов задаётся порядком вставок в строке.",
+        "challengeResult": "I:S",
+        "options": [
+          "I:S",
+          "S:I",
+          "Ничего",
+          "Ошибка компиляции"
+        ],
+        "correctIndex": 0
+      }
+    ],
+    "challengeResult": "A:K",
+    "options": [
+      "A:K",
+      "K:A",
+      "Ничего",
+      "Ошибка компиляции"
+    ],
+    "correctIndex": 0,
+    "exampleResult": "I:S"
+  },
+  {
+    "id": "expand-4-inferred-copy",
+    "codeDeckId": "lab4-mixed-reading",
+    "deckId": "typing-and-output",
+    "term": "var",
+    "exampleCode": "var text = \"11\";\nvar saved = text;\ntext = \"16\";\nConsole.WriteLine(saved + 9);",
+    "exampleNote": "var определяет тип по начальному значению. Копия получает значение до последующего переприсваивания.",
+    "kind": "Что выведет код?",
+    "challengeCode": "var text = \"3\";\nvar saved = text;\ntext = \"8\";\nConsole.WriteLine(saved + 1);",
+    "challengeInput": "",
+    "prompt": "Что появится в консоли?",
+    "explanation": "var определяет тип по начальному значению. Копия получает значение до последующего переприсваивания.",
+    "variants": [
+      {
+        "challengeCode": "var text = \"4\";\nvar saved = text;\ntext = \"9\";\nConsole.WriteLine(text + 2);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "var определяет тип по начальному значению. Копия получает значение до последующего переприсваивания.",
+        "challengeResult": "92",
+        "options": [
+          "92",
+          "93",
+          "91",
+          "94"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "var text = \"5\";\nvar saved = text;\ntext = \"10\";\nConsole.WriteLine(saved + 3);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "var определяет тип по начальному значению. Копия получает значение до последующего переприсваивания.",
+        "challengeResult": "53",
+        "options": [
+          "53",
+          "54",
+          "52",
+          "55"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "var text = \"6\";\nvar saved = text;\ntext = \"11\";\nConsole.WriteLine(text + 4);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "var определяет тип по начальному значению. Копия получает значение до последующего переприсваивания.",
+        "challengeResult": "114",
+        "options": [
+          "114",
+          "115",
+          "113",
+          "116"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "var text = \"7\";\nvar saved = text;\ntext = \"12\";\nConsole.WriteLine(saved + 5);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "var определяет тип по начальному значению. Копия получает значение до последующего переприсваивания.",
+        "challengeResult": "75",
+        "options": [
+          "75",
+          "76",
+          "74",
+          "77"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "var text = \"8\";\nvar saved = text;\ntext = \"13\";\nConsole.WriteLine(text + 6);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "var определяет тип по начальному значению. Копия получает значение до последующего переприсваивания.",
+        "challengeResult": "136",
+        "options": [
+          "136",
+          "137",
+          "135",
+          "138"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "var text = \"9\";\nvar saved = text;\ntext = \"14\";\nConsole.WriteLine(saved + 7);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "var определяет тип по начальному значению. Копия получает значение до последующего переприсваивания.",
+        "challengeResult": "97",
+        "options": [
+          "97",
+          "98",
+          "96",
+          "99"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "var text = \"10\";\nvar saved = text;\ntext = \"15\";\nConsole.WriteLine(text + 8);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "var определяет тип по начальному значению. Копия получает значение до последующего переприсваивания.",
+        "challengeResult": "158",
+        "options": [
+          "158",
+          "159",
+          "157",
+          "160"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "var text = \"11\";\nvar saved = text;\ntext = \"16\";\nConsole.WriteLine(saved + 9);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "var определяет тип по начальному значению. Копия получает значение до последующего переприсваивания.",
+        "challengeResult": "119",
+        "options": [
+          "119",
+          "120",
+          "118",
+          "121"
+        ],
+        "correctIndex": 0
+      }
+    ],
+    "challengeResult": "31",
+    "options": [
+      "31",
+      "32",
+      "30",
+      "33"
+    ],
+    "correctIndex": 0,
+    "exampleResult": "119"
+  },
+  {
+    "id": "expand-4-output-layout",
+    "codeDeckId": "lab4-mixed-reading",
+    "deckId": "typing-and-output",
+    "term": "Console.WriteLine",
+    "exampleCode": "Console.Write(\"9\");\nConsole.WriteLine(\"10\");\nConsole.WriteLine(\"11\");\nConsole.Write(\"12\");",
+    "exampleNote": "Write оставляет курсор на строке. WriteLine переносит курсор после вывода своего значения.",
+    "kind": "Что выведет код?",
+    "challengeCode": "Console.Write(\"1\");\nConsole.WriteLine(\"2\");\nConsole.WriteLine(\"3\");\nConsole.Write(\"4\");",
+    "challengeInput": "",
+    "prompt": "Что появится в консоли?",
+    "explanation": "Write оставляет курсор на строке. WriteLine переносит курсор после вывода своего значения.",
+    "variants": [
+      {
+        "challengeCode": "Console.Write(\"2\");\nConsole.Write(\"3\");\nConsole.WriteLine(\"4\");\nConsole.Write(\"5\");",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Write оставляет курсор на строке. WriteLine переносит курсор после вывода своего значения.",
+        "challengeResult": "234\n5",
+        "options": [
+          "234\n5",
+          "5\n234",
+          "235\n6",
+          "2345"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "Console.Write(\"3\");\nConsole.WriteLine(\"4\");\nConsole.WriteLine(\"5\");\nConsole.Write(\"6\");",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Write оставляет курсор на строке. WriteLine переносит курсор после вывода своего значения.",
+        "challengeResult": "34\n5\n6",
+        "options": [
+          "34\n5\n6",
+          "6\n5\n34",
+          "35\n6\n7",
+          "3456"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "Console.Write(\"4\");\nConsole.Write(\"5\");\nConsole.WriteLine(\"6\");\nConsole.Write(\"7\");",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Write оставляет курсор на строке. WriteLine переносит курсор после вывода своего значения.",
+        "challengeResult": "456\n7",
+        "options": [
+          "456\n7",
+          "7\n456",
+          "457\n8",
+          "4567"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "Console.Write(\"5\");\nConsole.WriteLine(\"6\");\nConsole.WriteLine(\"7\");\nConsole.Write(\"8\");",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Write оставляет курсор на строке. WriteLine переносит курсор после вывода своего значения.",
+        "challengeResult": "56\n7\n8",
+        "options": [
+          "56\n7\n8",
+          "8\n7\n56",
+          "57\n8\n9",
+          "5678"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "Console.Write(\"6\");\nConsole.Write(\"7\");\nConsole.WriteLine(\"8\");\nConsole.Write(\"9\");",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Write оставляет курсор на строке. WriteLine переносит курсор после вывода своего значения.",
+        "challengeResult": "678\n9",
+        "options": [
+          "678\n9",
+          "9\n678",
+          "679\n10",
+          "6789"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "Console.Write(\"7\");\nConsole.WriteLine(\"8\");\nConsole.WriteLine(\"9\");\nConsole.Write(\"10\");",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Write оставляет курсор на строке. WriteLine переносит курсор после вывода своего значения.",
+        "challengeResult": "78\n9\n10",
+        "options": [
+          "78\n9\n10",
+          "10\n9\n78",
+          "79\n10\n11",
+          "78910"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "Console.Write(\"8\");\nConsole.Write(\"9\");\nConsole.WriteLine(\"10\");\nConsole.Write(\"11\");",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Write оставляет курсор на строке. WriteLine переносит курсор после вывода своего значения.",
+        "challengeResult": "8910\n11",
+        "options": [
+          "8910\n11",
+          "11\n8910",
+          "8911\n12",
+          "891011"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "Console.Write(\"9\");\nConsole.WriteLine(\"10\");\nConsole.WriteLine(\"11\");\nConsole.Write(\"12\");",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Write оставляет курсор на строке. WriteLine переносит курсор после вывода своего значения.",
+        "challengeResult": "910\n11\n12",
+        "options": [
+          "910\n11\n12",
+          "12\n11\n910",
+          "911\n12\n13",
+          "9101112"
+        ],
+        "correctIndex": 0
+      }
+    ],
+    "challengeResult": "12\n3\n4",
+    "options": [
+      "12\n3\n4",
+      "4\n3\n12",
+      "13\n4\n5",
+      "1234"
+    ],
+    "correctIndex": 0,
+    "exampleResult": "910\n11\n12"
+  },
+  {
+    "id": "expand-4-literal-parentheses",
+    "codeDeckId": "lab4-mixed-reading",
+    "deckId": "variables-values",
+    "term": "Литерал",
+    "exampleCode": "Console.WriteLine(\"Ответ: \" + 10 + 12);",
+    "exampleNote": "Скобки определяют, сложатся ли числовые литералы до соединения со строкой.",
+    "kind": "Что выведет код?",
+    "challengeCode": "Console.WriteLine(\"Ответ: \" + 2 + 4);",
+    "challengeInput": "",
+    "prompt": "Что появится в консоли?",
+    "explanation": "Скобки определяют, сложатся ли числовые литералы до соединения со строкой.",
+    "variants": [
+      {
+        "challengeCode": "Console.WriteLine(\"Ответ: \" + (3 + 5));",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Скобки определяют, сложатся ли числовые литералы до соединения со строкой.",
+        "challengeResult": "Ответ: 8",
+        "options": [
+          "Ответ: 8",
+          "Ответ: 9",
+          "8 :тевтО",
+          "Ничего"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "Console.WriteLine(\"Ответ: \" + 4 + 6);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Скобки определяют, сложатся ли числовые литералы до соединения со строкой.",
+        "challengeResult": "Ответ: 46",
+        "options": [
+          "Ответ: 46",
+          "Ответ: 47",
+          "64 :тевтО",
+          "Ничего"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "Console.WriteLine(\"Ответ: \" + (5 + 7));",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Скобки определяют, сложатся ли числовые литералы до соединения со строкой.",
+        "challengeResult": "Ответ: 12",
+        "options": [
+          "Ответ: 12",
+          "Ответ: 13",
+          "21 :тевтО",
+          "Ничего"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "Console.WriteLine(\"Ответ: \" + 6 + 8);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Скобки определяют, сложатся ли числовые литералы до соединения со строкой.",
+        "challengeResult": "Ответ: 68",
+        "options": [
+          "Ответ: 68",
+          "Ответ: 69",
+          "86 :тевтО",
+          "Ничего"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "Console.WriteLine(\"Ответ: \" + (7 + 9));",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Скобки определяют, сложатся ли числовые литералы до соединения со строкой.",
+        "challengeResult": "Ответ: 16",
+        "options": [
+          "Ответ: 16",
+          "Ответ: 17",
+          "61 :тевтО",
+          "Ничего"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "Console.WriteLine(\"Ответ: \" + 8 + 10);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Скобки определяют, сложатся ли числовые литералы до соединения со строкой.",
+        "challengeResult": "Ответ: 810",
+        "options": [
+          "Ответ: 810",
+          "Ответ: 811",
+          "018 :тевтО",
+          "Ничего"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "Console.WriteLine(\"Ответ: \" + (9 + 11));",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Скобки определяют, сложатся ли числовые литералы до соединения со строкой.",
+        "challengeResult": "Ответ: 20",
+        "options": [
+          "Ответ: 20",
+          "Ответ: 21",
+          "02 :тевтО",
+          "Ничего"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "Console.WriteLine(\"Ответ: \" + 10 + 12);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Скобки определяют, сложатся ли числовые литералы до соединения со строкой.",
+        "challengeResult": "Ответ: 1012",
+        "options": [
+          "Ответ: 1012",
+          "Ответ: 1013",
+          "2101 :тевтО",
+          "Ничего"
+        ],
+        "correctIndex": 0
+      }
+    ],
+    "challengeResult": "Ответ: 24",
+    "options": [
+      "Ответ: 24",
+      "Ответ: 25",
+      "42 :тевтО",
+      "Ничего"
+    ],
+    "correctIndex": 0,
+    "exampleResult": "Ответ: 1012"
+  },
+  {
+    "id": "expand-5-cast-side",
+    "codeDeckId": "lab5-mixed-reading",
+    "deckId": "input-operations-conversions",
+    "term": "Явное преобразование",
+    "exampleCode": "int value = 23;\ndouble half = (double)value / 2;\nConsole.WriteLine(half * 2);",
+    "exampleNote": "Если приведение находится после целочисленного деления, потерянная дробная часть не восстанавливается.",
+    "kind": "Что выведет код?",
+    "challengeCode": "int value = 7;\ndouble half = (double)value / 2;\nConsole.WriteLine(half * 2);",
+    "challengeInput": "",
+    "prompt": "Что появится в консоли?",
+    "explanation": "Если приведение находится после целочисленного деления, потерянная дробная часть не восстанавливается.",
+    "variants": [
+      {
+        "challengeCode": "int value = 9;\ndouble half = (double)(value / 2);\nConsole.WriteLine(half * 2);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Если приведение находится после целочисленного деления, потерянная дробная часть не восстанавливается.",
+        "challengeResult": "8",
+        "options": [
+          "8",
+          "9",
+          "7",
+          "10"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int value = 11;\ndouble half = (double)value / 2;\nConsole.WriteLine(half * 2);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Если приведение находится после целочисленного деления, потерянная дробная часть не восстанавливается.",
+        "challengeResult": "11",
+        "options": [
+          "11",
+          "12",
+          "10",
+          "13"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int value = 13;\ndouble half = (double)(value / 2);\nConsole.WriteLine(half * 2);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Если приведение находится после целочисленного деления, потерянная дробная часть не восстанавливается.",
+        "challengeResult": "12",
+        "options": [
+          "12",
+          "13",
+          "11",
+          "14"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int value = 15;\ndouble half = (double)value / 2;\nConsole.WriteLine(half * 2);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Если приведение находится после целочисленного деления, потерянная дробная часть не восстанавливается.",
+        "challengeResult": "15",
+        "options": [
+          "15",
+          "16",
+          "14",
+          "17"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int value = 17;\ndouble half = (double)(value / 2);\nConsole.WriteLine(half * 2);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Если приведение находится после целочисленного деления, потерянная дробная часть не восстанавливается.",
+        "challengeResult": "16",
+        "options": [
+          "16",
+          "17",
+          "15",
+          "18"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int value = 19;\ndouble half = (double)value / 2;\nConsole.WriteLine(half * 2);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Если приведение находится после целочисленного деления, потерянная дробная часть не восстанавливается.",
+        "challengeResult": "19",
+        "options": [
+          "19",
+          "20",
+          "18",
+          "21"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int value = 21;\ndouble half = (double)(value / 2);\nConsole.WriteLine(half * 2);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Если приведение находится после целочисленного деления, потерянная дробная часть не восстанавливается.",
+        "challengeResult": "20",
+        "options": [
+          "20",
+          "21",
+          "19",
+          "22"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int value = 23;\ndouble half = (double)value / 2;\nConsole.WriteLine(half * 2);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Если приведение находится после целочисленного деления, потерянная дробная часть не восстанавливается.",
+        "challengeResult": "23",
+        "options": [
+          "23",
+          "24",
+          "22",
+          "25"
+        ],
+        "correctIndex": 0
+      }
+    ],
+    "challengeResult": "7",
+    "options": [
+      "7",
+      "8",
+      "6",
+      "9"
+    ],
+    "correctIndex": 0,
+    "exampleResult": "23"
+  },
+  {
+    "id": "expand-5-division-sign",
+    "codeDeckId": "lab5-mixed-reading",
+    "deckId": "input-operations-conversions",
+    "term": "Целочисленное деление",
+    "exampleCode": "int left = 1 * 35;\nint right = 4;\nConsole.WriteLine(left / right);\nConsole.WriteLine(left % right);",
+    "exampleNote": "Целочисленное деление отбрасывает дробную часть в направлении нуля. Знак определяется знаками операндов.",
+    "kind": "Что выведет код?",
+    "challengeCode": "int left = 1 * 11;\nint right = 2;\nConsole.WriteLine(left / right);\nConsole.WriteLine(left % right);",
+    "challengeInput": "",
+    "prompt": "Что появится в консоли?",
+    "explanation": "Целочисленное деление отбрасывает дробную часть в направлении нуля. Знак определяется знаками операндов.",
+    "variants": [
+      {
+        "challengeCode": "int left = -1 * 14;\nint right = 3;\nConsole.WriteLine(left / right);\nConsole.WriteLine(left % right);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Целочисленное деление отбрасывает дробную часть в направлении нуля. Знак определяется знаками операндов.",
+        "challengeResult": "-4\n-2",
+        "options": [
+          "-4\n-2",
+          "-2\n-4",
+          "-5\n-3",
+          "-4-2"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int left = 1 * 17;\nint right = 4;\nConsole.WriteLine(left / right);\nConsole.WriteLine(left % right);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Целочисленное деление отбрасывает дробную часть в направлении нуля. Знак определяется знаками операндов.",
+        "challengeResult": "4\n1",
+        "options": [
+          "4\n1",
+          "1\n4",
+          "5\n2",
+          "41"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int left = -1 * 20;\nint right = 2;\nConsole.WriteLine(left / right);\nConsole.WriteLine(left % right);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Целочисленное деление отбрасывает дробную часть в направлении нуля. Знак определяется знаками операндов.",
+        "challengeResult": "-10\n0",
+        "options": [
+          "-10\n0",
+          "0\n-10",
+          "-11\n1",
+          "-100"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int left = 1 * 23;\nint right = 3;\nConsole.WriteLine(left / right);\nConsole.WriteLine(left % right);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Целочисленное деление отбрасывает дробную часть в направлении нуля. Знак определяется знаками операндов.",
+        "challengeResult": "7\n2",
+        "options": [
+          "7\n2",
+          "2\n7",
+          "8\n3",
+          "72"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int left = -1 * 26;\nint right = 4;\nConsole.WriteLine(left / right);\nConsole.WriteLine(left % right);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Целочисленное деление отбрасывает дробную часть в направлении нуля. Знак определяется знаками операндов.",
+        "challengeResult": "-6\n-2",
+        "options": [
+          "-6\n-2",
+          "-2\n-6",
+          "-7\n-3",
+          "-6-2"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int left = 1 * 29;\nint right = 2;\nConsole.WriteLine(left / right);\nConsole.WriteLine(left % right);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Целочисленное деление отбрасывает дробную часть в направлении нуля. Знак определяется знаками операндов.",
+        "challengeResult": "14\n1",
+        "options": [
+          "14\n1",
+          "1\n14",
+          "15\n2",
+          "141"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int left = -1 * 32;\nint right = 3;\nConsole.WriteLine(left / right);\nConsole.WriteLine(left % right);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Целочисленное деление отбрасывает дробную часть в направлении нуля. Знак определяется знаками операндов.",
+        "challengeResult": "-10\n-2",
+        "options": [
+          "-10\n-2",
+          "-2\n-10",
+          "-11\n-3",
+          "-10-2"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int left = 1 * 35;\nint right = 4;\nConsole.WriteLine(left / right);\nConsole.WriteLine(left % right);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Целочисленное деление отбрасывает дробную часть в направлении нуля. Знак определяется знаками операндов.",
+        "challengeResult": "8\n3",
+        "options": [
+          "8\n3",
+          "3\n8",
+          "9\n4",
+          "83"
+        ],
+        "correctIndex": 0
+      }
+    ],
+    "challengeResult": "5\n1",
+    "options": [
+      "5\n1",
+      "1\n5",
+      "6\n2",
+      "51"
+    ],
+    "correctIndex": 0,
+    "exampleResult": "8\n3"
+  },
+  {
+    "id": "expand-5-compound-order",
+    "codeDeckId": "lab5-mixed-reading",
+    "deckId": "input-operations-conversions",
+    "term": "Составное присваивание",
+    "exampleCode": "int value = 11;\nvalue += 3;\nvalue *= 2;\nConsole.WriteLine(value);",
+    "exampleNote": "Каждая операция использует результат предыдущей строки. Умножение до прибавления и после него даёт разные результаты.",
+    "kind": "Что выведет код?",
+    "challengeCode": "int value = 3;\nvalue += 3;\nvalue *= 2;\nConsole.WriteLine(value);",
+    "challengeInput": "",
+    "prompt": "Что появится в консоли?",
+    "explanation": "Каждая операция использует результат предыдущей строки. Умножение до прибавления и после него даёт разные результаты.",
+    "variants": [
+      {
+        "challengeCode": "int value = 4;\nvalue *= 2;\nvalue += 3;\nConsole.WriteLine(value);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Каждая операция использует результат предыдущей строки. Умножение до прибавления и после него даёт разные результаты.",
+        "challengeResult": "11",
+        "options": [
+          "11",
+          "12",
+          "10",
+          "13"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int value = 5;\nvalue += 3;\nvalue *= 2;\nConsole.WriteLine(value);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Каждая операция использует результат предыдущей строки. Умножение до прибавления и после него даёт разные результаты.",
+        "challengeResult": "16",
+        "options": [
+          "16",
+          "17",
+          "15",
+          "18"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int value = 6;\nvalue *= 2;\nvalue += 3;\nConsole.WriteLine(value);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Каждая операция использует результат предыдущей строки. Умножение до прибавления и после него даёт разные результаты.",
+        "challengeResult": "15",
+        "options": [
+          "15",
+          "16",
+          "14",
+          "17"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int value = 7;\nvalue += 3;\nvalue *= 2;\nConsole.WriteLine(value);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Каждая операция использует результат предыдущей строки. Умножение до прибавления и после него даёт разные результаты.",
+        "challengeResult": "20",
+        "options": [
+          "20",
+          "21",
+          "19",
+          "22"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int value = 8;\nvalue *= 2;\nvalue += 3;\nConsole.WriteLine(value);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Каждая операция использует результат предыдущей строки. Умножение до прибавления и после него даёт разные результаты.",
+        "challengeResult": "19",
+        "options": [
+          "19",
+          "20",
+          "18",
+          "21"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int value = 9;\nvalue += 3;\nvalue *= 2;\nConsole.WriteLine(value);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Каждая операция использует результат предыдущей строки. Умножение до прибавления и после него даёт разные результаты.",
+        "challengeResult": "24",
+        "options": [
+          "24",
+          "25",
+          "23",
+          "26"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int value = 10;\nvalue *= 2;\nvalue += 3;\nConsole.WriteLine(value);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Каждая операция использует результат предыдущей строки. Умножение до прибавления и после него даёт разные результаты.",
+        "challengeResult": "23",
+        "options": [
+          "23",
+          "24",
+          "22",
+          "25"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int value = 11;\nvalue += 3;\nvalue *= 2;\nConsole.WriteLine(value);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Каждая операция использует результат предыдущей строки. Умножение до прибавления и после него даёт разные результаты.",
+        "challengeResult": "28",
+        "options": [
+          "28",
+          "29",
+          "27",
+          "30"
+        ],
+        "correctIndex": 0
+      }
+    ],
+    "challengeResult": "12",
+    "options": [
+      "12",
+      "13",
+      "11",
+      "14"
+    ],
+    "correctIndex": 0,
+    "exampleResult": "28"
+  },
+  {
+    "id": "expand-5-parse-location",
+    "codeDeckId": "lab5-mixed-reading",
+    "deckId": "input-operations-conversions",
+    "term": "Преобразование типов",
+    "exampleCode": "string text = \"13\";\nConsole.WriteLine(int.Parse(text) + 10);",
+    "exampleNote": "После Parse получается число. Без преобразования строковый операнд заставляет + соединять текст.",
+    "kind": "Что выведет код?",
+    "challengeCode": "string text = \"5\";\nConsole.WriteLine(int.Parse(text) + 2);",
+    "challengeInput": "",
+    "prompt": "Что появится в консоли?",
+    "explanation": "После Parse получается число. Без преобразования строковый операнд заставляет + соединять текст.",
+    "variants": [
+      {
+        "challengeCode": "string text = \"6\";\nConsole.WriteLine(text + 3);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "После Parse получается число. Без преобразования строковый операнд заставляет + соединять текст.",
+        "challengeResult": "63",
+        "options": [
+          "63",
+          "64",
+          "62",
+          "65"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "string text = \"7\";\nConsole.WriteLine(int.Parse(text) + 4);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "После Parse получается число. Без преобразования строковый операнд заставляет + соединять текст.",
+        "challengeResult": "11",
+        "options": [
+          "11",
+          "12",
+          "10",
+          "13"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "string text = \"8\";\nConsole.WriteLine(text + 5);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "После Parse получается число. Без преобразования строковый операнд заставляет + соединять текст.",
+        "challengeResult": "85",
+        "options": [
+          "85",
+          "86",
+          "84",
+          "87"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "string text = \"9\";\nConsole.WriteLine(int.Parse(text) + 6);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "После Parse получается число. Без преобразования строковый операнд заставляет + соединять текст.",
+        "challengeResult": "15",
+        "options": [
+          "15",
+          "16",
+          "14",
+          "17"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "string text = \"10\";\nConsole.WriteLine(text + 7);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "После Parse получается число. Без преобразования строковый операнд заставляет + соединять текст.",
+        "challengeResult": "107",
+        "options": [
+          "107",
+          "108",
+          "106",
+          "109"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "string text = \"11\";\nConsole.WriteLine(int.Parse(text) + 8);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "После Parse получается число. Без преобразования строковый операнд заставляет + соединять текст.",
+        "challengeResult": "19",
+        "options": [
+          "19",
+          "20",
+          "18",
+          "21"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "string text = \"12\";\nConsole.WriteLine(text + 9);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "После Parse получается число. Без преобразования строковый операнд заставляет + соединять текст.",
+        "challengeResult": "129",
+        "options": [
+          "129",
+          "130",
+          "128",
+          "131"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "string text = \"13\";\nConsole.WriteLine(int.Parse(text) + 10);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "После Parse получается число. Без преобразования строковый операнд заставляет + соединять текст.",
+        "challengeResult": "23",
+        "options": [
+          "23",
+          "24",
+          "22",
+          "25"
+        ],
+        "correctIndex": 0
+      }
+    ],
+    "challengeResult": "7",
+    "options": [
+      "7",
+      "8",
+      "6",
+      "9"
+    ],
+    "correctIndex": 0,
+    "exampleResult": "23"
+  },
+  {
+    "id": "expand-5-group-operations",
+    "codeDeckId": "lab5-mixed-reading",
+    "deckId": "input-operations-conversions",
+    "term": "Скобки в выражении",
+    "exampleCode": "int a = 10;\nint b = 12;\nConsole.WriteLine((a + b) * 3);\nConsole.WriteLine(a + b);",
+    "exampleNote": "Сначала вычисляют скобки, затем умножение и деление. Операции одного приоритета выполняются слева направо.",
+    "kind": "Что выведет код?",
+    "challengeCode": "int a = 2;\nint b = 4;\nConsole.WriteLine((a + b) * 3);\nConsole.WriteLine(a + b);",
+    "challengeInput": "",
+    "prompt": "Что появится в консоли?",
+    "explanation": "Сначала вычисляют скобки, затем умножение и деление. Операции одного приоритета выполняются слева направо.",
+    "variants": [
+      {
+        "challengeCode": "int a = 3;\nint b = 5;\nConsole.WriteLine(a + b * 3);\nConsole.WriteLine(a + b);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Сначала вычисляют скобки, затем умножение и деление. Операции одного приоритета выполняются слева направо.",
+        "challengeResult": "18\n8",
+        "options": [
+          "18\n8",
+          "8\n18",
+          "19\n9",
+          "188"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int a = 4;\nint b = 6;\nConsole.WriteLine((a + b) * 3);\nConsole.WriteLine(a + b);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Сначала вычисляют скобки, затем умножение и деление. Операции одного приоритета выполняются слева направо.",
+        "challengeResult": "30\n10",
+        "options": [
+          "30\n10",
+          "10\n30",
+          "31\n11",
+          "3010"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int a = 5;\nint b = 7;\nConsole.WriteLine(a + b * 3);\nConsole.WriteLine(a + b);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Сначала вычисляют скобки, затем умножение и деление. Операции одного приоритета выполняются слева направо.",
+        "challengeResult": "26\n12",
+        "options": [
+          "26\n12",
+          "12\n26",
+          "27\n13",
+          "2612"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int a = 6;\nint b = 8;\nConsole.WriteLine((a + b) * 3);\nConsole.WriteLine(a + b);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Сначала вычисляют скобки, затем умножение и деление. Операции одного приоритета выполняются слева направо.",
+        "challengeResult": "42\n14",
+        "options": [
+          "42\n14",
+          "14\n42",
+          "43\n15",
+          "4214"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int a = 7;\nint b = 9;\nConsole.WriteLine(a + b * 3);\nConsole.WriteLine(a + b);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Сначала вычисляют скобки, затем умножение и деление. Операции одного приоритета выполняются слева направо.",
+        "challengeResult": "34\n16",
+        "options": [
+          "34\n16",
+          "16\n34",
+          "35\n17",
+          "3416"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int a = 8;\nint b = 10;\nConsole.WriteLine((a + b) * 3);\nConsole.WriteLine(a + b);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Сначала вычисляют скобки, затем умножение и деление. Операции одного приоритета выполняются слева направо.",
+        "challengeResult": "54\n18",
+        "options": [
+          "54\n18",
+          "18\n54",
+          "55\n19",
+          "5418"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int a = 9;\nint b = 11;\nConsole.WriteLine(a + b * 3);\nConsole.WriteLine(a + b);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Сначала вычисляют скобки, затем умножение и деление. Операции одного приоритета выполняются слева направо.",
+        "challengeResult": "42\n20",
+        "options": [
+          "42\n20",
+          "20\n42",
+          "43\n21",
+          "4220"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int a = 10;\nint b = 12;\nConsole.WriteLine((a + b) * 3);\nConsole.WriteLine(a + b);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Сначала вычисляют скобки, затем умножение и деление. Операции одного приоритета выполняются слева направо.",
+        "challengeResult": "66\n22",
+        "options": [
+          "66\n22",
+          "22\n66",
+          "67\n23",
+          "6622"
+        ],
+        "correctIndex": 0
+      }
+    ],
+    "challengeResult": "18\n6",
+    "options": [
+      "18\n6",
+      "6\n18",
+      "19\n7",
+      "186"
+    ],
+    "correctIndex": 0,
+    "exampleResult": "66\n22"
+  },
+  {
+    "id": "expand-5-negative-cast",
+    "codeDeckId": "lab5-mixed-reading",
+    "deckId": "input-operations-conversions",
+    "term": "Потеря данных",
+    "exampleCode": "double value = -11.8;\nint whole = (int)value;\nConsole.WriteLine(whole + 2);",
+    "exampleNote": "Приведение double к int отбрасывает дробную часть к нулю. Оно не округляет до ближайшего целого.",
+    "kind": "Что выведет код?",
+    "challengeCode": "double value = -3.8;\nint whole = (int)value;\nConsole.WriteLine(whole + 2);",
+    "challengeInput": "",
+    "prompt": "Что появится в консоли?",
+    "explanation": "Приведение double к int отбрасывает дробную часть к нулю. Оно не округляет до ближайшего целого.",
+    "variants": [
+      {
+        "challengeCode": "double value = -4.8;\nint whole = (int)value;\nConsole.WriteLine(whole - 2);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Приведение double к int отбрасывает дробную часть к нулю. Оно не округляет до ближайшего целого.",
+        "challengeResult": "-6",
+        "options": [
+          "-6",
+          "-5",
+          "-7",
+          "-4"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "double value = -5.8;\nint whole = (int)value;\nConsole.WriteLine(whole + 2);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Приведение double к int отбрасывает дробную часть к нулю. Оно не округляет до ближайшего целого.",
+        "challengeResult": "-3",
+        "options": [
+          "-3",
+          "-2",
+          "-4",
+          "-1"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "double value = -6.8;\nint whole = (int)value;\nConsole.WriteLine(whole - 2);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Приведение double к int отбрасывает дробную часть к нулю. Оно не округляет до ближайшего целого.",
+        "challengeResult": "-8",
+        "options": [
+          "-8",
+          "-7",
+          "-9",
+          "-6"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "double value = -7.8;\nint whole = (int)value;\nConsole.WriteLine(whole + 2);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Приведение double к int отбрасывает дробную часть к нулю. Оно не округляет до ближайшего целого.",
+        "challengeResult": "-5",
+        "options": [
+          "-5",
+          "-4",
+          "-6",
+          "-3"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "double value = -8.8;\nint whole = (int)value;\nConsole.WriteLine(whole - 2);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Приведение double к int отбрасывает дробную часть к нулю. Оно не округляет до ближайшего целого.",
+        "challengeResult": "-10",
+        "options": [
+          "-10",
+          "-9",
+          "-11",
+          "-8"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "double value = -9.8;\nint whole = (int)value;\nConsole.WriteLine(whole + 2);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Приведение double к int отбрасывает дробную часть к нулю. Оно не округляет до ближайшего целого.",
+        "challengeResult": "-7",
+        "options": [
+          "-7",
+          "-6",
+          "-8",
+          "-5"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "double value = -10.8;\nint whole = (int)value;\nConsole.WriteLine(whole - 2);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Приведение double к int отбрасывает дробную часть к нулю. Оно не округляет до ближайшего целого.",
+        "challengeResult": "-12",
+        "options": [
+          "-12",
+          "-11",
+          "-13",
+          "-10"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "double value = -11.8;\nint whole = (int)value;\nConsole.WriteLine(whole + 2);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Приведение double к int отбрасывает дробную часть к нулю. Оно не округляет до ближайшего целого.",
+        "challengeResult": "-9",
+        "options": [
+          "-9",
+          "-8",
+          "-10",
+          "-7"
+        ],
+        "correctIndex": 0
+      }
+    ],
+    "challengeResult": "-1",
+    "options": [
+      "-1",
+      "0",
+      "-2",
+      "1"
+    ],
+    "correctIndex": 0,
+    "exampleResult": "-9"
+  },
+  {
+    "id": "expand-5-saved-expression",
+    "codeDeckId": "lab5-mixed-reading",
+    "deckId": "input-operations-conversions",
+    "term": "Выражение",
+    "exampleCode": "int x = 10;\nint saved = x * 3;\nx *= 2;\nConsole.WriteLine(saved);\nConsole.WriteLine(x);",
+    "exampleNote": "Результат выражения сохраняется при присваивании и не пересчитывается автоматически.",
+    "kind": "Что выведет код?",
+    "challengeCode": "int x = 2;\nint saved = x * 3;\nx *= 2;\nConsole.WriteLine(saved);\nConsole.WriteLine(x);",
+    "challengeInput": "",
+    "prompt": "Что появится в консоли?",
+    "explanation": "Результат выражения сохраняется при присваивании и не пересчитывается автоматически.",
+    "variants": [
+      {
+        "challengeCode": "int x = 3;\nint saved = x * 3;\nx += 2;\nConsole.WriteLine(saved);\nConsole.WriteLine(x);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Результат выражения сохраняется при присваивании и не пересчитывается автоматически.",
+        "challengeResult": "9\n5",
+        "options": [
+          "9\n5",
+          "5\n9",
+          "10\n6",
+          "95"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int x = 4;\nint saved = x * 3;\nx *= 2;\nConsole.WriteLine(saved);\nConsole.WriteLine(x);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Результат выражения сохраняется при присваивании и не пересчитывается автоматически.",
+        "challengeResult": "12\n8",
+        "options": [
+          "12\n8",
+          "8\n12",
+          "13\n9",
+          "128"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int x = 5;\nint saved = x * 3;\nx += 2;\nConsole.WriteLine(saved);\nConsole.WriteLine(x);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Результат выражения сохраняется при присваивании и не пересчитывается автоматически.",
+        "challengeResult": "15\n7",
+        "options": [
+          "15\n7",
+          "7\n15",
+          "16\n8",
+          "157"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int x = 6;\nint saved = x * 3;\nx *= 2;\nConsole.WriteLine(saved);\nConsole.WriteLine(x);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Результат выражения сохраняется при присваивании и не пересчитывается автоматически.",
+        "challengeResult": "18\n12",
+        "options": [
+          "18\n12",
+          "12\n18",
+          "19\n13",
+          "1812"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int x = 7;\nint saved = x * 3;\nx += 2;\nConsole.WriteLine(saved);\nConsole.WriteLine(x);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Результат выражения сохраняется при присваивании и не пересчитывается автоматически.",
+        "challengeResult": "21\n9",
+        "options": [
+          "21\n9",
+          "9\n21",
+          "22\n10",
+          "219"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int x = 8;\nint saved = x * 3;\nx *= 2;\nConsole.WriteLine(saved);\nConsole.WriteLine(x);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Результат выражения сохраняется при присваивании и не пересчитывается автоматически.",
+        "challengeResult": "24\n16",
+        "options": [
+          "24\n16",
+          "16\n24",
+          "25\n17",
+          "2416"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int x = 9;\nint saved = x * 3;\nx += 2;\nConsole.WriteLine(saved);\nConsole.WriteLine(x);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Результат выражения сохраняется при присваивании и не пересчитывается автоматически.",
+        "challengeResult": "27\n11",
+        "options": [
+          "27\n11",
+          "11\n27",
+          "28\n12",
+          "2711"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int x = 10;\nint saved = x * 3;\nx *= 2;\nConsole.WriteLine(saved);\nConsole.WriteLine(x);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Результат выражения сохраняется при присваивании и не пересчитывается автоматически.",
+        "challengeResult": "30\n20",
+        "options": [
+          "30\n20",
+          "20\n30",
+          "31\n21",
+          "3020"
+        ],
+        "correctIndex": 0
+      }
+    ],
+    "challengeResult": "6\n4",
+    "options": [
+      "6\n4",
+      "4\n6",
+      "7\n5",
+      "64"
+    ],
+    "correctIndex": 0,
+    "exampleResult": "30\n20"
+  },
+  {
+    "id": "expand-5-remainder-order",
+    "codeDeckId": "lab5-mixed-reading",
+    "deckId": "input-operations-conversions",
+    "term": "Остаток от деления",
+    "exampleCode": "int value = 22;\nConsole.WriteLine(value + 3 % 5);",
+    "exampleNote": "Остаток вычисляется раньше сложения. Скобки могут изменить делимое и итоговый результат.",
+    "kind": "Что выведет код?",
+    "challengeCode": "int value = 14;\nConsole.WriteLine(value + 3 % 5);",
+    "challengeInput": "",
+    "prompt": "Что появится в консоли?",
+    "explanation": "Остаток вычисляется раньше сложения. Скобки могут изменить делимое и итоговый результат.",
+    "variants": [
+      {
+        "challengeCode": "int value = 15;\nConsole.WriteLine((value + 3) % 5);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Остаток вычисляется раньше сложения. Скобки могут изменить делимое и итоговый результат.",
+        "challengeResult": "3",
+        "options": [
+          "3",
+          "4",
+          "2",
+          "5"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int value = 16;\nConsole.WriteLine(value + 3 % 5);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Остаток вычисляется раньше сложения. Скобки могут изменить делимое и итоговый результат.",
+        "challengeResult": "19",
+        "options": [
+          "19",
+          "20",
+          "18",
+          "21"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int value = 17;\nConsole.WriteLine((value + 3) % 5);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Остаток вычисляется раньше сложения. Скобки могут изменить делимое и итоговый результат.",
+        "challengeResult": "0",
+        "options": [
+          "0",
+          "1",
+          "-1",
+          "2"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int value = 18;\nConsole.WriteLine(value + 3 % 5);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Остаток вычисляется раньше сложения. Скобки могут изменить делимое и итоговый результат.",
+        "challengeResult": "21",
+        "options": [
+          "21",
+          "22",
+          "20",
+          "23"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int value = 19;\nConsole.WriteLine((value + 3) % 5);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Остаток вычисляется раньше сложения. Скобки могут изменить делимое и итоговый результат.",
+        "challengeResult": "2",
+        "options": [
+          "2",
+          "3",
+          "1",
+          "4"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int value = 20;\nConsole.WriteLine(value + 3 % 5);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Остаток вычисляется раньше сложения. Скобки могут изменить делимое и итоговый результат.",
+        "challengeResult": "23",
+        "options": [
+          "23",
+          "24",
+          "22",
+          "25"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int value = 21;\nConsole.WriteLine((value + 3) % 5);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Остаток вычисляется раньше сложения. Скобки могут изменить делимое и итоговый результат.",
+        "challengeResult": "4",
+        "options": [
+          "4",
+          "5",
+          "3",
+          "6"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int value = 22;\nConsole.WriteLine(value + 3 % 5);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Остаток вычисляется раньше сложения. Скобки могут изменить делимое и итоговый результат.",
+        "challengeResult": "25",
+        "options": [
+          "25",
+          "26",
+          "24",
+          "27"
+        ],
+        "correctIndex": 0
+      }
+    ],
+    "challengeResult": "17",
+    "options": [
+      "17",
+      "18",
+      "16",
+      "19"
+    ],
+    "correctIndex": 0,
+    "exampleResult": "25"
+  },
+  {
+    "id": "expand-5-read-two",
+    "codeDeckId": "lab5-mixed-reading",
+    "deckId": "input-operations-conversions",
+    "term": "Console.ReadLine",
+    "exampleCode": "int first = int.Parse(Console.ReadLine());\nint second = int.Parse(Console.ReadLine());\nConsole.WriteLine(first - second);",
+    "exampleNote": "Каждый ReadLine читает следующую строку. Первая переменная получает первую запись, вторая — вторую.",
+    "exampleInput": "25\n10",
+    "kind": "Что выведет код?",
+    "challengeCode": "int first = int.Parse(Console.ReadLine());\nint second = int.Parse(Console.ReadLine());\nConsole.WriteLine(first - second);",
+    "challengeInput": "9\n2",
+    "prompt": "Что появится в консоли?",
+    "explanation": "Каждый ReadLine читает следующую строку. Первая переменная получает первую запись, вторая — вторую.",
+    "variants": [
+      {
+        "challengeCode": "int first = int.Parse(Console.ReadLine());\nint second = int.Parse(Console.ReadLine());\nConsole.WriteLine(second - first);",
+        "challengeInput": "11\n3",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Каждый ReadLine читает следующую строку. Первая переменная получает первую запись, вторая — вторую.",
+        "challengeResult": "-8",
+        "options": [
+          "-8",
+          "-7",
+          "-9",
+          "-6"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int first = int.Parse(Console.ReadLine());\nint second = int.Parse(Console.ReadLine());\nConsole.WriteLine(first - second);",
+        "challengeInput": "13\n4",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Каждый ReadLine читает следующую строку. Первая переменная получает первую запись, вторая — вторую.",
+        "challengeResult": "9",
+        "options": [
+          "9",
+          "10",
+          "8",
+          "11"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int first = int.Parse(Console.ReadLine());\nint second = int.Parse(Console.ReadLine());\nConsole.WriteLine(second - first);",
+        "challengeInput": "15\n5",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Каждый ReadLine читает следующую строку. Первая переменная получает первую запись, вторая — вторую.",
+        "challengeResult": "-10",
+        "options": [
+          "-10",
+          "-9",
+          "-11",
+          "-8"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int first = int.Parse(Console.ReadLine());\nint second = int.Parse(Console.ReadLine());\nConsole.WriteLine(first - second);",
+        "challengeInput": "17\n6",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Каждый ReadLine читает следующую строку. Первая переменная получает первую запись, вторая — вторую.",
+        "challengeResult": "11",
+        "options": [
+          "11",
+          "12",
+          "10",
+          "13"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int first = int.Parse(Console.ReadLine());\nint second = int.Parse(Console.ReadLine());\nConsole.WriteLine(second - first);",
+        "challengeInput": "19\n7",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Каждый ReadLine читает следующую строку. Первая переменная получает первую запись, вторая — вторую.",
+        "challengeResult": "-12",
+        "options": [
+          "-12",
+          "-11",
+          "-13",
+          "-10"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int first = int.Parse(Console.ReadLine());\nint second = int.Parse(Console.ReadLine());\nConsole.WriteLine(first - second);",
+        "challengeInput": "21\n8",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Каждый ReadLine читает следующую строку. Первая переменная получает первую запись, вторая — вторую.",
+        "challengeResult": "13",
+        "options": [
+          "13",
+          "14",
+          "12",
+          "15"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int first = int.Parse(Console.ReadLine());\nint second = int.Parse(Console.ReadLine());\nConsole.WriteLine(second - first);",
+        "challengeInput": "23\n9",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Каждый ReadLine читает следующую строку. Первая переменная получает первую запись, вторая — вторую.",
+        "challengeResult": "-14",
+        "options": [
+          "-14",
+          "-13",
+          "-15",
+          "-12"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int first = int.Parse(Console.ReadLine());\nint second = int.Parse(Console.ReadLine());\nConsole.WriteLine(first - second);",
+        "challengeInput": "25\n10",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Каждый ReadLine читает следующую строку. Первая переменная получает первую запись, вторая — вторую.",
+        "challengeResult": "15",
+        "options": [
+          "15",
+          "16",
+          "14",
+          "17"
+        ],
+        "correctIndex": 0
+      }
+    ],
+    "challengeResult": "7",
+    "options": [
+      "7",
+      "8",
+      "6",
+      "9"
+    ],
+    "correctIndex": 0,
+    "exampleResult": "15"
+  },
+  {
+    "id": "expand-5-digits",
+    "codeDeckId": "lab5-mixed-reading",
+    "deckId": "input-operations-conversions",
+    "term": "Арифметический оператор",
+    "exampleCode": "int number = 77;\nint tens = number / 10;\nint ones = number % 10;\nConsole.WriteLine(tens + ones);",
+    "exampleNote": "У положительного двузначного числа деление на 10 даёт десятки, а остаток — единицы.",
+    "kind": "Что выведет код?",
+    "challengeCode": "int number = 21;\nint tens = number / 10;\nint ones = number % 10;\nConsole.WriteLine(tens + ones);",
+    "challengeInput": "",
+    "prompt": "Что появится в консоли?",
+    "explanation": "У положительного двузначного числа деление на 10 даёт десятки, а остаток — единицы.",
+    "variants": [
+      {
+        "challengeCode": "int number = 28;\nint tens = number / 10;\nint ones = number % 10;\nConsole.WriteLine(tens * ones);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "У положительного двузначного числа деление на 10 даёт десятки, а остаток — единицы.",
+        "challengeResult": "16",
+        "options": [
+          "16",
+          "17",
+          "15",
+          "18"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int number = 35;\nint tens = number / 10;\nint ones = number % 10;\nConsole.WriteLine(tens + ones);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "У положительного двузначного числа деление на 10 даёт десятки, а остаток — единицы.",
+        "challengeResult": "8",
+        "options": [
+          "8",
+          "9",
+          "7",
+          "10"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int number = 42;\nint tens = number / 10;\nint ones = number % 10;\nConsole.WriteLine(tens * ones);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "У положительного двузначного числа деление на 10 даёт десятки, а остаток — единицы.",
+        "challengeResult": "8",
+        "options": [
+          "8",
+          "9",
+          "7",
+          "10"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int number = 49;\nint tens = number / 10;\nint ones = number % 10;\nConsole.WriteLine(tens + ones);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "У положительного двузначного числа деление на 10 даёт десятки, а остаток — единицы.",
+        "challengeResult": "13",
+        "options": [
+          "13",
+          "14",
+          "12",
+          "15"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int number = 56;\nint tens = number / 10;\nint ones = number % 10;\nConsole.WriteLine(tens * ones);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "У положительного двузначного числа деление на 10 даёт десятки, а остаток — единицы.",
+        "challengeResult": "30",
+        "options": [
+          "30",
+          "31",
+          "29",
+          "32"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int number = 63;\nint tens = number / 10;\nint ones = number % 10;\nConsole.WriteLine(tens + ones);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "У положительного двузначного числа деление на 10 даёт десятки, а остаток — единицы.",
+        "challengeResult": "9",
+        "options": [
+          "9",
+          "10",
+          "8",
+          "11"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int number = 70;\nint tens = number / 10;\nint ones = number % 10;\nConsole.WriteLine(tens * ones);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "У положительного двузначного числа деление на 10 даёт десятки, а остаток — единицы.",
+        "challengeResult": "0",
+        "options": [
+          "0",
+          "1",
+          "-1",
+          "2"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int number = 77;\nint tens = number / 10;\nint ones = number % 10;\nConsole.WriteLine(tens + ones);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "У положительного двузначного числа деление на 10 даёт десятки, а остаток — единицы.",
+        "challengeResult": "14",
+        "options": [
+          "14",
+          "15",
+          "13",
+          "16"
+        ],
+        "correctIndex": 0
+      }
+    ],
+    "challengeResult": "3",
+    "options": [
+      "3",
+      "4",
+      "2",
+      "5"
+    ],
+    "correctIndex": 0,
+    "exampleResult": "14"
+  },
+  {
+    "id": "expand-6-compare-boundary",
+    "codeDeckId": "lab6-mixed-reading",
+    "deckId": "conditions-logic",
+    "term": "Оператор сравнения",
+    "exampleCode": "int score = 69;\nbool passed = score >= 68;\nConsole.WriteLine(passed);",
+    "exampleNote": "Проверьте строгость границы: >= включает равенство, а > его исключает.",
+    "kind": "Что выведет код?",
+    "challengeCode": "int score = 59;\nbool passed = score >= 60;\nConsole.WriteLine(passed);",
+    "challengeInput": "",
+    "prompt": "Что появится в консоли?",
+    "explanation": "Проверьте строгость границы: >= включает равенство, а > его исключает.",
+    "variants": [
+      {
+        "challengeCode": "int score = 61;\nbool passed = score > 61;\nConsole.WriteLine(passed);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Проверьте строгость границы: >= включает равенство, а > его исключает.",
+        "challengeResult": "False",
+        "options": [
+          "False",
+          "True",
+          "0",
+          "Ошибка компиляции"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int score = 63;\nbool passed = score >= 62;\nConsole.WriteLine(passed);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Проверьте строгость границы: >= включает равенство, а > его исключает.",
+        "challengeResult": "True",
+        "options": [
+          "True",
+          "False",
+          "0",
+          "Ошибка компиляции"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int score = 62;\nbool passed = score > 63;\nConsole.WriteLine(passed);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Проверьте строгость границы: >= включает равенство, а > его исключает.",
+        "challengeResult": "False",
+        "options": [
+          "False",
+          "True",
+          "0",
+          "Ошибка компиляции"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int score = 64;\nbool passed = score >= 64;\nConsole.WriteLine(passed);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Проверьте строгость границы: >= включает равенство, а > его исключает.",
+        "challengeResult": "True",
+        "options": [
+          "True",
+          "False",
+          "0",
+          "Ошибка компиляции"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int score = 66;\nbool passed = score > 65;\nConsole.WriteLine(passed);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Проверьте строгость границы: >= включает равенство, а > его исключает.",
+        "challengeResult": "True",
+        "options": [
+          "True",
+          "False",
+          "0",
+          "Ошибка компиляции"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int score = 65;\nbool passed = score >= 66;\nConsole.WriteLine(passed);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Проверьте строгость границы: >= включает равенство, а > его исключает.",
+        "challengeResult": "False",
+        "options": [
+          "False",
+          "True",
+          "0",
+          "Ошибка компиляции"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int score = 67;\nbool passed = score > 67;\nConsole.WriteLine(passed);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Проверьте строгость границы: >= включает равенство, а > его исключает.",
+        "challengeResult": "False",
+        "options": [
+          "False",
+          "True",
+          "0",
+          "Ошибка компиляции"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int score = 69;\nbool passed = score >= 68;\nConsole.WriteLine(passed);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Проверьте строгость границы: >= включает равенство, а > его исключает.",
+        "challengeResult": "True",
+        "options": [
+          "True",
+          "False",
+          "0",
+          "Ошибка компиляции"
+        ],
+        "correctIndex": 0
+      }
+    ],
+    "challengeResult": "False",
+    "options": [
+      "False",
+      "True",
+      "0",
+      "Ошибка компиляции"
+    ],
+    "correctIndex": 0,
+    "exampleResult": "True"
+  },
+  {
+    "id": "expand-6-range-combine",
+    "codeDeckId": "lab6-mixed-reading",
+    "deckId": "conditions-logic",
+    "term": "Проверка диапазона",
+    "exampleCode": "int value = -1;\nConsole.WriteLine(value >= 0 && value <= 10);",
+    "exampleNote": "Внутри диапазона должны выполняться обе границы. При || достаточно одной истинной проверки.",
+    "kind": "Что выведет код?",
+    "challengeCode": "int value = -2;\nConsole.WriteLine(value >= 0 && value <= 10);",
+    "challengeInput": "",
+    "prompt": "Что появится в консоли?",
+    "explanation": "Внутри диапазона должны выполняться обе границы. При || достаточно одной истинной проверки.",
+    "variants": [
+      {
+        "challengeCode": "int value = 0;\nConsole.WriteLine(value >= 0 || value <= 10);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Внутри диапазона должны выполняться обе границы. При || достаточно одной истинной проверки.",
+        "challengeResult": "True",
+        "options": [
+          "True",
+          "False",
+          "0",
+          "Ошибка компиляции"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int value = 5;\nConsole.WriteLine(value >= 0 && value <= 10);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Внутри диапазона должны выполняться обе границы. При || достаточно одной истинной проверки.",
+        "challengeResult": "True",
+        "options": [
+          "True",
+          "False",
+          "0",
+          "Ошибка компиляции"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int value = 10;\nConsole.WriteLine(value >= 0 || value <= 10);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Внутри диапазона должны выполняться обе границы. При || достаточно одной истинной проверки.",
+        "challengeResult": "True",
+        "options": [
+          "True",
+          "False",
+          "0",
+          "Ошибка компиляции"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int value = 12;\nConsole.WriteLine(value >= 0 && value <= 10);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Внутри диапазона должны выполняться обе границы. При || достаточно одной истинной проверки.",
+        "challengeResult": "False",
+        "options": [
+          "False",
+          "True",
+          "0",
+          "Ошибка компиляции"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int value = 3;\nConsole.WriteLine(value >= 0 || value <= 10);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Внутри диапазона должны выполняться обе границы. При || достаточно одной истинной проверки.",
+        "challengeResult": "True",
+        "options": [
+          "True",
+          "False",
+          "0",
+          "Ошибка компиляции"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int value = 15;\nConsole.WriteLine(value >= 0 && value <= 10);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Внутри диапазона должны выполняться обе границы. При || достаточно одной истинной проверки.",
+        "challengeResult": "False",
+        "options": [
+          "False",
+          "True",
+          "0",
+          "Ошибка компиляции"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int value = 8;\nConsole.WriteLine(value >= 0 || value <= 10);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Внутри диапазона должны выполняться обе границы. При || достаточно одной истинной проверки.",
+        "challengeResult": "True",
+        "options": [
+          "True",
+          "False",
+          "0",
+          "Ошибка компиляции"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int value = -1;\nConsole.WriteLine(value >= 0 && value <= 10);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Внутри диапазона должны выполняться обе границы. При || достаточно одной истинной проверки.",
+        "challengeResult": "False",
+        "options": [
+          "False",
+          "True",
+          "0",
+          "Ошибка компиляции"
+        ],
+        "correctIndex": 0
+      }
+    ],
+    "challengeResult": "False",
+    "options": [
+      "False",
+      "True",
+      "0",
+      "Ошибка компиляции"
+    ],
+    "correctIndex": 0,
+    "exampleResult": "False"
+  },
+  {
+    "id": "expand-6-negation",
+    "codeDeckId": "lab6-mixed-reading",
+    "deckId": "conditions-logic",
+    "term": "Логическое НЕ !",
+    "exampleCode": "int debts = 8;\nbool clear = !!(debts == 2);\nConsole.WriteLine(clear);",
+    "exampleNote": "Отрицание применяется ко всему выражению в скобках. Сначала определите истинность сравнения.",
+    "kind": "Что выведет код?",
+    "challengeCode": "int debts = 0;\nbool clear = !!(debts == 0);\nConsole.WriteLine(clear);",
+    "challengeInput": "",
+    "prompt": "Что появится в консоли?",
+    "explanation": "Отрицание применяется ко всему выражению в скобках. Сначала определите истинность сравнения.",
+    "variants": [
+      {
+        "challengeCode": "int debts = 1;\nbool clear = !(debts == 1);\nConsole.WriteLine(clear);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Отрицание применяется ко всему выражению в скобках. Сначала определите истинность сравнения.",
+        "challengeResult": "False",
+        "options": [
+          "False",
+          "True",
+          "0",
+          "Ошибка компиляции"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int debts = 2;\nbool clear = !!(debts == 2);\nConsole.WriteLine(clear);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Отрицание применяется ко всему выражению в скобках. Сначала определите истинность сравнения.",
+        "challengeResult": "True",
+        "options": [
+          "True",
+          "False",
+          "0",
+          "Ошибка компиляции"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int debts = 3;\nbool clear = !(debts == 0);\nConsole.WriteLine(clear);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Отрицание применяется ко всему выражению в скобках. Сначала определите истинность сравнения.",
+        "challengeResult": "True",
+        "options": [
+          "True",
+          "False",
+          "0",
+          "Ошибка компиляции"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int debts = 4;\nbool clear = !!(debts == 1);\nConsole.WriteLine(clear);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Отрицание применяется ко всему выражению в скобках. Сначала определите истинность сравнения.",
+        "challengeResult": "False",
+        "options": [
+          "False",
+          "True",
+          "0",
+          "Ошибка компиляции"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int debts = 5;\nbool clear = !(debts == 2);\nConsole.WriteLine(clear);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Отрицание применяется ко всему выражению в скобках. Сначала определите истинность сравнения.",
+        "challengeResult": "True",
+        "options": [
+          "True",
+          "False",
+          "0",
+          "Ошибка компиляции"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int debts = 6;\nbool clear = !!(debts == 0);\nConsole.WriteLine(clear);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Отрицание применяется ко всему выражению в скобках. Сначала определите истинность сравнения.",
+        "challengeResult": "False",
+        "options": [
+          "False",
+          "True",
+          "0",
+          "Ошибка компиляции"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int debts = 7;\nbool clear = !(debts == 1);\nConsole.WriteLine(clear);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Отрицание применяется ко всему выражению в скобках. Сначала определите истинность сравнения.",
+        "challengeResult": "True",
+        "options": [
+          "True",
+          "False",
+          "0",
+          "Ошибка компиляции"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int debts = 8;\nbool clear = !!(debts == 2);\nConsole.WriteLine(clear);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Отрицание применяется ко всему выражению в скобках. Сначала определите истинность сравнения.",
+        "challengeResult": "False",
+        "options": [
+          "False",
+          "True",
+          "0",
+          "Ошибка компиляции"
+        ],
+        "correctIndex": 0
+      }
+    ],
+    "challengeResult": "True",
+    "options": [
+      "True",
+      "False",
+      "0",
+      "Ошибка компиляции"
+    ],
+    "correctIndex": 0,
+    "exampleResult": "False"
+  },
+  {
+    "id": "expand-6-independent-update",
+    "codeDeckId": "lab6-mixed-reading",
+    "deckId": "branching-menu",
+    "term": "Независимые if",
+    "exampleCode": "int value = 10;\nif (value < 13)\n{\n    value += 4;\n}\nif (value > 13)\n{\n    value += 3;\n}\nConsole.WriteLine(value);",
+    "exampleNote": "Отдельные if проверяются последовательно. Вторая проверка видит значение, изменённое первой веткой.",
+    "kind": "Что выведет код?",
+    "challengeCode": "int value = 2;\nif (value < 5)\n{\n    value += 4;\n}\nif (value > 5)\n{\n    value += 3;\n}\nConsole.WriteLine(value);",
+    "challengeInput": "",
+    "prompt": "Что появится в консоли?",
+    "explanation": "Отдельные if проверяются последовательно. Вторая проверка видит значение, изменённое первой веткой.",
+    "variants": [
+      {
+        "challengeCode": "int value = 3;\nif (value < 6)\n{\n    value += 4;\n}\nelse if (value > 6)\n{\n    value += 3;\n}\nConsole.WriteLine(value);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Отдельные if проверяются последовательно. Вторая проверка видит значение, изменённое первой веткой.",
+        "challengeResult": "7",
+        "options": [
+          "7",
+          "8",
+          "6",
+          "9"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int value = 4;\nif (value < 7)\n{\n    value += 4;\n}\nif (value > 7)\n{\n    value += 3;\n}\nConsole.WriteLine(value);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Отдельные if проверяются последовательно. Вторая проверка видит значение, изменённое первой веткой.",
+        "challengeResult": "11",
+        "options": [
+          "11",
+          "12",
+          "10",
+          "13"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int value = 5;\nif (value < 8)\n{\n    value += 4;\n}\nelse if (value > 8)\n{\n    value += 3;\n}\nConsole.WriteLine(value);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Отдельные if проверяются последовательно. Вторая проверка видит значение, изменённое первой веткой.",
+        "challengeResult": "9",
+        "options": [
+          "9",
+          "10",
+          "8",
+          "11"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int value = 6;\nif (value < 9)\n{\n    value += 4;\n}\nif (value > 9)\n{\n    value += 3;\n}\nConsole.WriteLine(value);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Отдельные if проверяются последовательно. Вторая проверка видит значение, изменённое первой веткой.",
+        "challengeResult": "13",
+        "options": [
+          "13",
+          "14",
+          "12",
+          "15"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int value = 7;\nif (value < 10)\n{\n    value += 4;\n}\nelse if (value > 10)\n{\n    value += 3;\n}\nConsole.WriteLine(value);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Отдельные if проверяются последовательно. Вторая проверка видит значение, изменённое первой веткой.",
+        "challengeResult": "11",
+        "options": [
+          "11",
+          "12",
+          "10",
+          "13"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int value = 8;\nif (value < 11)\n{\n    value += 4;\n}\nif (value > 11)\n{\n    value += 3;\n}\nConsole.WriteLine(value);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Отдельные if проверяются последовательно. Вторая проверка видит значение, изменённое первой веткой.",
+        "challengeResult": "15",
+        "options": [
+          "15",
+          "16",
+          "14",
+          "17"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int value = 9;\nif (value < 12)\n{\n    value += 4;\n}\nelse if (value > 12)\n{\n    value += 3;\n}\nConsole.WriteLine(value);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Отдельные if проверяются последовательно. Вторая проверка видит значение, изменённое первой веткой.",
+        "challengeResult": "13",
+        "options": [
+          "13",
+          "14",
+          "12",
+          "15"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int value = 10;\nif (value < 13)\n{\n    value += 4;\n}\nif (value > 13)\n{\n    value += 3;\n}\nConsole.WriteLine(value);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Отдельные if проверяются последовательно. Вторая проверка видит значение, изменённое первой веткой.",
+        "challengeResult": "17",
+        "options": [
+          "17",
+          "18",
+          "16",
+          "19"
+        ],
+        "correctIndex": 0
+      }
+    ],
+    "challengeResult": "9",
+    "options": [
+      "9",
+      "10",
+      "8",
+      "11"
+    ],
+    "correctIndex": 0,
+    "exampleResult": "17"
+  },
+  {
+    "id": "expand-6-ternary-number",
+    "codeDeckId": "lab6-mixed-reading",
+    "deckId": "branching-menu",
+    "term": "Условный оператор ?:",
+    "exampleCode": "int first = 11;\nint second = 4;\nint result = first > second ? first : second;\nConsole.WriteLine(result);",
+    "exampleNote": "Условный оператор выбирает значение до двоеточия при true, после — при false.",
+    "kind": "Что выведет код?",
+    "challengeCode": "int first = 3;\nint second = 12;\nint result = first > second ? first : second;\nConsole.WriteLine(result);",
+    "challengeInput": "",
+    "prompt": "Что появится в консоли?",
+    "explanation": "Условный оператор выбирает значение до двоеточия при true, после — при false.",
+    "variants": [
+      {
+        "challengeCode": "int first = 4;\nint second = 11;\nint result = first < second ? first : second;\nConsole.WriteLine(result);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Условный оператор выбирает значение до двоеточия при true, после — при false.",
+        "challengeResult": "4",
+        "options": [
+          "4",
+          "5",
+          "3",
+          "6"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int first = 5;\nint second = 10;\nint result = first > second ? first : second;\nConsole.WriteLine(result);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Условный оператор выбирает значение до двоеточия при true, после — при false.",
+        "challengeResult": "10",
+        "options": [
+          "10",
+          "11",
+          "9",
+          "12"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int first = 6;\nint second = 9;\nint result = first < second ? first : second;\nConsole.WriteLine(result);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Условный оператор выбирает значение до двоеточия при true, после — при false.",
+        "challengeResult": "6",
+        "options": [
+          "6",
+          "7",
+          "5",
+          "8"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int first = 7;\nint second = 8;\nint result = first > second ? first : second;\nConsole.WriteLine(result);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Условный оператор выбирает значение до двоеточия при true, после — при false.",
+        "challengeResult": "8",
+        "options": [
+          "8",
+          "9",
+          "7",
+          "10"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int first = 8;\nint second = 7;\nint result = first < second ? first : second;\nConsole.WriteLine(result);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Условный оператор выбирает значение до двоеточия при true, после — при false.",
+        "challengeResult": "7",
+        "options": [
+          "7",
+          "8",
+          "6",
+          "9"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int first = 9;\nint second = 6;\nint result = first > second ? first : second;\nConsole.WriteLine(result);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Условный оператор выбирает значение до двоеточия при true, после — при false.",
+        "challengeResult": "9",
+        "options": [
+          "9",
+          "10",
+          "8",
+          "11"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int first = 10;\nint second = 5;\nint result = first < second ? first : second;\nConsole.WriteLine(result);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Условный оператор выбирает значение до двоеточия при true, после — при false.",
+        "challengeResult": "5",
+        "options": [
+          "5",
+          "6",
+          "4",
+          "7"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int first = 11;\nint second = 4;\nint result = first > second ? first : second;\nConsole.WriteLine(result);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Условный оператор выбирает значение до двоеточия при true, после — при false.",
+        "challengeResult": "11",
+        "options": [
+          "11",
+          "12",
+          "10",
+          "13"
+        ],
+        "correctIndex": 0
+      }
+    ],
+    "challengeResult": "12",
+    "options": [
+      "12",
+      "13",
+      "11",
+      "14"
+    ],
+    "correctIndex": 0,
+    "exampleResult": "11"
+  },
+  {
+    "id": "expand-6-switch-follow",
+    "codeDeckId": "lab6-mixed-reading",
+    "deckId": "branching-menu",
+    "term": "switch",
+    "exampleCode": "int action = 0;\nint value = 10;\nswitch (action)\n{\n    case 1: value += 3; break;\n    case 2: value *= 2; break;\n    default: value -= 1; break;\n}\nConsole.WriteLine(value);",
+    "exampleNote": "Выполняется подходящий case или default. break завершает switch, затем выполняется код после него.",
+    "kind": "Что выведет код?",
+    "challengeCode": "int action = 0;\nint value = 2;\nswitch (action)\n{\n    case 1: value += 3; break;\n    case 2: value *= 2; break;\n    default: value -= 1; break;\n}\nConsole.WriteLine(value);",
+    "challengeInput": "",
+    "prompt": "Что появится в консоли?",
+    "explanation": "Выполняется подходящий case или default. break завершает switch, затем выполняется код после него.",
+    "variants": [
+      {
+        "challengeCode": "int action = 1;\nint value = 3;\nswitch (action)\n{\n    case 1: value += 3; break;\n    case 2: value *= 2; break;\n    default: value -= 1; break;\n}\nConsole.WriteLine(value);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Выполняется подходящий case или default. break завершает switch, затем выполняется код после него.",
+        "challengeResult": "6",
+        "options": [
+          "6",
+          "7",
+          "5",
+          "8"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int action = 2;\nint value = 4;\nswitch (action)\n{\n    case 1: value += 3; break;\n    case 2: value *= 2; break;\n    default: value -= 1; break;\n}\nConsole.WriteLine(value);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Выполняется подходящий case или default. break завершает switch, затем выполняется код после него.",
+        "challengeResult": "8",
+        "options": [
+          "8",
+          "9",
+          "7",
+          "10"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int action = 3;\nint value = 5;\nswitch (action)\n{\n    case 1: value += 3; break;\n    case 2: value *= 2; break;\n    default: value -= 1; break;\n}\nConsole.WriteLine(value);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Выполняется подходящий case или default. break завершает switch, затем выполняется код после него.",
+        "challengeResult": "4",
+        "options": [
+          "4",
+          "5",
+          "3",
+          "6"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int action = 0;\nint value = 6;\nswitch (action)\n{\n    case 1: value += 3; break;\n    case 2: value *= 2; break;\n    default: value -= 1; break;\n}\nConsole.WriteLine(value);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Выполняется подходящий case или default. break завершает switch, затем выполняется код после него.",
+        "challengeResult": "5",
+        "options": [
+          "5",
+          "6",
+          "4",
+          "7"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int action = 1;\nint value = 7;\nswitch (action)\n{\n    case 1: value += 3; break;\n    case 2: value *= 2; break;\n    default: value -= 1; break;\n}\nConsole.WriteLine(value);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Выполняется подходящий case или default. break завершает switch, затем выполняется код после него.",
+        "challengeResult": "10",
+        "options": [
+          "10",
+          "11",
+          "9",
+          "12"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int action = 2;\nint value = 8;\nswitch (action)\n{\n    case 1: value += 3; break;\n    case 2: value *= 2; break;\n    default: value -= 1; break;\n}\nConsole.WriteLine(value);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Выполняется подходящий case или default. break завершает switch, затем выполняется код после него.",
+        "challengeResult": "16",
+        "options": [
+          "16",
+          "17",
+          "15",
+          "18"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int action = 3;\nint value = 9;\nswitch (action)\n{\n    case 1: value += 3; break;\n    case 2: value *= 2; break;\n    default: value -= 1; break;\n}\nConsole.WriteLine(value);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Выполняется подходящий case или default. break завершает switch, затем выполняется код после него.",
+        "challengeResult": "8",
+        "options": [
+          "8",
+          "9",
+          "7",
+          "10"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int action = 0;\nint value = 10;\nswitch (action)\n{\n    case 1: value += 3; break;\n    case 2: value *= 2; break;\n    default: value -= 1; break;\n}\nConsole.WriteLine(value);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Выполняется подходящий case или default. break завершает switch, затем выполняется код после него.",
+        "challengeResult": "9",
+        "options": [
+          "9",
+          "10",
+          "8",
+          "11"
+        ],
+        "correctIndex": 0
+      }
+    ],
+    "challengeResult": "1",
+    "options": [
+      "1",
+      "2",
+      "0",
+      "3"
+    ],
+    "correctIndex": 0,
+    "exampleResult": "9"
+  },
+  {
+    "id": "expand-6-nested-choice",
+    "codeDeckId": "lab6-mixed-reading",
+    "deckId": "branching-menu",
+    "term": "if",
+    "exampleCode": "int score = 78;\nint debts = 2;\nint result = 0;\nif (score >= 60)\n{\n    if (debts == 0)\n    {\n        result = 1;\n    }\n    else\n    {\n        result = 2;\n    }\n}\nConsole.WriteLine(result);",
+    "exampleNote": "Внутренний if выполняется только внутри выбранной внешней ветки. Следите за фигурными скобками.",
+    "kind": "Что выведет код?",
+    "challengeCode": "int score = 70;\nint debts = 0;\nint result = 0;\nif (score >= 60)\n{\n    if (debts == 0)\n    {\n        result = 1;\n    }\n    else\n    {\n        result = 2;\n    }\n}\nConsole.WriteLine(result);",
+    "challengeInput": "",
+    "prompt": "Что появится в консоли?",
+    "explanation": "Внутренний if выполняется только внутри выбранной внешней ветки. Следите за фигурными скобками.",
+    "variants": [
+      {
+        "challengeCode": "int score = 49;\nint debts = 1;\nint result = 0;\nif (score >= 60)\n{\n    if (debts == 0)\n    {\n        result = 1;\n    }\n    else\n    {\n        result = 2;\n    }\n}\nConsole.WriteLine(result);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Внутренний if выполняется только внутри выбранной внешней ветки. Следите за фигурными скобками.",
+        "challengeResult": "0",
+        "options": [
+          "0",
+          "1",
+          "-1",
+          "2"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int score = 72;\nint debts = 2;\nint result = 0;\nif (score >= 60)\n{\n    if (debts == 0)\n    {\n        result = 1;\n    }\n    else\n    {\n        result = 2;\n    }\n}\nConsole.WriteLine(result);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Внутренний if выполняется только внутри выбранной внешней ветки. Следите за фигурными скобками.",
+        "challengeResult": "2",
+        "options": [
+          "2",
+          "3",
+          "1",
+          "4"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int score = 47;\nint debts = 0;\nint result = 0;\nif (score >= 60)\n{\n    if (debts == 0)\n    {\n        result = 1;\n    }\n    else\n    {\n        result = 2;\n    }\n}\nConsole.WriteLine(result);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Внутренний if выполняется только внутри выбранной внешней ветки. Следите за фигурными скобками.",
+        "challengeResult": "0",
+        "options": [
+          "0",
+          "1",
+          "-1",
+          "2"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int score = 74;\nint debts = 1;\nint result = 0;\nif (score >= 60)\n{\n    if (debts == 0)\n    {\n        result = 1;\n    }\n    else\n    {\n        result = 2;\n    }\n}\nConsole.WriteLine(result);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Внутренний if выполняется только внутри выбранной внешней ветки. Следите за фигурными скобками.",
+        "challengeResult": "2",
+        "options": [
+          "2",
+          "3",
+          "1",
+          "4"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int score = 45;\nint debts = 2;\nint result = 0;\nif (score >= 60)\n{\n    if (debts == 0)\n    {\n        result = 1;\n    }\n    else\n    {\n        result = 2;\n    }\n}\nConsole.WriteLine(result);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Внутренний if выполняется только внутри выбранной внешней ветки. Следите за фигурными скобками.",
+        "challengeResult": "0",
+        "options": [
+          "0",
+          "1",
+          "-1",
+          "2"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int score = 76;\nint debts = 0;\nint result = 0;\nif (score >= 60)\n{\n    if (debts == 0)\n    {\n        result = 1;\n    }\n    else\n    {\n        result = 2;\n    }\n}\nConsole.WriteLine(result);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Внутренний if выполняется только внутри выбранной внешней ветки. Следите за фигурными скобками.",
+        "challengeResult": "1",
+        "options": [
+          "1",
+          "2",
+          "0",
+          "3"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int score = 43;\nint debts = 1;\nint result = 0;\nif (score >= 60)\n{\n    if (debts == 0)\n    {\n        result = 1;\n    }\n    else\n    {\n        result = 2;\n    }\n}\nConsole.WriteLine(result);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Внутренний if выполняется только внутри выбранной внешней ветки. Следите за фигурными скобками.",
+        "challengeResult": "0",
+        "options": [
+          "0",
+          "1",
+          "-1",
+          "2"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int score = 78;\nint debts = 2;\nint result = 0;\nif (score >= 60)\n{\n    if (debts == 0)\n    {\n        result = 1;\n    }\n    else\n    {\n        result = 2;\n    }\n}\nConsole.WriteLine(result);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Внутренний if выполняется только внутри выбранной внешней ветки. Следите за фигурными скобками.",
+        "challengeResult": "2",
+        "options": [
+          "2",
+          "3",
+          "1",
+          "4"
+        ],
+        "correctIndex": 0
+      }
+    ],
+    "challengeResult": "1",
+    "options": [
+      "1",
+      "2",
+      "0",
+      "3"
+    ],
+    "correctIndex": 0,
+    "exampleResult": "2"
+  },
+  {
+    "id": "expand-6-logical-precedence",
+    "codeDeckId": "lab6-mixed-reading",
+    "deckId": "conditions-logic",
+    "term": "Приоритет логических операторов",
+    "exampleCode": "int value = 10;\nbool first = value >= 5;\nbool second = value % 2 == 0;\nbool third = false;\nConsole.WriteLine(first || second && third);",
+    "exampleNote": "&& имеет больший приоритет, чем ||. Скобки меняют группировку; сокращённое вычисление может пропускать правую часть.",
+    "kind": "Что выведет код?",
+    "challengeCode": "int value = 2;\nbool first = value >= 5;\nbool second = value % 2 == 0;\nbool third = true;\nConsole.WriteLine(first || second && third);",
+    "challengeInput": "",
+    "prompt": "Что появится в консоли?",
+    "explanation": "&& имеет больший приоритет, чем ||. Скобки меняют группировку; сокращённое вычисление может пропускать правую часть.",
+    "variants": [
+      {
+        "challengeCode": "int value = 3;\nbool first = value >= 5;\nbool second = value % 2 == 0;\nbool third = false;\nConsole.WriteLine((first || second) && third);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "&& имеет больший приоритет, чем ||. Скобки меняют группировку; сокращённое вычисление может пропускать правую часть.",
+        "challengeResult": "False",
+        "options": [
+          "False",
+          "True",
+          "0",
+          "Ошибка компиляции"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int value = 4;\nbool first = value >= 5;\nbool second = value % 2 == 0;\nbool third = false;\nConsole.WriteLine(first || second && third);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "&& имеет больший приоритет, чем ||. Скобки меняют группировку; сокращённое вычисление может пропускать правую часть.",
+        "challengeResult": "False",
+        "options": [
+          "False",
+          "True",
+          "0",
+          "Ошибка компиляции"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int value = 5;\nbool first = value >= 5;\nbool second = value % 2 == 0;\nbool third = true;\nConsole.WriteLine((first || second) && third);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "&& имеет больший приоритет, чем ||. Скобки меняют группировку; сокращённое вычисление может пропускать правую часть.",
+        "challengeResult": "True",
+        "options": [
+          "True",
+          "False",
+          "0",
+          "Ошибка компиляции"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int value = 6;\nbool first = value >= 5;\nbool second = value % 2 == 0;\nbool third = false;\nConsole.WriteLine(first || second && third);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "&& имеет больший приоритет, чем ||. Скобки меняют группировку; сокращённое вычисление может пропускать правую часть.",
+        "challengeResult": "True",
+        "options": [
+          "True",
+          "False",
+          "0",
+          "Ошибка компиляции"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int value = 7;\nbool first = value >= 5;\nbool second = value % 2 == 0;\nbool third = false;\nConsole.WriteLine((first || second) && third);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "&& имеет больший приоритет, чем ||. Скобки меняют группировку; сокращённое вычисление может пропускать правую часть.",
+        "challengeResult": "False",
+        "options": [
+          "False",
+          "True",
+          "0",
+          "Ошибка компиляции"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int value = 8;\nbool first = value >= 5;\nbool second = value % 2 == 0;\nbool third = true;\nConsole.WriteLine(first || second && third);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "&& имеет больший приоритет, чем ||. Скобки меняют группировку; сокращённое вычисление может пропускать правую часть.",
+        "challengeResult": "True",
+        "options": [
+          "True",
+          "False",
+          "0",
+          "Ошибка компиляции"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int value = 9;\nbool first = value >= 5;\nbool second = value % 2 == 0;\nbool third = false;\nConsole.WriteLine((first || second) && third);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "&& имеет больший приоритет, чем ||. Скобки меняют группировку; сокращённое вычисление может пропускать правую часть.",
+        "challengeResult": "False",
+        "options": [
+          "False",
+          "True",
+          "0",
+          "Ошибка компиляции"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int value = 10;\nbool first = value >= 5;\nbool second = value % 2 == 0;\nbool third = false;\nConsole.WriteLine(first || second && third);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "&& имеет больший приоритет, чем ||. Скобки меняют группировку; сокращённое вычисление может пропускать правую часть.",
+        "challengeResult": "True",
+        "options": [
+          "True",
+          "False",
+          "0",
+          "Ошибка компиляции"
+        ],
+        "correctIndex": 0
+      }
+    ],
+    "challengeResult": "True",
+    "options": [
+      "True",
+      "False",
+      "0",
+      "Ошибка компиляции"
+    ],
+    "correctIndex": 0,
+    "exampleResult": "True"
+  },
+  {
+    "id": "expand-6-ordered-thresholds",
+    "codeDeckId": "lab6-mixed-reading",
+    "deckId": "branching-menu",
+    "term": "else if",
+    "exampleCode": "int score = 100;\nif (score >= 90)\n{\n    Console.WriteLine(5);\n}\nelse if (score >= 60)\n{\n    Console.WriteLine(3);\n}\nelse\n{\n    Console.WriteLine(2);\n}",
+    "exampleNote": "В цепочке выбирается первая истинная ветка. Более широкий порог раньше узкого может изменить результат.",
+    "kind": "Что выведет код?",
+    "challengeCode": "int score = 95;\nif (score >= 90)\n{\n    Console.WriteLine(5);\n}\nelse if (score >= 60)\n{\n    Console.WriteLine(3);\n}\nelse\n{\n    Console.WriteLine(2);\n}",
+    "challengeInput": "",
+    "prompt": "Что появится в консоли?",
+    "explanation": "В цепочке выбирается первая истинная ветка. Более широкий порог раньше узкого может изменить результат.",
+    "variants": [
+      {
+        "challengeCode": "int score = 74;\nif (score >= 60)\n{\n    Console.WriteLine(5);\n}\nelse if (score >= 90)\n{\n    Console.WriteLine(3);\n}\nelse\n{\n    Console.WriteLine(2);\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "В цепочке выбирается первая истинная ветка. Более широкий порог раньше узкого может изменить результат.",
+        "challengeResult": "5",
+        "options": [
+          "5",
+          "6",
+          "4",
+          "7"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int score = 60;\nif (score >= 90)\n{\n    Console.WriteLine(5);\n}\nelse if (score >= 60)\n{\n    Console.WriteLine(3);\n}\nelse\n{\n    Console.WriteLine(2);\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "В цепочке выбирается первая истинная ветка. Более широкий порог раньше узкого может изменить результат.",
+        "challengeResult": "3",
+        "options": [
+          "3",
+          "4",
+          "2",
+          "5"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int score = 59;\nif (score >= 60)\n{\n    Console.WriteLine(5);\n}\nelse if (score >= 90)\n{\n    Console.WriteLine(3);\n}\nelse\n{\n    Console.WriteLine(2);\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "В цепочке выбирается первая истинная ветка. Более широкий порог раньше узкого может изменить результат.",
+        "challengeResult": "2",
+        "options": [
+          "2",
+          "3",
+          "1",
+          "4"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int score = 90;\nif (score >= 90)\n{\n    Console.WriteLine(5);\n}\nelse if (score >= 60)\n{\n    Console.WriteLine(3);\n}\nelse\n{\n    Console.WriteLine(2);\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "В цепочке выбирается первая истинная ветка. Более широкий порог раньше узкого может изменить результат.",
+        "challengeResult": "5",
+        "options": [
+          "5",
+          "6",
+          "4",
+          "7"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int score = 75;\nif (score >= 60)\n{\n    Console.WriteLine(5);\n}\nelse if (score >= 90)\n{\n    Console.WriteLine(3);\n}\nelse\n{\n    Console.WriteLine(2);\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "В цепочке выбирается первая истинная ветка. Более широкий порог раньше узкого может изменить результат.",
+        "challengeResult": "5",
+        "options": [
+          "5",
+          "6",
+          "4",
+          "7"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int score = 80;\nif (score >= 90)\n{\n    Console.WriteLine(5);\n}\nelse if (score >= 60)\n{\n    Console.WriteLine(3);\n}\nelse\n{\n    Console.WriteLine(2);\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "В цепочке выбирается первая истинная ветка. Более широкий порог раньше узкого может изменить результат.",
+        "challengeResult": "3",
+        "options": [
+          "3",
+          "4",
+          "2",
+          "5"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int score = 40;\nif (score >= 60)\n{\n    Console.WriteLine(5);\n}\nelse if (score >= 90)\n{\n    Console.WriteLine(3);\n}\nelse\n{\n    Console.WriteLine(2);\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "В цепочке выбирается первая истинная ветка. Более широкий порог раньше узкого может изменить результат.",
+        "challengeResult": "2",
+        "options": [
+          "2",
+          "3",
+          "1",
+          "4"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int score = 100;\nif (score >= 90)\n{\n    Console.WriteLine(5);\n}\nelse if (score >= 60)\n{\n    Console.WriteLine(3);\n}\nelse\n{\n    Console.WriteLine(2);\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "В цепочке выбирается первая истинная ветка. Более широкий порог раньше узкого может изменить результат.",
+        "challengeResult": "5",
+        "options": [
+          "5",
+          "6",
+          "4",
+          "7"
+        ],
+        "correctIndex": 0
+      }
+    ],
+    "challengeResult": "5",
+    "options": [
+      "5",
+      "6",
+      "4",
+      "7"
+    ],
+    "correctIndex": 0,
+    "exampleResult": "5"
+  },
+  {
+    "id": "expand-6-inequality",
+    "codeDeckId": "lab6-mixed-reading",
+    "deckId": "conditions-logic",
+    "term": "Неравенство !=",
+    "exampleCode": "int expected = 10;\nint actual = 10;\nConsole.WriteLine(actual != expected);",
+    "exampleNote": "!= проверяет различие значений. Сравните фактические значения после присваивания.",
+    "kind": "Что выведет код?",
+    "challengeCode": "int expected = 2;\nint actual = 2;\nConsole.WriteLine(actual != expected);",
+    "challengeInput": "",
+    "prompt": "Что появится в консоли?",
+    "explanation": "!= проверяет различие значений. Сравните фактические значения после присваивания.",
+    "variants": [
+      {
+        "challengeCode": "int expected = 3;\nint actual = 4;\nConsole.WriteLine(actual != expected);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "!= проверяет различие значений. Сравните фактические значения после присваивания.",
+        "challengeResult": "True",
+        "options": [
+          "True",
+          "False",
+          "0",
+          "Ошибка компиляции"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int expected = 4;\nint actual = 4;\nConsole.WriteLine(actual != expected);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "!= проверяет различие значений. Сравните фактические значения после присваивания.",
+        "challengeResult": "False",
+        "options": [
+          "False",
+          "True",
+          "0",
+          "Ошибка компиляции"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int expected = 5;\nint actual = 6;\nConsole.WriteLine(actual != expected);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "!= проверяет различие значений. Сравните фактические значения после присваивания.",
+        "challengeResult": "True",
+        "options": [
+          "True",
+          "False",
+          "0",
+          "Ошибка компиляции"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int expected = 6;\nint actual = 6;\nConsole.WriteLine(actual != expected);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "!= проверяет различие значений. Сравните фактические значения после присваивания.",
+        "challengeResult": "False",
+        "options": [
+          "False",
+          "True",
+          "0",
+          "Ошибка компиляции"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int expected = 7;\nint actual = 8;\nConsole.WriteLine(actual != expected);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "!= проверяет различие значений. Сравните фактические значения после присваивания.",
+        "challengeResult": "True",
+        "options": [
+          "True",
+          "False",
+          "0",
+          "Ошибка компиляции"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int expected = 8;\nint actual = 8;\nConsole.WriteLine(actual != expected);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "!= проверяет различие значений. Сравните фактические значения после присваивания.",
+        "challengeResult": "False",
+        "options": [
+          "False",
+          "True",
+          "0",
+          "Ошибка компиляции"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int expected = 9;\nint actual = 10;\nConsole.WriteLine(actual != expected);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "!= проверяет различие значений. Сравните фактические значения после присваивания.",
+        "challengeResult": "True",
+        "options": [
+          "True",
+          "False",
+          "0",
+          "Ошибка компиляции"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int expected = 10;\nint actual = 10;\nConsole.WriteLine(actual != expected);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "!= проверяет различие значений. Сравните фактические значения после присваивания.",
+        "challengeResult": "False",
+        "options": [
+          "False",
+          "True",
+          "0",
+          "Ошибка компиляции"
+        ],
+        "correctIndex": 0
+      }
+    ],
+    "challengeResult": "False",
+    "options": [
+      "False",
+      "True",
+      "0",
+      "Ошибка компиляции"
+    ],
+    "correctIndex": 0,
+    "exampleResult": "False"
+  },
+  {
+    "id": "expand-7-loop-stride",
+    "codeDeckId": "lab7-mixed-reading",
+    "deckId": "loops-basics",
+    "term": "for",
+    "exampleCode": "int count = 0;\nfor (int i = 2; i < 14; i += 3)\n{\n    count++;\n}\nConsole.WriteLine(count);",
+    "exampleNote": "Выпишите значения счётчика с заданным шагом до нарушения границы. Считается выполнение тела, а не последнее значение счётчика.",
+    "kind": "Что выведет код?",
+    "challengeCode": "int count = 0;\nfor (int i = 0; i < 6; i += 1)\n{\n    count++;\n}\nConsole.WriteLine(count);",
+    "challengeInput": "",
+    "prompt": "Что появится в консоли?",
+    "explanation": "Выпишите значения счётчика с заданным шагом до нарушения границы. Считается выполнение тела, а не последнее значение счётчика.",
+    "variants": [
+      {
+        "challengeCode": "int count = 0;\nfor (int i = 1; i <= 7; i += 2)\n{\n    count++;\n}\nConsole.WriteLine(count);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Выпишите значения счётчика с заданным шагом до нарушения границы. Считается выполнение тела, а не последнее значение счётчика.",
+        "challengeResult": "4",
+        "options": [
+          "4",
+          "5",
+          "3",
+          "6"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int count = 0;\nfor (int i = 2; i < 8; i += 3)\n{\n    count++;\n}\nConsole.WriteLine(count);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Выпишите значения счётчика с заданным шагом до нарушения границы. Считается выполнение тела, а не последнее значение счётчика.",
+        "challengeResult": "2",
+        "options": [
+          "2",
+          "3",
+          "1",
+          "4"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int count = 0;\nfor (int i = 0; i <= 9; i += 1)\n{\n    count++;\n}\nConsole.WriteLine(count);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Выпишите значения счётчика с заданным шагом до нарушения границы. Считается выполнение тела, а не последнее значение счётчика.",
+        "challengeResult": "10",
+        "options": [
+          "10",
+          "11",
+          "9",
+          "12"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int count = 0;\nfor (int i = 1; i < 10; i += 2)\n{\n    count++;\n}\nConsole.WriteLine(count);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Выпишите значения счётчика с заданным шагом до нарушения границы. Считается выполнение тела, а не последнее значение счётчика.",
+        "challengeResult": "5",
+        "options": [
+          "5",
+          "6",
+          "4",
+          "7"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int count = 0;\nfor (int i = 2; i <= 11; i += 3)\n{\n    count++;\n}\nConsole.WriteLine(count);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Выпишите значения счётчика с заданным шагом до нарушения границы. Считается выполнение тела, а не последнее значение счётчика.",
+        "challengeResult": "4",
+        "options": [
+          "4",
+          "5",
+          "3",
+          "6"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int count = 0;\nfor (int i = 0; i < 12; i += 1)\n{\n    count++;\n}\nConsole.WriteLine(count);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Выпишите значения счётчика с заданным шагом до нарушения границы. Считается выполнение тела, а не последнее значение счётчика.",
+        "challengeResult": "12",
+        "options": [
+          "12",
+          "13",
+          "11",
+          "14"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int count = 0;\nfor (int i = 1; i <= 13; i += 2)\n{\n    count++;\n}\nConsole.WriteLine(count);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Выпишите значения счётчика с заданным шагом до нарушения границы. Считается выполнение тела, а не последнее значение счётчика.",
+        "challengeResult": "7",
+        "options": [
+          "7",
+          "8",
+          "6",
+          "9"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int count = 0;\nfor (int i = 2; i < 14; i += 3)\n{\n    count++;\n}\nConsole.WriteLine(count);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Выпишите значения счётчика с заданным шагом до нарушения границы. Считается выполнение тела, а не последнее значение счётчика.",
+        "challengeResult": "4",
+        "options": [
+          "4",
+          "5",
+          "3",
+          "6"
+        ],
+        "correctIndex": 0
+      }
+    ],
+    "challengeResult": "6",
+    "options": [
+      "6",
+      "7",
+      "5",
+      "8"
+    ],
+    "correctIndex": 0,
+    "exampleResult": "4"
+  },
+  {
+    "id": "expand-7-loop-descending",
+    "codeDeckId": "lab7-mixed-reading",
+    "deckId": "loops-control",
+    "term": "Убывающий цикл",
+    "exampleCode": "int sum = 0;\nfor (int i = 14; i > 2; i -= 1)\n{\n    sum += i;\n}\nConsole.WriteLine(sum);",
+    "exampleNote": "Убывающий счётчик проходит только значения, удовлетворяющие границе. Шаг может пропускать числа.",
+    "kind": "Что выведет код?",
+    "challengeCode": "int sum = 0;\nfor (int i = 6; i > 0; i -= 1)\n{\n    sum += i;\n}\nConsole.WriteLine(sum);",
+    "challengeInput": "",
+    "prompt": "Что появится в консоли?",
+    "explanation": "Убывающий счётчик проходит только значения, удовлетворяющие границе. Шаг может пропускать числа.",
+    "variants": [
+      {
+        "challengeCode": "int sum = 0;\nfor (int i = 7; i > 1; i -= 2)\n{\n    sum += i;\n}\nConsole.WriteLine(sum);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Убывающий счётчик проходит только значения, удовлетворяющие границе. Шаг может пропускать числа.",
+        "challengeResult": "15",
+        "options": [
+          "15",
+          "16",
+          "14",
+          "17"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int sum = 0;\nfor (int i = 8; i > 2; i -= 1)\n{\n    sum += i;\n}\nConsole.WriteLine(sum);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Убывающий счётчик проходит только значения, удовлетворяющие границе. Шаг может пропускать числа.",
+        "challengeResult": "33",
+        "options": [
+          "33",
+          "34",
+          "32",
+          "35"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int sum = 0;\nfor (int i = 9; i > 0; i -= 2)\n{\n    sum += i;\n}\nConsole.WriteLine(sum);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Убывающий счётчик проходит только значения, удовлетворяющие границе. Шаг может пропускать числа.",
+        "challengeResult": "25",
+        "options": [
+          "25",
+          "26",
+          "24",
+          "27"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int sum = 0;\nfor (int i = 10; i > 1; i -= 1)\n{\n    sum += i;\n}\nConsole.WriteLine(sum);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Убывающий счётчик проходит только значения, удовлетворяющие границе. Шаг может пропускать числа.",
+        "challengeResult": "54",
+        "options": [
+          "54",
+          "55",
+          "53",
+          "56"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int sum = 0;\nfor (int i = 11; i > 2; i -= 2)\n{\n    sum += i;\n}\nConsole.WriteLine(sum);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Убывающий счётчик проходит только значения, удовлетворяющие границе. Шаг может пропускать числа.",
+        "challengeResult": "35",
+        "options": [
+          "35",
+          "36",
+          "34",
+          "37"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int sum = 0;\nfor (int i = 12; i > 0; i -= 1)\n{\n    sum += i;\n}\nConsole.WriteLine(sum);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Убывающий счётчик проходит только значения, удовлетворяющие границе. Шаг может пропускать числа.",
+        "challengeResult": "78",
+        "options": [
+          "78",
+          "79",
+          "77",
+          "80"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int sum = 0;\nfor (int i = 13; i > 1; i -= 2)\n{\n    sum += i;\n}\nConsole.WriteLine(sum);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Убывающий счётчик проходит только значения, удовлетворяющие границе. Шаг может пропускать числа.",
+        "challengeResult": "48",
+        "options": [
+          "48",
+          "49",
+          "47",
+          "50"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int sum = 0;\nfor (int i = 14; i > 2; i -= 1)\n{\n    sum += i;\n}\nConsole.WriteLine(sum);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Убывающий счётчик проходит только значения, удовлетворяющие границе. Шаг может пропускать числа.",
+        "challengeResult": "102",
+        "options": [
+          "102",
+          "103",
+          "101",
+          "104"
+        ],
+        "correctIndex": 0
+      }
+    ],
+    "challengeResult": "21",
+    "options": [
+      "21",
+      "22",
+      "20",
+      "23"
+    ],
+    "correctIndex": 0,
+    "exampleResult": "102"
+  },
+  {
+    "id": "expand-7-continue-placement",
+    "codeDeckId": "lab7-mixed-reading",
+    "deckId": "loops-control",
+    "term": "continue",
+    "exampleCode": "int sum = 0;\nfor (int i = 1; i <= 12; i++)\n{\n    if (i % 2 == 0)\n    {\n        continue;\n    }\n    sum += i;\n}\nConsole.WriteLine(sum);",
+    "exampleNote": "Команды до continue уже выполнятся. После continue остаток текущей итерации пропускается.",
+    "kind": "Что выведет код?",
+    "challengeCode": "int sum = 0;\nfor (int i = 1; i <= 4; i++)\n{\n    if (i % 2 == 0)\n    {\n        continue;\n    }\n    sum += i;\n}\nConsole.WriteLine(sum);",
+    "challengeInput": "",
+    "prompt": "Что появится в консоли?",
+    "explanation": "Команды до continue уже выполнятся. После continue остаток текущей итерации пропускается.",
+    "variants": [
+      {
+        "challengeCode": "int sum = 0;\nfor (int i = 1; i <= 5; i++)\n{\n    sum += i;\n    if (i % 2 == 0)\n    {\n        continue;\n    }\n    sum++;\n}\nConsole.WriteLine(sum);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Команды до continue уже выполнятся. После continue остаток текущей итерации пропускается.",
+        "challengeResult": "18",
+        "options": [
+          "18",
+          "19",
+          "17",
+          "20"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int sum = 0;\nfor (int i = 1; i <= 6; i++)\n{\n    if (i % 2 == 0)\n    {\n        continue;\n    }\n    sum += i;\n}\nConsole.WriteLine(sum);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Команды до continue уже выполнятся. После continue остаток текущей итерации пропускается.",
+        "challengeResult": "9",
+        "options": [
+          "9",
+          "10",
+          "8",
+          "11"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int sum = 0;\nfor (int i = 1; i <= 7; i++)\n{\n    sum += i;\n    if (i % 2 == 0)\n    {\n        continue;\n    }\n    sum++;\n}\nConsole.WriteLine(sum);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Команды до continue уже выполнятся. После continue остаток текущей итерации пропускается.",
+        "challengeResult": "32",
+        "options": [
+          "32",
+          "33",
+          "31",
+          "34"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int sum = 0;\nfor (int i = 1; i <= 8; i++)\n{\n    if (i % 2 == 0)\n    {\n        continue;\n    }\n    sum += i;\n}\nConsole.WriteLine(sum);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Команды до continue уже выполнятся. После continue остаток текущей итерации пропускается.",
+        "challengeResult": "16",
+        "options": [
+          "16",
+          "17",
+          "15",
+          "18"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int sum = 0;\nfor (int i = 1; i <= 9; i++)\n{\n    sum += i;\n    if (i % 2 == 0)\n    {\n        continue;\n    }\n    sum++;\n}\nConsole.WriteLine(sum);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Команды до continue уже выполнятся. После continue остаток текущей итерации пропускается.",
+        "challengeResult": "50",
+        "options": [
+          "50",
+          "51",
+          "49",
+          "52"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int sum = 0;\nfor (int i = 1; i <= 10; i++)\n{\n    if (i % 2 == 0)\n    {\n        continue;\n    }\n    sum += i;\n}\nConsole.WriteLine(sum);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Команды до continue уже выполнятся. После continue остаток текущей итерации пропускается.",
+        "challengeResult": "25",
+        "options": [
+          "25",
+          "26",
+          "24",
+          "27"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int sum = 0;\nfor (int i = 1; i <= 11; i++)\n{\n    sum += i;\n    if (i % 2 == 0)\n    {\n        continue;\n    }\n    sum++;\n}\nConsole.WriteLine(sum);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Команды до continue уже выполнятся. После continue остаток текущей итерации пропускается.",
+        "challengeResult": "72",
+        "options": [
+          "72",
+          "73",
+          "71",
+          "74"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int sum = 0;\nfor (int i = 1; i <= 12; i++)\n{\n    if (i % 2 == 0)\n    {\n        continue;\n    }\n    sum += i;\n}\nConsole.WriteLine(sum);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Команды до continue уже выполнятся. После continue остаток текущей итерации пропускается.",
+        "challengeResult": "36",
+        "options": [
+          "36",
+          "37",
+          "35",
+          "38"
+        ],
+        "correctIndex": 0
+      }
+    ],
+    "challengeResult": "4",
+    "options": [
+      "4",
+      "5",
+      "3",
+      "6"
+    ],
+    "correctIndex": 0,
+    "exampleResult": "36"
+  },
+  {
+    "id": "expand-7-break-placement",
+    "codeDeckId": "lab7-mixed-reading",
+    "deckId": "loops-control",
+    "term": "break в цикле",
+    "exampleCode": "int sum = 0;\nfor (int i = 1; i <= 14; i++)\n{\n    if (i == 11)\n    {\n        break;\n    }\n    sum += i;\n}\nConsole.WriteLine(sum);",
+    "exampleNote": "Выход по break прекращает ближайший цикл. Прибавление до проверки включает граничное i, после проверки — исключает.",
+    "kind": "Что выведет код?",
+    "challengeCode": "int sum = 0;\nfor (int i = 1; i <= 6; i++)\n{\n    if (i == 3)\n    {\n        break;\n    }\n    sum += i;\n}\nConsole.WriteLine(sum);",
+    "challengeInput": "",
+    "prompt": "Что появится в консоли?",
+    "explanation": "Выход по break прекращает ближайший цикл. Прибавление до проверки включает граничное i, после проверки — исключает.",
+    "variants": [
+      {
+        "challengeCode": "int sum = 0;\nfor (int i = 1; i <= 7; i++)\n{\n    sum += i;\n    if (i == 4)\n    {\n        break;\n    }\n    \n}\nConsole.WriteLine(sum);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Выход по break прекращает ближайший цикл. Прибавление до проверки включает граничное i, после проверки — исключает.",
+        "challengeResult": "10",
+        "options": [
+          "10",
+          "11",
+          "9",
+          "12"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int sum = 0;\nfor (int i = 1; i <= 8; i++)\n{\n    if (i == 5)\n    {\n        break;\n    }\n    sum += i;\n}\nConsole.WriteLine(sum);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Выход по break прекращает ближайший цикл. Прибавление до проверки включает граничное i, после проверки — исключает.",
+        "challengeResult": "10",
+        "options": [
+          "10",
+          "11",
+          "9",
+          "12"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int sum = 0;\nfor (int i = 1; i <= 9; i++)\n{\n    sum += i;\n    if (i == 6)\n    {\n        break;\n    }\n    \n}\nConsole.WriteLine(sum);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Выход по break прекращает ближайший цикл. Прибавление до проверки включает граничное i, после проверки — исключает.",
+        "challengeResult": "21",
+        "options": [
+          "21",
+          "22",
+          "20",
+          "23"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int sum = 0;\nfor (int i = 1; i <= 10; i++)\n{\n    if (i == 7)\n    {\n        break;\n    }\n    sum += i;\n}\nConsole.WriteLine(sum);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Выход по break прекращает ближайший цикл. Прибавление до проверки включает граничное i, после проверки — исключает.",
+        "challengeResult": "21",
+        "options": [
+          "21",
+          "22",
+          "20",
+          "23"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int sum = 0;\nfor (int i = 1; i <= 11; i++)\n{\n    sum += i;\n    if (i == 8)\n    {\n        break;\n    }\n    \n}\nConsole.WriteLine(sum);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Выход по break прекращает ближайший цикл. Прибавление до проверки включает граничное i, после проверки — исключает.",
+        "challengeResult": "36",
+        "options": [
+          "36",
+          "37",
+          "35",
+          "38"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int sum = 0;\nfor (int i = 1; i <= 12; i++)\n{\n    if (i == 9)\n    {\n        break;\n    }\n    sum += i;\n}\nConsole.WriteLine(sum);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Выход по break прекращает ближайший цикл. Прибавление до проверки включает граничное i, после проверки — исключает.",
+        "challengeResult": "36",
+        "options": [
+          "36",
+          "37",
+          "35",
+          "38"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int sum = 0;\nfor (int i = 1; i <= 13; i++)\n{\n    sum += i;\n    if (i == 10)\n    {\n        break;\n    }\n    \n}\nConsole.WriteLine(sum);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Выход по break прекращает ближайший цикл. Прибавление до проверки включает граничное i, после проверки — исключает.",
+        "challengeResult": "55",
+        "options": [
+          "55",
+          "56",
+          "54",
+          "57"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int sum = 0;\nfor (int i = 1; i <= 14; i++)\n{\n    if (i == 11)\n    {\n        break;\n    }\n    sum += i;\n}\nConsole.WriteLine(sum);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Выход по break прекращает ближайший цикл. Прибавление до проверки включает граничное i, после проверки — исключает.",
+        "challengeResult": "55",
+        "options": [
+          "55",
+          "56",
+          "54",
+          "57"
+        ],
+        "correctIndex": 0
+      }
+    ],
+    "challengeResult": "3",
+    "options": [
+      "3",
+      "4",
+      "2",
+      "5"
+    ],
+    "correctIndex": 0,
+    "exampleResult": "55"
+  },
+  {
+    "id": "expand-7-nested-dependent",
+    "codeDeckId": "lab7-mixed-reading",
+    "deckId": "loops-control",
+    "term": "Вложенный цикл",
+    "exampleCode": "int count = 0;\nfor (int row = 1; row <= 5; row++)\n{\n    for (int col = 0; col < row; col++)\n    {\n        count++;\n    }\n}\nConsole.WriteLine(count);",
+    "exampleNote": "Внутренняя граница зависит от row. Для каждой внешней итерации число внутренних повторений нужно посчитать отдельно.",
+    "kind": "Что выведет код?",
+    "challengeCode": "int count = 0;\nfor (int row = 1; row <= 2; row++)\n{\n    for (int col = 0; col < row; col++)\n    {\n        count++;\n    }\n}\nConsole.WriteLine(count);",
+    "challengeInput": "",
+    "prompt": "Что появится в консоли?",
+    "explanation": "Внутренняя граница зависит от row. Для каждой внешней итерации число внутренних повторений нужно посчитать отдельно.",
+    "variants": [
+      {
+        "challengeCode": "int count = 0;\nfor (int row = 1; row <= 3; row++)\n{\n    for (int col = 0; col <= row; col++)\n    {\n        count++;\n    }\n}\nConsole.WriteLine(count);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Внутренняя граница зависит от row. Для каждой внешней итерации число внутренних повторений нужно посчитать отдельно.",
+        "challengeResult": "9",
+        "options": [
+          "9",
+          "10",
+          "8",
+          "11"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int count = 0;\nfor (int row = 1; row <= 4; row++)\n{\n    for (int col = 0; col < row; col++)\n    {\n        count++;\n    }\n}\nConsole.WriteLine(count);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Внутренняя граница зависит от row. Для каждой внешней итерации число внутренних повторений нужно посчитать отдельно.",
+        "challengeResult": "10",
+        "options": [
+          "10",
+          "11",
+          "9",
+          "12"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int count = 0;\nfor (int row = 1; row <= 5; row++)\n{\n    for (int col = 0; col <= row; col++)\n    {\n        count++;\n    }\n}\nConsole.WriteLine(count);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Внутренняя граница зависит от row. Для каждой внешней итерации число внутренних повторений нужно посчитать отдельно.",
+        "challengeResult": "20",
+        "options": [
+          "20",
+          "21",
+          "19",
+          "22"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int count = 0;\nfor (int row = 1; row <= 6; row++)\n{\n    for (int col = 0; col < row; col++)\n    {\n        count++;\n    }\n}\nConsole.WriteLine(count);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Внутренняя граница зависит от row. Для каждой внешней итерации число внутренних повторений нужно посчитать отдельно.",
+        "challengeResult": "21",
+        "options": [
+          "21",
+          "22",
+          "20",
+          "23"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int count = 0;\nfor (int row = 1; row <= 2; row++)\n{\n    for (int col = 0; col <= row; col++)\n    {\n        count++;\n    }\n}\nConsole.WriteLine(count);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Внутренняя граница зависит от row. Для каждой внешней итерации число внутренних повторений нужно посчитать отдельно.",
+        "challengeResult": "5",
+        "options": [
+          "5",
+          "6",
+          "4",
+          "7"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int count = 0;\nfor (int row = 1; row <= 3; row++)\n{\n    for (int col = 0; col < row; col++)\n    {\n        count++;\n    }\n}\nConsole.WriteLine(count);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Внутренняя граница зависит от row. Для каждой внешней итерации число внутренних повторений нужно посчитать отдельно.",
+        "challengeResult": "6",
+        "options": [
+          "6",
+          "7",
+          "5",
+          "8"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int count = 0;\nfor (int row = 1; row <= 4; row++)\n{\n    for (int col = 0; col <= row; col++)\n    {\n        count++;\n    }\n}\nConsole.WriteLine(count);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Внутренняя граница зависит от row. Для каждой внешней итерации число внутренних повторений нужно посчитать отдельно.",
+        "challengeResult": "14",
+        "options": [
+          "14",
+          "15",
+          "13",
+          "16"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int count = 0;\nfor (int row = 1; row <= 5; row++)\n{\n    for (int col = 0; col < row; col++)\n    {\n        count++;\n    }\n}\nConsole.WriteLine(count);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Внутренняя граница зависит от row. Для каждой внешней итерации число внутренних повторений нужно посчитать отдельно.",
+        "challengeResult": "15",
+        "options": [
+          "15",
+          "16",
+          "14",
+          "17"
+        ],
+        "correctIndex": 0
+      }
+    ],
+    "challengeResult": "3",
+    "options": [
+      "3",
+      "4",
+      "2",
+      "5"
+    ],
+    "correctIndex": 0,
+    "exampleResult": "15"
+  },
+  {
+    "id": "expand-7-while-growth",
+    "codeDeckId": "lab7-mixed-reading",
+    "deckId": "loops-basics",
+    "term": "while",
+    "exampleCode": "int value = 3;\nint count = 0;\nwhile (value < 36)\n{\n    value += 3;\n    count++;\n}\nConsole.WriteLine(count);\nConsole.WriteLine(value);",
+    "exampleNote": "Условие проверяется перед телом. Сначала изменяется value, затем увеличивается счётчик выполненных итераций.",
+    "kind": "Что выведет код?",
+    "challengeCode": "int value = 1;\nint count = 0;\nwhile (value < 12)\n{\n    value += 3;\n    count++;\n}\nConsole.WriteLine(count);\nConsole.WriteLine(value);",
+    "challengeInput": "",
+    "prompt": "Что появится в консоли?",
+    "explanation": "Условие проверяется перед телом. Сначала изменяется value, затем увеличивается счётчик выполненных итераций.",
+    "variants": [
+      {
+        "challengeCode": "int value = 2;\nint count = 0;\nwhile (value < 15)\n{\n    value *= 2;\n    count++;\n}\nConsole.WriteLine(count);\nConsole.WriteLine(value);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Условие проверяется перед телом. Сначала изменяется value, затем увеличивается счётчик выполненных итераций.",
+        "challengeResult": "3\n16",
+        "options": [
+          "3\n16",
+          "16\n3",
+          "4\n17",
+          "316"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int value = 3;\nint count = 0;\nwhile (value < 18)\n{\n    value += 3;\n    count++;\n}\nConsole.WriteLine(count);\nConsole.WriteLine(value);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Условие проверяется перед телом. Сначала изменяется value, затем увеличивается счётчик выполненных итераций.",
+        "challengeResult": "5\n18",
+        "options": [
+          "5\n18",
+          "18\n5",
+          "6\n19",
+          "518"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int value = 1;\nint count = 0;\nwhile (value < 21)\n{\n    value *= 2;\n    count++;\n}\nConsole.WriteLine(count);\nConsole.WriteLine(value);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Условие проверяется перед телом. Сначала изменяется value, затем увеличивается счётчик выполненных итераций.",
+        "challengeResult": "5\n32",
+        "options": [
+          "5\n32",
+          "32\n5",
+          "6\n33",
+          "532"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int value = 2;\nint count = 0;\nwhile (value < 24)\n{\n    value += 3;\n    count++;\n}\nConsole.WriteLine(count);\nConsole.WriteLine(value);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Условие проверяется перед телом. Сначала изменяется value, затем увеличивается счётчик выполненных итераций.",
+        "challengeResult": "8\n26",
+        "options": [
+          "8\n26",
+          "26\n8",
+          "9\n27",
+          "826"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int value = 3;\nint count = 0;\nwhile (value < 27)\n{\n    value *= 2;\n    count++;\n}\nConsole.WriteLine(count);\nConsole.WriteLine(value);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Условие проверяется перед телом. Сначала изменяется value, затем увеличивается счётчик выполненных итераций.",
+        "challengeResult": "4\n48",
+        "options": [
+          "4\n48",
+          "48\n4",
+          "5\n49",
+          "448"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int value = 1;\nint count = 0;\nwhile (value < 30)\n{\n    value += 3;\n    count++;\n}\nConsole.WriteLine(count);\nConsole.WriteLine(value);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Условие проверяется перед телом. Сначала изменяется value, затем увеличивается счётчик выполненных итераций.",
+        "challengeResult": "10\n31",
+        "options": [
+          "10\n31",
+          "31\n10",
+          "11\n32",
+          "1031"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int value = 2;\nint count = 0;\nwhile (value < 33)\n{\n    value *= 2;\n    count++;\n}\nConsole.WriteLine(count);\nConsole.WriteLine(value);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Условие проверяется перед телом. Сначала изменяется value, затем увеличивается счётчик выполненных итераций.",
+        "challengeResult": "5\n64",
+        "options": [
+          "5\n64",
+          "64\n5",
+          "6\n65",
+          "564"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int value = 3;\nint count = 0;\nwhile (value < 36)\n{\n    value += 3;\n    count++;\n}\nConsole.WriteLine(count);\nConsole.WriteLine(value);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Условие проверяется перед телом. Сначала изменяется value, затем увеличивается счётчик выполненных итераций.",
+        "challengeResult": "11\n36",
+        "options": [
+          "11\n36",
+          "36\n11",
+          "12\n37",
+          "1136"
+        ],
+        "correctIndex": 0
+      }
+    ],
+    "challengeResult": "4\n13",
+    "options": [
+      "4\n13",
+      "13\n4",
+      "5\n14",
+      "413"
+    ],
+    "correctIndex": 0,
+    "exampleResult": "11\n36"
+  },
+  {
+    "id": "expand-7-do-boundary",
+    "codeDeckId": "lab7-mixed-reading",
+    "deckId": "loops-basics",
+    "term": "do…while",
+    "exampleCode": "int value = 10;\nint count = 0;\ndo\n{\n    count++;\n    value -= 2;\n} while (value > 2);\nConsole.WriteLine(count);",
+    "exampleNote": "do…while выполняет тело перед первой проверкой. Учтите последнее изменение value перед выходом.",
+    "kind": "Что выведет код?",
+    "challengeCode": "int value = 2;\nint count = 0;\ndo\n{\n    count++;\n    value -= 2;\n} while (value > 0);\nConsole.WriteLine(count);",
+    "challengeInput": "",
+    "prompt": "Что появится в консоли?",
+    "explanation": "do…while выполняет тело перед первой проверкой. Учтите последнее изменение value перед выходом.",
+    "variants": [
+      {
+        "challengeCode": "int value = 3;\nint count = 0;\ndo\n{\n    count++;\n    value -= 2;\n} while (value >= 1);\nConsole.WriteLine(count);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "do…while выполняет тело перед первой проверкой. Учтите последнее изменение value перед выходом.",
+        "challengeResult": "2",
+        "options": [
+          "2",
+          "3",
+          "1",
+          "4"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int value = 4;\nint count = 0;\ndo\n{\n    count++;\n    value -= 2;\n} while (value > 2);\nConsole.WriteLine(count);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "do…while выполняет тело перед первой проверкой. Учтите последнее изменение value перед выходом.",
+        "challengeResult": "1",
+        "options": [
+          "1",
+          "2",
+          "0",
+          "3"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int value = 5;\nint count = 0;\ndo\n{\n    count++;\n    value -= 2;\n} while (value >= 0);\nConsole.WriteLine(count);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "do…while выполняет тело перед первой проверкой. Учтите последнее изменение value перед выходом.",
+        "challengeResult": "3",
+        "options": [
+          "3",
+          "4",
+          "2",
+          "5"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int value = 6;\nint count = 0;\ndo\n{\n    count++;\n    value -= 2;\n} while (value > 1);\nConsole.WriteLine(count);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "do…while выполняет тело перед первой проверкой. Учтите последнее изменение value перед выходом.",
+        "challengeResult": "3",
+        "options": [
+          "3",
+          "4",
+          "2",
+          "5"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int value = 7;\nint count = 0;\ndo\n{\n    count++;\n    value -= 2;\n} while (value >= 2);\nConsole.WriteLine(count);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "do…while выполняет тело перед первой проверкой. Учтите последнее изменение value перед выходом.",
+        "challengeResult": "3",
+        "options": [
+          "3",
+          "4",
+          "2",
+          "5"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int value = 8;\nint count = 0;\ndo\n{\n    count++;\n    value -= 2;\n} while (value > 0);\nConsole.WriteLine(count);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "do…while выполняет тело перед первой проверкой. Учтите последнее изменение value перед выходом.",
+        "challengeResult": "4",
+        "options": [
+          "4",
+          "5",
+          "3",
+          "6"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int value = 9;\nint count = 0;\ndo\n{\n    count++;\n    value -= 2;\n} while (value >= 1);\nConsole.WriteLine(count);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "do…while выполняет тело перед первой проверкой. Учтите последнее изменение value перед выходом.",
+        "challengeResult": "5",
+        "options": [
+          "5",
+          "6",
+          "4",
+          "7"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int value = 10;\nint count = 0;\ndo\n{\n    count++;\n    value -= 2;\n} while (value > 2);\nConsole.WriteLine(count);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "do…while выполняет тело перед первой проверкой. Учтите последнее изменение value перед выходом.",
+        "challengeResult": "4",
+        "options": [
+          "4",
+          "5",
+          "3",
+          "6"
+        ],
+        "correctIndex": 0
+      }
+    ],
+    "challengeResult": "1",
+    "options": [
+      "1",
+      "2",
+      "0",
+      "3"
+    ],
+    "correctIndex": 0,
+    "exampleResult": "4"
+  },
+  {
+    "id": "expand-7-accumulator-reset",
+    "codeDeckId": "lab7-mixed-reading",
+    "deckId": "loops-control",
+    "term": "Накопитель",
+    "exampleCode": "int sum = 0;\nfor (int i = 1; i <= 11; i++)\n{\n    sum += i * 2;\n}\nConsole.WriteLine(sum);",
+    "exampleNote": "Обнуление внутри тела уничтожает результат предыдущих итераций. Без обнуления значения накапливаются.",
+    "kind": "Что выведет код?",
+    "challengeCode": "int sum = 0;\nfor (int i = 1; i <= 3; i++)\n{\n    sum += i * 2;\n}\nConsole.WriteLine(sum);",
+    "challengeInput": "",
+    "prompt": "Что появится в консоли?",
+    "explanation": "Обнуление внутри тела уничтожает результат предыдущих итераций. Без обнуления значения накапливаются.",
+    "variants": [
+      {
+        "challengeCode": "int sum = 0;\nfor (int i = 1; i <= 4; i++)\n{\n    sum = 0;\n    sum += i * 2;\n}\nConsole.WriteLine(sum);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Обнуление внутри тела уничтожает результат предыдущих итераций. Без обнуления значения накапливаются.",
+        "challengeResult": "8",
+        "options": [
+          "8",
+          "9",
+          "7",
+          "10"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int sum = 0;\nfor (int i = 1; i <= 5; i++)\n{\n    sum += i * 2;\n}\nConsole.WriteLine(sum);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Обнуление внутри тела уничтожает результат предыдущих итераций. Без обнуления значения накапливаются.",
+        "challengeResult": "30",
+        "options": [
+          "30",
+          "31",
+          "29",
+          "32"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int sum = 0;\nfor (int i = 1; i <= 6; i++)\n{\n    sum = 0;\n    sum += i * 2;\n}\nConsole.WriteLine(sum);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Обнуление внутри тела уничтожает результат предыдущих итераций. Без обнуления значения накапливаются.",
+        "challengeResult": "12",
+        "options": [
+          "12",
+          "13",
+          "11",
+          "14"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int sum = 0;\nfor (int i = 1; i <= 7; i++)\n{\n    sum += i * 2;\n}\nConsole.WriteLine(sum);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Обнуление внутри тела уничтожает результат предыдущих итераций. Без обнуления значения накапливаются.",
+        "challengeResult": "56",
+        "options": [
+          "56",
+          "57",
+          "55",
+          "58"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int sum = 0;\nfor (int i = 1; i <= 8; i++)\n{\n    sum = 0;\n    sum += i * 2;\n}\nConsole.WriteLine(sum);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Обнуление внутри тела уничтожает результат предыдущих итераций. Без обнуления значения накапливаются.",
+        "challengeResult": "16",
+        "options": [
+          "16",
+          "17",
+          "15",
+          "18"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int sum = 0;\nfor (int i = 1; i <= 9; i++)\n{\n    sum += i * 2;\n}\nConsole.WriteLine(sum);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Обнуление внутри тела уничтожает результат предыдущих итераций. Без обнуления значения накапливаются.",
+        "challengeResult": "90",
+        "options": [
+          "90",
+          "91",
+          "89",
+          "92"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int sum = 0;\nfor (int i = 1; i <= 10; i++)\n{\n    sum = 0;\n    sum += i * 2;\n}\nConsole.WriteLine(sum);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Обнуление внутри тела уничтожает результат предыдущих итераций. Без обнуления значения накапливаются.",
+        "challengeResult": "20",
+        "options": [
+          "20",
+          "21",
+          "19",
+          "22"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int sum = 0;\nfor (int i = 1; i <= 11; i++)\n{\n    sum += i * 2;\n}\nConsole.WriteLine(sum);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Обнуление внутри тела уничтожает результат предыдущих итераций. Без обнуления значения накапливаются.",
+        "challengeResult": "132",
+        "options": [
+          "132",
+          "133",
+          "131",
+          "134"
+        ],
+        "correctIndex": 0
+      }
+    ],
+    "challengeResult": "12",
+    "options": [
+      "12",
+      "13",
+      "11",
+      "14"
+    ],
+    "correctIndex": 0,
+    "exampleResult": "132"
+  },
+  {
+    "id": "expand-7-counter-after",
+    "codeDeckId": "lab7-mixed-reading",
+    "deckId": "loops-basics",
+    "term": "Счётчик цикла",
+    "exampleCode": "int i;\nfor (i = 0; i < 13; i += 3)\n{\n}\nConsole.WriteLine(i);",
+    "exampleNote": "После последней итерации for выполняет шаг, затем ложная проверка завершает цикл. Переменная объявлена вне for.",
+    "kind": "Что выведет код?",
+    "challengeCode": "int i;\nfor (i = 0; i < 5; i += 1)\n{\n}\nConsole.WriteLine(i);",
+    "challengeInput": "",
+    "prompt": "Что появится в консоли?",
+    "explanation": "После последней итерации for выполняет шаг, затем ложная проверка завершает цикл. Переменная объявлена вне for.",
+    "variants": [
+      {
+        "challengeCode": "int i;\nfor (i = 1; i < 6; i += 2)\n{\n}\nConsole.WriteLine(i);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "После последней итерации for выполняет шаг, затем ложная проверка завершает цикл. Переменная объявлена вне for.",
+        "challengeResult": "7",
+        "options": [
+          "7",
+          "8",
+          "6",
+          "9"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int i;\nfor (i = 0; i < 7; i += 3)\n{\n}\nConsole.WriteLine(i);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "После последней итерации for выполняет шаг, затем ложная проверка завершает цикл. Переменная объявлена вне for.",
+        "challengeResult": "9",
+        "options": [
+          "9",
+          "10",
+          "8",
+          "11"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int i;\nfor (i = 1; i < 8; i += 1)\n{\n}\nConsole.WriteLine(i);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "После последней итерации for выполняет шаг, затем ложная проверка завершает цикл. Переменная объявлена вне for.",
+        "challengeResult": "8",
+        "options": [
+          "8",
+          "9",
+          "7",
+          "10"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int i;\nfor (i = 0; i < 9; i += 2)\n{\n}\nConsole.WriteLine(i);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "После последней итерации for выполняет шаг, затем ложная проверка завершает цикл. Переменная объявлена вне for.",
+        "challengeResult": "10",
+        "options": [
+          "10",
+          "11",
+          "9",
+          "12"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int i;\nfor (i = 1; i < 10; i += 3)\n{\n}\nConsole.WriteLine(i);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "После последней итерации for выполняет шаг, затем ложная проверка завершает цикл. Переменная объявлена вне for.",
+        "challengeResult": "10",
+        "options": [
+          "10",
+          "11",
+          "9",
+          "12"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int i;\nfor (i = 0; i < 11; i += 1)\n{\n}\nConsole.WriteLine(i);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "После последней итерации for выполняет шаг, затем ложная проверка завершает цикл. Переменная объявлена вне for.",
+        "challengeResult": "11",
+        "options": [
+          "11",
+          "12",
+          "10",
+          "13"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int i;\nfor (i = 1; i < 12; i += 2)\n{\n}\nConsole.WriteLine(i);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "После последней итерации for выполняет шаг, затем ложная проверка завершает цикл. Переменная объявлена вне for.",
+        "challengeResult": "13",
+        "options": [
+          "13",
+          "14",
+          "12",
+          "15"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int i;\nfor (i = 0; i < 13; i += 3)\n{\n}\nConsole.WriteLine(i);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "После последней итерации for выполняет шаг, затем ложная проверка завершает цикл. Переменная объявлена вне for.",
+        "challengeResult": "15",
+        "options": [
+          "15",
+          "16",
+          "14",
+          "17"
+        ],
+        "correctIndex": 0
+      }
+    ],
+    "challengeResult": "5",
+    "options": [
+      "5",
+      "6",
+      "4",
+      "7"
+    ],
+    "correctIndex": 0,
+    "exampleResult": "15"
+  },
+  {
+    "id": "expand-7-two-accumulators",
+    "codeDeckId": "lab7-mixed-reading",
+    "deckId": "loops-control",
+    "term": "Накопитель",
+    "exampleCode": "int sum = 0;\nint count = 0;\nfor (int i = 0; i <= 12; i++)\n{\n    if (i % 2 == 0)\n    {\n        sum += i;\n        count++;\n    }\n}\nConsole.WriteLine($\"{sum} {count}\");",
+    "exampleNote": "В каждой итерации sum и count меняются по разным правилам. Прибавляется текущее i, а не число итераций.",
+    "kind": "Что выведет код?",
+    "challengeCode": "int sum = 0;\nint count = 0;\nfor (int i = 0; i <= 4; i++)\n{\n    if (i % 2 == 0)\n    {\n        sum += i;\n        count++;\n    }\n}\nConsole.WriteLine($\"{sum} {count}\");",
+    "challengeInput": "",
+    "prompt": "Что появится в консоли?",
+    "explanation": "В каждой итерации sum и count меняются по разным правилам. Прибавляется текущее i, а не число итераций.",
+    "variants": [
+      {
+        "challengeCode": "int sum = 0;\nint count = 0;\nfor (int i = 1; i <= 5; i++)\n{\n    if (i % 2 == 1)\n    {\n        sum += i;\n        count++;\n    }\n}\nConsole.WriteLine($\"{sum} {count}\");",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "В каждой итерации sum и count меняются по разным правилам. Прибавляется текущее i, а не число итераций.",
+        "challengeResult": "9 3",
+        "options": [
+          "9 3",
+          "10 4",
+          "3 9",
+          "Ничего"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int sum = 0;\nint count = 0;\nfor (int i = 0; i <= 6; i++)\n{\n    if (i % 2 == 0)\n    {\n        sum += i;\n        count++;\n    }\n}\nConsole.WriteLine($\"{sum} {count}\");",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "В каждой итерации sum и count меняются по разным правилам. Прибавляется текущее i, а не число итераций.",
+        "challengeResult": "12 4",
+        "options": [
+          "12 4",
+          "13 5",
+          "4 21",
+          "Ничего"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int sum = 0;\nint count = 0;\nfor (int i = 1; i <= 7; i++)\n{\n    if (i % 2 == 1)\n    {\n        sum += i;\n        count++;\n    }\n}\nConsole.WriteLine($\"{sum} {count}\");",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "В каждой итерации sum и count меняются по разным правилам. Прибавляется текущее i, а не число итераций.",
+        "challengeResult": "16 4",
+        "options": [
+          "16 4",
+          "17 5",
+          "4 61",
+          "Ничего"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int sum = 0;\nint count = 0;\nfor (int i = 0; i <= 8; i++)\n{\n    if (i % 2 == 0)\n    {\n        sum += i;\n        count++;\n    }\n}\nConsole.WriteLine($\"{sum} {count}\");",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "В каждой итерации sum и count меняются по разным правилам. Прибавляется текущее i, а не число итераций.",
+        "challengeResult": "20 5",
+        "options": [
+          "20 5",
+          "21 6",
+          "5 02",
+          "Ничего"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int sum = 0;\nint count = 0;\nfor (int i = 1; i <= 9; i++)\n{\n    if (i % 2 == 1)\n    {\n        sum += i;\n        count++;\n    }\n}\nConsole.WriteLine($\"{sum} {count}\");",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "В каждой итерации sum и count меняются по разным правилам. Прибавляется текущее i, а не число итераций.",
+        "challengeResult": "25 5",
+        "options": [
+          "25 5",
+          "26 6",
+          "5 52",
+          "Ничего"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int sum = 0;\nint count = 0;\nfor (int i = 0; i <= 10; i++)\n{\n    if (i % 2 == 0)\n    {\n        sum += i;\n        count++;\n    }\n}\nConsole.WriteLine($\"{sum} {count}\");",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "В каждой итерации sum и count меняются по разным правилам. Прибавляется текущее i, а не число итераций.",
+        "challengeResult": "30 6",
+        "options": [
+          "30 6",
+          "31 7",
+          "6 03",
+          "Ничего"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int sum = 0;\nint count = 0;\nfor (int i = 1; i <= 11; i++)\n{\n    if (i % 2 == 1)\n    {\n        sum += i;\n        count++;\n    }\n}\nConsole.WriteLine($\"{sum} {count}\");",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "В каждой итерации sum и count меняются по разным правилам. Прибавляется текущее i, а не число итераций.",
+        "challengeResult": "36 6",
+        "options": [
+          "36 6",
+          "37 7",
+          "6 63",
+          "Ничего"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int sum = 0;\nint count = 0;\nfor (int i = 0; i <= 12; i++)\n{\n    if (i % 2 == 0)\n    {\n        sum += i;\n        count++;\n    }\n}\nConsole.WriteLine($\"{sum} {count}\");",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "В каждой итерации sum и count меняются по разным правилам. Прибавляется текущее i, а не число итераций.",
+        "challengeResult": "42 7",
+        "options": [
+          "42 7",
+          "43 8",
+          "7 24",
+          "Ничего"
+        ],
+        "correctIndex": 0
+      }
+    ],
+    "challengeResult": "6 3",
+    "options": [
+      "6 3",
+      "7 4",
+      "3 6",
+      "Ничего"
+    ],
+    "correctIndex": 0,
+    "exampleResult": "42 7"
+  },
+  {
+    "id": "expand-8-array-copy",
+    "codeDeckId": "lab8-mixed-reading",
+    "deckId": "arrays-traversal",
+    "term": "Изменение элемента",
+    "exampleCode": "int[] values = { 10, 13, 16 };\nint saved = values[2];\nvalues[2] = 28;\nConsole.WriteLine(saved);\nConsole.WriteLine(values[2]);",
+    "exampleNote": "Переменная int хранит копию выбранного элемента. Последующая запись в массив не меняет эту копию.",
+    "kind": "Что выведет код?",
+    "challengeCode": "int[] values = { 2, 5, 8 };\nint saved = values[0];\nvalues[0] = 20;\nConsole.WriteLine(saved);\nConsole.WriteLine(values[0]);",
+    "challengeInput": "",
+    "prompt": "Что появится в консоли?",
+    "explanation": "Переменная int хранит копию выбранного элемента. Последующая запись в массив не меняет эту копию.",
+    "variants": [
+      {
+        "challengeCode": "int[] values = { 3, 6, 9 };\nint saved = values[1];\nvalues[1] = 21;\nConsole.WriteLine(saved);\nConsole.WriteLine(values[1]);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Переменная int хранит копию выбранного элемента. Последующая запись в массив не меняет эту копию.",
+        "challengeResult": "6\n21",
+        "options": [
+          "6\n21",
+          "21\n6",
+          "7\n22",
+          "621"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int[] values = { 4, 7, 10 };\nint saved = values[2];\nvalues[2] = 22;\nConsole.WriteLine(saved);\nConsole.WriteLine(values[2]);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Переменная int хранит копию выбранного элемента. Последующая запись в массив не меняет эту копию.",
+        "challengeResult": "10\n22",
+        "options": [
+          "10\n22",
+          "22\n10",
+          "11\n23",
+          "1022"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int[] values = { 5, 8, 11 };\nint saved = values[0];\nvalues[0] = 23;\nConsole.WriteLine(saved);\nConsole.WriteLine(values[0]);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Переменная int хранит копию выбранного элемента. Последующая запись в массив не меняет эту копию.",
+        "challengeResult": "5\n23",
+        "options": [
+          "5\n23",
+          "23\n5",
+          "6\n24",
+          "523"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int[] values = { 6, 9, 12 };\nint saved = values[1];\nvalues[1] = 24;\nConsole.WriteLine(saved);\nConsole.WriteLine(values[1]);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Переменная int хранит копию выбранного элемента. Последующая запись в массив не меняет эту копию.",
+        "challengeResult": "9\n24",
+        "options": [
+          "9\n24",
+          "24\n9",
+          "10\n25",
+          "924"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int[] values = { 7, 10, 13 };\nint saved = values[2];\nvalues[2] = 25;\nConsole.WriteLine(saved);\nConsole.WriteLine(values[2]);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Переменная int хранит копию выбранного элемента. Последующая запись в массив не меняет эту копию.",
+        "challengeResult": "13\n25",
+        "options": [
+          "13\n25",
+          "25\n13",
+          "14\n26",
+          "1325"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int[] values = { 8, 11, 14 };\nint saved = values[0];\nvalues[0] = 26;\nConsole.WriteLine(saved);\nConsole.WriteLine(values[0]);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Переменная int хранит копию выбранного элемента. Последующая запись в массив не меняет эту копию.",
+        "challengeResult": "8\n26",
+        "options": [
+          "8\n26",
+          "26\n8",
+          "9\n27",
+          "826"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int[] values = { 9, 12, 15 };\nint saved = values[1];\nvalues[1] = 27;\nConsole.WriteLine(saved);\nConsole.WriteLine(values[1]);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Переменная int хранит копию выбранного элемента. Последующая запись в массив не меняет эту копию.",
+        "challengeResult": "12\n27",
+        "options": [
+          "12\n27",
+          "27\n12",
+          "13\n28",
+          "1227"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int[] values = { 10, 13, 16 };\nint saved = values[2];\nvalues[2] = 28;\nConsole.WriteLine(saved);\nConsole.WriteLine(values[2]);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Переменная int хранит копию выбранного элемента. Последующая запись в массив не меняет эту копию.",
+        "challengeResult": "16\n28",
+        "options": [
+          "16\n28",
+          "28\n16",
+          "17\n29",
+          "1628"
+        ],
+        "correctIndex": 0
+      }
+    ],
+    "challengeResult": "2\n20",
+    "options": [
+      "2\n20",
+      "20\n2",
+      "3\n21",
+      "220"
+    ],
+    "correctIndex": 0,
+    "exampleResult": "16\n28"
+  },
+  {
+    "id": "expand-8-array-update-order",
+    "codeDeckId": "lab8-mixed-reading",
+    "deckId": "arrays-traversal",
+    "term": "Изменение элемента",
+    "exampleCode": "int[] values = { 9, 11, 14 };\nvalues[1] = values[0] + values[2];\nvalues[0] = values[2];\nConsole.WriteLine($\"{values[0]} {values[1]}\");",
+    "exampleNote": "Каждая следующая запись использует уже изменённые элементы массива. Порядок присваиваний влияет на результат.",
+    "kind": "Что выведет код?",
+    "challengeCode": "int[] values = { 1, 3, 6 };\nvalues[1] = values[0] + values[2];\nvalues[0] = values[2];\nConsole.WriteLine($\"{values[0]} {values[1]}\");",
+    "challengeInput": "",
+    "prompt": "Что появится в консоли?",
+    "explanation": "Каждая следующая запись использует уже изменённые элементы массива. Порядок присваиваний влияет на результат.",
+    "variants": [
+      {
+        "challengeCode": "int[] values = { 2, 4, 7 };\nvalues[1] = values[0] + values[2];\nvalues[0] = values[1];\nConsole.WriteLine($\"{values[0]} {values[1]}\");",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Каждая следующая запись использует уже изменённые элементы массива. Порядок присваиваний влияет на результат.",
+        "challengeResult": "9 9",
+        "options": [
+          "9 9",
+          "10 10",
+          "Ничего",
+          "Ошибка компиляции"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int[] values = { 3, 5, 8 };\nvalues[1] = values[0] + values[2];\nvalues[0] = values[2];\nConsole.WriteLine($\"{values[0]} {values[1]}\");",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Каждая следующая запись использует уже изменённые элементы массива. Порядок присваиваний влияет на результат.",
+        "challengeResult": "8 11",
+        "options": [
+          "8 11",
+          "9 12",
+          "11 8",
+          "Ничего"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int[] values = { 4, 6, 9 };\nvalues[1] = values[0] + values[2];\nvalues[0] = values[1];\nConsole.WriteLine($\"{values[0]} {values[1]}\");",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Каждая следующая запись использует уже изменённые элементы массива. Порядок присваиваний влияет на результат.",
+        "challengeResult": "13 13",
+        "options": [
+          "13 13",
+          "14 14",
+          "31 31",
+          "Ничего"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int[] values = { 5, 7, 10 };\nvalues[1] = values[0] + values[2];\nvalues[0] = values[2];\nConsole.WriteLine($\"{values[0]} {values[1]}\");",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Каждая следующая запись использует уже изменённые элементы массива. Порядок присваиваний влияет на результат.",
+        "challengeResult": "10 15",
+        "options": [
+          "10 15",
+          "11 16",
+          "51 01",
+          "Ничего"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int[] values = { 6, 8, 11 };\nvalues[1] = values[0] + values[2];\nvalues[0] = values[1];\nConsole.WriteLine($\"{values[0]} {values[1]}\");",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Каждая следующая запись использует уже изменённые элементы массива. Порядок присваиваний влияет на результат.",
+        "challengeResult": "17 17",
+        "options": [
+          "17 17",
+          "18 18",
+          "71 71",
+          "Ничего"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int[] values = { 7, 9, 12 };\nvalues[1] = values[0] + values[2];\nvalues[0] = values[2];\nConsole.WriteLine($\"{values[0]} {values[1]}\");",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Каждая следующая запись использует уже изменённые элементы массива. Порядок присваиваний влияет на результат.",
+        "challengeResult": "12 19",
+        "options": [
+          "12 19",
+          "13 20",
+          "91 21",
+          "Ничего"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int[] values = { 8, 10, 13 };\nvalues[1] = values[0] + values[2];\nvalues[0] = values[1];\nConsole.WriteLine($\"{values[0]} {values[1]}\");",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Каждая следующая запись использует уже изменённые элементы массива. Порядок присваиваний влияет на результат.",
+        "challengeResult": "21 21",
+        "options": [
+          "21 21",
+          "22 22",
+          "12 12",
+          "Ничего"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int[] values = { 9, 11, 14 };\nvalues[1] = values[0] + values[2];\nvalues[0] = values[2];\nConsole.WriteLine($\"{values[0]} {values[1]}\");",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Каждая следующая запись использует уже изменённые элементы массива. Порядок присваиваний влияет на результат.",
+        "challengeResult": "14 23",
+        "options": [
+          "14 23",
+          "15 24",
+          "32 41",
+          "Ничего"
+        ],
+        "correctIndex": 0
+      }
+    ],
+    "challengeResult": "6 7",
+    "options": [
+      "6 7",
+      "7 8",
+      "7 6",
+      "Ничего"
+    ],
+    "correctIndex": 0,
+    "exampleResult": "14 23"
+  },
+  {
+    "id": "expand-8-array-defaults",
+    "codeDeckId": "lab8-mixed-reading",
+    "deckId": "arrays-basics",
+    "term": "Значение по умолчанию",
+    "exampleCode": "int[] values = new int[5];\nvalues[0] = 12;\nvalues[1] += 10;\nConsole.WriteLine(values[2]);",
+    "exampleNote": "Незаполненные элементы int[] равны нулю. Прибавление к ячейке сохраняет результат именно в ней.",
+    "kind": "Что выведет код?",
+    "challengeCode": "int[] values = new int[3];\nvalues[0] = 4;\nvalues[1] += 2;\nConsole.WriteLine(values[0]);",
+    "challengeInput": "",
+    "prompt": "Что появится в консоли?",
+    "explanation": "Незаполненные элементы int[] равны нулю. Прибавление к ячейке сохраняет результат именно в ней.",
+    "variants": [
+      {
+        "challengeCode": "int[] values = new int[4];\nvalues[0] = 5;\nvalues[2] += 3;\nConsole.WriteLine(values[1]);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Незаполненные элементы int[] равны нулю. Прибавление к ячейке сохраняет результат именно в ней.",
+        "challengeResult": "0",
+        "options": [
+          "0",
+          "1",
+          "-1",
+          "2"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int[] values = new int[5];\nvalues[0] = 6;\nvalues[1] += 4;\nConsole.WriteLine(values[2]);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Незаполненные элементы int[] равны нулю. Прибавление к ячейке сохраняет результат именно в ней.",
+        "challengeResult": "0",
+        "options": [
+          "0",
+          "1",
+          "-1",
+          "2"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int[] values = new int[3];\nvalues[0] = 7;\nvalues[2] += 5;\nConsole.WriteLine(values[0]);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Незаполненные элементы int[] равны нулю. Прибавление к ячейке сохраняет результат именно в ней.",
+        "challengeResult": "7",
+        "options": [
+          "7",
+          "8",
+          "6",
+          "9"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int[] values = new int[4];\nvalues[0] = 8;\nvalues[1] += 6;\nConsole.WriteLine(values[1]);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Незаполненные элементы int[] равны нулю. Прибавление к ячейке сохраняет результат именно в ней.",
+        "challengeResult": "6",
+        "options": [
+          "6",
+          "7",
+          "5",
+          "8"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int[] values = new int[5];\nvalues[0] = 9;\nvalues[2] += 7;\nConsole.WriteLine(values[2]);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Незаполненные элементы int[] равны нулю. Прибавление к ячейке сохраняет результат именно в ней.",
+        "challengeResult": "7",
+        "options": [
+          "7",
+          "8",
+          "6",
+          "9"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int[] values = new int[3];\nvalues[0] = 10;\nvalues[1] += 8;\nConsole.WriteLine(values[0]);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Незаполненные элементы int[] равны нулю. Прибавление к ячейке сохраняет результат именно в ней.",
+        "challengeResult": "10",
+        "options": [
+          "10",
+          "11",
+          "9",
+          "12"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int[] values = new int[4];\nvalues[0] = 11;\nvalues[2] += 9;\nConsole.WriteLine(values[1]);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Незаполненные элементы int[] равны нулю. Прибавление к ячейке сохраняет результат именно в ней.",
+        "challengeResult": "0",
+        "options": [
+          "0",
+          "1",
+          "-1",
+          "2"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int[] values = new int[5];\nvalues[0] = 12;\nvalues[1] += 10;\nConsole.WriteLine(values[2]);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Незаполненные элементы int[] равны нулю. Прибавление к ячейке сохраняет результат именно в ней.",
+        "challengeResult": "0",
+        "options": [
+          "0",
+          "1",
+          "-1",
+          "2"
+        ],
+        "correctIndex": 0
+      }
+    ],
+    "challengeResult": "4",
+    "options": [
+      "4",
+      "5",
+      "3",
+      "6"
+    ],
+    "correctIndex": 0,
+    "exampleResult": "0"
+  },
+  {
+    "id": "expand-8-array-reverse",
+    "codeDeckId": "lab8-mixed-reading",
+    "deckId": "arrays-traversal",
+    "term": "Перебор массива",
+    "exampleCode": "int[] values = { 9, 12, 15 };\nfor (int i = values.Length - 1; i >= 0; i--)\n{\n    Console.WriteLine(values[i]);\n}",
+    "exampleNote": "Начало с Length - 1 даёт последний элемент. Убывающий индекс задаёт обратный порядок обхода.",
+    "kind": "Что выведет код?",
+    "challengeCode": "int[] values = { 1, 4, 7 };\nfor (int i = values.Length - 1; i >= 0; i--)\n{\n    Console.WriteLine(values[i]);\n}",
+    "challengeInput": "",
+    "prompt": "Что появится в консоли?",
+    "explanation": "Начало с Length - 1 даёт последний элемент. Убывающий индекс задаёт обратный порядок обхода.",
+    "variants": [
+      {
+        "challengeCode": "int[] values = { 2, 5, 8 };\nfor (int i = values.Length - 1; i > 0; i--)\n{\n    Console.WriteLine(values[i]);\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Начало с Length - 1 даёт последний элемент. Убывающий индекс задаёт обратный порядок обхода.",
+        "challengeResult": "8\n5",
+        "options": [
+          "8\n5",
+          "5\n8",
+          "9\n6",
+          "85"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int[] values = { 3, 6, 9 };\nfor (int i = values.Length - 1; i >= 0; i--)\n{\n    Console.WriteLine(values[i]);\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Начало с Length - 1 даёт последний элемент. Убывающий индекс задаёт обратный порядок обхода.",
+        "challengeResult": "9\n6\n3",
+        "options": [
+          "9\n6\n3",
+          "3\n6\n9",
+          "10\n7\n4",
+          "963"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int[] values = { 4, 7, 10 };\nfor (int i = values.Length - 1; i > 0; i--)\n{\n    Console.WriteLine(values[i]);\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Начало с Length - 1 даёт последний элемент. Убывающий индекс задаёт обратный порядок обхода.",
+        "challengeResult": "10\n7",
+        "options": [
+          "10\n7",
+          "7\n10",
+          "11\n8",
+          "107"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int[] values = { 5, 8, 11 };\nfor (int i = values.Length - 1; i >= 0; i--)\n{\n    Console.WriteLine(values[i]);\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Начало с Length - 1 даёт последний элемент. Убывающий индекс задаёт обратный порядок обхода.",
+        "challengeResult": "11\n8\n5",
+        "options": [
+          "11\n8\n5",
+          "5\n8\n11",
+          "12\n9\n6",
+          "1185"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int[] values = { 6, 9, 12 };\nfor (int i = values.Length - 1; i > 0; i--)\n{\n    Console.WriteLine(values[i]);\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Начало с Length - 1 даёт последний элемент. Убывающий индекс задаёт обратный порядок обхода.",
+        "challengeResult": "12\n9",
+        "options": [
+          "12\n9",
+          "9\n12",
+          "13\n10",
+          "129"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int[] values = { 7, 10, 13 };\nfor (int i = values.Length - 1; i >= 0; i--)\n{\n    Console.WriteLine(values[i]);\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Начало с Length - 1 даёт последний элемент. Убывающий индекс задаёт обратный порядок обхода.",
+        "challengeResult": "13\n10\n7",
+        "options": [
+          "13\n10\n7",
+          "7\n10\n13",
+          "14\n11\n8",
+          "13107"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int[] values = { 8, 11, 14 };\nfor (int i = values.Length - 1; i > 0; i--)\n{\n    Console.WriteLine(values[i]);\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Начало с Length - 1 даёт последний элемент. Убывающий индекс задаёт обратный порядок обхода.",
+        "challengeResult": "14\n11",
+        "options": [
+          "14\n11",
+          "11\n14",
+          "15\n12",
+          "1411"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int[] values = { 9, 12, 15 };\nfor (int i = values.Length - 1; i >= 0; i--)\n{\n    Console.WriteLine(values[i]);\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Начало с Length - 1 даёт последний элемент. Убывающий индекс задаёт обратный порядок обхода.",
+        "challengeResult": "15\n12\n9",
+        "options": [
+          "15\n12\n9",
+          "9\n12\n15",
+          "16\n13\n10",
+          "15129"
+        ],
+        "correctIndex": 0
+      }
+    ],
+    "challengeResult": "7\n4\n1",
+    "options": [
+      "7\n4\n1",
+      "1\n4\n7",
+      "8\n5\n2",
+      "741"
+    ],
+    "correctIndex": 0,
+    "exampleResult": "15\n12\n9"
+  },
+  {
+    "id": "expand-8-array-filter-sum",
+    "codeDeckId": "lab8-mixed-reading",
+    "deckId": "arrays-analysis",
+    "term": "Сумма элементов",
+    "exampleCode": "int[] values = { 4, 10, -3, 13 };\nint sum = 0;\nfor (int i = 0; i < values.Length; i++)\n{\n    if (values[i] >= 0)\n    {\n        sum += values[i];\n    }\n}\nConsole.WriteLine(sum);",
+    "exampleNote": "В сумму входят только элементы, прошедшие проверку. Условие проверяет значение ячейки, а не её индекс.",
+    "kind": "Что выведет код?",
+    "challengeCode": "int[] values = { -4, 2, -3, 5 };\nint sum = 0;\nfor (int i = 0; i < values.Length; i++)\n{\n    if (values[i] >= 0)\n    {\n        sum += values[i];\n    }\n}\nConsole.WriteLine(sum);",
+    "challengeInput": "",
+    "prompt": "Что появится в консоли?",
+    "explanation": "В сумму входят только элементы, прошедшие проверку. Условие проверяет значение ячейки, а не её индекс.",
+    "variants": [
+      {
+        "challengeCode": "int[] values = { -3, 3, -3, 6 };\nint sum = 0;\nfor (int i = 0; i < values.Length; i++)\n{\n    if (values[i] < 0)\n    {\n        sum += values[i];\n    }\n}\nConsole.WriteLine(sum);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "В сумму входят только элементы, прошедшие проверку. Условие проверяет значение ячейки, а не её индекс.",
+        "challengeResult": "-6",
+        "options": [
+          "-6",
+          "-5",
+          "-7",
+          "-4"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int[] values = { -2, 4, -3, 7 };\nint sum = 0;\nfor (int i = 0; i < values.Length; i++)\n{\n    if (values[i] >= 0)\n    {\n        sum += values[i];\n    }\n}\nConsole.WriteLine(sum);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "В сумму входят только элементы, прошедшие проверку. Условие проверяет значение ячейки, а не её индекс.",
+        "challengeResult": "11",
+        "options": [
+          "11",
+          "12",
+          "10",
+          "13"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int[] values = { -1, 5, -3, 8 };\nint sum = 0;\nfor (int i = 0; i < values.Length; i++)\n{\n    if (values[i] < 0)\n    {\n        sum += values[i];\n    }\n}\nConsole.WriteLine(sum);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "В сумму входят только элементы, прошедшие проверку. Условие проверяет значение ячейки, а не её индекс.",
+        "challengeResult": "-4",
+        "options": [
+          "-4",
+          "-3",
+          "-5",
+          "-2"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int[] values = { 0, 6, -3, 9 };\nint sum = 0;\nfor (int i = 0; i < values.Length; i++)\n{\n    if (values[i] >= 0)\n    {\n        sum += values[i];\n    }\n}\nConsole.WriteLine(sum);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "В сумму входят только элементы, прошедшие проверку. Условие проверяет значение ячейки, а не её индекс.",
+        "challengeResult": "15",
+        "options": [
+          "15",
+          "16",
+          "14",
+          "17"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int[] values = { 1, 7, -3, 10 };\nint sum = 0;\nfor (int i = 0; i < values.Length; i++)\n{\n    if (values[i] < 0)\n    {\n        sum += values[i];\n    }\n}\nConsole.WriteLine(sum);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "В сумму входят только элементы, прошедшие проверку. Условие проверяет значение ячейки, а не её индекс.",
+        "challengeResult": "-3",
+        "options": [
+          "-3",
+          "-2",
+          "-4",
+          "-1"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int[] values = { 2, 8, -3, 11 };\nint sum = 0;\nfor (int i = 0; i < values.Length; i++)\n{\n    if (values[i] >= 0)\n    {\n        sum += values[i];\n    }\n}\nConsole.WriteLine(sum);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "В сумму входят только элементы, прошедшие проверку. Условие проверяет значение ячейки, а не её индекс.",
+        "challengeResult": "21",
+        "options": [
+          "21",
+          "22",
+          "20",
+          "23"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int[] values = { 3, 9, -3, 12 };\nint sum = 0;\nfor (int i = 0; i < values.Length; i++)\n{\n    if (values[i] < 0)\n    {\n        sum += values[i];\n    }\n}\nConsole.WriteLine(sum);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "В сумму входят только элементы, прошедшие проверку. Условие проверяет значение ячейки, а не её индекс.",
+        "challengeResult": "-3",
+        "options": [
+          "-3",
+          "-2",
+          "-4",
+          "-1"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int[] values = { 4, 10, -3, 13 };\nint sum = 0;\nfor (int i = 0; i < values.Length; i++)\n{\n    if (values[i] >= 0)\n    {\n        sum += values[i];\n    }\n}\nConsole.WriteLine(sum);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "В сумму входят только элементы, прошедшие проверку. Условие проверяет значение ячейки, а не её индекс.",
+        "challengeResult": "27",
+        "options": [
+          "27",
+          "28",
+          "26",
+          "29"
+        ],
+        "correctIndex": 0
+      }
+    ],
+    "challengeResult": "7",
+    "options": [
+      "7",
+      "8",
+      "6",
+      "9"
+    ],
+    "correctIndex": 0,
+    "exampleResult": "27"
+  },
+  {
+    "id": "expand-8-array-index-value",
+    "codeDeckId": "lab8-mixed-reading",
+    "deckId": "arrays-analysis",
+    "term": "Поиск по условию",
+    "exampleCode": "int[] values = { 10, 16, 10, 13 };\nint result = 0;\nfor (int i = 0; i < values.Length; i++)\n{\n    if (values[i] == 10)\n    {\n        result += i + 1;\n    }\n}\nConsole.WriteLine(result);",
+    "exampleNote": "Различайте индекс найденного элемента и его значение. В счётчик записывается то выражение, которое указано в теле.",
+    "kind": "Что выведет код?",
+    "challengeCode": "int[] values = { 2, 8, 2, 5 };\nint result = 0;\nfor (int i = 0; i < values.Length; i++)\n{\n    if (values[i] == 2)\n    {\n        result += i + 1;\n    }\n}\nConsole.WriteLine(result);",
+    "challengeInput": "",
+    "prompt": "Что появится в консоли?",
+    "explanation": "Различайте индекс найденного элемента и его значение. В счётчик записывается то выражение, которое указано в теле.",
+    "variants": [
+      {
+        "challengeCode": "int[] values = { 3, 9, 3, 6 };\nint result = 0;\nfor (int i = 0; i < values.Length; i++)\n{\n    if (values[i] == 3)\n    {\n        result += values[i];\n    }\n}\nConsole.WriteLine(result);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Различайте индекс найденного элемента и его значение. В счётчик записывается то выражение, которое указано в теле.",
+        "challengeResult": "6",
+        "options": [
+          "6",
+          "7",
+          "5",
+          "8"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int[] values = { 4, 10, 4, 7 };\nint result = 0;\nfor (int i = 0; i < values.Length; i++)\n{\n    if (values[i] == 4)\n    {\n        result += i + 1;\n    }\n}\nConsole.WriteLine(result);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Различайте индекс найденного элемента и его значение. В счётчик записывается то выражение, которое указано в теле.",
+        "challengeResult": "4",
+        "options": [
+          "4",
+          "5",
+          "3",
+          "6"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int[] values = { 5, 11, 5, 8 };\nint result = 0;\nfor (int i = 0; i < values.Length; i++)\n{\n    if (values[i] == 5)\n    {\n        result += values[i];\n    }\n}\nConsole.WriteLine(result);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Различайте индекс найденного элемента и его значение. В счётчик записывается то выражение, которое указано в теле.",
+        "challengeResult": "10",
+        "options": [
+          "10",
+          "11",
+          "9",
+          "12"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int[] values = { 6, 12, 6, 9 };\nint result = 0;\nfor (int i = 0; i < values.Length; i++)\n{\n    if (values[i] == 6)\n    {\n        result += i + 1;\n    }\n}\nConsole.WriteLine(result);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Различайте индекс найденного элемента и его значение. В счётчик записывается то выражение, которое указано в теле.",
+        "challengeResult": "4",
+        "options": [
+          "4",
+          "5",
+          "3",
+          "6"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int[] values = { 7, 13, 7, 10 };\nint result = 0;\nfor (int i = 0; i < values.Length; i++)\n{\n    if (values[i] == 7)\n    {\n        result += values[i];\n    }\n}\nConsole.WriteLine(result);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Различайте индекс найденного элемента и его значение. В счётчик записывается то выражение, которое указано в теле.",
+        "challengeResult": "14",
+        "options": [
+          "14",
+          "15",
+          "13",
+          "16"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int[] values = { 8, 14, 8, 11 };\nint result = 0;\nfor (int i = 0; i < values.Length; i++)\n{\n    if (values[i] == 8)\n    {\n        result += i + 1;\n    }\n}\nConsole.WriteLine(result);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Различайте индекс найденного элемента и его значение. В счётчик записывается то выражение, которое указано в теле.",
+        "challengeResult": "4",
+        "options": [
+          "4",
+          "5",
+          "3",
+          "6"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int[] values = { 9, 15, 9, 12 };\nint result = 0;\nfor (int i = 0; i < values.Length; i++)\n{\n    if (values[i] == 9)\n    {\n        result += values[i];\n    }\n}\nConsole.WriteLine(result);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Различайте индекс найденного элемента и его значение. В счётчик записывается то выражение, которое указано в теле.",
+        "challengeResult": "18",
+        "options": [
+          "18",
+          "19",
+          "17",
+          "20"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int[] values = { 10, 16, 10, 13 };\nint result = 0;\nfor (int i = 0; i < values.Length; i++)\n{\n    if (values[i] == 10)\n    {\n        result += i + 1;\n    }\n}\nConsole.WriteLine(result);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Различайте индекс найденного элемента и его значение. В счётчик записывается то выражение, которое указано в теле.",
+        "challengeResult": "4",
+        "options": [
+          "4",
+          "5",
+          "3",
+          "6"
+        ],
+        "correctIndex": 0
+      }
+    ],
+    "challengeResult": "4",
+    "options": [
+      "4",
+      "5",
+      "3",
+      "6"
+    ],
+    "correctIndex": 0,
+    "exampleResult": "4"
+  },
+  {
+    "id": "expand-8-array-max-index",
+    "codeDeckId": "lab8-mixed-reading",
+    "deckId": "arrays-analysis",
+    "term": "Максимум массива",
+    "exampleCode": "int[] values = { 10, 16, 11, 16 };\nint best = 0;\nfor (int i = 1; i < values.Length; i++)\n{\n    if (values[i] > values[best])\n    {\n        best = i;\n    }\n}\nConsole.WriteLine(best);",
+    "exampleNote": "При строгом > сохраняется индекс первого максимума, при >= — последнего. Сам максимум при этом одинаков.",
+    "kind": "Что выведет код?",
+    "challengeCode": "int[] values = { 2, 8, 3, 8 };\nint best = 0;\nfor (int i = 1; i < values.Length; i++)\n{\n    if (values[i] > values[best])\n    {\n        best = i;\n    }\n}\nConsole.WriteLine(best);",
+    "challengeInput": "",
+    "prompt": "Что появится в консоли?",
+    "explanation": "При строгом > сохраняется индекс первого максимума, при >= — последнего. Сам максимум при этом одинаков.",
+    "variants": [
+      {
+        "challengeCode": "int[] values = { 3, 9, 4, 9 };\nint best = 0;\nfor (int i = 1; i < values.Length; i++)\n{\n    if (values[i] >= values[best])\n    {\n        best = i;\n    }\n}\nConsole.WriteLine(best);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "При строгом > сохраняется индекс первого максимума, при >= — последнего. Сам максимум при этом одинаков.",
+        "challengeResult": "3",
+        "options": [
+          "3",
+          "4",
+          "2",
+          "5"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int[] values = { 4, 10, 5, 10 };\nint best = 0;\nfor (int i = 1; i < values.Length; i++)\n{\n    if (values[i] > values[best])\n    {\n        best = i;\n    }\n}\nConsole.WriteLine(best);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "При строгом > сохраняется индекс первого максимума, при >= — последнего. Сам максимум при этом одинаков.",
+        "challengeResult": "1",
+        "options": [
+          "1",
+          "2",
+          "0",
+          "3"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int[] values = { 5, 11, 6, 11 };\nint best = 0;\nfor (int i = 1; i < values.Length; i++)\n{\n    if (values[i] >= values[best])\n    {\n        best = i;\n    }\n}\nConsole.WriteLine(best);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "При строгом > сохраняется индекс первого максимума, при >= — последнего. Сам максимум при этом одинаков.",
+        "challengeResult": "3",
+        "options": [
+          "3",
+          "4",
+          "2",
+          "5"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int[] values = { 6, 12, 7, 12 };\nint best = 0;\nfor (int i = 1; i < values.Length; i++)\n{\n    if (values[i] > values[best])\n    {\n        best = i;\n    }\n}\nConsole.WriteLine(best);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "При строгом > сохраняется индекс первого максимума, при >= — последнего. Сам максимум при этом одинаков.",
+        "challengeResult": "1",
+        "options": [
+          "1",
+          "2",
+          "0",
+          "3"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int[] values = { 7, 13, 8, 13 };\nint best = 0;\nfor (int i = 1; i < values.Length; i++)\n{\n    if (values[i] >= values[best])\n    {\n        best = i;\n    }\n}\nConsole.WriteLine(best);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "При строгом > сохраняется индекс первого максимума, при >= — последнего. Сам максимум при этом одинаков.",
+        "challengeResult": "3",
+        "options": [
+          "3",
+          "4",
+          "2",
+          "5"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int[] values = { 8, 14, 9, 14 };\nint best = 0;\nfor (int i = 1; i < values.Length; i++)\n{\n    if (values[i] > values[best])\n    {\n        best = i;\n    }\n}\nConsole.WriteLine(best);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "При строгом > сохраняется индекс первого максимума, при >= — последнего. Сам максимум при этом одинаков.",
+        "challengeResult": "1",
+        "options": [
+          "1",
+          "2",
+          "0",
+          "3"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int[] values = { 9, 15, 10, 15 };\nint best = 0;\nfor (int i = 1; i < values.Length; i++)\n{\n    if (values[i] >= values[best])\n    {\n        best = i;\n    }\n}\nConsole.WriteLine(best);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "При строгом > сохраняется индекс первого максимума, при >= — последнего. Сам максимум при этом одинаков.",
+        "challengeResult": "3",
+        "options": [
+          "3",
+          "4",
+          "2",
+          "5"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int[] values = { 10, 16, 11, 16 };\nint best = 0;\nfor (int i = 1; i < values.Length; i++)\n{\n    if (values[i] > values[best])\n    {\n        best = i;\n    }\n}\nConsole.WriteLine(best);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "При строгом > сохраняется индекс первого максимума, при >= — последнего. Сам максимум при этом одинаков.",
+        "challengeResult": "1",
+        "options": [
+          "1",
+          "2",
+          "0",
+          "3"
+        ],
+        "correctIndex": 0
+      }
+    ],
+    "challengeResult": "1",
+    "options": [
+      "1",
+      "2",
+      "0",
+      "3"
+    ],
+    "correctIndex": 0,
+    "exampleResult": "1"
+  },
+  {
+    "id": "expand-8-array-repeat-count",
+    "codeDeckId": "lab8-mixed-reading",
+    "deckId": "arrays-analysis",
+    "term": "Подсчёт по условию",
+    "exampleCode": "int[] values = { 0, 10, 0 };\nint count = 0;\nfor (int pass = 0; pass < 2; pass++)\n{\n    for (int i = 0; i < values.Length; i++)\n    {\n        if (values[i] == 0)\n        {\n            count++;\n        }\n    }\n}\nConsole.WriteLine(count);",
+    "exampleNote": "Счётчик должен учитывать только подходящие значения. При повторном обходе учтите, обнуляется ли он.",
+    "kind": "Что выведет код?",
+    "challengeCode": "int[] values = { 0, 2, 0 };\nint count = 0;\nfor (int pass = 0; pass < 2; pass++)\n{\n    for (int i = 0; i < values.Length; i++)\n    {\n        if (values[i] == 0)\n        {\n            count++;\n        }\n    }\n}\nConsole.WriteLine(count);",
+    "challengeInput": "",
+    "prompt": "Что появится в консоли?",
+    "explanation": "Счётчик должен учитывать только подходящие значения. При повторном обходе учтите, обнуляется ли он.",
+    "variants": [
+      {
+        "challengeCode": "int[] values = { 1, 3, 0 };\nint count = 0;\nfor (int pass = 0; pass < 2; pass++)\n{\n    count = 0;\n    for (int i = 0; i < values.Length; i++)\n    {\n        if (values[i] == 0)\n        {\n            count++;\n        }\n    }\n}\nConsole.WriteLine(count);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Счётчик должен учитывать только подходящие значения. При повторном обходе учтите, обнуляется ли он.",
+        "challengeResult": "1",
+        "options": [
+          "1",
+          "2",
+          "0",
+          "3"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int[] values = { 0, 4, 0 };\nint count = 0;\nfor (int pass = 0; pass < 2; pass++)\n{\n    for (int i = 0; i < values.Length; i++)\n    {\n        if (values[i] == 0)\n        {\n            count++;\n        }\n    }\n}\nConsole.WriteLine(count);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Счётчик должен учитывать только подходящие значения. При повторном обходе учтите, обнуляется ли он.",
+        "challengeResult": "4",
+        "options": [
+          "4",
+          "5",
+          "3",
+          "6"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int[] values = { 1, 5, 0 };\nint count = 0;\nfor (int pass = 0; pass < 2; pass++)\n{\n    count = 0;\n    for (int i = 0; i < values.Length; i++)\n    {\n        if (values[i] == 0)\n        {\n            count++;\n        }\n    }\n}\nConsole.WriteLine(count);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Счётчик должен учитывать только подходящие значения. При повторном обходе учтите, обнуляется ли он.",
+        "challengeResult": "1",
+        "options": [
+          "1",
+          "2",
+          "0",
+          "3"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int[] values = { 0, 6, 0 };\nint count = 0;\nfor (int pass = 0; pass < 2; pass++)\n{\n    for (int i = 0; i < values.Length; i++)\n    {\n        if (values[i] == 0)\n        {\n            count++;\n        }\n    }\n}\nConsole.WriteLine(count);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Счётчик должен учитывать только подходящие значения. При повторном обходе учтите, обнуляется ли он.",
+        "challengeResult": "4",
+        "options": [
+          "4",
+          "5",
+          "3",
+          "6"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int[] values = { 1, 7, 0 };\nint count = 0;\nfor (int pass = 0; pass < 2; pass++)\n{\n    count = 0;\n    for (int i = 0; i < values.Length; i++)\n    {\n        if (values[i] == 0)\n        {\n            count++;\n        }\n    }\n}\nConsole.WriteLine(count);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Счётчик должен учитывать только подходящие значения. При повторном обходе учтите, обнуляется ли он.",
+        "challengeResult": "1",
+        "options": [
+          "1",
+          "2",
+          "0",
+          "3"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int[] values = { 0, 8, 0 };\nint count = 0;\nfor (int pass = 0; pass < 2; pass++)\n{\n    for (int i = 0; i < values.Length; i++)\n    {\n        if (values[i] == 0)\n        {\n            count++;\n        }\n    }\n}\nConsole.WriteLine(count);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Счётчик должен учитывать только подходящие значения. При повторном обходе учтите, обнуляется ли он.",
+        "challengeResult": "4",
+        "options": [
+          "4",
+          "5",
+          "3",
+          "6"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int[] values = { 1, 9, 0 };\nint count = 0;\nfor (int pass = 0; pass < 2; pass++)\n{\n    count = 0;\n    for (int i = 0; i < values.Length; i++)\n    {\n        if (values[i] == 0)\n        {\n            count++;\n        }\n    }\n}\nConsole.WriteLine(count);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Счётчик должен учитывать только подходящие значения. При повторном обходе учтите, обнуляется ли он.",
+        "challengeResult": "1",
+        "options": [
+          "1",
+          "2",
+          "0",
+          "3"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int[] values = { 0, 10, 0 };\nint count = 0;\nfor (int pass = 0; pass < 2; pass++)\n{\n    for (int i = 0; i < values.Length; i++)\n    {\n        if (values[i] == 0)\n        {\n            count++;\n        }\n    }\n}\nConsole.WriteLine(count);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Счётчик должен учитывать только подходящие значения. При повторном обходе учтите, обнуляется ли он.",
+        "challengeResult": "4",
+        "options": [
+          "4",
+          "5",
+          "3",
+          "6"
+        ],
+        "correctIndex": 0
+      }
+    ],
+    "challengeResult": "4",
+    "options": [
+      "4",
+      "5",
+      "3",
+      "6"
+    ],
+    "correctIndex": 0,
+    "exampleResult": "4"
+  },
+  {
+    "id": "expand-8-array-prefix",
+    "codeDeckId": "lab8-mixed-reading",
+    "deckId": "arrays-traversal",
+    "term": "Заполнение массива",
+    "exampleCode": "int[] values = new int[5];\nvalues[0] = 9;\nfor (int i = 1; i < values.Length; i++)\n{\n    values[i] = values[i - 1] * 2;\n}\nConsole.WriteLine(values[values.Length - 1]);",
+    "exampleNote": "При заполнении слева направо предыдущая ячейка уже содержит рассчитанное значение.",
+    "kind": "Что выведет код?",
+    "challengeCode": "int[] values = new int[3];\nvalues[0] = 1;\nfor (int i = 1; i < values.Length; i++)\n{\n    values[i] = values[i - 1] * 2;\n}\nConsole.WriteLine(values[values.Length - 1]);",
+    "challengeInput": "",
+    "prompt": "Что появится в консоли?",
+    "explanation": "При заполнении слева направо предыдущая ячейка уже содержит рассчитанное значение.",
+    "variants": [
+      {
+        "challengeCode": "int[] values = new int[4];\nvalues[0] = 2;\nfor (int i = 1; i < values.Length; i++)\n{\n    values[i] = values[i - 1] + 2;\n}\nConsole.WriteLine(values[values.Length - 1]);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "При заполнении слева направо предыдущая ячейка уже содержит рассчитанное значение.",
+        "challengeResult": "8",
+        "options": [
+          "8",
+          "9",
+          "7",
+          "10"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int[] values = new int[5];\nvalues[0] = 3;\nfor (int i = 1; i < values.Length; i++)\n{\n    values[i] = values[i - 1] * 2;\n}\nConsole.WriteLine(values[values.Length - 1]);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "При заполнении слева направо предыдущая ячейка уже содержит рассчитанное значение.",
+        "challengeResult": "48",
+        "options": [
+          "48",
+          "49",
+          "47",
+          "50"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int[] values = new int[3];\nvalues[0] = 4;\nfor (int i = 1; i < values.Length; i++)\n{\n    values[i] = values[i - 1] + 2;\n}\nConsole.WriteLine(values[values.Length - 1]);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "При заполнении слева направо предыдущая ячейка уже содержит рассчитанное значение.",
+        "challengeResult": "8",
+        "options": [
+          "8",
+          "9",
+          "7",
+          "10"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int[] values = new int[4];\nvalues[0] = 5;\nfor (int i = 1; i < values.Length; i++)\n{\n    values[i] = values[i - 1] * 2;\n}\nConsole.WriteLine(values[values.Length - 1]);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "При заполнении слева направо предыдущая ячейка уже содержит рассчитанное значение.",
+        "challengeResult": "40",
+        "options": [
+          "40",
+          "41",
+          "39",
+          "42"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int[] values = new int[5];\nvalues[0] = 6;\nfor (int i = 1; i < values.Length; i++)\n{\n    values[i] = values[i - 1] + 2;\n}\nConsole.WriteLine(values[values.Length - 1]);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "При заполнении слева направо предыдущая ячейка уже содержит рассчитанное значение.",
+        "challengeResult": "14",
+        "options": [
+          "14",
+          "15",
+          "13",
+          "16"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int[] values = new int[3];\nvalues[0] = 7;\nfor (int i = 1; i < values.Length; i++)\n{\n    values[i] = values[i - 1] * 2;\n}\nConsole.WriteLine(values[values.Length - 1]);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "При заполнении слева направо предыдущая ячейка уже содержит рассчитанное значение.",
+        "challengeResult": "28",
+        "options": [
+          "28",
+          "29",
+          "27",
+          "30"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int[] values = new int[4];\nvalues[0] = 8;\nfor (int i = 1; i < values.Length; i++)\n{\n    values[i] = values[i - 1] + 2;\n}\nConsole.WriteLine(values[values.Length - 1]);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "При заполнении слева направо предыдущая ячейка уже содержит рассчитанное значение.",
+        "challengeResult": "14",
+        "options": [
+          "14",
+          "15",
+          "13",
+          "16"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int[] values = new int[5];\nvalues[0] = 9;\nfor (int i = 1; i < values.Length; i++)\n{\n    values[i] = values[i - 1] * 2;\n}\nConsole.WriteLine(values[values.Length - 1]);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "При заполнении слева направо предыдущая ячейка уже содержит рассчитанное значение.",
+        "challengeResult": "144",
+        "options": [
+          "144",
+          "145",
+          "143",
+          "146"
+        ],
+        "correctIndex": 0
+      }
+    ],
+    "challengeResult": "4",
+    "options": [
+      "4",
+      "5",
+      "3",
+      "6"
+    ],
+    "correctIndex": 0,
+    "exampleResult": "144"
+  },
+  {
+    "id": "expand-8-array-saved-sum",
+    "codeDeckId": "lab8-mixed-reading",
+    "deckId": "arrays-analysis",
+    "term": "Пересчёт результатов",
+    "exampleCode": "int[] values = { 11, 14 };\nint sum = 0;\nfor (int i = 0; i < values.Length; i++)\n{\n    sum += values[i];\n}\nvalues[0] = 28;\nConsole.WriteLine(sum);\nConsole.WriteLine(values[0]);",
+    "exampleNote": "Сумма хранит результат выполненного обхода. Последующие изменения массива не пересчитывают её автоматически.",
+    "kind": "Что выведет код?",
+    "challengeCode": "int[] values = { 3, 6 };\nint sum = 0;\nfor (int i = 0; i < values.Length; i++)\n{\n    sum += values[i];\n}\nvalues[0] = 20;\nConsole.WriteLine(sum);\nConsole.WriteLine(values[0]);",
+    "challengeInput": "",
+    "prompt": "Что появится в консоли?",
+    "explanation": "Сумма хранит результат выполненного обхода. Последующие изменения массива не пересчитывают её автоматически.",
+    "variants": [
+      {
+        "challengeCode": "int[] values = { 4, 7 };\nint sum = 0;\nfor (int i = 0; i < values.Length; i++)\n{\n    sum += values[i];\n}\nvalues[1] = 21;\nConsole.WriteLine(sum);\nConsole.WriteLine(values[1]);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Сумма хранит результат выполненного обхода. Последующие изменения массива не пересчитывают её автоматически.",
+        "challengeResult": "11\n21",
+        "options": [
+          "11\n21",
+          "21\n11",
+          "12\n22",
+          "1121"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int[] values = { 5, 8 };\nint sum = 0;\nfor (int i = 0; i < values.Length; i++)\n{\n    sum += values[i];\n}\nvalues[0] = 22;\nConsole.WriteLine(sum);\nConsole.WriteLine(values[0]);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Сумма хранит результат выполненного обхода. Последующие изменения массива не пересчитывают её автоматически.",
+        "challengeResult": "13\n22",
+        "options": [
+          "13\n22",
+          "22\n13",
+          "14\n23",
+          "1322"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int[] values = { 6, 9 };\nint sum = 0;\nfor (int i = 0; i < values.Length; i++)\n{\n    sum += values[i];\n}\nvalues[1] = 23;\nConsole.WriteLine(sum);\nConsole.WriteLine(values[1]);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Сумма хранит результат выполненного обхода. Последующие изменения массива не пересчитывают её автоматически.",
+        "challengeResult": "15\n23",
+        "options": [
+          "15\n23",
+          "23\n15",
+          "16\n24",
+          "1523"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int[] values = { 7, 10 };\nint sum = 0;\nfor (int i = 0; i < values.Length; i++)\n{\n    sum += values[i];\n}\nvalues[0] = 24;\nConsole.WriteLine(sum);\nConsole.WriteLine(values[0]);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Сумма хранит результат выполненного обхода. Последующие изменения массива не пересчитывают её автоматически.",
+        "challengeResult": "17\n24",
+        "options": [
+          "17\n24",
+          "24\n17",
+          "18\n25",
+          "1724"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int[] values = { 8, 11 };\nint sum = 0;\nfor (int i = 0; i < values.Length; i++)\n{\n    sum += values[i];\n}\nvalues[1] = 25;\nConsole.WriteLine(sum);\nConsole.WriteLine(values[1]);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Сумма хранит результат выполненного обхода. Последующие изменения массива не пересчитывают её автоматически.",
+        "challengeResult": "19\n25",
+        "options": [
+          "19\n25",
+          "25\n19",
+          "20\n26",
+          "1925"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int[] values = { 9, 12 };\nint sum = 0;\nfor (int i = 0; i < values.Length; i++)\n{\n    sum += values[i];\n}\nvalues[0] = 26;\nConsole.WriteLine(sum);\nConsole.WriteLine(values[0]);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Сумма хранит результат выполненного обхода. Последующие изменения массива не пересчитывают её автоматически.",
+        "challengeResult": "21\n26",
+        "options": [
+          "21\n26",
+          "26\n21",
+          "22\n27",
+          "2126"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int[] values = { 10, 13 };\nint sum = 0;\nfor (int i = 0; i < values.Length; i++)\n{\n    sum += values[i];\n}\nvalues[1] = 27;\nConsole.WriteLine(sum);\nConsole.WriteLine(values[1]);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Сумма хранит результат выполненного обхода. Последующие изменения массива не пересчитывают её автоматически.",
+        "challengeResult": "23\n27",
+        "options": [
+          "23\n27",
+          "27\n23",
+          "24\n28",
+          "2327"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int[] values = { 11, 14 };\nint sum = 0;\nfor (int i = 0; i < values.Length; i++)\n{\n    sum += values[i];\n}\nvalues[0] = 28;\nConsole.WriteLine(sum);\nConsole.WriteLine(values[0]);",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Сумма хранит результат выполненного обхода. Последующие изменения массива не пересчитывают её автоматически.",
+        "challengeResult": "25\n28",
+        "options": [
+          "25\n28",
+          "28\n25",
+          "26\n29",
+          "2528"
+        ],
+        "correctIndex": 0
+      }
+    ],
+    "challengeResult": "9\n20",
+    "options": [
+      "9\n20",
+      "20\n9",
+      "10\n21",
+      "920"
+    ],
+    "correctIndex": 0,
+    "exampleResult": "25\n28"
+  },
+  {
+    "id": "expand-9-method-composition",
+    "codeDeckId": "lab9-mixed-reading",
+    "deckId": "methods-basics",
+    "term": "Вызов метода",
+    "exampleCode": "Console.WriteLine(Add(10, Double(3)));\nint Add(int first, int second)\n{\n    return first + second;\n}\nint Double(int number)\n{\n    return number * 2;\n}",
+    "exampleNote": "Сначала вычисляется внутренний вызов, его результат становится аргументом внешнего вызова.",
+    "kind": "Что выведет код?",
+    "challengeCode": "Console.WriteLine(Add(2, Double(3)));\nint Add(int first, int second)\n{\n    return first + second;\n}\nint Double(int number)\n{\n    return number * 2;\n}",
+    "challengeInput": "",
+    "prompt": "Что появится в консоли?",
+    "explanation": "Сначала вычисляется внутренний вызов, его результат становится аргументом внешнего вызова.",
+    "variants": [
+      {
+        "challengeCode": "Console.WriteLine(Add(Double(3), 3));\nint Add(int first, int second)\n{\n    return first + second;\n}\nint Double(int number)\n{\n    return number * 2;\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Сначала вычисляется внутренний вызов, его результат становится аргументом внешнего вызова.",
+        "challengeResult": "9",
+        "options": [
+          "9",
+          "10",
+          "8",
+          "11"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "Console.WriteLine(Add(4, Double(3)));\nint Add(int first, int second)\n{\n    return first + second;\n}\nint Double(int number)\n{\n    return number * 2;\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Сначала вычисляется внутренний вызов, его результат становится аргументом внешнего вызова.",
+        "challengeResult": "10",
+        "options": [
+          "10",
+          "11",
+          "9",
+          "12"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "Console.WriteLine(Add(Double(5), 3));\nint Add(int first, int second)\n{\n    return first + second;\n}\nint Double(int number)\n{\n    return number * 2;\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Сначала вычисляется внутренний вызов, его результат становится аргументом внешнего вызова.",
+        "challengeResult": "13",
+        "options": [
+          "13",
+          "14",
+          "12",
+          "15"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "Console.WriteLine(Add(6, Double(3)));\nint Add(int first, int second)\n{\n    return first + second;\n}\nint Double(int number)\n{\n    return number * 2;\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Сначала вычисляется внутренний вызов, его результат становится аргументом внешнего вызова.",
+        "challengeResult": "12",
+        "options": [
+          "12",
+          "13",
+          "11",
+          "14"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "Console.WriteLine(Add(Double(7), 3));\nint Add(int first, int second)\n{\n    return first + second;\n}\nint Double(int number)\n{\n    return number * 2;\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Сначала вычисляется внутренний вызов, его результат становится аргументом внешнего вызова.",
+        "challengeResult": "17",
+        "options": [
+          "17",
+          "18",
+          "16",
+          "19"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "Console.WriteLine(Add(8, Double(3)));\nint Add(int first, int second)\n{\n    return first + second;\n}\nint Double(int number)\n{\n    return number * 2;\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Сначала вычисляется внутренний вызов, его результат становится аргументом внешнего вызова.",
+        "challengeResult": "14",
+        "options": [
+          "14",
+          "15",
+          "13",
+          "16"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "Console.WriteLine(Add(Double(9), 3));\nint Add(int first, int second)\n{\n    return first + second;\n}\nint Double(int number)\n{\n    return number * 2;\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Сначала вычисляется внутренний вызов, его результат становится аргументом внешнего вызова.",
+        "challengeResult": "21",
+        "options": [
+          "21",
+          "22",
+          "20",
+          "23"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "Console.WriteLine(Add(10, Double(3)));\nint Add(int first, int second)\n{\n    return first + second;\n}\nint Double(int number)\n{\n    return number * 2;\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Сначала вычисляется внутренний вызов, его результат становится аргументом внешнего вызова.",
+        "challengeResult": "16",
+        "options": [
+          "16",
+          "17",
+          "15",
+          "18"
+        ],
+        "correctIndex": 0
+      }
+    ],
+    "challengeResult": "8",
+    "options": [
+      "8",
+      "9",
+      "7",
+      "10"
+    ],
+    "correctIndex": 0,
+    "exampleResult": "16"
+  },
+  {
+    "id": "expand-9-method-argument-order",
+    "codeDeckId": "lab9-mixed-reading",
+    "deckId": "methods-basics",
+    "term": "Порядок аргументов",
+    "exampleCode": "int a = 16;\nint b = 10;\nConsole.WriteLine(Difference(a, b));\nint Difference(int first, int second)\n{\n    return first - second;\n}",
+    "exampleNote": "Позиционные аргументы передаются по порядку. Перестановка аргументов у вычитания меняет результат.",
+    "kind": "Что выведет код?",
+    "challengeCode": "int a = 8;\nint b = 2;\nConsole.WriteLine(Difference(a, b));\nint Difference(int first, int second)\n{\n    return first - second;\n}",
+    "challengeInput": "",
+    "prompt": "Что появится в консоли?",
+    "explanation": "Позиционные аргументы передаются по порядку. Перестановка аргументов у вычитания меняет результат.",
+    "variants": [
+      {
+        "challengeCode": "int a = 9;\nint b = 3;\nConsole.WriteLine(Difference(b, a));\nint Difference(int first, int second)\n{\n    return first - second;\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Позиционные аргументы передаются по порядку. Перестановка аргументов у вычитания меняет результат.",
+        "challengeResult": "-6",
+        "options": [
+          "-6",
+          "-5",
+          "-7",
+          "-4"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int a = 10;\nint b = 4;\nConsole.WriteLine(Difference(a, b));\nint Difference(int first, int second)\n{\n    return first - second;\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Позиционные аргументы передаются по порядку. Перестановка аргументов у вычитания меняет результат.",
+        "challengeResult": "6",
+        "options": [
+          "6",
+          "7",
+          "5",
+          "8"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int a = 11;\nint b = 5;\nConsole.WriteLine(Difference(b, a));\nint Difference(int first, int second)\n{\n    return first - second;\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Позиционные аргументы передаются по порядку. Перестановка аргументов у вычитания меняет результат.",
+        "challengeResult": "-6",
+        "options": [
+          "-6",
+          "-5",
+          "-7",
+          "-4"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int a = 12;\nint b = 6;\nConsole.WriteLine(Difference(a, b));\nint Difference(int first, int second)\n{\n    return first - second;\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Позиционные аргументы передаются по порядку. Перестановка аргументов у вычитания меняет результат.",
+        "challengeResult": "6",
+        "options": [
+          "6",
+          "7",
+          "5",
+          "8"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int a = 13;\nint b = 7;\nConsole.WriteLine(Difference(b, a));\nint Difference(int first, int second)\n{\n    return first - second;\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Позиционные аргументы передаются по порядку. Перестановка аргументов у вычитания меняет результат.",
+        "challengeResult": "-6",
+        "options": [
+          "-6",
+          "-5",
+          "-7",
+          "-4"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int a = 14;\nint b = 8;\nConsole.WriteLine(Difference(a, b));\nint Difference(int first, int second)\n{\n    return first - second;\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Позиционные аргументы передаются по порядку. Перестановка аргументов у вычитания меняет результат.",
+        "challengeResult": "6",
+        "options": [
+          "6",
+          "7",
+          "5",
+          "8"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int a = 15;\nint b = 9;\nConsole.WriteLine(Difference(b, a));\nint Difference(int first, int second)\n{\n    return first - second;\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Позиционные аргументы передаются по порядку. Перестановка аргументов у вычитания меняет результат.",
+        "challengeResult": "-6",
+        "options": [
+          "-6",
+          "-5",
+          "-7",
+          "-4"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int a = 16;\nint b = 10;\nConsole.WriteLine(Difference(a, b));\nint Difference(int first, int second)\n{\n    return first - second;\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Позиционные аргументы передаются по порядку. Перестановка аргументов у вычитания меняет результат.",
+        "challengeResult": "6",
+        "options": [
+          "6",
+          "7",
+          "5",
+          "8"
+        ],
+        "correctIndex": 0
+      }
+    ],
+    "challengeResult": "6",
+    "options": [
+      "6",
+      "7",
+      "5",
+      "8"
+    ],
+    "correctIndex": 0,
+    "exampleResult": "6"
+  },
+  {
+    "id": "expand-9-method-ignored-return",
+    "codeDeckId": "lab9-mixed-reading",
+    "deckId": "methods-return-scope",
+    "term": "Возвращаемое значение",
+    "exampleCode": "int value = 11;\nIncrease(value);\nConsole.WriteLine(value);\nint Increase(int number)\n{\n    number += 4;\n    return number;\n}",
+    "exampleNote": "Возвращаемое число меняет внешнюю переменную только при явном присваивании результата вызова.",
+    "kind": "Что выведет код?",
+    "challengeCode": "int value = 3;\nIncrease(value);\nConsole.WriteLine(value);\nint Increase(int number)\n{\n    number += 2;\n    return number;\n}",
+    "challengeInput": "",
+    "prompt": "Что появится в консоли?",
+    "explanation": "Возвращаемое число меняет внешнюю переменную только при явном присваивании результата вызова.",
+    "variants": [
+      {
+        "challengeCode": "int value = 4;\nvalue = Increase(value);\nConsole.WriteLine(value);\nint Increase(int number)\n{\n    number += 3;\n    return number;\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Возвращаемое число меняет внешнюю переменную только при явном присваивании результата вызова.",
+        "challengeResult": "7",
+        "options": [
+          "7",
+          "8",
+          "6",
+          "9"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int value = 5;\nIncrease(value);\nConsole.WriteLine(value);\nint Increase(int number)\n{\n    number += 4;\n    return number;\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Возвращаемое число меняет внешнюю переменную только при явном присваивании результата вызова.",
+        "challengeResult": "5",
+        "options": [
+          "5",
+          "6",
+          "4",
+          "7"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int value = 6;\nvalue = Increase(value);\nConsole.WriteLine(value);\nint Increase(int number)\n{\n    number += 2;\n    return number;\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Возвращаемое число меняет внешнюю переменную только при явном присваивании результата вызова.",
+        "challengeResult": "8",
+        "options": [
+          "8",
+          "9",
+          "7",
+          "10"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int value = 7;\nIncrease(value);\nConsole.WriteLine(value);\nint Increase(int number)\n{\n    number += 3;\n    return number;\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Возвращаемое число меняет внешнюю переменную только при явном присваивании результата вызова.",
+        "challengeResult": "7",
+        "options": [
+          "7",
+          "8",
+          "6",
+          "9"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int value = 8;\nvalue = Increase(value);\nConsole.WriteLine(value);\nint Increase(int number)\n{\n    number += 4;\n    return number;\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Возвращаемое число меняет внешнюю переменную только при явном присваивании результата вызова.",
+        "challengeResult": "12",
+        "options": [
+          "12",
+          "13",
+          "11",
+          "14"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int value = 9;\nIncrease(value);\nConsole.WriteLine(value);\nint Increase(int number)\n{\n    number += 2;\n    return number;\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Возвращаемое число меняет внешнюю переменную только при явном присваивании результата вызова.",
+        "challengeResult": "9",
+        "options": [
+          "9",
+          "10",
+          "8",
+          "11"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int value = 10;\nvalue = Increase(value);\nConsole.WriteLine(value);\nint Increase(int number)\n{\n    number += 3;\n    return number;\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Возвращаемое число меняет внешнюю переменную только при явном присваивании результата вызова.",
+        "challengeResult": "13",
+        "options": [
+          "13",
+          "14",
+          "12",
+          "15"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int value = 11;\nIncrease(value);\nConsole.WriteLine(value);\nint Increase(int number)\n{\n    number += 4;\n    return number;\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Возвращаемое число меняет внешнюю переменную только при явном присваивании результата вызова.",
+        "challengeResult": "11",
+        "options": [
+          "11",
+          "12",
+          "10",
+          "13"
+        ],
+        "correctIndex": 0
+      }
+    ],
+    "challengeResult": "3",
+    "options": [
+      "3",
+      "4",
+      "2",
+      "5"
+    ],
+    "correctIndex": 0,
+    "exampleResult": "11"
+  },
+  {
+    "id": "expand-9-method-return-exit",
+    "codeDeckId": "lab9-mixed-reading",
+    "deckId": "methods-return-scope",
+    "term": "return",
+    "exampleCode": "Console.WriteLine(Choose(4));\nint Choose(int number)\n{\n    if (number > 0)\n    {\n        return number + 2;\n    }\n    return number - 2;\n}",
+    "exampleNote": "Первый выполненный return завершает текущий вызов. Следующие команды этого вызова пропускаются.",
+    "kind": "Что выведет код?",
+    "challengeCode": "Console.WriteLine(Choose(-4));\nint Choose(int number)\n{\n    if (number > 0)\n    {\n        return number + 2;\n    }\n    return number - 2;\n}",
+    "challengeInput": "",
+    "prompt": "Что появится в консоли?",
+    "explanation": "Первый выполненный return завершает текущий вызов. Следующие команды этого вызова пропускаются.",
+    "variants": [
+      {
+        "challengeCode": "Console.WriteLine(Choose(-3));\nint Choose(int number)\n{\n    if (number >= 0)\n    {\n        return number + 2;\n    }\n    return number - 2;\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Первый выполненный return завершает текущий вызов. Следующие команды этого вызова пропускаются.",
+        "challengeResult": "-5",
+        "options": [
+          "-5",
+          "-4",
+          "-6",
+          "-3"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "Console.WriteLine(Choose(-2));\nint Choose(int number)\n{\n    if (number > 0)\n    {\n        return number + 2;\n    }\n    return number - 2;\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Первый выполненный return завершает текущий вызов. Следующие команды этого вызова пропускаются.",
+        "challengeResult": "-4",
+        "options": [
+          "-4",
+          "-3",
+          "-5",
+          "-2"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "Console.WriteLine(Choose(-1));\nint Choose(int number)\n{\n    if (number >= 0)\n    {\n        return number + 2;\n    }\n    return number - 2;\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Первый выполненный return завершает текущий вызов. Следующие команды этого вызова пропускаются.",
+        "challengeResult": "-3",
+        "options": [
+          "-3",
+          "-2",
+          "-4",
+          "-1"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "Console.WriteLine(Choose(0));\nint Choose(int number)\n{\n    if (number > 0)\n    {\n        return number + 2;\n    }\n    return number - 2;\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Первый выполненный return завершает текущий вызов. Следующие команды этого вызова пропускаются.",
+        "challengeResult": "-2",
+        "options": [
+          "-2",
+          "-1",
+          "-3",
+          "0"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "Console.WriteLine(Choose(1));\nint Choose(int number)\n{\n    if (number >= 0)\n    {\n        return number + 2;\n    }\n    return number - 2;\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Первый выполненный return завершает текущий вызов. Следующие команды этого вызова пропускаются.",
+        "challengeResult": "3",
+        "options": [
+          "3",
+          "4",
+          "2",
+          "5"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "Console.WriteLine(Choose(2));\nint Choose(int number)\n{\n    if (number > 0)\n    {\n        return number + 2;\n    }\n    return number - 2;\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Первый выполненный return завершает текущий вызов. Следующие команды этого вызова пропускаются.",
+        "challengeResult": "4",
+        "options": [
+          "4",
+          "5",
+          "3",
+          "6"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "Console.WriteLine(Choose(3));\nint Choose(int number)\n{\n    if (number >= 0)\n    {\n        return number + 2;\n    }\n    return number - 2;\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Первый выполненный return завершает текущий вызов. Следующие команды этого вызова пропускаются.",
+        "challengeResult": "5",
+        "options": [
+          "5",
+          "6",
+          "4",
+          "7"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "Console.WriteLine(Choose(4));\nint Choose(int number)\n{\n    if (number > 0)\n    {\n        return number + 2;\n    }\n    return number - 2;\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Первый выполненный return завершает текущий вызов. Следующие команды этого вызова пропускаются.",
+        "challengeResult": "6",
+        "options": [
+          "6",
+          "7",
+          "5",
+          "8"
+        ],
+        "correctIndex": 0
+      }
+    ],
+    "challengeResult": "-6",
+    "options": [
+      "-6",
+      "-5",
+      "-7",
+      "-4"
+    ],
+    "correctIndex": 0,
+    "exampleResult": "6"
+  },
+  {
+    "id": "expand-9-method-local-count",
+    "codeDeckId": "lab9-mixed-reading",
+    "deckId": "methods-return-scope",
+    "term": "Локальная переменная метода",
+    "exampleCode": "Console.WriteLine(Count(10));\nConsole.WriteLine(Count(11));\nint Count(int limit)\n{\n    int count = 0;\n    for (int i = 0; i < limit; i++)\n    {\n        count++;\n    }\n    return count;\n}",
+    "exampleNote": "Локальная переменная создаётся заново при каждом вызове. Результат предыдущего вызова не накапливается в ней.",
+    "kind": "Что выведет код?",
+    "challengeCode": "Console.WriteLine(Count(2));\nConsole.WriteLine(Count(3));\nint Count(int limit)\n{\n    int count = 0;\n    for (int i = 0; i < limit; i++)\n    {\n        count++;\n    }\n    return count;\n}",
+    "challengeInput": "",
+    "prompt": "Что появится в консоли?",
+    "explanation": "Локальная переменная создаётся заново при каждом вызове. Результат предыдущего вызова не накапливается в ней.",
+    "variants": [
+      {
+        "challengeCode": "Console.WriteLine(Count(3));\nConsole.WriteLine(Count(4));\nint Count(int limit)\n{\n    int count = 0;\n    for (int i = 0; i <= limit; i++)\n    {\n        count++;\n    }\n    return count;\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Локальная переменная создаётся заново при каждом вызове. Результат предыдущего вызова не накапливается в ней.",
+        "challengeResult": "4\n5",
+        "options": [
+          "4\n5",
+          "5\n4",
+          "5\n6",
+          "45"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "Console.WriteLine(Count(4));\nConsole.WriteLine(Count(5));\nint Count(int limit)\n{\n    int count = 0;\n    for (int i = 0; i < limit; i++)\n    {\n        count++;\n    }\n    return count;\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Локальная переменная создаётся заново при каждом вызове. Результат предыдущего вызова не накапливается в ней.",
+        "challengeResult": "4\n5",
+        "options": [
+          "4\n5",
+          "5\n4",
+          "5\n6",
+          "45"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "Console.WriteLine(Count(5));\nConsole.WriteLine(Count(6));\nint Count(int limit)\n{\n    int count = 0;\n    for (int i = 0; i <= limit; i++)\n    {\n        count++;\n    }\n    return count;\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Локальная переменная создаётся заново при каждом вызове. Результат предыдущего вызова не накапливается в ней.",
+        "challengeResult": "6\n7",
+        "options": [
+          "6\n7",
+          "7\n6",
+          "7\n8",
+          "67"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "Console.WriteLine(Count(6));\nConsole.WriteLine(Count(7));\nint Count(int limit)\n{\n    int count = 0;\n    for (int i = 0; i < limit; i++)\n    {\n        count++;\n    }\n    return count;\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Локальная переменная создаётся заново при каждом вызове. Результат предыдущего вызова не накапливается в ней.",
+        "challengeResult": "6\n7",
+        "options": [
+          "6\n7",
+          "7\n6",
+          "7\n8",
+          "67"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "Console.WriteLine(Count(7));\nConsole.WriteLine(Count(8));\nint Count(int limit)\n{\n    int count = 0;\n    for (int i = 0; i <= limit; i++)\n    {\n        count++;\n    }\n    return count;\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Локальная переменная создаётся заново при каждом вызове. Результат предыдущего вызова не накапливается в ней.",
+        "challengeResult": "8\n9",
+        "options": [
+          "8\n9",
+          "9\n8",
+          "9\n10",
+          "89"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "Console.WriteLine(Count(8));\nConsole.WriteLine(Count(9));\nint Count(int limit)\n{\n    int count = 0;\n    for (int i = 0; i < limit; i++)\n    {\n        count++;\n    }\n    return count;\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Локальная переменная создаётся заново при каждом вызове. Результат предыдущего вызова не накапливается в ней.",
+        "challengeResult": "8\n9",
+        "options": [
+          "8\n9",
+          "9\n8",
+          "9\n10",
+          "89"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "Console.WriteLine(Count(9));\nConsole.WriteLine(Count(10));\nint Count(int limit)\n{\n    int count = 0;\n    for (int i = 0; i <= limit; i++)\n    {\n        count++;\n    }\n    return count;\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Локальная переменная создаётся заново при каждом вызове. Результат предыдущего вызова не накапливается в ней.",
+        "challengeResult": "10\n11",
+        "options": [
+          "10\n11",
+          "11\n10",
+          "11\n12",
+          "1011"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "Console.WriteLine(Count(10));\nConsole.WriteLine(Count(11));\nint Count(int limit)\n{\n    int count = 0;\n    for (int i = 0; i < limit; i++)\n    {\n        count++;\n    }\n    return count;\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Локальная переменная создаётся заново при каждом вызове. Результат предыдущего вызова не накапливается в ней.",
+        "challengeResult": "10\n11",
+        "options": [
+          "10\n11",
+          "11\n10",
+          "11\n12",
+          "1011"
+        ],
+        "correctIndex": 0
+      }
+    ],
+    "challengeResult": "2\n3",
+    "options": [
+      "2\n3",
+      "3\n2",
+      "3\n4",
+      "23"
+    ],
+    "correctIndex": 0,
+    "exampleResult": "10\n11"
+  },
+  {
+    "id": "expand-9-method-copy",
+    "codeDeckId": "lab9-mixed-reading",
+    "deckId": "methods-return-scope",
+    "term": "Передача по значению",
+    "exampleCode": "int value = 12;\nint result = Change(value);\nConsole.WriteLine($\"{value} {result}\");\nint Change(int number)\n{\n    number += 3;\n    return number;\n}",
+    "exampleNote": "Параметр int получает копию значения. Изменение параметра не переприсваивает аргумент снаружи.",
+    "kind": "Что выведет код?",
+    "challengeCode": "int value = 4;\nint result = Change(value);\nConsole.WriteLine($\"{value} {result}\");\nint Change(int number)\n{\n    number += 3;\n    return number;\n}",
+    "challengeInput": "",
+    "prompt": "Что появится в консоли?",
+    "explanation": "Параметр int получает копию значения. Изменение параметра не переприсваивает аргумент снаружи.",
+    "variants": [
+      {
+        "challengeCode": "int value = 5;\nint result = Change(value);\nConsole.WriteLine($\"{value} {result}\");\nint Change(int number)\n{\n    number *= 3;\n    return number;\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Параметр int получает копию значения. Изменение параметра не переприсваивает аргумент снаружи.",
+        "challengeResult": "5 15",
+        "options": [
+          "5 15",
+          "6 16",
+          "51 5",
+          "Ничего"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int value = 6;\nint result = Change(value);\nConsole.WriteLine($\"{value} {result}\");\nint Change(int number)\n{\n    number += 3;\n    return number;\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Параметр int получает копию значения. Изменение параметра не переприсваивает аргумент снаружи.",
+        "challengeResult": "6 9",
+        "options": [
+          "6 9",
+          "7 10",
+          "9 6",
+          "Ничего"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int value = 7;\nint result = Change(value);\nConsole.WriteLine($\"{value} {result}\");\nint Change(int number)\n{\n    number *= 3;\n    return number;\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Параметр int получает копию значения. Изменение параметра не переприсваивает аргумент снаружи.",
+        "challengeResult": "7 21",
+        "options": [
+          "7 21",
+          "8 22",
+          "12 7",
+          "Ничего"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int value = 8;\nint result = Change(value);\nConsole.WriteLine($\"{value} {result}\");\nint Change(int number)\n{\n    number += 3;\n    return number;\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Параметр int получает копию значения. Изменение параметра не переприсваивает аргумент снаружи.",
+        "challengeResult": "8 11",
+        "options": [
+          "8 11",
+          "9 12",
+          "11 8",
+          "Ничего"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int value = 9;\nint result = Change(value);\nConsole.WriteLine($\"{value} {result}\");\nint Change(int number)\n{\n    number *= 3;\n    return number;\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Параметр int получает копию значения. Изменение параметра не переприсваивает аргумент снаружи.",
+        "challengeResult": "9 27",
+        "options": [
+          "9 27",
+          "10 28",
+          "72 9",
+          "Ничего"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int value = 10;\nint result = Change(value);\nConsole.WriteLine($\"{value} {result}\");\nint Change(int number)\n{\n    number += 3;\n    return number;\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Параметр int получает копию значения. Изменение параметра не переприсваивает аргумент снаружи.",
+        "challengeResult": "10 13",
+        "options": [
+          "10 13",
+          "11 14",
+          "31 01",
+          "Ничего"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int value = 11;\nint result = Change(value);\nConsole.WriteLine($\"{value} {result}\");\nint Change(int number)\n{\n    number *= 3;\n    return number;\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Параметр int получает копию значения. Изменение параметра не переприсваивает аргумент снаружи.",
+        "challengeResult": "11 33",
+        "options": [
+          "11 33",
+          "12 34",
+          "33 11",
+          "Ничего"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int value = 12;\nint result = Change(value);\nConsole.WriteLine($\"{value} {result}\");\nint Change(int number)\n{\n    number += 3;\n    return number;\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Параметр int получает копию значения. Изменение параметра не переприсваивает аргумент снаружи.",
+        "challengeResult": "12 15",
+        "options": [
+          "12 15",
+          "13 16",
+          "51 21",
+          "Ничего"
+        ],
+        "correctIndex": 0
+      }
+    ],
+    "challengeResult": "4 7",
+    "options": [
+      "4 7",
+      "5 8",
+      "7 4",
+      "Ничего"
+    ],
+    "correctIndex": 0,
+    "exampleResult": "12 15"
+  },
+  {
+    "id": "expand-9-method-loop-return",
+    "codeDeckId": "lab9-mixed-reading",
+    "deckId": "methods-purchase",
+    "term": "Расчётный метод",
+    "exampleCode": "Console.WriteLine(Sum(12));\nint Sum(int limit)\n{\n    int sum = 0;\n    for (int i = 1; i <= limit; i++)\n    {\n        if (i % 2 == 0)\n        {\n            sum += i;\n        }\n    }\n    return sum;\n}",
+    "exampleNote": "Метод суммирует только значения, подходящие под условие. Начальное значение накопителя задаётся для каждого вызова.",
+    "kind": "Что выведет код?",
+    "challengeCode": "Console.WriteLine(Sum(4));\nint Sum(int limit)\n{\n    int sum = 0;\n    for (int i = 1; i <= limit; i++)\n    {\n        if (i % 2 == 0)\n        {\n            sum += i;\n        }\n    }\n    return sum;\n}",
+    "challengeInput": "",
+    "prompt": "Что появится в консоли?",
+    "explanation": "Метод суммирует только значения, подходящие под условие. Начальное значение накопителя задаётся для каждого вызова.",
+    "variants": [
+      {
+        "challengeCode": "Console.WriteLine(Sum(5));\nint Sum(int limit)\n{\n    int sum = 0;\n    for (int i = 1; i <= limit; i++)\n    {\n        if (i % 2 == 1)\n        {\n            sum += i;\n        }\n    }\n    return sum;\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Метод суммирует только значения, подходящие под условие. Начальное значение накопителя задаётся для каждого вызова.",
+        "challengeResult": "9",
+        "options": [
+          "9",
+          "10",
+          "8",
+          "11"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "Console.WriteLine(Sum(6));\nint Sum(int limit)\n{\n    int sum = 0;\n    for (int i = 1; i <= limit; i++)\n    {\n        if (i % 2 == 0)\n        {\n            sum += i;\n        }\n    }\n    return sum;\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Метод суммирует только значения, подходящие под условие. Начальное значение накопителя задаётся для каждого вызова.",
+        "challengeResult": "12",
+        "options": [
+          "12",
+          "13",
+          "11",
+          "14"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "Console.WriteLine(Sum(7));\nint Sum(int limit)\n{\n    int sum = 0;\n    for (int i = 1; i <= limit; i++)\n    {\n        if (i % 2 == 1)\n        {\n            sum += i;\n        }\n    }\n    return sum;\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Метод суммирует только значения, подходящие под условие. Начальное значение накопителя задаётся для каждого вызова.",
+        "challengeResult": "16",
+        "options": [
+          "16",
+          "17",
+          "15",
+          "18"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "Console.WriteLine(Sum(8));\nint Sum(int limit)\n{\n    int sum = 0;\n    for (int i = 1; i <= limit; i++)\n    {\n        if (i % 2 == 0)\n        {\n            sum += i;\n        }\n    }\n    return sum;\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Метод суммирует только значения, подходящие под условие. Начальное значение накопителя задаётся для каждого вызова.",
+        "challengeResult": "20",
+        "options": [
+          "20",
+          "21",
+          "19",
+          "22"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "Console.WriteLine(Sum(9));\nint Sum(int limit)\n{\n    int sum = 0;\n    for (int i = 1; i <= limit; i++)\n    {\n        if (i % 2 == 1)\n        {\n            sum += i;\n        }\n    }\n    return sum;\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Метод суммирует только значения, подходящие под условие. Начальное значение накопителя задаётся для каждого вызова.",
+        "challengeResult": "25",
+        "options": [
+          "25",
+          "26",
+          "24",
+          "27"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "Console.WriteLine(Sum(10));\nint Sum(int limit)\n{\n    int sum = 0;\n    for (int i = 1; i <= limit; i++)\n    {\n        if (i % 2 == 0)\n        {\n            sum += i;\n        }\n    }\n    return sum;\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Метод суммирует только значения, подходящие под условие. Начальное значение накопителя задаётся для каждого вызова.",
+        "challengeResult": "30",
+        "options": [
+          "30",
+          "31",
+          "29",
+          "32"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "Console.WriteLine(Sum(11));\nint Sum(int limit)\n{\n    int sum = 0;\n    for (int i = 1; i <= limit; i++)\n    {\n        if (i % 2 == 1)\n        {\n            sum += i;\n        }\n    }\n    return sum;\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Метод суммирует только значения, подходящие под условие. Начальное значение накопителя задаётся для каждого вызова.",
+        "challengeResult": "36",
+        "options": [
+          "36",
+          "37",
+          "35",
+          "38"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "Console.WriteLine(Sum(12));\nint Sum(int limit)\n{\n    int sum = 0;\n    for (int i = 1; i <= limit; i++)\n    {\n        if (i % 2 == 0)\n        {\n            sum += i;\n        }\n    }\n    return sum;\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Метод суммирует только значения, подходящие под условие. Начальное значение накопителя задаётся для каждого вызова.",
+        "challengeResult": "42",
+        "options": [
+          "42",
+          "43",
+          "41",
+          "44"
+        ],
+        "correctIndex": 0
+      }
+    ],
+    "challengeResult": "6",
+    "options": [
+      "6",
+      "7",
+      "5",
+      "8"
+    ],
+    "correctIndex": 0,
+    "exampleResult": "42"
+  },
+  {
+    "id": "expand-9-method-print-order",
+    "codeDeckId": "lab9-mixed-reading",
+    "deckId": "methods-purchase",
+    "term": "Метод вывода",
+    "exampleCode": "Show(10);\nConsole.Write(\"Z\");\nvoid Show(int count)\n{\n    for (int i = 0; i < count; i++)\n    {\n        Console.Write(\"A\");\n    }\n}",
+    "exampleNote": "Вывод внутри метода происходит во время вызова, до следующей команды вызывающего кода.",
+    "kind": "Что выведет код?",
+    "challengeCode": "Show(2);\nConsole.Write(\"Z\");\nvoid Show(int count)\n{\n    for (int i = 0; i < count; i++)\n    {\n        Console.Write(\"A\");\n    }\n}",
+    "challengeInput": "",
+    "prompt": "Что появится в консоли?",
+    "explanation": "Вывод внутри метода происходит во время вызова, до следующей команды вызывающего кода.",
+    "variants": [
+      {
+        "challengeCode": "Show(3);\nConsole.Write(\"Z\");\nvoid Show(int count)\n{\n    for (int i = 0; i < count; i++)\n    {\n        Console.WriteLine(\"A\");\n    }\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Вывод внутри метода происходит во время вызова, до следующей команды вызывающего кода.",
+        "challengeResult": "A\nA\nA\nZ",
+        "options": [
+          "A\nA\nA\nZ",
+          "Z\nA\nA\nA",
+          "AAAZ",
+          "Ничего"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "Show(4);\nConsole.Write(\"Z\");\nvoid Show(int count)\n{\n    for (int i = 0; i < count; i++)\n    {\n        Console.Write(\"A\");\n    }\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Вывод внутри метода происходит во время вызова, до следующей команды вызывающего кода.",
+        "challengeResult": "AAAAZ",
+        "options": [
+          "AAAAZ",
+          "ZAAAA",
+          "Ничего",
+          "Ошибка компиляции"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "Show(5);\nConsole.Write(\"Z\");\nvoid Show(int count)\n{\n    for (int i = 0; i < count; i++)\n    {\n        Console.WriteLine(\"A\");\n    }\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Вывод внутри метода происходит во время вызова, до следующей команды вызывающего кода.",
+        "challengeResult": "A\nA\nA\nA\nA\nZ",
+        "options": [
+          "A\nA\nA\nA\nA\nZ",
+          "Z\nA\nA\nA\nA\nA",
+          "AAAAAZ",
+          "Ничего"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "Show(6);\nConsole.Write(\"Z\");\nvoid Show(int count)\n{\n    for (int i = 0; i < count; i++)\n    {\n        Console.Write(\"A\");\n    }\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Вывод внутри метода происходит во время вызова, до следующей команды вызывающего кода.",
+        "challengeResult": "AAAAAAZ",
+        "options": [
+          "AAAAAAZ",
+          "ZAAAAAA",
+          "Ничего",
+          "Ошибка компиляции"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "Show(7);\nConsole.Write(\"Z\");\nvoid Show(int count)\n{\n    for (int i = 0; i < count; i++)\n    {\n        Console.WriteLine(\"A\");\n    }\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Вывод внутри метода происходит во время вызова, до следующей команды вызывающего кода.",
+        "challengeResult": "A\nA\nA\nA\nA\nA\nA\nZ",
+        "options": [
+          "A\nA\nA\nA\nA\nA\nA\nZ",
+          "Z\nA\nA\nA\nA\nA\nA\nA",
+          "AAAAAAAZ",
+          "Ничего"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "Show(8);\nConsole.Write(\"Z\");\nvoid Show(int count)\n{\n    for (int i = 0; i < count; i++)\n    {\n        Console.Write(\"A\");\n    }\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Вывод внутри метода происходит во время вызова, до следующей команды вызывающего кода.",
+        "challengeResult": "AAAAAAAAZ",
+        "options": [
+          "AAAAAAAAZ",
+          "ZAAAAAAAA",
+          "Ничего",
+          "Ошибка компиляции"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "Show(9);\nConsole.Write(\"Z\");\nvoid Show(int count)\n{\n    for (int i = 0; i < count; i++)\n    {\n        Console.WriteLine(\"A\");\n    }\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Вывод внутри метода происходит во время вызова, до следующей команды вызывающего кода.",
+        "challengeResult": "A\nA\nA\nA\nA\nA\nA\nA\nA\nZ",
+        "options": [
+          "A\nA\nA\nA\nA\nA\nA\nA\nA\nZ",
+          "Z\nA\nA\nA\nA\nA\nA\nA\nA\nA",
+          "AAAAAAAAAZ",
+          "Ничего"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "Show(10);\nConsole.Write(\"Z\");\nvoid Show(int count)\n{\n    for (int i = 0; i < count; i++)\n    {\n        Console.Write(\"A\");\n    }\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Вывод внутри метода происходит во время вызова, до следующей команды вызывающего кода.",
+        "challengeResult": "AAAAAAAAAAZ",
+        "options": [
+          "AAAAAAAAAAZ",
+          "ZAAAAAAAAAA",
+          "Ничего",
+          "Ошибка компиляции"
+        ],
+        "correctIndex": 0
+      }
+    ],
+    "challengeResult": "AAZ",
+    "options": [
+      "AAZ",
+      "ZAA",
+      "Ничего",
+      "Ошибка компиляции"
+    ],
+    "correctIndex": 0,
+    "exampleResult": "AAAAAAAAAAZ"
+  },
+  {
+    "id": "expand-9-method-discount-two",
+    "codeDeckId": "lab9-mixed-reading",
+    "deckId": "methods-purchase",
+    "term": "CalculateDiscount",
+    "exampleCode": "decimal cost = 260m;\ndecimal first = Discount(cost, 10);\ndecimal second = Discount(cost, 20);\nConsole.WriteLine(cost - first - second);\ndecimal Discount(decimal cost, int percent)\n{\n    return cost * percent / 100;\n}",
+    "exampleNote": "Метод возвращает размер скидки. Сравните, от какой суммы вычисляется каждый следующий процент.",
+    "kind": "Что выведет код?",
+    "challengeCode": "decimal cost = 100m;\ndecimal first = Discount(cost, 10);\ndecimal second = Discount(cost, 20);\nConsole.WriteLine(cost - first - second);\ndecimal Discount(decimal cost, int percent)\n{\n    return cost * percent / 100;\n}",
+    "challengeInput": "",
+    "prompt": "Какое число выведется? Точка обозначает десятичный разделитель; на компьютере возможна запятая.",
+    "explanation": "Метод возвращает размер скидки. Сравните, от какой суммы вычисляется каждый следующий процент.",
+    "variants": [
+      {
+        "challengeCode": "decimal cost = 120m;\ndecimal first = Discount(cost, 10);\ndecimal second = Discount(cost - first, 20);\nConsole.WriteLine(cost - first - second);\ndecimal Discount(decimal cost, int percent)\n{\n    return cost * percent / 100;\n}",
+        "challengeInput": "",
+        "prompt": "Какое число выведется? Точка обозначает десятичный разделитель; на компьютере возможна запятая.",
+        "explanation": "Метод возвращает размер скидки. Сравните, от какой суммы вычисляется каждый следующий процент.",
+        "challengeResult": "86.4",
+        "options": [
+          "86.4",
+          "87.5",
+          "4.68",
+          "Ничего"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "decimal cost = 140m;\ndecimal first = Discount(cost, 10);\ndecimal second = Discount(cost, 20);\nConsole.WriteLine(cost - first - second);\ndecimal Discount(decimal cost, int percent)\n{\n    return cost * percent / 100;\n}",
+        "challengeInput": "",
+        "prompt": "Какое число выведется? Точка обозначает десятичный разделитель; на компьютере возможна запятая.",
+        "explanation": "Метод возвращает размер скидки. Сравните, от какой суммы вычисляется каждый следующий процент.",
+        "challengeResult": "98",
+        "options": [
+          "98",
+          "99",
+          "97",
+          "100"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "decimal cost = 160m;\ndecimal first = Discount(cost, 10);\ndecimal second = Discount(cost - first, 20);\nConsole.WriteLine(cost - first - second);\ndecimal Discount(decimal cost, int percent)\n{\n    return cost * percent / 100;\n}",
+        "challengeInput": "",
+        "prompt": "Какое число выведется? Точка обозначает десятичный разделитель; на компьютере возможна запятая.",
+        "explanation": "Метод возвращает размер скидки. Сравните, от какой суммы вычисляется каждый следующий процент.",
+        "challengeResult": "115.2",
+        "options": [
+          "115.2",
+          "116.3",
+          "2.511",
+          "Ничего"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "decimal cost = 180m;\ndecimal first = Discount(cost, 10);\ndecimal second = Discount(cost, 20);\nConsole.WriteLine(cost - first - second);\ndecimal Discount(decimal cost, int percent)\n{\n    return cost * percent / 100;\n}",
+        "challengeInput": "",
+        "prompt": "Какое число выведется? Точка обозначает десятичный разделитель; на компьютере возможна запятая.",
+        "explanation": "Метод возвращает размер скидки. Сравните, от какой суммы вычисляется каждый следующий процент.",
+        "challengeResult": "126",
+        "options": [
+          "126",
+          "127",
+          "125",
+          "128"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "decimal cost = 200m;\ndecimal first = Discount(cost, 10);\ndecimal second = Discount(cost - first, 20);\nConsole.WriteLine(cost - first - second);\ndecimal Discount(decimal cost, int percent)\n{\n    return cost * percent / 100;\n}",
+        "challengeInput": "",
+        "prompt": "Какое число выведется? Точка обозначает десятичный разделитель; на компьютере возможна запятая.",
+        "explanation": "Метод возвращает размер скидки. Сравните, от какой суммы вычисляется каждый следующий процент.",
+        "challengeResult": "144",
+        "options": [
+          "144",
+          "145",
+          "143",
+          "146"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "decimal cost = 220m;\ndecimal first = Discount(cost, 10);\ndecimal second = Discount(cost, 20);\nConsole.WriteLine(cost - first - second);\ndecimal Discount(decimal cost, int percent)\n{\n    return cost * percent / 100;\n}",
+        "challengeInput": "",
+        "prompt": "Какое число выведется? Точка обозначает десятичный разделитель; на компьютере возможна запятая.",
+        "explanation": "Метод возвращает размер скидки. Сравните, от какой суммы вычисляется каждый следующий процент.",
+        "challengeResult": "154",
+        "options": [
+          "154",
+          "155",
+          "153",
+          "156"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "decimal cost = 240m;\ndecimal first = Discount(cost, 10);\ndecimal second = Discount(cost - first, 20);\nConsole.WriteLine(cost - first - second);\ndecimal Discount(decimal cost, int percent)\n{\n    return cost * percent / 100;\n}",
+        "challengeInput": "",
+        "prompt": "Какое число выведется? Точка обозначает десятичный разделитель; на компьютере возможна запятая.",
+        "explanation": "Метод возвращает размер скидки. Сравните, от какой суммы вычисляется каждый следующий процент.",
+        "challengeResult": "172.8",
+        "options": [
+          "172.8",
+          "173.9",
+          "8.271",
+          "Ничего"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "decimal cost = 260m;\ndecimal first = Discount(cost, 10);\ndecimal second = Discount(cost, 20);\nConsole.WriteLine(cost - first - second);\ndecimal Discount(decimal cost, int percent)\n{\n    return cost * percent / 100;\n}",
+        "challengeInput": "",
+        "prompt": "Какое число выведется? Точка обозначает десятичный разделитель; на компьютере возможна запятая.",
+        "explanation": "Метод возвращает размер скидки. Сравните, от какой суммы вычисляется каждый следующий процент.",
+        "challengeResult": "182",
+        "options": [
+          "182",
+          "183",
+          "181",
+          "184"
+        ],
+        "correctIndex": 0
+      }
+    ],
+    "challengeResult": "70",
+    "options": [
+      "70",
+      "71",
+      "69",
+      "72"
+    ],
+    "correctIndex": 0,
+    "exampleResult": "182"
+  },
+  {
+    "id": "expand-9-method-cost-values",
+    "codeDeckId": "lab9-mixed-reading",
+    "deckId": "methods-purchase",
+    "term": "CalculateCost",
+    "exampleCode": "int quantity = 4;\ndecimal cost = Cost(18m, quantity);\nquantity += 1;\nConsole.WriteLine(cost);\nConsole.WriteLine(quantity);\ndecimal Cost(decimal price, int count)\n{\n    return price * count;\n}",
+    "exampleNote": "Метод получает текущие значения аргументов при вызове. Изменение количества после расчёта не меняет сохранённую стоимость.",
+    "kind": "Что выведет код?",
+    "challengeCode": "int quantity = 2;\ndecimal cost = Cost(10m, quantity);\nquantity += 1;\nConsole.WriteLine(cost);\nConsole.WriteLine(quantity);\ndecimal Cost(decimal price, int count)\n{\n    return price * count;\n}",
+    "challengeInput": "",
+    "prompt": "Что появится в консоли?",
+    "explanation": "Метод получает текущие значения аргументов при вызове. Изменение количества после расчёта не меняет сохранённую стоимость.",
+    "variants": [
+      {
+        "challengeCode": "int quantity = 3;\ndecimal cost = Cost(11m, quantity);\nquantity += 2;\nConsole.WriteLine(cost);\nConsole.WriteLine(quantity);\ndecimal Cost(decimal price, int count)\n{\n    return price * count;\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Метод получает текущие значения аргументов при вызове. Изменение количества после расчёта не меняет сохранённую стоимость.",
+        "challengeResult": "33\n5",
+        "options": [
+          "33\n5",
+          "5\n33",
+          "34\n6",
+          "335"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int quantity = 4;\ndecimal cost = Cost(12m, quantity);\nquantity += 1;\nConsole.WriteLine(cost);\nConsole.WriteLine(quantity);\ndecimal Cost(decimal price, int count)\n{\n    return price * count;\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Метод получает текущие значения аргументов при вызове. Изменение количества после расчёта не меняет сохранённую стоимость.",
+        "challengeResult": "48\n5",
+        "options": [
+          "48\n5",
+          "5\n48",
+          "49\n6",
+          "485"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int quantity = 2;\ndecimal cost = Cost(13m, quantity);\nquantity += 2;\nConsole.WriteLine(cost);\nConsole.WriteLine(quantity);\ndecimal Cost(decimal price, int count)\n{\n    return price * count;\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Метод получает текущие значения аргументов при вызове. Изменение количества после расчёта не меняет сохранённую стоимость.",
+        "challengeResult": "26\n4",
+        "options": [
+          "26\n4",
+          "4\n26",
+          "27\n5",
+          "264"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int quantity = 3;\ndecimal cost = Cost(14m, quantity);\nquantity += 1;\nConsole.WriteLine(cost);\nConsole.WriteLine(quantity);\ndecimal Cost(decimal price, int count)\n{\n    return price * count;\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Метод получает текущие значения аргументов при вызове. Изменение количества после расчёта не меняет сохранённую стоимость.",
+        "challengeResult": "42\n4",
+        "options": [
+          "42\n4",
+          "4\n42",
+          "43\n5",
+          "424"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int quantity = 4;\ndecimal cost = Cost(15m, quantity);\nquantity += 2;\nConsole.WriteLine(cost);\nConsole.WriteLine(quantity);\ndecimal Cost(decimal price, int count)\n{\n    return price * count;\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Метод получает текущие значения аргументов при вызове. Изменение количества после расчёта не меняет сохранённую стоимость.",
+        "challengeResult": "60\n6",
+        "options": [
+          "60\n6",
+          "6\n60",
+          "61\n7",
+          "606"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int quantity = 2;\ndecimal cost = Cost(16m, quantity);\nquantity += 1;\nConsole.WriteLine(cost);\nConsole.WriteLine(quantity);\ndecimal Cost(decimal price, int count)\n{\n    return price * count;\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Метод получает текущие значения аргументов при вызове. Изменение количества после расчёта не меняет сохранённую стоимость.",
+        "challengeResult": "32\n3",
+        "options": [
+          "32\n3",
+          "3\n32",
+          "33\n4",
+          "323"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int quantity = 3;\ndecimal cost = Cost(17m, quantity);\nquantity += 2;\nConsole.WriteLine(cost);\nConsole.WriteLine(quantity);\ndecimal Cost(decimal price, int count)\n{\n    return price * count;\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Метод получает текущие значения аргументов при вызове. Изменение количества после расчёта не меняет сохранённую стоимость.",
+        "challengeResult": "51\n5",
+        "options": [
+          "51\n5",
+          "5\n51",
+          "52\n6",
+          "515"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int quantity = 4;\ndecimal cost = Cost(18m, quantity);\nquantity += 1;\nConsole.WriteLine(cost);\nConsole.WriteLine(quantity);\ndecimal Cost(decimal price, int count)\n{\n    return price * count;\n}",
+        "challengeInput": "",
+        "prompt": "Что появится в консоли?",
+        "explanation": "Метод получает текущие значения аргументов при вызове. Изменение количества после расчёта не меняет сохранённую стоимость.",
+        "challengeResult": "72\n5",
+        "options": [
+          "72\n5",
+          "5\n72",
+          "73\n6",
+          "725"
+        ],
+        "correctIndex": 0
+      }
+    ],
+    "challengeResult": "20\n3",
+    "options": [
+      "20\n3",
+      "3\n20",
+      "21\n4",
+      "203"
+    ],
+    "correctIndex": 0,
+    "exampleResult": "72\n5"
   }
 ];

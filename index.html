@@ -3,12 +3,18 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+      if (performance.getEntriesByType("navigation")[0]?.type === "reload") {
+        history.scrollRestoration = "manual";
+        window.addEventListener("pageshow", () => window.scrollTo(0, 0), { once: true });
+      }
+    </script>
     <title>IT-термины перед C#</title>
     <meta
       name="description"
       content="Карточки, тесты и справочник по базовым IT-терминам для студентов перед изучением C#."
     >
-    <link rel="stylesheet" href="styles.css?v=ef74034ccb48">
+    <link rel="stylesheet" href="styles.css?v=878d7a6e11eb">
   </head>
   <body>
     <div class="app-shell">
@@ -27,6 +33,7 @@
           <button type="button" class="nav-link" data-screen-link="quiz">Тест</button>
           <button type="button" class="nav-link" data-screen-link="code">Понимаю код</button>
           <button type="button" class="nav-link" data-screen-link="bugs">Найди ошибку</button>
+          <button type="button" class="nav-link" data-screen-link="terminal">Учим терминал</button>
           <button type="button" class="nav-link" data-screen-link="reference">Справочник</button>
         </nav>
 
@@ -97,6 +104,11 @@
               <span class="mode-icon">05</span>
               <strong>Найди ошибку</strong>
               <small>Найди одну ошибку в коде. На обороте — исправление и объяснение. Без таймера.</small>
+            </button>
+            <button class="mode-card" type="button" data-screen-link="terminal">
+              <span class="mode-icon">06</span>
+              <strong>Учим терминал</strong>
+              <small>Найди и запусти проект ЛБ 10, затем отправь коммит в учебном репозитории.</small>
             </button>
           </section>
         </section>
@@ -305,6 +317,56 @@
           </div>
         </section>
 
+        <section class="screen" id="terminalScreen" data-screen="terminal">
+          <div class="workspace">
+            <aside class="settings-panel">
+              <div class="section-heading">
+                <p class="eyebrow">Практика ЛБ 10</p>
+                <h2>Учим терминал</h2>
+              </div>
+              <p class="settings-description">Это симулятор. Команды работают с учебными файлами и репозиторием внутри страницы.</p>
+              <label>
+                Среда
+                <select id="terminalShell">
+                  <option value="powershell">PowerShell · Windows</option>
+                  <option value="bash">Bash · Linux</option>
+                </select>
+              </label>
+              <label>
+                Урок
+                <select id="terminalLesson">
+                  <optgroup label="Терминал и C#">
+                    <option value="navigate">Найди папку ЛБ 10</option>
+                    <option value="run">Запусти ЛБ 10</option>
+                  </optgroup>
+                  <optgroup label="Git">
+                    <option value="git">Сохрани и отправь изменение</option>
+                  </optgroup>
+                </select>
+              </label>
+              <button class="ghost-button" id="terminalRestart" type="button">Начать урок заново</button>
+            </aside>
+            <section class="study-panel terminal-panel" aria-label="Учебный терминал">
+              <p class="quiz-type" id="terminalProgress"></p>
+              <h2 id="terminalTitle"></h2>
+              <p id="terminalTask" role="status"></p>
+              <button class="secondary-button" id="terminalHintButton" type="button" aria-controls="terminalHint" aria-expanded="false">Показать подсказку</button>
+              <p class="terminal-hint" id="terminalHint" role="status" hidden></p>
+              <div class="terminal-console">
+                <div class="terminal-log" id="terminalLog" role="log" aria-label="Вывод команд" tabindex="0"></div>
+                <form id="terminalForm">
+                  <label for="terminalCommand" id="terminalPrompt"></label>
+                  <div class="terminal-input-row">
+                    <input id="terminalCommand" type="text" autocomplete="off" autocapitalize="off" spellcheck="false"
+                      maxlength="200" aria-label="Команда терминала" placeholder="Введите команду">
+                    <button class="primary-button" type="submit">Выполнить</button>
+                  </div>
+                </form>
+              </div>
+            </section>
+          </div>
+        </section>
+
         <section class="screen" id="referenceScreen" data-screen="reference">
           <div class="reference-layout">
             <div class="section-heading">
@@ -357,9 +419,10 @@
       </form>
     </dialog>
 
-    <script src="terms-content.js?v=ef74034ccb48"></script>
-    <script src="code-content.js?v=ef74034ccb48"></script>
-    <script src="bug-content.js?v=ef74034ccb48"></script>
-    <script src="app.js?v=ef74034ccb48"></script>
+    <script src="terms-content.js?v=878d7a6e11eb"></script>
+    <script src="code-content.js?v=878d7a6e11eb"></script>
+    <script src="bug-content.js?v=878d7a6e11eb"></script>
+    <script src="terminal.js?v=878d7a6e11eb"></script>
+    <script src="app.js?v=878d7a6e11eb"></script>
   </body>
 </html>

@@ -36,8 +36,10 @@ function element() {
     append(child) { this.children.push(child); },
     querySelectorAll() { return this.children; },
     setAttribute() {},
+    focus() {},
     addEventListener(name, callback) { listeners[name] = callback; },
-    click() { listeners.click?.(); }
+    dispatch(name) { listeners[name]?.({ preventDefault() {} }); },
+    click() { this.dispatch("click"); }
   };
 }
 
@@ -46,6 +48,8 @@ function setup(storage = new Map(), blocked = false) {
   const root = element();
   elements.get("#codeLabSelect").value = "all";
   elements.get("#bugLabSelect").value = "ЛБ 4";
+  elements.get("#terminalShell").value = "powershell";
+  elements.get("#terminalLesson").value = "navigate";
   let id = 0;
   const intervals = new Map();
   const context = vm.createContext({
@@ -69,9 +73,73 @@ function setup(storage = new Map(), blocked = false) {
     }
   });
   vm.runInContext(`${read("terms-content.js")}\n${read("code-content.js")}\n${read("bug-content.js")}\n${read("app.js")}`, context);
+  vm.runInContext(read("terminal.js"), context);
   const run = code => vm.runInContext(code, context);
   return { elements, run, storage, intervals };
 }
+
+function terminal(app) {
+  const get = id => app.elements.get("#terminal" + id);
+  return {
+    select(id, value) {
+      get(id).value = value;
+      get(id).dispatch("change");
+    },
+    command(value) {
+      get("Command").value = value;
+      get("Form").dispatch("submit");
+      return get("Log").children.at(-1).textContent;
+    },
+    get
+  };
+}
+
+test("terminal teaches navigation and C# launch in PowerShell and Bash", () => {
+  const ui = terminal(setup());
+  for (const [shell, location, list, projects] of [
+    ["powershell", "Get-Location", "Get-ChildItem", "C:\\Users\\student\\Projects"],
+    ["bash", "pwd", "ls", "/home/student/Projects"]
+  ]) {
+    ui.select("Shell", shell);
+    ui.select("Lesson", "navigate");
+    ui.get("HintButton").click();
+    assert.equal(ui.get("Hint").textContent, location);
+    assert.equal(ui.command(location), projects);
+    assert.match(ui.command(list), /Lab10/);
+    ui.command("cd Lab10");
+    assert.match(ui.command(list), /Lab10\.csproj/);
+    assert.equal(ui.get("Progress").textContent, "Урок завершён");
+
+    ui.select("Lesson", "run");
+    assert.match(ui.command("dotnet run"), /нет файла \.csproj/);
+    assert.equal(ui.get("Progress").textContent, "Шаг 1 из 3");
+    ui.command("cd ..");
+    ui.command("cd Lab10");
+    assert.match(ui.command("dotnet run"), /Исходные замеры/);
+    assert.equal(ui.get("Progress").textContent, "Урок завершён");
+  }
+});
+
+test("terminal Git distinguishes staged changes, a local commit, and a pushed commit", () => {
+  const ui = terminal(setup());
+  ui.select("Lesson", "git");
+  assert.match(ui.command("git push"), /сначала выполни текущий шаг/);
+  assert.match(ui.command("git status"), /Changes not staged/);
+  assert.match(ui.command("git diff"), /\+var sorted/);
+  ui.command("git add Program.cs");
+  assert.match(ui.command("git status"), /Changes to be committed/);
+  assert.match(ui.command("git diff --staged"), /\+var sorted/);
+  assert.match(ui.command('git commit -m "missing'), /Проверь кавычки/);
+  assert.match(ui.command('git commit -m "Sort timings"'), /\[main a1b2c3d\] Sort timings/);
+  assert.match(ui.command("git status"), /ahead of 'origin\/main' by 1 commit/);
+  assert.match(ui.command("git push"), /main -> main/);
+  assert.match(ui.command("git log --oneline"), /HEAD -> main, origin\/main/);
+  assert.equal(ui.get("Progress").textContent, "Урок завершён");
+
+  ui.select("Shell", "bash");
+  assert.match(ui.get("Prompt").textContent, /^student@linux:/);
+  assert.match(ui.command("git status"), /Changes not staged/);
+});
 
 test("error cards reveal corrections on demand and require a reveal before grading", () => {
   const app = setup();

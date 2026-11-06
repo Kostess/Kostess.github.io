@@ -350,7 +350,7 @@ h2 {
 
 .mode-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 14px;
   margin: 18px 0 0;
 }
@@ -1165,6 +1165,64 @@ dialog::backdrop {
 .bug-result { padding: 12px; border: 1px solid var(--line); border-radius: var(--radius); white-space: pre-wrap; overflow-wrap: anywhere; }
 .bug-card [hidden] { display: none; }
 .bug-card h2 { min-height: auto; }
+
+.terminal-panel {
+  min-width: 0;
+  min-height: auto;
+}
+
+.terminal-hint {
+  margin: 12px 0 0;
+  color: var(--accent-strong);
+  overflow-wrap: anywhere;
+}
+
+.terminal-console {
+  margin-top: 18px;
+  padding: clamp(12px, 3vw, 20px);
+  border-radius: var(--radius);
+  background: #111815;
+  color: #d6f8e8;
+  font: 0.95rem/1.55 "Cascadia Code", Consolas, monospace;
+}
+
+.terminal-log {
+  min-height: 9rem;
+  max-height: 19rem;
+  margin-bottom: 16px;
+  overflow: auto;
+  overflow-wrap: anywhere;
+  white-space: pre-wrap;
+}
+
+.terminal-log > * + * { margin-top: 8px; }
+.terminal-echo { color: #8be6c0; }
+
+.terminal-console label {
+  margin-bottom: 6px;
+  color: #8be6c0;
+  font: inherit;
+  overflow-wrap: anywhere;
+}
+
+.terminal-input-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 8px;
+}
+
+.terminal-input-row input {
+  min-width: 0;
+  border-color: #40554a;
+  background: #202823;
+  color: #eef5f1;
+}
+
+.terminal-input-row button { font-family: inherit; }
+
+@media (max-width: 450px) {
+  .terminal-input-row { grid-template-columns: minmax(0, 1fr); }
+}
 
 @media (min-width: 881px) and (max-width: 1100px) {
   .topbar { grid-template-columns: minmax(0, 1fr) auto; }

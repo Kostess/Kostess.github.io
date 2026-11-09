@@ -118,6 +118,7 @@ const els = {
   codeText: document.querySelector("#codeText"),
   codeInput: document.querySelector("#codeInput"),
   codeAnswerGrid: document.querySelector("#codeAnswerGrid"),
+  codeAnswerHint: document.querySelector("#codeAnswerHint"),
   codeFeedback: document.querySelector("#codeFeedback"),
   nextCodeBtn: document.querySelector("#nextCodeBtn"),
   nextQuizBtn: document.querySelector("#nextQuizBtn"),
@@ -738,6 +739,14 @@ function describeCodeInput(value) {
   return `Ввод: ${JSON.stringify(value)}`;
 }
 
+function codeAnswersNeedWhitespace(options) {
+  return options.some(value => value === "" || /^\s|\s$| {2,}|[\t\r\n]/u.test(value));
+}
+
+function formatCodeAnswer(value, markWhitespace) {
+  return markWhitespace ? JSON.stringify(value).replaceAll(" ", "␠") : value;
+}
+
 function resetCodeUi() {
   stopCodeTimer();
   els.codeTimer.hidden = true;
@@ -747,6 +756,7 @@ function resetCodeUi() {
   els.codeQuestion.textContent = "Нажмите «Начать практику», когда будете готовы.";
   els.codeSnippet.hidden = true;
   els.codeAnswerGrid.replaceChildren();
+  els.codeAnswerHint.hidden = true;
   els.codeFeedback.textContent = "";
   els.nextCodeBtn.hidden = true;
   updateCodeRefactorTask();
@@ -855,12 +865,14 @@ function renderCodeQuestion() {
   els.codeFeedback.textContent = "";
   els.nextCodeBtn.hidden = true;
   els.codeAnswerGrid.replaceChildren();
+  const markWhitespace = codeAnswersNeedWhitespace(question.options);
+  els.codeAnswerHint.hidden = !markWhitespace;
 
   question.options.forEach((option, index) => {
     const button = document.createElement("button");
     button.type = "button";
     button.className = "answer-option";
-    button.textContent = option;
+    button.textContent = formatCodeAnswer(option, markWhitespace);
     button.addEventListener("click", () => handleCodeAnswer(index));
     els.codeAnswerGrid.append(button);
   });
@@ -889,7 +901,8 @@ function handleCodeAnswer(index, timedOut = false) {
   });
   els.codeTimer.textContent = timedOut ? "Время вышло: 0:00" : "Ответ принят";
   els.codeTimer.classList.toggle("is-urgent", timedOut);
-  els.codeFeedback.textContent = `${timedOut ? "Время вышло. " : ""}${isCorrect ? "Верно." : `Правильный ответ: ${question.options[question.correctIndex]}.`} ${question.explanation}`;
+  const correctAnswer = formatCodeAnswer(question.options[question.correctIndex], codeAnswersNeedWhitespace(question.options));
+  els.codeFeedback.textContent = `${timedOut ? "Время вышло. " : ""}${isCorrect ? "Верно." : `Правильный ответ: ${correctAnswer}.`} ${question.explanation}`;
   els.nextCodeBtn.textContent = session.index === session.questions.length - 1 ? "Показать итог" : "Следующее задание";
   els.nextCodeBtn.hidden = false;
 }
@@ -902,6 +915,7 @@ function finishCode() {
   els.codeProgress.textContent = "Практика завершена";
   els.codeProgressFill.style.width = "100%";
   els.codeType.textContent = "Итог";
+  els.codeAnswerHint.hidden = true;
   els.codeQuestion.textContent = `${session.correct} из ${session.questions.length} правильных ответов (${percent}%).`;
   els.codeSnippet.hidden = true;
   els.codeAnswerGrid.replaceChildren();

@@ -387,6 +387,22 @@ test("practice lab and deck selectors restrict a session to the selected 5–10 
   }
 });
 
+test("whitespace-sensitive answers remain distinct and grading uses the original values", () => {
+  const app = setup();
+  app.run('state.codeSession = { questions: [codeLessons.find(lesson => lesson.id === "lab11-10")], index: 0, correct: 0 }; renderCodeQuestion();');
+  const options = app.elements.get("#codeAnswerGrid").children.map(button => button.textContent);
+  assert.equal(app.elements.get("#codeAnswerHint").hidden, false);
+  assert.ok(options.includes('"Война␠␠␠и␠␠мир"'));
+  assert.ok(options.includes('"Война␠и␠мир"'));
+  assert.equal(new Set(options).size, 4);
+  assert.equal(app.run('formatCodeAnswer("  Код  ", true)'), '"␠␠Код␠␠"');
+  assert.equal(app.run('formatCodeAnswer("", true)'), '""');
+  app.run('handleCodeAnswer(state.codeSession.questions[0].correctIndex)');
+  assert.equal(app.run("state.codeSession.correct"), 1);
+  app.run("resetMode()");
+  assert.equal(app.elements.get("#codeAnswerHint").hidden, true);
+});
+
 test("lab 11 distinguishes Enter from end of input in questions and worked examples", () => {
   const app = setup();
   for (const [id, expected] of [

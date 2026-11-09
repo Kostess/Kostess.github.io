@@ -726,6 +726,17 @@ button:focus-visible {
   cursor: default;
 }
 
+#codeAnswerGrid .answer-option {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.code-answer-hint {
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
 .code-snippet,
 .reference-example pre {
   border: 1px solid #31483d;

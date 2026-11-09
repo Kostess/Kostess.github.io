@@ -357,13 +357,14 @@ test("mixed lab practice draws ten distinct questions across decks without lengt
 test("error mode draws only five distinct cards from the full selected lab bank", () => {
   const app = setup();
   app.run('shuffle = items => [...items].reverse();');
-  for (let lab = 4; lab <= 9; lab++) {
+  for (const lab of [4, 5, 6, 7, 8, 9, 11]) {
     app.elements.get("#bugLabSelect").value = `ЛБ ${lab}`;
     app.run('startBugs()');
     assert.equal(app.run('state.bugSession.cards.length'), 5);
     assert.equal(app.run('new Set(state.bugSession.cards.map(card => card.id)).size'), 5);
     assert.equal(app.run('state.bugSession.cards.every(card => card.lab === els.bugLabSelect.value)'), true);
-    assert.ok(app.run('state.bugSession.cards.some(card => card.id.startsWith("bank-"))'));
+    if (lab < 11) assert.ok(app.run('state.bugSession.cards.some(card => card.id.startsWith("bank-"))'));
+    else assert.match(html, /<option value="ЛБ 11">ЛБ 11: строки и null<\/option>/);
     app.run('resetMode()');
   }
 });

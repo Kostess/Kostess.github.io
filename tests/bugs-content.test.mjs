@@ -9,10 +9,10 @@ const topics = vm.runInNewContext(`${read("terms-content.js")}\ntopics`);
 const terms = new Set(topics.flatMap(topic => topic.decks.flatMap(deck =>
   deck.terms.map(item => `${deck.id}:${item.term}`))));
 
-test("150 error cards have stable IDs, glossary links, and twenty-five cards per lab", () => {
-  assert.equal(cards.length, 150);
-  assert.equal(new Set(cards.map(card => card.id)).size, 150);
-  for (let lab = 4; lab <= 9; lab++) {
+test("175 error cards have stable IDs, glossary links, and twenty-five cards per supported lab", () => {
+  assert.equal(cards.length, 175);
+  assert.equal(new Set(cards.map(card => card.id)).size, 175);
+  for (const lab of [4, 5, 6, 7, 8, 9, 11]) {
     assert.equal(cards.filter(card => card.lab === `ЛБ ${lab}`).length, 25);
   }
   for (const card of cards) {
@@ -32,8 +32,10 @@ test("each correction changes exactly the highlighted line and respects the cour
     const changes = fixed.flatMap((line, index) => line !== broken[index] ? [index + 1] : []);
     assert.deepEqual(changes, [card.changedLine], card.id);
     const source = `${card.brokenCode}\n${card.fixedCode}`;
-    assert.doesNotMatch(source, /\b(null|foreach|try|catch|throw|class|ref)\b/, card.id);
-    if (Number(card.lab.slice(-1)) <= 5) assert.doesNotMatch(source, /\b(if|switch|for|while)\b/, card.id);
-    if (Number(card.lab.slice(-1)) <= 7) assert.doesNotMatch(source, /\[|\b(TryParse|Length)\b/, card.id);
+    assert.doesNotMatch(source, /\b(foreach|try|catch|throw|class|ref)\b/, card.id);
+    const lab = Number(card.lab.replace(/\D/g, ""));
+    if (lab < 11) assert.doesNotMatch(source, /\bnull\b|string\?/, card.id);
+    if (lab <= 5) assert.doesNotMatch(source, /\b(if|switch|for|while)\b/, card.id);
+    if (lab <= 7) assert.doesNotMatch(source, /\[|\b(TryParse|Length)\b/, card.id);
   }
 });

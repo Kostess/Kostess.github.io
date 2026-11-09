@@ -627,9 +627,10 @@ function renderQuestion() {
   const question = session.questions[session.index];
   const isTermToDefinition = question.direction === "term";
   const correctText = isTermToDefinition ? question.term.definition : question.term.term;
-  const distractorPool = allTerms
+  const distractorPool = [...new Set(allTerms
     .filter((item) => item.term !== question.term.term)
-    .map((item) => (isTermToDefinition ? item.definition : item.term));
+    .map((item) => (isTermToDefinition ? item.definition : item.term)))]
+    .filter(option => option !== correctText);
   const options = shuffle([correctText, ...shuffle(distractorPool).slice(0, 3)]);
 
   session.answered = false;
@@ -736,7 +737,9 @@ function describeCodeInput(value) {
   if (value === undefined) return "";
   if (value === null) return "Ввод: входной поток завершён (Console.ReadLine вернёт null)";
   if (value === "") return "Ввод: Enter без текста (пустая строка)";
-  return `Ввод: ${JSON.stringify(value)}`;
+  return codeAnswersNeedWhitespace([value])
+    ? `Ввод: ${formatCodeAnswer(value, true)} (␠ — один пробел)`
+    : `Ввод: ${JSON.stringify(value)}`;
 }
 
 function codeAnswersNeedWhitespace(options) {
@@ -1076,14 +1079,14 @@ function renderReference() {
           (item) => `
             <details class="term-item">
               <summary>
-                <strong>${item.term}</strong>
-                <span>${item.topicTitle} · ${item.deckTitle.replace("Колода ", "")}</span>
+                <strong>${escapeHtml(item.term)}</strong>
+                <span>${escapeHtml(item.topicTitle)} · ${escapeHtml(item.deckTitle.replace("Колода ", ""))}</span>
               </summary>
               <div class="term-body">
                 <div class="chip-row">
                   ${item.chips.map((chip) => `<span class="term-chip term-chip--${chip.kind}">${chip.label}</span>`).join("")}
                 </div>
-                <p>${item.definition}</p>
+                <p>${escapeHtml(item.definition)}</p>
                 ${renderReferenceExample(item)}
               </div>
             </details>

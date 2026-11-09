@@ -387,6 +387,22 @@ test("practice lab and deck selectors restrict a session to the selected 5–10 
   }
 });
 
+test("quiz deduplicates repeated terms and reference preserves literal generic type syntax", () => {
+  const app = setup();
+  app.run(`shuffle = items => [...items].sort((a, b) => a === "Метод" ? -1 : b === "Метод" ? 1 : 0);
+    state.quizSession = { questions: [{ term: allTerms[0], direction: "definition" }], index: 0, correct: 0 };
+    renderQuestion();`);
+  const options = app.elements.get("#answerGrid").children.map(button => button.dataset.answer);
+  assert.equal(options.length, 4);
+  assert.equal(new Set(options).size, 4);
+  app.elements.get("#searchInput").value = "Nullable";
+  app.run("renderReference()");
+  assert.match(app.elements.get("#referenceList").innerHTML, /Nullable&lt;T&gt;/);
+  assert.match(app.elements.get("#referenceList").innerHTML, /Nullable&lt;int&gt;/);
+  assert.doesNotMatch(app.elements.get("#referenceList").innerHTML, /Nullable<(?:T|int)>/);
+  assert.equal(app.run('describeCodeInput("   ")'), 'Ввод: "␠␠␠" (␠ — один пробел)');
+});
+
 test("whitespace-sensitive answers remain distinct and grading uses the original values", () => {
   const app = setup();
   app.run('state.codeSession = { questions: [codeLessons.find(lesson => lesson.id === "lab11-10")], index: 0, correct: 0 }; renderCodeQuestion();');

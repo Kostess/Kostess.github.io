@@ -30,6 +30,22 @@ test("all code lessons link to real glossary terms", () => {
   }
 });
 
+test("all answer versions stay visually distinct after browser whitespace collapsing", () => {
+  const helpers = appSource.slice(appSource.indexOf("function codeAnswersNeedWhitespace("), appSource.indexOf("function resetCodeUi("));
+  const { codeAnswersNeedWhitespace, formatCodeAnswer } = vm.runInNewContext(
+    `${helpers}\n({ codeAnswersNeedWhitespace, formatCodeAnswer })`
+  );
+  for (const lesson of lessons) {
+    for (const version of [lesson, ...(lesson.variants || [])]) {
+      const mark = codeAnswersNeedWhitespace(version.options);
+      const visible = version.options.map(value =>
+        formatCodeAnswer(value, mark).replace(/[\t\n\r\f ]+/g, " ").trim()
+      );
+      assert.equal(new Set(visible).size, 4, lesson.id);
+    }
+  }
+});
+
 test("labs 4 through 11 have separate practice questions", () => {
   const lab4 = lessons.filter((lesson) => ["variables-values", "csharp-data-types", "typing-and-output"].includes(lesson.deckId));
   const lab5 = lessons.filter((lesson) => lesson.deckId === "input-operations-conversions");

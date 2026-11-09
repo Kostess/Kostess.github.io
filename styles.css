@@ -871,7 +871,7 @@ button:focus-visible {
 }
 
 .reference-example .example-result {
-  white-space: pre-line;
+  white-space: pre-wrap;
 }
 
 .chip-row {

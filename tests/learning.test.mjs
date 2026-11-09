@@ -254,6 +254,30 @@ test("error cards reveal corrections on demand and require a reveal before gradi
   assert.equal(reload.run('Object.values(learningProgress).filter(item => item.needsReview).length'), 0);
 });
 
+test("error-card explanations describe the original program and reveal both outputs for logic errors", () => {
+  const app = setup();
+  for (const id of ["expand-bug8-index-or-value-1", "bug11-null-guard", "bug11-char-quotes"]) {
+    app.run(`state.bugSession = { cards: [bugCards.find(card => card.id === "${id}")], index: 0, known: 0, repeated: 0, flipped: false }; renderBugCard();`);
+    assert.equal(app.elements.get("#bugErrorType").textContent, "");
+    assert.equal(app.elements.get("#bugOriginalOutput").hidden, true);
+    assert.equal(app.elements.get("#bugActual").textContent, "");
+    app.run("flipBugCard()");
+    assert.match(app.elements.get("#bugErrorType").textContent, /исходного кода/);
+    assert.equal(app.elements.get("#bugExplanation").textContent, app.run("state.bugSession.cards[0].explanation"));
+    assert.equal(app.run("Object.keys(learningProgress).length"), 0);
+    if (id === "expand-bug8-index-or-value-1") {
+      assert.equal(app.elements.get("#bugOriginalOutput").hidden, false);
+      assert.equal(app.elements.get("#bugActual").textContent, "5\n5");
+      assert.equal(app.elements.get("#bugExpected").textContent, "1\n3");
+      assert.match(app.elements.get("#bugExplanation").textContent, /индексах 0 и 2/);
+    } else {
+      assert.equal(app.elements.get("#bugOriginalOutput").hidden, true);
+    }
+    app.run("resetMode()");
+    assert.equal(app.elements.get("#bugErrorType").textContent, "");
+  }
+});
+
 test("error mode clears revealed answers on exit and safely handles an empty review list", () => {
   const app = setup();
   app.elements.get("#bugMistakesOnly").checked = true;

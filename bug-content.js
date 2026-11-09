@@ -1079,7 +1079,7 @@ const bugCards = [
     "brokenCode": "int target = 5;\nint[] values = { target, 2, target };\nfor (int i = 0; i < values.Length; i++)\n{\n    if (values[i] == target)\n    {\n        Console.WriteLine(values[i]);\n    }\n}",
     "fixedCode": "int target = 5;\nint[] values = { target, 2, target };\nfor (int i = 0; i < values.Length; i++)\n{\n    if (values[i] == target)\n    {\n        Console.WriteLine(i + 1);\n    }\n}",
     "changedLine": 7,
-    "explanation": "Для номера выводят индекс + 1. Значение найденной ячейки — это не её номер.",
+    "explanation": "В строке 7 values[i] выводит найденное число 5. Поэтому исходный код печатает 5 дважды. По условию нужны номера позиций с отсчётом от 1. Совпадения находятся на индексах 0 и 2, поэтому заменяем вывод на i + 1 и получаем номера 1 и 3.",
     "expectedResult": "1\n3",
     "brokenResult": "5\n5"
   },
@@ -1094,7 +1094,7 @@ const bugCards = [
     "brokenCode": "int target = 6;\nint[] values = { target, 2, target };\nfor (int i = 0; i < values.Length; i++)\n{\n    if (values[i] == target)\n    {\n        Console.WriteLine(values[i]);\n    }\n}",
     "fixedCode": "int target = 6;\nint[] values = { target, 2, target };\nfor (int i = 0; i < values.Length; i++)\n{\n    if (values[i] == target)\n    {\n        Console.WriteLine(i + 1);\n    }\n}",
     "changedLine": 7,
-    "explanation": "Для номера выводят индекс + 1. Значение найденной ячейки — это не её номер.",
+    "explanation": "В строке 7 values[i] выводит найденное число 6. Поэтому исходный код печатает 6 дважды. По условию нужны номера позиций с отсчётом от 1. Совпадения находятся на индексах 0 и 2, поэтому заменяем вывод на i + 1 и получаем номера 1 и 3.",
     "expectedResult": "1\n3",
     "brokenResult": "6\n6"
   },
@@ -1949,7 +1949,7 @@ const bugCards = [
     "brokenCode": "int target = 8;\nint[] values = { target, 1, target, 2 };\nint found = -1;\nfor (int i = 0; i < values.Length; i++)\n{\n    if (values[i] == target)\n    {\n        found = values[i];\n        break;\n    }\n}\nConsole.WriteLine(found);",
     "fixedCode": "int target = 8;\nint[] values = { target, 1, target, 2 };\nint found = -1;\nfor (int i = 0; i < values.Length; i++)\n{\n    if (values[i] == target)\n    {\n        found = i;\n        break;\n    }\n}\nConsole.WriteLine(found);",
     "changedLine": 8,
-    "explanation": "Найденное значение и его индекс — разные числа. Для индекса записывают i.",
+    "explanation": "При первом совпадении i равен 0, а values[i] равно 8. Исходная строка сохраняет число 8, хотя по условию нужен его индекс. Заменяем found = values[i] на found = i и получаем результат 0.",
     "expectedResult": "0",
     "brokenResult": "8"
   },
@@ -1964,7 +1964,7 @@ const bugCards = [
     "brokenCode": "int target = 9;\nint[] values = { 1, target, 2, target };\nint found = -1;\nfor (int i = 0; i < values.Length; i++)\n{\n    if (values[i] == target)\n    {\n        found = values[i];\n        break;\n    }\n}\nConsole.WriteLine(found);",
     "fixedCode": "int target = 9;\nint[] values = { 1, target, 2, target };\nint found = -1;\nfor (int i = 0; i < values.Length; i++)\n{\n    if (values[i] == target)\n    {\n        found = i;\n        break;\n    }\n}\nConsole.WriteLine(found);",
     "changedLine": 8,
-    "explanation": "Найденное значение и его индекс — разные числа. Для индекса записывают i.",
+    "explanation": "При первом совпадении i равен 1, а values[i] равно 9. Исходная строка сохраняет число 9, хотя по условию нужен его индекс. Заменяем found = values[i] на found = i и получаем результат 1.",
     "expectedResult": "1",
     "brokenResult": "9"
   },

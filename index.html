@@ -14,7 +14,7 @@
       name="description"
       content="Карточки, тесты и справочник по базовым IT-терминам для студентов перед изучением C#."
     >
-    <link rel="stylesheet" href="styles.css?v=d13a1d9178ca">
+    <link rel="stylesheet" href="styles.css?v=a824aaefbe29">
   </head>
   <body>
     <div class="app-shell">
@@ -346,12 +346,18 @@ class Program
                   <pre><code id="bugBrokenCode"></code></pre>
                 </div>
                 <div id="bugSolution" hidden>
+                  <p class="quiz-type" id="bugErrorType"></p>
                   <div class="code-snippet">
                     <span class="code-label">Исправленный код · выделена изменённая строка</span>
                     <pre><code id="bugFixedCode"></code></pre>
                   </div>
+                  <p><strong>Что исправлено</strong></p>
                   <p id="bugExplanation"></p>
-                  <p><strong>Ожидаемый результат:</strong></p>
+                  <div id="bugOriginalOutput" hidden>
+                    <p><strong>Вывод кода с ошибкой</strong></p>
+                    <pre class="bug-result" id="bugActual"></pre>
+                  </div>
+                  <p><strong>Результат исправленного кода</strong></p>
                   <pre class="bug-result" id="bugExpected"></pre>
                 </div>
                 <button class="primary-button" id="flipBugBtn" type="button" aria-expanded="false" aria-controls="bugSolution" disabled>Показать решение</button>
@@ -489,11 +495,11 @@ git push · git fetch origin · git pull --ff-only</pre>
       </form>
     </dialog>
 
-    <script src="terms-content.js?v=d13a1d9178ca"></script>
-    <script src="code-content.js?v=d13a1d9178ca"></script>
-    <script src="bug-content.js?v=d13a1d9178ca"></script>
-    <script src="terminal-engine.js?v=d13a1d9178ca"></script>
-    <script src="terminal.js?v=d13a1d9178ca"></script>
-    <script src="app.js?v=d13a1d9178ca"></script>
+    <script src="terms-content.js?v=a824aaefbe29"></script>
+    <script src="code-content.js?v=a824aaefbe29"></script>
+    <script src="bug-content.js?v=a824aaefbe29"></script>
+    <script src="terminal-engine.js?v=a824aaefbe29"></script>
+    <script src="terminal.js?v=a824aaefbe29"></script>
+    <script src="app.js?v=a824aaefbe29"></script>
   </body>
 </html>

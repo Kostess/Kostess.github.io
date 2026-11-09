@@ -134,6 +134,9 @@ const els = {
   bugSolution: document.querySelector("#bugSolution"),
   bugFixedCode: document.querySelector("#bugFixedCode"),
   bugExplanation: document.querySelector("#bugExplanation"),
+  bugErrorType: document.querySelector("#bugErrorType"),
+  bugOriginalOutput: document.querySelector("#bugOriginalOutput"),
+  bugActual: document.querySelector("#bugActual"),
   bugExpected: document.querySelector("#bugExpected"),
   flipBugBtn: document.querySelector("#flipBugBtn"),
   bugKnownBtn: document.querySelector("#bugKnownBtn"),
@@ -941,6 +944,9 @@ function resetBugsUi() {
   els.bugSolution.hidden = true;
   els.bugFixedCode.replaceChildren();
   els.bugExplanation.textContent = "";
+  els.bugErrorType.textContent = "";
+  els.bugOriginalOutput.hidden = true;
+  els.bugActual.textContent = "";
   els.bugExpected.textContent = "";
   els.flipBugBtn.disabled = true;
   els.flipBugBtn.textContent = "Показать решение";
@@ -978,8 +984,15 @@ function renderBugCard() {
   els.bugFixedCode.innerHTML = session.flipped ? card.fixedCode.split("\n").map((line, index) =>
     `<span class="bug-code-line${index + 1 === card.changedLine ? " is-corrected" : ""}"><span class="bug-line-number" aria-hidden="true">${index + 1}</span>${escapeHtml(line) || " "}</span>`
   ).join("") : "";
-  const types = { compile: "Код не собирается.", runtime: "Ошибка при выполнении.", logic: "Неверный результат." };
-  els.bugExplanation.textContent = session.flipped ? `${types[card.kind]} ${card.explanation}` : "";
+  const types = {
+    compile: "Ошибка компиляции исходного кода",
+    runtime: "Ошибка выполнения исходного кода",
+    logic: "Логическая ошибка исходного кода"
+  };
+  els.bugErrorType.textContent = session.flipped ? types[card.kind] : "";
+  els.bugExplanation.textContent = session.flipped ? card.explanation : "";
+  els.bugOriginalOutput.hidden = !session.flipped || card.kind !== "logic";
+  els.bugActual.textContent = session.flipped && card.kind === "logic" ? card.brokenResult : "";
   els.bugExpected.textContent = session.flipped ? card.expectedResult : "";
   els.flipBugBtn.disabled = false;
   els.flipBugBtn.textContent = session.flipped ? "Показать код с ошибкой" : "Показать решение";
@@ -987,7 +1000,7 @@ function renderBugCard() {
   els.bugKnownBtn.disabled = !session.flipped;
   els.bugRepeatBtn.disabled = !session.flipped;
   els.bugSessionNote.textContent = session.flipped
-    ? "Сравните со своим решением и оцените себя. Трудные карточки сохранятся для следующего повторения."
+    ? "Вы открыли разбор ошибки исходного кода. Сравните его со своим решением и выберите «Нашёл сам» или «Нужно повторить»."
     : "Найдите ошибку и сформулируйте исправление своими словами. Здесь нет таймера.";
 }
 

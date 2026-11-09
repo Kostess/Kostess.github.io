@@ -370,7 +370,7 @@ test("error mode draws only five distinct cards from the full selected lab bank"
 
 test("practice lab and deck selectors restrict a session to the selected 5–10 examples", () => {
   const app = setup();
-  for (const lab of ["ЛБ 4", "ЛБ 5", "ЛБ 6", "ЛБ 7", "ЛБ 8", "ЛБ 9", "ЛБ 10"]) {
+  for (const lab of ["ЛБ 4", "ЛБ 5", "ЛБ 6", "ЛБ 7", "ЛБ 8", "ЛБ 9", "ЛБ 10", "ЛБ 11"]) {
     app.elements.get("#codeLabSelect").value = lab;
     app.run('fillCodeDeckSelect()');
     const deckIds = app.run(`codeDecks.filter(deck => deck.lab === ${JSON.stringify(lab)}).map(deck => deck.id)`);
@@ -384,6 +384,26 @@ test("practice lab and deck selectors restrict a session to the selected 5–10 
       app.run('resetMode()');
     }
   }
+});
+
+test("lab 11 distinguishes Enter from end of input in questions and worked examples", () => {
+  const app = setup();
+  for (const [id, expected] of [
+    ["lab11-12", /Enter без текста/],
+    ["lab11-18", /входной поток завершён/]
+  ]) {
+    app.run(`state.codeSession = { questions: [codeLessons.find(lesson => lesson.id === "${id}")], index: 0, correct: 0 };`);
+    app.run("renderCodeQuestion()");
+    assert.equal(app.elements.get("#codeInput").hidden, false);
+    assert.match(app.elements.get("#codeInput").textContent, expected);
+  }
+  assert.match(app.run('renderReferenceExample({deckId:"strings-null",term:"Конец входного потока"})'), /входной поток завершён/);
+  const question = app.run('createCodeQuestion({...codeLessons.find(lesson => lesson.id === "lab11-30"), variants: []})');
+  assert.equal(question.challengeInput, "0");
+  app.elements.get("#codeLabSelect").value = "ЛБ 11";
+  app.run("fillCodeDeckSelect(); startCode()");
+  assert.equal(app.run("state.codeSession.questions.length"), 10);
+  assert.equal(app.run('state.codeSession.questions.every(lesson => lesson.id.startsWith("lab11-"))'), true);
 });
 
 test("open refactoring task appears for the selected deck outside the timed session", () => {

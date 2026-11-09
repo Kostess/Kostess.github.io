@@ -52,7 +52,10 @@ const deckLabTags = {
   "methods-purchase": ["ЛБ 9"],
   "methods-overloads": ["ЛБ 10"],
   "array-processing": ["ЛБ 10"],
-  "methods-refactoring": ["ЛБ 10"]
+  "methods-refactoring": ["ЛБ 10"],
+  "strings-text": ["ЛБ 11"],
+  "strings-null": ["ЛБ 11"],
+  "strings-nullable": ["ЛБ 11"]
 };
 
 const CODE_ANSWER_TIME_MS = 90_000;
@@ -728,6 +731,13 @@ function startCodeTimer() {
   state.codeTimerId = window.setInterval(update, 250);
 }
 
+function describeCodeInput(value) {
+  if (value === undefined) return "";
+  if (value === null) return "Ввод: входной поток завершён (Console.ReadLine вернёт null)";
+  if (value === "") return "Ввод: Enter без текста (пустая строка)";
+  return `Ввод: ${JSON.stringify(value)}`;
+}
+
 function resetCodeUi() {
   stopCodeTimer();
   els.codeTimer.hidden = true;
@@ -840,8 +850,8 @@ function renderCodeQuestion() {
   els.codeQuestion.textContent = question.prompt;
   els.codeSnippet.hidden = false;
   els.codeText.textContent = question.challengeCode;
-  els.codeInput.hidden = !question.challengeInput;
-  els.codeInput.textContent = question.challengeInput ? `Ввод: ${question.challengeInput}` : "";
+  els.codeInput.hidden = question.challengeInput === undefined;
+  els.codeInput.textContent = describeCodeInput(question.challengeInput);
   els.codeFeedback.textContent = "";
   els.nextCodeBtn.hidden = true;
   els.codeAnswerGrid.replaceChildren();
@@ -1075,7 +1085,7 @@ function renderReferenceExample(item) {
     <div class="reference-example">
       <strong>Пример C# ${index + 1} из ${lessons.length}</strong>
       <pre><code>${escapeHtml(lesson.exampleCode)}</code></pre>
-      ${lesson.exampleInput ? `<p><strong>Ввод:</strong> ${escapeHtml(lesson.exampleInput)}</p>` : ""}
+      ${lesson.exampleInput !== undefined ? `<p>${escapeHtml(describeCodeInput(lesson.exampleInput))}</p>` : ""}
       <p><strong>Результат:</strong> <span class="example-result">${escapeHtml(lesson.exampleResult)}</span></p>
       <p>${escapeHtml(lesson.exampleNote)}</p>
     </div>

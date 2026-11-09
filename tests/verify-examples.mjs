@@ -38,11 +38,12 @@ try {
     }]),
     ...(lesson.variants || []).map((variant, index) => ({
       id: `${lesson.id}:variant-${index + 1}`, code: variant.challengeCode,
-      result: variant.challengeResult, input: variant.challengeInput ?? lesson.challengeInput
+      result: variant.challengeResult,
+      input: Object.hasOwn(variant, "challengeInput") ? variant.challengeInput : lesson.challengeInput
     }))
   ]);
   const calls = checks.map((check) => `
-Check(${JSON.stringify(check.id)}, ${JSON.stringify(check.result)}, ${JSON.stringify(check.input || "")}, () => {
+Check(${JSON.stringify(check.id)}, ${JSON.stringify(check.result)}, ${JSON.stringify(check.input === null ? "" : (check.input ?? "") + "\n")}, () => {
 ${check.code}
 });`).join("\n");
 
@@ -57,7 +58,7 @@ void Check(string id, string expected, string input, Action example)
     var previousIn = Console.In;
     var previousCulture = CultureInfo.CurrentCulture;
     using var output = new StringWriter(CultureInfo.InvariantCulture);
-    using var inputReader = new StringReader(input + "\\n");
+    using var inputReader = new StringReader(input);
     try
     {
         Console.SetOut(output);

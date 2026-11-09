@@ -199,7 +199,22 @@ const codeDecks = [
     "id": "lab9-bank-tracing",
     "lab": "ЛБ 9",
     "title": "Скрытый запас: чтение и исправление"
-  }
+  },
+{
+  "id": "lab11-strings-text",
+  "lab": "ЛБ 11",
+  "title": "Строки и обработка текста"
+},
+{
+  "id": "lab11-strings-null",
+  "lab": "ЛБ 11",
+  "title": "null и проверка строкового ввода"
+},
+{
+  "id": "lab11-strings-nullable",
+  "lab": "ЛБ 11",
+  "title": "Поиск и необязательные значения"
+}
 ];
 
 const codeLessons = [
@@ -28315,5 +28330,705 @@ const codeLessons = [
     ],
     "correctIndex": 0,
     "exampleResult": "33"
-  }
+  },
+{
+  "id": "lab11-01",
+  "deckId": "strings-text",
+  "term": "Элемент строки char",
+  "exampleCode": "string text = \"Снег\";\nchar first = text[0];\nConsole.WriteLine(first);",
+  "exampleResult": "С",
+  "exampleNote": "text[0] получает первый char.",
+  "kind": "Что выведет код?",
+  "challengeCode": "string text = \"Лето\";\nConsole.WriteLine(text[1]);",
+  "prompt": "Что появится в консоли?",
+  "options": [
+    "Л",
+    "е",
+    "т",
+    "о"
+  ],
+  "correctIndex": 1,
+  "explanation": "Индекс 1 указывает на второй элемент строки.",
+  "codeDeckId": "lab11-strings-text",
+  "challengeResult": "е"
+},
+{
+  "id": "lab11-02",
+  "deckId": "strings-text",
+  "term": "Индекс строки",
+  "exampleCode": "string text = \"Снег\";\nConsole.WriteLine(text[text.Length - 1]);",
+  "exampleResult": "г",
+  "exampleNote": "Последний индекс непустой строки равен Length - 1.",
+  "kind": "Что выведет код?",
+  "challengeCode": "string text = \"Книга\";\nConsole.WriteLine(text[text.Length - 2]);",
+  "prompt": "Что появится в консоли?",
+  "options": [
+    "К",
+    "и",
+    "г",
+    "а"
+  ],
+  "correctIndex": 2,
+  "explanation": "Длина равна 5. Индекс 5 - 2 равен 3 и указывает на букву «г».",
+  "codeDeckId": "lab11-strings-text",
+  "challengeResult": "г"
+},
+{
+  "id": "lab11-03",
+  "deckId": "strings-text",
+  "term": "Длина строки Length",
+  "exampleCode": "string text = \"Код!\";\nConsole.WriteLine(text.Length);",
+  "exampleResult": "4",
+  "exampleNote": "Знак восклицания входит в длину строки.",
+  "kind": "Что выведет код?",
+  "challengeCode": "string text = \"😀\";\nConsole.WriteLine(text.Length);",
+  "prompt": "Что появится в консоли?",
+  "options": [
+    "1",
+    "2",
+    "0",
+    "4"
+  ],
+  "correctIndex": 1,
+  "explanation": "Эмодзи в этом примере представлен двумя char UTF-16. Length считает элементы char.",
+  "codeDeckId": "lab11-strings-text",
+  "challengeResult": "2"
+},
+{
+  "id": "lab11-04",
+  "deckId": "strings-text",
+  "term": "Неизменяемость строки",
+  "exampleCode": "string text = \"  Код  \";\ntext.Trim();\nConsole.WriteLine(text.Length);",
+  "exampleResult": "7",
+  "exampleNote": "Вызов Trim вернул новую строку, но результат не был сохранён.",
+  "kind": "Что выведет код?",
+  "challengeCode": "string text = \" Снег \";\ntext.Trim();\nConsole.WriteLine(text.Length);",
+  "prompt": "Что появится в консоли?",
+  "options": [
+    "4",
+    "5",
+    "6",
+    "0"
+  ],
+  "correctIndex": 2,
+  "explanation": "В text осталось исходное значение длины 6. Для сохранения результата нужно присваивание.",
+  "codeDeckId": "lab11-strings-text",
+  "challengeResult": "6"
+},
+{
+  "id": "lab11-05",
+  "deckId": "strings-text",
+  "term": "Trim",
+  "exampleCode": "string text = \"  Код  \";\ntext = text.Trim();\nConsole.WriteLine(text.Length);",
+  "exampleResult": "3",
+  "exampleNote": "Сохранённый результат Trim не содержит пробелов по краям.",
+  "kind": "Что выведет код?",
+  "challengeCode": "string text = \"  Война и мир  \";\nConsole.WriteLine(text.Trim().Length);",
+  "prompt": "Что появится в консоли?",
+  "options": [
+    "15",
+    "11",
+    "10",
+    "9"
+  ],
+  "correctIndex": 1,
+  "explanation": "После удаления крайних пробелов остаются 11 char, включая два пробела внутри.",
+  "codeDeckId": "lab11-strings-text",
+  "challengeResult": "11"
+},
+{
+  "id": "lab11-06",
+  "deckId": "strings-text",
+  "term": "Split",
+  "exampleCode": "string[] parts = \"red,,blue\".Split(',');\nConsole.WriteLine(parts.Length);",
+  "exampleResult": "3",
+  "exampleNote": "Без RemoveEmptyEntries между соседними запятыми остаётся пустая часть.",
+  "kind": "Что выведет код?",
+  "challengeCode": "string[] parts = \"a;;b;\".Split(';');\nConsole.WriteLine(parts.Length);",
+  "prompt": "Что появится в консоли?",
+  "options": [
+    "2",
+    "3",
+    "4",
+    "1"
+  ],
+  "correctIndex": 2,
+  "explanation": "Получатся «a», пустая строка, «b» и пустая строка после последней точки с запятой.",
+  "codeDeckId": "lab11-strings-text",
+  "challengeResult": "4"
+},
+{
+  "id": "lab11-07",
+  "deckId": "strings-text",
+  "term": "Разделитель",
+  "exampleCode": "string[] words = \"red,blue,green\".Split(',');\nConsole.WriteLine(words.Length);",
+  "exampleResult": "3",
+  "exampleNote": "Запятая задаёт границы частей.",
+  "kind": "Что выведет код?",
+  "challengeCode": "string[] words = \"red,blue,green\".Split(' ');\nConsole.WriteLine(words.Length);",
+  "prompt": "Что появится в консоли?",
+  "options": [
+    "0",
+    "1",
+    "2",
+    "3"
+  ],
+  "correctIndex": 1,
+  "explanation": "Обычных пробелов здесь нет, поэтому весь текст остаётся одной частью.",
+  "codeDeckId": "lab11-strings-text",
+  "challengeResult": "1"
+},
+{
+  "id": "lab11-08",
+  "deckId": "strings-text",
+  "term": "StringSplitOptions.RemoveEmptyEntries",
+  "exampleCode": "string[] words = \"red,,blue\".Split(',', StringSplitOptions.RemoveEmptyEntries);\nConsole.WriteLine(words.Length);",
+  "exampleResult": "2",
+  "exampleNote": "Пустая часть между запятыми исключена.",
+  "kind": "Что выведет код?",
+  "challengeCode": "string[] words = \"  Код   строка  \".Split(' ', StringSplitOptions.RemoveEmptyEntries);\nConsole.WriteLine(words.Length);",
+  "prompt": "Что появится в консоли?",
+  "options": [
+    "2",
+    "3",
+    "4",
+    "7"
+  ],
+  "correctIndex": 0,
+  "explanation": "В результате только два непустых слова: «Код» и «строка».",
+  "codeDeckId": "lab11-strings-text",
+  "challengeResult": "2"
+},
+{
+  "id": "lab11-09",
+  "deckId": "strings-text",
+  "term": "string.Join",
+  "exampleCode": "string[] words = \"red,,blue,green\".Split(',', StringSplitOptions.RemoveEmptyEntries);\nConsole.WriteLine(string.Join(\"|\", words));",
+  "exampleResult": "red|blue|green",
+  "exampleNote": "Join вставляет разделитель только между соседними частями.",
+  "kind": "Что выведет код?",
+  "challengeCode": "string[] words = \"C#;строки\".Split(';');\nConsole.WriteLine(string.Join(\" / \", words));",
+  "prompt": "Что появится в консоли?",
+  "options": [
+    "C#/строки",
+    "C# / строки",
+    "C#;строки",
+    " / C# / строки / "
+  ],
+  "correctIndex": 1,
+  "explanation": "Разделитель « / » вставляется между двумя элементами.",
+  "codeDeckId": "lab11-strings-text",
+  "challengeResult": "C# / строки"
+},
+{
+  "id": "lab11-10",
+  "deckId": "strings-text",
+  "term": "Нормализация пробелов",
+  "exampleCode": "static string NormalizeTitle(string text)\n{\n    string[] words = text.Split(' ', StringSplitOptions.RemoveEmptyEntries);\n    return string.Join(\" \", words);\n}\nConsole.WriteLine(NormalizeTitle(\"  Мастер   и Маргарита  \"));",
+  "exampleResult": "Мастер и Маргарита",
+  "exampleNote": "Метод принимает текст и возвращает результат обработки.",
+  "kind": "Что выведет код?",
+  "challengeCode": "string text = \"  Война   и  мир  \";\nstring[] words = text.Split(' ', StringSplitOptions.RemoveEmptyEntries);\nConsole.WriteLine(string.Join(\" \", words));",
+  "prompt": "Что появится в консоли?",
+  "options": [
+    "Война   и  мир",
+    "Войнаимир",
+    "Война и мир",
+    "война и мир"
+  ],
+  "correctIndex": 2,
+  "explanation": "Split исключает пустые части, Join соединяет слова одним пробелом, сохраняя регистр.",
+  "codeDeckId": "lab11-strings-text",
+  "challengeResult": "Война и мир"
+},
+{
+  "id": "lab11-11",
+  "deckId": "strings-null",
+  "term": "null",
+  "exampleCode": "#nullable enable\nstring? text = null;\nConsole.WriteLine(text == null);",
+  "exampleResult": "True",
+  "exampleNote": "null означает отсутствие ссылки на строку.",
+  "kind": "Что выведет код?",
+  "challengeCode": "#nullable enable\nstring? text = \"\";\nConsole.WriteLine(text == null);",
+  "prompt": "Что появится в консоли?",
+  "options": [
+    "True",
+    "False",
+    "0",
+    "Ошибка"
+  ],
+  "correctIndex": 1,
+  "explanation": "Пустая строка существует. Она не равна null.",
+  "codeDeckId": "lab11-strings-null",
+  "challengeResult": "False"
+},
+{
+  "id": "lab11-12",
+  "deckId": "strings-null",
+  "term": "Пустая строка",
+  "exampleCode": "string text = \"\";\nConsole.WriteLine(text.Length);",
+  "exampleResult": "0",
+  "exampleNote": "У пустой строки нет char, но есть сама строка.",
+  "kind": "Что выведет код?",
+  "challengeCode": "#nullable enable\nstring? input = Console.ReadLine();\nConsole.WriteLine(input == \"\");",
+  "prompt": "Что появится в консоли?",
+  "options": [
+    "True",
+    "False",
+    "null",
+    "Ошибка"
+  ],
+  "correctIndex": 0,
+  "explanation": "Обычный Enter без текста возвращает пустую строку.",
+  "codeDeckId": "lab11-strings-null",
+  "exampleInput": "",
+  "challengeInput": "",
+  "challengeResult": "True"
+},
+{
+  "id": "lab11-13",
+  "deckId": "strings-null",
+  "term": "Строка из пробельных символов",
+  "exampleCode": "string text = \"   \";\nConsole.WriteLine(text.Length);",
+  "exampleResult": "3",
+  "exampleNote": "Три обычных пробела дают длину 3.",
+  "kind": "Что выведет код?",
+  "challengeCode": "string text = \"   \";\nConsole.WriteLine(text == \"\");",
+  "prompt": "Что появится в консоли?",
+  "options": [
+    "True",
+    "False",
+    "3",
+    "null"
+  ],
+  "correctIndex": 1,
+  "explanation": "Строка из трёх пробелов не равна строке без элементов.",
+  "codeDeckId": "lab11-strings-null",
+  "challengeResult": "False"
+},
+{
+  "id": "lab11-14",
+  "deckId": "strings-null",
+  "term": "string.IsNullOrWhiteSpace",
+  "exampleCode": "#nullable enable\nstring? text = null;\nConsole.WriteLine(string.IsNullOrWhiteSpace(text));",
+  "exampleResult": "True",
+  "exampleNote": "Этот метод безопасно принимает null.",
+  "kind": "Что выведет код?",
+  "challengeCode": "string text = \"  Да  \";\nConsole.WriteLine(string.IsNullOrWhiteSpace(text));",
+  "prompt": "Что появится в консоли?",
+  "options": [
+    "True",
+    "False",
+    "Да",
+    "Ошибка"
+  ],
+  "correctIndex": 1,
+  "explanation": "В строке есть непробельные буквы, поэтому результат false.",
+  "codeDeckId": "lab11-strings-null",
+  "challengeResult": "False"
+},
+{
+  "id": "lab11-15",
+  "deckId": "strings-null",
+  "term": "string?",
+  "exampleCode": "#nullable enable\nstring? text = null;\nif (text == null)\n{\n    Console.WriteLine(\"Нет строки\");\n}",
+  "exampleResult": "Нет строки",
+  "exampleNote": "Аннотация string? сообщает компилятору, что значение может отсутствовать.",
+  "kind": "Что произойдёт?",
+  "challengeCode": "#nullable enable\nstring? text = null;\nConsole.WriteLine(text.Length);",
+  "prompt": "Что произойдёт при запуске с этим значением?",
+  "options": [
+    "Автоматически заменит null пустой строкой",
+    "NullReferenceException при выполнении",
+    "Выведет 0",
+    "Выведет null"
+  ],
+  "correctIndex": 1,
+  "explanation": "Аннотация не подставляет проверку во время выполнения. Обращение к Length через null вызывает исключение.",
+  "codeDeckId": "lab11-strings-null"
+},
+{
+  "id": "lab11-16",
+  "deckId": "strings-null",
+  "term": "#nullable enable",
+  "exampleCode": "#nullable enable\nstring? title = null;\nConsole.WriteLine(string.IsNullOrWhiteSpace(title));",
+  "exampleResult": "True",
+  "exampleNote": "Директива включает анализ nullable-ссылок для файла.",
+  "kind": "Разберите код",
+  "challengeCode": "#nullable enable\nstring? title = null;\nConsole.WriteLine(title.Length);",
+  "prompt": "Какую роль здесь выполняет #nullable enable?",
+  "options": [
+    "Создаёт строку автоматически",
+    "Всегда запрещает сборку программы",
+    "Включает анализ, который предупредит об опасном обращении",
+    "Возвращает 0 вместо исключения"
+  ],
+  "correctIndex": 2,
+  "explanation": "Директива помогает найти риск заранее. При обычных настройках это предупреждение; выполнение опасной строки всё ещё вызовет исключение.",
+  "codeDeckId": "lab11-strings-null"
+},
+{
+  "id": "lab11-17",
+  "deckId": "strings-null",
+  "term": "NullReferenceException",
+  "exampleCode": "#nullable enable\nstring? title = null;\nif (title != null)\n{\n    Console.WriteLine(title.Length);\n}\nelse\n{\n    Console.WriteLine(\"Нет названия\");\n}",
+  "exampleResult": "Нет названия",
+  "exampleNote": "Проверка предотвращает обращение к Length через null.",
+  "kind": "Что произойдёт?",
+  "challengeCode": "#nullable enable\nstring? title = null;\nConsole.WriteLine(title.Trim());",
+  "prompt": "Что произойдёт при выполнении этого кода?",
+  "options": [
+    "Пустая строка",
+    "0",
+    "NullReferenceException",
+    "InvalidOperationException"
+  ],
+  "correctIndex": 2,
+  "explanation": "Вызвать Trim у отсутствующей строки нельзя.",
+  "codeDeckId": "lab11-strings-null"
+},
+{
+  "id": "lab11-18",
+  "deckId": "strings-null",
+  "term": "Конец входного потока",
+  "exampleCode": "#nullable enable\nstring? input = Console.ReadLine();\nConsole.WriteLine(input == null);",
+  "exampleResult": "True",
+  "exampleNote": "Здесь входной поток уже завершён: Console.ReadLine возвращает null.",
+  "kind": "Что выведет код?",
+  "challengeCode": "#nullable enable\nstring? input = Console.ReadLine();\nConsole.WriteLine(input == null);",
+  "prompt": "Что появится в консоли?",
+  "options": [
+    "True",
+    "False",
+    "0",
+    "Ошибка"
+  ],
+  "correctIndex": 0,
+  "explanation": "При завершённом потоке получаем null, а не пустую строку.",
+  "codeDeckId": "lab11-strings-null",
+  "exampleInput": null,
+  "challengeInput": null,
+  "challengeResult": "True"
+},
+{
+  "id": "lab11-19",
+  "deckId": "strings-null",
+  "term": "Проверка перед обращением",
+  "exampleCode": "#nullable enable\nstring? title = \" Дюна \";\nif (!string.IsNullOrWhiteSpace(title))\n{\n    Console.WriteLine(title.Trim().Length);\n}",
+  "exampleResult": "4",
+  "exampleNote": "После проверки у строки есть непустое содержимое.",
+  "kind": "Что выведет код?",
+  "challengeCode": "#nullable enable\nstring? title = \"\";\nif (!string.IsNullOrWhiteSpace(title))\n{\n    Console.WriteLine(title[0]);\n}\nelse\n{\n    Console.WriteLine(\"Нет названия\");\n}",
+  "prompt": "Что появится в консоли?",
+  "options": [
+    "Первый пробел",
+    "Нет названия",
+    "0",
+    "Ошибка индекса"
+  ],
+  "correctIndex": 1,
+  "explanation": "Пустая строка отсекается до обращения к индексу 0.",
+  "codeDeckId": "lab11-strings-null",
+  "challengeResult": "Нет названия"
+},
+{
+  "id": "lab11-20",
+  "deckId": "strings-null",
+  "term": "Ранний выход",
+  "exampleCode": "#nullable enable\nstring? input = null;\nif (input == null)\n{\n    Console.WriteLine(\"Ввод завершён\");\n    return;\n}\nConsole.WriteLine(\"Обработка\");",
+  "exampleResult": "Ввод завершён",
+  "exampleNote": "return завершает текущий метод, поэтому обработка ниже не выполняется.",
+  "kind": "Что выведет код?",
+  "challengeCode": "#nullable enable\nstring? input = \"   \";\nif (string.IsNullOrWhiteSpace(input))\n{\n    Console.WriteLine(\"Нужно название\");\n    return;\n}\nConsole.WriteLine(\"Продолжаем\");",
+  "prompt": "Что появится в консоли?",
+  "options": [
+    "Продолжаем",
+    "Нужно название",
+    "Нужно название и Продолжаем",
+    "Ошибка"
+  ],
+  "correctIndex": 1,
+  "explanation": "После сообщения return прекращает выполнение метода.",
+  "codeDeckId": "lab11-strings-null",
+  "challengeResult": "Нужно название"
+},
+{
+  "id": "lab11-21",
+  "deckId": "strings-nullable",
+  "term": "Подстрока",
+  "exampleCode": "Console.WriteLine(\"КОТёнок\".Contains(\"КОТ\"));",
+  "exampleResult": "True",
+  "exampleNote": "Фрагмент может быть частью слова.",
+  "kind": "Что выведет код?",
+  "challengeCode": "Console.WriteLine(\"Скорость ветра\".Contains(\"ветр\"));",
+  "prompt": "Что появится в консоли?",
+  "options": [
+    "True",
+    "False",
+    "ветр",
+    "Ошибка"
+  ],
+  "correctIndex": 0,
+  "explanation": "Фрагмент «ветр» найден внутри слова «ветра».",
+  "codeDeckId": "lab11-strings-nullable",
+  "challengeResult": "True"
+},
+{
+  "id": "lab11-22",
+  "deckId": "strings-nullable",
+  "term": "Contains",
+  "exampleCode": "Console.WriteLine(\"Дюна\".Contains(\"лес\"));",
+  "exampleResult": "False",
+  "exampleNote": "Contains возвращает bool, показывающий наличие фрагмента.",
+  "kind": "Что выведет код?",
+  "challengeCode": "Console.WriteLine(\"Мастер и Маргарита\".Contains(\"Маргарита\"));",
+  "prompt": "Что появится в консоли?",
+  "options": [
+    "True",
+    "False",
+    "17",
+    "Маргарита"
+  ],
+  "correctIndex": 0,
+  "explanation": "Указанная подстрока целиком присутствует в названии.",
+  "codeDeckId": "lab11-strings-nullable",
+  "challengeResult": "True"
+},
+{
+  "id": "lab11-23",
+  "deckId": "strings-nullable",
+  "term": "StringComparison.OrdinalIgnoreCase",
+  "exampleCode": "Console.WriteLine(\"КОТёнок\".Contains(\"кот\", StringComparison.OrdinalIgnoreCase));",
+  "exampleResult": "True",
+  "exampleNote": "В этом режиме прописные и строчные буквы сравниваются без учёта регистра.",
+  "kind": "Что выведет код?",
+  "challengeCode": "string title = \"Дюна\";\nstring query = \" дю \";\nConsole.WriteLine(title.Contains(query.Trim(), StringComparison.OrdinalIgnoreCase));",
+  "prompt": "Что появится в консоли?",
+  "options": [
+    "True",
+    "False",
+    "дю",
+    "Ошибка"
+  ],
+  "correctIndex": 0,
+  "explanation": "Trim убирает пробелы запроса, а OrdinalIgnoreCase позволяет найти «дю» в «Дюна».",
+  "codeDeckId": "lab11-strings-nullable",
+  "challengeResult": "True"
+},
+{
+  "id": "lab11-24",
+  "deckId": "strings-nullable",
+  "term": "Регистр символов",
+  "exampleCode": "Console.WriteLine(\"Снег\".Contains(\"снег\"));",
+  "exampleResult": "False",
+  "exampleNote": "По умолчанию Contains учитывает регистр.",
+  "kind": "Что выведет код?",
+  "challengeCode": "Console.WriteLine(\"Война и мир\".Contains(\"МИР\"));",
+  "prompt": "Что появится в консоли?",
+  "options": [
+    "True",
+    "False",
+    "МИР",
+    "Ошибка"
+  ],
+  "correctIndex": 1,
+  "explanation": "Прописной фрагмент «МИР» не совпадает со строчным «мир» при обычном Contains.",
+  "codeDeckId": "lab11-strings-nullable",
+  "challengeResult": "False"
+},
+{
+  "id": "lab11-25",
+  "deckId": "strings-nullable",
+  "term": "int?",
+  "exampleCode": "int? year = null;\nConsole.WriteLine(year == null);",
+  "exampleResult": "True",
+  "exampleNote": "Необязательный год может отсутствовать.",
+  "kind": "Что выведет код?",
+  "challengeCode": "int? score = 0;\nConsole.WriteLine(score.HasValue);",
+  "prompt": "Что появится в консоли?",
+  "options": [
+    "True",
+    "False",
+    "null",
+    "Ошибка"
+  ],
+  "correctIndex": 0,
+  "explanation": "Ноль — заданное число, поэтому HasValue равно true.",
+  "codeDeckId": "lab11-strings-nullable",
+  "challengeResult": "True"
+},
+{
+  "id": "lab11-26",
+  "deckId": "strings-nullable",
+  "term": "Nullable<T>",
+  "exampleCode": "Nullable<int> year = 1965;\nConsole.WriteLine(year.Value);",
+  "exampleResult": "1965",
+  "exampleNote": "Nullable<int> и int? обозначают один тип.",
+  "kind": "Что выведет код?",
+  "challengeCode": "int? temperature = -5;\nConsole.WriteLine(temperature.Value);",
+  "prompt": "Что появится в консоли?",
+  "options": [
+    "0",
+    "null",
+    "-5",
+    "Ошибка"
+  ],
+  "correctIndex": 2,
+  "explanation": "Тип int? допускает обычное отрицательное число; Value возвращает его.",
+  "codeDeckId": "lab11-strings-nullable",
+  "challengeResult": "-5"
+},
+{
+  "id": "lab11-27",
+  "deckId": "strings-nullable",
+  "term": "HasValue",
+  "exampleCode": "int? year = null;\nConsole.WriteLine(year.HasValue);",
+  "exampleResult": "False",
+  "exampleNote": "При отсутствии числа HasValue равно false.",
+  "kind": "Что выведет код?",
+  "challengeCode": "int? temperature = 0;\nConsole.WriteLine(temperature.HasValue);",
+  "prompt": "Что появится в консоли?",
+  "options": [
+    "True",
+    "False",
+    "0",
+    "Ошибка"
+  ],
+  "correctIndex": 0,
+  "explanation": "Ноль не является отсутствием значения.",
+  "codeDeckId": "lab11-strings-nullable",
+  "challengeResult": "True"
+},
+{
+  "id": "lab11-28",
+  "deckId": "strings-nullable",
+  "term": "Value",
+  "exampleCode": "int? year = 1937;\nif (year.HasValue)\n{\n    Console.WriteLine(year.Value);\n}",
+  "exampleResult": "1937",
+  "exampleNote": "Value читается только после проверки наличия числа.",
+  "kind": "Что произойдёт?",
+  "challengeCode": "int? year = null;\nConsole.WriteLine(year.Value);",
+  "prompt": "Какой результат у обращения к Value без проверки?",
+  "options": [
+    "0",
+    "null",
+    "NullReferenceException",
+    "InvalidOperationException"
+  ],
+  "correctIndex": 3,
+  "explanation": "У nullable-значения нет числа. Чтение Value вызывает InvalidOperationException.",
+  "codeDeckId": "lab11-strings-nullable"
+},
+{
+  "id": "lab11-29",
+  "deckId": "strings-nullable",
+  "term": "Необязательный ввод",
+  "exampleCode": "#nullable enable\nstring? input = \"   \";\nint? year = null;\nif (!string.IsNullOrWhiteSpace(input))\n{\n    year = int.Parse(input);\n}\nConsole.WriteLine(year.HasValue);",
+  "exampleResult": "False",
+  "exampleNote": "По правилам задачи пробельный ввод означает пропуск.",
+  "kind": "Что выведет код?",
+  "challengeCode": "#nullable enable\nstring? input = Console.ReadLine();\nif (input == null)\n{\n    Console.WriteLine(\"Ввод завершён\");\n    return;\n}\nint? year = null;\nif (!string.IsNullOrWhiteSpace(input))\n{\n    if (!int.TryParse(input, out int number) || number < 1 || number > 9999)\n    {\n        Console.WriteLine(\"Ошибка года\");\n        return;\n    }\n    year = number;\n}\nConsole.WriteLine(year.HasValue ? \"Год указан\" : \"Год не указан\");",
+  "prompt": "Что появится в консоли?",
+  "options": [
+    "Год указан",
+    "Год не указан",
+    "Ошибка года",
+    "Ввод завершён"
+  ],
+  "correctIndex": 1,
+  "explanation": "Обычный Enter даёт пустую строку. Поле пропущено, year остаётся null.",
+  "codeDeckId": "lab11-strings-nullable",
+  "challengeInput": "",
+  "challengeResult": "Год не указан"
+},
+{
+  "id": "lab11-30",
+  "deckId": "strings-nullable",
+  "term": "Три результата проверки ввода",
+  "exampleCode": "#nullable enable\nstring? input = Console.ReadLine();\nif (input == null)\n{\n    Console.WriteLine(\"Ввод завершён\");\n    return;\n}\nif (string.IsNullOrWhiteSpace(input))\n{\n    Console.WriteLine(\"Год не указан\");\n}\nelse if (int.TryParse(input, out int year) && year >= 1 && year <= 9999)\n{\n    Console.WriteLine(\"Год принят\");\n}\nelse\n{\n    Console.WriteLine(\"Ошибка года\");\n}",
+  "exampleResult": "Год принят",
+  "exampleNote": "Год 1 входит в допустимый диапазон. Пропуск и ошибочный ввод проверяются отдельно.",
+  "kind": "Что выведет код?",
+  "challengeCode": "#nullable enable\nstring? input = Console.ReadLine();\nif (input == null)\n{\n    Console.WriteLine(\"Ввод завершён\");\n    return;\n}\nif (string.IsNullOrWhiteSpace(input))\n{\n    Console.WriteLine(\"Год не указан\");\n}\nelse if (int.TryParse(input, out int year) && year >= 1 && year <= 9999)\n{\n    Console.WriteLine(\"Год принят\");\n}\nelse\n{\n    Console.WriteLine(\"Ошибка года\");\n}",
+  "prompt": "Что появится в консоли?",
+  "options": [
+    "Год принят",
+    "Год не указан",
+    "Ошибка года",
+    "Ввод завершён"
+  ],
+  "correctIndex": 2,
+  "explanation": "Ноль выходит за допустимый диапазон 1–9999. Ошибку нельзя заменить отсутствием года.",
+  "codeDeckId": "lab11-strings-nullable",
+  "exampleInput": "1",
+  "challengeInput": "0",
+  "challengeResult": "Ошибка года",
+  "variants": [
+    {
+      "challengeCode": "#nullable enable\nstring? input = Console.ReadLine();\nif (input == null)\n{\n    Console.WriteLine(\"Ввод завершён\");\n    return;\n}\nif (string.IsNullOrWhiteSpace(input))\n{\n    Console.WriteLine(\"Год не указан\");\n}\nelse if (int.TryParse(input, out int year) && year >= 1 && year <= 9999)\n{\n    Console.WriteLine(\"Год принят\");\n}\nelse\n{\n    Console.WriteLine(\"Ошибка года\");\n}",
+      "challengeInput": "9999",
+      "options": [
+        "Год принят",
+        "Год не указан",
+        "Ошибка года",
+        "Ввод завершён"
+      ],
+      "correctIndex": 0,
+      "challengeResult": "Год принят",
+      "explanation": "Граница 9999 включена в допустимый диапазон."
+    },
+    {
+      "challengeCode": "#nullable enable\nstring? input = Console.ReadLine();\nif (input == null)\n{\n    Console.WriteLine(\"Ввод завершён\");\n    return;\n}\nif (string.IsNullOrWhiteSpace(input))\n{\n    Console.WriteLine(\"Год не указан\");\n}\nelse if (int.TryParse(input, out int year) && year >= 1 && year <= 9999)\n{\n    Console.WriteLine(\"Год принят\");\n}\nelse\n{\n    Console.WriteLine(\"Ошибка года\");\n}",
+      "challengeInput": "10000",
+      "options": [
+        "Год принят",
+        "Год не указан",
+        "Ошибка года",
+        "Ввод завершён"
+      ],
+      "correctIndex": 2,
+      "challengeResult": "Ошибка года",
+      "explanation": "10000 больше допустимого года 9999."
+    },
+    {
+      "challengeCode": "#nullable enable\nstring? input = Console.ReadLine();\nif (input == null)\n{\n    Console.WriteLine(\"Ввод завершён\");\n    return;\n}\nif (string.IsNullOrWhiteSpace(input))\n{\n    Console.WriteLine(\"Год не указан\");\n}\nelse if (int.TryParse(input, out int year) && year >= 1 && year <= 9999)\n{\n    Console.WriteLine(\"Год принят\");\n}\nelse\n{\n    Console.WriteLine(\"Ошибка года\");\n}",
+      "challengeInput": "abc",
+      "options": [
+        "Год принят",
+        "Год не указан",
+        "Ошибка года",
+        "Ввод завершён"
+      ],
+      "correctIndex": 2,
+      "challengeResult": "Ошибка года",
+      "explanation": "Текст abc нельзя преобразовать в целое число."
+    },
+    {
+      "challengeCode": "#nullable enable\nstring? input = Console.ReadLine();\nif (input == null)\n{\n    Console.WriteLine(\"Ввод завершён\");\n    return;\n}\nif (string.IsNullOrWhiteSpace(input))\n{\n    Console.WriteLine(\"Год не указан\");\n}\nelse if (int.TryParse(input, out int year) && year >= 1 && year <= 9999)\n{\n    Console.WriteLine(\"Год принят\");\n}\nelse\n{\n    Console.WriteLine(\"Ошибка года\");\n}",
+      "challengeInput": "   ",
+      "options": [
+        "Год принят",
+        "Год не указан",
+        "Ошибка года",
+        "Ввод завершён"
+      ],
+      "correctIndex": 1,
+      "challengeResult": "Год не указан",
+      "explanation": "Одни пробелы означают пропуск необязательного года."
+    },
+    {
+      "challengeCode": "#nullable enable\nstring? input = Console.ReadLine();\nif (input == null)\n{\n    Console.WriteLine(\"Ввод завершён\");\n    return;\n}\nif (string.IsNullOrWhiteSpace(input))\n{\n    Console.WriteLine(\"Год не указан\");\n}\nelse if (int.TryParse(input, out int year) && year >= 1 && year <= 9999)\n{\n    Console.WriteLine(\"Год принят\");\n}\nelse\n{\n    Console.WriteLine(\"Ошибка года\");\n}",
+      "challengeInput": null,
+      "options": [
+        "Год принят",
+        "Год не указан",
+        "Ошибка года",
+        "Ввод завершён"
+      ],
+      "correctIndex": 3,
+      "challengeResult": "Ввод завершён",
+      "explanation": "Завершение потока — отдельная ситуация. Программа заканчивается до обработки года."
+    }
+  ]
+}
 ];

@@ -3002,35 +3002,25 @@ const codeLessons = [
     "codeDeckId": "practice-loops-basics",
     "variants": [
       {
-        "challengeCode": "for (int i = 0; i < 2; i++)\n{\n    Console.Write(\"X\");\n}",
+        "challengeCode": "int count = 0;\nfor (int i = 0; i < 1; i += 1)\n{\n    count++;\n}\nConsole.WriteLine(count);",
+        "challengeResult": "1",
+        "prompt": "Сколько раз выполнится тело цикла? Это число выводится в конце.",
+        "kind": "Число итераций",
+        "explanation": "Тело выполняется при i = 0. Количество повторений: 1.",
         "options": [
-          "XX",
-          "X",
-          "XXX",
-          "Ничего"
+          "1",
+          "2",
+          "0",
+          "3"
         ],
-        "correctIndex": 0,
-        "challengeResult": "XX",
-        "explanation": "От 0 до 1 — 2 итераций, выводится 2 букв X."
+        "correctIndex": 0
       },
       {
-        "challengeCode": "for (int i = 0; i < 5; i++)\n{\n    Console.Write(\"X\");\n}",
-        "options": [
-          "XXXXX",
-          "XXXX",
-          "XXXXXX",
-          "Ничего"
-        ],
-        "correctIndex": 0,
-        "challengeResult": "XXXXX",
-        "explanation": "От 0 до 4 — 5 итераций, выводится 5 букв X."
-      },
-      {
-        "challengeCode": "int count = 0;\nfor (int i = 2; i < 8; i += 3)\n{\n    count++;\n}\nConsole.WriteLine(count);",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Выпишите значения счётчика с заданным шагом до нарушения границы. Считается выполнение тела, а не последнее значение счётчика.",
+        "challengeCode": "int count = 0;\nfor (int i = 0; i < 2; i += 1)\n{\n    count++;\n}\nConsole.WriteLine(count);",
         "challengeResult": "2",
+        "prompt": "Сколько раз выполнится тело цикла? Это число выводится в конце.",
+        "kind": "Число итераций",
+        "explanation": "Тело выполняется при i = 0, 1. Количество повторений: 2.",
         "options": [
           "2",
           "3",
@@ -3040,39 +3030,25 @@ const codeLessons = [
         "correctIndex": 0
       },
       {
-        "challengeCode": "int count = 0;\nfor (int i = 0; i <= 9; i += 1)\n{\n    count++;\n}\nConsole.WriteLine(count);",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Выпишите значения счётчика с заданным шагом до нарушения границы. Считается выполнение тела, а не последнее значение счётчика.",
-        "challengeResult": "10",
+        "challengeCode": "int count = 0;\nfor (int i = 0; i < 3; i += 1)\n{\n    count++;\n}\nConsole.WriteLine(count);",
+        "challengeResult": "3",
+        "prompt": "Сколько раз выполнится тело цикла? Это число выводится в конце.",
+        "kind": "Число итераций",
+        "explanation": "Тело выполняется при i = 0, 1, 2. Количество повторений: 3.",
         "options": [
-          "10",
-          "11",
-          "9",
-          "12"
-        ],
-        "correctIndex": 0
-      },
-      {
-        "challengeCode": "int count = 0;\nfor (int i = 1; i < 10; i += 2)\n{\n    count++;\n}\nConsole.WriteLine(count);",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Выпишите значения счётчика с заданным шагом до нарушения границы. Считается выполнение тела, а не последнее значение счётчика.",
-        "challengeResult": "5",
-        "options": [
-          "5",
-          "6",
+          "3",
           "4",
-          "7"
+          "2",
+          "5"
         ],
         "correctIndex": 0
       },
       {
-        "challengeCode": "int count = 0;\nfor (int i = 2; i <= 11; i += 3)\n{\n    count++;\n}\nConsole.WriteLine(count);",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Выпишите значения счётчика с заданным шагом до нарушения границы. Считается выполнение тела, а не последнее значение счётчика.",
+        "challengeCode": "int count = 0;\nfor (int i = 0; i < 4; i += 1)\n{\n    count++;\n}\nConsole.WriteLine(count);",
         "challengeResult": "4",
+        "prompt": "Сколько раз выполнится тело цикла? Это число выводится в конце.",
+        "kind": "Число итераций",
+        "explanation": "Тело выполняется при i = 0, 1, 2, 3. Количество повторений: 4.",
         "options": [
           "4",
           "5",
@@ -3082,30 +3058,58 @@ const codeLessons = [
         "correctIndex": 0
       },
       {
-        "challengeCode": "int count = 0;\nfor (int i = 0; i < 12; i += 1)\n{\n    count++;\n}\nConsole.WriteLine(count);",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Выпишите значения счётчика с заданным шагом до нарушения границы. Считается выполнение тела, а не последнее значение счётчика.",
-        "challengeResult": "12",
+        "challengeCode": "int count = 0;\nfor (int i = 0; i <= 0; i += 1)\n{\n    count++;\n}\nConsole.WriteLine(count);",
+        "challengeResult": "1",
+        "prompt": "Сколько раз выполнится тело цикла? Это число выводится в конце.",
+        "kind": "Число итераций",
+        "explanation": "Тело выполняется при i = 0. Количество повторений: 1.",
         "options": [
-          "12",
-          "13",
-          "11",
-          "14"
+          "1",
+          "2",
+          "0",
+          "3"
         ],
         "correctIndex": 0
       },
       {
-        "challengeCode": "int count = 0;\nfor (int i = 1; i <= 13; i += 2)\n{\n    count++;\n}\nConsole.WriteLine(count);",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Выпишите значения счётчика с заданным шагом до нарушения границы. Считается выполнение тела, а не последнее значение счётчика.",
-        "challengeResult": "7",
+        "challengeCode": "int count = 0;\nfor (int i = 0; i <= 1; i += 1)\n{\n    count++;\n}\nConsole.WriteLine(count);",
+        "challengeResult": "2",
+        "prompt": "Сколько раз выполнится тело цикла? Это число выводится в конце.",
+        "kind": "Число итераций",
+        "explanation": "Тело выполняется при i = 0, 1. Количество повторений: 2.",
         "options": [
-          "7",
-          "8",
-          "6",
-          "9"
+          "2",
+          "3",
+          "1",
+          "4"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int count = 0;\nfor (int i = 0; i <= 2; i += 1)\n{\n    count++;\n}\nConsole.WriteLine(count);",
+        "challengeResult": "3",
+        "prompt": "Сколько раз выполнится тело цикла? Это число выводится в конце.",
+        "kind": "Число итераций",
+        "explanation": "Тело выполняется при i = 0, 1, 2. Количество повторений: 3.",
+        "options": [
+          "3",
+          "4",
+          "2",
+          "5"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int count = 0;\nfor (int i = 0; i <= 3; i += 1)\n{\n    count++;\n}\nConsole.WriteLine(count);",
+        "challengeResult": "4",
+        "prompt": "Сколько раз выполнится тело цикла? Это число выводится в конце.",
+        "kind": "Число итераций",
+        "explanation": "Тело выполняется при i = 0, 1, 2, 3. Количество повторений: 4.",
+        "options": [
+          "4",
+          "5",
+          "3",
+          "6"
         ],
         "correctIndex": 0
       }
@@ -3196,35 +3200,25 @@ const codeLessons = [
     "codeDeckId": "practice-loops-basics",
     "variants": [
       {
-        "challengeCode": "for (int i = 2; i < 5; i++)\n{\n    Console.Write(i);\n}",
+        "challengeCode": "int count = 0;\nfor (int i = 0; i < 1; i += 1)\n{\n    count++;\n}\nConsole.WriteLine(count);",
+        "challengeResult": "1",
+        "prompt": "Сколько раз выполнится тело цикла? Это число выводится в конце.",
+        "kind": "Число итераций",
+        "explanation": "Тело выполняется при i = 0. Количество повторений: 1.",
         "options": [
-          "234",
-          "2345",
-          "34",
-          "5"
+          "1",
+          "2",
+          "0",
+          "3"
         ],
-        "correctIndex": 0,
-        "challengeResult": "234",
-        "explanation": "Выводятся числа от 2 до 4; граница 5 не включается."
+        "correctIndex": 0
       },
       {
-        "challengeCode": "for (int i = 3; i < 6; i++)\n{\n    Console.Write(i);\n}",
-        "options": [
-          "345",
-          "3456",
-          "45",
-          "6"
-        ],
-        "correctIndex": 0,
-        "challengeResult": "345",
-        "explanation": "Выводятся числа от 3 до 5; граница 6 не включается."
-      },
-      {
-        "challengeCode": "int count = 0;\nfor (int i = 2; i < 8; i += 3)\n{\n    count++;\n}\nConsole.WriteLine(count);",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Выпишите значения счётчика с заданным шагом до нарушения границы. Считается выполнение тела, а не последнее значение счётчика.",
+        "challengeCode": "int count = 0;\nfor (int i = 0; i < 2; i += 1)\n{\n    count++;\n}\nConsole.WriteLine(count);",
         "challengeResult": "2",
+        "prompt": "Сколько раз выполнится тело цикла? Это число выводится в конце.",
+        "kind": "Число итераций",
+        "explanation": "Тело выполняется при i = 0, 1. Количество повторений: 2.",
         "options": [
           "2",
           "3",
@@ -3234,39 +3228,25 @@ const codeLessons = [
         "correctIndex": 0
       },
       {
-        "challengeCode": "int count = 0;\nfor (int i = 0; i <= 9; i += 1)\n{\n    count++;\n}\nConsole.WriteLine(count);",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Выпишите значения счётчика с заданным шагом до нарушения границы. Считается выполнение тела, а не последнее значение счётчика.",
-        "challengeResult": "10",
+        "challengeCode": "int count = 0;\nfor (int i = 0; i < 3; i += 1)\n{\n    count++;\n}\nConsole.WriteLine(count);",
+        "challengeResult": "3",
+        "prompt": "Сколько раз выполнится тело цикла? Это число выводится в конце.",
+        "kind": "Число итераций",
+        "explanation": "Тело выполняется при i = 0, 1, 2. Количество повторений: 3.",
         "options": [
-          "10",
-          "11",
-          "9",
-          "12"
-        ],
-        "correctIndex": 0
-      },
-      {
-        "challengeCode": "int count = 0;\nfor (int i = 1; i < 10; i += 2)\n{\n    count++;\n}\nConsole.WriteLine(count);",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Выпишите значения счётчика с заданным шагом до нарушения границы. Считается выполнение тела, а не последнее значение счётчика.",
-        "challengeResult": "5",
-        "options": [
-          "5",
-          "6",
+          "3",
           "4",
-          "7"
+          "2",
+          "5"
         ],
         "correctIndex": 0
       },
       {
-        "challengeCode": "int count = 0;\nfor (int i = 2; i <= 11; i += 3)\n{\n    count++;\n}\nConsole.WriteLine(count);",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Выпишите значения счётчика с заданным шагом до нарушения границы. Считается выполнение тела, а не последнее значение счётчика.",
+        "challengeCode": "int count = 0;\nfor (int i = 0; i < 4; i += 1)\n{\n    count++;\n}\nConsole.WriteLine(count);",
         "challengeResult": "4",
+        "prompt": "Сколько раз выполнится тело цикла? Это число выводится в конце.",
+        "kind": "Число итераций",
+        "explanation": "Тело выполняется при i = 0, 1, 2, 3. Количество повторений: 4.",
         "options": [
           "4",
           "5",
@@ -3276,30 +3256,58 @@ const codeLessons = [
         "correctIndex": 0
       },
       {
-        "challengeCode": "int count = 0;\nfor (int i = 0; i < 12; i += 1)\n{\n    count++;\n}\nConsole.WriteLine(count);",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Выпишите значения счётчика с заданным шагом до нарушения границы. Считается выполнение тела, а не последнее значение счётчика.",
-        "challengeResult": "12",
+        "challengeCode": "int count = 0;\nfor (int i = 0; i <= 0; i += 1)\n{\n    count++;\n}\nConsole.WriteLine(count);",
+        "challengeResult": "1",
+        "prompt": "Сколько раз выполнится тело цикла? Это число выводится в конце.",
+        "kind": "Число итераций",
+        "explanation": "Тело выполняется при i = 0. Количество повторений: 1.",
         "options": [
-          "12",
-          "13",
-          "11",
-          "14"
+          "1",
+          "2",
+          "0",
+          "3"
         ],
         "correctIndex": 0
       },
       {
-        "challengeCode": "int count = 0;\nfor (int i = 1; i <= 13; i += 2)\n{\n    count++;\n}\nConsole.WriteLine(count);",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Выпишите значения счётчика с заданным шагом до нарушения границы. Считается выполнение тела, а не последнее значение счётчика.",
-        "challengeResult": "7",
+        "challengeCode": "int count = 0;\nfor (int i = 0; i <= 1; i += 1)\n{\n    count++;\n}\nConsole.WriteLine(count);",
+        "challengeResult": "2",
+        "prompt": "Сколько раз выполнится тело цикла? Это число выводится в конце.",
+        "kind": "Число итераций",
+        "explanation": "Тело выполняется при i = 0, 1. Количество повторений: 2.",
         "options": [
-          "7",
-          "8",
-          "6",
-          "9"
+          "2",
+          "3",
+          "1",
+          "4"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int count = 0;\nfor (int i = 0; i <= 2; i += 1)\n{\n    count++;\n}\nConsole.WriteLine(count);",
+        "challengeResult": "3",
+        "prompt": "Сколько раз выполнится тело цикла? Это число выводится в конце.",
+        "kind": "Число итераций",
+        "explanation": "Тело выполняется при i = 0, 1, 2. Количество повторений: 3.",
+        "options": [
+          "3",
+          "4",
+          "2",
+          "5"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int count = 0;\nfor (int i = 0; i <= 3; i += 1)\n{\n    count++;\n}\nConsole.WriteLine(count);",
+        "challengeResult": "4",
+        "prompt": "Сколько раз выполнится тело цикла? Это число выводится в конце.",
+        "kind": "Число итераций",
+        "explanation": "Тело выполняется при i = 0, 1, 2, 3. Количество повторений: 4.",
+        "options": [
+          "4",
+          "5",
+          "3",
+          "6"
         ],
         "correctIndex": 0
       }
@@ -3327,110 +3335,114 @@ const codeLessons = [
     "codeDeckId": "practice-loops-basics",
     "variants": [
       {
-        "challengeCode": "int i = 3;\nwhile (i <= 5)\n{\n    Console.Write(i);\n    i++;\n}",
+        "challengeCode": "int value = 0;\nint count = 0;\nwhile (value < 1)\n{\n    value += 1;\n    count++;\n}\nConsole.WriteLine(count);\nConsole.WriteLine(value);",
+        "challengeResult": "1\n1",
+        "prompt": "Сколько будет повторений и чему будет равно value? Числа выводятся на отдельных строках.",
+        "kind": "Что выведет код?",
+        "explanation": "Условие проверяется перед телом. Количество проходов: 1. value изменится с 0 до 1. Затем условие ложно.",
         "options": [
-          "345",
-          "34",
-          "3456",
-          "5"
-        ],
-        "correctIndex": 0,
-        "challengeResult": "345",
-        "explanation": "Выводятся числа от 3 до 5 включительно."
-      },
-      {
-        "challengeCode": "int i = 4;\nwhile (i <= 6)\n{\n    Console.Write(i);\n    i++;\n}",
-        "options": [
-          "456",
-          "45",
-          "4567",
-          "6"
-        ],
-        "correctIndex": 0,
-        "challengeResult": "456",
-        "explanation": "Выводятся числа от 4 до 6 включительно."
-      },
-      {
-        "challengeCode": "int value = 3;\nint count = 0;\nwhile (value < 18)\n{\n    value += 3;\n    count++;\n}\nConsole.WriteLine(count);\nConsole.WriteLine(value);",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Условие проверяется перед телом. Сначала изменяется value, затем увеличивается счётчик выполненных итераций.",
-        "challengeResult": "5\n18",
-        "options": [
-          "5\n18",
-          "18\n5",
-          "6\n19",
-          "518"
+          "1\n1",
+          "1 1",
+          "1",
+          "1\n1\n0"
         ],
         "correctIndex": 0
       },
       {
-        "challengeCode": "int value = 1;\nint count = 0;\nwhile (value < 21)\n{\n    value *= 2;\n    count++;\n}\nConsole.WriteLine(count);\nConsole.WriteLine(value);",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Условие проверяется перед телом. Сначала изменяется value, затем увеличивается счётчик выполненных итераций.",
-        "challengeResult": "5\n32",
+        "challengeCode": "int value = 0;\nint count = 0;\nwhile (value < 2)\n{\n    value += 1;\n    count++;\n}\nConsole.WriteLine(count);\nConsole.WriteLine(value);",
+        "challengeResult": "2\n2",
+        "prompt": "Сколько будет повторений и чему будет равно value? Числа выводятся на отдельных строках.",
+        "kind": "Что выведет код?",
+        "explanation": "Условие проверяется перед телом. Количество проходов: 2. value изменится с 0 до 2. Затем условие ложно.",
         "options": [
-          "5\n32",
-          "32\n5",
-          "6\n33",
-          "532"
+          "2\n2",
+          "2 2",
+          "2",
+          "2\n2\n0"
         ],
         "correctIndex": 0
       },
       {
-        "challengeCode": "int value = 2;\nint count = 0;\nwhile (value < 24)\n{\n    value += 3;\n    count++;\n}\nConsole.WriteLine(count);\nConsole.WriteLine(value);",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Условие проверяется перед телом. Сначала изменяется value, затем увеличивается счётчик выполненных итераций.",
-        "challengeResult": "8\n26",
+        "challengeCode": "int value = 0;\nint count = 0;\nwhile (value < 3)\n{\n    value += 1;\n    count++;\n}\nConsole.WriteLine(count);\nConsole.WriteLine(value);",
+        "challengeResult": "3\n3",
+        "prompt": "Сколько будет повторений и чему будет равно value? Числа выводятся на отдельных строках.",
+        "kind": "Что выведет код?",
+        "explanation": "Условие проверяется перед телом. Количество проходов: 3. value изменится с 0 до 3. Затем условие ложно.",
         "options": [
-          "8\n26",
-          "26\n8",
-          "9\n27",
-          "826"
+          "3\n3",
+          "3 3",
+          "3",
+          "3\n3\n0"
         ],
         "correctIndex": 0
       },
       {
-        "challengeCode": "int value = 3;\nint count = 0;\nwhile (value < 27)\n{\n    value *= 2;\n    count++;\n}\nConsole.WriteLine(count);\nConsole.WriteLine(value);",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Условие проверяется перед телом. Сначала изменяется value, затем увеличивается счётчик выполненных итераций.",
-        "challengeResult": "4\n48",
+        "challengeCode": "int value = 0;\nint count = 0;\nwhile (value < 4)\n{\n    value += 1;\n    count++;\n}\nConsole.WriteLine(count);\nConsole.WriteLine(value);",
+        "challengeResult": "4\n4",
+        "prompt": "Сколько будет повторений и чему будет равно value? Числа выводятся на отдельных строках.",
+        "kind": "Что выведет код?",
+        "explanation": "Условие проверяется перед телом. Количество проходов: 4. value изменится с 0 до 4. Затем условие ложно.",
         "options": [
-          "4\n48",
-          "48\n4",
-          "5\n49",
-          "448"
+          "4\n4",
+          "4 4",
+          "4",
+          "4\n4\n0"
         ],
         "correctIndex": 0
       },
       {
-        "challengeCode": "int value = 1;\nint count = 0;\nwhile (value < 30)\n{\n    value += 3;\n    count++;\n}\nConsole.WriteLine(count);\nConsole.WriteLine(value);",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Условие проверяется перед телом. Сначала изменяется value, затем увеличивается счётчик выполненных итераций.",
-        "challengeResult": "10\n31",
+        "challengeCode": "int value = 1;\nint count = 0;\nwhile (value < 2)\n{\n    value *= 2;\n    count++;\n}\nConsole.WriteLine(count);\nConsole.WriteLine(value);",
+        "challengeResult": "1\n2",
+        "prompt": "Сколько будет повторений и чему будет равно value? Числа выводятся на отдельных строках.",
+        "kind": "Что выведет код?",
+        "explanation": "Условие проверяется перед телом. Количество проходов: 1. value изменится с 1 до 2. Затем условие ложно.",
         "options": [
-          "10\n31",
-          "31\n10",
-          "11\n32",
-          "1031"
+          "1\n2",
+          "2\n1",
+          "1 2",
+          "1"
         ],
         "correctIndex": 0
       },
       {
-        "challengeCode": "int value = 2;\nint count = 0;\nwhile (value < 33)\n{\n    value *= 2;\n    count++;\n}\nConsole.WriteLine(count);\nConsole.WriteLine(value);",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Условие проверяется перед телом. Сначала изменяется value, затем увеличивается счётчик выполненных итераций.",
-        "challengeResult": "5\n64",
+        "challengeCode": "int value = 1;\nint count = 0;\nwhile (value < 4)\n{\n    value *= 2;\n    count++;\n}\nConsole.WriteLine(count);\nConsole.WriteLine(value);",
+        "challengeResult": "2\n4",
+        "prompt": "Сколько будет повторений и чему будет равно value? Числа выводятся на отдельных строках.",
+        "kind": "Что выведет код?",
+        "explanation": "Условие проверяется перед телом. Количество проходов: 2. value изменится с 1 до 4. Затем условие ложно.",
         "options": [
-          "5\n64",
-          "64\n5",
-          "6\n65",
-          "564"
+          "2\n4",
+          "4\n2",
+          "2 4",
+          "2"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int value = 1;\nint count = 0;\nwhile (value < 8)\n{\n    value *= 2;\n    count++;\n}\nConsole.WriteLine(count);\nConsole.WriteLine(value);",
+        "challengeResult": "3\n8",
+        "prompt": "Сколько будет повторений и чему будет равно value? Числа выводятся на отдельных строках.",
+        "kind": "Что выведет код?",
+        "explanation": "Условие проверяется перед телом. Количество проходов: 3. value изменится с 1 до 8. Затем условие ложно.",
+        "options": [
+          "3\n8",
+          "8\n3",
+          "3 8",
+          "3"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int value = 1;\nint count = 0;\nwhile (value < 16)\n{\n    value *= 2;\n    count++;\n}\nConsole.WriteLine(count);\nConsole.WriteLine(value);",
+        "challengeResult": "4\n16",
+        "prompt": "Сколько будет повторений и чему будет равно value? Числа выводятся на отдельных строках.",
+        "kind": "Что выведет код?",
+        "explanation": "Условие проверяется перед телом. Количество проходов: 4. value изменится с 1 до 16. Затем условие ложно.",
+        "options": [
+          "4\n16",
+          "16\n4",
+          "4 16",
+          "4"
         ],
         "correctIndex": 0
       }
@@ -3542,110 +3554,114 @@ const codeLessons = [
     "codeDeckId": "practice-loops-control",
     "variants": [
       {
-        "challengeCode": "for (int i = 5; i >= 3; i--)\n{\n    Console.Write(i);\n}",
+        "challengeCode": "int sum = 0;\nfor (int i = 1; i > 0; i -= 1)\n{\n    sum += i;\n}\nConsole.WriteLine(sum);",
+        "challengeResult": "1",
+        "prompt": "Что появится в консоли?",
+        "kind": "Что выведет код?",
+        "explanation": "Граница и шаг выбирают i = 1. Их сумма 1 = 1.",
         "options": [
-          "543",
-          "54",
-          "345",
+          "1",
+          "2",
+          "0",
+          "3"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int sum = 0;\nfor (int i = 2; i > 0; i -= 1)\n{\n    sum += i;\n}\nConsole.WriteLine(sum);",
+        "challengeResult": "3",
+        "prompt": "Что появится в консоли?",
+        "kind": "Что выведет код?",
+        "explanation": "Граница и шаг выбирают i = 2, 1. Их сумма 2 + 1 = 3.",
+        "options": [
+          "3",
+          "4",
+          "2",
           "5"
         ],
-        "correctIndex": 0,
-        "challengeResult": "543",
-        "explanation": "Счётчик уменьшается от 5 до 3 включительно."
+        "correctIndex": 0
       },
       {
-        "challengeCode": "for (int i = 6; i >= 4; i--)\n{\n    Console.Write(i);\n}",
-        "options": [
-          "654",
-          "65",
-          "456",
-          "6"
-        ],
-        "correctIndex": 0,
-        "challengeResult": "654",
-        "explanation": "Счётчик уменьшается от 6 до 4 включительно."
-      },
-      {
-        "challengeCode": "int sum = 0;\nfor (int i = 8; i > 2; i -= 1)\n{\n    sum += i;\n}\nConsole.WriteLine(sum);",
-        "challengeInput": "",
+        "challengeCode": "int sum = 0;\nfor (int i = 3; i > 0; i -= 1)\n{\n    sum += i;\n}\nConsole.WriteLine(sum);",
+        "challengeResult": "6",
         "prompt": "Что появится в консоли?",
-        "explanation": "Убывающий счётчик проходит только значения, удовлетворяющие границе. Шаг может пропускать числа.",
-        "challengeResult": "33",
+        "kind": "Что выведет код?",
+        "explanation": "Граница и шаг выбирают i = 3, 2, 1. Их сумма 3 + 2 + 1 = 6.",
         "options": [
-          "33",
-          "34",
-          "32",
-          "35"
+          "6",
+          "7",
+          "5",
+          "8"
         ],
         "correctIndex": 0
       },
       {
-        "challengeCode": "int sum = 0;\nfor (int i = 9; i > 0; i -= 2)\n{\n    sum += i;\n}\nConsole.WriteLine(sum);",
-        "challengeInput": "",
+        "challengeCode": "int sum = 0;\nfor (int i = 4; i > 0; i -= 1)\n{\n    sum += i;\n}\nConsole.WriteLine(sum);",
+        "challengeResult": "10",
         "prompt": "Что появится в консоли?",
-        "explanation": "Убывающий счётчик проходит только значения, удовлетворяющие границе. Шаг может пропускать числа.",
-        "challengeResult": "25",
+        "kind": "Что выведет код?",
+        "explanation": "Граница и шаг выбирают i = 4, 3, 2, 1. Их сумма 4 + 3 + 2 + 1 = 10.",
         "options": [
-          "25",
-          "26",
-          "24",
-          "27"
+          "10",
+          "11",
+          "9",
+          "12"
         ],
         "correctIndex": 0
       },
       {
-        "challengeCode": "int sum = 0;\nfor (int i = 10; i > 1; i -= 1)\n{\n    sum += i;\n}\nConsole.WriteLine(sum);",
-        "challengeInput": "",
+        "challengeCode": "int sum = 0;\nfor (int i = 1; i >= 1; i -= 1)\n{\n    sum += i;\n}\nConsole.WriteLine(sum);",
+        "challengeResult": "1",
         "prompt": "Что появится в консоли?",
-        "explanation": "Убывающий счётчик проходит только значения, удовлетворяющие границе. Шаг может пропускать числа.",
-        "challengeResult": "54",
+        "kind": "Что выведет код?",
+        "explanation": "Граница и шаг выбирают i = 1. Их сумма 1 = 1.",
         "options": [
-          "54",
-          "55",
-          "53",
-          "56"
+          "1",
+          "2",
+          "0",
+          "3"
         ],
         "correctIndex": 0
       },
       {
-        "challengeCode": "int sum = 0;\nfor (int i = 11; i > 2; i -= 2)\n{\n    sum += i;\n}\nConsole.WriteLine(sum);",
-        "challengeInput": "",
+        "challengeCode": "int sum = 0;\nfor (int i = 2; i >= 1; i -= 1)\n{\n    sum += i;\n}\nConsole.WriteLine(sum);",
+        "challengeResult": "3",
         "prompt": "Что появится в консоли?",
-        "explanation": "Убывающий счётчик проходит только значения, удовлетворяющие границе. Шаг может пропускать числа.",
-        "challengeResult": "35",
+        "kind": "Что выведет код?",
+        "explanation": "Граница и шаг выбирают i = 2, 1. Их сумма 2 + 1 = 3.",
         "options": [
-          "35",
-          "36",
-          "34",
-          "37"
+          "3",
+          "4",
+          "2",
+          "5"
         ],
         "correctIndex": 0
       },
       {
-        "challengeCode": "int sum = 0;\nfor (int i = 12; i > 0; i -= 1)\n{\n    sum += i;\n}\nConsole.WriteLine(sum);",
-        "challengeInput": "",
+        "challengeCode": "int sum = 0;\nfor (int i = 3; i >= 1; i -= 1)\n{\n    sum += i;\n}\nConsole.WriteLine(sum);",
+        "challengeResult": "6",
         "prompt": "Что появится в консоли?",
-        "explanation": "Убывающий счётчик проходит только значения, удовлетворяющие границе. Шаг может пропускать числа.",
-        "challengeResult": "78",
+        "kind": "Что выведет код?",
+        "explanation": "Граница и шаг выбирают i = 3, 2, 1. Их сумма 3 + 2 + 1 = 6.",
         "options": [
-          "78",
-          "79",
-          "77",
-          "80"
+          "6",
+          "7",
+          "5",
+          "8"
         ],
         "correctIndex": 0
       },
       {
-        "challengeCode": "int sum = 0;\nfor (int i = 13; i > 1; i -= 2)\n{\n    sum += i;\n}\nConsole.WriteLine(sum);",
-        "challengeInput": "",
+        "challengeCode": "int sum = 0;\nfor (int i = 4; i >= 1; i -= 1)\n{\n    sum += i;\n}\nConsole.WriteLine(sum);",
+        "challengeResult": "10",
         "prompt": "Что появится в консоли?",
-        "explanation": "Убывающий счётчик проходит только значения, удовлетворяющие границе. Шаг может пропускать числа.",
-        "challengeResult": "48",
+        "kind": "Что выведет код?",
+        "explanation": "Граница и шаг выбирают i = 4, 3, 2, 1. Их сумма 4 + 3 + 2 + 1 = 10.",
         "options": [
-          "48",
-          "49",
-          "47",
-          "50"
+          "10",
+          "11",
+          "9",
+          "12"
         ],
         "correctIndex": 0
       }
@@ -3696,110 +3712,114 @@ const codeLessons = [
     "codeDeckId": "practice-loops-control",
     "variants": [
       {
-        "challengeCode": "for (int i = 1; i <= 6; i++)\n{\n    if (i == 2)\n    {\n        break;\n    }\n    Console.Write(i);\n}",
+        "challengeCode": "int count = 0;\nfor (int i = 0; i < 2; i++)\n{\n    if (i == 1)\n    {\n        break;\n    }\n    count++;\n}\nConsole.WriteLine(count);",
+        "challengeResult": "1",
+        "prompt": "Сколько раз выполнится count++ до остановки?",
+        "kind": "Число выполнений строки",
+        "explanation": "При i = 1 выполняется break. Строка изменения после него уже не выполняется. Учитываются i = 0.",
         "options": [
           "1",
-          "12",
-          "123456",
-          "2"
+          "2",
+          "0",
+          "3"
         ],
-        "correctIndex": 0,
-        "challengeResult": "1",
-        "explanation": "При i = 2 цикл завершается до вывода; успевают вывестись числа 1–1."
+        "correctIndex": 0
       },
       {
-        "challengeCode": "for (int i = 1; i <= 6; i++)\n{\n    if (i == 5)\n    {\n        break;\n    }\n    Console.Write(i);\n}",
+        "challengeCode": "int count = 0;\nfor (int i = 0; i < 3; i++)\n{\n    if (i == 1)\n    {\n        break;\n    }\n    count++;\n}\nConsole.WriteLine(count);",
+        "challengeResult": "1",
+        "prompt": "Сколько раз выполнится count++ до остановки?",
+        "kind": "Число выполнений строки",
+        "explanation": "При i = 1 выполняется break. Строка изменения после него уже не выполняется. Учитываются i = 0.",
         "options": [
-          "1234",
-          "12345",
-          "123456",
+          "1",
+          "2",
+          "0",
+          "3"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int count = 0;\nfor (int i = 0; i <= 3; i++)\n{\n    if (i == 2)\n    {\n        break;\n    }\n    count++;\n}\nConsole.WriteLine(count);",
+        "challengeResult": "2",
+        "prompt": "Сколько раз выполнится count++ до остановки?",
+        "kind": "Число выполнений строки",
+        "explanation": "При i = 2 выполняется break. Строка изменения после него уже не выполняется. Учитываются i = 0, 1.",
+        "options": [
+          "2",
+          "3",
+          "1",
+          "4"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int count = 0;\nfor (int i = 0; i <= 4; i++)\n{\n    if (i == 2)\n    {\n        break;\n    }\n    count++;\n}\nConsole.WriteLine(count);",
+        "challengeResult": "2",
+        "prompt": "Сколько раз выполнится count++ до остановки?",
+        "kind": "Число выполнений строки",
+        "explanation": "При i = 2 выполняется break. Строка изменения после него уже не выполняется. Учитываются i = 0, 1.",
+        "options": [
+          "2",
+          "3",
+          "1",
+          "4"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int count = 0;\nfor (int i = 0; i < 2; i++)\n{\n    count++;\n    if (i == 1)\n    {\n        break;\n    }\n}\nConsole.WriteLine(count);",
+        "challengeResult": "2",
+        "prompt": "Сколько раз выполнится count++ до остановки?",
+        "kind": "Число выполнений строки",
+        "explanation": "При i = 1 выполняется break. Строка изменения стоит перед ним и успевает выполниться. Учитываются i = 0, 1.",
+        "options": [
+          "2",
+          "3",
+          "1",
+          "4"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int count = 0;\nfor (int i = 0; i < 3; i++)\n{\n    count++;\n    if (i == 1)\n    {\n        break;\n    }\n}\nConsole.WriteLine(count);",
+        "challengeResult": "2",
+        "prompt": "Сколько раз выполнится count++ до остановки?",
+        "kind": "Число выполнений строки",
+        "explanation": "При i = 1 выполняется break. Строка изменения стоит перед ним и успевает выполниться. Учитываются i = 0, 1.",
+        "options": [
+          "2",
+          "3",
+          "1",
+          "4"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int count = 0;\nfor (int i = 0; i <= 3; i++)\n{\n    count++;\n    if (i == 2)\n    {\n        break;\n    }\n}\nConsole.WriteLine(count);",
+        "challengeResult": "3",
+        "prompt": "Сколько раз выполнится count++ до остановки?",
+        "kind": "Число выполнений строки",
+        "explanation": "При i = 2 выполняется break. Строка изменения стоит перед ним и успевает выполниться. Учитываются i = 0, 1, 2.",
+        "options": [
+          "3",
+          "4",
+          "2",
           "5"
         ],
-        "correctIndex": 0,
-        "challengeResult": "1234",
-        "explanation": "При i = 5 цикл завершается до вывода; успевают вывестись числа 1–4."
-      },
-      {
-        "challengeCode": "int sum = 0;\nfor (int i = 1; i <= 8; i++)\n{\n    if (i == 5)\n    {\n        break;\n    }\n    sum += i;\n}\nConsole.WriteLine(sum);",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Выход по break прекращает ближайший цикл. Прибавление до проверки включает граничное i, после проверки — исключает.",
-        "challengeResult": "10",
-        "options": [
-          "10",
-          "11",
-          "9",
-          "12"
-        ],
         "correctIndex": 0
       },
       {
-        "challengeCode": "int sum = 0;\nfor (int i = 1; i <= 9; i++)\n{\n    sum += i;\n    if (i == 6)\n    {\n        break;\n    }\n    \n}\nConsole.WriteLine(sum);",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Выход по break прекращает ближайший цикл. Прибавление до проверки включает граничное i, после проверки — исключает.",
-        "challengeResult": "21",
+        "challengeCode": "int count = 0;\nfor (int i = 0; i <= 4; i++)\n{\n    count++;\n    if (i == 2)\n    {\n        break;\n    }\n}\nConsole.WriteLine(count);",
+        "challengeResult": "3",
+        "prompt": "Сколько раз выполнится count++ до остановки?",
+        "kind": "Число выполнений строки",
+        "explanation": "При i = 2 выполняется break. Строка изменения стоит перед ним и успевает выполниться. Учитываются i = 0, 1, 2.",
         "options": [
-          "21",
-          "22",
-          "20",
-          "23"
-        ],
-        "correctIndex": 0
-      },
-      {
-        "challengeCode": "int sum = 0;\nfor (int i = 1; i <= 10; i++)\n{\n    if (i == 7)\n    {\n        break;\n    }\n    sum += i;\n}\nConsole.WriteLine(sum);",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Выход по break прекращает ближайший цикл. Прибавление до проверки включает граничное i, после проверки — исключает.",
-        "challengeResult": "21",
-        "options": [
-          "21",
-          "22",
-          "20",
-          "23"
-        ],
-        "correctIndex": 0
-      },
-      {
-        "challengeCode": "int sum = 0;\nfor (int i = 1; i <= 11; i++)\n{\n    sum += i;\n    if (i == 8)\n    {\n        break;\n    }\n    \n}\nConsole.WriteLine(sum);",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Выход по break прекращает ближайший цикл. Прибавление до проверки включает граничное i, после проверки — исключает.",
-        "challengeResult": "36",
-        "options": [
-          "36",
-          "37",
-          "35",
-          "38"
-        ],
-        "correctIndex": 0
-      },
-      {
-        "challengeCode": "int sum = 0;\nfor (int i = 1; i <= 12; i++)\n{\n    if (i == 9)\n    {\n        break;\n    }\n    sum += i;\n}\nConsole.WriteLine(sum);",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Выход по break прекращает ближайший цикл. Прибавление до проверки включает граничное i, после проверки — исключает.",
-        "challengeResult": "36",
-        "options": [
-          "36",
-          "37",
-          "35",
-          "38"
-        ],
-        "correctIndex": 0
-      },
-      {
-        "challengeCode": "int sum = 0;\nfor (int i = 1; i <= 13; i++)\n{\n    sum += i;\n    if (i == 10)\n    {\n        break;\n    }\n    \n}\nConsole.WriteLine(sum);",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Выход по break прекращает ближайший цикл. Прибавление до проверки включает граничное i, после проверки — исключает.",
-        "challengeResult": "55",
-        "options": [
-          "55",
-          "56",
-          "54",
-          "57"
+          "3",
+          "4",
+          "2",
+          "5"
         ],
         "correctIndex": 0
       }
@@ -3827,110 +3847,114 @@ const codeLessons = [
     "codeDeckId": "practice-loops-control",
     "variants": [
       {
-        "challengeCode": "for (int i = 1; i <= 5; i++)\n{\n    if (i == 2)\n    {\n        continue;\n    }\n    Console.Write(i);\n}",
+        "challengeCode": "int count = 0;\nfor (int i = 0; i < 2; i++)\n{\n    if (i == 1)\n    {\n        continue;\n    }\n    count++;\n}\nConsole.WriteLine(count);",
+        "challengeResult": "1",
+        "prompt": "Сколько раз выполнится строка count++?",
+        "kind": "Число выполнений строки",
+        "explanation": "Количество проходов цикла: 2. При i = 1 выполняется continue. count++ стоит после него, поэтому один проход пропускается.",
         "options": [
-          "1345",
-          "12345",
           "1",
-          "2"
+          "2",
+          "0",
+          "3"
         ],
-        "correctIndex": 0,
-        "challengeResult": "1345",
-        "explanation": "continue пропускает только вывод 2; остальные итерации выполняются."
+        "correctIndex": 0
       },
       {
-        "challengeCode": "for (int i = 1; i <= 5; i++)\n{\n    if (i == 4)\n    {\n        continue;\n    }\n    Console.Write(i);\n}",
+        "challengeCode": "int count = 0;\nfor (int i = 1; i < 3; i++)\n{\n    if (i == 2)\n    {\n        continue;\n    }\n    count++;\n}\nConsole.WriteLine(count);",
+        "challengeResult": "1",
+        "prompt": "Сколько раз выполнится строка count++?",
+        "kind": "Число выполнений строки",
+        "explanation": "Количество проходов цикла: 2. При i = 2 выполняется continue. count++ стоит после него, поэтому один проход пропускается.",
         "options": [
-          "1235",
-          "12345",
-          "123",
+          "1",
+          "2",
+          "0",
+          "3"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int count = 0;\nfor (int i = 0; i < 2; i++)\n{\n    count++;\n    if (i == 1)\n    {\n        continue;\n    }\n}\nConsole.WriteLine(count);",
+        "challengeResult": "2",
+        "prompt": "Сколько раз выполнится строка count++?",
+        "kind": "Число выполнений строки",
+        "explanation": "Количество проходов цикла: 2. При i = 1 выполняется continue. count++ стоит перед ним и выполняется на каждом проходе.",
+        "options": [
+          "2",
+          "3",
+          "1",
           "4"
         ],
-        "correctIndex": 0,
-        "challengeResult": "1235",
-        "explanation": "continue пропускает только вывод 4; остальные итерации выполняются."
+        "correctIndex": 0
       },
       {
-        "challengeCode": "int sum = 0;\nfor (int i = 1; i <= 6; i++)\n{\n    if (i % 2 == 0)\n    {\n        continue;\n    }\n    sum += i;\n}\nConsole.WriteLine(sum);",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Команды до continue уже выполнятся. После continue остаток текущей итерации пропускается.",
-        "challengeResult": "9",
+        "challengeCode": "int count = 0;\nfor (int i = 1; i < 3; i++)\n{\n    count++;\n    if (i == 2)\n    {\n        continue;\n    }\n}\nConsole.WriteLine(count);",
+        "challengeResult": "2",
+        "prompt": "Сколько раз выполнится строка count++?",
+        "kind": "Число выполнений строки",
+        "explanation": "Количество проходов цикла: 2. При i = 2 выполняется continue. count++ стоит перед ним и выполняется на каждом проходе.",
         "options": [
-          "9",
-          "10",
-          "8",
-          "11"
+          "2",
+          "3",
+          "1",
+          "4"
         ],
         "correctIndex": 0
       },
       {
-        "challengeCode": "int sum = 0;\nfor (int i = 1; i <= 7; i++)\n{\n    sum += i;\n    if (i % 2 == 0)\n    {\n        continue;\n    }\n    sum++;\n}\nConsole.WriteLine(sum);",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Команды до continue уже выполнятся. После continue остаток текущей итерации пропускается.",
-        "challengeResult": "32",
+        "challengeCode": "int count = 0;\nfor (int i = 0; i < 3; i++)\n{\n    if (i == 1)\n    {\n        continue;\n    }\n    count++;\n}\nConsole.WriteLine(count);",
+        "challengeResult": "2",
+        "prompt": "Сколько раз выполнится строка count++?",
+        "kind": "Число выполнений строки",
+        "explanation": "Количество проходов цикла: 3. При i = 1 выполняется continue. count++ стоит после него, поэтому один проход пропускается.",
         "options": [
-          "32",
-          "33",
-          "31",
-          "34"
+          "2",
+          "3",
+          "1",
+          "4"
         ],
         "correctIndex": 0
       },
       {
-        "challengeCode": "int sum = 0;\nfor (int i = 1; i <= 8; i++)\n{\n    if (i % 2 == 0)\n    {\n        continue;\n    }\n    sum += i;\n}\nConsole.WriteLine(sum);",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Команды до continue уже выполнятся. После continue остаток текущей итерации пропускается.",
-        "challengeResult": "16",
+        "challengeCode": "int count = 0;\nfor (int i = 1; i < 4; i++)\n{\n    if (i == 2)\n    {\n        continue;\n    }\n    count++;\n}\nConsole.WriteLine(count);",
+        "challengeResult": "2",
+        "prompt": "Сколько раз выполнится строка count++?",
+        "kind": "Число выполнений строки",
+        "explanation": "Количество проходов цикла: 3. При i = 2 выполняется continue. count++ стоит после него, поэтому один проход пропускается.",
         "options": [
-          "16",
-          "17",
-          "15",
-          "18"
+          "2",
+          "3",
+          "1",
+          "4"
         ],
         "correctIndex": 0
       },
       {
-        "challengeCode": "int sum = 0;\nfor (int i = 1; i <= 9; i++)\n{\n    sum += i;\n    if (i % 2 == 0)\n    {\n        continue;\n    }\n    sum++;\n}\nConsole.WriteLine(sum);",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Команды до continue уже выполнятся. После continue остаток текущей итерации пропускается.",
-        "challengeResult": "50",
+        "challengeCode": "int count = 0;\nfor (int i = 0; i < 3; i++)\n{\n    count++;\n    if (i == 1)\n    {\n        continue;\n    }\n}\nConsole.WriteLine(count);",
+        "challengeResult": "3",
+        "prompt": "Сколько раз выполнится строка count++?",
+        "kind": "Число выполнений строки",
+        "explanation": "Количество проходов цикла: 3. При i = 1 выполняется continue. count++ стоит перед ним и выполняется на каждом проходе.",
         "options": [
-          "50",
-          "51",
-          "49",
-          "52"
+          "3",
+          "4",
+          "2",
+          "5"
         ],
         "correctIndex": 0
       },
       {
-        "challengeCode": "int sum = 0;\nfor (int i = 1; i <= 10; i++)\n{\n    if (i % 2 == 0)\n    {\n        continue;\n    }\n    sum += i;\n}\nConsole.WriteLine(sum);",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Команды до continue уже выполнятся. После continue остаток текущей итерации пропускается.",
-        "challengeResult": "25",
+        "challengeCode": "int count = 0;\nfor (int i = 1; i < 4; i++)\n{\n    count++;\n    if (i == 2)\n    {\n        continue;\n    }\n}\nConsole.WriteLine(count);",
+        "challengeResult": "3",
+        "prompt": "Сколько раз выполнится строка count++?",
+        "kind": "Число выполнений строки",
+        "explanation": "Количество проходов цикла: 3. При i = 2 выполняется continue. count++ стоит перед ним и выполняется на каждом проходе.",
         "options": [
-          "25",
-          "26",
-          "24",
-          "27"
-        ],
-        "correctIndex": 0
-      },
-      {
-        "challengeCode": "int sum = 0;\nfor (int i = 1; i <= 11; i++)\n{\n    sum += i;\n    if (i % 2 == 0)\n    {\n        continue;\n    }\n    sum++;\n}\nConsole.WriteLine(sum);",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Команды до continue уже выполнятся. После continue остаток текущей итерации пропускается.",
-        "challengeResult": "72",
-        "options": [
-          "72",
-          "73",
-          "71",
-          "74"
+          "3",
+          "4",
+          "2",
+          "5"
         ],
         "correctIndex": 0
       }
@@ -3943,92 +3967,96 @@ const codeLessons = [
     "exampleCode": "for (int row = 1; row <= 2; row++)\n{\n    for (int col = 1; col <= 3; col++)\n    {\n        Console.Write(\"*\");\n    }\n    Console.WriteLine();\n}",
     "exampleResult": "***\n***",
     "exampleNote": "Внутренний цикл выполняет три вывода для каждой из двух строк.",
-    "kind": "Что выведет код?",
-    "challengeCode": "int count = 0;\nfor (int row = 0; row < 3; row++)\n{\n    for (int col = 0; col < 2; col++)\n    {\n        count++;\n    }\n}\nConsole.WriteLine(count);",
-    "prompt": "Что появится в консоли?",
+    "kind": "Вложенные циклы",
+    "challengeCode": "int count = 0;\nfor (int row = 0; row < 2; row++)\n{\n    for (int col = 0; col < 2; col++)\n    {\n        count++;\n    }\n}\nConsole.WriteLine(count);",
+    "prompt": "Сколько раз выполнится самое внутреннее тело?",
     "options": [
-      "2",
-      "3",
+      "4",
       "5",
+      "3",
       "6"
     ],
-    "correctIndex": 3,
-    "explanation": "Три внешние итерации по две внутренние: 3 × 2 = 6.",
+    "correctIndex": 0,
+    "explanation": "Для каждого из двух значений row внутренний цикл выполняется два раза: 2 × 2 = 4.",
     "codeDeckId": "practice-loops-control",
-    "challengeResult": "6",
+    "challengeResult": "4",
     "variants": [
       {
-        "challengeCode": "int count = 0;\nfor (int row = 0; row < 2; row++)\n{\n    for (int col = 0; col < 4; col++)\n    {\n        count++;\n    }\n}\nConsole.WriteLine(count);",
+        "challengeCode": "int count = 0;\nfor (int row = 0; row < 1; row++)\n{\n    for (int col = 0; col < row + 1; col++)\n    {\n        count++;\n    }\n}\nConsole.WriteLine(count);",
+        "challengeResult": "1",
+        "prompt": "Сколько раз выполнится самое внутреннее тело?",
+        "kind": "Вложенные циклы",
+        "explanation": "Для row = 0 внутреннее тело выполнится соответственно 1 раз. Всего 1 увеличений счётчика.",
         "options": [
-          "8",
-          "6",
+          "1",
           "2",
-          "4"
+          "0",
+          "3"
         ],
-        "correctIndex": 0,
-        "challengeResult": "8",
-        "explanation": "2 внешние итерации по 4 внутренние: счётчик увеличится 8 раз."
+        "correctIndex": 0
       },
       {
-        "challengeCode": "int count = 0;\nfor (int row = 0; row < 3; row++)\n{\n    for (int col = 0; col < 4; col++)\n    {\n        count++;\n    }\n}\nConsole.WriteLine(count);",
+        "challengeCode": "int count = 0;\nfor (int row = 0; row < 1; row++)\n{\n    for (int col = 0; col <= row + 2; col++)\n    {\n        count++;\n    }\n}\nConsole.WriteLine(count);",
+        "challengeResult": "3",
+        "prompt": "Сколько раз выполнится самое внутреннее тело?",
+        "kind": "Вложенные циклы",
+        "explanation": "Для row = 0 внутреннее тело выполнится соответственно 3 раз. Всего 3 увеличений счётчика.",
         "options": [
-          "12",
-          "7",
           "3",
+          "4",
+          "2",
+          "5"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int count = 0;\nfor (int row = 0; row < 1; row++)\n{\n    for (int col = 0; col <= row + 1; col++)\n    {\n        count++;\n    }\n}\nConsole.WriteLine(count);",
+        "challengeResult": "2",
+        "prompt": "Сколько раз выполнится самое внутреннее тело?",
+        "kind": "Вложенные циклы",
+        "explanation": "Для row = 0 внутреннее тело выполнится соответственно 2 раз. Всего 2 увеличений счётчика.",
+        "options": [
+          "2",
+          "3",
+          "1",
           "4"
         ],
-        "correctIndex": 0,
-        "challengeResult": "12",
-        "explanation": "3 внешние итерации по 4 внутренние: счётчик увеличится 12 раз."
+        "correctIndex": 0
       },
       {
-        "challengeCode": "int count = 0;\nfor (int row = 1; row <= 4; row++)\n{\n    for (int col = 0; col < row; col++)\n    {\n        count++;\n    }\n}\nConsole.WriteLine(count);",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Внутренняя граница зависит от row. Для каждой внешней итерации число внутренних повторений нужно посчитать отдельно.",
-        "challengeResult": "10",
+        "challengeCode": "int count = 0;\nfor (int row = 0; row < 1; row++)\n{\n    for (int col = 0; col < row + 2; col++)\n    {\n        count++;\n    }\n}\nConsole.WriteLine(count);",
+        "challengeResult": "2",
+        "prompt": "Сколько раз выполнится самое внутреннее тело?",
+        "kind": "Вложенные циклы",
+        "explanation": "Для row = 0 внутреннее тело выполнится соответственно 2 раз. Всего 2 увеличений счётчика.",
         "options": [
-          "10",
-          "11",
-          "9",
-          "12"
+          "2",
+          "3",
+          "1",
+          "4"
         ],
         "correctIndex": 0
       },
       {
-        "challengeCode": "int count = 0;\nfor (int row = 1; row <= 5; row++)\n{\n    for (int col = 0; col <= row; col++)\n    {\n        count++;\n    }\n}\nConsole.WriteLine(count);",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Внутренняя граница зависит от row. Для каждой внешней итерации число внутренних повторений нужно посчитать отдельно.",
-        "challengeResult": "20",
+        "challengeCode": "int count = 0;\nfor (int row = 0; row < 2; row++)\n{\n    for (int col = 0; col < row + 1; col++)\n    {\n        count++;\n    }\n}\nConsole.WriteLine(count);",
+        "challengeResult": "3",
+        "prompt": "Сколько раз выполнится самое внутреннее тело?",
+        "kind": "Вложенные циклы",
+        "explanation": "Для row = 0, 1 внутреннее тело выполнится соответственно 1 и 2 раз. Всего 3 увеличений счётчика.",
         "options": [
-          "20",
-          "21",
-          "19",
-          "22"
+          "3",
+          "4",
+          "2",
+          "5"
         ],
         "correctIndex": 0
       },
       {
-        "challengeCode": "int count = 0;\nfor (int row = 1; row <= 6; row++)\n{\n    for (int col = 0; col < row; col++)\n    {\n        count++;\n    }\n}\nConsole.WriteLine(count);",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Внутренняя граница зависит от row. Для каждой внешней итерации число внутренних повторений нужно посчитать отдельно.",
-        "challengeResult": "21",
-        "options": [
-          "21",
-          "22",
-          "20",
-          "23"
-        ],
-        "correctIndex": 0
-      },
-      {
-        "challengeCode": "int count = 0;\nfor (int row = 1; row <= 2; row++)\n{\n    for (int col = 0; col <= row; col++)\n    {\n        count++;\n    }\n}\nConsole.WriteLine(count);",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Внутренняя граница зависит от row. Для каждой внешней итерации число внутренних повторений нужно посчитать отдельно.",
+        "challengeCode": "int count = 0;\nfor (int row = 0; row < 2; row++)\n{\n    for (int col = 0; col <= row + 1; col++)\n    {\n        count++;\n    }\n}\nConsole.WriteLine(count);",
         "challengeResult": "5",
+        "prompt": "Сколько раз выполнится самое внутреннее тело?",
+        "kind": "Вложенные циклы",
+        "explanation": "Для row = 0, 1 внутреннее тело выполнится соответственно 2 и 3 раз. Всего 5 увеличений счётчика.",
         "options": [
           "5",
           "6",
@@ -4038,30 +4066,30 @@ const codeLessons = [
         "correctIndex": 0
       },
       {
-        "challengeCode": "int count = 0;\nfor (int row = 1; row <= 3; row++)\n{\n    for (int col = 0; col < row; col++)\n    {\n        count++;\n    }\n}\nConsole.WriteLine(count);",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Внутренняя граница зависит от row. Для каждой внешней итерации число внутренних повторений нужно посчитать отдельно.",
-        "challengeResult": "6",
+        "challengeCode": "int count = 0;\nfor (int row = 0; row < 2; row++)\n{\n    for (int col = 0; col < row + 2; col++)\n    {\n        count++;\n    }\n}\nConsole.WriteLine(count);",
+        "challengeResult": "5",
+        "prompt": "Сколько раз выполнится самое внутреннее тело?",
+        "kind": "Вложенные циклы",
+        "explanation": "Для row = 0, 1 внутреннее тело выполнится соответственно 2 и 3 раз. Всего 5 увеличений счётчика.",
         "options": [
-          "6",
-          "7",
           "5",
-          "8"
+          "6",
+          "4",
+          "7"
         ],
         "correctIndex": 0
       },
       {
-        "challengeCode": "int count = 0;\nfor (int row = 1; row <= 4; row++)\n{\n    for (int col = 0; col <= row; col++)\n    {\n        count++;\n    }\n}\nConsole.WriteLine(count);",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Внутренняя граница зависит от row. Для каждой внешней итерации число внутренних повторений нужно посчитать отдельно.",
-        "challengeResult": "14",
+        "challengeCode": "int count = 0;\nfor (int row = 1; row < 2; row++)\n{\n    for (int col = 0; col < row + 1; col++)\n    {\n        count++;\n    }\n}\nConsole.WriteLine(count);",
+        "challengeResult": "2",
+        "prompt": "Сколько раз выполнится самое внутреннее тело?",
+        "kind": "Вложенные циклы",
+        "explanation": "Для row = 1 внутреннее тело выполнится соответственно 2 раз. Всего 2 увеличений счётчика.",
         "options": [
-          "14",
-          "15",
-          "13",
-          "16"
+          "2",
+          "3",
+          "1",
+          "4"
         ],
         "correctIndex": 0
       }
@@ -4089,110 +4117,114 @@ const codeLessons = [
     "codeDeckId": "practice-loops-control",
     "variants": [
       {
-        "challengeCode": "int sum = 0;\nfor (int i = 1; i <= 3; i++)\n{\n    sum += i;\n}\nConsole.WriteLine(sum);",
+        "challengeCode": "int sum = 0;\nfor (int i = 1; i < 2; i++)\n{\n    sum += i;\n}\nConsole.WriteLine(sum);",
+        "challengeResult": "1",
+        "prompt": "Где обнуляется sum и какое значение останется после цикла?",
+        "kind": "Что выведет код?",
+        "explanation": "Сброса внутри цикла нет. Прибавления сохраняются: 1 = 1.",
         "options": [
-          "6",
-          "3",
-          "9",
-          "Ничего"
-        ],
-        "correctIndex": 0,
-        "challengeResult": "6",
-        "explanation": "Сумма чисел от 1 до 3 равна 6."
-      },
-      {
-        "challengeCode": "int sum = 0;\nfor (int i = 1; i <= 5; i++)\n{\n    sum += i;\n}\nConsole.WriteLine(sum);",
-        "options": [
-          "15",
-          "5",
-          "25",
-          "10"
-        ],
-        "correctIndex": 0,
-        "challengeResult": "15",
-        "explanation": "Сумма чисел от 1 до 5 равна 15."
-      },
-      {
-        "challengeCode": "int sum = 0;\nfor (int i = 1; i <= 5; i++)\n{\n    sum += i * 2;\n}\nConsole.WriteLine(sum);",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Обнуление внутри тела уничтожает результат предыдущих итераций. Без обнуления значения накапливаются.",
-        "challengeResult": "30",
-        "options": [
-          "30",
-          "31",
-          "29",
-          "32"
+          "1",
+          "2",
+          "0",
+          "3"
         ],
         "correctIndex": 0
       },
       {
-        "challengeCode": "int sum = 0;\nfor (int i = 1; i <= 6; i++)\n{\n    sum = 0;\n    sum += i * 2;\n}\nConsole.WriteLine(sum);",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Обнуление внутри тела уничтожает результат предыдущих итераций. Без обнуления значения накапливаются.",
+        "challengeCode": "int sum = 0;\nfor (int i = 1; i < 2; i++)\n{\n    sum = 0;\n    sum += i;\n}\nConsole.WriteLine(sum);",
+        "challengeResult": "1",
+        "prompt": "Где обнуляется sum и какое значение останется после цикла?",
+        "kind": "Что выведет код?",
+        "explanation": "На каждом проходе sum обнуляется. В конце остаётся последнее i = 1.",
+        "options": [
+          "1",
+          "2",
+          "0",
+          "3"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int sum = 0;\nfor (int i = 1; i < 3; i++)\n{\n    sum = 0;\n    sum += i;\n}\nConsole.WriteLine(sum);",
+        "challengeResult": "2",
+        "prompt": "Где обнуляется sum и какое значение останется после цикла?",
+        "kind": "Что выведет код?",
+        "explanation": "На каждом проходе sum обнуляется. В конце остаётся последнее i = 2.",
+        "options": [
+          "2",
+          "3",
+          "1",
+          "4"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int sum = 0;\nfor (int i = 2; i < 4; i++)\n{\n    sum += i;\n}\nConsole.WriteLine(sum);",
+        "challengeResult": "5",
+        "prompt": "Где обнуляется sum и какое значение останется после цикла?",
+        "kind": "Что выведет код?",
+        "explanation": "Сброса внутри цикла нет. Прибавления сохраняются: 2 + 3 = 5.",
+        "options": [
+          "5",
+          "6",
+          "4",
+          "7"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int sum = 0;\nfor (int i = 2; i < 4; i++)\n{\n    sum = 0;\n    sum += i;\n}\nConsole.WriteLine(sum);",
+        "challengeResult": "3",
+        "prompt": "Где обнуляется sum и какое значение останется после цикла?",
+        "kind": "Что выведет код?",
+        "explanation": "На каждом проходе sum обнуляется. В конце остаётся последнее i = 3.",
+        "options": [
+          "3",
+          "4",
+          "2",
+          "5"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int sum = 0;\nfor (int i = 2; i < 5; i++)\n{\n    sum += i;\n}\nConsole.WriteLine(sum);",
+        "challengeResult": "9",
+        "prompt": "Где обнуляется sum и какое значение останется после цикла?",
+        "kind": "Что выведет код?",
+        "explanation": "Сброса внутри цикла нет. Прибавления сохраняются: 2 + 3 + 4 = 9.",
+        "options": [
+          "9",
+          "10",
+          "8",
+          "11"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int sum = 0;\nfor (int i = 2; i < 5; i++)\n{\n    sum = 0;\n    sum += i;\n}\nConsole.WriteLine(sum);",
+        "challengeResult": "4",
+        "prompt": "Где обнуляется sum и какое значение останется после цикла?",
+        "kind": "Что выведет код?",
+        "explanation": "На каждом проходе sum обнуляется. В конце остаётся последнее i = 4.",
+        "options": [
+          "4",
+          "5",
+          "3",
+          "6"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int sum = 0;\nfor (int i = 3; i < 6; i++)\n{\n    sum += i;\n}\nConsole.WriteLine(sum);",
         "challengeResult": "12",
+        "prompt": "Где обнуляется sum и какое значение останется после цикла?",
+        "kind": "Что выведет код?",
+        "explanation": "Сброса внутри цикла нет. Прибавления сохраняются: 3 + 4 + 5 = 12.",
         "options": [
           "12",
           "13",
           "11",
           "14"
-        ],
-        "correctIndex": 0
-      },
-      {
-        "challengeCode": "int sum = 0;\nfor (int i = 1; i <= 7; i++)\n{\n    sum += i * 2;\n}\nConsole.WriteLine(sum);",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Обнуление внутри тела уничтожает результат предыдущих итераций. Без обнуления значения накапливаются.",
-        "challengeResult": "56",
-        "options": [
-          "56",
-          "57",
-          "55",
-          "58"
-        ],
-        "correctIndex": 0
-      },
-      {
-        "challengeCode": "int sum = 0;\nfor (int i = 1; i <= 8; i++)\n{\n    sum = 0;\n    sum += i * 2;\n}\nConsole.WriteLine(sum);",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Обнуление внутри тела уничтожает результат предыдущих итераций. Без обнуления значения накапливаются.",
-        "challengeResult": "16",
-        "options": [
-          "16",
-          "17",
-          "15",
-          "18"
-        ],
-        "correctIndex": 0
-      },
-      {
-        "challengeCode": "int sum = 0;\nfor (int i = 1; i <= 9; i++)\n{\n    sum += i * 2;\n}\nConsole.WriteLine(sum);",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Обнуление внутри тела уничтожает результат предыдущих итераций. Без обнуления значения накапливаются.",
-        "challengeResult": "90",
-        "options": [
-          "90",
-          "91",
-          "89",
-          "92"
-        ],
-        "correctIndex": 0
-      },
-      {
-        "challengeCode": "int sum = 0;\nfor (int i = 1; i <= 10; i++)\n{\n    sum = 0;\n    sum += i * 2;\n}\nConsole.WriteLine(sum);",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Обнуление внутри тела уничтожает результат предыдущих итераций. Без обнуления значения накапливаются.",
-        "challengeResult": "20",
-        "options": [
-          "20",
-          "21",
-          "19",
-          "22"
         ],
         "correctIndex": 0
       }
@@ -4268,125 +4300,129 @@ const codeLessons = [
     "exampleCode": "int count = 0;\nfor (int i = 0; i <= 3; i++)\n    count++;\nConsole.WriteLine(count);",
     "exampleResult": "4",
     "exampleNote": "При старте с нуля включённая граница 3 даёт четыре итерации, а не три.",
-    "kind": "Что выведет код?",
-    "challengeCode": "int count = 0;\nfor (int i = 0; i <= 4; i++)\n    count++;\nConsole.WriteLine(count);",
-    "prompt": "Что появится в консоли?",
+    "kind": "Число итераций",
+    "challengeCode": "int count = 0;\nfor (int i = 0; i <= 3; i++)\n{\n    count++;\n}\nConsole.WriteLine(count);",
+    "prompt": "Сколько раз выполнится тело?",
     "options": [
-      "3",
       "4",
       "5",
+      "3",
       "6"
     ],
-    "correctIndex": 2,
-    "explanation": "Значения 0, 1, 2, 3, 4 дают пять итераций. Для четырёх нужна граница i < 4.",
-    "challengeResult": "5",
+    "correctIndex": 0,
+    "explanation": "При <= 3 тело выполняется для i = 0, 1, 2, 3. Включённая верхняя граница даёт четыре прохода.",
+    "challengeResult": "4",
     "codeDeckId": "practice-loops-control",
     "variants": [
       {
-        "challengeCode": "int count = 0;\nfor (int i = 0; i <= 2; i++)\n{\n    count++;\n}\nConsole.WriteLine(count);",
+        "challengeCode": "int i;\nfor (i = 0; i < 1; i += 1)\n{\n}\nConsole.WriteLine(i);",
+        "challengeResult": "1",
+        "prompt": "Чему равно i после выхода из цикла?",
+        "kind": "Состояние после цикла",
+        "explanation": "Тело выполняется при i = 0. После последнего шага i = 1, и условие становится ложным.",
+        "options": [
+          "1",
+          "0",
+          "2",
+          "3"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int i;\nfor (i = 0; i < 2; i += 1)\n{\n}\nConsole.WriteLine(i);",
+        "challengeResult": "2",
+        "prompt": "Чему равно i после выхода из цикла?",
+        "kind": "Состояние после цикла",
+        "explanation": "Тело выполняется при i = 0, 1. После последнего шага i = 2, и условие становится ложным.",
+        "options": [
+          "2",
+          "1",
+          "3",
+          "4"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int i;\nfor (i = 0; i < 3; i += 1)\n{\n}\nConsole.WriteLine(i);",
+        "challengeResult": "3",
+        "prompt": "Чему равно i после выхода из цикла?",
+        "kind": "Состояние после цикла",
+        "explanation": "Тело выполняется при i = 0, 1, 2. После последнего шага i = 3, и условие становится ложным.",
         "options": [
           "3",
           "2",
+          "4",
+          "5"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int i;\nfor (i = 0; i < 4; i += 1)\n{\n}\nConsole.WriteLine(i);",
+        "challengeResult": "4",
+        "prompt": "Чему равно i после выхода из цикла?",
+        "kind": "Состояние после цикла",
+        "explanation": "Тело выполняется при i = 0, 1, 2, 3. После последнего шага i = 4, и условие становится ложным.",
+        "options": [
+          "4",
+          "3",
+          "5",
+          "6"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int i;\nfor (i = 0; i <= 0; i += 1)\n{\n}\nConsole.WriteLine(i);",
+        "challengeResult": "1",
+        "prompt": "Чему равно i после выхода из цикла?",
+        "kind": "Состояние после цикла",
+        "explanation": "Тело выполняется при i = 0. После последнего шага i = 1, и условие становится ложным.",
+        "options": [
           "1",
+          "0",
+          "2",
+          "3"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int i;\nfor (i = 0; i <= 1; i += 1)\n{\n}\nConsole.WriteLine(i);",
+        "challengeResult": "2",
+        "prompt": "Чему равно i после выхода из цикла?",
+        "kind": "Состояние после цикла",
+        "explanation": "Тело выполняется при i = 0, 1. После последнего шага i = 2, и условие становится ложным.",
+        "options": [
+          "2",
+          "1",
+          "3",
           "4"
         ],
-        "correctIndex": 0,
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int i;\nfor (i = 0; i <= 2; i += 1)\n{\n}\nConsole.WriteLine(i);",
         "challengeResult": "3",
-        "explanation": "От 0 до 2 включительно — 3 значений, поэтому 3 итераций."
-      },
-      {
-        "challengeCode": "int count = 0;\nfor (int i = 0; i <= 5; i++)\n{\n    count++;\n}\nConsole.WriteLine(count);",
+        "prompt": "Чему равно i после выхода из цикла?",
+        "kind": "Состояние после цикла",
+        "explanation": "Тело выполняется при i = 0, 1, 2. После последнего шага i = 3, и условие становится ложным.",
         "options": [
-          "6",
-          "5",
+          "3",
+          "2",
           "4",
-          "7"
-        ],
-        "correctIndex": 0,
-        "challengeResult": "6",
-        "explanation": "От 0 до 5 включительно — 6 значений, поэтому 6 итераций."
-      },
-      {
-        "challengeCode": "int i;\nfor (i = 0; i < 7; i += 3)\n{\n}\nConsole.WriteLine(i);",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "После последней итерации for выполняет шаг, затем ложная проверка завершает цикл. Переменная объявлена вне for.",
-        "challengeResult": "9",
-        "options": [
-          "9",
-          "10",
-          "8",
-          "11"
+          "5"
         ],
         "correctIndex": 0
       },
       {
-        "challengeCode": "int i;\nfor (i = 1; i < 8; i += 1)\n{\n}\nConsole.WriteLine(i);",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "После последней итерации for выполняет шаг, затем ложная проверка завершает цикл. Переменная объявлена вне for.",
-        "challengeResult": "8",
+        "challengeCode": "int i;\nfor (i = 0; i <= 3; i += 1)\n{\n}\nConsole.WriteLine(i);",
+        "challengeResult": "4",
+        "prompt": "Чему равно i после выхода из цикла?",
+        "kind": "Состояние после цикла",
+        "explanation": "Тело выполняется при i = 0, 1, 2, 3. После последнего шага i = 4, и условие становится ложным.",
         "options": [
-          "8",
-          "9",
-          "7",
-          "10"
-        ],
-        "correctIndex": 0
-      },
-      {
-        "challengeCode": "int i;\nfor (i = 0; i < 9; i += 2)\n{\n}\nConsole.WriteLine(i);",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "После последней итерации for выполняет шаг, затем ложная проверка завершает цикл. Переменная объявлена вне for.",
-        "challengeResult": "10",
-        "options": [
-          "10",
-          "11",
-          "9",
-          "12"
-        ],
-        "correctIndex": 0
-      },
-      {
-        "challengeCode": "int i;\nfor (i = 1; i < 10; i += 3)\n{\n}\nConsole.WriteLine(i);",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "После последней итерации for выполняет шаг, затем ложная проверка завершает цикл. Переменная объявлена вне for.",
-        "challengeResult": "10",
-        "options": [
-          "10",
-          "11",
-          "9",
-          "12"
-        ],
-        "correctIndex": 0
-      },
-      {
-        "challengeCode": "int i;\nfor (i = 0; i < 11; i += 1)\n{\n}\nConsole.WriteLine(i);",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "После последней итерации for выполняет шаг, затем ложная проверка завершает цикл. Переменная объявлена вне for.",
-        "challengeResult": "11",
-        "options": [
-          "11",
-          "12",
-          "10",
-          "13"
-        ],
-        "correctIndex": 0
-      },
-      {
-        "challengeCode": "int i;\nfor (i = 1; i < 12; i += 2)\n{\n}\nConsole.WriteLine(i);",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "После последней итерации for выполняет шаг, затем ложная проверка завершает цикл. Переменная объявлена вне for.",
-        "challengeResult": "13",
-        "options": [
-          "13",
-          "14",
-          "12",
-          "15"
+          "4",
+          "3",
+          "5",
+          "6"
         ],
         "correctIndex": 0
       }
@@ -5814,17 +5850,17 @@ const codeLessons = [
     "exampleResult": "6",
     "exampleNote": "Для накопления произведения начальное значение берут равным 1, затем умножают его на каждый очередной множитель.",
     "kind": "Что выведет код?",
-    "challengeCode": "int product = 1;\nfor (int i = 1; i <= 4; i++)\n{\n    product *= i;\n}\nConsole.WriteLine(product);",
+    "challengeCode": "int product = 1;\nfor (int i = 1; i <= 3; i++)\n{\n    product *= i;\n}\nConsole.WriteLine(product);",
     "prompt": "Что появится в консоли?",
     "options": [
-      "24",
-      "10",
-      "0",
-      "4"
+      "6",
+      "7",
+      "5",
+      "8"
     ],
     "correctIndex": 0,
-    "explanation": "Накопление произведения начинается с 1, затем умножаются 1, 2, 3, 4. При старте с 0 всё произведение осталось бы нулём.",
-    "challengeResult": "24"
+    "explanation": "Накопитель начинается с 1. Три прохода дают 1 × 2 × 3 = 6.",
+    "challengeResult": "6"
   },
   {
     "id": "more7-reset-accumulator",
@@ -5856,17 +5892,17 @@ const codeLessons = [
     "exampleResult": "8",
     "exampleNote": "continue пропускает остаток текущей итерации, включая прибавление её i к сумме.",
     "kind": "Что выведет код?",
-    "challengeCode": "int sum = 0;\nfor (int i = 1; i <= 5; i++)\n{\n    if (i == 3)\n    {\n        continue;\n    }\n    sum += i;\n}\nConsole.WriteLine(sum);",
+    "challengeCode": "int sum = 0;\nfor (int i = 1; i <= 4; i++)\n{\n    if (i == 2)\n    {\n        continue;\n    }\n    sum += i;\n}\nConsole.WriteLine(sum);",
     "prompt": "Что появится в консоли?",
     "options": [
-      "12",
-      "15",
-      "3",
+      "8",
+      "9",
+      "7",
       "10"
     ],
     "correctIndex": 0,
-    "explanation": "continue пропускает прибавление 3. В сумму входят 1, 2, 4 и 5, всего 12.",
-    "challengeResult": "12"
+    "explanation": "continue пропускает прибавление 2. В sum попадают 1, 3 и 4: итог 8.",
+    "challengeResult": "8"
   },
   {
     "id": "more7-break-sum",
@@ -5919,17 +5955,17 @@ const codeLessons = [
     "exampleResult": "4",
     "exampleNote": "break завершает только внутренний цикл. Внешний цикл продолжает работу и заново запускает внутренний.",
     "kind": "Что выведет код?",
-    "challengeCode": "int count = 0;\nfor (int row = 0; row < 3; row++)\n{\n    for (int col = 0; col < 5; col++)\n    {\n        if (col == 2)\n        {\n            break;\n        }\n        count++;\n    }\n}\nConsole.WriteLine(count);",
+    "challengeCode": "int count = 0;\nfor (int row = 0; row < 2; row++)\n{\n    for (int col = 0; col < 3; col++)\n    {\n        if (col == 2)\n        {\n            break;\n        }\n        count++;\n    }\n}\nConsole.WriteLine(count);",
     "prompt": "Что появится в консоли?",
     "options": [
-      "6",
-      "2",
+      "4",
+      "5",
       "3",
-      "15"
+      "6"
     ],
     "correctIndex": 0,
-    "explanation": "break завершает ближайший внутренний цикл. В каждой из трёх внешних итераций count увеличивается дважды.",
-    "challengeResult": "6"
+    "explanation": "break завершает только внутренний цикл. Для каждого row учитываются col = 0 и 1. Внешний цикл всё равно выполняется два раза.",
+    "challengeResult": "4"
   },
   {
     "id": "more7-product-start",
@@ -5940,8 +5976,8 @@ const codeLessons = [
     "exampleResult": "6",
     "exampleNote": "Нейтральное начальное значение для произведения равно 1: оно не меняет результат последующих умножений.",
     "kind": "Заполните пропуск",
-    "challengeCode": "int product = /* ??? */;\nfor (int i = 1; i <= 4; i++)\n{\n    product *= i;\n}\nConsole.WriteLine(product);",
-    "prompt": "Что поставить вместо /* ??? */, чтобы получить результат: 24?",
+    "challengeCode": "int product = /* ??? */;\nfor (int i = 1; i <= 3; i++)\n{\n    product *= i;\n}\nConsole.WriteLine(product);",
+    "prompt": "Какое начальное значение product даст произведение 1 × 2 × 3 = 6?",
     "options": [
       "1",
       "0",
@@ -5949,8 +5985,8 @@ const codeLessons = [
       "4"
     ],
     "correctIndex": 0,
-    "explanation": "Для произведения начальное значение 1 не меняет результат. Ноль обнулит произведение; 2 и 4 увеличат его в соответствующее число раз.",
-    "solutionResult": "24"
+    "explanation": "Произведение начинают с 1. Ноль обнулит все последующие умножения.",
+    "solutionResult": "6"
   },
   {
     "id": "more7-boundary-fill",
@@ -8854,88 +8890,76 @@ const codeLessons = [
         "explanation": "IsEven проверяет остаток 9 % 2. Выбирается сообщение «Нечётное»."
       },
       {
-        "challengeCode": "Console.WriteLine(Sum(6));\nint Sum(int limit)\n{\n    int sum = 0;\n    for (int i = 1; i <= limit; i++)\n    {\n        if (i % 2 == 0)\n        {\n            sum += i;\n        }\n    }\n    return sum;\n}",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Метод суммирует только значения, подходящие под условие. Начальное значение накопителя задаётся для каждого вызова.",
-        "challengeResult": "12",
+        "challengeCode": "if (IsEven(0))\n{\n    Console.WriteLine(\"Чётное\");\n}\nelse\n{\n    Console.WriteLine(\"Нечётное\");\n}\nbool IsEven(int number)\n{\n    return number % 2 == 0;\n}",
         "options": [
-          "12",
-          "13",
-          "11",
-          "14"
+          "Чётное",
+          "Нечётное",
+          "True",
+          "False"
         ],
-        "correctIndex": 0
+        "correctIndex": 0,
+        "challengeResult": "Чётное",
+        "explanation": "Остаток 0 % 2 равен 0. Метод возвращает true, поэтому выводится «Чётное»."
       },
       {
-        "challengeCode": "Console.WriteLine(Sum(7));\nint Sum(int limit)\n{\n    int sum = 0;\n    for (int i = 1; i <= limit; i++)\n    {\n        if (i % 2 == 1)\n        {\n            sum += i;\n        }\n    }\n    return sum;\n}",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Метод суммирует только значения, подходящие под условие. Начальное значение накопителя задаётся для каждого вызова.",
-        "challengeResult": "16",
+        "challengeCode": "if (IsEven(-2))\n{\n    Console.WriteLine(\"Чётное\");\n}\nelse\n{\n    Console.WriteLine(\"Нечётное\");\n}\nbool IsEven(int number)\n{\n    return number % 2 == 0;\n}",
         "options": [
-          "16",
-          "17",
-          "15",
-          "18"
+          "Чётное",
+          "Нечётное",
+          "True",
+          "False"
         ],
-        "correctIndex": 0
+        "correctIndex": 0,
+        "challengeResult": "Чётное",
+        "explanation": "Остаток -2 % 2 равен 0. Метод возвращает true, поэтому выводится «Чётное»."
       },
       {
-        "challengeCode": "Console.WriteLine(Sum(8));\nint Sum(int limit)\n{\n    int sum = 0;\n    for (int i = 1; i <= limit; i++)\n    {\n        if (i % 2 == 0)\n        {\n            sum += i;\n        }\n    }\n    return sum;\n}",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Метод суммирует только значения, подходящие под условие. Начальное значение накопителя задаётся для каждого вызова.",
-        "challengeResult": "20",
+        "challengeCode": "if (IsEven(-3))\n{\n    Console.WriteLine(\"Чётное\");\n}\nelse\n{\n    Console.WriteLine(\"Нечётное\");\n}\nbool IsEven(int number)\n{\n    return number % 2 == 0;\n}",
         "options": [
-          "20",
-          "21",
-          "19",
-          "22"
+          "Нечётное",
+          "Чётное",
+          "True",
+          "False"
         ],
-        "correctIndex": 0
+        "correctIndex": 0,
+        "challengeResult": "Нечётное",
+        "explanation": "Остаток -3 % 2 не равен 0. Метод возвращает false, поэтому выводится «Нечётное»."
       },
       {
-        "challengeCode": "Console.WriteLine(Sum(9));\nint Sum(int limit)\n{\n    int sum = 0;\n    for (int i = 1; i <= limit; i++)\n    {\n        if (i % 2 == 1)\n        {\n            sum += i;\n        }\n    }\n    return sum;\n}",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Метод суммирует только значения, подходящие под условие. Начальное значение накопителя задаётся для каждого вызова.",
-        "challengeResult": "25",
+        "challengeCode": "if (IsEven(4))\n{\n    Console.WriteLine(\"Чётное\");\n}\nelse\n{\n    Console.WriteLine(\"Нечётное\");\n}\nbool IsEven(int number)\n{\n    return number % 2 == 0;\n}",
         "options": [
-          "25",
-          "26",
-          "24",
-          "27"
+          "Чётное",
+          "Нечётное",
+          "True",
+          "False"
         ],
-        "correctIndex": 0
+        "correctIndex": 0,
+        "challengeResult": "Чётное",
+        "explanation": "Остаток 4 % 2 равен 0. Метод возвращает true, поэтому выводится «Чётное»."
       },
       {
-        "challengeCode": "Console.WriteLine(Sum(10));\nint Sum(int limit)\n{\n    int sum = 0;\n    for (int i = 1; i <= limit; i++)\n    {\n        if (i % 2 == 0)\n        {\n            sum += i;\n        }\n    }\n    return sum;\n}",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Метод суммирует только значения, подходящие под условие. Начальное значение накопителя задаётся для каждого вызова.",
-        "challengeResult": "30",
+        "challengeCode": "if (IsEven(1))\n{\n    Console.WriteLine(\"Чётное\");\n}\nelse\n{\n    Console.WriteLine(\"Нечётное\");\n}\nbool IsEven(int number)\n{\n    return number % 2 == 0;\n}",
         "options": [
-          "30",
-          "31",
-          "29",
-          "32"
+          "Нечётное",
+          "Чётное",
+          "True",
+          "False"
         ],
-        "correctIndex": 0
+        "correctIndex": 0,
+        "challengeResult": "Нечётное",
+        "explanation": "Остаток 1 % 2 не равен 0. Метод возвращает false, поэтому выводится «Нечётное»."
       },
       {
-        "challengeCode": "Console.WriteLine(Sum(11));\nint Sum(int limit)\n{\n    int sum = 0;\n    for (int i = 1; i <= limit; i++)\n    {\n        if (i % 2 == 1)\n        {\n            sum += i;\n        }\n    }\n    return sum;\n}",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Метод суммирует только значения, подходящие под условие. Начальное значение накопителя задаётся для каждого вызова.",
-        "challengeResult": "36",
+        "challengeCode": "if (IsEven(-1))\n{\n    Console.WriteLine(\"Чётное\");\n}\nelse\n{\n    Console.WriteLine(\"Нечётное\");\n}\nbool IsEven(int number)\n{\n    return number % 2 == 0;\n}",
         "options": [
-          "36",
-          "37",
-          "35",
-          "38"
+          "Нечётное",
+          "Чётное",
+          "True",
+          "False"
         ],
-        "correctIndex": 0
+        "correctIndex": 0,
+        "challengeResult": "Нечётное",
+        "explanation": "Остаток -1 % 2 не равен 0. Метод возвращает false, поэтому выводится «Нечётное»."
       }
     ]
   },
@@ -9007,127 +9031,131 @@ const codeLessons = [
     "codeDeckId": "lab9-small-methods",
     "deckId": "methods-purchase",
     "term": "Расчётный метод",
-    "exampleCode": "Console.WriteLine(SumTo(3));\nint SumTo(int n)\n{\n    int sum = 0;\n    for (int i = 1; i <= n; i++)\n    {\n        sum += i;\n    }\n    return sum;\n}",
-    "exampleResult": "6",
-    "exampleNote": "Локальный накопитель складывает числа от 1 до переданного n включительно.",
+    "exampleCode": "Console.WriteLine(Sum(2));\nint Sum(int limit)\n{\n    int sum = 0;\n    for (int i = 1; i <= limit; i++)\n    {\n        sum += i;\n    }\n    return sum;\n}",
+    "exampleResult": "3",
+    "exampleNote": "return после цикла возвращает сумму выбранных значений. Цикл перебирает i от 1 до 2.",
     "kind": "Что выведет код?",
-    "challengeCode": "Console.WriteLine(SumTo(5));\nint SumTo(int n)\n{\n    int sum = 0;\n    for (int i = 1; i <= n; i++)\n    {\n        sum += i;\n    }\n    return sum;\n}",
+    "challengeCode": "Console.WriteLine(Sum(2));\nint Sum(int limit)\n{\n    int sum = 0;\n    for (int i = 1; i <= limit; i++)\n    {\n        sum += i;\n    }\n    return sum;\n}",
     "prompt": "Что появится в консоли?",
     "options": [
-      "15",
-      "5",
-      "10",
-      "25"
+      "3",
+      "4",
+      "2",
+      "5"
     ],
     "correctIndex": 0,
-    "explanation": "Сумма равна 1 + 2 + 3 + 4 + 5 = 15.",
-    "challengeResult": "15",
+    "explanation": "return после цикла возвращает сумму выбранных значений. Цикл перебирает i от 1 до 2.",
+    "challengeResult": "3",
     "variants": [
       {
-        "challengeCode": "Console.WriteLine(SumTo(4));\nint SumTo(int n)\n{\n    int sum = 0;\n    for (int i = 1; i <= n; i++)\n    {\n        sum += i;\n    }\n    return sum;\n}",
+        "challengeCode": "Console.WriteLine(Sum(1));\nint Sum(int limit)\n{\n    int sum = 0;\n    for (int i = 1; i <= limit; i++)\n    {\n        sum += i;\n    }\n    return sum;\n}",
+        "challengeResult": "1",
+        "prompt": "Что появится в консоли?",
+        "kind": "Что выведет код?",
+        "explanation": "return после цикла возвращает сумму выбранных значений. Цикл перебирает i от 1 до 1.",
+        "options": [
+          "1",
+          "2",
+          "0",
+          "3"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "Console.WriteLine(Sum(1));\nint Sum(int limit)\n{\n    int sum = 0;\n    for (int i = 1; i <= limit; i++)\n    {\n        sum += i;\n        return sum;\n    }\n    return sum;\n}",
+        "challengeResult": "1",
+        "prompt": "Что появится в консоли?",
+        "kind": "Что выведет код?",
+        "explanation": "return внутри цикла завершает метод на первом проходе. До следующих i выполнение не доходит.",
+        "options": [
+          "1",
+          "2",
+          "0",
+          "3"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "Console.WriteLine(Sum(2));\nint Sum(int limit)\n{\n    int sum = 0;\n    for (int i = 1; i <= limit; i++)\n    {\n        sum += i;\n        return sum;\n    }\n    return sum;\n}",
+        "challengeResult": "1",
+        "prompt": "Что появится в консоли?",
+        "kind": "Что выведет код?",
+        "explanation": "return внутри цикла завершает метод на первом проходе. До следующих i выполнение не доходит.",
+        "options": [
+          "1",
+          "2",
+          "0",
+          "3"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "Console.WriteLine(Sum(3));\nint Sum(int limit)\n{\n    int sum = 0;\n    for (int i = 1; i <= limit; i++)\n    {\n        sum += i;\n    }\n    return sum;\n}",
+        "challengeResult": "6",
+        "prompt": "Что появится в консоли?",
+        "kind": "Что выведет код?",
+        "explanation": "return после цикла возвращает сумму выбранных значений. Цикл перебирает i от 1 до 3.",
+        "options": [
+          "6",
+          "7",
+          "5",
+          "8"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "Console.WriteLine(Sum(3));\nint Sum(int limit)\n{\n    int sum = 0;\n    for (int i = 1; i <= limit; i++)\n    {\n        sum += i;\n        return sum;\n    }\n    return sum;\n}",
+        "challengeResult": "1",
+        "prompt": "Что появится в консоли?",
+        "kind": "Что выведет код?",
+        "explanation": "return внутри цикла завершает метод на первом проходе. До следующих i выполнение не доходит.",
+        "options": [
+          "1",
+          "2",
+          "0",
+          "3"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "Console.WriteLine(Sum(4));\nint Sum(int limit)\n{\n    int sum = 0;\n    for (int i = 1; i <= limit; i++)\n    {\n        sum += i;\n    }\n    return sum;\n}",
+        "challengeResult": "10",
+        "prompt": "Что появится в консоли?",
+        "kind": "Что выведет код?",
+        "explanation": "return после цикла возвращает сумму выбранных значений. Цикл перебирает i от 1 до 4.",
         "options": [
           "10",
-          "4",
-          "16",
-          "6"
-        ],
-        "correctIndex": 0,
-        "challengeResult": "10",
-        "explanation": "Сумма чисел от 1 до 4 включительно равна 10."
-      },
-      {
-        "challengeCode": "Console.WriteLine(SumTo(6));\nint SumTo(int n)\n{\n    int sum = 0;\n    for (int i = 1; i <= n; i++)\n    {\n        sum += i;\n    }\n    return sum;\n}",
-        "options": [
-          "21",
-          "6",
-          "36",
-          "15"
-        ],
-        "correctIndex": 0,
-        "challengeResult": "21",
-        "explanation": "Сумма чисел от 1 до 6 включительно равна 21."
-      },
-      {
-        "challengeCode": "Console.WriteLine(Sum(6));\nint Sum(int limit)\n{\n    int sum = 0;\n    for (int i = 1; i <= limit; i++)\n    {\n        if (i % 2 == 0)\n        {\n            sum += i;\n        }\n    }\n    return sum;\n}",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Метод суммирует только значения, подходящие под условие. Начальное значение накопителя задаётся для каждого вызова.",
-        "challengeResult": "12",
-        "options": [
-          "12",
-          "13",
           "11",
-          "14"
+          "9",
+          "12"
         ],
         "correctIndex": 0
       },
       {
-        "challengeCode": "Console.WriteLine(Sum(7));\nint Sum(int limit)\n{\n    int sum = 0;\n    for (int i = 1; i <= limit; i++)\n    {\n        if (i % 2 == 1)\n        {\n            sum += i;\n        }\n    }\n    return sum;\n}",
-        "challengeInput": "",
+        "challengeCode": "Console.WriteLine(Sum(4));\nint Sum(int limit)\n{\n    int sum = 0;\n    for (int i = 1; i <= limit; i++)\n    {\n        sum += i;\n        return sum;\n    }\n    return sum;\n}",
+        "challengeResult": "1",
         "prompt": "Что появится в консоли?",
-        "explanation": "Метод суммирует только значения, подходящие под условие. Начальное значение накопителя задаётся для каждого вызова.",
-        "challengeResult": "16",
+        "kind": "Что выведет код?",
+        "explanation": "return внутри цикла завершает метод на первом проходе. До следующих i выполнение не доходит.",
         "options": [
-          "16",
-          "17",
-          "15",
-          "18"
+          "1",
+          "2",
+          "0",
+          "3"
         ],
         "correctIndex": 0
       },
       {
-        "challengeCode": "Console.WriteLine(Sum(8));\nint Sum(int limit)\n{\n    int sum = 0;\n    for (int i = 1; i <= limit; i++)\n    {\n        if (i % 2 == 0)\n        {\n            sum += i;\n        }\n    }\n    return sum;\n}",
-        "challengeInput": "",
+        "challengeCode": "Console.WriteLine(Sum(1));\nint Sum(int limit)\n{\n    int sum = 0;\n    for (int i = 1; i <= limit; i++)\n    {\n        if (i % 2 == 0)\n        {\n            sum += i;\n        }\n    }\n    return sum;\n}",
+        "challengeResult": "0",
         "prompt": "Что появится в консоли?",
-        "explanation": "Метод суммирует только значения, подходящие под условие. Начальное значение накопителя задаётся для каждого вызова.",
-        "challengeResult": "20",
+        "kind": "Что выведет код?",
+        "explanation": "return после цикла возвращает сумму выбранных значений. Цикл перебирает i от 1 до 1.",
         "options": [
-          "20",
-          "21",
-          "19",
-          "22"
-        ],
-        "correctIndex": 0
-      },
-      {
-        "challengeCode": "Console.WriteLine(Sum(9));\nint Sum(int limit)\n{\n    int sum = 0;\n    for (int i = 1; i <= limit; i++)\n    {\n        if (i % 2 == 1)\n        {\n            sum += i;\n        }\n    }\n    return sum;\n}",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Метод суммирует только значения, подходящие под условие. Начальное значение накопителя задаётся для каждого вызова.",
-        "challengeResult": "25",
-        "options": [
-          "25",
-          "26",
-          "24",
-          "27"
-        ],
-        "correctIndex": 0
-      },
-      {
-        "challengeCode": "Console.WriteLine(Sum(10));\nint Sum(int limit)\n{\n    int sum = 0;\n    for (int i = 1; i <= limit; i++)\n    {\n        if (i % 2 == 0)\n        {\n            sum += i;\n        }\n    }\n    return sum;\n}",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Метод суммирует только значения, подходящие под условие. Начальное значение накопителя задаётся для каждого вызова.",
-        "challengeResult": "30",
-        "options": [
-          "30",
-          "31",
-          "29",
-          "32"
-        ],
-        "correctIndex": 0
-      },
-      {
-        "challengeCode": "Console.WriteLine(Sum(11));\nint Sum(int limit)\n{\n    int sum = 0;\n    for (int i = 1; i <= limit; i++)\n    {\n        if (i % 2 == 1)\n        {\n            sum += i;\n        }\n    }\n    return sum;\n}",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Метод суммирует только значения, подходящие под условие. Начальное значение накопителя задаётся для каждого вызова.",
-        "challengeResult": "36",
-        "options": [
-          "36",
-          "37",
-          "35",
-          "38"
+          "0",
+          "1",
+          "-1",
+          "2"
         ],
         "correctIndex": 0
       }
@@ -14296,34 +14324,34 @@ const codeLessons = [
     "codeDeckId": "lab7-mixed-reading",
     "deckId": "loops-basics",
     "term": "for",
-    "exampleCode": "int count = 0;\nfor (int i = 2; i < 14; i += 3)\n{\n    count++;\n}\nConsole.WriteLine(count);",
-    "exampleNote": "Выпишите значения счётчика с заданным шагом до нарушения границы. Считается выполнение тела, а не последнее значение счётчика.",
-    "kind": "Что выведет код?",
-    "challengeCode": "int count = 0;\nfor (int i = 0; i < 6; i += 1)\n{\n    count++;\n}\nConsole.WriteLine(count);",
+    "exampleCode": "int count = 0;\nfor (int i = 0; i < 3; i += 1)\n{\n    count++;\n}\nConsole.WriteLine(count);",
+    "exampleNote": "Тело выполняется при i = 0, 1, 2. Количество повторений: 3.",
+    "kind": "Число итераций",
+    "challengeCode": "int count = 0;\nfor (int i = 0; i < 3; i += 1)\n{\n    count++;\n}\nConsole.WriteLine(count);",
     "challengeInput": "",
-    "prompt": "Что появится в консоли?",
-    "explanation": "Выпишите значения счётчика с заданным шагом до нарушения границы. Считается выполнение тела, а не последнее значение счётчика.",
+    "prompt": "Сколько раз выполнится тело цикла? Это число выводится в конце.",
+    "explanation": "Тело выполняется при i = 0, 1, 2. Количество повторений: 3.",
     "variants": [
       {
-        "challengeCode": "int count = 0;\nfor (int i = 1; i <= 7; i += 2)\n{\n    count++;\n}\nConsole.WriteLine(count);",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Выпишите значения счётчика с заданным шагом до нарушения границы. Считается выполнение тела, а не последнее значение счётчика.",
-        "challengeResult": "4",
+        "challengeCode": "int count = 0;\nfor (int i = 0; i < 1; i += 1)\n{\n    count++;\n}\nConsole.WriteLine(count);",
+        "challengeResult": "1",
+        "prompt": "Сколько раз выполнится тело цикла? Это число выводится в конце.",
+        "kind": "Число итераций",
+        "explanation": "Тело выполняется при i = 0. Количество повторений: 1.",
         "options": [
-          "4",
-          "5",
-          "3",
-          "6"
+          "1",
+          "2",
+          "0",
+          "3"
         ],
         "correctIndex": 0
       },
       {
-        "challengeCode": "int count = 0;\nfor (int i = 2; i < 8; i += 3)\n{\n    count++;\n}\nConsole.WriteLine(count);",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Выпишите значения счётчика с заданным шагом до нарушения границы. Считается выполнение тела, а не последнее значение счётчика.",
+        "challengeCode": "int count = 0;\nfor (int i = 0; i < 2; i += 1)\n{\n    count++;\n}\nConsole.WriteLine(count);",
         "challengeResult": "2",
+        "prompt": "Сколько раз выполнится тело цикла? Это число выводится в конце.",
+        "kind": "Число итераций",
+        "explanation": "Тело выполняется при i = 0, 1. Количество повторений: 2.",
         "options": [
           "2",
           "3",
@@ -14333,11 +14361,147 @@ const codeLessons = [
         "correctIndex": 0
       },
       {
-        "challengeCode": "int count = 0;\nfor (int i = 0; i <= 9; i += 1)\n{\n    count++;\n}\nConsole.WriteLine(count);",
-        "challengeInput": "",
+        "challengeCode": "int count = 0;\nfor (int i = 0; i < 4; i += 1)\n{\n    count++;\n}\nConsole.WriteLine(count);",
+        "challengeResult": "4",
+        "prompt": "Сколько раз выполнится тело цикла? Это число выводится в конце.",
+        "kind": "Число итераций",
+        "explanation": "Тело выполняется при i = 0, 1, 2, 3. Количество повторений: 4.",
+        "options": [
+          "4",
+          "5",
+          "3",
+          "6"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int count = 0;\nfor (int i = 0; i <= 0; i += 1)\n{\n    count++;\n}\nConsole.WriteLine(count);",
+        "challengeResult": "1",
+        "prompt": "Сколько раз выполнится тело цикла? Это число выводится в конце.",
+        "kind": "Число итераций",
+        "explanation": "Тело выполняется при i = 0. Количество повторений: 1.",
+        "options": [
+          "1",
+          "2",
+          "0",
+          "3"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int count = 0;\nfor (int i = 0; i <= 1; i += 1)\n{\n    count++;\n}\nConsole.WriteLine(count);",
+        "challengeResult": "2",
+        "prompt": "Сколько раз выполнится тело цикла? Это число выводится в конце.",
+        "kind": "Число итераций",
+        "explanation": "Тело выполняется при i = 0, 1. Количество повторений: 2.",
+        "options": [
+          "2",
+          "3",
+          "1",
+          "4"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int count = 0;\nfor (int i = 0; i <= 2; i += 1)\n{\n    count++;\n}\nConsole.WriteLine(count);",
+        "challengeResult": "3",
+        "prompt": "Сколько раз выполнится тело цикла? Это число выводится в конце.",
+        "kind": "Число итераций",
+        "explanation": "Тело выполняется при i = 0, 1, 2. Количество повторений: 3.",
+        "options": [
+          "3",
+          "4",
+          "2",
+          "5"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int count = 0;\nfor (int i = 0; i <= 3; i += 1)\n{\n    count++;\n}\nConsole.WriteLine(count);",
+        "challengeResult": "4",
+        "prompt": "Сколько раз выполнится тело цикла? Это число выводится в конце.",
+        "kind": "Число итераций",
+        "explanation": "Тело выполняется при i = 0, 1, 2, 3. Количество повторений: 4.",
+        "options": [
+          "4",
+          "5",
+          "3",
+          "6"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int count = 0;\nfor (int i = 0; i < 2; i += 2)\n{\n    count++;\n}\nConsole.WriteLine(count);",
+        "challengeResult": "1",
+        "prompt": "Сколько раз выполнится тело цикла? Это число выводится в конце.",
+        "kind": "Число итераций",
+        "explanation": "Тело выполняется при i = 0. Количество повторений: 1.",
+        "options": [
+          "1",
+          "2",
+          "0",
+          "3"
+        ],
+        "correctIndex": 0
+      }
+    ],
+    "challengeResult": "3",
+    "options": [
+      "3",
+      "4",
+      "2",
+      "5"
+    ],
+    "correctIndex": 0,
+    "exampleResult": "3"
+  },
+  {
+    "id": "expand-7-loop-descending",
+    "codeDeckId": "lab7-mixed-reading",
+    "deckId": "loops-control",
+    "term": "Убывающий цикл",
+    "exampleCode": "int sum = 0;\nfor (int i = 3; i > 0; i -= 1)\n{\n    sum += i;\n}\nConsole.WriteLine(sum);",
+    "exampleNote": "Граница и шаг выбирают i = 3, 2, 1. Их сумма 3 + 2 + 1 = 6.",
+    "kind": "Что выведет код?",
+    "challengeCode": "int sum = 0;\nfor (int i = 3; i > 0; i -= 1)\n{\n    sum += i;\n}\nConsole.WriteLine(sum);",
+    "challengeInput": "",
+    "prompt": "Что появится в консоли?",
+    "explanation": "Граница и шаг выбирают i = 3, 2, 1. Их сумма 3 + 2 + 1 = 6.",
+    "variants": [
+      {
+        "challengeCode": "int sum = 0;\nfor (int i = 1; i > 0; i -= 1)\n{\n    sum += i;\n}\nConsole.WriteLine(sum);",
+        "challengeResult": "1",
         "prompt": "Что появится в консоли?",
-        "explanation": "Выпишите значения счётчика с заданным шагом до нарушения границы. Считается выполнение тела, а не последнее значение счётчика.",
+        "kind": "Что выведет код?",
+        "explanation": "Граница и шаг выбирают i = 1. Их сумма 1 = 1.",
+        "options": [
+          "1",
+          "2",
+          "0",
+          "3"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int sum = 0;\nfor (int i = 2; i > 0; i -= 1)\n{\n    sum += i;\n}\nConsole.WriteLine(sum);",
+        "challengeResult": "3",
+        "prompt": "Что появится в консоли?",
+        "kind": "Что выведет код?",
+        "explanation": "Граница и шаг выбирают i = 2, 1. Их сумма 2 + 1 = 3.",
+        "options": [
+          "3",
+          "4",
+          "2",
+          "5"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int sum = 0;\nfor (int i = 4; i > 0; i -= 1)\n{\n    sum += i;\n}\nConsole.WriteLine(sum);",
         "challengeResult": "10",
+        "prompt": "Что появится в консоли?",
+        "kind": "Что выведет код?",
+        "explanation": "Граница и шаг выбирают i = 4, 3, 2, 1. Их сумма 4 + 3 + 2 + 1 = 10.",
         "options": [
           "10",
           "11",
@@ -14347,72 +14511,72 @@ const codeLessons = [
         "correctIndex": 0
       },
       {
-        "challengeCode": "int count = 0;\nfor (int i = 1; i < 10; i += 2)\n{\n    count++;\n}\nConsole.WriteLine(count);",
-        "challengeInput": "",
+        "challengeCode": "int sum = 0;\nfor (int i = 1; i >= 1; i -= 1)\n{\n    sum += i;\n}\nConsole.WriteLine(sum);",
+        "challengeResult": "1",
         "prompt": "Что появится в консоли?",
-        "explanation": "Выпишите значения счётчика с заданным шагом до нарушения границы. Считается выполнение тела, а не последнее значение счётчика.",
-        "challengeResult": "5",
+        "kind": "Что выведет код?",
+        "explanation": "Граница и шаг выбирают i = 1. Их сумма 1 = 1.",
         "options": [
-          "5",
-          "6",
-          "4",
-          "7"
+          "1",
+          "2",
+          "0",
+          "3"
         ],
         "correctIndex": 0
       },
       {
-        "challengeCode": "int count = 0;\nfor (int i = 2; i <= 11; i += 3)\n{\n    count++;\n}\nConsole.WriteLine(count);",
-        "challengeInput": "",
+        "challengeCode": "int sum = 0;\nfor (int i = 2; i >= 1; i -= 1)\n{\n    sum += i;\n}\nConsole.WriteLine(sum);",
+        "challengeResult": "3",
         "prompt": "Что появится в консоли?",
-        "explanation": "Выпишите значения счётчика с заданным шагом до нарушения границы. Считается выполнение тела, а не последнее значение счётчика.",
-        "challengeResult": "4",
+        "kind": "Что выведет код?",
+        "explanation": "Граница и шаг выбирают i = 2, 1. Их сумма 2 + 1 = 3.",
         "options": [
-          "4",
-          "5",
           "3",
-          "6"
+          "4",
+          "2",
+          "5"
         ],
         "correctIndex": 0
       },
       {
-        "challengeCode": "int count = 0;\nfor (int i = 0; i < 12; i += 1)\n{\n    count++;\n}\nConsole.WriteLine(count);",
-        "challengeInput": "",
+        "challengeCode": "int sum = 0;\nfor (int i = 3; i >= 1; i -= 1)\n{\n    sum += i;\n}\nConsole.WriteLine(sum);",
+        "challengeResult": "6",
         "prompt": "Что появится в консоли?",
-        "explanation": "Выпишите значения счётчика с заданным шагом до нарушения границы. Считается выполнение тела, а не последнее значение счётчика.",
-        "challengeResult": "12",
+        "kind": "Что выведет код?",
+        "explanation": "Граница и шаг выбирают i = 3, 2, 1. Их сумма 3 + 2 + 1 = 6.",
         "options": [
-          "12",
-          "13",
-          "11",
-          "14"
-        ],
-        "correctIndex": 0
-      },
-      {
-        "challengeCode": "int count = 0;\nfor (int i = 1; i <= 13; i += 2)\n{\n    count++;\n}\nConsole.WriteLine(count);",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Выпишите значения счётчика с заданным шагом до нарушения границы. Считается выполнение тела, а не последнее значение счётчика.",
-        "challengeResult": "7",
-        "options": [
+          "6",
           "7",
-          "8",
-          "6",
-          "9"
+          "5",
+          "8"
         ],
         "correctIndex": 0
       },
       {
-        "challengeCode": "int count = 0;\nfor (int i = 2; i < 14; i += 3)\n{\n    count++;\n}\nConsole.WriteLine(count);",
-        "challengeInput": "",
+        "challengeCode": "int sum = 0;\nfor (int i = 4; i >= 1; i -= 1)\n{\n    sum += i;\n}\nConsole.WriteLine(sum);",
+        "challengeResult": "10",
         "prompt": "Что появится в консоли?",
-        "explanation": "Выпишите значения счётчика с заданным шагом до нарушения границы. Считается выполнение тела, а не последнее значение счётчика.",
-        "challengeResult": "4",
+        "kind": "Что выведет код?",
+        "explanation": "Граница и шаг выбирают i = 4, 3, 2, 1. Их сумма 4 + 3 + 2 + 1 = 10.",
         "options": [
-          "4",
-          "5",
-          "3",
-          "6"
+          "10",
+          "11",
+          "9",
+          "12"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int sum = 0;\nfor (int i = 1; i > 0; i -= 2)\n{\n    sum += i;\n}\nConsole.WriteLine(sum);",
+        "challengeResult": "1",
+        "prompt": "Что появится в консоли?",
+        "kind": "Что выведет код?",
+        "explanation": "Граница и шаг выбирают i = 1. Их сумма 1 = 1.",
+        "options": [
+          "1",
+          "2",
+          "0",
+          "3"
         ],
         "correctIndex": 0
       }
@@ -14425,177 +14589,777 @@ const codeLessons = [
       "8"
     ],
     "correctIndex": 0,
-    "exampleResult": "4"
-  },
-  {
-    "id": "expand-7-loop-descending",
-    "codeDeckId": "lab7-mixed-reading",
-    "deckId": "loops-control",
-    "term": "Убывающий цикл",
-    "exampleCode": "int sum = 0;\nfor (int i = 14; i > 2; i -= 1)\n{\n    sum += i;\n}\nConsole.WriteLine(sum);",
-    "exampleNote": "Убывающий счётчик проходит только значения, удовлетворяющие границе. Шаг может пропускать числа.",
-    "kind": "Что выведет код?",
-    "challengeCode": "int sum = 0;\nfor (int i = 6; i > 0; i -= 1)\n{\n    sum += i;\n}\nConsole.WriteLine(sum);",
-    "challengeInput": "",
-    "prompt": "Что появится в консоли?",
-    "explanation": "Убывающий счётчик проходит только значения, удовлетворяющие границе. Шаг может пропускать числа.",
-    "variants": [
-      {
-        "challengeCode": "int sum = 0;\nfor (int i = 7; i > 1; i -= 2)\n{\n    sum += i;\n}\nConsole.WriteLine(sum);",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Убывающий счётчик проходит только значения, удовлетворяющие границе. Шаг может пропускать числа.",
-        "challengeResult": "15",
-        "options": [
-          "15",
-          "16",
-          "14",
-          "17"
-        ],
-        "correctIndex": 0
-      },
-      {
-        "challengeCode": "int sum = 0;\nfor (int i = 8; i > 2; i -= 1)\n{\n    sum += i;\n}\nConsole.WriteLine(sum);",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Убывающий счётчик проходит только значения, удовлетворяющие границе. Шаг может пропускать числа.",
-        "challengeResult": "33",
-        "options": [
-          "33",
-          "34",
-          "32",
-          "35"
-        ],
-        "correctIndex": 0
-      },
-      {
-        "challengeCode": "int sum = 0;\nfor (int i = 9; i > 0; i -= 2)\n{\n    sum += i;\n}\nConsole.WriteLine(sum);",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Убывающий счётчик проходит только значения, удовлетворяющие границе. Шаг может пропускать числа.",
-        "challengeResult": "25",
-        "options": [
-          "25",
-          "26",
-          "24",
-          "27"
-        ],
-        "correctIndex": 0
-      },
-      {
-        "challengeCode": "int sum = 0;\nfor (int i = 10; i > 1; i -= 1)\n{\n    sum += i;\n}\nConsole.WriteLine(sum);",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Убывающий счётчик проходит только значения, удовлетворяющие границе. Шаг может пропускать числа.",
-        "challengeResult": "54",
-        "options": [
-          "54",
-          "55",
-          "53",
-          "56"
-        ],
-        "correctIndex": 0
-      },
-      {
-        "challengeCode": "int sum = 0;\nfor (int i = 11; i > 2; i -= 2)\n{\n    sum += i;\n}\nConsole.WriteLine(sum);",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Убывающий счётчик проходит только значения, удовлетворяющие границе. Шаг может пропускать числа.",
-        "challengeResult": "35",
-        "options": [
-          "35",
-          "36",
-          "34",
-          "37"
-        ],
-        "correctIndex": 0
-      },
-      {
-        "challengeCode": "int sum = 0;\nfor (int i = 12; i > 0; i -= 1)\n{\n    sum += i;\n}\nConsole.WriteLine(sum);",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Убывающий счётчик проходит только значения, удовлетворяющие границе. Шаг может пропускать числа.",
-        "challengeResult": "78",
-        "options": [
-          "78",
-          "79",
-          "77",
-          "80"
-        ],
-        "correctIndex": 0
-      },
-      {
-        "challengeCode": "int sum = 0;\nfor (int i = 13; i > 1; i -= 2)\n{\n    sum += i;\n}\nConsole.WriteLine(sum);",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Убывающий счётчик проходит только значения, удовлетворяющие границе. Шаг может пропускать числа.",
-        "challengeResult": "48",
-        "options": [
-          "48",
-          "49",
-          "47",
-          "50"
-        ],
-        "correctIndex": 0
-      },
-      {
-        "challengeCode": "int sum = 0;\nfor (int i = 14; i > 2; i -= 1)\n{\n    sum += i;\n}\nConsole.WriteLine(sum);",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Убывающий счётчик проходит только значения, удовлетворяющие границе. Шаг может пропускать числа.",
-        "challengeResult": "102",
-        "options": [
-          "102",
-          "103",
-          "101",
-          "104"
-        ],
-        "correctIndex": 0
-      }
-    ],
-    "challengeResult": "21",
-    "options": [
-      "21",
-      "22",
-      "20",
-      "23"
-    ],
-    "correctIndex": 0,
-    "exampleResult": "102"
+    "exampleResult": "6"
   },
   {
     "id": "expand-7-continue-placement",
     "codeDeckId": "lab7-mixed-reading",
     "deckId": "loops-control",
     "term": "continue",
-    "exampleCode": "int sum = 0;\nfor (int i = 1; i <= 12; i++)\n{\n    if (i % 2 == 0)\n    {\n        continue;\n    }\n    sum += i;\n}\nConsole.WriteLine(sum);",
-    "exampleNote": "Команды до continue уже выполнятся. После continue остаток текущей итерации пропускается.",
-    "kind": "Что выведет код?",
-    "challengeCode": "int sum = 0;\nfor (int i = 1; i <= 4; i++)\n{\n    if (i % 2 == 0)\n    {\n        continue;\n    }\n    sum += i;\n}\nConsole.WriteLine(sum);",
+    "exampleCode": "int count = 0;\nfor (int i = 0; i < 2; i++)\n{\n    count++;\n    if (i == 1)\n    {\n        continue;\n    }\n}\nConsole.WriteLine(count);",
+    "exampleNote": "Количество проходов цикла: 2. При i = 1 выполняется continue. count++ стоит перед ним и выполняется на каждом проходе.",
+    "kind": "Число выполнений строки",
+    "challengeCode": "int count = 0;\nfor (int i = 0; i < 2; i++)\n{\n    count++;\n    if (i == 1)\n    {\n        continue;\n    }\n}\nConsole.WriteLine(count);",
     "challengeInput": "",
-    "prompt": "Что появится в консоли?",
-    "explanation": "Команды до continue уже выполнятся. После continue остаток текущей итерации пропускается.",
+    "prompt": "Сколько раз выполнится строка count++?",
+    "explanation": "Количество проходов цикла: 2. При i = 1 выполняется continue. count++ стоит перед ним и выполняется на каждом проходе.",
     "variants": [
       {
-        "challengeCode": "int sum = 0;\nfor (int i = 1; i <= 5; i++)\n{\n    sum += i;\n    if (i % 2 == 0)\n    {\n        continue;\n    }\n    sum++;\n}\nConsole.WriteLine(sum);",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Команды до continue уже выполнятся. После continue остаток текущей итерации пропускается.",
-        "challengeResult": "18",
+        "challengeCode": "int count = 0;\nfor (int i = 0; i < 2; i++)\n{\n    if (i == 1)\n    {\n        continue;\n    }\n    count++;\n}\nConsole.WriteLine(count);",
+        "challengeResult": "1",
+        "prompt": "Сколько раз выполнится строка count++?",
+        "kind": "Число выполнений строки",
+        "explanation": "Количество проходов цикла: 2. При i = 1 выполняется continue. count++ стоит после него, поэтому один проход пропускается.",
         "options": [
-          "18",
-          "19",
-          "17",
-          "20"
+          "1",
+          "2",
+          "0",
+          "3"
         ],
         "correctIndex": 0
       },
       {
-        "challengeCode": "int sum = 0;\nfor (int i = 1; i <= 6; i++)\n{\n    if (i % 2 == 0)\n    {\n        continue;\n    }\n    sum += i;\n}\nConsole.WriteLine(sum);",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Команды до continue уже выполнятся. После continue остаток текущей итерации пропускается.",
+        "challengeCode": "int count = 0;\nfor (int i = 1; i < 3; i++)\n{\n    if (i == 2)\n    {\n        continue;\n    }\n    count++;\n}\nConsole.WriteLine(count);",
+        "challengeResult": "1",
+        "prompt": "Сколько раз выполнится строка count++?",
+        "kind": "Число выполнений строки",
+        "explanation": "Количество проходов цикла: 2. При i = 2 выполняется continue. count++ стоит после него, поэтому один проход пропускается.",
+        "options": [
+          "1",
+          "2",
+          "0",
+          "3"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int count = 0;\nfor (int i = 1; i < 3; i++)\n{\n    count++;\n    if (i == 2)\n    {\n        continue;\n    }\n}\nConsole.WriteLine(count);",
+        "challengeResult": "2",
+        "prompt": "Сколько раз выполнится строка count++?",
+        "kind": "Число выполнений строки",
+        "explanation": "Количество проходов цикла: 2. При i = 2 выполняется continue. count++ стоит перед ним и выполняется на каждом проходе.",
+        "options": [
+          "2",
+          "3",
+          "1",
+          "4"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int count = 0;\nfor (int i = 0; i < 3; i++)\n{\n    if (i == 1)\n    {\n        continue;\n    }\n    count++;\n}\nConsole.WriteLine(count);",
+        "challengeResult": "2",
+        "prompt": "Сколько раз выполнится строка count++?",
+        "kind": "Число выполнений строки",
+        "explanation": "Количество проходов цикла: 3. При i = 1 выполняется continue. count++ стоит после него, поэтому один проход пропускается.",
+        "options": [
+          "2",
+          "3",
+          "1",
+          "4"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int count = 0;\nfor (int i = 1; i < 4; i++)\n{\n    if (i == 2)\n    {\n        continue;\n    }\n    count++;\n}\nConsole.WriteLine(count);",
+        "challengeResult": "2",
+        "prompt": "Сколько раз выполнится строка count++?",
+        "kind": "Число выполнений строки",
+        "explanation": "Количество проходов цикла: 3. При i = 2 выполняется continue. count++ стоит после него, поэтому один проход пропускается.",
+        "options": [
+          "2",
+          "3",
+          "1",
+          "4"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int count = 0;\nfor (int i = 0; i < 3; i++)\n{\n    count++;\n    if (i == 1)\n    {\n        continue;\n    }\n}\nConsole.WriteLine(count);",
+        "challengeResult": "3",
+        "prompt": "Сколько раз выполнится строка count++?",
+        "kind": "Число выполнений строки",
+        "explanation": "Количество проходов цикла: 3. При i = 1 выполняется continue. count++ стоит перед ним и выполняется на каждом проходе.",
+        "options": [
+          "3",
+          "4",
+          "2",
+          "5"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int count = 0;\nfor (int i = 1; i < 4; i++)\n{\n    count++;\n    if (i == 2)\n    {\n        continue;\n    }\n}\nConsole.WriteLine(count);",
+        "challengeResult": "3",
+        "prompt": "Сколько раз выполнится строка count++?",
+        "kind": "Число выполнений строки",
+        "explanation": "Количество проходов цикла: 3. При i = 2 выполняется continue. count++ стоит перед ним и выполняется на каждом проходе.",
+        "options": [
+          "3",
+          "4",
+          "2",
+          "5"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int count = 0;\nfor (int i = 0; i < 4; i++)\n{\n    if (i == 1)\n    {\n        continue;\n    }\n    count++;\n}\nConsole.WriteLine(count);",
+        "challengeResult": "3",
+        "prompt": "Сколько раз выполнится строка count++?",
+        "kind": "Число выполнений строки",
+        "explanation": "Количество проходов цикла: 4. При i = 1 выполняется continue. count++ стоит после него, поэтому один проход пропускается.",
+        "options": [
+          "3",
+          "4",
+          "2",
+          "5"
+        ],
+        "correctIndex": 0
+      }
+    ],
+    "challengeResult": "2",
+    "options": [
+      "2",
+      "3",
+      "1",
+      "4"
+    ],
+    "correctIndex": 0,
+    "exampleResult": "2"
+  },
+  {
+    "id": "expand-7-break-placement",
+    "codeDeckId": "lab7-mixed-reading",
+    "deckId": "loops-control",
+    "term": "break в цикле",
+    "exampleCode": "int count = 0;\nfor (int i = 0; i <= 3; i++)\n{\n    if (i == 2)\n    {\n        break;\n    }\n    count++;\n}\nConsole.WriteLine(count);",
+    "exampleNote": "При i = 2 выполняется break. Строка изменения после него уже не выполняется. Учитываются i = 0, 1.",
+    "kind": "Число выполнений строки",
+    "challengeCode": "int count = 0;\nfor (int i = 0; i <= 3; i++)\n{\n    if (i == 2)\n    {\n        break;\n    }\n    count++;\n}\nConsole.WriteLine(count);",
+    "challengeInput": "",
+    "prompt": "Сколько раз выполнится count++ до остановки?",
+    "explanation": "При i = 2 выполняется break. Строка изменения после него уже не выполняется. Учитываются i = 0, 1.",
+    "variants": [
+      {
+        "challengeCode": "int count = 0;\nfor (int i = 0; i < 2; i++)\n{\n    if (i == 1)\n    {\n        break;\n    }\n    count++;\n}\nConsole.WriteLine(count);",
+        "challengeResult": "1",
+        "prompt": "Сколько раз выполнится count++ до остановки?",
+        "kind": "Число выполнений строки",
+        "explanation": "При i = 1 выполняется break. Строка изменения после него уже не выполняется. Учитываются i = 0.",
+        "options": [
+          "1",
+          "2",
+          "0",
+          "3"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int count = 0;\nfor (int i = 0; i < 3; i++)\n{\n    if (i == 1)\n    {\n        break;\n    }\n    count++;\n}\nConsole.WriteLine(count);",
+        "challengeResult": "1",
+        "prompt": "Сколько раз выполнится count++ до остановки?",
+        "kind": "Число выполнений строки",
+        "explanation": "При i = 1 выполняется break. Строка изменения после него уже не выполняется. Учитываются i = 0.",
+        "options": [
+          "1",
+          "2",
+          "0",
+          "3"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int count = 0;\nfor (int i = 0; i <= 4; i++)\n{\n    if (i == 2)\n    {\n        break;\n    }\n    count++;\n}\nConsole.WriteLine(count);",
+        "challengeResult": "2",
+        "prompt": "Сколько раз выполнится count++ до остановки?",
+        "kind": "Число выполнений строки",
+        "explanation": "При i = 2 выполняется break. Строка изменения после него уже не выполняется. Учитываются i = 0, 1.",
+        "options": [
+          "2",
+          "3",
+          "1",
+          "4"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int count = 0;\nfor (int i = 0; i < 2; i++)\n{\n    count++;\n    if (i == 1)\n    {\n        break;\n    }\n}\nConsole.WriteLine(count);",
+        "challengeResult": "2",
+        "prompt": "Сколько раз выполнится count++ до остановки?",
+        "kind": "Число выполнений строки",
+        "explanation": "При i = 1 выполняется break. Строка изменения стоит перед ним и успевает выполниться. Учитываются i = 0, 1.",
+        "options": [
+          "2",
+          "3",
+          "1",
+          "4"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int count = 0;\nfor (int i = 0; i < 3; i++)\n{\n    count++;\n    if (i == 1)\n    {\n        break;\n    }\n}\nConsole.WriteLine(count);",
+        "challengeResult": "2",
+        "prompt": "Сколько раз выполнится count++ до остановки?",
+        "kind": "Число выполнений строки",
+        "explanation": "При i = 1 выполняется break. Строка изменения стоит перед ним и успевает выполниться. Учитываются i = 0, 1.",
+        "options": [
+          "2",
+          "3",
+          "1",
+          "4"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int count = 0;\nfor (int i = 0; i <= 3; i++)\n{\n    count++;\n    if (i == 2)\n    {\n        break;\n    }\n}\nConsole.WriteLine(count);",
+        "challengeResult": "3",
+        "prompt": "Сколько раз выполнится count++ до остановки?",
+        "kind": "Число выполнений строки",
+        "explanation": "При i = 2 выполняется break. Строка изменения стоит перед ним и успевает выполниться. Учитываются i = 0, 1, 2.",
+        "options": [
+          "3",
+          "4",
+          "2",
+          "5"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int count = 0;\nfor (int i = 0; i <= 4; i++)\n{\n    count++;\n    if (i == 2)\n    {\n        break;\n    }\n}\nConsole.WriteLine(count);",
+        "challengeResult": "3",
+        "prompt": "Сколько раз выполнится count++ до остановки?",
+        "kind": "Число выполнений строки",
+        "explanation": "При i = 2 выполняется break. Строка изменения стоит перед ним и успевает выполниться. Учитываются i = 0, 1, 2.",
+        "options": [
+          "3",
+          "4",
+          "2",
+          "5"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int count = 0;\nfor (int i = 1; i < 3; i++)\n{\n    if (i == 2)\n    {\n        break;\n    }\n    count++;\n}\nConsole.WriteLine(count);",
+        "challengeResult": "1",
+        "prompt": "Сколько раз выполнится count++ до остановки?",
+        "kind": "Число выполнений строки",
+        "explanation": "При i = 2 выполняется break. Строка изменения после него уже не выполняется. Учитываются i = 1.",
+        "options": [
+          "1",
+          "2",
+          "0",
+          "3"
+        ],
+        "correctIndex": 0
+      }
+    ],
+    "challengeResult": "2",
+    "options": [
+      "2",
+      "3",
+      "1",
+      "4"
+    ],
+    "correctIndex": 0,
+    "exampleResult": "2"
+  },
+  {
+    "id": "expand-7-nested-dependent",
+    "codeDeckId": "lab7-mixed-reading",
+    "deckId": "loops-control",
+    "term": "Вложенный цикл",
+    "exampleCode": "int count = 0;\nfor (int row = 0; row < 2; row++)\n{\n    for (int col = 0; col < row + 1; col++)\n    {\n        count++;\n    }\n}\nConsole.WriteLine(count);",
+    "exampleNote": "Для row = 0, 1 внутреннее тело выполнится соответственно 1 и 2 раз. Всего 3 увеличений счётчика.",
+    "kind": "Вложенные циклы",
+    "challengeCode": "int count = 0;\nfor (int row = 0; row < 2; row++)\n{\n    for (int col = 0; col < row + 1; col++)\n    {\n        count++;\n    }\n}\nConsole.WriteLine(count);",
+    "challengeInput": "",
+    "prompt": "Сколько раз выполнится самое внутреннее тело?",
+    "explanation": "Для row = 0, 1 внутреннее тело выполнится соответственно 1 и 2 раз. Всего 3 увеличений счётчика.",
+    "variants": [
+      {
+        "challengeCode": "int count = 0;\nfor (int row = 0; row < 1; row++)\n{\n    for (int col = 0; col < row + 1; col++)\n    {\n        count++;\n    }\n}\nConsole.WriteLine(count);",
+        "challengeResult": "1",
+        "prompt": "Сколько раз выполнится самое внутреннее тело?",
+        "kind": "Вложенные циклы",
+        "explanation": "Для row = 0 внутреннее тело выполнится соответственно 1 раз. Всего 1 увеличений счётчика.",
+        "options": [
+          "1",
+          "2",
+          "0",
+          "3"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int count = 0;\nfor (int row = 0; row < 1; row++)\n{\n    for (int col = 0; col <= row + 2; col++)\n    {\n        count++;\n    }\n}\nConsole.WriteLine(count);",
+        "challengeResult": "3",
+        "prompt": "Сколько раз выполнится самое внутреннее тело?",
+        "kind": "Вложенные циклы",
+        "explanation": "Для row = 0 внутреннее тело выполнится соответственно 3 раз. Всего 3 увеличений счётчика.",
+        "options": [
+          "3",
+          "4",
+          "2",
+          "5"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int count = 0;\nfor (int row = 0; row < 1; row++)\n{\n    for (int col = 0; col <= row + 1; col++)\n    {\n        count++;\n    }\n}\nConsole.WriteLine(count);",
+        "challengeResult": "2",
+        "prompt": "Сколько раз выполнится самое внутреннее тело?",
+        "kind": "Вложенные циклы",
+        "explanation": "Для row = 0 внутреннее тело выполнится соответственно 2 раз. Всего 2 увеличений счётчика.",
+        "options": [
+          "2",
+          "3",
+          "1",
+          "4"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int count = 0;\nfor (int row = 0; row < 1; row++)\n{\n    for (int col = 0; col < row + 2; col++)\n    {\n        count++;\n    }\n}\nConsole.WriteLine(count);",
+        "challengeResult": "2",
+        "prompt": "Сколько раз выполнится самое внутреннее тело?",
+        "kind": "Вложенные циклы",
+        "explanation": "Для row = 0 внутреннее тело выполнится соответственно 2 раз. Всего 2 увеличений счётчика.",
+        "options": [
+          "2",
+          "3",
+          "1",
+          "4"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int count = 0;\nfor (int row = 0; row < 2; row++)\n{\n    for (int col = 0; col <= row + 1; col++)\n    {\n        count++;\n    }\n}\nConsole.WriteLine(count);",
+        "challengeResult": "5",
+        "prompt": "Сколько раз выполнится самое внутреннее тело?",
+        "kind": "Вложенные циклы",
+        "explanation": "Для row = 0, 1 внутреннее тело выполнится соответственно 2 и 3 раз. Всего 5 увеличений счётчика.",
+        "options": [
+          "5",
+          "6",
+          "4",
+          "7"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int count = 0;\nfor (int row = 0; row < 2; row++)\n{\n    for (int col = 0; col < row + 2; col++)\n    {\n        count++;\n    }\n}\nConsole.WriteLine(count);",
+        "challengeResult": "5",
+        "prompt": "Сколько раз выполнится самое внутреннее тело?",
+        "kind": "Вложенные циклы",
+        "explanation": "Для row = 0, 1 внутреннее тело выполнится соответственно 2 и 3 раз. Всего 5 увеличений счётчика.",
+        "options": [
+          "5",
+          "6",
+          "4",
+          "7"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int count = 0;\nfor (int row = 1; row < 2; row++)\n{\n    for (int col = 0; col < row + 1; col++)\n    {\n        count++;\n    }\n}\nConsole.WriteLine(count);",
+        "challengeResult": "2",
+        "prompt": "Сколько раз выполнится самое внутреннее тело?",
+        "kind": "Вложенные циклы",
+        "explanation": "Для row = 1 внутреннее тело выполнится соответственно 2 раз. Всего 2 увеличений счётчика.",
+        "options": [
+          "2",
+          "3",
+          "1",
+          "4"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int count = 0;\nfor (int row = 1; row < 2; row++)\n{\n    for (int col = 0; col <= row + 1; col++)\n    {\n        count++;\n    }\n}\nConsole.WriteLine(count);",
+        "challengeResult": "3",
+        "prompt": "Сколько раз выполнится самое внутреннее тело?",
+        "kind": "Вложенные циклы",
+        "explanation": "Для row = 1 внутреннее тело выполнится соответственно 3 раз. Всего 3 увеличений счётчика.",
+        "options": [
+          "3",
+          "4",
+          "2",
+          "5"
+        ],
+        "correctIndex": 0
+      }
+    ],
+    "challengeResult": "3",
+    "options": [
+      "3",
+      "4",
+      "2",
+      "5"
+    ],
+    "correctIndex": 0,
+    "exampleResult": "3"
+  },
+  {
+    "id": "expand-7-while-growth",
+    "codeDeckId": "lab7-mixed-reading",
+    "deckId": "loops-basics",
+    "term": "while",
+    "exampleCode": "int value = 0;\nint count = 0;\nwhile (value < 3)\n{\n    value += 1;\n    count++;\n}\nConsole.WriteLine(count);\nConsole.WriteLine(value);",
+    "exampleNote": "Условие проверяется перед телом. Количество проходов: 3. value изменится с 0 до 3. Затем условие ложно.",
+    "kind": "Что выведет код?",
+    "challengeCode": "int value = 0;\nint count = 0;\nwhile (value < 3)\n{\n    value += 1;\n    count++;\n}\nConsole.WriteLine(count);\nConsole.WriteLine(value);",
+    "challengeInput": "",
+    "prompt": "Сколько будет повторений и чему будет равно value? Числа выводятся на отдельных строках.",
+    "explanation": "Условие проверяется перед телом. Количество проходов: 3. value изменится с 0 до 3. Затем условие ложно.",
+    "variants": [
+      {
+        "challengeCode": "int value = 0;\nint count = 0;\nwhile (value < 1)\n{\n    value += 1;\n    count++;\n}\nConsole.WriteLine(count);\nConsole.WriteLine(value);",
+        "challengeResult": "1\n1",
+        "prompt": "Сколько будет повторений и чему будет равно value? Числа выводятся на отдельных строках.",
+        "kind": "Что выведет код?",
+        "explanation": "Условие проверяется перед телом. Количество проходов: 1. value изменится с 0 до 1. Затем условие ложно.",
+        "options": [
+          "1\n1",
+          "1 1",
+          "1",
+          "1\n1\n0"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int value = 0;\nint count = 0;\nwhile (value < 2)\n{\n    value += 1;\n    count++;\n}\nConsole.WriteLine(count);\nConsole.WriteLine(value);",
+        "challengeResult": "2\n2",
+        "prompt": "Сколько будет повторений и чему будет равно value? Числа выводятся на отдельных строках.",
+        "kind": "Что выведет код?",
+        "explanation": "Условие проверяется перед телом. Количество проходов: 2. value изменится с 0 до 2. Затем условие ложно.",
+        "options": [
+          "2\n2",
+          "2 2",
+          "2",
+          "2\n2\n0"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int value = 0;\nint count = 0;\nwhile (value < 4)\n{\n    value += 1;\n    count++;\n}\nConsole.WriteLine(count);\nConsole.WriteLine(value);",
+        "challengeResult": "4\n4",
+        "prompt": "Сколько будет повторений и чему будет равно value? Числа выводятся на отдельных строках.",
+        "kind": "Что выведет код?",
+        "explanation": "Условие проверяется перед телом. Количество проходов: 4. value изменится с 0 до 4. Затем условие ложно.",
+        "options": [
+          "4\n4",
+          "4 4",
+          "4",
+          "4\n4\n0"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int value = 1;\nint count = 0;\nwhile (value < 2)\n{\n    value *= 2;\n    count++;\n}\nConsole.WriteLine(count);\nConsole.WriteLine(value);",
+        "challengeResult": "1\n2",
+        "prompt": "Сколько будет повторений и чему будет равно value? Числа выводятся на отдельных строках.",
+        "kind": "Что выведет код?",
+        "explanation": "Условие проверяется перед телом. Количество проходов: 1. value изменится с 1 до 2. Затем условие ложно.",
+        "options": [
+          "1\n2",
+          "2\n1",
+          "1 2",
+          "1"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int value = 1;\nint count = 0;\nwhile (value < 4)\n{\n    value *= 2;\n    count++;\n}\nConsole.WriteLine(count);\nConsole.WriteLine(value);",
+        "challengeResult": "2\n4",
+        "prompt": "Сколько будет повторений и чему будет равно value? Числа выводятся на отдельных строках.",
+        "kind": "Что выведет код?",
+        "explanation": "Условие проверяется перед телом. Количество проходов: 2. value изменится с 1 до 4. Затем условие ложно.",
+        "options": [
+          "2\n4",
+          "4\n2",
+          "2 4",
+          "2"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int value = 1;\nint count = 0;\nwhile (value < 8)\n{\n    value *= 2;\n    count++;\n}\nConsole.WriteLine(count);\nConsole.WriteLine(value);",
+        "challengeResult": "3\n8",
+        "prompt": "Сколько будет повторений и чему будет равно value? Числа выводятся на отдельных строках.",
+        "kind": "Что выведет код?",
+        "explanation": "Условие проверяется перед телом. Количество проходов: 3. value изменится с 1 до 8. Затем условие ложно.",
+        "options": [
+          "3\n8",
+          "8\n3",
+          "3 8",
+          "3"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int value = 1;\nint count = 0;\nwhile (value < 16)\n{\n    value *= 2;\n    count++;\n}\nConsole.WriteLine(count);\nConsole.WriteLine(value);",
+        "challengeResult": "4\n16",
+        "prompt": "Сколько будет повторений и чему будет равно value? Числа выводятся на отдельных строках.",
+        "kind": "Что выведет код?",
+        "explanation": "Условие проверяется перед телом. Количество проходов: 4. value изменится с 1 до 16. Затем условие ложно.",
+        "options": [
+          "4\n16",
+          "16\n4",
+          "4 16",
+          "4"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int value = 0;\nint count = 0;\nwhile (value < 2)\n{\n    value += 2;\n    count++;\n}\nConsole.WriteLine(count);\nConsole.WriteLine(value);",
+        "challengeResult": "1\n2",
+        "prompt": "Сколько будет повторений и чему будет равно value? Числа выводятся на отдельных строках.",
+        "kind": "Что выведет код?",
+        "explanation": "Условие проверяется перед телом. Количество проходов: 1. value изменится с 0 до 2. Затем условие ложно.",
+        "options": [
+          "1\n2",
+          "2\n1",
+          "1 2",
+          "1"
+        ],
+        "correctIndex": 0
+      }
+    ],
+    "challengeResult": "3\n3",
+    "options": [
+      "3\n3",
+      "3 3",
+      "3",
+      "3\n3\n0"
+    ],
+    "correctIndex": 0,
+    "exampleResult": "3\n3"
+  },
+  {
+    "id": "expand-7-do-boundary",
+    "codeDeckId": "lab7-mixed-reading",
+    "deckId": "loops-basics",
+    "term": "do…while",
+    "exampleCode": "int value = 2;\nint count = 0;\ndo\n{\n    count++;\n    value -= 1;\n} while (value >= 0);\nConsole.WriteLine(count);",
+    "exampleNote": "do выполняет тело перед первой проверкой. После уменьшения проверяется value >= 0. Количество проходов: 3.",
+    "kind": "Число итераций",
+    "challengeCode": "int value = 2;\nint count = 0;\ndo\n{\n    count++;\n    value -= 1;\n} while (value >= 0);\nConsole.WriteLine(count);",
+    "challengeInput": "",
+    "prompt": "Сколько раз выполнится тело do…while?",
+    "explanation": "do выполняет тело перед первой проверкой. После уменьшения проверяется value >= 0. Количество проходов: 3.",
+    "variants": [
+      {
+        "challengeCode": "int value = 0;\nint count = 0;\ndo\n{\n    count++;\n    value -= 1;\n} while (value >= 0);\nConsole.WriteLine(count);",
+        "challengeResult": "1",
+        "prompt": "Сколько раз выполнится тело do…while?",
+        "kind": "Число итераций",
+        "explanation": "do выполняет тело перед первой проверкой. После уменьшения проверяется value >= 0. Количество проходов: 1.",
+        "options": [
+          "1",
+          "2",
+          "0",
+          "3"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int value = 1;\nint count = 0;\ndo\n{\n    count++;\n    value -= 1;\n} while (value > 0);\nConsole.WriteLine(count);",
+        "challengeResult": "1",
+        "prompt": "Сколько раз выполнится тело do…while?",
+        "kind": "Число итераций",
+        "explanation": "do выполняет тело перед первой проверкой. После уменьшения проверяется value > 0. Количество проходов: 1.",
+        "options": [
+          "1",
+          "2",
+          "0",
+          "3"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int value = 3;\nint count = 0;\ndo\n{\n    count++;\n    value -= 1;\n} while (value > 0);\nConsole.WriteLine(count);",
+        "challengeResult": "3",
+        "prompt": "Сколько раз выполнится тело do…while?",
+        "kind": "Число итераций",
+        "explanation": "do выполняет тело перед первой проверкой. После уменьшения проверяется value > 0. Количество проходов: 3.",
+        "options": [
+          "3",
+          "4",
+          "2",
+          "5"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int value = 0;\nint count = 0;\ndo\n{\n    count++;\n    value -= 2;\n} while (value >= 0);\nConsole.WriteLine(count);",
+        "challengeResult": "1",
+        "prompt": "Сколько раз выполнится тело do…while?",
+        "kind": "Число итераций",
+        "explanation": "do выполняет тело перед первой проверкой. После уменьшения проверяется value >= 0. Количество проходов: 1.",
+        "options": [
+          "1",
+          "2",
+          "0",
+          "3"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int value = 1;\nint count = 0;\ndo\n{\n    count++;\n    value -= 2;\n} while (value > 0);\nConsole.WriteLine(count);",
+        "challengeResult": "1",
+        "prompt": "Сколько раз выполнится тело do…while?",
+        "kind": "Число итераций",
+        "explanation": "do выполняет тело перед первой проверкой. После уменьшения проверяется value > 0. Количество проходов: 1.",
+        "options": [
+          "1",
+          "2",
+          "0",
+          "3"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int value = 2;\nint count = 0;\ndo\n{\n    count++;\n    value -= 2;\n} while (value >= 0);\nConsole.WriteLine(count);",
+        "challengeResult": "2",
+        "prompt": "Сколько раз выполнится тело do…while?",
+        "kind": "Число итераций",
+        "explanation": "do выполняет тело перед первой проверкой. После уменьшения проверяется value >= 0. Количество проходов: 2.",
+        "options": [
+          "2",
+          "3",
+          "1",
+          "4"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int value = 3;\nint count = 0;\ndo\n{\n    count++;\n    value -= 2;\n} while (value > 0);\nConsole.WriteLine(count);",
+        "challengeResult": "2",
+        "prompt": "Сколько раз выполнится тело do…while?",
+        "kind": "Число итераций",
+        "explanation": "do выполняет тело перед первой проверкой. После уменьшения проверяется value > 0. Количество проходов: 2.",
+        "options": [
+          "2",
+          "3",
+          "1",
+          "4"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int value = 0;\nint count = 0;\ndo\n{\n    count++;\n    value -= 3;\n} while (value >= 0);\nConsole.WriteLine(count);",
+        "challengeResult": "1",
+        "prompt": "Сколько раз выполнится тело do…while?",
+        "kind": "Число итераций",
+        "explanation": "do выполняет тело перед первой проверкой. После уменьшения проверяется value >= 0. Количество проходов: 1.",
+        "options": [
+          "1",
+          "2",
+          "0",
+          "3"
+        ],
+        "correctIndex": 0
+      }
+    ],
+    "challengeResult": "3",
+    "options": [
+      "3",
+      "4",
+      "2",
+      "5"
+    ],
+    "correctIndex": 0,
+    "exampleResult": "3"
+  },
+  {
+    "id": "expand-7-accumulator-reset",
+    "codeDeckId": "lab7-mixed-reading",
+    "deckId": "loops-control",
+    "term": "Накопитель",
+    "exampleCode": "int sum = 0;\nfor (int i = 2; i < 5; i++)\n{\n    sum = 0;\n    sum += i;\n}\nConsole.WriteLine(sum);",
+    "exampleNote": "На каждом проходе sum обнуляется. В конце остаётся последнее i = 4.",
+    "kind": "Что выведет код?",
+    "challengeCode": "int sum = 0;\nfor (int i = 2; i < 5; i++)\n{\n    sum = 0;\n    sum += i;\n}\nConsole.WriteLine(sum);",
+    "challengeInput": "",
+    "prompt": "Где обнуляется sum и какое значение останется после цикла?",
+    "explanation": "На каждом проходе sum обнуляется. В конце остаётся последнее i = 4.",
+    "variants": [
+      {
+        "challengeCode": "int sum = 0;\nfor (int i = 1; i < 2; i++)\n{\n    sum += i;\n}\nConsole.WriteLine(sum);",
+        "challengeResult": "1",
+        "prompt": "Где обнуляется sum и какое значение останется после цикла?",
+        "kind": "Что выведет код?",
+        "explanation": "Сброса внутри цикла нет. Прибавления сохраняются: 1 = 1.",
+        "options": [
+          "1",
+          "2",
+          "0",
+          "3"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int sum = 0;\nfor (int i = 1; i < 2; i++)\n{\n    sum = 0;\n    sum += i;\n}\nConsole.WriteLine(sum);",
+        "challengeResult": "1",
+        "prompt": "Где обнуляется sum и какое значение останется после цикла?",
+        "kind": "Что выведет код?",
+        "explanation": "На каждом проходе sum обнуляется. В конце остаётся последнее i = 1.",
+        "options": [
+          "1",
+          "2",
+          "0",
+          "3"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int sum = 0;\nfor (int i = 1; i < 3; i++)\n{\n    sum = 0;\n    sum += i;\n}\nConsole.WriteLine(sum);",
+        "challengeResult": "2",
+        "prompt": "Где обнуляется sum и какое значение останется после цикла?",
+        "kind": "Что выведет код?",
+        "explanation": "На каждом проходе sum обнуляется. В конце остаётся последнее i = 2.",
+        "options": [
+          "2",
+          "3",
+          "1",
+          "4"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int sum = 0;\nfor (int i = 2; i < 4; i++)\n{\n    sum += i;\n}\nConsole.WriteLine(sum);",
+        "challengeResult": "5",
+        "prompt": "Где обнуляется sum и какое значение останется после цикла?",
+        "kind": "Что выведет код?",
+        "explanation": "Сброса внутри цикла нет. Прибавления сохраняются: 2 + 3 = 5.",
+        "options": [
+          "5",
+          "6",
+          "4",
+          "7"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int sum = 0;\nfor (int i = 2; i < 4; i++)\n{\n    sum = 0;\n    sum += i;\n}\nConsole.WriteLine(sum);",
+        "challengeResult": "3",
+        "prompt": "Где обнуляется sum и какое значение останется после цикла?",
+        "kind": "Что выведет код?",
+        "explanation": "На каждом проходе sum обнуляется. В конце остаётся последнее i = 3.",
+        "options": [
+          "3",
+          "4",
+          "2",
+          "5"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int sum = 0;\nfor (int i = 2; i < 5; i++)\n{\n    sum += i;\n}\nConsole.WriteLine(sum);",
         "challengeResult": "9",
+        "prompt": "Где обнуляется sum и какое значение останется после цикла?",
+        "kind": "Что выведет код?",
+        "explanation": "Сброса внутри цикла нет. Прибавления сохраняются: 2 + 3 + 4 = 9.",
         "options": [
           "9",
           "10",
@@ -14605,86 +15369,30 @@ const codeLessons = [
         "correctIndex": 0
       },
       {
-        "challengeCode": "int sum = 0;\nfor (int i = 1; i <= 7; i++)\n{\n    sum += i;\n    if (i % 2 == 0)\n    {\n        continue;\n    }\n    sum++;\n}\nConsole.WriteLine(sum);",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Команды до continue уже выполнятся. После continue остаток текущей итерации пропускается.",
-        "challengeResult": "32",
+        "challengeCode": "int sum = 0;\nfor (int i = 3; i < 6; i++)\n{\n    sum += i;\n}\nConsole.WriteLine(sum);",
+        "challengeResult": "12",
+        "prompt": "Где обнуляется sum и какое значение останется после цикла?",
+        "kind": "Что выведет код?",
+        "explanation": "Сброса внутри цикла нет. Прибавления сохраняются: 3 + 4 + 5 = 12.",
         "options": [
-          "32",
-          "33",
-          "31",
-          "34"
+          "12",
+          "13",
+          "11",
+          "14"
         ],
         "correctIndex": 0
       },
       {
-        "challengeCode": "int sum = 0;\nfor (int i = 1; i <= 8; i++)\n{\n    if (i % 2 == 0)\n    {\n        continue;\n    }\n    sum += i;\n}\nConsole.WriteLine(sum);",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Команды до continue уже выполнятся. После continue остаток текущей итерации пропускается.",
-        "challengeResult": "16",
+        "challengeCode": "int sum = 0;\nfor (int i = 3; i < 7; i++)\n{\n    sum = 0;\n    sum += i;\n}\nConsole.WriteLine(sum);",
+        "challengeResult": "6",
+        "prompt": "Где обнуляется sum и какое значение останется после цикла?",
+        "kind": "Что выведет код?",
+        "explanation": "На каждом проходе sum обнуляется. В конце остаётся последнее i = 6.",
         "options": [
-          "16",
-          "17",
-          "15",
-          "18"
-        ],
-        "correctIndex": 0
-      },
-      {
-        "challengeCode": "int sum = 0;\nfor (int i = 1; i <= 9; i++)\n{\n    sum += i;\n    if (i % 2 == 0)\n    {\n        continue;\n    }\n    sum++;\n}\nConsole.WriteLine(sum);",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Команды до continue уже выполнятся. После continue остаток текущей итерации пропускается.",
-        "challengeResult": "50",
-        "options": [
-          "50",
-          "51",
-          "49",
-          "52"
-        ],
-        "correctIndex": 0
-      },
-      {
-        "challengeCode": "int sum = 0;\nfor (int i = 1; i <= 10; i++)\n{\n    if (i % 2 == 0)\n    {\n        continue;\n    }\n    sum += i;\n}\nConsole.WriteLine(sum);",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Команды до continue уже выполнятся. После continue остаток текущей итерации пропускается.",
-        "challengeResult": "25",
-        "options": [
-          "25",
-          "26",
-          "24",
-          "27"
-        ],
-        "correctIndex": 0
-      },
-      {
-        "challengeCode": "int sum = 0;\nfor (int i = 1; i <= 11; i++)\n{\n    sum += i;\n    if (i % 2 == 0)\n    {\n        continue;\n    }\n    sum++;\n}\nConsole.WriteLine(sum);",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Команды до continue уже выполнятся. После continue остаток текущей итерации пропускается.",
-        "challengeResult": "72",
-        "options": [
-          "72",
-          "73",
-          "71",
-          "74"
-        ],
-        "correctIndex": 0
-      },
-      {
-        "challengeCode": "int sum = 0;\nfor (int i = 1; i <= 12; i++)\n{\n    if (i % 2 == 0)\n    {\n        continue;\n    }\n    sum += i;\n}\nConsole.WriteLine(sum);",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Команды до continue уже выполнятся. После continue остаток текущей итерации пропускается.",
-        "challengeResult": "36",
-        "options": [
-          "36",
-          "37",
-          "35",
-          "38"
+          "6",
+          "7",
+          "5",
+          "8"
         ],
         "correctIndex": 0
       }
@@ -14697,959 +15405,279 @@ const codeLessons = [
       "6"
     ],
     "correctIndex": 0,
-    "exampleResult": "36"
-  },
-  {
-    "id": "expand-7-break-placement",
-    "codeDeckId": "lab7-mixed-reading",
-    "deckId": "loops-control",
-    "term": "break в цикле",
-    "exampleCode": "int sum = 0;\nfor (int i = 1; i <= 14; i++)\n{\n    if (i == 11)\n    {\n        break;\n    }\n    sum += i;\n}\nConsole.WriteLine(sum);",
-    "exampleNote": "Выход по break прекращает ближайший цикл. Прибавление до проверки включает граничное i, после проверки — исключает.",
-    "kind": "Что выведет код?",
-    "challengeCode": "int sum = 0;\nfor (int i = 1; i <= 6; i++)\n{\n    if (i == 3)\n    {\n        break;\n    }\n    sum += i;\n}\nConsole.WriteLine(sum);",
-    "challengeInput": "",
-    "prompt": "Что появится в консоли?",
-    "explanation": "Выход по break прекращает ближайший цикл. Прибавление до проверки включает граничное i, после проверки — исключает.",
-    "variants": [
-      {
-        "challengeCode": "int sum = 0;\nfor (int i = 1; i <= 7; i++)\n{\n    sum += i;\n    if (i == 4)\n    {\n        break;\n    }\n    \n}\nConsole.WriteLine(sum);",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Выход по break прекращает ближайший цикл. Прибавление до проверки включает граничное i, после проверки — исключает.",
-        "challengeResult": "10",
-        "options": [
-          "10",
-          "11",
-          "9",
-          "12"
-        ],
-        "correctIndex": 0
-      },
-      {
-        "challengeCode": "int sum = 0;\nfor (int i = 1; i <= 8; i++)\n{\n    if (i == 5)\n    {\n        break;\n    }\n    sum += i;\n}\nConsole.WriteLine(sum);",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Выход по break прекращает ближайший цикл. Прибавление до проверки включает граничное i, после проверки — исключает.",
-        "challengeResult": "10",
-        "options": [
-          "10",
-          "11",
-          "9",
-          "12"
-        ],
-        "correctIndex": 0
-      },
-      {
-        "challengeCode": "int sum = 0;\nfor (int i = 1; i <= 9; i++)\n{\n    sum += i;\n    if (i == 6)\n    {\n        break;\n    }\n    \n}\nConsole.WriteLine(sum);",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Выход по break прекращает ближайший цикл. Прибавление до проверки включает граничное i, после проверки — исключает.",
-        "challengeResult": "21",
-        "options": [
-          "21",
-          "22",
-          "20",
-          "23"
-        ],
-        "correctIndex": 0
-      },
-      {
-        "challengeCode": "int sum = 0;\nfor (int i = 1; i <= 10; i++)\n{\n    if (i == 7)\n    {\n        break;\n    }\n    sum += i;\n}\nConsole.WriteLine(sum);",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Выход по break прекращает ближайший цикл. Прибавление до проверки включает граничное i, после проверки — исключает.",
-        "challengeResult": "21",
-        "options": [
-          "21",
-          "22",
-          "20",
-          "23"
-        ],
-        "correctIndex": 0
-      },
-      {
-        "challengeCode": "int sum = 0;\nfor (int i = 1; i <= 11; i++)\n{\n    sum += i;\n    if (i == 8)\n    {\n        break;\n    }\n    \n}\nConsole.WriteLine(sum);",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Выход по break прекращает ближайший цикл. Прибавление до проверки включает граничное i, после проверки — исключает.",
-        "challengeResult": "36",
-        "options": [
-          "36",
-          "37",
-          "35",
-          "38"
-        ],
-        "correctIndex": 0
-      },
-      {
-        "challengeCode": "int sum = 0;\nfor (int i = 1; i <= 12; i++)\n{\n    if (i == 9)\n    {\n        break;\n    }\n    sum += i;\n}\nConsole.WriteLine(sum);",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Выход по break прекращает ближайший цикл. Прибавление до проверки включает граничное i, после проверки — исключает.",
-        "challengeResult": "36",
-        "options": [
-          "36",
-          "37",
-          "35",
-          "38"
-        ],
-        "correctIndex": 0
-      },
-      {
-        "challengeCode": "int sum = 0;\nfor (int i = 1; i <= 13; i++)\n{\n    sum += i;\n    if (i == 10)\n    {\n        break;\n    }\n    \n}\nConsole.WriteLine(sum);",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Выход по break прекращает ближайший цикл. Прибавление до проверки включает граничное i, после проверки — исключает.",
-        "challengeResult": "55",
-        "options": [
-          "55",
-          "56",
-          "54",
-          "57"
-        ],
-        "correctIndex": 0
-      },
-      {
-        "challengeCode": "int sum = 0;\nfor (int i = 1; i <= 14; i++)\n{\n    if (i == 11)\n    {\n        break;\n    }\n    sum += i;\n}\nConsole.WriteLine(sum);",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Выход по break прекращает ближайший цикл. Прибавление до проверки включает граничное i, после проверки — исключает.",
-        "challengeResult": "55",
-        "options": [
-          "55",
-          "56",
-          "54",
-          "57"
-        ],
-        "correctIndex": 0
-      }
-    ],
-    "challengeResult": "3",
-    "options": [
-      "3",
-      "4",
-      "2",
-      "5"
-    ],
-    "correctIndex": 0,
-    "exampleResult": "55"
-  },
-  {
-    "id": "expand-7-nested-dependent",
-    "codeDeckId": "lab7-mixed-reading",
-    "deckId": "loops-control",
-    "term": "Вложенный цикл",
-    "exampleCode": "int count = 0;\nfor (int row = 1; row <= 5; row++)\n{\n    for (int col = 0; col < row; col++)\n    {\n        count++;\n    }\n}\nConsole.WriteLine(count);",
-    "exampleNote": "Внутренняя граница зависит от row. Для каждой внешней итерации число внутренних повторений нужно посчитать отдельно.",
-    "kind": "Что выведет код?",
-    "challengeCode": "int count = 0;\nfor (int row = 1; row <= 2; row++)\n{\n    for (int col = 0; col < row; col++)\n    {\n        count++;\n    }\n}\nConsole.WriteLine(count);",
-    "challengeInput": "",
-    "prompt": "Что появится в консоли?",
-    "explanation": "Внутренняя граница зависит от row. Для каждой внешней итерации число внутренних повторений нужно посчитать отдельно.",
-    "variants": [
-      {
-        "challengeCode": "int count = 0;\nfor (int row = 1; row <= 3; row++)\n{\n    for (int col = 0; col <= row; col++)\n    {\n        count++;\n    }\n}\nConsole.WriteLine(count);",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Внутренняя граница зависит от row. Для каждой внешней итерации число внутренних повторений нужно посчитать отдельно.",
-        "challengeResult": "9",
-        "options": [
-          "9",
-          "10",
-          "8",
-          "11"
-        ],
-        "correctIndex": 0
-      },
-      {
-        "challengeCode": "int count = 0;\nfor (int row = 1; row <= 4; row++)\n{\n    for (int col = 0; col < row; col++)\n    {\n        count++;\n    }\n}\nConsole.WriteLine(count);",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Внутренняя граница зависит от row. Для каждой внешней итерации число внутренних повторений нужно посчитать отдельно.",
-        "challengeResult": "10",
-        "options": [
-          "10",
-          "11",
-          "9",
-          "12"
-        ],
-        "correctIndex": 0
-      },
-      {
-        "challengeCode": "int count = 0;\nfor (int row = 1; row <= 5; row++)\n{\n    for (int col = 0; col <= row; col++)\n    {\n        count++;\n    }\n}\nConsole.WriteLine(count);",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Внутренняя граница зависит от row. Для каждой внешней итерации число внутренних повторений нужно посчитать отдельно.",
-        "challengeResult": "20",
-        "options": [
-          "20",
-          "21",
-          "19",
-          "22"
-        ],
-        "correctIndex": 0
-      },
-      {
-        "challengeCode": "int count = 0;\nfor (int row = 1; row <= 6; row++)\n{\n    for (int col = 0; col < row; col++)\n    {\n        count++;\n    }\n}\nConsole.WriteLine(count);",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Внутренняя граница зависит от row. Для каждой внешней итерации число внутренних повторений нужно посчитать отдельно.",
-        "challengeResult": "21",
-        "options": [
-          "21",
-          "22",
-          "20",
-          "23"
-        ],
-        "correctIndex": 0
-      },
-      {
-        "challengeCode": "int count = 0;\nfor (int row = 1; row <= 2; row++)\n{\n    for (int col = 0; col <= row; col++)\n    {\n        count++;\n    }\n}\nConsole.WriteLine(count);",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Внутренняя граница зависит от row. Для каждой внешней итерации число внутренних повторений нужно посчитать отдельно.",
-        "challengeResult": "5",
-        "options": [
-          "5",
-          "6",
-          "4",
-          "7"
-        ],
-        "correctIndex": 0
-      },
-      {
-        "challengeCode": "int count = 0;\nfor (int row = 1; row <= 3; row++)\n{\n    for (int col = 0; col < row; col++)\n    {\n        count++;\n    }\n}\nConsole.WriteLine(count);",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Внутренняя граница зависит от row. Для каждой внешней итерации число внутренних повторений нужно посчитать отдельно.",
-        "challengeResult": "6",
-        "options": [
-          "6",
-          "7",
-          "5",
-          "8"
-        ],
-        "correctIndex": 0
-      },
-      {
-        "challengeCode": "int count = 0;\nfor (int row = 1; row <= 4; row++)\n{\n    for (int col = 0; col <= row; col++)\n    {\n        count++;\n    }\n}\nConsole.WriteLine(count);",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Внутренняя граница зависит от row. Для каждой внешней итерации число внутренних повторений нужно посчитать отдельно.",
-        "challengeResult": "14",
-        "options": [
-          "14",
-          "15",
-          "13",
-          "16"
-        ],
-        "correctIndex": 0
-      },
-      {
-        "challengeCode": "int count = 0;\nfor (int row = 1; row <= 5; row++)\n{\n    for (int col = 0; col < row; col++)\n    {\n        count++;\n    }\n}\nConsole.WriteLine(count);",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Внутренняя граница зависит от row. Для каждой внешней итерации число внутренних повторений нужно посчитать отдельно.",
-        "challengeResult": "15",
-        "options": [
-          "15",
-          "16",
-          "14",
-          "17"
-        ],
-        "correctIndex": 0
-      }
-    ],
-    "challengeResult": "3",
-    "options": [
-      "3",
-      "4",
-      "2",
-      "5"
-    ],
-    "correctIndex": 0,
-    "exampleResult": "15"
-  },
-  {
-    "id": "expand-7-while-growth",
-    "codeDeckId": "lab7-mixed-reading",
-    "deckId": "loops-basics",
-    "term": "while",
-    "exampleCode": "int value = 3;\nint count = 0;\nwhile (value < 36)\n{\n    value += 3;\n    count++;\n}\nConsole.WriteLine(count);\nConsole.WriteLine(value);",
-    "exampleNote": "Условие проверяется перед телом. Сначала изменяется value, затем увеличивается счётчик выполненных итераций.",
-    "kind": "Что выведет код?",
-    "challengeCode": "int value = 1;\nint count = 0;\nwhile (value < 12)\n{\n    value += 3;\n    count++;\n}\nConsole.WriteLine(count);\nConsole.WriteLine(value);",
-    "challengeInput": "",
-    "prompt": "Что появится в консоли?",
-    "explanation": "Условие проверяется перед телом. Сначала изменяется value, затем увеличивается счётчик выполненных итераций.",
-    "variants": [
-      {
-        "challengeCode": "int value = 2;\nint count = 0;\nwhile (value < 15)\n{\n    value *= 2;\n    count++;\n}\nConsole.WriteLine(count);\nConsole.WriteLine(value);",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Условие проверяется перед телом. Сначала изменяется value, затем увеличивается счётчик выполненных итераций.",
-        "challengeResult": "3\n16",
-        "options": [
-          "3\n16",
-          "16\n3",
-          "4\n17",
-          "316"
-        ],
-        "correctIndex": 0
-      },
-      {
-        "challengeCode": "int value = 3;\nint count = 0;\nwhile (value < 18)\n{\n    value += 3;\n    count++;\n}\nConsole.WriteLine(count);\nConsole.WriteLine(value);",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Условие проверяется перед телом. Сначала изменяется value, затем увеличивается счётчик выполненных итераций.",
-        "challengeResult": "5\n18",
-        "options": [
-          "5\n18",
-          "18\n5",
-          "6\n19",
-          "518"
-        ],
-        "correctIndex": 0
-      },
-      {
-        "challengeCode": "int value = 1;\nint count = 0;\nwhile (value < 21)\n{\n    value *= 2;\n    count++;\n}\nConsole.WriteLine(count);\nConsole.WriteLine(value);",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Условие проверяется перед телом. Сначала изменяется value, затем увеличивается счётчик выполненных итераций.",
-        "challengeResult": "5\n32",
-        "options": [
-          "5\n32",
-          "32\n5",
-          "6\n33",
-          "532"
-        ],
-        "correctIndex": 0
-      },
-      {
-        "challengeCode": "int value = 2;\nint count = 0;\nwhile (value < 24)\n{\n    value += 3;\n    count++;\n}\nConsole.WriteLine(count);\nConsole.WriteLine(value);",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Условие проверяется перед телом. Сначала изменяется value, затем увеличивается счётчик выполненных итераций.",
-        "challengeResult": "8\n26",
-        "options": [
-          "8\n26",
-          "26\n8",
-          "9\n27",
-          "826"
-        ],
-        "correctIndex": 0
-      },
-      {
-        "challengeCode": "int value = 3;\nint count = 0;\nwhile (value < 27)\n{\n    value *= 2;\n    count++;\n}\nConsole.WriteLine(count);\nConsole.WriteLine(value);",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Условие проверяется перед телом. Сначала изменяется value, затем увеличивается счётчик выполненных итераций.",
-        "challengeResult": "4\n48",
-        "options": [
-          "4\n48",
-          "48\n4",
-          "5\n49",
-          "448"
-        ],
-        "correctIndex": 0
-      },
-      {
-        "challengeCode": "int value = 1;\nint count = 0;\nwhile (value < 30)\n{\n    value += 3;\n    count++;\n}\nConsole.WriteLine(count);\nConsole.WriteLine(value);",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Условие проверяется перед телом. Сначала изменяется value, затем увеличивается счётчик выполненных итераций.",
-        "challengeResult": "10\n31",
-        "options": [
-          "10\n31",
-          "31\n10",
-          "11\n32",
-          "1031"
-        ],
-        "correctIndex": 0
-      },
-      {
-        "challengeCode": "int value = 2;\nint count = 0;\nwhile (value < 33)\n{\n    value *= 2;\n    count++;\n}\nConsole.WriteLine(count);\nConsole.WriteLine(value);",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Условие проверяется перед телом. Сначала изменяется value, затем увеличивается счётчик выполненных итераций.",
-        "challengeResult": "5\n64",
-        "options": [
-          "5\n64",
-          "64\n5",
-          "6\n65",
-          "564"
-        ],
-        "correctIndex": 0
-      },
-      {
-        "challengeCode": "int value = 3;\nint count = 0;\nwhile (value < 36)\n{\n    value += 3;\n    count++;\n}\nConsole.WriteLine(count);\nConsole.WriteLine(value);",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Условие проверяется перед телом. Сначала изменяется value, затем увеличивается счётчик выполненных итераций.",
-        "challengeResult": "11\n36",
-        "options": [
-          "11\n36",
-          "36\n11",
-          "12\n37",
-          "1136"
-        ],
-        "correctIndex": 0
-      }
-    ],
-    "challengeResult": "4\n13",
-    "options": [
-      "4\n13",
-      "13\n4",
-      "5\n14",
-      "413"
-    ],
-    "correctIndex": 0,
-    "exampleResult": "11\n36"
-  },
-  {
-    "id": "expand-7-do-boundary",
-    "codeDeckId": "lab7-mixed-reading",
-    "deckId": "loops-basics",
-    "term": "do…while",
-    "exampleCode": "int value = 10;\nint count = 0;\ndo\n{\n    count++;\n    value -= 2;\n} while (value > 2);\nConsole.WriteLine(count);",
-    "exampleNote": "do…while выполняет тело перед первой проверкой. Учтите последнее изменение value перед выходом.",
-    "kind": "Что выведет код?",
-    "challengeCode": "int value = 2;\nint count = 0;\ndo\n{\n    count++;\n    value -= 2;\n} while (value > 0);\nConsole.WriteLine(count);",
-    "challengeInput": "",
-    "prompt": "Что появится в консоли?",
-    "explanation": "do…while выполняет тело перед первой проверкой. Учтите последнее изменение value перед выходом.",
-    "variants": [
-      {
-        "challengeCode": "int value = 3;\nint count = 0;\ndo\n{\n    count++;\n    value -= 2;\n} while (value >= 1);\nConsole.WriteLine(count);",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "do…while выполняет тело перед первой проверкой. Учтите последнее изменение value перед выходом.",
-        "challengeResult": "2",
-        "options": [
-          "2",
-          "3",
-          "1",
-          "4"
-        ],
-        "correctIndex": 0
-      },
-      {
-        "challengeCode": "int value = 4;\nint count = 0;\ndo\n{\n    count++;\n    value -= 2;\n} while (value > 2);\nConsole.WriteLine(count);",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "do…while выполняет тело перед первой проверкой. Учтите последнее изменение value перед выходом.",
-        "challengeResult": "1",
-        "options": [
-          "1",
-          "2",
-          "0",
-          "3"
-        ],
-        "correctIndex": 0
-      },
-      {
-        "challengeCode": "int value = 5;\nint count = 0;\ndo\n{\n    count++;\n    value -= 2;\n} while (value >= 0);\nConsole.WriteLine(count);",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "do…while выполняет тело перед первой проверкой. Учтите последнее изменение value перед выходом.",
-        "challengeResult": "3",
-        "options": [
-          "3",
-          "4",
-          "2",
-          "5"
-        ],
-        "correctIndex": 0
-      },
-      {
-        "challengeCode": "int value = 6;\nint count = 0;\ndo\n{\n    count++;\n    value -= 2;\n} while (value > 1);\nConsole.WriteLine(count);",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "do…while выполняет тело перед первой проверкой. Учтите последнее изменение value перед выходом.",
-        "challengeResult": "3",
-        "options": [
-          "3",
-          "4",
-          "2",
-          "5"
-        ],
-        "correctIndex": 0
-      },
-      {
-        "challengeCode": "int value = 7;\nint count = 0;\ndo\n{\n    count++;\n    value -= 2;\n} while (value >= 2);\nConsole.WriteLine(count);",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "do…while выполняет тело перед первой проверкой. Учтите последнее изменение value перед выходом.",
-        "challengeResult": "3",
-        "options": [
-          "3",
-          "4",
-          "2",
-          "5"
-        ],
-        "correctIndex": 0
-      },
-      {
-        "challengeCode": "int value = 8;\nint count = 0;\ndo\n{\n    count++;\n    value -= 2;\n} while (value > 0);\nConsole.WriteLine(count);",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "do…while выполняет тело перед первой проверкой. Учтите последнее изменение value перед выходом.",
-        "challengeResult": "4",
-        "options": [
-          "4",
-          "5",
-          "3",
-          "6"
-        ],
-        "correctIndex": 0
-      },
-      {
-        "challengeCode": "int value = 9;\nint count = 0;\ndo\n{\n    count++;\n    value -= 2;\n} while (value >= 1);\nConsole.WriteLine(count);",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "do…while выполняет тело перед первой проверкой. Учтите последнее изменение value перед выходом.",
-        "challengeResult": "5",
-        "options": [
-          "5",
-          "6",
-          "4",
-          "7"
-        ],
-        "correctIndex": 0
-      },
-      {
-        "challengeCode": "int value = 10;\nint count = 0;\ndo\n{\n    count++;\n    value -= 2;\n} while (value > 2);\nConsole.WriteLine(count);",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "do…while выполняет тело перед первой проверкой. Учтите последнее изменение value перед выходом.",
-        "challengeResult": "4",
-        "options": [
-          "4",
-          "5",
-          "3",
-          "6"
-        ],
-        "correctIndex": 0
-      }
-    ],
-    "challengeResult": "1",
-    "options": [
-      "1",
-      "2",
-      "0",
-      "3"
-    ],
-    "correctIndex": 0,
     "exampleResult": "4"
-  },
-  {
-    "id": "expand-7-accumulator-reset",
-    "codeDeckId": "lab7-mixed-reading",
-    "deckId": "loops-control",
-    "term": "Накопитель",
-    "exampleCode": "int sum = 0;\nfor (int i = 1; i <= 11; i++)\n{\n    sum += i * 2;\n}\nConsole.WriteLine(sum);",
-    "exampleNote": "Обнуление внутри тела уничтожает результат предыдущих итераций. Без обнуления значения накапливаются.",
-    "kind": "Что выведет код?",
-    "challengeCode": "int sum = 0;\nfor (int i = 1; i <= 3; i++)\n{\n    sum += i * 2;\n}\nConsole.WriteLine(sum);",
-    "challengeInput": "",
-    "prompt": "Что появится в консоли?",
-    "explanation": "Обнуление внутри тела уничтожает результат предыдущих итераций. Без обнуления значения накапливаются.",
-    "variants": [
-      {
-        "challengeCode": "int sum = 0;\nfor (int i = 1; i <= 4; i++)\n{\n    sum = 0;\n    sum += i * 2;\n}\nConsole.WriteLine(sum);",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Обнуление внутри тела уничтожает результат предыдущих итераций. Без обнуления значения накапливаются.",
-        "challengeResult": "8",
-        "options": [
-          "8",
-          "9",
-          "7",
-          "10"
-        ],
-        "correctIndex": 0
-      },
-      {
-        "challengeCode": "int sum = 0;\nfor (int i = 1; i <= 5; i++)\n{\n    sum += i * 2;\n}\nConsole.WriteLine(sum);",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Обнуление внутри тела уничтожает результат предыдущих итераций. Без обнуления значения накапливаются.",
-        "challengeResult": "30",
-        "options": [
-          "30",
-          "31",
-          "29",
-          "32"
-        ],
-        "correctIndex": 0
-      },
-      {
-        "challengeCode": "int sum = 0;\nfor (int i = 1; i <= 6; i++)\n{\n    sum = 0;\n    sum += i * 2;\n}\nConsole.WriteLine(sum);",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Обнуление внутри тела уничтожает результат предыдущих итераций. Без обнуления значения накапливаются.",
-        "challengeResult": "12",
-        "options": [
-          "12",
-          "13",
-          "11",
-          "14"
-        ],
-        "correctIndex": 0
-      },
-      {
-        "challengeCode": "int sum = 0;\nfor (int i = 1; i <= 7; i++)\n{\n    sum += i * 2;\n}\nConsole.WriteLine(sum);",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Обнуление внутри тела уничтожает результат предыдущих итераций. Без обнуления значения накапливаются.",
-        "challengeResult": "56",
-        "options": [
-          "56",
-          "57",
-          "55",
-          "58"
-        ],
-        "correctIndex": 0
-      },
-      {
-        "challengeCode": "int sum = 0;\nfor (int i = 1; i <= 8; i++)\n{\n    sum = 0;\n    sum += i * 2;\n}\nConsole.WriteLine(sum);",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Обнуление внутри тела уничтожает результат предыдущих итераций. Без обнуления значения накапливаются.",
-        "challengeResult": "16",
-        "options": [
-          "16",
-          "17",
-          "15",
-          "18"
-        ],
-        "correctIndex": 0
-      },
-      {
-        "challengeCode": "int sum = 0;\nfor (int i = 1; i <= 9; i++)\n{\n    sum += i * 2;\n}\nConsole.WriteLine(sum);",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Обнуление внутри тела уничтожает результат предыдущих итераций. Без обнуления значения накапливаются.",
-        "challengeResult": "90",
-        "options": [
-          "90",
-          "91",
-          "89",
-          "92"
-        ],
-        "correctIndex": 0
-      },
-      {
-        "challengeCode": "int sum = 0;\nfor (int i = 1; i <= 10; i++)\n{\n    sum = 0;\n    sum += i * 2;\n}\nConsole.WriteLine(sum);",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Обнуление внутри тела уничтожает результат предыдущих итераций. Без обнуления значения накапливаются.",
-        "challengeResult": "20",
-        "options": [
-          "20",
-          "21",
-          "19",
-          "22"
-        ],
-        "correctIndex": 0
-      },
-      {
-        "challengeCode": "int sum = 0;\nfor (int i = 1; i <= 11; i++)\n{\n    sum += i * 2;\n}\nConsole.WriteLine(sum);",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Обнуление внутри тела уничтожает результат предыдущих итераций. Без обнуления значения накапливаются.",
-        "challengeResult": "132",
-        "options": [
-          "132",
-          "133",
-          "131",
-          "134"
-        ],
-        "correctIndex": 0
-      }
-    ],
-    "challengeResult": "12",
-    "options": [
-      "12",
-      "13",
-      "11",
-      "14"
-    ],
-    "correctIndex": 0,
-    "exampleResult": "132"
   },
   {
     "id": "expand-7-counter-after",
     "codeDeckId": "lab7-mixed-reading",
     "deckId": "loops-basics",
     "term": "Счётчик цикла",
-    "exampleCode": "int i;\nfor (i = 0; i < 13; i += 3)\n{\n}\nConsole.WriteLine(i);",
-    "exampleNote": "После последней итерации for выполняет шаг, затем ложная проверка завершает цикл. Переменная объявлена вне for.",
-    "kind": "Что выведет код?",
-    "challengeCode": "int i;\nfor (i = 0; i < 5; i += 1)\n{\n}\nConsole.WriteLine(i);",
+    "exampleCode": "int i;\nfor (i = 0; i < 3; i += 1)\n{\n}\nConsole.WriteLine(i);",
+    "exampleNote": "Тело выполняется при i = 0, 1, 2. После последнего шага i = 3, и условие становится ложным.",
+    "kind": "Состояние после цикла",
+    "challengeCode": "int i;\nfor (i = 0; i < 3; i += 1)\n{\n}\nConsole.WriteLine(i);",
     "challengeInput": "",
-    "prompt": "Что появится в консоли?",
-    "explanation": "После последней итерации for выполняет шаг, затем ложная проверка завершает цикл. Переменная объявлена вне for.",
+    "prompt": "Чему равно i после выхода из цикла?",
+    "explanation": "Тело выполняется при i = 0, 1, 2. После последнего шага i = 3, и условие становится ложным.",
     "variants": [
       {
-        "challengeCode": "int i;\nfor (i = 1; i < 6; i += 2)\n{\n}\nConsole.WriteLine(i);",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "После последней итерации for выполняет шаг, затем ложная проверка завершает цикл. Переменная объявлена вне for.",
-        "challengeResult": "7",
+        "challengeCode": "int i;\nfor (i = 0; i < 1; i += 1)\n{\n}\nConsole.WriteLine(i);",
+        "challengeResult": "1",
+        "prompt": "Чему равно i после выхода из цикла?",
+        "kind": "Состояние после цикла",
+        "explanation": "Тело выполняется при i = 0. После последнего шага i = 1, и условие становится ложным.",
         "options": [
-          "7",
-          "8",
-          "6",
-          "9"
+          "1",
+          "0",
+          "2",
+          "3"
         ],
         "correctIndex": 0
       },
       {
-        "challengeCode": "int i;\nfor (i = 0; i < 7; i += 3)\n{\n}\nConsole.WriteLine(i);",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "После последней итерации for выполняет шаг, затем ложная проверка завершает цикл. Переменная объявлена вне for.",
-        "challengeResult": "9",
+        "challengeCode": "int i;\nfor (i = 0; i < 2; i += 1)\n{\n}\nConsole.WriteLine(i);",
+        "challengeResult": "2",
+        "prompt": "Чему равно i после выхода из цикла?",
+        "kind": "Состояние после цикла",
+        "explanation": "Тело выполняется при i = 0, 1. После последнего шага i = 2, и условие становится ложным.",
         "options": [
-          "9",
-          "10",
-          "8",
-          "11"
+          "2",
+          "1",
+          "3",
+          "4"
         ],
         "correctIndex": 0
       },
       {
-        "challengeCode": "int i;\nfor (i = 1; i < 8; i += 1)\n{\n}\nConsole.WriteLine(i);",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "После последней итерации for выполняет шаг, затем ложная проверка завершает цикл. Переменная объявлена вне for.",
-        "challengeResult": "8",
+        "challengeCode": "int i;\nfor (i = 0; i < 4; i += 1)\n{\n}\nConsole.WriteLine(i);",
+        "challengeResult": "4",
+        "prompt": "Чему равно i после выхода из цикла?",
+        "kind": "Состояние после цикла",
+        "explanation": "Тело выполняется при i = 0, 1, 2, 3. После последнего шага i = 4, и условие становится ложным.",
         "options": [
-          "8",
-          "9",
-          "7",
-          "10"
+          "4",
+          "3",
+          "5",
+          "6"
         ],
         "correctIndex": 0
       },
       {
-        "challengeCode": "int i;\nfor (i = 0; i < 9; i += 2)\n{\n}\nConsole.WriteLine(i);",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "После последней итерации for выполняет шаг, затем ложная проверка завершает цикл. Переменная объявлена вне for.",
-        "challengeResult": "10",
+        "challengeCode": "int i;\nfor (i = 0; i <= 0; i += 1)\n{\n}\nConsole.WriteLine(i);",
+        "challengeResult": "1",
+        "prompt": "Чему равно i после выхода из цикла?",
+        "kind": "Состояние после цикла",
+        "explanation": "Тело выполняется при i = 0. После последнего шага i = 1, и условие становится ложным.",
         "options": [
-          "10",
-          "11",
-          "9",
-          "12"
+          "1",
+          "0",
+          "2",
+          "3"
         ],
         "correctIndex": 0
       },
       {
-        "challengeCode": "int i;\nfor (i = 1; i < 10; i += 3)\n{\n}\nConsole.WriteLine(i);",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "После последней итерации for выполняет шаг, затем ложная проверка завершает цикл. Переменная объявлена вне for.",
-        "challengeResult": "10",
+        "challengeCode": "int i;\nfor (i = 0; i <= 1; i += 1)\n{\n}\nConsole.WriteLine(i);",
+        "challengeResult": "2",
+        "prompt": "Чему равно i после выхода из цикла?",
+        "kind": "Состояние после цикла",
+        "explanation": "Тело выполняется при i = 0, 1. После последнего шага i = 2, и условие становится ложным.",
         "options": [
-          "10",
-          "11",
-          "9",
-          "12"
+          "2",
+          "1",
+          "3",
+          "4"
         ],
         "correctIndex": 0
       },
       {
-        "challengeCode": "int i;\nfor (i = 0; i < 11; i += 1)\n{\n}\nConsole.WriteLine(i);",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "После последней итерации for выполняет шаг, затем ложная проверка завершает цикл. Переменная объявлена вне for.",
-        "challengeResult": "11",
+        "challengeCode": "int i;\nfor (i = 0; i <= 2; i += 1)\n{\n}\nConsole.WriteLine(i);",
+        "challengeResult": "3",
+        "prompt": "Чему равно i после выхода из цикла?",
+        "kind": "Состояние после цикла",
+        "explanation": "Тело выполняется при i = 0, 1, 2. После последнего шага i = 3, и условие становится ложным.",
         "options": [
-          "11",
-          "12",
-          "10",
-          "13"
+          "3",
+          "2",
+          "4",
+          "5"
         ],
         "correctIndex": 0
       },
       {
-        "challengeCode": "int i;\nfor (i = 1; i < 12; i += 2)\n{\n}\nConsole.WriteLine(i);",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "После последней итерации for выполняет шаг, затем ложная проверка завершает цикл. Переменная объявлена вне for.",
-        "challengeResult": "13",
+        "challengeCode": "int i;\nfor (i = 0; i <= 3; i += 1)\n{\n}\nConsole.WriteLine(i);",
+        "challengeResult": "4",
+        "prompt": "Чему равно i после выхода из цикла?",
+        "kind": "Состояние после цикла",
+        "explanation": "Тело выполняется при i = 0, 1, 2, 3. После последнего шага i = 4, и условие становится ложным.",
         "options": [
-          "13",
-          "14",
-          "12",
-          "15"
+          "4",
+          "3",
+          "5",
+          "6"
         ],
         "correctIndex": 0
       },
       {
-        "challengeCode": "int i;\nfor (i = 0; i < 13; i += 3)\n{\n}\nConsole.WriteLine(i);",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "После последней итерации for выполняет шаг, затем ложная проверка завершает цикл. Переменная объявлена вне for.",
-        "challengeResult": "15",
+        "challengeCode": "int i;\nfor (i = 0; i < 2; i += 2)\n{\n}\nConsole.WriteLine(i);",
+        "challengeResult": "2",
+        "prompt": "Чему равно i после выхода из цикла?",
+        "kind": "Состояние после цикла",
+        "explanation": "Тело выполняется при i = 0. После последнего шага i = 2, и условие становится ложным.",
         "options": [
-          "15",
-          "16",
-          "14",
-          "17"
+          "2",
+          "0",
+          "3",
+          "1"
         ],
         "correctIndex": 0
       }
     ],
-    "challengeResult": "5",
+    "challengeResult": "3",
     "options": [
-      "5",
-      "6",
+      "3",
+      "2",
       "4",
-      "7"
+      "5"
     ],
     "correctIndex": 0,
-    "exampleResult": "15"
+    "exampleResult": "3"
   },
   {
     "id": "expand-7-two-accumulators",
     "codeDeckId": "lab7-mixed-reading",
     "deckId": "loops-control",
     "term": "Накопитель",
-    "exampleCode": "int sum = 0;\nint count = 0;\nfor (int i = 0; i <= 12; i++)\n{\n    if (i % 2 == 0)\n    {\n        sum += i;\n        count++;\n    }\n}\nConsole.WriteLine($\"{sum} {count}\");",
-    "exampleNote": "В каждой итерации sum и count меняются по разным правилам. Прибавляется текущее i, а не число итераций.",
+    "exampleCode": "int sum = 0;\nint count = 0;\nfor (int i = 0; i < 4; i++)\n{\n    if (i % 2 == 0)\n    {\n        sum += i;\n        count++;\n    }\n}\nConsole.WriteLine($\"{sum} {count}\");",
+    "exampleNote": "Условие выбирает i = 0, 2. sum складывает их, count считает выбранные значения.",
     "kind": "Что выведет код?",
-    "challengeCode": "int sum = 0;\nint count = 0;\nfor (int i = 0; i <= 4; i++)\n{\n    if (i % 2 == 0)\n    {\n        sum += i;\n        count++;\n    }\n}\nConsole.WriteLine($\"{sum} {count}\");",
+    "challengeCode": "int sum = 0;\nint count = 0;\nfor (int i = 0; i < 4; i++)\n{\n    if (i % 2 == 0)\n    {\n        sum += i;\n        count++;\n    }\n}\nConsole.WriteLine($\"{sum} {count}\");",
     "challengeInput": "",
-    "prompt": "Что появится в консоли?",
-    "explanation": "В каждой итерации sum и count меняются по разным правилам. Прибавляется текущее i, а не число итераций.",
+    "prompt": "Что выведется: сначала сумма выбранных значений, затем их количество?",
+    "explanation": "Условие выбирает i = 0, 2. sum складывает их, count считает выбранные значения.",
     "variants": [
       {
-        "challengeCode": "int sum = 0;\nint count = 0;\nfor (int i = 1; i <= 5; i++)\n{\n    if (i % 2 == 1)\n    {\n        sum += i;\n        count++;\n    }\n}\nConsole.WriteLine($\"{sum} {count}\");",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "В каждой итерации sum и count меняются по разным правилам. Прибавляется текущее i, а не число итераций.",
-        "challengeResult": "9 3",
+        "challengeCode": "int sum = 0;\nint count = 0;\nfor (int i = 0; i < 2; i++)\n{\n    if (i % 2 == 0)\n    {\n        sum += i;\n        count++;\n    }\n}\nConsole.WriteLine($\"{sum} {count}\");",
+        "challengeResult": "0 1",
+        "prompt": "Что выведется: сначала сумма выбранных значений, затем их количество?",
+        "kind": "Что выведет код?",
+        "explanation": "Условие выбирает i = 0. sum складывает их, count считает выбранные значения.",
         "options": [
-          "9 3",
-          "10 4",
-          "3 9",
+          "0 1",
+          "1 0",
+          "0 1\n0",
           "Ничего"
         ],
         "correctIndex": 0
       },
       {
-        "challengeCode": "int sum = 0;\nint count = 0;\nfor (int i = 0; i <= 6; i++)\n{\n    if (i % 2 == 0)\n    {\n        sum += i;\n        count++;\n    }\n}\nConsole.WriteLine($\"{sum} {count}\");",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "В каждой итерации sum и count меняются по разным правилам. Прибавляется текущее i, а не число итераций.",
-        "challengeResult": "12 4",
+        "challengeCode": "int sum = 0;\nint count = 0;\nfor (int i = 1; i < 3; i++)\n{\n    if (i % 2 == 0)\n    {\n        sum += i;\n        count++;\n    }\n}\nConsole.WriteLine($\"{sum} {count}\");",
+        "challengeResult": "2 1",
+        "prompt": "Что выведется: сначала сумма выбранных значений, затем их количество?",
+        "kind": "Что выведет код?",
+        "explanation": "Условие выбирает i = 2. sum складывает их, count считает выбранные значения.",
         "options": [
-          "12 4",
-          "13 5",
-          "4 21",
+          "2 1",
+          "1 2",
+          "2 1\n0",
           "Ничего"
         ],
         "correctIndex": 0
       },
       {
-        "challengeCode": "int sum = 0;\nint count = 0;\nfor (int i = 1; i <= 7; i++)\n{\n    if (i % 2 == 1)\n    {\n        sum += i;\n        count++;\n    }\n}\nConsole.WriteLine($\"{sum} {count}\");",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "В каждой итерации sum и count меняются по разным правилам. Прибавляется текущее i, а не число итераций.",
-        "challengeResult": "16 4",
+        "challengeCode": "int sum = 0;\nint count = 0;\nfor (int i = 0; i < 3; i++)\n{\n    if (i % 2 == 0)\n    {\n        sum += i;\n        count++;\n    }\n}\nConsole.WriteLine($\"{sum} {count}\");",
+        "challengeResult": "2 2",
+        "prompt": "Что выведется: сначала сумма выбранных значений, затем их количество?",
+        "kind": "Что выведет код?",
+        "explanation": "Условие выбирает i = 0, 2. sum складывает их, count считает выбранные значения.",
         "options": [
-          "16 4",
-          "17 5",
-          "4 61",
+          "2 2",
+          "2 2\n0",
+          "Ничего",
+          "0"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int sum = 0;\nint count = 0;\nfor (int i = 1; i < 4; i++)\n{\n    if (i % 2 == 0)\n    {\n        sum += i;\n        count++;\n    }\n}\nConsole.WriteLine($\"{sum} {count}\");",
+        "challengeResult": "2 1",
+        "prompt": "Что выведется: сначала сумма выбранных значений, затем их количество?",
+        "kind": "Что выведет код?",
+        "explanation": "Условие выбирает i = 2. sum складывает их, count считает выбранные значения.",
+        "options": [
+          "2 1",
+          "1 2",
+          "2 1\n0",
           "Ничего"
         ],
         "correctIndex": 0
       },
       {
-        "challengeCode": "int sum = 0;\nint count = 0;\nfor (int i = 0; i <= 8; i++)\n{\n    if (i % 2 == 0)\n    {\n        sum += i;\n        count++;\n    }\n}\nConsole.WriteLine($\"{sum} {count}\");",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "В каждой итерации sum и count меняются по разным правилам. Прибавляется текущее i, а не число итераций.",
-        "challengeResult": "20 5",
+        "challengeCode": "int sum = 0;\nint count = 0;\nfor (int i = 1; i < 5; i++)\n{\n    if (i % 2 == 0)\n    {\n        sum += i;\n        count++;\n    }\n}\nConsole.WriteLine($\"{sum} {count}\");",
+        "challengeResult": "6 2",
+        "prompt": "Что выведется: сначала сумма выбранных значений, затем их количество?",
+        "kind": "Что выведет код?",
+        "explanation": "Условие выбирает i = 2, 4. sum складывает их, count считает выбранные значения.",
         "options": [
-          "20 5",
-          "21 6",
-          "5 02",
+          "6 2",
+          "2 6",
+          "6 2\n0",
           "Ничего"
         ],
         "correctIndex": 0
       },
       {
-        "challengeCode": "int sum = 0;\nint count = 0;\nfor (int i = 1; i <= 9; i++)\n{\n    if (i % 2 == 1)\n    {\n        sum += i;\n        count++;\n    }\n}\nConsole.WriteLine($\"{sum} {count}\");",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "В каждой итерации sum и count меняются по разным правилам. Прибавляется текущее i, а не число итераций.",
-        "challengeResult": "25 5",
+        "challengeCode": "int sum = 0;\nint count = 0;\nfor (int i = 0; i < 2; i++)\n{\n    if (i % 2 == 1)\n    {\n        sum += i;\n        count++;\n    }\n}\nConsole.WriteLine($\"{sum} {count}\");",
+        "challengeResult": "1 1",
+        "prompt": "Что выведется: сначала сумма выбранных значений, затем их количество?",
+        "kind": "Что выведет код?",
+        "explanation": "Условие выбирает i = 1. sum складывает их, count считает выбранные значения.",
         "options": [
-          "25 5",
-          "26 6",
-          "5 52",
-          "Ничего"
+          "1 1",
+          "1 1\n0",
+          "Ничего",
+          "0"
         ],
         "correctIndex": 0
       },
       {
-        "challengeCode": "int sum = 0;\nint count = 0;\nfor (int i = 0; i <= 10; i++)\n{\n    if (i % 2 == 0)\n    {\n        sum += i;\n        count++;\n    }\n}\nConsole.WriteLine($\"{sum} {count}\");",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "В каждой итерации sum и count меняются по разным правилам. Прибавляется текущее i, а не число итераций.",
-        "challengeResult": "30 6",
+        "challengeCode": "int sum = 0;\nint count = 0;\nfor (int i = 1; i < 3; i++)\n{\n    if (i % 2 == 1)\n    {\n        sum += i;\n        count++;\n    }\n}\nConsole.WriteLine($\"{sum} {count}\");",
+        "challengeResult": "1 1",
+        "prompt": "Что выведется: сначала сумма выбранных значений, затем их количество?",
+        "kind": "Что выведет код?",
+        "explanation": "Условие выбирает i = 1. sum складывает их, count считает выбранные значения.",
         "options": [
-          "30 6",
-          "31 7",
-          "6 03",
-          "Ничего"
+          "1 1",
+          "1 1\n0",
+          "Ничего",
+          "0"
         ],
         "correctIndex": 0
       },
       {
-        "challengeCode": "int sum = 0;\nint count = 0;\nfor (int i = 1; i <= 11; i++)\n{\n    if (i % 2 == 1)\n    {\n        sum += i;\n        count++;\n    }\n}\nConsole.WriteLine($\"{sum} {count}\");",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "В каждой итерации sum и count меняются по разным правилам. Прибавляется текущее i, а не число итераций.",
-        "challengeResult": "36 6",
+        "challengeCode": "int sum = 0;\nint count = 0;\nfor (int i = 0; i < 3; i++)\n{\n    if (i % 2 == 1)\n    {\n        sum += i;\n        count++;\n    }\n}\nConsole.WriteLine($\"{sum} {count}\");",
+        "challengeResult": "1 1",
+        "prompt": "Что выведется: сначала сумма выбранных значений, затем их количество?",
+        "kind": "Что выведет код?",
+        "explanation": "Условие выбирает i = 1. sum складывает их, count считает выбранные значения.",
         "options": [
-          "36 6",
-          "37 7",
-          "6 63",
-          "Ничего"
-        ],
-        "correctIndex": 0
-      },
-      {
-        "challengeCode": "int sum = 0;\nint count = 0;\nfor (int i = 0; i <= 12; i++)\n{\n    if (i % 2 == 0)\n    {\n        sum += i;\n        count++;\n    }\n}\nConsole.WriteLine($\"{sum} {count}\");",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "В каждой итерации sum и count меняются по разным правилам. Прибавляется текущее i, а не число итераций.",
-        "challengeResult": "42 7",
-        "options": [
-          "42 7",
-          "43 8",
-          "7 24",
-          "Ничего"
+          "1 1",
+          "1 1\n0",
+          "Ничего",
+          "0"
         ],
         "correctIndex": 0
       }
     ],
-    "challengeResult": "6 3",
+    "challengeResult": "2 2",
     "options": [
-      "6 3",
-      "7 4",
-      "3 6",
-      "Ничего"
+      "2 2",
+      "2 2\n0",
+      "Ничего",
+      "0"
     ],
     "correctIndex": 0,
-    "exampleResult": "42 7"
+    "exampleResult": "2 2"
   },
   {
     "id": "expand-8-array-copy",
@@ -16744,136 +16772,136 @@ const codeLessons = [
     "codeDeckId": "lab8-mixed-reading",
     "deckId": "arrays-traversal",
     "term": "Заполнение массива",
-    "exampleCode": "int[] values = new int[5];\nvalues[0] = 9;\nfor (int i = 1; i < values.Length; i++)\n{\n    values[i] = values[i - 1] * 2;\n}\nConsole.WriteLine(values[values.Length - 1]);",
-    "exampleNote": "При заполнении слева направо предыдущая ячейка уже содержит рассчитанное значение.",
+    "exampleCode": "int[] values = new int[3];\nvalues[0] = 1;\nfor (int i = 1; i < values.Length; i++)\n{\n    values[i] = values[i - 1] + 1;\n}\nConsole.WriteLine(values[values.Length - 1]);",
+    "exampleNote": "Каждый следующий элемент вычисляется из предыдущего. Получаются 1, 2, 3.",
     "kind": "Что выведет код?",
-    "challengeCode": "int[] values = new int[3];\nvalues[0] = 1;\nfor (int i = 1; i < values.Length; i++)\n{\n    values[i] = values[i - 1] * 2;\n}\nConsole.WriteLine(values[values.Length - 1]);",
+    "challengeCode": "int[] values = new int[3];\nvalues[0] = 1;\nfor (int i = 1; i < values.Length; i++)\n{\n    values[i] = values[i - 1] + 1;\n}\nConsole.WriteLine(values[values.Length - 1]);",
     "challengeInput": "",
     "prompt": "Что появится в консоли?",
-    "explanation": "При заполнении слева направо предыдущая ячейка уже содержит рассчитанное значение.",
+    "explanation": "Каждый следующий элемент вычисляется из предыдущего. Получаются 1, 2, 3.",
     "variants": [
       {
-        "challengeCode": "int[] values = new int[4];\nvalues[0] = 2;\nfor (int i = 1; i < values.Length; i++)\n{\n    values[i] = values[i - 1] + 2;\n}\nConsole.WriteLine(values[values.Length - 1]);",
-        "challengeInput": "",
+        "challengeCode": "int[] values = new int[2];\nvalues[0] = 1;\nfor (int i = 1; i < values.Length; i++)\n{\n    values[i] = values[i - 1] + 1;\n}\nConsole.WriteLine(values[values.Length - 1]);",
+        "challengeResult": "2",
         "prompt": "Что появится в консоли?",
-        "explanation": "При заполнении слева направо предыдущая ячейка уже содержит рассчитанное значение.",
-        "challengeResult": "8",
+        "kind": "Что выведет код?",
+        "explanation": "Каждый следующий элемент вычисляется из предыдущего. Получаются 1, 2.",
         "options": [
-          "8",
-          "9",
+          "2",
+          "3",
+          "1",
+          "4"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int[] values = new int[2];\nvalues[0] = 1;\nfor (int i = 1; i < values.Length; i++)\n{\n    values[i] = values[i - 1] + 2;\n}\nConsole.WriteLine(values[values.Length - 1]);",
+        "challengeResult": "3",
+        "prompt": "Что появится в консоли?",
+        "kind": "Что выведет код?",
+        "explanation": "Каждый следующий элемент вычисляется из предыдущего. Получаются 1, 3.",
+        "options": [
+          "3",
+          "4",
+          "2",
+          "5"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int[] values = new int[3];\nvalues[0] = 1;\nfor (int i = 1; i < values.Length; i++)\n{\n    values[i] = values[i - 1] + 2;\n}\nConsole.WriteLine(values[values.Length - 1]);",
+        "challengeResult": "5",
+        "prompt": "Что появится в консоли?",
+        "kind": "Что выведет код?",
+        "explanation": "Каждый следующий элемент вычисляется из предыдущего. Получаются 1, 3, 5.",
+        "options": [
+          "5",
+          "6",
+          "4",
+          "7"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int[] values = new int[4];\nvalues[0] = 1;\nfor (int i = 1; i < values.Length; i++)\n{\n    values[i] = values[i - 1] + 1;\n}\nConsole.WriteLine(values[values.Length - 1]);",
+        "challengeResult": "4",
+        "prompt": "Что появится в консоли?",
+        "kind": "Что выведет код?",
+        "explanation": "Каждый следующий элемент вычисляется из предыдущего. Получаются 1, 2, 3, 4.",
+        "options": [
+          "4",
+          "5",
+          "3",
+          "6"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int[] values = new int[4];\nvalues[0] = 1;\nfor (int i = 1; i < values.Length; i++)\n{\n    values[i] = values[i - 1] + 2;\n}\nConsole.WriteLine(values[values.Length - 1]);",
+        "challengeResult": "7",
+        "prompt": "Что появится в консоли?",
+        "kind": "Что выведет код?",
+        "explanation": "Каждый следующий элемент вычисляется из предыдущего. Получаются 1, 3, 5, 7.",
+        "options": [
           "7",
-          "10"
-        ],
-        "correctIndex": 0
-      },
-      {
-        "challengeCode": "int[] values = new int[5];\nvalues[0] = 3;\nfor (int i = 1; i < values.Length; i++)\n{\n    values[i] = values[i - 1] * 2;\n}\nConsole.WriteLine(values[values.Length - 1]);",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "При заполнении слева направо предыдущая ячейка уже содержит рассчитанное значение.",
-        "challengeResult": "48",
-        "options": [
-          "48",
-          "49",
-          "47",
-          "50"
-        ],
-        "correctIndex": 0
-      },
-      {
-        "challengeCode": "int[] values = new int[3];\nvalues[0] = 4;\nfor (int i = 1; i < values.Length; i++)\n{\n    values[i] = values[i - 1] + 2;\n}\nConsole.WriteLine(values[values.Length - 1]);",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "При заполнении слева направо предыдущая ячейка уже содержит рассчитанное значение.",
-        "challengeResult": "8",
-        "options": [
           "8",
-          "9",
-          "7",
-          "10"
+          "6",
+          "9"
         ],
         "correctIndex": 0
       },
       {
-        "challengeCode": "int[] values = new int[4];\nvalues[0] = 5;\nfor (int i = 1; i < values.Length; i++)\n{\n    values[i] = values[i - 1] * 2;\n}\nConsole.WriteLine(values[values.Length - 1]);",
-        "challengeInput": "",
+        "challengeCode": "int[] values = new int[2];\nvalues[0] = 2;\nfor (int i = 1; i < values.Length; i++)\n{\n    values[i] = values[i - 1] + 1;\n}\nConsole.WriteLine(values[values.Length - 1]);",
+        "challengeResult": "3",
         "prompt": "Что появится в консоли?",
-        "explanation": "При заполнении слева направо предыдущая ячейка уже содержит рассчитанное значение.",
-        "challengeResult": "40",
+        "kind": "Что выведет код?",
+        "explanation": "Каждый следующий элемент вычисляется из предыдущего. Получаются 2, 3.",
         "options": [
-          "40",
-          "41",
-          "39",
-          "42"
+          "3",
+          "4",
+          "2",
+          "5"
         ],
         "correctIndex": 0
       },
       {
-        "challengeCode": "int[] values = new int[5];\nvalues[0] = 6;\nfor (int i = 1; i < values.Length; i++)\n{\n    values[i] = values[i - 1] + 2;\n}\nConsole.WriteLine(values[values.Length - 1]);",
-        "challengeInput": "",
+        "challengeCode": "int[] values = new int[2];\nvalues[0] = 2;\nfor (int i = 1; i < values.Length; i++)\n{\n    values[i] = values[i - 1] + 2;\n}\nConsole.WriteLine(values[values.Length - 1]);",
+        "challengeResult": "4",
         "prompt": "Что появится в консоли?",
-        "explanation": "При заполнении слева направо предыдущая ячейка уже содержит рассчитанное значение.",
-        "challengeResult": "14",
+        "kind": "Что выведет код?",
+        "explanation": "Каждый следующий элемент вычисляется из предыдущего. Получаются 2, 4.",
         "options": [
-          "14",
-          "15",
-          "13",
-          "16"
+          "4",
+          "5",
+          "3",
+          "6"
         ],
         "correctIndex": 0
       },
       {
-        "challengeCode": "int[] values = new int[3];\nvalues[0] = 7;\nfor (int i = 1; i < values.Length; i++)\n{\n    values[i] = values[i - 1] * 2;\n}\nConsole.WriteLine(values[values.Length - 1]);",
-        "challengeInput": "",
+        "challengeCode": "int[] values = new int[3];\nvalues[0] = 2;\nfor (int i = 1; i < values.Length; i++)\n{\n    values[i] = values[i - 1] + 1;\n}\nConsole.WriteLine(values[values.Length - 1]);",
+        "challengeResult": "4",
         "prompt": "Что появится в консоли?",
-        "explanation": "При заполнении слева направо предыдущая ячейка уже содержит рассчитанное значение.",
-        "challengeResult": "28",
+        "kind": "Что выведет код?",
+        "explanation": "Каждый следующий элемент вычисляется из предыдущего. Получаются 2, 3, 4.",
         "options": [
-          "28",
-          "29",
-          "27",
-          "30"
-        ],
-        "correctIndex": 0
-      },
-      {
-        "challengeCode": "int[] values = new int[4];\nvalues[0] = 8;\nfor (int i = 1; i < values.Length; i++)\n{\n    values[i] = values[i - 1] + 2;\n}\nConsole.WriteLine(values[values.Length - 1]);",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "При заполнении слева направо предыдущая ячейка уже содержит рассчитанное значение.",
-        "challengeResult": "14",
-        "options": [
-          "14",
-          "15",
-          "13",
-          "16"
-        ],
-        "correctIndex": 0
-      },
-      {
-        "challengeCode": "int[] values = new int[5];\nvalues[0] = 9;\nfor (int i = 1; i < values.Length; i++)\n{\n    values[i] = values[i - 1] * 2;\n}\nConsole.WriteLine(values[values.Length - 1]);",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "При заполнении слева направо предыдущая ячейка уже содержит рассчитанное значение.",
-        "challengeResult": "144",
-        "options": [
-          "144",
-          "145",
-          "143",
-          "146"
+          "4",
+          "5",
+          "3",
+          "6"
         ],
         "correctIndex": 0
       }
     ],
-    "challengeResult": "4",
+    "challengeResult": "3",
     "options": [
-      "4",
-      "5",
       "3",
-      "6"
+      "4",
+      "2",
+      "5"
     ],
     "correctIndex": 0,
-    "exampleResult": "144"
+    "exampleResult": "3"
   },
   {
     "id": "expand-8-array-saved-sum",
@@ -17560,136 +17588,136 @@ const codeLessons = [
     "codeDeckId": "lab9-mixed-reading",
     "deckId": "methods-return-scope",
     "term": "Локальная переменная метода",
-    "exampleCode": "Console.WriteLine(Count(10));\nConsole.WriteLine(Count(11));\nint Count(int limit)\n{\n    int count = 0;\n    for (int i = 0; i < limit; i++)\n    {\n        count++;\n    }\n    return count;\n}",
-    "exampleNote": "Локальная переменная создаётся заново при каждом вызове. Результат предыдущего вызова не накапливается в ней.",
+    "exampleCode": "Console.WriteLine(Count(3));\nConsole.WriteLine(Count(4));\nint Count(int limit)\n{\n    int count = 0;\n    for (int i = 0; i < limit; i += 1)\n    {\n        count++;\n    }\n    return count;\n}",
+    "exampleNote": "В каждом вызове локальный count начинается с нуля. Аргументы 3 и 4, начальное i = 0, шаг 1.",
     "kind": "Что выведет код?",
-    "challengeCode": "Console.WriteLine(Count(2));\nConsole.WriteLine(Count(3));\nint Count(int limit)\n{\n    int count = 0;\n    for (int i = 0; i < limit; i++)\n    {\n        count++;\n    }\n    return count;\n}",
+    "challengeCode": "Console.WriteLine(Count(3));\nConsole.WriteLine(Count(4));\nint Count(int limit)\n{\n    int count = 0;\n    for (int i = 0; i < limit; i += 1)\n    {\n        count++;\n    }\n    return count;\n}",
     "challengeInput": "",
-    "prompt": "Что появится в консоли?",
-    "explanation": "Локальная переменная создаётся заново при каждом вызове. Результат предыдущего вызова не накапливается в ней.",
+    "prompt": "Сколько проходов сделает цикл в каждом вызове? Выберите две строки вывода.",
+    "explanation": "В каждом вызове локальный count начинается с нуля. Аргументы 3 и 4, начальное i = 0, шаг 1.",
     "variants": [
       {
-        "challengeCode": "Console.WriteLine(Count(3));\nConsole.WriteLine(Count(4));\nint Count(int limit)\n{\n    int count = 0;\n    for (int i = 0; i <= limit; i++)\n    {\n        count++;\n    }\n    return count;\n}",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Локальная переменная создаётся заново при каждом вызове. Результат предыдущего вызова не накапливается в ней.",
-        "challengeResult": "4\n5",
+        "challengeCode": "Console.WriteLine(Count(1));\nConsole.WriteLine(Count(2));\nint Count(int limit)\n{\n    int count = 0;\n    for (int i = 0; i < limit; i += 1)\n    {\n        count++;\n    }\n    return count;\n}",
+        "challengeResult": "1\n2",
+        "prompt": "Сколько проходов сделает цикл в каждом вызове? Выберите две строки вывода.",
+        "kind": "Что выведет код?",
+        "explanation": "В каждом вызове локальный count начинается с нуля. Аргументы 1 и 2, начальное i = 0, шаг 1.",
         "options": [
-          "4\n5",
-          "5\n4",
-          "5\n6",
-          "45"
+          "1\n2",
+          "2\n1",
+          "1 2",
+          "1"
         ],
         "correctIndex": 0
       },
       {
-        "challengeCode": "Console.WriteLine(Count(4));\nConsole.WriteLine(Count(5));\nint Count(int limit)\n{\n    int count = 0;\n    for (int i = 0; i < limit; i++)\n    {\n        count++;\n    }\n    return count;\n}",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Локальная переменная создаётся заново при каждом вызове. Результат предыдущего вызова не накапливается в ней.",
-        "challengeResult": "4\n5",
+        "challengeCode": "Console.WriteLine(Count(2));\nConsole.WriteLine(Count(3));\nint Count(int limit)\n{\n    int count = 0;\n    for (int i = 0; i < limit; i += 1)\n    {\n        count++;\n    }\n    return count;\n}",
+        "challengeResult": "2\n3",
+        "prompt": "Сколько проходов сделает цикл в каждом вызове? Выберите две строки вывода.",
+        "kind": "Что выведет код?",
+        "explanation": "В каждом вызове локальный count начинается с нуля. Аргументы 2 и 3, начальное i = 0, шаг 1.",
         "options": [
-          "4\n5",
-          "5\n4",
-          "5\n6",
-          "45"
+          "2\n3",
+          "3\n2",
+          "2 3",
+          "2"
         ],
         "correctIndex": 0
       },
       {
-        "challengeCode": "Console.WriteLine(Count(5));\nConsole.WriteLine(Count(6));\nint Count(int limit)\n{\n    int count = 0;\n    for (int i = 0; i <= limit; i++)\n    {\n        count++;\n    }\n    return count;\n}",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Локальная переменная создаётся заново при каждом вызове. Результат предыдущего вызова не накапливается в ней.",
-        "challengeResult": "6\n7",
+        "challengeCode": "Console.WriteLine(Count(1));\nConsole.WriteLine(Count(2));\nint Count(int limit)\n{\n    int count = 0;\n    for (int i = 0; i < limit; i += 2)\n    {\n        count++;\n    }\n    return count;\n}",
+        "challengeResult": "1\n1",
+        "prompt": "Сколько проходов сделает цикл в каждом вызове? Выберите две строки вывода.",
+        "kind": "Что выведет код?",
+        "explanation": "В каждом вызове локальный count начинается с нуля. Аргументы 1 и 2, начальное i = 0, шаг 2.",
         "options": [
-          "6\n7",
-          "7\n6",
-          "7\n8",
-          "67"
+          "1\n1",
+          "1 1",
+          "1",
+          "1\n1\n0"
         ],
         "correctIndex": 0
       },
       {
-        "challengeCode": "Console.WriteLine(Count(6));\nConsole.WriteLine(Count(7));\nint Count(int limit)\n{\n    int count = 0;\n    for (int i = 0; i < limit; i++)\n    {\n        count++;\n    }\n    return count;\n}",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Локальная переменная создаётся заново при каждом вызове. Результат предыдущего вызова не накапливается в ней.",
-        "challengeResult": "6\n7",
+        "challengeCode": "Console.WriteLine(Count(2));\nConsole.WriteLine(Count(3));\nint Count(int limit)\n{\n    int count = 0;\n    for (int i = 0; i < limit; i += 2)\n    {\n        count++;\n    }\n    return count;\n}",
+        "challengeResult": "1\n2",
+        "prompt": "Сколько проходов сделает цикл в каждом вызове? Выберите две строки вывода.",
+        "kind": "Что выведет код?",
+        "explanation": "В каждом вызове локальный count начинается с нуля. Аргументы 2 и 3, начальное i = 0, шаг 2.",
         "options": [
-          "6\n7",
-          "7\n6",
-          "7\n8",
-          "67"
+          "1\n2",
+          "2\n1",
+          "1 2",
+          "1"
         ],
         "correctIndex": 0
       },
       {
-        "challengeCode": "Console.WriteLine(Count(7));\nConsole.WriteLine(Count(8));\nint Count(int limit)\n{\n    int count = 0;\n    for (int i = 0; i <= limit; i++)\n    {\n        count++;\n    }\n    return count;\n}",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Локальная переменная создаётся заново при каждом вызове. Результат предыдущего вызова не накапливается в ней.",
-        "challengeResult": "8\n9",
+        "challengeCode": "Console.WriteLine(Count(3));\nConsole.WriteLine(Count(4));\nint Count(int limit)\n{\n    int count = 0;\n    for (int i = 0; i < limit; i += 2)\n    {\n        count++;\n    }\n    return count;\n}",
+        "challengeResult": "2\n2",
+        "prompt": "Сколько проходов сделает цикл в каждом вызове? Выберите две строки вывода.",
+        "kind": "Что выведет код?",
+        "explanation": "В каждом вызове локальный count начинается с нуля. Аргументы 3 и 4, начальное i = 0, шаг 2.",
         "options": [
-          "8\n9",
-          "9\n8",
-          "9\n10",
-          "89"
+          "2\n2",
+          "2 2",
+          "2",
+          "2\n2\n0"
         ],
         "correctIndex": 0
       },
       {
-        "challengeCode": "Console.WriteLine(Count(8));\nConsole.WriteLine(Count(9));\nint Count(int limit)\n{\n    int count = 0;\n    for (int i = 0; i < limit; i++)\n    {\n        count++;\n    }\n    return count;\n}",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Локальная переменная создаётся заново при каждом вызове. Результат предыдущего вызова не накапливается в ней.",
-        "challengeResult": "8\n9",
+        "challengeCode": "Console.WriteLine(Count(1));\nConsole.WriteLine(Count(2));\nint Count(int limit)\n{\n    int count = 0;\n    for (int i = 1; i < limit; i += 1)\n    {\n        count++;\n    }\n    return count;\n}",
+        "challengeResult": "0\n1",
+        "prompt": "Сколько проходов сделает цикл в каждом вызове? Выберите две строки вывода.",
+        "kind": "Что выведет код?",
+        "explanation": "В каждом вызове локальный count начинается с нуля. Аргументы 1 и 2, начальное i = 1, шаг 1.",
         "options": [
-          "8\n9",
-          "9\n8",
-          "9\n10",
-          "89"
+          "0\n1",
+          "1\n0",
+          "0 1",
+          "0"
         ],
         "correctIndex": 0
       },
       {
-        "challengeCode": "Console.WriteLine(Count(9));\nConsole.WriteLine(Count(10));\nint Count(int limit)\n{\n    int count = 0;\n    for (int i = 0; i <= limit; i++)\n    {\n        count++;\n    }\n    return count;\n}",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Локальная переменная создаётся заново при каждом вызове. Результат предыдущего вызова не накапливается в ней.",
-        "challengeResult": "10\n11",
+        "challengeCode": "Console.WriteLine(Count(2));\nConsole.WriteLine(Count(3));\nint Count(int limit)\n{\n    int count = 0;\n    for (int i = 1; i < limit; i += 1)\n    {\n        count++;\n    }\n    return count;\n}",
+        "challengeResult": "1\n2",
+        "prompt": "Сколько проходов сделает цикл в каждом вызове? Выберите две строки вывода.",
+        "kind": "Что выведет код?",
+        "explanation": "В каждом вызове локальный count начинается с нуля. Аргументы 2 и 3, начальное i = 1, шаг 1.",
         "options": [
-          "10\n11",
-          "11\n10",
-          "11\n12",
-          "1011"
+          "1\n2",
+          "2\n1",
+          "1 2",
+          "1"
         ],
         "correctIndex": 0
       },
       {
-        "challengeCode": "Console.WriteLine(Count(10));\nConsole.WriteLine(Count(11));\nint Count(int limit)\n{\n    int count = 0;\n    for (int i = 0; i < limit; i++)\n    {\n        count++;\n    }\n    return count;\n}",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Локальная переменная создаётся заново при каждом вызове. Результат предыдущего вызова не накапливается в ней.",
-        "challengeResult": "10\n11",
+        "challengeCode": "Console.WriteLine(Count(3));\nConsole.WriteLine(Count(4));\nint Count(int limit)\n{\n    int count = 0;\n    for (int i = 1; i < limit; i += 1)\n    {\n        count++;\n    }\n    return count;\n}",
+        "challengeResult": "2\n3",
+        "prompt": "Сколько проходов сделает цикл в каждом вызове? Выберите две строки вывода.",
+        "kind": "Что выведет код?",
+        "explanation": "В каждом вызове локальный count начинается с нуля. Аргументы 3 и 4, начальное i = 1, шаг 1.",
         "options": [
-          "10\n11",
-          "11\n10",
-          "11\n12",
-          "1011"
+          "2\n3",
+          "3\n2",
+          "2 3",
+          "2"
         ],
         "correctIndex": 0
       }
     ],
-    "challengeResult": "2\n3",
+    "challengeResult": "3\n4",
     "options": [
-      "2\n3",
-      "3\n2",
       "3\n4",
-      "23"
+      "4\n3",
+      "3 4",
+      "3"
     ],
     "correctIndex": 0,
-    "exampleResult": "10\n11"
+    "exampleResult": "3\n4"
   },
   {
     "id": "expand-9-method-copy",
@@ -17832,272 +17860,272 @@ const codeLessons = [
     "codeDeckId": "lab9-mixed-reading",
     "deckId": "methods-purchase",
     "term": "Расчётный метод",
-    "exampleCode": "Console.WriteLine(Sum(12));\nint Sum(int limit)\n{\n    int sum = 0;\n    for (int i = 1; i <= limit; i++)\n    {\n        if (i % 2 == 0)\n        {\n            sum += i;\n        }\n    }\n    return sum;\n}",
-    "exampleNote": "Метод суммирует только значения, подходящие под условие. Начальное значение накопителя задаётся для каждого вызова.",
+    "exampleCode": "Console.WriteLine(Sum(2));\nint Sum(int limit)\n{\n    int sum = 0;\n    for (int i = 1; i <= limit; i++)\n    {\n        sum += i;\n    }\n    return sum;\n}",
+    "exampleNote": "return после цикла возвращает сумму выбранных значений. Цикл перебирает i от 1 до 2.",
     "kind": "Что выведет код?",
-    "challengeCode": "Console.WriteLine(Sum(4));\nint Sum(int limit)\n{\n    int sum = 0;\n    for (int i = 1; i <= limit; i++)\n    {\n        if (i % 2 == 0)\n        {\n            sum += i;\n        }\n    }\n    return sum;\n}",
+    "challengeCode": "Console.WriteLine(Sum(2));\nint Sum(int limit)\n{\n    int sum = 0;\n    for (int i = 1; i <= limit; i++)\n    {\n        sum += i;\n    }\n    return sum;\n}",
     "challengeInput": "",
     "prompt": "Что появится в консоли?",
-    "explanation": "Метод суммирует только значения, подходящие под условие. Начальное значение накопителя задаётся для каждого вызова.",
+    "explanation": "return после цикла возвращает сумму выбранных значений. Цикл перебирает i от 1 до 2.",
     "variants": [
       {
-        "challengeCode": "Console.WriteLine(Sum(5));\nint Sum(int limit)\n{\n    int sum = 0;\n    for (int i = 1; i <= limit; i++)\n    {\n        if (i % 2 == 1)\n        {\n            sum += i;\n        }\n    }\n    return sum;\n}",
-        "challengeInput": "",
+        "challengeCode": "Console.WriteLine(Sum(1));\nint Sum(int limit)\n{\n    int sum = 0;\n    for (int i = 1; i <= limit; i++)\n    {\n        sum += i;\n    }\n    return sum;\n}",
+        "challengeResult": "1",
         "prompt": "Что появится в консоли?",
-        "explanation": "Метод суммирует только значения, подходящие под условие. Начальное значение накопителя задаётся для каждого вызова.",
-        "challengeResult": "9",
+        "kind": "Что выведет код?",
+        "explanation": "return после цикла возвращает сумму выбранных значений. Цикл перебирает i от 1 до 1.",
         "options": [
-          "9",
+          "1",
+          "2",
+          "0",
+          "3"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "Console.WriteLine(Sum(1));\nint Sum(int limit)\n{\n    int sum = 0;\n    for (int i = 1; i <= limit; i++)\n    {\n        sum += i;\n        return sum;\n    }\n    return sum;\n}",
+        "challengeResult": "1",
+        "prompt": "Что появится в консоли?",
+        "kind": "Что выведет код?",
+        "explanation": "return внутри цикла завершает метод на первом проходе. До следующих i выполнение не доходит.",
+        "options": [
+          "1",
+          "2",
+          "0",
+          "3"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "Console.WriteLine(Sum(2));\nint Sum(int limit)\n{\n    int sum = 0;\n    for (int i = 1; i <= limit; i++)\n    {\n        sum += i;\n        return sum;\n    }\n    return sum;\n}",
+        "challengeResult": "1",
+        "prompt": "Что появится в консоли?",
+        "kind": "Что выведет код?",
+        "explanation": "return внутри цикла завершает метод на первом проходе. До следующих i выполнение не доходит.",
+        "options": [
+          "1",
+          "2",
+          "0",
+          "3"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "Console.WriteLine(Sum(3));\nint Sum(int limit)\n{\n    int sum = 0;\n    for (int i = 1; i <= limit; i++)\n    {\n        sum += i;\n    }\n    return sum;\n}",
+        "challengeResult": "6",
+        "prompt": "Что появится в консоли?",
+        "kind": "Что выведет код?",
+        "explanation": "return после цикла возвращает сумму выбранных значений. Цикл перебирает i от 1 до 3.",
+        "options": [
+          "6",
+          "7",
+          "5",
+          "8"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "Console.WriteLine(Sum(3));\nint Sum(int limit)\n{\n    int sum = 0;\n    for (int i = 1; i <= limit; i++)\n    {\n        sum += i;\n        return sum;\n    }\n    return sum;\n}",
+        "challengeResult": "1",
+        "prompt": "Что появится в консоли?",
+        "kind": "Что выведет код?",
+        "explanation": "return внутри цикла завершает метод на первом проходе. До следующих i выполнение не доходит.",
+        "options": [
+          "1",
+          "2",
+          "0",
+          "3"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "Console.WriteLine(Sum(4));\nint Sum(int limit)\n{\n    int sum = 0;\n    for (int i = 1; i <= limit; i++)\n    {\n        sum += i;\n    }\n    return sum;\n}",
+        "challengeResult": "10",
+        "prompt": "Что появится в консоли?",
+        "kind": "Что выведет код?",
+        "explanation": "return после цикла возвращает сумму выбранных значений. Цикл перебирает i от 1 до 4.",
+        "options": [
           "10",
-          "8",
-          "11"
-        ],
-        "correctIndex": 0
-      },
-      {
-        "challengeCode": "Console.WriteLine(Sum(6));\nint Sum(int limit)\n{\n    int sum = 0;\n    for (int i = 1; i <= limit; i++)\n    {\n        if (i % 2 == 0)\n        {\n            sum += i;\n        }\n    }\n    return sum;\n}",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Метод суммирует только значения, подходящие под условие. Начальное значение накопителя задаётся для каждого вызова.",
-        "challengeResult": "12",
-        "options": [
-          "12",
-          "13",
           "11",
-          "14"
+          "9",
+          "12"
         ],
         "correctIndex": 0
       },
       {
-        "challengeCode": "Console.WriteLine(Sum(7));\nint Sum(int limit)\n{\n    int sum = 0;\n    for (int i = 1; i <= limit; i++)\n    {\n        if (i % 2 == 1)\n        {\n            sum += i;\n        }\n    }\n    return sum;\n}",
-        "challengeInput": "",
+        "challengeCode": "Console.WriteLine(Sum(4));\nint Sum(int limit)\n{\n    int sum = 0;\n    for (int i = 1; i <= limit; i++)\n    {\n        sum += i;\n        return sum;\n    }\n    return sum;\n}",
+        "challengeResult": "1",
         "prompt": "Что появится в консоли?",
-        "explanation": "Метод суммирует только значения, подходящие под условие. Начальное значение накопителя задаётся для каждого вызова.",
-        "challengeResult": "16",
+        "kind": "Что выведет код?",
+        "explanation": "return внутри цикла завершает метод на первом проходе. До следующих i выполнение не доходит.",
         "options": [
-          "16",
-          "17",
-          "15",
-          "18"
+          "1",
+          "2",
+          "0",
+          "3"
         ],
         "correctIndex": 0
       },
       {
-        "challengeCode": "Console.WriteLine(Sum(8));\nint Sum(int limit)\n{\n    int sum = 0;\n    for (int i = 1; i <= limit; i++)\n    {\n        if (i % 2 == 0)\n        {\n            sum += i;\n        }\n    }\n    return sum;\n}",
-        "challengeInput": "",
+        "challengeCode": "Console.WriteLine(Sum(1));\nint Sum(int limit)\n{\n    int sum = 0;\n    for (int i = 1; i <= limit; i++)\n    {\n        if (i % 2 == 0)\n        {\n            sum += i;\n        }\n    }\n    return sum;\n}",
+        "challengeResult": "0",
         "prompt": "Что появится в консоли?",
-        "explanation": "Метод суммирует только значения, подходящие под условие. Начальное значение накопителя задаётся для каждого вызова.",
-        "challengeResult": "20",
+        "kind": "Что выведет код?",
+        "explanation": "return после цикла возвращает сумму выбранных значений. Цикл перебирает i от 1 до 1.",
         "options": [
-          "20",
-          "21",
-          "19",
-          "22"
-        ],
-        "correctIndex": 0
-      },
-      {
-        "challengeCode": "Console.WriteLine(Sum(9));\nint Sum(int limit)\n{\n    int sum = 0;\n    for (int i = 1; i <= limit; i++)\n    {\n        if (i % 2 == 1)\n        {\n            sum += i;\n        }\n    }\n    return sum;\n}",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Метод суммирует только значения, подходящие под условие. Начальное значение накопителя задаётся для каждого вызова.",
-        "challengeResult": "25",
-        "options": [
-          "25",
-          "26",
-          "24",
-          "27"
-        ],
-        "correctIndex": 0
-      },
-      {
-        "challengeCode": "Console.WriteLine(Sum(10));\nint Sum(int limit)\n{\n    int sum = 0;\n    for (int i = 1; i <= limit; i++)\n    {\n        if (i % 2 == 0)\n        {\n            sum += i;\n        }\n    }\n    return sum;\n}",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Метод суммирует только значения, подходящие под условие. Начальное значение накопителя задаётся для каждого вызова.",
-        "challengeResult": "30",
-        "options": [
-          "30",
-          "31",
-          "29",
-          "32"
-        ],
-        "correctIndex": 0
-      },
-      {
-        "challengeCode": "Console.WriteLine(Sum(11));\nint Sum(int limit)\n{\n    int sum = 0;\n    for (int i = 1; i <= limit; i++)\n    {\n        if (i % 2 == 1)\n        {\n            sum += i;\n        }\n    }\n    return sum;\n}",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Метод суммирует только значения, подходящие под условие. Начальное значение накопителя задаётся для каждого вызова.",
-        "challengeResult": "36",
-        "options": [
-          "36",
-          "37",
-          "35",
-          "38"
-        ],
-        "correctIndex": 0
-      },
-      {
-        "challengeCode": "Console.WriteLine(Sum(12));\nint Sum(int limit)\n{\n    int sum = 0;\n    for (int i = 1; i <= limit; i++)\n    {\n        if (i % 2 == 0)\n        {\n            sum += i;\n        }\n    }\n    return sum;\n}",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Метод суммирует только значения, подходящие под условие. Начальное значение накопителя задаётся для каждого вызова.",
-        "challengeResult": "42",
-        "options": [
-          "42",
-          "43",
-          "41",
-          "44"
+          "0",
+          "1",
+          "-1",
+          "2"
         ],
         "correctIndex": 0
       }
     ],
-    "challengeResult": "6",
+    "challengeResult": "3",
     "options": [
-      "6",
-      "7",
-      "5",
-      "8"
+      "3",
+      "4",
+      "2",
+      "5"
     ],
     "correctIndex": 0,
-    "exampleResult": "42"
+    "exampleResult": "3"
   },
   {
     "id": "expand-9-method-print-order",
     "codeDeckId": "lab9-mixed-reading",
     "deckId": "methods-purchase",
     "term": "Метод вывода",
-    "exampleCode": "Show(10);\nConsole.Write(\"Z\");\nvoid Show(int count)\n{\n    for (int i = 0; i < count; i++)\n    {\n        Console.Write(\"A\");\n    }\n}",
-    "exampleNote": "Вывод внутри метода происходит во время вызова, до следующей команды вызывающего кода.",
+    "exampleCode": "Show(1);\nConsole.Write(\"Z\");\nvoid Show(int count)\n{\n    for (int i = 0; i < count; i++)\n    {\n        Console.Write(\"B\");\n    }\n}",
+    "exampleNote": "Вызов Show полностью выполняет 1 вывода. Z печатается после возврата из Show.",
     "kind": "Что выведет код?",
-    "challengeCode": "Show(2);\nConsole.Write(\"Z\");\nvoid Show(int count)\n{\n    for (int i = 0; i < count; i++)\n    {\n        Console.Write(\"A\");\n    }\n}",
+    "challengeCode": "Show(1);\nConsole.Write(\"Z\");\nvoid Show(int count)\n{\n    for (int i = 0; i < count; i++)\n    {\n        Console.Write(\"B\");\n    }\n}",
     "challengeInput": "",
     "prompt": "Что появится в консоли?",
-    "explanation": "Вывод внутри метода происходит во время вызова, до следующей команды вызывающего кода.",
+    "explanation": "Вызов Show полностью выполняет 1 вывода. Z печатается после возврата из Show.",
     "variants": [
       {
-        "challengeCode": "Show(3);\nConsole.Write(\"Z\");\nvoid Show(int count)\n{\n    for (int i = 0; i < count; i++)\n    {\n        Console.WriteLine(\"A\");\n    }\n}",
-        "challengeInput": "",
+        "challengeCode": "Show(1);\nConsole.Write(\"Z\");\nvoid Show(int count)\n{\n    for (int i = 0; i < count; i++)\n    {\n        Console.Write(\"A\");\n    }\n}",
+        "challengeResult": "AZ",
         "prompt": "Что появится в консоли?",
-        "explanation": "Вывод внутри метода происходит во время вызова, до следующей команды вызывающего кода.",
-        "challengeResult": "A\nA\nA\nZ",
+        "kind": "Что выведет код?",
+        "explanation": "Вызов Show полностью выполняет 1 вывода. Z печатается после возврата из Show.",
         "options": [
-          "A\nA\nA\nZ",
-          "Z\nA\nA\nA",
+          "AZ",
+          "AZ\n0",
+          "Ничего",
+          "0"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "Console.Write(\"Z\");\nShow(1);\nvoid Show(int count)\n{\n    for (int i = 0; i < count; i++)\n    {\n        Console.Write(\"B\");\n    }\n}",
+        "challengeResult": "ZB",
+        "prompt": "Что появится в консоли?",
+        "kind": "Что выведет код?",
+        "explanation": "Вызов Show полностью выполняет 1 вывода. Z печатается перед вызовом.",
+        "options": [
+          "ZB",
+          "ZB\n0",
+          "Ничего",
+          "0"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "Console.Write(\"Z\");\nShow(1);\nvoid Show(int count)\n{\n    for (int i = 0; i < count; i++)\n    {\n        Console.Write(\"A\");\n    }\n}",
+        "challengeResult": "ZA",
+        "prompt": "Что появится в консоли?",
+        "kind": "Что выведет код?",
+        "explanation": "Вызов Show полностью выполняет 1 вывода. Z печатается перед вызовом.",
+        "options": [
+          "ZA",
+          "ZA\n0",
+          "Ничего",
+          "0"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "Show(2);\nConsole.Write(\"Z\");\nvoid Show(int count)\n{\n    for (int i = 0; i < count; i++)\n    {\n        Console.Write(\"A\");\n    }\n}",
+        "challengeResult": "AAZ",
+        "prompt": "Что появится в консоли?",
+        "kind": "Что выведет код?",
+        "explanation": "Вызов Show полностью выполняет 2 вывода. Z печатается после возврата из Show.",
+        "options": [
+          "AAZ",
+          "AAZ\n0",
+          "Ничего",
+          "0"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "Console.Write(\"Z\");\nShow(2);\nvoid Show(int count)\n{\n    for (int i = 0; i < count; i++)\n    {\n        Console.Write(\"B\");\n    }\n}",
+        "challengeResult": "ZBB",
+        "prompt": "Что появится в консоли?",
+        "kind": "Что выведет код?",
+        "explanation": "Вызов Show полностью выполняет 2 вывода. Z печатается перед вызовом.",
+        "options": [
+          "ZBB",
+          "ZBB\n0",
+          "Ничего",
+          "0"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "Show(2);\nConsole.Write(\"Z\");\nvoid Show(int count)\n{\n    for (int i = 0; i < count; i++)\n    {\n        Console.Write(\"B\");\n    }\n}",
+        "challengeResult": "BBZ",
+        "prompt": "Что появится в консоли?",
+        "kind": "Что выведет код?",
+        "explanation": "Вызов Show полностью выполняет 2 вывода. Z печатается после возврата из Show.",
+        "options": [
+          "BBZ",
+          "BBZ\n0",
+          "Ничего",
+          "0"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "Console.Write(\"Z\");\nShow(2);\nvoid Show(int count)\n{\n    for (int i = 0; i < count; i++)\n    {\n        Console.Write(\"A\");\n    }\n}",
+        "challengeResult": "ZAA",
+        "prompt": "Что появится в консоли?",
+        "kind": "Что выведет код?",
+        "explanation": "Вызов Show полностью выполняет 2 вывода. Z печатается перед вызовом.",
+        "options": [
+          "ZAA",
+          "ZAA\n0",
+          "Ничего",
+          "0"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "Show(3);\nConsole.Write(\"Z\");\nvoid Show(int count)\n{\n    for (int i = 0; i < count; i++)\n    {\n        Console.Write(\"A\");\n    }\n}",
+        "challengeResult": "AAAZ",
+        "prompt": "Что появится в консоли?",
+        "kind": "Что выведет код?",
+        "explanation": "Вызов Show полностью выполняет 3 вывода. Z печатается после возврата из Show.",
+        "options": [
           "AAAZ",
-          "Ничего"
-        ],
-        "correctIndex": 0
-      },
-      {
-        "challengeCode": "Show(4);\nConsole.Write(\"Z\");\nvoid Show(int count)\n{\n    for (int i = 0; i < count; i++)\n    {\n        Console.Write(\"A\");\n    }\n}",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Вывод внутри метода происходит во время вызова, до следующей команды вызывающего кода.",
-        "challengeResult": "AAAAZ",
-        "options": [
-          "AAAAZ",
-          "ZAAAA",
+          "AAAZ\n0",
           "Ничего",
-          "Ошибка компиляции"
-        ],
-        "correctIndex": 0
-      },
-      {
-        "challengeCode": "Show(5);\nConsole.Write(\"Z\");\nvoid Show(int count)\n{\n    for (int i = 0; i < count; i++)\n    {\n        Console.WriteLine(\"A\");\n    }\n}",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Вывод внутри метода происходит во время вызова, до следующей команды вызывающего кода.",
-        "challengeResult": "A\nA\nA\nA\nA\nZ",
-        "options": [
-          "A\nA\nA\nA\nA\nZ",
-          "Z\nA\nA\nA\nA\nA",
-          "AAAAAZ",
-          "Ничего"
-        ],
-        "correctIndex": 0
-      },
-      {
-        "challengeCode": "Show(6);\nConsole.Write(\"Z\");\nvoid Show(int count)\n{\n    for (int i = 0; i < count; i++)\n    {\n        Console.Write(\"A\");\n    }\n}",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Вывод внутри метода происходит во время вызова, до следующей команды вызывающего кода.",
-        "challengeResult": "AAAAAAZ",
-        "options": [
-          "AAAAAAZ",
-          "ZAAAAAA",
-          "Ничего",
-          "Ошибка компиляции"
-        ],
-        "correctIndex": 0
-      },
-      {
-        "challengeCode": "Show(7);\nConsole.Write(\"Z\");\nvoid Show(int count)\n{\n    for (int i = 0; i < count; i++)\n    {\n        Console.WriteLine(\"A\");\n    }\n}",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Вывод внутри метода происходит во время вызова, до следующей команды вызывающего кода.",
-        "challengeResult": "A\nA\nA\nA\nA\nA\nA\nZ",
-        "options": [
-          "A\nA\nA\nA\nA\nA\nA\nZ",
-          "Z\nA\nA\nA\nA\nA\nA\nA",
-          "AAAAAAAZ",
-          "Ничего"
-        ],
-        "correctIndex": 0
-      },
-      {
-        "challengeCode": "Show(8);\nConsole.Write(\"Z\");\nvoid Show(int count)\n{\n    for (int i = 0; i < count; i++)\n    {\n        Console.Write(\"A\");\n    }\n}",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Вывод внутри метода происходит во время вызова, до следующей команды вызывающего кода.",
-        "challengeResult": "AAAAAAAAZ",
-        "options": [
-          "AAAAAAAAZ",
-          "ZAAAAAAAA",
-          "Ничего",
-          "Ошибка компиляции"
-        ],
-        "correctIndex": 0
-      },
-      {
-        "challengeCode": "Show(9);\nConsole.Write(\"Z\");\nvoid Show(int count)\n{\n    for (int i = 0; i < count; i++)\n    {\n        Console.WriteLine(\"A\");\n    }\n}",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Вывод внутри метода происходит во время вызова, до следующей команды вызывающего кода.",
-        "challengeResult": "A\nA\nA\nA\nA\nA\nA\nA\nA\nZ",
-        "options": [
-          "A\nA\nA\nA\nA\nA\nA\nA\nA\nZ",
-          "Z\nA\nA\nA\nA\nA\nA\nA\nA\nA",
-          "AAAAAAAAAZ",
-          "Ничего"
-        ],
-        "correctIndex": 0
-      },
-      {
-        "challengeCode": "Show(10);\nConsole.Write(\"Z\");\nvoid Show(int count)\n{\n    for (int i = 0; i < count; i++)\n    {\n        Console.Write(\"A\");\n    }\n}",
-        "challengeInput": "",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Вывод внутри метода происходит во время вызова, до следующей команды вызывающего кода.",
-        "challengeResult": "AAAAAAAAAAZ",
-        "options": [
-          "AAAAAAAAAAZ",
-          "ZAAAAAAAAAA",
-          "Ничего",
-          "Ошибка компиляции"
+          "0"
         ],
         "correctIndex": 0
       }
     ],
-    "challengeResult": "AAZ",
+    "challengeResult": "BZ",
     "options": [
-      "AAZ",
-      "ZAA",
+      "BZ",
+      "BZ\n0",
       "Ничего",
-      "Ошибка компиляции"
+      "0"
     ],
     "correctIndex": 0,
-    "exampleResult": "AAAAAAAAAAZ"
+    "exampleResult": "BZ"
   },
   {
     "id": "expand-9-method-discount-two",
@@ -23356,485 +23384,518 @@ const codeLessons = [
     "codeDeckId": "lab7-bank-tracing",
     "deckId": "loops-control",
     "term": "Накопитель",
-    "exampleCode": "int first = 1;\nint last = first + 2;\nint factor = 5;\nint sum = 0;\nfor (int i = first; i <= last; i++)\n{\n    sum += i * i * factor;\n}\nConsole.WriteLine(sum);",
-    "exampleNote": "В каждой итерации в накопитель добавляется квадрат i с заданным множителем, а не само число i.",
+    "exampleCode": "int value = 3;\nint sum = 0;\nfor (int i = 0; i < 2; i++)\n{\n    sum += value;\n    value += 1;\n}\nConsole.WriteLine(sum);",
+    "exampleNote": "В sum попадают 3 и 4. Значение value меняется после прибавления. Итоговая сумма 7.",
     "kind": "Что выведет код?",
-    "challengeCode": "int first = 1;\nint last = first + 2;\nint factor = 1;\nint sum = 0;\nfor (int i = first; i <= last; i++)\n{\n    sum += i * i * factor;\n}\nConsole.WriteLine(sum);",
-    "prompt": "Что появится в консоли?",
-    "explanation": "В каждой итерации в накопитель добавляется квадрат i с заданным множителем, а не само число i.",
+    "challengeCode": "int value = 3;\nint sum = 0;\nfor (int i = 0; i < 2; i++)\n{\n    sum += value;\n    value += 1;\n}\nConsole.WriteLine(sum);",
+    "prompt": "Какие значения успеют прибавиться к sum? Выберите итог.",
+    "explanation": "В sum попадают 3 и 4. Значение value меняется после прибавления. Итоговая сумма 7.",
     "variants": [
       {
-        "challengeCode": "int first = 2;\nint last = first + 3;\nint factor = 2;\nint sum = 0;\nfor (int i = first; i <= last; i++)\n{\n    sum += i * i * factor;\n}\nConsole.WriteLine(sum);",
-        "prompt": "Что появится в консоли?",
-        "explanation": "В каждой итерации в накопитель добавляется квадрат i с заданным множителем, а не само число i.",
-        "challengeResult": "108",
+        "challengeCode": "int value = 1;\nint sum = 0;\nfor (int i = 0; i < 2; i++)\n{\n    sum += value;\n    value += 1;\n}\nConsole.WriteLine(sum);",
+        "challengeResult": "3",
+        "prompt": "Какие значения успеют прибавиться к sum? Выберите итог.",
+        "kind": "Что выведет код?",
+        "explanation": "В sum попадают 1 и 2. Значение value меняется после прибавления. Итоговая сумма 3.",
         "options": [
-          "108",
-          "109",
-          "107",
-          "216"
+          "3",
+          "4",
+          "2",
+          "5"
         ],
         "correctIndex": 0
       },
       {
-        "challengeCode": "int first = 3;\nint last = first + 4;\nint factor = 3;\nint sum = 0;\nfor (int i = first; i <= last; i++)\n{\n    sum += i * i * factor;\n}\nConsole.WriteLine(sum);",
-        "prompt": "Что появится в консоли?",
-        "explanation": "В каждой итерации в накопитель добавляется квадрат i с заданным множителем, а не само число i.",
-        "challengeResult": "405",
+        "challengeCode": "int value = 2;\nint sum = 0;\nfor (int i = 0; i < 2; i++)\n{\n    sum += value;\n    value += 1;\n}\nConsole.WriteLine(sum);",
+        "challengeResult": "5",
+        "prompt": "Какие значения успеют прибавиться к sum? Выберите итог.",
+        "kind": "Что выведет код?",
+        "explanation": "В sum попадают 2 и 3. Значение value меняется после прибавления. Итоговая сумма 5.",
         "options": [
-          "405",
-          "406",
-          "404",
-          "810"
+          "5",
+          "6",
+          "4",
+          "7"
         ],
         "correctIndex": 0
       },
       {
-        "challengeCode": "int first = 1;\nint last = first + 5;\nint factor = 4;\nint sum = 0;\nfor (int i = first; i <= last; i++)\n{\n    sum += i * i * factor;\n}\nConsole.WriteLine(sum);",
-        "prompt": "Что появится в консоли?",
-        "explanation": "В каждой итерации в накопитель добавляется квадрат i с заданным множителем, а не само число i.",
-        "challengeResult": "364",
+        "challengeCode": "int value = 1;\nint sum = 0;\nfor (int i = 0; i < 2; i++)\n{\n    sum += value;\n    value += 2;\n}\nConsole.WriteLine(sum);",
+        "challengeResult": "4",
+        "prompt": "Какие значения успеют прибавиться к sum? Выберите итог.",
+        "kind": "Что выведет код?",
+        "explanation": "В sum попадают 1 и 3. Значение value меняется после прибавления. Итоговая сумма 4.",
         "options": [
-          "364",
-          "365",
-          "363",
-          "728"
+          "4",
+          "5",
+          "3",
+          "6"
         ],
         "correctIndex": 0
       },
       {
-        "challengeCode": "int first = 2;\nint last = first + 2;\nint factor = 5;\nint sum = 0;\nfor (int i = first; i <= last; i++)\n{\n    sum += i * i * factor;\n}\nConsole.WriteLine(sum);",
-        "prompt": "Что появится в консоли?",
-        "explanation": "В каждой итерации в накопитель добавляется квадрат i с заданным множителем, а не само число i.",
-        "challengeResult": "145",
+        "challengeCode": "int value = 2;\nint sum = 0;\nfor (int i = 0; i < 2; i++)\n{\n    sum += value;\n    value += 2;\n}\nConsole.WriteLine(sum);",
+        "challengeResult": "6",
+        "prompt": "Какие значения успеют прибавиться к sum? Выберите итог.",
+        "kind": "Что выведет код?",
+        "explanation": "В sum попадают 2 и 4. Значение value меняется после прибавления. Итоговая сумма 6.",
         "options": [
-          "145",
-          "146",
-          "144",
-          "290"
+          "6",
+          "7",
+          "5",
+          "8"
         ],
         "correctIndex": 0
       },
       {
-        "challengeCode": "int first = 3;\nint last = first + 3;\nint factor = 1;\nint sum = 0;\nfor (int i = first; i <= last; i++)\n{\n    sum += i * i * factor;\n}\nConsole.WriteLine(sum);",
-        "prompt": "Что появится в консоли?",
-        "explanation": "В каждой итерации в накопитель добавляется квадрат i с заданным множителем, а не само число i.",
-        "challengeResult": "86",
+        "challengeCode": "int value = 3;\nint sum = 0;\nfor (int i = 0; i < 2; i++)\n{\n    sum += value;\n    value += 2;\n}\nConsole.WriteLine(sum);",
+        "challengeResult": "8",
+        "prompt": "Какие значения успеют прибавиться к sum? Выберите итог.",
+        "kind": "Что выведет код?",
+        "explanation": "В sum попадают 3 и 5. Значение value меняется после прибавления. Итоговая сумма 8.",
         "options": [
-          "86",
-          "87",
-          "85",
-          "172"
+          "8",
+          "9",
+          "7",
+          "10"
         ],
         "correctIndex": 0
       },
       {
-        "challengeCode": "int first = 1;\nint last = first + 4;\nint factor = 2;\nint sum = 0;\nfor (int i = first; i <= last; i++)\n{\n    sum += i * i * factor;\n}\nConsole.WriteLine(sum);",
-        "prompt": "Что появится в консоли?",
-        "explanation": "В каждой итерации в накопитель добавляется квадрат i с заданным множителем, а не само число i.",
-        "challengeResult": "110",
+        "challengeCode": "int value = 1;\nint sum = 0;\nfor (int i = 0; i < 3; i++)\n{\n    sum += value;\n    value += 1;\n}\nConsole.WriteLine(sum);",
+        "challengeResult": "6",
+        "prompt": "Какие значения успеют прибавиться к sum? Выберите итог.",
+        "kind": "Что выведет код?",
+        "explanation": "В sum попадают 1 и 2 и 3. Значение value меняется после прибавления. Итоговая сумма 6.",
         "options": [
-          "110",
-          "111",
-          "109",
-          "220"
+          "6",
+          "7",
+          "5",
+          "8"
         ],
         "correctIndex": 0
       },
       {
-        "challengeCode": "int first = 2;\nint last = first + 5;\nint factor = 3;\nint sum = 0;\nfor (int i = first; i <= last; i++)\n{\n    sum += i * i * factor;\n}\nConsole.WriteLine(sum);",
-        "prompt": "Что появится в консоли?",
-        "explanation": "В каждой итерации в накопитель добавляется квадрат i с заданным множителем, а не само число i.",
-        "challengeResult": "417",
+        "challengeCode": "int value = 2;\nint sum = 0;\nfor (int i = 0; i < 3; i++)\n{\n    sum += value;\n    value += 1;\n}\nConsole.WriteLine(sum);",
+        "challengeResult": "9",
+        "prompt": "Какие значения успеют прибавиться к sum? Выберите итог.",
+        "kind": "Что выведет код?",
+        "explanation": "В sum попадают 2 и 3 и 4. Значение value меняется после прибавления. Итоговая сумма 9.",
         "options": [
-          "417",
-          "418",
-          "416",
-          "834"
+          "9",
+          "10",
+          "8",
+          "11"
         ],
         "correctIndex": 0
       },
       {
-        "challengeCode": "int first = 3;\nint last = first + 2;\nint factor = 4;\nint sum = 0;\nfor (int i = first; i <= last; i++)\n{\n    sum += i * i * factor;\n}\nConsole.WriteLine(sum);",
-        "prompt": "Что появится в консоли?",
-        "explanation": "В каждой итерации в накопитель добавляется квадрат i с заданным множителем, а не само число i.",
-        "challengeResult": "200",
+        "challengeCode": "int value = 3;\nint sum = 0;\nfor (int i = 0; i < 3; i++)\n{\n    sum += value;\n    value += 1;\n}\nConsole.WriteLine(sum);",
+        "challengeResult": "12",
+        "prompt": "Какие значения успеют прибавиться к sum? Выберите итог.",
+        "kind": "Что выведет код?",
+        "explanation": "В sum попадают 3 и 4 и 5. Значение value меняется после прибавления. Итоговая сумма 12.",
         "options": [
-          "200",
-          "201",
-          "199",
-          "400"
+          "12",
+          "13",
+          "11",
+          "14"
         ],
         "correctIndex": 0
       },
       {
-        "challengeCode": "int first = 1;\nint last = first + 3;\nint factor = 5;\nint sum = 0;\nfor (int i = first; i <= last; i++)\n{\n    sum += i * i * factor;\n}\nConsole.WriteLine(sum);",
-        "prompt": "Что появится в консоли?",
-        "explanation": "В каждой итерации в накопитель добавляется квадрат i с заданным множителем, а не само число i.",
-        "challengeResult": "150",
+        "challengeCode": "int value = 1;\nint sum = 0;\nfor (int i = 0; i < 3; i++)\n{\n    sum += value;\n    value += 2;\n}\nConsole.WriteLine(sum);",
+        "challengeResult": "9",
+        "prompt": "Какие значения успеют прибавиться к sum? Выберите итог.",
+        "kind": "Что выведет код?",
+        "explanation": "В sum попадают 1 и 3 и 5. Значение value меняется после прибавления. Итоговая сумма 9.",
         "options": [
-          "150",
-          "151",
-          "149",
-          "300"
+          "9",
+          "10",
+          "8",
+          "11"
         ],
         "correctIndex": 0
       },
       {
-        "challengeCode": "int first = 2;\nint last = first + 4;\nint factor = 1;\nint sum = 0;\nfor (int i = first; i <= last; i++)\n{\n    sum += i * i * factor;\n}\nConsole.WriteLine(sum);",
-        "prompt": "Что появится в консоли?",
-        "explanation": "В каждой итерации в накопитель добавляется квадрат i с заданным множителем, а не само число i.",
-        "challengeResult": "90",
+        "challengeCode": "int value = 2;\nint sum = 0;\nfor (int i = 0; i < 3; i++)\n{\n    sum += value;\n    value += 2;\n}\nConsole.WriteLine(sum);",
+        "challengeResult": "12",
+        "prompt": "Какие значения успеют прибавиться к sum? Выберите итог.",
+        "kind": "Что выведет код?",
+        "explanation": "В sum попадают 2 и 4 и 6. Значение value меняется после прибавления. Итоговая сумма 12.",
         "options": [
-          "90",
-          "91",
-          "89",
-          "180"
+          "12",
+          "13",
+          "11",
+          "14"
         ],
         "correctIndex": 0
       },
       {
-        "challengeCode": "int first = 3;\nint last = first + 5;\nint factor = 2;\nint sum = 0;\nfor (int i = first; i <= last; i++)\n{\n    sum += i * i * factor;\n}\nConsole.WriteLine(sum);",
-        "prompt": "Что появится в консоли?",
-        "explanation": "В каждой итерации в накопитель добавляется квадрат i с заданным множителем, а не само число i.",
-        "challengeResult": "398",
+        "challengeCode": "int value = 3;\nint sum = 0;\nfor (int i = 0; i < 3; i++)\n{\n    sum += value;\n    value += 2;\n}\nConsole.WriteLine(sum);",
+        "challengeResult": "15",
+        "prompt": "Какие значения успеют прибавиться к sum? Выберите итог.",
+        "kind": "Что выведет код?",
+        "explanation": "В sum попадают 3 и 5 и 7. Значение value меняется после прибавления. Итоговая сумма 15.",
         "options": [
-          "398",
-          "399",
-          "397",
-          "796"
+          "15",
+          "16",
+          "14",
+          "17"
         ],
         "correctIndex": 0
       }
     ],
-    "challengeResult": "14",
+    "challengeResult": "7",
     "options": [
-      "14",
-      "15",
-      "13",
-      "28"
+      "7",
+      "8",
+      "6",
+      "9"
     ],
     "correctIndex": 0,
-    "exampleResult": "70"
+    "exampleResult": "7"
   },
   {
     "id": "bank-7-weighted-squares-2",
     "codeDeckId": "lab7-bank-tracing",
     "deckId": "loops-control",
     "term": "Накопитель",
-    "exampleCode": "int first = 2;\nint last = first + 3;\nint factor = 1;\nint sum = 0;\nfor (int i = first; i <= last; i++)\n{\n    sum += i * i * factor;\n}\nConsole.WriteLine(sum);",
-    "exampleNote": "В каждой итерации в накопитель добавляется квадрат i с заданным множителем, а не само число i.",
+    "exampleCode": "int value = 3;\nint sum = 0;\nfor (int i = 0; i < 2; i++)\n{\n    sum += value;\n    value += 2;\n}\nConsole.WriteLine(sum);",
+    "exampleNote": "В sum попадают 3 и 5. Значение value меняется после прибавления. Итоговая сумма 8.",
     "kind": "Что выведет код?",
-    "challengeCode": "int first = 1;\nint last = first + 2;\nint factor = 3;\nint sum = 0;\nfor (int i = first; i <= last; i++)\n{\n    sum += i * i * factor;\n}\nConsole.WriteLine(sum);",
-    "prompt": "Что появится в консоли?",
-    "explanation": "В каждой итерации в накопитель добавляется квадрат i с заданным множителем, а не само число i.",
+    "challengeCode": "int value = 3;\nint sum = 0;\nfor (int i = 0; i < 2; i++)\n{\n    sum += value;\n    value += 2;\n}\nConsole.WriteLine(sum);",
+    "prompt": "Какие значения успеют прибавиться к sum? Выберите итог.",
+    "explanation": "В sum попадают 3 и 5. Значение value меняется после прибавления. Итоговая сумма 8.",
     "variants": [
       {
-        "challengeCode": "int first = 2;\nint last = first + 3;\nint factor = 4;\nint sum = 0;\nfor (int i = first; i <= last; i++)\n{\n    sum += i * i * factor;\n}\nConsole.WriteLine(sum);",
-        "prompt": "Что появится в консоли?",
-        "explanation": "В каждой итерации в накопитель добавляется квадрат i с заданным множителем, а не само число i.",
-        "challengeResult": "216",
+        "challengeCode": "int value = 1;\nint sum = 0;\nfor (int i = 0; i < 2; i++)\n{\n    sum += value;\n    value += 1;\n}\nConsole.WriteLine(sum);",
+        "challengeResult": "3",
+        "prompt": "Какие значения успеют прибавиться к sum? Выберите итог.",
+        "kind": "Что выведет код?",
+        "explanation": "В sum попадают 1 и 2. Значение value меняется после прибавления. Итоговая сумма 3.",
         "options": [
-          "216",
-          "217",
-          "215",
-          "432"
+          "3",
+          "4",
+          "2",
+          "5"
         ],
         "correctIndex": 0
       },
       {
-        "challengeCode": "int first = 3;\nint last = first + 4;\nint factor = 5;\nint sum = 0;\nfor (int i = first; i <= last; i++)\n{\n    sum += i * i * factor;\n}\nConsole.WriteLine(sum);",
-        "prompt": "Что появится в консоли?",
-        "explanation": "В каждой итерации в накопитель добавляется квадрат i с заданным множителем, а не само число i.",
-        "challengeResult": "675",
+        "challengeCode": "int value = 2;\nint sum = 0;\nfor (int i = 0; i < 2; i++)\n{\n    sum += value;\n    value += 1;\n}\nConsole.WriteLine(sum);",
+        "challengeResult": "5",
+        "prompt": "Какие значения успеют прибавиться к sum? Выберите итог.",
+        "kind": "Что выведет код?",
+        "explanation": "В sum попадают 2 и 3. Значение value меняется после прибавления. Итоговая сумма 5.",
         "options": [
-          "675",
-          "676",
-          "674",
-          "1350"
+          "5",
+          "6",
+          "4",
+          "7"
         ],
         "correctIndex": 0
       },
       {
-        "challengeCode": "int first = 1;\nint last = first + 5;\nint factor = 1;\nint sum = 0;\nfor (int i = first; i <= last; i++)\n{\n    sum += i * i * factor;\n}\nConsole.WriteLine(sum);",
-        "prompt": "Что появится в консоли?",
-        "explanation": "В каждой итерации в накопитель добавляется квадрат i с заданным множителем, а не само число i.",
-        "challengeResult": "91",
+        "challengeCode": "int value = 3;\nint sum = 0;\nfor (int i = 0; i < 2; i++)\n{\n    sum += value;\n    value += 1;\n}\nConsole.WriteLine(sum);",
+        "challengeResult": "7",
+        "prompt": "Какие значения успеют прибавиться к sum? Выберите итог.",
+        "kind": "Что выведет код?",
+        "explanation": "В sum попадают 3 и 4. Значение value меняется после прибавления. Итоговая сумма 7.",
         "options": [
-          "91",
-          "92",
-          "90",
-          "182"
+          "7",
+          "8",
+          "6",
+          "9"
         ],
         "correctIndex": 0
       },
       {
-        "challengeCode": "int first = 2;\nint last = first + 2;\nint factor = 2;\nint sum = 0;\nfor (int i = first; i <= last; i++)\n{\n    sum += i * i * factor;\n}\nConsole.WriteLine(sum);",
-        "prompt": "Что появится в консоли?",
-        "explanation": "В каждой итерации в накопитель добавляется квадрат i с заданным множителем, а не само число i.",
-        "challengeResult": "58",
+        "challengeCode": "int value = 1;\nint sum = 0;\nfor (int i = 0; i < 2; i++)\n{\n    sum += value;\n    value += 2;\n}\nConsole.WriteLine(sum);",
+        "challengeResult": "4",
+        "prompt": "Какие значения успеют прибавиться к sum? Выберите итог.",
+        "kind": "Что выведет код?",
+        "explanation": "В sum попадают 1 и 3. Значение value меняется после прибавления. Итоговая сумма 4.",
         "options": [
-          "58",
-          "59",
-          "57",
-          "116"
+          "4",
+          "5",
+          "3",
+          "6"
         ],
         "correctIndex": 0
       },
       {
-        "challengeCode": "int first = 3;\nint last = first + 3;\nint factor = 3;\nint sum = 0;\nfor (int i = first; i <= last; i++)\n{\n    sum += i * i * factor;\n}\nConsole.WriteLine(sum);",
-        "prompt": "Что появится в консоли?",
-        "explanation": "В каждой итерации в накопитель добавляется квадрат i с заданным множителем, а не само число i.",
-        "challengeResult": "258",
+        "challengeCode": "int value = 2;\nint sum = 0;\nfor (int i = 0; i < 2; i++)\n{\n    sum += value;\n    value += 2;\n}\nConsole.WriteLine(sum);",
+        "challengeResult": "6",
+        "prompt": "Какие значения успеют прибавиться к sum? Выберите итог.",
+        "kind": "Что выведет код?",
+        "explanation": "В sum попадают 2 и 4. Значение value меняется после прибавления. Итоговая сумма 6.",
         "options": [
-          "258",
-          "259",
-          "257",
-          "516"
+          "6",
+          "7",
+          "5",
+          "8"
         ],
         "correctIndex": 0
       },
       {
-        "challengeCode": "int first = 1;\nint last = first + 4;\nint factor = 4;\nint sum = 0;\nfor (int i = first; i <= last; i++)\n{\n    sum += i * i * factor;\n}\nConsole.WriteLine(sum);",
-        "prompt": "Что появится в консоли?",
-        "explanation": "В каждой итерации в накопитель добавляется квадрат i с заданным множителем, а не само число i.",
-        "challengeResult": "220",
+        "challengeCode": "int value = 1;\nint sum = 0;\nfor (int i = 0; i < 3; i++)\n{\n    sum += value;\n    value += 1;\n}\nConsole.WriteLine(sum);",
+        "challengeResult": "6",
+        "prompt": "Какие значения успеют прибавиться к sum? Выберите итог.",
+        "kind": "Что выведет код?",
+        "explanation": "В sum попадают 1 и 2 и 3. Значение value меняется после прибавления. Итоговая сумма 6.",
         "options": [
-          "220",
-          "221",
-          "219",
-          "440"
+          "6",
+          "7",
+          "5",
+          "8"
         ],
         "correctIndex": 0
       },
       {
-        "challengeCode": "int first = 2;\nint last = first + 5;\nint factor = 5;\nint sum = 0;\nfor (int i = first; i <= last; i++)\n{\n    sum += i * i * factor;\n}\nConsole.WriteLine(sum);",
-        "prompt": "Что появится в консоли?",
-        "explanation": "В каждой итерации в накопитель добавляется квадрат i с заданным множителем, а не само число i.",
-        "challengeResult": "695",
+        "challengeCode": "int value = 2;\nint sum = 0;\nfor (int i = 0; i < 3; i++)\n{\n    sum += value;\n    value += 1;\n}\nConsole.WriteLine(sum);",
+        "challengeResult": "9",
+        "prompt": "Какие значения успеют прибавиться к sum? Выберите итог.",
+        "kind": "Что выведет код?",
+        "explanation": "В sum попадают 2 и 3 и 4. Значение value меняется после прибавления. Итоговая сумма 9.",
         "options": [
-          "695",
-          "696",
-          "694",
-          "1390"
+          "9",
+          "10",
+          "8",
+          "11"
         ],
         "correctIndex": 0
       },
       {
-        "challengeCode": "int first = 3;\nint last = first + 2;\nint factor = 1;\nint sum = 0;\nfor (int i = first; i <= last; i++)\n{\n    sum += i * i * factor;\n}\nConsole.WriteLine(sum);",
-        "prompt": "Что появится в консоли?",
-        "explanation": "В каждой итерации в накопитель добавляется квадрат i с заданным множителем, а не само число i.",
-        "challengeResult": "50",
+        "challengeCode": "int value = 3;\nint sum = 0;\nfor (int i = 0; i < 3; i++)\n{\n    sum += value;\n    value += 1;\n}\nConsole.WriteLine(sum);",
+        "challengeResult": "12",
+        "prompt": "Какие значения успеют прибавиться к sum? Выберите итог.",
+        "kind": "Что выведет код?",
+        "explanation": "В sum попадают 3 и 4 и 5. Значение value меняется после прибавления. Итоговая сумма 12.",
         "options": [
-          "50",
-          "51",
-          "49",
-          "100"
+          "12",
+          "13",
+          "11",
+          "14"
         ],
         "correctIndex": 0
       },
       {
-        "challengeCode": "int first = 1;\nint last = first + 3;\nint factor = 2;\nint sum = 0;\nfor (int i = first; i <= last; i++)\n{\n    sum += i * i * factor;\n}\nConsole.WriteLine(sum);",
-        "prompt": "Что появится в консоли?",
-        "explanation": "В каждой итерации в накопитель добавляется квадрат i с заданным множителем, а не само число i.",
-        "challengeResult": "60",
+        "challengeCode": "int value = 1;\nint sum = 0;\nfor (int i = 0; i < 3; i++)\n{\n    sum += value;\n    value += 2;\n}\nConsole.WriteLine(sum);",
+        "challengeResult": "9",
+        "prompt": "Какие значения успеют прибавиться к sum? Выберите итог.",
+        "kind": "Что выведет код?",
+        "explanation": "В sum попадают 1 и 3 и 5. Значение value меняется после прибавления. Итоговая сумма 9.",
         "options": [
-          "60",
-          "61",
-          "59",
-          "120"
+          "9",
+          "10",
+          "8",
+          "11"
         ],
         "correctIndex": 0
       },
       {
-        "challengeCode": "int first = 2;\nint last = first + 4;\nint factor = 3;\nint sum = 0;\nfor (int i = first; i <= last; i++)\n{\n    sum += i * i * factor;\n}\nConsole.WriteLine(sum);",
-        "prompt": "Что появится в консоли?",
-        "explanation": "В каждой итерации в накопитель добавляется квадрат i с заданным множителем, а не само число i.",
-        "challengeResult": "270",
+        "challengeCode": "int value = 2;\nint sum = 0;\nfor (int i = 0; i < 3; i++)\n{\n    sum += value;\n    value += 2;\n}\nConsole.WriteLine(sum);",
+        "challengeResult": "12",
+        "prompt": "Какие значения успеют прибавиться к sum? Выберите итог.",
+        "kind": "Что выведет код?",
+        "explanation": "В sum попадают 2 и 4 и 6. Значение value меняется после прибавления. Итоговая сумма 12.",
         "options": [
-          "270",
-          "271",
-          "269",
-          "540"
+          "12",
+          "13",
+          "11",
+          "14"
         ],
         "correctIndex": 0
       },
       {
-        "challengeCode": "int first = 3;\nint last = first + 5;\nint factor = 4;\nint sum = 0;\nfor (int i = first; i <= last; i++)\n{\n    sum += i * i * factor;\n}\nConsole.WriteLine(sum);",
-        "prompt": "Что появится в консоли?",
-        "explanation": "В каждой итерации в накопитель добавляется квадрат i с заданным множителем, а не само число i.",
-        "challengeResult": "796",
+        "challengeCode": "int value = 3;\nint sum = 0;\nfor (int i = 0; i < 3; i++)\n{\n    sum += value;\n    value += 2;\n}\nConsole.WriteLine(sum);",
+        "challengeResult": "15",
+        "prompt": "Какие значения успеют прибавиться к sum? Выберите итог.",
+        "kind": "Что выведет код?",
+        "explanation": "В sum попадают 3 и 5 и 7. Значение value меняется после прибавления. Итоговая сумма 15.",
         "options": [
-          "796",
-          "797",
-          "795",
-          "1592"
+          "15",
+          "16",
+          "14",
+          "17"
         ],
         "correctIndex": 0
       }
     ],
-    "challengeResult": "42",
+    "challengeResult": "8",
     "options": [
-      "42",
-      "43",
-      "41",
-      "84"
+      "8",
+      "9",
+      "7",
+      "10"
     ],
     "correctIndex": 0,
-    "exampleResult": "54"
+    "exampleResult": "8"
   },
   {
     "id": "bank-7-grid-count-1",
     "codeDeckId": "lab7-bank-tracing",
     "deckId": "loops-control",
     "term": "Вложенный цикл",
-    "exampleCode": "int rows = 2;\nint columns = 5;\nint count = 0;\nfor (int row = 0; row < rows; row++)\n{\n    for (int col = 0; col < columns; col++)\n    {\n        count++;\n    }\n}\nConsole.WriteLine(count);",
-    "exampleNote": "За каждое выполнение тела счётчик увеличивается на 1. Присваивание 1 теряет число предыдущих повторений.",
-    "kind": "Что выведет код?",
+    "exampleCode": "int rows = 2;\nint columns = 2;\nint count = 0;\nfor (int row = 0; row < rows; row++)\n{\n    for (int col = 0; col < columns; col++)\n    {\n        count++;\n    }\n}\nConsole.WriteLine(count);",
+    "exampleNote": "Число проходов внешнего цикла: 2. На каждом из них внутреннее тело выполняется 2 раз. Всего 2 × 2 = 4.",
+    "kind": "Вложенные циклы",
     "challengeCode": "int rows = 2;\nint columns = 2;\nint count = 0;\nfor (int row = 0; row < rows; row++)\n{\n    for (int col = 0; col < columns; col++)\n    {\n        count++;\n    }\n}\nConsole.WriteLine(count);",
-    "prompt": "Что появится в консоли?",
-    "explanation": "За каждое выполнение тела счётчик увеличивается на 1. Присваивание 1 теряет число предыдущих повторений.",
+    "prompt": "Сколько раз выполнится count++ во вложенных циклах?",
+    "explanation": "Число проходов внешнего цикла: 2. На каждом из них внутреннее тело выполняется 2 раз. Всего 2 × 2 = 4.",
     "variants": [
       {
-        "challengeCode": "int rows = 3;\nint columns = 3;\nint count = 0;\nfor (int row = 0; row < rows; row++)\n{\n    for (int col = 0; col < columns; col++)\n    {\n        count++;\n    }\n}\nConsole.WriteLine(count);",
-        "prompt": "Что появится в консоли?",
-        "explanation": "За каждое выполнение тела счётчик увеличивается на 1. Присваивание 1 теряет число предыдущих повторений.",
-        "challengeResult": "9",
+        "challengeCode": "int rows = 1;\nint columns = 1;\nint count = 0;\nfor (int row = 0; row < rows; row++)\n{\n    for (int col = 0; col < columns; col++)\n    {\n        count++;\n    }\n}\nConsole.WriteLine(count);",
+        "challengeResult": "1",
+        "prompt": "Сколько раз выполнится count++ во вложенных циклах?",
+        "kind": "Вложенные циклы",
+        "explanation": "Число проходов внешнего цикла: 1. На каждом из них внутреннее тело выполняется 1 раз. Всего 1 × 1 = 1.",
         "options": [
-          "9",
-          "10",
-          "8",
-          "18"
+          "1",
+          "2",
+          "0",
+          "3"
         ],
         "correctIndex": 0
       },
       {
-        "challengeCode": "int rows = 4;\nint columns = 4;\nint count = 0;\nfor (int row = 0; row < rows; row++)\n{\n    for (int col = 0; col < columns; col++)\n    {\n        count++;\n    }\n}\nConsole.WriteLine(count);",
-        "prompt": "Что появится в консоли?",
-        "explanation": "За каждое выполнение тела счётчик увеличивается на 1. Присваивание 1 теряет число предыдущих повторений.",
-        "challengeResult": "16",
+        "challengeCode": "int rows = 2;\nint columns = 1;\nint count = 0;\nfor (int row = 0; row < rows; row++)\n{\n    for (int col = 0; col < columns; col++)\n    {\n        count++;\n    }\n}\nConsole.WriteLine(count);",
+        "challengeResult": "2",
+        "prompt": "Сколько раз выполнится count++ во вложенных циклах?",
+        "kind": "Вложенные циклы",
+        "explanation": "Число проходов внешнего цикла: 2. На каждом из них внутреннее тело выполняется 1 раз. Всего 2 × 1 = 2.",
         "options": [
-          "16",
-          "17",
-          "15",
-          "32"
+          "2",
+          "3",
+          "1",
+          "4"
         ],
         "correctIndex": 0
       },
       {
-        "challengeCode": "int rows = 5;\nint columns = 5;\nint count = 0;\nfor (int row = 0; row < rows; row++)\n{\n    for (int col = 0; col < columns; col++)\n    {\n        count++;\n    }\n}\nConsole.WriteLine(count);",
-        "prompt": "Что появится в консоли?",
-        "explanation": "За каждое выполнение тела счётчик увеличивается на 1. Присваивание 1 теряет число предыдущих повторений.",
-        "challengeResult": "25",
+        "challengeCode": "int rows = 1;\nint columns = 2;\nint count = 0;\nfor (int row = 0; row < rows; row++)\n{\n    for (int col = 0; col < columns; col++)\n    {\n        count++;\n    }\n}\nConsole.WriteLine(count);",
+        "challengeResult": "2",
+        "prompt": "Сколько раз выполнится count++ во вложенных циклах?",
+        "kind": "Вложенные циклы",
+        "explanation": "Число проходов внешнего цикла: 1. На каждом из них внутреннее тело выполняется 2 раз. Всего 1 × 2 = 2.",
         "options": [
-          "25",
-          "26",
-          "24",
-          "50"
+          "2",
+          "3",
+          "1",
+          "4"
         ],
         "correctIndex": 0
       },
       {
-        "challengeCode": "int rows = 2;\nint columns = 6;\nint count = 0;\nfor (int row = 0; row < rows; row++)\n{\n    for (int col = 0; col < columns; col++)\n    {\n        count++;\n    }\n}\nConsole.WriteLine(count);",
-        "prompt": "Что появится в консоли?",
-        "explanation": "За каждое выполнение тела счётчик увеличивается на 1. Присваивание 1 теряет число предыдущих повторений.",
-        "challengeResult": "12",
+        "challengeCode": "int rows = 1;\nint columns = 3;\nint count = 0;\nfor (int row = 0; row < rows; row++)\n{\n    for (int col = 0; col < columns; col++)\n    {\n        count++;\n    }\n}\nConsole.WriteLine(count);",
+        "challengeResult": "3",
+        "prompt": "Сколько раз выполнится count++ во вложенных циклах?",
+        "kind": "Вложенные циклы",
+        "explanation": "Число проходов внешнего цикла: 1. На каждом из них внутреннее тело выполняется 3 раз. Всего 1 × 3 = 3.",
         "options": [
-          "12",
-          "13",
-          "11",
-          "24"
-        ],
-        "correctIndex": 0
-      },
-      {
-        "challengeCode": "int rows = 3;\nint columns = 7;\nint count = 0;\nfor (int row = 0; row < rows; row++)\n{\n    for (int col = 0; col < columns; col++)\n    {\n        count++;\n    }\n}\nConsole.WriteLine(count);",
-        "prompt": "Что появится в консоли?",
-        "explanation": "За каждое выполнение тела счётчик увеличивается на 1. Присваивание 1 теряет число предыдущих повторений.",
-        "challengeResult": "21",
-        "options": [
-          "21",
-          "22",
-          "20",
-          "42"
-        ],
-        "correctIndex": 0
-      },
-      {
-        "challengeCode": "int rows = 4;\nint columns = 8;\nint count = 0;\nfor (int row = 0; row < rows; row++)\n{\n    for (int col = 0; col < columns; col++)\n    {\n        count++;\n    }\n}\nConsole.WriteLine(count);",
-        "prompt": "Что появится в консоли?",
-        "explanation": "За каждое выполнение тела счётчик увеличивается на 1. Присваивание 1 теряет число предыдущих повторений.",
-        "challengeResult": "32",
-        "options": [
-          "32",
-          "33",
-          "31",
-          "64"
-        ],
-        "correctIndex": 0
-      },
-      {
-        "challengeCode": "int rows = 5;\nint columns = 2;\nint count = 0;\nfor (int row = 0; row < rows; row++)\n{\n    for (int col = 0; col < columns; col++)\n    {\n        count++;\n    }\n}\nConsole.WriteLine(count);",
-        "prompt": "Что появится в консоли?",
-        "explanation": "За каждое выполнение тела счётчик увеличивается на 1. Присваивание 1 теряет число предыдущих повторений.",
-        "challengeResult": "10",
-        "options": [
-          "10",
-          "11",
-          "9",
-          "20"
+          "3",
+          "4",
+          "2",
+          "5"
         ],
         "correctIndex": 0
       },
       {
         "challengeCode": "int rows = 2;\nint columns = 3;\nint count = 0;\nfor (int row = 0; row < rows; row++)\n{\n    for (int col = 0; col < columns; col++)\n    {\n        count++;\n    }\n}\nConsole.WriteLine(count);",
-        "prompt": "Что появится в консоли?",
-        "explanation": "За каждое выполнение тела счётчик увеличивается на 1. Присваивание 1 теряет число предыдущих повторений.",
         "challengeResult": "6",
+        "prompt": "Сколько раз выполнится count++ во вложенных циклах?",
+        "kind": "Вложенные циклы",
+        "explanation": "Число проходов внешнего цикла: 2. На каждом из них внутреннее тело выполняется 3 раз. Всего 2 × 3 = 6.",
         "options": [
           "6",
           "7",
           "5",
-          "12"
+          "8"
         ],
         "correctIndex": 0
       },
       {
-        "challengeCode": "int rows = 3;\nint columns = 4;\nint count = 0;\nfor (int row = 0; row < rows; row++)\n{\n    for (int col = 0; col < columns; col++)\n    {\n        count++;\n    }\n}\nConsole.WriteLine(count);",
-        "prompt": "Что появится в консоли?",
-        "explanation": "За каждое выполнение тела счётчик увеличивается на 1. Присваивание 1 теряет число предыдущих повторений.",
-        "challengeResult": "12",
+        "challengeCode": "int rows = 1;\nint columns = 1;\nint count = 0;\nfor (int row = 0; row < rows; row++)\n{\n    for (int col = 0; col <= columns - 1; col++)\n    {\n        count++;\n    }\n}\nConsole.WriteLine(count);",
+        "challengeResult": "1",
+        "prompt": "Сколько раз выполнится count++ во вложенных циклах?",
+        "kind": "Вложенные циклы",
+        "explanation": "Число проходов внешнего цикла: 1. На каждом из них внутреннее тело выполняется 1 раз. Всего 1 × 1 = 1.",
         "options": [
-          "12",
-          "13",
-          "11",
-          "24"
+          "1",
+          "2",
+          "0",
+          "3"
         ],
         "correctIndex": 0
       },
       {
-        "challengeCode": "int rows = 4;\nint columns = 5;\nint count = 0;\nfor (int row = 0; row < rows; row++)\n{\n    for (int col = 0; col < columns; col++)\n    {\n        count++;\n    }\n}\nConsole.WriteLine(count);",
-        "prompt": "Что появится в консоли?",
-        "explanation": "За каждое выполнение тела счётчик увеличивается на 1. Присваивание 1 теряет число предыдущих повторений.",
-        "challengeResult": "20",
+        "challengeCode": "int rows = 2;\nint columns = 1;\nint count = 0;\nfor (int row = 0; row < rows; row++)\n{\n    for (int col = 0; col <= columns - 1; col++)\n    {\n        count++;\n    }\n}\nConsole.WriteLine(count);",
+        "challengeResult": "2",
+        "prompt": "Сколько раз выполнится count++ во вложенных циклах?",
+        "kind": "Вложенные циклы",
+        "explanation": "Число проходов внешнего цикла: 2. На каждом из них внутреннее тело выполняется 1 раз. Всего 2 × 1 = 2.",
         "options": [
-          "20",
-          "21",
-          "19",
-          "40"
+          "2",
+          "3",
+          "1",
+          "4"
         ],
         "correctIndex": 0
       },
       {
-        "challengeCode": "int rows = 5;\nint columns = 6;\nint count = 0;\nfor (int row = 0; row < rows; row++)\n{\n    for (int col = 0; col < columns; col++)\n    {\n        count++;\n    }\n}\nConsole.WriteLine(count);",
-        "prompt": "Что появится в консоли?",
-        "explanation": "За каждое выполнение тела счётчик увеличивается на 1. Присваивание 1 теряет число предыдущих повторений.",
-        "challengeResult": "30",
+        "challengeCode": "int rows = 1;\nint columns = 2;\nint count = 0;\nfor (int row = 0; row < rows; row++)\n{\n    for (int col = 0; col <= columns - 1; col++)\n    {\n        count++;\n    }\n}\nConsole.WriteLine(count);",
+        "challengeResult": "2",
+        "prompt": "Сколько раз выполнится count++ во вложенных циклах?",
+        "kind": "Вложенные циклы",
+        "explanation": "Число проходов внешнего цикла: 1. На каждом из них внутреннее тело выполняется 2 раз. Всего 1 × 2 = 2.",
         "options": [
-          "30",
-          "31",
-          "29",
-          "60"
+          "2",
+          "3",
+          "1",
+          "4"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int rows = 2;\nint columns = 2;\nint count = 0;\nfor (int row = 0; row < rows; row++)\n{\n    for (int col = 0; col <= columns - 1; col++)\n    {\n        count++;\n    }\n}\nConsole.WriteLine(count);",
+        "challengeResult": "4",
+        "prompt": "Сколько раз выполнится count++ во вложенных циклах?",
+        "kind": "Вложенные циклы",
+        "explanation": "Число проходов внешнего цикла: 2. На каждом из них внутреннее тело выполняется 2 раз. Всего 2 × 2 = 4.",
+        "options": [
+          "4",
+          "5",
+          "3",
+          "6"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int rows = 1;\nint columns = 3;\nint count = 0;\nfor (int row = 0; row < rows; row++)\n{\n    for (int col = 0; col <= columns - 1; col++)\n    {\n        count++;\n    }\n}\nConsole.WriteLine(count);",
+        "challengeResult": "3",
+        "prompt": "Сколько раз выполнится count++ во вложенных циклах?",
+        "kind": "Вложенные циклы",
+        "explanation": "Число проходов внешнего цикла: 1. На каждом из них внутреннее тело выполняется 3 раз. Всего 1 × 3 = 3.",
+        "options": [
+          "3",
+          "4",
+          "2",
+          "5"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int rows = 2;\nint columns = 3;\nint count = 0;\nfor (int row = 0; row < rows; row++)\n{\n    for (int col = 0; col <= columns - 1; col++)\n    {\n        count++;\n    }\n}\nConsole.WriteLine(count);",
+        "challengeResult": "6",
+        "prompt": "Сколько раз выполнится count++ во вложенных циклах?",
+        "kind": "Вложенные циклы",
+        "explanation": "Число проходов внешнего цикла: 2. На каждом из них внутреннее тело выполняется 3 раз. Всего 2 × 3 = 6.",
+        "options": [
+          "6",
+          "7",
+          "5",
+          "8"
         ],
         "correctIndex": 0
       }
@@ -23844,661 +23905,1059 @@ const codeLessons = [
       "4",
       "5",
       "3",
-      "8"
+      "6"
     ],
     "correctIndex": 0,
-    "exampleResult": "10"
+    "exampleResult": "4"
   },
   {
     "id": "bank-7-grid-count-2",
     "codeDeckId": "lab7-bank-tracing",
     "deckId": "loops-control",
     "term": "Вложенный цикл",
-    "exampleCode": "int rows = 3;\nint columns = 6;\nint count = 0;\nfor (int row = 0; row < rows; row++)\n{\n    for (int col = 0; col < columns; col++)\n    {\n        count++;\n    }\n}\nConsole.WriteLine(count);",
-    "exampleNote": "За каждое выполнение тела счётчик увеличивается на 1. Присваивание 1 теряет число предыдущих повторений.",
-    "kind": "Что выведет код?",
-    "challengeCode": "int rows = 2;\nint columns = 7;\nint count = 0;\nfor (int row = 0; row < rows; row++)\n{\n    for (int col = 0; col < columns; col++)\n    {\n        count++;\n    }\n}\nConsole.WriteLine(count);",
-    "prompt": "Что появится в консоли?",
-    "explanation": "За каждое выполнение тела счётчик увеличивается на 1. Присваивание 1 теряет число предыдущих повторений.",
+    "exampleCode": "int rows = 2;\nint columns = 2;\nint count = 0;\nfor (int row = 0; row < rows; row++)\n{\n    for (int col = 0; col < columns; col++)\n    {\n        count++;\n    }\n}\nConsole.WriteLine(count);",
+    "exampleNote": "Число проходов внешнего цикла: 2. На каждом из них внутреннее тело выполняется 2 раз. Всего 2 × 2 = 4.",
+    "kind": "Вложенные циклы",
+    "challengeCode": "int rows = 2;\nint columns = 2;\nint count = 0;\nfor (int row = 0; row < rows; row++)\n{\n    for (int col = 0; col < columns; col++)\n    {\n        count++;\n    }\n}\nConsole.WriteLine(count);",
+    "prompt": "Сколько раз выполнится count++ во вложенных циклах?",
+    "explanation": "Число проходов внешнего цикла: 2. На каждом из них внутреннее тело выполняется 2 раз. Всего 2 × 2 = 4.",
     "variants": [
       {
-        "challengeCode": "int rows = 3;\nint columns = 8;\nint count = 0;\nfor (int row = 0; row < rows; row++)\n{\n    for (int col = 0; col < columns; col++)\n    {\n        count++;\n    }\n}\nConsole.WriteLine(count);",
-        "prompt": "Что появится в консоли?",
-        "explanation": "За каждое выполнение тела счётчик увеличивается на 1. Присваивание 1 теряет число предыдущих повторений.",
-        "challengeResult": "24",
+        "challengeCode": "int rows = 1;\nint columns = 1;\nint count = 0;\nfor (int row = 0; row < rows; row++)\n{\n    for (int col = 0; col < columns; col++)\n    {\n        count++;\n    }\n}\nConsole.WriteLine(count);",
+        "challengeResult": "1",
+        "prompt": "Сколько раз выполнится count++ во вложенных циклах?",
+        "kind": "Вложенные циклы",
+        "explanation": "Число проходов внешнего цикла: 1. На каждом из них внутреннее тело выполняется 1 раз. Всего 1 × 1 = 1.",
         "options": [
-          "24",
-          "25",
-          "23",
-          "48"
+          "1",
+          "2",
+          "0",
+          "3"
         ],
         "correctIndex": 0
       },
       {
-        "challengeCode": "int rows = 4;\nint columns = 2;\nint count = 0;\nfor (int row = 0; row < rows; row++)\n{\n    for (int col = 0; col < columns; col++)\n    {\n        count++;\n    }\n}\nConsole.WriteLine(count);",
-        "prompt": "Что появится в консоли?",
-        "explanation": "За каждое выполнение тела счётчик увеличивается на 1. Присваивание 1 теряет число предыдущих повторений.",
-        "challengeResult": "8",
+        "challengeCode": "int rows = 2;\nint columns = 1;\nint count = 0;\nfor (int row = 0; row < rows; row++)\n{\n    for (int col = 0; col < columns; col++)\n    {\n        count++;\n    }\n}\nConsole.WriteLine(count);",
+        "challengeResult": "2",
+        "prompt": "Сколько раз выполнится count++ во вложенных циклах?",
+        "kind": "Вложенные циклы",
+        "explanation": "Число проходов внешнего цикла: 2. На каждом из них внутреннее тело выполняется 1 раз. Всего 2 × 1 = 2.",
         "options": [
-          "8",
-          "9",
-          "7",
-          "16"
+          "2",
+          "3",
+          "1",
+          "4"
         ],
         "correctIndex": 0
       },
       {
-        "challengeCode": "int rows = 5;\nint columns = 3;\nint count = 0;\nfor (int row = 0; row < rows; row++)\n{\n    for (int col = 0; col < columns; col++)\n    {\n        count++;\n    }\n}\nConsole.WriteLine(count);",
-        "prompt": "Что появится в консоли?",
-        "explanation": "За каждое выполнение тела счётчик увеличивается на 1. Присваивание 1 теряет число предыдущих повторений.",
-        "challengeResult": "15",
+        "challengeCode": "int rows = 1;\nint columns = 2;\nint count = 0;\nfor (int row = 0; row < rows; row++)\n{\n    for (int col = 0; col < columns; col++)\n    {\n        count++;\n    }\n}\nConsole.WriteLine(count);",
+        "challengeResult": "2",
+        "prompt": "Сколько раз выполнится count++ во вложенных циклах?",
+        "kind": "Вложенные циклы",
+        "explanation": "Число проходов внешнего цикла: 1. На каждом из них внутреннее тело выполняется 2 раз. Всего 1 × 2 = 2.",
         "options": [
-          "15",
-          "16",
-          "14",
-          "30"
+          "2",
+          "3",
+          "1",
+          "4"
         ],
         "correctIndex": 0
       },
       {
-        "challengeCode": "int rows = 2;\nint columns = 4;\nint count = 0;\nfor (int row = 0; row < rows; row++)\n{\n    for (int col = 0; col < columns; col++)\n    {\n        count++;\n    }\n}\nConsole.WriteLine(count);",
-        "prompt": "Что появится в консоли?",
-        "explanation": "За каждое выполнение тела счётчик увеличивается на 1. Присваивание 1 теряет число предыдущих повторений.",
-        "challengeResult": "8",
+        "challengeCode": "int rows = 1;\nint columns = 3;\nint count = 0;\nfor (int row = 0; row < rows; row++)\n{\n    for (int col = 0; col < columns; col++)\n    {\n        count++;\n    }\n}\nConsole.WriteLine(count);",
+        "challengeResult": "3",
+        "prompt": "Сколько раз выполнится count++ во вложенных циклах?",
+        "kind": "Вложенные циклы",
+        "explanation": "Число проходов внешнего цикла: 1. На каждом из них внутреннее тело выполняется 3 раз. Всего 1 × 3 = 3.",
         "options": [
-          "8",
-          "9",
-          "7",
-          "16"
+          "3",
+          "4",
+          "2",
+          "5"
         ],
         "correctIndex": 0
       },
       {
-        "challengeCode": "int rows = 3;\nint columns = 5;\nint count = 0;\nfor (int row = 0; row < rows; row++)\n{\n    for (int col = 0; col < columns; col++)\n    {\n        count++;\n    }\n}\nConsole.WriteLine(count);",
-        "prompt": "Что появится в консоли?",
-        "explanation": "За каждое выполнение тела счётчик увеличивается на 1. Присваивание 1 теряет число предыдущих повторений.",
-        "challengeResult": "15",
-        "options": [
-          "15",
-          "16",
-          "14",
-          "30"
-        ],
-        "correctIndex": 0
-      },
-      {
-        "challengeCode": "int rows = 4;\nint columns = 6;\nint count = 0;\nfor (int row = 0; row < rows; row++)\n{\n    for (int col = 0; col < columns; col++)\n    {\n        count++;\n    }\n}\nConsole.WriteLine(count);",
-        "prompt": "Что появится в консоли?",
-        "explanation": "За каждое выполнение тела счётчик увеличивается на 1. Присваивание 1 теряет число предыдущих повторений.",
-        "challengeResult": "24",
-        "options": [
-          "24",
-          "25",
-          "23",
-          "48"
-        ],
-        "correctIndex": 0
-      },
-      {
-        "challengeCode": "int rows = 5;\nint columns = 7;\nint count = 0;\nfor (int row = 0; row < rows; row++)\n{\n    for (int col = 0; col < columns; col++)\n    {\n        count++;\n    }\n}\nConsole.WriteLine(count);",
-        "prompt": "Что появится в консоли?",
-        "explanation": "За каждое выполнение тела счётчик увеличивается на 1. Присваивание 1 теряет число предыдущих повторений.",
-        "challengeResult": "35",
-        "options": [
-          "35",
-          "36",
-          "34",
-          "70"
-        ],
-        "correctIndex": 0
-      },
-      {
-        "challengeCode": "int rows = 2;\nint columns = 8;\nint count = 0;\nfor (int row = 0; row < rows; row++)\n{\n    for (int col = 0; col < columns; col++)\n    {\n        count++;\n    }\n}\nConsole.WriteLine(count);",
-        "prompt": "Что появится в консоли?",
-        "explanation": "За каждое выполнение тела счётчик увеличивается на 1. Присваивание 1 теряет число предыдущих повторений.",
-        "challengeResult": "16",
-        "options": [
-          "16",
-          "17",
-          "15",
-          "32"
-        ],
-        "correctIndex": 0
-      },
-      {
-        "challengeCode": "int rows = 3;\nint columns = 2;\nint count = 0;\nfor (int row = 0; row < rows; row++)\n{\n    for (int col = 0; col < columns; col++)\n    {\n        count++;\n    }\n}\nConsole.WriteLine(count);",
-        "prompt": "Что появится в консоли?",
-        "explanation": "За каждое выполнение тела счётчик увеличивается на 1. Присваивание 1 теряет число предыдущих повторений.",
+        "challengeCode": "int rows = 2;\nint columns = 3;\nint count = 0;\nfor (int row = 0; row < rows; row++)\n{\n    for (int col = 0; col < columns; col++)\n    {\n        count++;\n    }\n}\nConsole.WriteLine(count);",
         "challengeResult": "6",
+        "prompt": "Сколько раз выполнится count++ во вложенных циклах?",
+        "kind": "Вложенные циклы",
+        "explanation": "Число проходов внешнего цикла: 2. На каждом из них внутреннее тело выполняется 3 раз. Всего 2 × 3 = 6.",
         "options": [
           "6",
           "7",
           "5",
-          "12"
+          "8"
         ],
         "correctIndex": 0
       },
       {
-        "challengeCode": "int rows = 4;\nint columns = 3;\nint count = 0;\nfor (int row = 0; row < rows; row++)\n{\n    for (int col = 0; col < columns; col++)\n    {\n        count++;\n    }\n}\nConsole.WriteLine(count);",
-        "prompt": "Что появится в консоли?",
-        "explanation": "За каждое выполнение тела счётчик увеличивается на 1. Присваивание 1 теряет число предыдущих повторений.",
-        "challengeResult": "12",
+        "challengeCode": "int rows = 1;\nint columns = 1;\nint count = 0;\nfor (int row = 0; row < rows; row++)\n{\n    for (int col = 0; col <= columns - 1; col++)\n    {\n        count++;\n    }\n}\nConsole.WriteLine(count);",
+        "challengeResult": "1",
+        "prompt": "Сколько раз выполнится count++ во вложенных циклах?",
+        "kind": "Вложенные циклы",
+        "explanation": "Число проходов внешнего цикла: 1. На каждом из них внутреннее тело выполняется 1 раз. Всего 1 × 1 = 1.",
         "options": [
-          "12",
-          "13",
-          "11",
-          "24"
+          "1",
+          "2",
+          "0",
+          "3"
         ],
         "correctIndex": 0
       },
       {
-        "challengeCode": "int rows = 5;\nint columns = 4;\nint count = 0;\nfor (int row = 0; row < rows; row++)\n{\n    for (int col = 0; col < columns; col++)\n    {\n        count++;\n    }\n}\nConsole.WriteLine(count);",
-        "prompt": "Что появится в консоли?",
-        "explanation": "За каждое выполнение тела счётчик увеличивается на 1. Присваивание 1 теряет число предыдущих повторений.",
-        "challengeResult": "20",
+        "challengeCode": "int rows = 2;\nint columns = 1;\nint count = 0;\nfor (int row = 0; row < rows; row++)\n{\n    for (int col = 0; col <= columns - 1; col++)\n    {\n        count++;\n    }\n}\nConsole.WriteLine(count);",
+        "challengeResult": "2",
+        "prompt": "Сколько раз выполнится count++ во вложенных циклах?",
+        "kind": "Вложенные циклы",
+        "explanation": "Число проходов внешнего цикла: 2. На каждом из них внутреннее тело выполняется 1 раз. Всего 2 × 1 = 2.",
         "options": [
-          "20",
-          "21",
-          "19",
-          "40"
+          "2",
+          "3",
+          "1",
+          "4"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int rows = 1;\nint columns = 2;\nint count = 0;\nfor (int row = 0; row < rows; row++)\n{\n    for (int col = 0; col <= columns - 1; col++)\n    {\n        count++;\n    }\n}\nConsole.WriteLine(count);",
+        "challengeResult": "2",
+        "prompt": "Сколько раз выполнится count++ во вложенных циклах?",
+        "kind": "Вложенные циклы",
+        "explanation": "Число проходов внешнего цикла: 1. На каждом из них внутреннее тело выполняется 2 раз. Всего 1 × 2 = 2.",
+        "options": [
+          "2",
+          "3",
+          "1",
+          "4"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int rows = 2;\nint columns = 2;\nint count = 0;\nfor (int row = 0; row < rows; row++)\n{\n    for (int col = 0; col <= columns - 1; col++)\n    {\n        count++;\n    }\n}\nConsole.WriteLine(count);",
+        "challengeResult": "4",
+        "prompt": "Сколько раз выполнится count++ во вложенных циклах?",
+        "kind": "Вложенные циклы",
+        "explanation": "Число проходов внешнего цикла: 2. На каждом из них внутреннее тело выполняется 2 раз. Всего 2 × 2 = 4.",
+        "options": [
+          "4",
+          "5",
+          "3",
+          "6"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int rows = 1;\nint columns = 3;\nint count = 0;\nfor (int row = 0; row < rows; row++)\n{\n    for (int col = 0; col <= columns - 1; col++)\n    {\n        count++;\n    }\n}\nConsole.WriteLine(count);",
+        "challengeResult": "3",
+        "prompt": "Сколько раз выполнится count++ во вложенных циклах?",
+        "kind": "Вложенные циклы",
+        "explanation": "Число проходов внешнего цикла: 1. На каждом из них внутреннее тело выполняется 3 раз. Всего 1 × 3 = 3.",
+        "options": [
+          "3",
+          "4",
+          "2",
+          "5"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int rows = 2;\nint columns = 3;\nint count = 0;\nfor (int row = 0; row < rows; row++)\n{\n    for (int col = 0; col <= columns - 1; col++)\n    {\n        count++;\n    }\n}\nConsole.WriteLine(count);",
+        "challengeResult": "6",
+        "prompt": "Сколько раз выполнится count++ во вложенных циклах?",
+        "kind": "Вложенные циклы",
+        "explanation": "Число проходов внешнего цикла: 2. На каждом из них внутреннее тело выполняется 3 раз. Всего 2 × 3 = 6.",
+        "options": [
+          "6",
+          "7",
+          "5",
+          "8"
         ],
         "correctIndex": 0
       }
     ],
-    "challengeResult": "14",
+    "challengeResult": "4",
     "options": [
-      "14",
-      "15",
-      "13",
-      "28"
+      "4",
+      "5",
+      "3",
+      "6"
     ],
     "correctIndex": 0,
-    "exampleResult": "18"
+    "exampleResult": "4"
   },
   {
     "id": "bank-7-while-sum-1",
     "codeDeckId": "lab7-bank-tracing",
     "deckId": "loops-basics",
     "term": "while",
-    "exampleCode": "int value = 31;\nint step = 1;\nint sum = 0;\nwhile (value > 0)\n{\n    sum += value;\n    value -= step;\n}\nConsole.WriteLine(sum);",
-    "exampleNote": "Накопитель должен прибавлять каждое очередное значение. Простое присваивание оставляет только последнее.",
+    "exampleCode": "int value = 0;\nint step = 1;\nint sum = 0;\nwhile (value > 0)\n{\n    sum += value;\n    value -= step;\n}\nConsole.WriteLine(sum);",
+    "exampleNote": "Начальное value равно 0, поэтому условие сразу ложно. Тело не выполняется, sum остаётся равным 0.",
     "kind": "Что выведет код?",
-    "challengeCode": "int value = 7;\nint step = 1;\nint sum = 0;\nwhile (value > 0)\n{\n    sum += value;\n    value -= step;\n}\nConsole.WriteLine(sum);",
-    "prompt": "Что появится в консоли?",
-    "explanation": "Накопитель должен прибавлять каждое очередное значение. Простое присваивание оставляет только последнее.",
+    "challengeCode": "int value = 0;\nint step = 1;\nint sum = 0;\nwhile (value > 0)\n{\n    sum += value;\n    value -= step;\n}\nConsole.WriteLine(sum);",
+    "prompt": "Какие значения попадут в sum до завершения while? Выберите итог.",
+    "explanation": "Начальное value равно 0, поэтому условие сразу ложно. Тело не выполняется, sum остаётся равным 0.",
     "variants": [
       {
-        "challengeCode": "int value = 8;\nint step = 2;\nint sum = 0;\nwhile (value > 0)\n{\n    sum += value;\n    value -= step;\n}\nConsole.WriteLine(sum);",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Накопитель должен прибавлять каждое очередное значение. Простое присваивание оставляет только последнее.",
-        "challengeResult": "20",
+        "challengeCode": "int value = 1;\nint step = 1;\nint sum = 0;\nwhile (value > 0)\n{\n    sum += value;\n    value -= step;\n}\nConsole.WriteLine(sum);",
+        "challengeResult": "1",
+        "prompt": "Какие значения попадут в sum до завершения while? Выберите итог.",
+        "kind": "Что выведет код?",
+        "explanation": "В sum добавляются 1. Ноль и отрицательные значения уже не входят в тело.",
         "options": [
-          "20",
-          "21",
-          "19",
-          "40"
+          "1",
+          "2",
+          "0",
+          "3"
         ],
         "correctIndex": 0
       },
       {
-        "challengeCode": "int value = 9;\nint step = 1;\nint sum = 0;\nwhile (value > 0)\n{\n    sum += value;\n    value -= step;\n}\nConsole.WriteLine(sum);",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Накопитель должен прибавлять каждое очередное значение. Простое присваивание оставляет только последнее.",
-        "challengeResult": "45",
+        "challengeCode": "int value = 2;\nint step = 1;\nint sum = 0;\nwhile (value > 0)\n{\n    sum += value;\n    value -= step;\n}\nConsole.WriteLine(sum);",
+        "challengeResult": "3",
+        "prompt": "Какие значения попадут в sum до завершения while? Выберите итог.",
+        "kind": "Что выведет код?",
+        "explanation": "В sum добавляются 2, 1. Ноль и отрицательные значения уже не входят в тело.",
         "options": [
-          "45",
-          "46",
-          "44",
-          "90"
+          "3",
+          "4",
+          "2",
+          "5"
         ],
         "correctIndex": 0
       },
       {
-        "challengeCode": "int value = 10;\nint step = 2;\nint sum = 0;\nwhile (value > 0)\n{\n    sum += value;\n    value -= step;\n}\nConsole.WriteLine(sum);",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Накопитель должен прибавлять каждое очередное значение. Простое присваивание оставляет только последнее.",
-        "challengeResult": "30",
+        "challengeCode": "int value = 3;\nint step = 1;\nint sum = 0;\nwhile (value > 0)\n{\n    sum += value;\n    value -= step;\n}\nConsole.WriteLine(sum);",
+        "challengeResult": "6",
+        "prompt": "Какие значения попадут в sum до завершения while? Выберите итог.",
+        "kind": "Что выведет код?",
+        "explanation": "В sum добавляются 3, 2, 1. Ноль и отрицательные значения уже не входят в тело.",
         "options": [
-          "30",
-          "31",
-          "29",
-          "60"
+          "6",
+          "7",
+          "5",
+          "8"
         ],
         "correctIndex": 0
       },
       {
-        "challengeCode": "int value = 11;\nint step = 1;\nint sum = 0;\nwhile (value > 0)\n{\n    sum += value;\n    value -= step;\n}\nConsole.WriteLine(sum);",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Накопитель должен прибавлять каждое очередное значение. Простое присваивание оставляет только последнее.",
-        "challengeResult": "66",
+        "challengeCode": "int value = 2;\nint step = 2;\nint sum = 0;\nwhile (value > 0)\n{\n    sum += value;\n    value -= step;\n}\nConsole.WriteLine(sum);",
+        "challengeResult": "2",
+        "prompt": "Какие значения попадут в sum до завершения while? Выберите итог.",
+        "kind": "Что выведет код?",
+        "explanation": "В sum добавляются 2. Ноль и отрицательные значения уже не входят в тело.",
         "options": [
-          "66",
-          "67",
-          "65",
-          "132"
+          "2",
+          "3",
+          "1",
+          "4"
         ],
         "correctIndex": 0
       },
       {
-        "challengeCode": "int value = 12;\nint step = 2;\nint sum = 0;\nwhile (value > 0)\n{\n    sum += value;\n    value -= step;\n}\nConsole.WriteLine(sum);",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Накопитель должен прибавлять каждое очередное значение. Простое присваивание оставляет только последнее.",
-        "challengeResult": "42",
+        "challengeCode": "int value = 5;\nint step = 2;\nint sum = 0;\nwhile (value > 0)\n{\n    sum += value;\n    value -= step;\n}\nConsole.WriteLine(sum);",
+        "challengeResult": "9",
+        "prompt": "Какие значения попадут в sum до завершения while? Выберите итог.",
+        "kind": "Что выведет код?",
+        "explanation": "В sum добавляются 5, 3, 1. Ноль и отрицательные значения уже не входят в тело.",
         "options": [
-          "42",
-          "43",
-          "41",
-          "84"
+          "9",
+          "10",
+          "8",
+          "11"
         ],
         "correctIndex": 0
       },
       {
-        "challengeCode": "int value = 13;\nint step = 1;\nint sum = 0;\nwhile (value > 0)\n{\n    sum += value;\n    value -= step;\n}\nConsole.WriteLine(sum);",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Накопитель должен прибавлять каждое очередное значение. Простое присваивание оставляет только последнее.",
-        "challengeResult": "91",
+        "challengeCode": "int value = 1;\nint step = 2;\nint sum = 0;\nwhile (value > 0)\n{\n    sum += value;\n    value -= step;\n}\nConsole.WriteLine(sum);",
+        "challengeResult": "1",
+        "prompt": "Какие значения попадут в sum до завершения while? Выберите итог.",
+        "kind": "Что выведет код?",
+        "explanation": "В sum добавляются 1. Ноль и отрицательные значения уже не входят в тело.",
         "options": [
-          "91",
-          "92",
-          "90",
-          "182"
+          "1",
+          "2",
+          "0",
+          "3"
         ],
         "correctIndex": 0
       },
       {
-        "challengeCode": "int value = 14;\nint step = 2;\nint sum = 0;\nwhile (value > 0)\n{\n    sum += value;\n    value -= step;\n}\nConsole.WriteLine(sum);",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Накопитель должен прибавлять каждое очередное значение. Простое присваивание оставляет только последнее.",
-        "challengeResult": "56",
+        "challengeCode": "int value = 6;\nint step = 2;\nint sum = 0;\nwhile (value > 0)\n{\n    sum += value;\n    value -= step;\n}\nConsole.WriteLine(sum);",
+        "challengeResult": "12",
+        "prompt": "Какие значения попадут в sum до завершения while? Выберите итог.",
+        "kind": "Что выведет код?",
+        "explanation": "В sum добавляются 6, 4, 2. Ноль и отрицательные значения уже не входят в тело.",
         "options": [
-          "56",
-          "57",
-          "55",
-          "112"
+          "12",
+          "13",
+          "11",
+          "14"
         ],
         "correctIndex": 0
       },
       {
-        "challengeCode": "int value = 15;\nint step = 1;\nint sum = 0;\nwhile (value > 0)\n{\n    sum += value;\n    value -= step;\n}\nConsole.WriteLine(sum);",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Накопитель должен прибавлять каждое очередное значение. Простое присваивание оставляет только последнее.",
-        "challengeResult": "120",
+        "challengeCode": "int value = 4;\nint step = 1;\nint sum = 0;\nwhile (value > 0)\n{\n    sum += value;\n    value -= step;\n}\nConsole.WriteLine(sum);",
+        "challengeResult": "10",
+        "prompt": "Какие значения попадут в sum до завершения while? Выберите итог.",
+        "kind": "Что выведет код?",
+        "explanation": "В sum добавляются 4, 3, 2, 1. Ноль и отрицательные значения уже не входят в тело.",
         "options": [
-          "120",
-          "121",
-          "119",
-          "240"
+          "10",
+          "11",
+          "9",
+          "12"
         ],
         "correctIndex": 0
       },
       {
-        "challengeCode": "int value = 16;\nint step = 2;\nint sum = 0;\nwhile (value > 0)\n{\n    sum += value;\n    value -= step;\n}\nConsole.WriteLine(sum);",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Накопитель должен прибавлять каждое очередное значение. Простое присваивание оставляет только последнее.",
-        "challengeResult": "72",
+        "challengeCode": "int value = 4;\nint step = 2;\nint sum = 0;\nwhile (value > 0)\n{\n    sum += value;\n    value -= step;\n}\nConsole.WriteLine(sum);",
+        "challengeResult": "6",
+        "prompt": "Какие значения попадут в sum до завершения while? Выберите итог.",
+        "kind": "Что выведет код?",
+        "explanation": "В sum добавляются 4, 2. Ноль и отрицательные значения уже не входят в тело.",
         "options": [
-          "72",
-          "73",
-          "71",
-          "144"
+          "6",
+          "7",
+          "5",
+          "8"
         ],
         "correctIndex": 0
       },
       {
-        "challengeCode": "int value = 17;\nint step = 1;\nint sum = 0;\nwhile (value > 0)\n{\n    sum += value;\n    value -= step;\n}\nConsole.WriteLine(sum);",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Накопитель должен прибавлять каждое очередное значение. Простое присваивание оставляет только последнее.",
-        "challengeResult": "153",
+        "challengeCode": "int value = 7;\nint step = 2;\nint sum = 0;\nwhile (value > 0)\n{\n    sum += value;\n    value -= step;\n}\nConsole.WriteLine(sum);",
+        "challengeResult": "16",
+        "prompt": "Какие значения попадут в sum до завершения while? Выберите итог.",
+        "kind": "Что выведет код?",
+        "explanation": "В sum добавляются 7, 5, 3, 1. Ноль и отрицательные значения уже не входят в тело.",
         "options": [
-          "153",
-          "154",
-          "152",
-          "306"
+          "16",
+          "17",
+          "15",
+          "18"
         ],
         "correctIndex": 0
       },
       {
-        "challengeCode": "int value = 18;\nint step = 2;\nint sum = 0;\nwhile (value > 0)\n{\n    sum += value;\n    value -= step;\n}\nConsole.WriteLine(sum);",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Накопитель должен прибавлять каждое очередное значение. Простое присваивание оставляет только последнее.",
-        "challengeResult": "90",
+        "challengeCode": "int value = 3;\nint step = 2;\nint sum = 0;\nwhile (value > 0)\n{\n    sum += value;\n    value -= step;\n}\nConsole.WriteLine(sum);",
+        "challengeResult": "4",
+        "prompt": "Какие значения попадут в sum до завершения while? Выберите итог.",
+        "kind": "Что выведет код?",
+        "explanation": "В sum добавляются 3, 1. Ноль и отрицательные значения уже не входят в тело.",
         "options": [
-          "90",
-          "91",
-          "89",
-          "180"
+          "4",
+          "5",
+          "3",
+          "6"
         ],
         "correctIndex": 0
       }
     ],
-    "challengeResult": "28",
+    "challengeResult": "0",
     "options": [
-      "28",
-      "29",
-      "27",
-      "56"
+      "0",
+      "1",
+      "-1",
+      "2"
     ],
     "correctIndex": 0,
-    "exampleResult": "496"
+    "exampleResult": "0"
   },
   {
     "id": "bank-7-while-sum-2",
     "codeDeckId": "lab7-bank-tracing",
     "deckId": "loops-basics",
     "term": "while",
-    "exampleCode": "int value = 32;\nint step = 2;\nint sum = 0;\nwhile (value > 0)\n{\n    sum += value;\n    value -= step;\n}\nConsole.WriteLine(sum);",
-    "exampleNote": "Накопитель должен прибавлять каждое очередное значение. Простое присваивание оставляет только последнее.",
+    "exampleCode": "int value = 5;\nint step = 2;\nint sum = 0;\nwhile (value > 0)\n{\n    sum += value;\n    value -= step;\n}\nConsole.WriteLine(sum);",
+    "exampleNote": "В sum добавляются 5, 3, 1. Ноль и отрицательные значения уже не входят в тело.",
     "kind": "Что выведет код?",
-    "challengeCode": "int value = 19;\nint step = 1;\nint sum = 0;\nwhile (value > 0)\n{\n    sum += value;\n    value -= step;\n}\nConsole.WriteLine(sum);",
-    "prompt": "Что появится в консоли?",
-    "explanation": "Накопитель должен прибавлять каждое очередное значение. Простое присваивание оставляет только последнее.",
+    "challengeCode": "int value = 5;\nint step = 2;\nint sum = 0;\nwhile (value > 0)\n{\n    sum += value;\n    value -= step;\n}\nConsole.WriteLine(sum);",
+    "prompt": "Какие значения попадут в sum до завершения while? Выберите итог.",
+    "explanation": "В sum добавляются 5, 3, 1. Ноль и отрицательные значения уже не входят в тело.",
     "variants": [
       {
-        "challengeCode": "int value = 20;\nint step = 2;\nint sum = 0;\nwhile (value > 0)\n{\n    sum += value;\n    value -= step;\n}\nConsole.WriteLine(sum);",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Накопитель должен прибавлять каждое очередное значение. Простое присваивание оставляет только последнее.",
-        "challengeResult": "110",
+        "challengeCode": "int value = 1;\nint step = 1;\nint sum = 0;\nwhile (value > 0)\n{\n    sum += value;\n    value -= step;\n}\nConsole.WriteLine(sum);",
+        "challengeResult": "1",
+        "prompt": "Какие значения попадут в sum до завершения while? Выберите итог.",
+        "kind": "Что выведет код?",
+        "explanation": "В sum добавляются 1. Ноль и отрицательные значения уже не входят в тело.",
         "options": [
-          "110",
-          "111",
-          "109",
-          "220"
+          "1",
+          "2",
+          "0",
+          "3"
         ],
         "correctIndex": 0
       },
       {
-        "challengeCode": "int value = 21;\nint step = 1;\nint sum = 0;\nwhile (value > 0)\n{\n    sum += value;\n    value -= step;\n}\nConsole.WriteLine(sum);",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Накопитель должен прибавлять каждое очередное значение. Простое присваивание оставляет только последнее.",
-        "challengeResult": "231",
+        "challengeCode": "int value = 2;\nint step = 1;\nint sum = 0;\nwhile (value > 0)\n{\n    sum += value;\n    value -= step;\n}\nConsole.WriteLine(sum);",
+        "challengeResult": "3",
+        "prompt": "Какие значения попадут в sum до завершения while? Выберите итог.",
+        "kind": "Что выведет код?",
+        "explanation": "В sum добавляются 2, 1. Ноль и отрицательные значения уже не входят в тело.",
         "options": [
-          "231",
-          "232",
-          "230",
-          "462"
+          "3",
+          "4",
+          "2",
+          "5"
         ],
         "correctIndex": 0
       },
       {
-        "challengeCode": "int value = 22;\nint step = 2;\nint sum = 0;\nwhile (value > 0)\n{\n    sum += value;\n    value -= step;\n}\nConsole.WriteLine(sum);",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Накопитель должен прибавлять каждое очередное значение. Простое присваивание оставляет только последнее.",
-        "challengeResult": "132",
+        "challengeCode": "int value = 0;\nint step = 1;\nint sum = 0;\nwhile (value > 0)\n{\n    sum += value;\n    value -= step;\n}\nConsole.WriteLine(sum);",
+        "challengeResult": "0",
+        "prompt": "Какие значения попадут в sum до завершения while? Выберите итог.",
+        "kind": "Что выведет код?",
+        "explanation": "Начальное value равно 0, поэтому условие сразу ложно. Тело не выполняется, sum остаётся равным 0.",
         "options": [
-          "132",
-          "133",
-          "131",
-          "264"
+          "0",
+          "1",
+          "-1",
+          "2"
         ],
         "correctIndex": 0
       },
       {
-        "challengeCode": "int value = 23;\nint step = 1;\nint sum = 0;\nwhile (value > 0)\n{\n    sum += value;\n    value -= step;\n}\nConsole.WriteLine(sum);",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Накопитель должен прибавлять каждое очередное значение. Простое присваивание оставляет только последнее.",
-        "challengeResult": "276",
+        "challengeCode": "int value = 3;\nint step = 1;\nint sum = 0;\nwhile (value > 0)\n{\n    sum += value;\n    value -= step;\n}\nConsole.WriteLine(sum);",
+        "challengeResult": "6",
+        "prompt": "Какие значения попадут в sum до завершения while? Выберите итог.",
+        "kind": "Что выведет код?",
+        "explanation": "В sum добавляются 3, 2, 1. Ноль и отрицательные значения уже не входят в тело.",
         "options": [
-          "276",
-          "277",
-          "275",
-          "552"
+          "6",
+          "7",
+          "5",
+          "8"
         ],
         "correctIndex": 0
       },
       {
-        "challengeCode": "int value = 24;\nint step = 2;\nint sum = 0;\nwhile (value > 0)\n{\n    sum += value;\n    value -= step;\n}\nConsole.WriteLine(sum);",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Накопитель должен прибавлять каждое очередное значение. Простое присваивание оставляет только последнее.",
-        "challengeResult": "156",
+        "challengeCode": "int value = 2;\nint step = 2;\nint sum = 0;\nwhile (value > 0)\n{\n    sum += value;\n    value -= step;\n}\nConsole.WriteLine(sum);",
+        "challengeResult": "2",
+        "prompt": "Какие значения попадут в sum до завершения while? Выберите итог.",
+        "kind": "Что выведет код?",
+        "explanation": "В sum добавляются 2. Ноль и отрицательные значения уже не входят в тело.",
         "options": [
-          "156",
-          "157",
-          "155",
-          "312"
+          "2",
+          "3",
+          "1",
+          "4"
         ],
         "correctIndex": 0
       },
       {
-        "challengeCode": "int value = 25;\nint step = 1;\nint sum = 0;\nwhile (value > 0)\n{\n    sum += value;\n    value -= step;\n}\nConsole.WriteLine(sum);",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Накопитель должен прибавлять каждое очередное значение. Простое присваивание оставляет только последнее.",
-        "challengeResult": "325",
+        "challengeCode": "int value = 1;\nint step = 2;\nint sum = 0;\nwhile (value > 0)\n{\n    sum += value;\n    value -= step;\n}\nConsole.WriteLine(sum);",
+        "challengeResult": "1",
+        "prompt": "Какие значения попадут в sum до завершения while? Выберите итог.",
+        "kind": "Что выведет код?",
+        "explanation": "В sum добавляются 1. Ноль и отрицательные значения уже не входят в тело.",
         "options": [
-          "325",
-          "326",
-          "324",
-          "650"
+          "1",
+          "2",
+          "0",
+          "3"
         ],
         "correctIndex": 0
       },
       {
-        "challengeCode": "int value = 26;\nint step = 2;\nint sum = 0;\nwhile (value > 0)\n{\n    sum += value;\n    value -= step;\n}\nConsole.WriteLine(sum);",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Накопитель должен прибавлять каждое очередное значение. Простое присваивание оставляет только последнее.",
-        "challengeResult": "182",
+        "challengeCode": "int value = 6;\nint step = 2;\nint sum = 0;\nwhile (value > 0)\n{\n    sum += value;\n    value -= step;\n}\nConsole.WriteLine(sum);",
+        "challengeResult": "12",
+        "prompt": "Какие значения попадут в sum до завершения while? Выберите итог.",
+        "kind": "Что выведет код?",
+        "explanation": "В sum добавляются 6, 4, 2. Ноль и отрицательные значения уже не входят в тело.",
         "options": [
-          "182",
-          "183",
-          "181",
-          "364"
+          "12",
+          "13",
+          "11",
+          "14"
         ],
         "correctIndex": 0
       },
       {
-        "challengeCode": "int value = 27;\nint step = 1;\nint sum = 0;\nwhile (value > 0)\n{\n    sum += value;\n    value -= step;\n}\nConsole.WriteLine(sum);",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Накопитель должен прибавлять каждое очередное значение. Простое присваивание оставляет только последнее.",
-        "challengeResult": "378",
+        "challengeCode": "int value = 4;\nint step = 1;\nint sum = 0;\nwhile (value > 0)\n{\n    sum += value;\n    value -= step;\n}\nConsole.WriteLine(sum);",
+        "challengeResult": "10",
+        "prompt": "Какие значения попадут в sum до завершения while? Выберите итог.",
+        "kind": "Что выведет код?",
+        "explanation": "В sum добавляются 4, 3, 2, 1. Ноль и отрицательные значения уже не входят в тело.",
         "options": [
-          "378",
-          "379",
-          "377",
-          "756"
+          "10",
+          "11",
+          "9",
+          "12"
         ],
         "correctIndex": 0
       },
       {
-        "challengeCode": "int value = 28;\nint step = 2;\nint sum = 0;\nwhile (value > 0)\n{\n    sum += value;\n    value -= step;\n}\nConsole.WriteLine(sum);",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Накопитель должен прибавлять каждое очередное значение. Простое присваивание оставляет только последнее.",
-        "challengeResult": "210",
+        "challengeCode": "int value = 4;\nint step = 2;\nint sum = 0;\nwhile (value > 0)\n{\n    sum += value;\n    value -= step;\n}\nConsole.WriteLine(sum);",
+        "challengeResult": "6",
+        "prompt": "Какие значения попадут в sum до завершения while? Выберите итог.",
+        "kind": "Что выведет код?",
+        "explanation": "В sum добавляются 4, 2. Ноль и отрицательные значения уже не входят в тело.",
         "options": [
-          "210",
-          "211",
-          "209",
-          "420"
+          "6",
+          "7",
+          "5",
+          "8"
         ],
         "correctIndex": 0
       },
       {
-        "challengeCode": "int value = 29;\nint step = 1;\nint sum = 0;\nwhile (value > 0)\n{\n    sum += value;\n    value -= step;\n}\nConsole.WriteLine(sum);",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Накопитель должен прибавлять каждое очередное значение. Простое присваивание оставляет только последнее.",
-        "challengeResult": "435",
+        "challengeCode": "int value = 7;\nint step = 2;\nint sum = 0;\nwhile (value > 0)\n{\n    sum += value;\n    value -= step;\n}\nConsole.WriteLine(sum);",
+        "challengeResult": "16",
+        "prompt": "Какие значения попадут в sum до завершения while? Выберите итог.",
+        "kind": "Что выведет код?",
+        "explanation": "В sum добавляются 7, 5, 3, 1. Ноль и отрицательные значения уже не входят в тело.",
         "options": [
-          "435",
-          "436",
-          "434",
-          "870"
+          "16",
+          "17",
+          "15",
+          "18"
         ],
         "correctIndex": 0
       },
       {
-        "challengeCode": "int value = 30;\nint step = 2;\nint sum = 0;\nwhile (value > 0)\n{\n    sum += value;\n    value -= step;\n}\nConsole.WriteLine(sum);",
-        "prompt": "Что появится в консоли?",
-        "explanation": "Накопитель должен прибавлять каждое очередное значение. Простое присваивание оставляет только последнее.",
-        "challengeResult": "240",
+        "challengeCode": "int value = 3;\nint step = 2;\nint sum = 0;\nwhile (value > 0)\n{\n    sum += value;\n    value -= step;\n}\nConsole.WriteLine(sum);",
+        "challengeResult": "4",
+        "prompt": "Какие значения попадут в sum до завершения while? Выберите итог.",
+        "kind": "Что выведет код?",
+        "explanation": "В sum добавляются 3, 1. Ноль и отрицательные значения уже не входят в тело.",
         "options": [
-          "240",
-          "241",
-          "239",
-          "480"
+          "4",
+          "5",
+          "3",
+          "6"
         ],
         "correctIndex": 0
       }
     ],
-    "challengeResult": "190",
+    "challengeResult": "9",
     "options": [
-      "190",
-      "191",
-      "189",
-      "380"
+      "9",
+      "10",
+      "8",
+      "11"
     ],
     "correctIndex": 0,
-    "exampleResult": "272"
+    "exampleResult": "9"
   },
   {
     "id": "bank-7-stop-before-1",
     "codeDeckId": "lab7-bank-tracing",
     "deckId": "loops-control",
     "term": "break в цикле",
-    "exampleCode": "int first = 25;\nint stop = first + 2;\nint sum = 0;\nfor (int i = first; i <= stop + 2; i++)\n{\n    if (i == stop)\n    {\n        break;\n    }\n    sum += i;\n}\nConsole.WriteLine(sum);",
-    "exampleNote": "break прекращает цикл целиком. continue пропускает лишь одну итерацию и разрешает дальнейшие прибавления.",
+    "exampleCode": "int sum = 0;\nfor (int i = 0; i <= 3; i++)\n{\n    if (i == 2)\n    {\n        break;\n    }\n    sum += i;\n}\nConsole.WriteLine(sum);",
+    "exampleNote": "При i = 2 выполняется break. Строка изменения после него уже не выполняется. Учитываются i = 0, 1.",
     "kind": "Что выведет код?",
-    "challengeCode": "int first = 1;\nint stop = first + 2;\nint sum = 0;\nfor (int i = first; i <= stop + 2; i++)\n{\n    if (i == stop)\n    {\n        break;\n    }\n    sum += i;\n}\nConsole.WriteLine(sum);",
-    "prompt": "Что появится в консоли?",
-    "explanation": "break прекращает цикл целиком. continue пропускает лишь одну итерацию и разрешает дальнейшие прибавления.",
+    "challengeCode": "int sum = 0;\nfor (int i = 0; i <= 3; i++)\n{\n    if (i == 2)\n    {\n        break;\n    }\n    sum += i;\n}\nConsole.WriteLine(sum);",
+    "prompt": "Какие значения успеют попасть в sum до break? Выберите итог.",
+    "explanation": "При i = 2 выполняется break. Строка изменения после него уже не выполняется. Учитываются i = 0, 1.",
     "variants": [
       {
-        "challengeCode": "int first = 2;\nint stop = first + 2;\nint sum = 0;\nfor (int i = first; i <= stop + 2; i++)\n{\n    if (i == stop)\n    {\n        break;\n    }\n    sum += i;\n}\nConsole.WriteLine(sum);",
-        "prompt": "Что появится в консоли?",
-        "explanation": "break прекращает цикл целиком. continue пропускает лишь одну итерацию и разрешает дальнейшие прибавления.",
+        "challengeCode": "int sum = 0;\nfor (int i = 0; i < 2; i++)\n{\n    if (i == 1)\n    {\n        break;\n    }\n    sum += i;\n}\nConsole.WriteLine(sum);",
+        "challengeResult": "0",
+        "prompt": "Какие значения успеют попасть в sum до break? Выберите итог.",
+        "kind": "Что выведет код?",
+        "explanation": "При i = 1 выполняется break. Строка изменения после него уже не выполняется. Учитываются i = 0.",
+        "options": [
+          "0",
+          "1",
+          "-1",
+          "2"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int sum = 0;\nfor (int i = 0; i < 3; i++)\n{\n    if (i == 1)\n    {\n        break;\n    }\n    sum += i;\n}\nConsole.WriteLine(sum);",
+        "challengeResult": "0",
+        "prompt": "Какие значения успеют попасть в sum до break? Выберите итог.",
+        "kind": "Что выведет код?",
+        "explanation": "При i = 1 выполняется break. Строка изменения после него уже не выполняется. Учитываются i = 0.",
+        "options": [
+          "0",
+          "1",
+          "-1",
+          "2"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int sum = 0;\nfor (int i = 0; i <= 4; i++)\n{\n    if (i == 2)\n    {\n        break;\n    }\n    sum += i;\n}\nConsole.WriteLine(sum);",
+        "challengeResult": "1",
+        "prompt": "Какие значения успеют попасть в sum до break? Выберите итог.",
+        "kind": "Что выведет код?",
+        "explanation": "При i = 2 выполняется break. Строка изменения после него уже не выполняется. Учитываются i = 0, 1.",
+        "options": [
+          "1",
+          "2",
+          "0",
+          "3"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int sum = 0;\nfor (int i = 1; i < 3; i++)\n{\n    if (i == 2)\n    {\n        break;\n    }\n    sum += i;\n}\nConsole.WriteLine(sum);",
+        "challengeResult": "1",
+        "prompt": "Какие значения успеют попасть в sum до break? Выберите итог.",
+        "kind": "Что выведет код?",
+        "explanation": "При i = 2 выполняется break. Строка изменения после него уже не выполняется. Учитываются i = 1.",
+        "options": [
+          "1",
+          "2",
+          "0",
+          "3"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int sum = 0;\nfor (int i = 1; i < 4; i++)\n{\n    if (i == 2)\n    {\n        break;\n    }\n    sum += i;\n}\nConsole.WriteLine(sum);",
+        "challengeResult": "1",
+        "prompt": "Какие значения успеют попасть в sum до break? Выберите итог.",
+        "kind": "Что выведет код?",
+        "explanation": "При i = 2 выполняется break. Строка изменения после него уже не выполняется. Учитываются i = 1.",
+        "options": [
+          "1",
+          "2",
+          "0",
+          "3"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int sum = 0;\nfor (int i = 1; i <= 4; i++)\n{\n    if (i == 3)\n    {\n        break;\n    }\n    sum += i;\n}\nConsole.WriteLine(sum);",
+        "challengeResult": "3",
+        "prompt": "Какие значения успеют попасть в sum до break? Выберите итог.",
+        "kind": "Что выведет код?",
+        "explanation": "При i = 3 выполняется break. Строка изменения после него уже не выполняется. Учитываются i = 1, 2.",
+        "options": [
+          "3",
+          "4",
+          "2",
+          "5"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int sum = 0;\nfor (int i = 1; i <= 5; i++)\n{\n    if (i == 3)\n    {\n        break;\n    }\n    sum += i;\n}\nConsole.WriteLine(sum);",
+        "challengeResult": "3",
+        "prompt": "Какие значения успеют попасть в sum до break? Выберите итог.",
+        "kind": "Что выведет код?",
+        "explanation": "При i = 3 выполняется break. Строка изменения после него уже не выполняется. Учитываются i = 1, 2.",
+        "options": [
+          "3",
+          "4",
+          "2",
+          "5"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int sum = 0;\nfor (int i = 2; i < 4; i++)\n{\n    if (i == 3)\n    {\n        break;\n    }\n    sum += i;\n}\nConsole.WriteLine(sum);",
+        "challengeResult": "2",
+        "prompt": "Какие значения успеют попасть в sum до break? Выберите итог.",
+        "kind": "Что выведет код?",
+        "explanation": "При i = 3 выполняется break. Строка изменения после него уже не выполняется. Учитываются i = 2.",
+        "options": [
+          "2",
+          "3",
+          "1",
+          "4"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int sum = 0;\nfor (int i = 2; i < 5; i++)\n{\n    if (i == 3)\n    {\n        break;\n    }\n    sum += i;\n}\nConsole.WriteLine(sum);",
+        "challengeResult": "2",
+        "prompt": "Какие значения успеют попасть в sum до break? Выберите итог.",
+        "kind": "Что выведет код?",
+        "explanation": "При i = 3 выполняется break. Строка изменения после него уже не выполняется. Учитываются i = 2.",
+        "options": [
+          "2",
+          "3",
+          "1",
+          "4"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int sum = 0;\nfor (int i = 2; i <= 5; i++)\n{\n    if (i == 4)\n    {\n        break;\n    }\n    sum += i;\n}\nConsole.WriteLine(sum);",
         "challengeResult": "5",
+        "prompt": "Какие значения успеют попасть в sum до break? Выберите итог.",
+        "kind": "Что выведет код?",
+        "explanation": "При i = 4 выполняется break. Строка изменения после него уже не выполняется. Учитываются i = 2, 3.",
         "options": [
           "5",
           "6",
           "4",
-          "10"
+          "7"
         ],
         "correctIndex": 0
       },
       {
-        "challengeCode": "int first = 3;\nint stop = first + 2;\nint sum = 0;\nfor (int i = first; i <= stop + 2; i++)\n{\n    if (i == stop)\n    {\n        break;\n    }\n    sum += i;\n}\nConsole.WriteLine(sum);",
-        "prompt": "Что появится в консоли?",
-        "explanation": "break прекращает цикл целиком. continue пропускает лишь одну итерацию и разрешает дальнейшие прибавления.",
-        "challengeResult": "7",
+        "challengeCode": "int sum = 0;\nfor (int i = 2; i <= 6; i++)\n{\n    if (i == 4)\n    {\n        break;\n    }\n    sum += i;\n}\nConsole.WriteLine(sum);",
+        "challengeResult": "5",
+        "prompt": "Какие значения успеют попасть в sum до break? Выберите итог.",
+        "kind": "Что выведет код?",
+        "explanation": "При i = 4 выполняется break. Строка изменения после него уже не выполняется. Учитываются i = 2, 3.",
         "options": [
-          "7",
-          "8",
+          "5",
           "6",
-          "14"
+          "4",
+          "7"
+        ],
+        "correctIndex": 0
+      }
+    ],
+    "challengeResult": "1",
+    "options": [
+      "1",
+      "2",
+      "0",
+      "3"
+    ],
+    "correctIndex": 0,
+    "exampleResult": "1"
+  },
+  {
+    "id": "bank-7-stop-before-2",
+    "codeDeckId": "lab7-bank-tracing",
+    "deckId": "loops-control",
+    "term": "break в цикле",
+    "exampleCode": "int sum = 0;\nfor (int i = 1; i < 4; i++)\n{\n    if (i == 2)\n    {\n        break;\n    }\n    sum += i;\n}\nConsole.WriteLine(sum);",
+    "exampleNote": "При i = 2 выполняется break. Строка изменения после него уже не выполняется. Учитываются i = 1.",
+    "kind": "Что выведет код?",
+    "challengeCode": "int sum = 0;\nfor (int i = 1; i < 4; i++)\n{\n    if (i == 2)\n    {\n        break;\n    }\n    sum += i;\n}\nConsole.WriteLine(sum);",
+    "prompt": "Какие значения успеют попасть в sum до break? Выберите итог.",
+    "explanation": "При i = 2 выполняется break. Строка изменения после него уже не выполняется. Учитываются i = 1.",
+    "variants": [
+      {
+        "challengeCode": "int sum = 0;\nfor (int i = 0; i < 2; i++)\n{\n    if (i == 1)\n    {\n        break;\n    }\n    sum += i;\n}\nConsole.WriteLine(sum);",
+        "challengeResult": "0",
+        "prompt": "Какие значения успеют попасть в sum до break? Выберите итог.",
+        "kind": "Что выведет код?",
+        "explanation": "При i = 1 выполняется break. Строка изменения после него уже не выполняется. Учитываются i = 0.",
+        "options": [
+          "0",
+          "1",
+          "-1",
+          "2"
         ],
         "correctIndex": 0
       },
       {
-        "challengeCode": "int first = 4;\nint stop = first + 2;\nint sum = 0;\nfor (int i = first; i <= stop + 2; i++)\n{\n    if (i == stop)\n    {\n        break;\n    }\n    sum += i;\n}\nConsole.WriteLine(sum);",
-        "prompt": "Что появится в консоли?",
-        "explanation": "break прекращает цикл целиком. continue пропускает лишь одну итерацию и разрешает дальнейшие прибавления.",
-        "challengeResult": "9",
+        "challengeCode": "int sum = 0;\nfor (int i = 0; i < 3; i++)\n{\n    if (i == 1)\n    {\n        break;\n    }\n    sum += i;\n}\nConsole.WriteLine(sum);",
+        "challengeResult": "0",
+        "prompt": "Какие значения успеют попасть в sum до break? Выберите итог.",
+        "kind": "Что выведет код?",
+        "explanation": "При i = 1 выполняется break. Строка изменения после него уже не выполняется. Учитываются i = 0.",
         "options": [
-          "9",
-          "10",
-          "8",
-          "18"
+          "0",
+          "1",
+          "-1",
+          "2"
         ],
         "correctIndex": 0
       },
       {
-        "challengeCode": "int first = 5;\nint stop = first + 2;\nint sum = 0;\nfor (int i = first; i <= stop + 2; i++)\n{\n    if (i == stop)\n    {\n        break;\n    }\n    sum += i;\n}\nConsole.WriteLine(sum);",
-        "prompt": "Что появится в консоли?",
-        "explanation": "break прекращает цикл целиком. continue пропускает лишь одну итерацию и разрешает дальнейшие прибавления.",
-        "challengeResult": "11",
+        "challengeCode": "int sum = 0;\nfor (int i = 0; i <= 3; i++)\n{\n    if (i == 2)\n    {\n        break;\n    }\n    sum += i;\n}\nConsole.WriteLine(sum);",
+        "challengeResult": "1",
+        "prompt": "Какие значения успеют попасть в sum до break? Выберите итог.",
+        "kind": "Что выведет код?",
+        "explanation": "При i = 2 выполняется break. Строка изменения после него уже не выполняется. Учитываются i = 0, 1.",
         "options": [
-          "11",
-          "12",
-          "10",
-          "22"
+          "1",
+          "2",
+          "0",
+          "3"
         ],
         "correctIndex": 0
       },
       {
-        "challengeCode": "int first = 6;\nint stop = first + 2;\nint sum = 0;\nfor (int i = first; i <= stop + 2; i++)\n{\n    if (i == stop)\n    {\n        break;\n    }\n    sum += i;\n}\nConsole.WriteLine(sum);",
-        "prompt": "Что появится в консоли?",
-        "explanation": "break прекращает цикл целиком. continue пропускает лишь одну итерацию и разрешает дальнейшие прибавления.",
-        "challengeResult": "13",
+        "challengeCode": "int sum = 0;\nfor (int i = 0; i <= 4; i++)\n{\n    if (i == 2)\n    {\n        break;\n    }\n    sum += i;\n}\nConsole.WriteLine(sum);",
+        "challengeResult": "1",
+        "prompt": "Какие значения успеют попасть в sum до break? Выберите итог.",
+        "kind": "Что выведет код?",
+        "explanation": "При i = 2 выполняется break. Строка изменения после него уже не выполняется. Учитываются i = 0, 1.",
         "options": [
-          "13",
-          "14",
-          "12",
-          "26"
+          "1",
+          "2",
+          "0",
+          "3"
         ],
         "correctIndex": 0
       },
       {
-        "challengeCode": "int first = 7;\nint stop = first + 2;\nint sum = 0;\nfor (int i = first; i <= stop + 2; i++)\n{\n    if (i == stop)\n    {\n        break;\n    }\n    sum += i;\n}\nConsole.WriteLine(sum);",
-        "prompt": "Что появится в консоли?",
-        "explanation": "break прекращает цикл целиком. continue пропускает лишь одну итерацию и разрешает дальнейшие прибавления.",
-        "challengeResult": "15",
+        "challengeCode": "int sum = 0;\nfor (int i = 1; i < 3; i++)\n{\n    if (i == 2)\n    {\n        break;\n    }\n    sum += i;\n}\nConsole.WriteLine(sum);",
+        "challengeResult": "1",
+        "prompt": "Какие значения успеют попасть в sum до break? Выберите итог.",
+        "kind": "Что выведет код?",
+        "explanation": "При i = 2 выполняется break. Строка изменения после него уже не выполняется. Учитываются i = 1.",
         "options": [
-          "15",
-          "16",
-          "14",
-          "30"
+          "1",
+          "2",
+          "0",
+          "3"
         ],
         "correctIndex": 0
       },
       {
-        "challengeCode": "int first = 8;\nint stop = first + 2;\nint sum = 0;\nfor (int i = first; i <= stop + 2; i++)\n{\n    if (i == stop)\n    {\n        break;\n    }\n    sum += i;\n}\nConsole.WriteLine(sum);",
-        "prompt": "Что появится в консоли?",
-        "explanation": "break прекращает цикл целиком. continue пропускает лишь одну итерацию и разрешает дальнейшие прибавления.",
-        "challengeResult": "17",
+        "challengeCode": "int sum = 0;\nfor (int i = 1; i <= 4; i++)\n{\n    if (i == 3)\n    {\n        break;\n    }\n    sum += i;\n}\nConsole.WriteLine(sum);",
+        "challengeResult": "3",
+        "prompt": "Какие значения успеют попасть в sum до break? Выберите итог.",
+        "kind": "Что выведет код?",
+        "explanation": "При i = 3 выполняется break. Строка изменения после него уже не выполняется. Учитываются i = 1, 2.",
         "options": [
-          "17",
-          "18",
-          "16",
-          "34"
+          "3",
+          "4",
+          "2",
+          "5"
         ],
         "correctIndex": 0
       },
       {
-        "challengeCode": "int first = 9;\nint stop = first + 2;\nint sum = 0;\nfor (int i = first; i <= stop + 2; i++)\n{\n    if (i == stop)\n    {\n        break;\n    }\n    sum += i;\n}\nConsole.WriteLine(sum);",
-        "prompt": "Что появится в консоли?",
-        "explanation": "break прекращает цикл целиком. continue пропускает лишь одну итерацию и разрешает дальнейшие прибавления.",
-        "challengeResult": "19",
+        "challengeCode": "int sum = 0;\nfor (int i = 1; i <= 5; i++)\n{\n    if (i == 3)\n    {\n        break;\n    }\n    sum += i;\n}\nConsole.WriteLine(sum);",
+        "challengeResult": "3",
+        "prompt": "Какие значения успеют попасть в sum до break? Выберите итог.",
+        "kind": "Что выведет код?",
+        "explanation": "При i = 3 выполняется break. Строка изменения после него уже не выполняется. Учитываются i = 1, 2.",
         "options": [
-          "19",
-          "20",
-          "18",
-          "38"
+          "3",
+          "4",
+          "2",
+          "5"
         ],
         "correctIndex": 0
       },
       {
-        "challengeCode": "int first = 10;\nint stop = first + 2;\nint sum = 0;\nfor (int i = first; i <= stop + 2; i++)\n{\n    if (i == stop)\n    {\n        break;\n    }\n    sum += i;\n}\nConsole.WriteLine(sum);",
-        "prompt": "Что появится в консоли?",
-        "explanation": "break прекращает цикл целиком. continue пропускает лишь одну итерацию и разрешает дальнейшие прибавления.",
-        "challengeResult": "21",
+        "challengeCode": "int sum = 0;\nfor (int i = 2; i < 4; i++)\n{\n    if (i == 3)\n    {\n        break;\n    }\n    sum += i;\n}\nConsole.WriteLine(sum);",
+        "challengeResult": "2",
+        "prompt": "Какие значения успеют попасть в sum до break? Выберите итог.",
+        "kind": "Что выведет код?",
+        "explanation": "При i = 3 выполняется break. Строка изменения после него уже не выполняется. Учитываются i = 2.",
         "options": [
-          "21",
-          "22",
-          "20",
-          "42"
+          "2",
+          "3",
+          "1",
+          "4"
         ],
         "correctIndex": 0
       },
       {
-        "challengeCode": "int first = 11;\nint stop = first + 2;\nint sum = 0;\nfor (int i = first; i <= stop + 2; i++)\n{\n    if (i == stop)\n    {\n        break;\n    }\n    sum += i;\n}\nConsole.WriteLine(sum);",
-        "prompt": "Что появится в консоли?",
-        "explanation": "break прекращает цикл целиком. continue пропускает лишь одну итерацию и разрешает дальнейшие прибавления.",
-        "challengeResult": "23",
+        "challengeCode": "int sum = 0;\nfor (int i = 2; i < 5; i++)\n{\n    if (i == 3)\n    {\n        break;\n    }\n    sum += i;\n}\nConsole.WriteLine(sum);",
+        "challengeResult": "2",
+        "prompt": "Какие значения успеют попасть в sum до break? Выберите итог.",
+        "kind": "Что выведет код?",
+        "explanation": "При i = 3 выполняется break. Строка изменения после него уже не выполняется. Учитываются i = 2.",
         "options": [
-          "23",
-          "24",
-          "22",
-          "46"
+          "2",
+          "3",
+          "1",
+          "4"
         ],
         "correctIndex": 0
       },
       {
-        "challengeCode": "int first = 12;\nint stop = first + 2;\nint sum = 0;\nfor (int i = first; i <= stop + 2; i++)\n{\n    if (i == stop)\n    {\n        break;\n    }\n    sum += i;\n}\nConsole.WriteLine(sum);",
-        "prompt": "Что появится в консоли?",
-        "explanation": "break прекращает цикл целиком. continue пропускает лишь одну итерацию и разрешает дальнейшие прибавления.",
-        "challengeResult": "25",
+        "challengeCode": "int sum = 0;\nfor (int i = 2; i <= 5; i++)\n{\n    if (i == 4)\n    {\n        break;\n    }\n    sum += i;\n}\nConsole.WriteLine(sum);",
+        "challengeResult": "5",
+        "prompt": "Какие значения успеют попасть в sum до break? Выберите итог.",
+        "kind": "Что выведет код?",
+        "explanation": "При i = 4 выполняется break. Строка изменения после него уже не выполняется. Учитываются i = 2, 3.",
         "options": [
-          "25",
-          "26",
-          "24",
-          "50"
+          "5",
+          "6",
+          "4",
+          "7"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int sum = 0;\nfor (int i = 2; i <= 6; i++)\n{\n    if (i == 4)\n    {\n        break;\n    }\n    sum += i;\n}\nConsole.WriteLine(sum);",
+        "challengeResult": "5",
+        "prompt": "Какие значения успеют попасть в sum до break? Выберите итог.",
+        "kind": "Что выведет код?",
+        "explanation": "При i = 4 выполняется break. Строка изменения после него уже не выполняется. Учитываются i = 2, 3.",
+        "options": [
+          "5",
+          "6",
+          "4",
+          "7"
+        ],
+        "correctIndex": 0
+      }
+    ],
+    "challengeResult": "1",
+    "options": [
+      "1",
+      "2",
+      "0",
+      "3"
+    ],
+    "correctIndex": 0,
+    "exampleResult": "1"
+  },
+  {
+    "id": "bank-7-do-zero-1",
+    "codeDeckId": "lab7-bank-tracing",
+    "deckId": "loops-basics",
+    "term": "do…while",
+    "exampleCode": "int value = 2;\nint count = 0;\ndo\n{\n    count++;\n    value -= 1;\n} while (value >= 0);\nConsole.WriteLine(count);",
+    "exampleNote": "do выполняет тело перед первой проверкой. После уменьшения проверяется value >= 0. Количество проходов: 3.",
+    "kind": "Число итераций",
+    "challengeCode": "int value = 2;\nint count = 0;\ndo\n{\n    count++;\n    value -= 1;\n} while (value >= 0);\nConsole.WriteLine(count);",
+    "prompt": "Сколько раз выполнится тело do…while?",
+    "explanation": "do выполняет тело перед первой проверкой. После уменьшения проверяется value >= 0. Количество проходов: 3.",
+    "variants": [
+      {
+        "challengeCode": "int value = 0;\nint count = 0;\ndo\n{\n    count++;\n    value -= 1;\n} while (value >= 0);\nConsole.WriteLine(count);",
+        "challengeResult": "1",
+        "prompt": "Сколько раз выполнится тело do…while?",
+        "kind": "Число итераций",
+        "explanation": "do выполняет тело перед первой проверкой. После уменьшения проверяется value >= 0. Количество проходов: 1.",
+        "options": [
+          "1",
+          "2",
+          "0",
+          "3"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int value = 1;\nint count = 0;\ndo\n{\n    count++;\n    value -= 1;\n} while (value >= 0);\nConsole.WriteLine(count);",
+        "challengeResult": "2",
+        "prompt": "Сколько раз выполнится тело do…while?",
+        "kind": "Число итераций",
+        "explanation": "do выполняет тело перед первой проверкой. После уменьшения проверяется value >= 0. Количество проходов: 2.",
+        "options": [
+          "2",
+          "3",
+          "1",
+          "4"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int value = 3;\nint count = 0;\ndo\n{\n    count++;\n    value -= 1;\n} while (value >= 0);\nConsole.WriteLine(count);",
+        "challengeResult": "4",
+        "prompt": "Сколько раз выполнится тело do…while?",
+        "kind": "Число итераций",
+        "explanation": "do выполняет тело перед первой проверкой. После уменьшения проверяется value >= 0. Количество проходов: 4.",
+        "options": [
+          "4",
+          "5",
+          "3",
+          "6"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int value = 0;\nint count = 0;\ndo\n{\n    count++;\n    value -= 2;\n} while (value >= 0);\nConsole.WriteLine(count);",
+        "challengeResult": "1",
+        "prompt": "Сколько раз выполнится тело do…while?",
+        "kind": "Число итераций",
+        "explanation": "do выполняет тело перед первой проверкой. После уменьшения проверяется value >= 0. Количество проходов: 1.",
+        "options": [
+          "1",
+          "2",
+          "0",
+          "3"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int value = 1;\nint count = 0;\ndo\n{\n    count++;\n    value -= 2;\n} while (value >= 0);\nConsole.WriteLine(count);",
+        "challengeResult": "1",
+        "prompt": "Сколько раз выполнится тело do…while?",
+        "kind": "Число итераций",
+        "explanation": "do выполняет тело перед первой проверкой. После уменьшения проверяется value >= 0. Количество проходов: 1.",
+        "options": [
+          "1",
+          "2",
+          "0",
+          "3"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int value = 2;\nint count = 0;\ndo\n{\n    count++;\n    value -= 2;\n} while (value >= 0);\nConsole.WriteLine(count);",
+        "challengeResult": "2",
+        "prompt": "Сколько раз выполнится тело do…while?",
+        "kind": "Число итераций",
+        "explanation": "do выполняет тело перед первой проверкой. После уменьшения проверяется value >= 0. Количество проходов: 2.",
+        "options": [
+          "2",
+          "3",
+          "1",
+          "4"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int value = 3;\nint count = 0;\ndo\n{\n    count++;\n    value -= 2;\n} while (value >= 0);\nConsole.WriteLine(count);",
+        "challengeResult": "2",
+        "prompt": "Сколько раз выполнится тело do…while?",
+        "kind": "Число итераций",
+        "explanation": "do выполняет тело перед первой проверкой. После уменьшения проверяется value >= 0. Количество проходов: 2.",
+        "options": [
+          "2",
+          "3",
+          "1",
+          "4"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int value = 0;\nint count = 0;\ndo\n{\n    count++;\n    value -= 3;\n} while (value >= 0);\nConsole.WriteLine(count);",
+        "challengeResult": "1",
+        "prompt": "Сколько раз выполнится тело do…while?",
+        "kind": "Число итераций",
+        "explanation": "do выполняет тело перед первой проверкой. После уменьшения проверяется value >= 0. Количество проходов: 1.",
+        "options": [
+          "1",
+          "2",
+          "0",
+          "3"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int value = 1;\nint count = 0;\ndo\n{\n    count++;\n    value -= 3;\n} while (value >= 0);\nConsole.WriteLine(count);",
+        "challengeResult": "1",
+        "prompt": "Сколько раз выполнится тело do…while?",
+        "kind": "Число итераций",
+        "explanation": "do выполняет тело перед первой проверкой. После уменьшения проверяется value >= 0. Количество проходов: 1.",
+        "options": [
+          "1",
+          "2",
+          "0",
+          "3"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int value = 2;\nint count = 0;\ndo\n{\n    count++;\n    value -= 3;\n} while (value >= 0);\nConsole.WriteLine(count);",
+        "challengeResult": "1",
+        "prompt": "Сколько раз выполнится тело do…while?",
+        "kind": "Число итераций",
+        "explanation": "do выполняет тело перед первой проверкой. После уменьшения проверяется value >= 0. Количество проходов: 1.",
+        "options": [
+          "1",
+          "2",
+          "0",
+          "3"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "challengeCode": "int value = 3;\nint count = 0;\ndo\n{\n    count++;\n    value -= 3;\n} while (value >= 0);\nConsole.WriteLine(count);",
+        "challengeResult": "2",
+        "prompt": "Сколько раз выполнится тело do…while?",
+        "kind": "Число итераций",
+        "explanation": "do выполняет тело перед первой проверкой. После уменьшения проверяется value >= 0. Количество проходов: 2.",
+        "options": [
+          "2",
+          "3",
+          "1",
+          "4"
         ],
         "correctIndex": 0
       }
@@ -24508,508 +24967,187 @@ const codeLessons = [
       "3",
       "4",
       "2",
-      "6"
+      "5"
     ],
     "correctIndex": 0,
-    "exampleResult": "51"
-  },
-  {
-    "id": "bank-7-stop-before-2",
-    "codeDeckId": "lab7-bank-tracing",
-    "deckId": "loops-control",
-    "term": "break в цикле",
-    "exampleCode": "int first = 26;\nint stop = first + 2;\nint sum = 0;\nfor (int i = first; i <= stop + 2; i++)\n{\n    if (i == stop)\n    {\n        break;\n    }\n    sum += i;\n}\nConsole.WriteLine(sum);",
-    "exampleNote": "break прекращает цикл целиком. continue пропускает лишь одну итерацию и разрешает дальнейшие прибавления.",
-    "kind": "Что выведет код?",
-    "challengeCode": "int first = 13;\nint stop = first + 2;\nint sum = 0;\nfor (int i = first; i <= stop + 2; i++)\n{\n    if (i == stop)\n    {\n        break;\n    }\n    sum += i;\n}\nConsole.WriteLine(sum);",
-    "prompt": "Что появится в консоли?",
-    "explanation": "break прекращает цикл целиком. continue пропускает лишь одну итерацию и разрешает дальнейшие прибавления.",
-    "variants": [
-      {
-        "challengeCode": "int first = 14;\nint stop = first + 2;\nint sum = 0;\nfor (int i = first; i <= stop + 2; i++)\n{\n    if (i == stop)\n    {\n        break;\n    }\n    sum += i;\n}\nConsole.WriteLine(sum);",
-        "prompt": "Что появится в консоли?",
-        "explanation": "break прекращает цикл целиком. continue пропускает лишь одну итерацию и разрешает дальнейшие прибавления.",
-        "challengeResult": "29",
-        "options": [
-          "29",
-          "30",
-          "28",
-          "58"
-        ],
-        "correctIndex": 0
-      },
-      {
-        "challengeCode": "int first = 15;\nint stop = first + 2;\nint sum = 0;\nfor (int i = first; i <= stop + 2; i++)\n{\n    if (i == stop)\n    {\n        break;\n    }\n    sum += i;\n}\nConsole.WriteLine(sum);",
-        "prompt": "Что появится в консоли?",
-        "explanation": "break прекращает цикл целиком. continue пропускает лишь одну итерацию и разрешает дальнейшие прибавления.",
-        "challengeResult": "31",
-        "options": [
-          "31",
-          "32",
-          "30",
-          "62"
-        ],
-        "correctIndex": 0
-      },
-      {
-        "challengeCode": "int first = 16;\nint stop = first + 2;\nint sum = 0;\nfor (int i = first; i <= stop + 2; i++)\n{\n    if (i == stop)\n    {\n        break;\n    }\n    sum += i;\n}\nConsole.WriteLine(sum);",
-        "prompt": "Что появится в консоли?",
-        "explanation": "break прекращает цикл целиком. continue пропускает лишь одну итерацию и разрешает дальнейшие прибавления.",
-        "challengeResult": "33",
-        "options": [
-          "33",
-          "34",
-          "32",
-          "66"
-        ],
-        "correctIndex": 0
-      },
-      {
-        "challengeCode": "int first = 17;\nint stop = first + 2;\nint sum = 0;\nfor (int i = first; i <= stop + 2; i++)\n{\n    if (i == stop)\n    {\n        break;\n    }\n    sum += i;\n}\nConsole.WriteLine(sum);",
-        "prompt": "Что появится в консоли?",
-        "explanation": "break прекращает цикл целиком. continue пропускает лишь одну итерацию и разрешает дальнейшие прибавления.",
-        "challengeResult": "35",
-        "options": [
-          "35",
-          "36",
-          "34",
-          "70"
-        ],
-        "correctIndex": 0
-      },
-      {
-        "challengeCode": "int first = 18;\nint stop = first + 2;\nint sum = 0;\nfor (int i = first; i <= stop + 2; i++)\n{\n    if (i == stop)\n    {\n        break;\n    }\n    sum += i;\n}\nConsole.WriteLine(sum);",
-        "prompt": "Что появится в консоли?",
-        "explanation": "break прекращает цикл целиком. continue пропускает лишь одну итерацию и разрешает дальнейшие прибавления.",
-        "challengeResult": "37",
-        "options": [
-          "37",
-          "38",
-          "36",
-          "74"
-        ],
-        "correctIndex": 0
-      },
-      {
-        "challengeCode": "int first = 19;\nint stop = first + 2;\nint sum = 0;\nfor (int i = first; i <= stop + 2; i++)\n{\n    if (i == stop)\n    {\n        break;\n    }\n    sum += i;\n}\nConsole.WriteLine(sum);",
-        "prompt": "Что появится в консоли?",
-        "explanation": "break прекращает цикл целиком. continue пропускает лишь одну итерацию и разрешает дальнейшие прибавления.",
-        "challengeResult": "39",
-        "options": [
-          "39",
-          "40",
-          "38",
-          "78"
-        ],
-        "correctIndex": 0
-      },
-      {
-        "challengeCode": "int first = 20;\nint stop = first + 2;\nint sum = 0;\nfor (int i = first; i <= stop + 2; i++)\n{\n    if (i == stop)\n    {\n        break;\n    }\n    sum += i;\n}\nConsole.WriteLine(sum);",
-        "prompt": "Что появится в консоли?",
-        "explanation": "break прекращает цикл целиком. continue пропускает лишь одну итерацию и разрешает дальнейшие прибавления.",
-        "challengeResult": "41",
-        "options": [
-          "41",
-          "42",
-          "40",
-          "82"
-        ],
-        "correctIndex": 0
-      },
-      {
-        "challengeCode": "int first = 21;\nint stop = first + 2;\nint sum = 0;\nfor (int i = first; i <= stop + 2; i++)\n{\n    if (i == stop)\n    {\n        break;\n    }\n    sum += i;\n}\nConsole.WriteLine(sum);",
-        "prompt": "Что появится в консоли?",
-        "explanation": "break прекращает цикл целиком. continue пропускает лишь одну итерацию и разрешает дальнейшие прибавления.",
-        "challengeResult": "43",
-        "options": [
-          "43",
-          "44",
-          "42",
-          "86"
-        ],
-        "correctIndex": 0
-      },
-      {
-        "challengeCode": "int first = 22;\nint stop = first + 2;\nint sum = 0;\nfor (int i = first; i <= stop + 2; i++)\n{\n    if (i == stop)\n    {\n        break;\n    }\n    sum += i;\n}\nConsole.WriteLine(sum);",
-        "prompt": "Что появится в консоли?",
-        "explanation": "break прекращает цикл целиком. continue пропускает лишь одну итерацию и разрешает дальнейшие прибавления.",
-        "challengeResult": "45",
-        "options": [
-          "45",
-          "46",
-          "44",
-          "90"
-        ],
-        "correctIndex": 0
-      },
-      {
-        "challengeCode": "int first = 23;\nint stop = first + 2;\nint sum = 0;\nfor (int i = first; i <= stop + 2; i++)\n{\n    if (i == stop)\n    {\n        break;\n    }\n    sum += i;\n}\nConsole.WriteLine(sum);",
-        "prompt": "Что появится в консоли?",
-        "explanation": "break прекращает цикл целиком. continue пропускает лишь одну итерацию и разрешает дальнейшие прибавления.",
-        "challengeResult": "47",
-        "options": [
-          "47",
-          "48",
-          "46",
-          "94"
-        ],
-        "correctIndex": 0
-      },
-      {
-        "challengeCode": "int first = 24;\nint stop = first + 2;\nint sum = 0;\nfor (int i = first; i <= stop + 2; i++)\n{\n    if (i == stop)\n    {\n        break;\n    }\n    sum += i;\n}\nConsole.WriteLine(sum);",
-        "prompt": "Что появится в консоли?",
-        "explanation": "break прекращает цикл целиком. continue пропускает лишь одну итерацию и разрешает дальнейшие прибавления.",
-        "challengeResult": "49",
-        "options": [
-          "49",
-          "50",
-          "48",
-          "98"
-        ],
-        "correctIndex": 0
-      }
-    ],
-    "challengeResult": "27",
-    "options": [
-      "27",
-      "28",
-      "26",
-      "54"
-    ],
-    "correctIndex": 0,
-    "exampleResult": "53"
-  },
-  {
-    "id": "bank-7-do-zero-1",
-    "codeDeckId": "lab7-bank-tracing",
-    "deckId": "loops-basics",
-    "term": "do…while",
-    "exampleCode": "int value = 25;\nint count = 0;\ndo\n{\n    count++;\n    value--;\n} while (value >= 0);\nConsole.WriteLine(count);",
-    "exampleNote": "После уменьшения проверка должна разрешить следующую итерацию с value = 0. Строгий > её исключает.",
-    "kind": "Что выведет код?",
-    "challengeCode": "int value = 1;\nint count = 0;\ndo\n{\n    count++;\n    value--;\n} while (value >= 0);\nConsole.WriteLine(count);",
-    "prompt": "Что появится в консоли?",
-    "explanation": "После уменьшения проверка должна разрешить следующую итерацию с value = 0. Строгий > её исключает.",
-    "variants": [
-      {
-        "challengeCode": "int value = 2;\nint count = 0;\ndo\n{\n    count++;\n    value--;\n} while (value >= 0);\nConsole.WriteLine(count);",
-        "prompt": "Что появится в консоли?",
-        "explanation": "После уменьшения проверка должна разрешить следующую итерацию с value = 0. Строгий > её исключает.",
-        "challengeResult": "3",
-        "options": [
-          "3",
-          "4",
-          "2",
-          "6"
-        ],
-        "correctIndex": 0
-      },
-      {
-        "challengeCode": "int value = 3;\nint count = 0;\ndo\n{\n    count++;\n    value--;\n} while (value >= 0);\nConsole.WriteLine(count);",
-        "prompt": "Что появится в консоли?",
-        "explanation": "После уменьшения проверка должна разрешить следующую итерацию с value = 0. Строгий > её исключает.",
-        "challengeResult": "4",
-        "options": [
-          "4",
-          "5",
-          "3",
-          "8"
-        ],
-        "correctIndex": 0
-      },
-      {
-        "challengeCode": "int value = 4;\nint count = 0;\ndo\n{\n    count++;\n    value--;\n} while (value >= 0);\nConsole.WriteLine(count);",
-        "prompt": "Что появится в консоли?",
-        "explanation": "После уменьшения проверка должна разрешить следующую итерацию с value = 0. Строгий > её исключает.",
-        "challengeResult": "5",
-        "options": [
-          "5",
-          "6",
-          "4",
-          "10"
-        ],
-        "correctIndex": 0
-      },
-      {
-        "challengeCode": "int value = 5;\nint count = 0;\ndo\n{\n    count++;\n    value--;\n} while (value >= 0);\nConsole.WriteLine(count);",
-        "prompt": "Что появится в консоли?",
-        "explanation": "После уменьшения проверка должна разрешить следующую итерацию с value = 0. Строгий > её исключает.",
-        "challengeResult": "6",
-        "options": [
-          "6",
-          "7",
-          "5",
-          "12"
-        ],
-        "correctIndex": 0
-      },
-      {
-        "challengeCode": "int value = 6;\nint count = 0;\ndo\n{\n    count++;\n    value--;\n} while (value >= 0);\nConsole.WriteLine(count);",
-        "prompt": "Что появится в консоли?",
-        "explanation": "После уменьшения проверка должна разрешить следующую итерацию с value = 0. Строгий > её исключает.",
-        "challengeResult": "7",
-        "options": [
-          "7",
-          "8",
-          "6",
-          "14"
-        ],
-        "correctIndex": 0
-      },
-      {
-        "challengeCode": "int value = 7;\nint count = 0;\ndo\n{\n    count++;\n    value--;\n} while (value >= 0);\nConsole.WriteLine(count);",
-        "prompt": "Что появится в консоли?",
-        "explanation": "После уменьшения проверка должна разрешить следующую итерацию с value = 0. Строгий > её исключает.",
-        "challengeResult": "8",
-        "options": [
-          "8",
-          "9",
-          "7",
-          "16"
-        ],
-        "correctIndex": 0
-      },
-      {
-        "challengeCode": "int value = 8;\nint count = 0;\ndo\n{\n    count++;\n    value--;\n} while (value >= 0);\nConsole.WriteLine(count);",
-        "prompt": "Что появится в консоли?",
-        "explanation": "После уменьшения проверка должна разрешить следующую итерацию с value = 0. Строгий > её исключает.",
-        "challengeResult": "9",
-        "options": [
-          "9",
-          "10",
-          "8",
-          "18"
-        ],
-        "correctIndex": 0
-      },
-      {
-        "challengeCode": "int value = 9;\nint count = 0;\ndo\n{\n    count++;\n    value--;\n} while (value >= 0);\nConsole.WriteLine(count);",
-        "prompt": "Что появится в консоли?",
-        "explanation": "После уменьшения проверка должна разрешить следующую итерацию с value = 0. Строгий > её исключает.",
-        "challengeResult": "10",
-        "options": [
-          "10",
-          "11",
-          "9",
-          "20"
-        ],
-        "correctIndex": 0
-      },
-      {
-        "challengeCode": "int value = 10;\nint count = 0;\ndo\n{\n    count++;\n    value--;\n} while (value >= 0);\nConsole.WriteLine(count);",
-        "prompt": "Что появится в консоли?",
-        "explanation": "После уменьшения проверка должна разрешить следующую итерацию с value = 0. Строгий > её исключает.",
-        "challengeResult": "11",
-        "options": [
-          "11",
-          "12",
-          "10",
-          "22"
-        ],
-        "correctIndex": 0
-      },
-      {
-        "challengeCode": "int value = 11;\nint count = 0;\ndo\n{\n    count++;\n    value--;\n} while (value >= 0);\nConsole.WriteLine(count);",
-        "prompt": "Что появится в консоли?",
-        "explanation": "После уменьшения проверка должна разрешить следующую итерацию с value = 0. Строгий > её исключает.",
-        "challengeResult": "12",
-        "options": [
-          "12",
-          "13",
-          "11",
-          "24"
-        ],
-        "correctIndex": 0
-      },
-      {
-        "challengeCode": "int value = 12;\nint count = 0;\ndo\n{\n    count++;\n    value--;\n} while (value >= 0);\nConsole.WriteLine(count);",
-        "prompt": "Что появится в консоли?",
-        "explanation": "После уменьшения проверка должна разрешить следующую итерацию с value = 0. Строгий > её исключает.",
-        "challengeResult": "13",
-        "options": [
-          "13",
-          "14",
-          "12",
-          "26"
-        ],
-        "correctIndex": 0
-      }
-    ],
-    "challengeResult": "2",
-    "options": [
-      "2",
-      "3",
-      "1",
-      "4"
-    ],
-    "correctIndex": 0,
-    "exampleResult": "26"
+    "exampleResult": "3"
   },
   {
     "id": "bank-7-do-zero-2",
     "codeDeckId": "lab7-bank-tracing",
     "deckId": "loops-basics",
     "term": "do…while",
-    "exampleCode": "int value = 26;\nint count = 0;\ndo\n{\n    count++;\n    value--;\n} while (value >= 0);\nConsole.WriteLine(count);",
-    "exampleNote": "После уменьшения проверка должна разрешить следующую итерацию с value = 0. Строгий > её исключает.",
-    "kind": "Что выведет код?",
-    "challengeCode": "int value = 13;\nint count = 0;\ndo\n{\n    count++;\n    value--;\n} while (value >= 0);\nConsole.WriteLine(count);",
-    "prompt": "Что появится в консоли?",
-    "explanation": "После уменьшения проверка должна разрешить следующую итерацию с value = 0. Строгий > её исключает.",
+    "exampleCode": "int value = 1;\nint count = 0;\ndo\n{\n    count++;\n    value -= 2;\n} while (value >= 0);\nConsole.WriteLine(count);",
+    "exampleNote": "do выполняет тело перед первой проверкой. После уменьшения проверяется value >= 0. Количество проходов: 1.",
+    "kind": "Число итераций",
+    "challengeCode": "int value = 1;\nint count = 0;\ndo\n{\n    count++;\n    value -= 2;\n} while (value >= 0);\nConsole.WriteLine(count);",
+    "prompt": "Сколько раз выполнится тело do…while?",
+    "explanation": "do выполняет тело перед первой проверкой. После уменьшения проверяется value >= 0. Количество проходов: 1.",
     "variants": [
       {
-        "challengeCode": "int value = 14;\nint count = 0;\ndo\n{\n    count++;\n    value--;\n} while (value >= 0);\nConsole.WriteLine(count);",
-        "prompt": "Что появится в консоли?",
-        "explanation": "После уменьшения проверка должна разрешить следующую итерацию с value = 0. Строгий > её исключает.",
-        "challengeResult": "15",
+        "challengeCode": "int value = 0;\nint count = 0;\ndo\n{\n    count++;\n    value -= 1;\n} while (value >= 0);\nConsole.WriteLine(count);",
+        "challengeResult": "1",
+        "prompt": "Сколько раз выполнится тело do…while?",
+        "kind": "Число итераций",
+        "explanation": "do выполняет тело перед первой проверкой. После уменьшения проверяется value >= 0. Количество проходов: 1.",
         "options": [
-          "15",
-          "16",
-          "14",
-          "30"
+          "1",
+          "2",
+          "0",
+          "3"
         ],
         "correctIndex": 0
       },
       {
-        "challengeCode": "int value = 15;\nint count = 0;\ndo\n{\n    count++;\n    value--;\n} while (value >= 0);\nConsole.WriteLine(count);",
-        "prompt": "Что появится в консоли?",
-        "explanation": "После уменьшения проверка должна разрешить следующую итерацию с value = 0. Строгий > её исключает.",
-        "challengeResult": "16",
+        "challengeCode": "int value = 1;\nint count = 0;\ndo\n{\n    count++;\n    value -= 1;\n} while (value >= 0);\nConsole.WriteLine(count);",
+        "challengeResult": "2",
+        "prompt": "Сколько раз выполнится тело do…while?",
+        "kind": "Число итераций",
+        "explanation": "do выполняет тело перед первой проверкой. После уменьшения проверяется value >= 0. Количество проходов: 2.",
         "options": [
-          "16",
-          "17",
-          "15",
-          "32"
+          "2",
+          "3",
+          "1",
+          "4"
         ],
         "correctIndex": 0
       },
       {
-        "challengeCode": "int value = 16;\nint count = 0;\ndo\n{\n    count++;\n    value--;\n} while (value >= 0);\nConsole.WriteLine(count);",
-        "prompt": "Что появится в консоли?",
-        "explanation": "После уменьшения проверка должна разрешить следующую итерацию с value = 0. Строгий > её исключает.",
-        "challengeResult": "17",
+        "challengeCode": "int value = 2;\nint count = 0;\ndo\n{\n    count++;\n    value -= 1;\n} while (value >= 0);\nConsole.WriteLine(count);",
+        "challengeResult": "3",
+        "prompt": "Сколько раз выполнится тело do…while?",
+        "kind": "Число итераций",
+        "explanation": "do выполняет тело перед первой проверкой. После уменьшения проверяется value >= 0. Количество проходов: 3.",
         "options": [
-          "17",
-          "18",
-          "16",
-          "34"
+          "3",
+          "4",
+          "2",
+          "5"
         ],
         "correctIndex": 0
       },
       {
-        "challengeCode": "int value = 17;\nint count = 0;\ndo\n{\n    count++;\n    value--;\n} while (value >= 0);\nConsole.WriteLine(count);",
-        "prompt": "Что появится в консоли?",
-        "explanation": "После уменьшения проверка должна разрешить следующую итерацию с value = 0. Строгий > её исключает.",
-        "challengeResult": "18",
+        "challengeCode": "int value = 3;\nint count = 0;\ndo\n{\n    count++;\n    value -= 1;\n} while (value >= 0);\nConsole.WriteLine(count);",
+        "challengeResult": "4",
+        "prompt": "Сколько раз выполнится тело do…while?",
+        "kind": "Число итераций",
+        "explanation": "do выполняет тело перед первой проверкой. После уменьшения проверяется value >= 0. Количество проходов: 4.",
         "options": [
-          "18",
-          "19",
-          "17",
-          "36"
+          "4",
+          "5",
+          "3",
+          "6"
         ],
         "correctIndex": 0
       },
       {
-        "challengeCode": "int value = 18;\nint count = 0;\ndo\n{\n    count++;\n    value--;\n} while (value >= 0);\nConsole.WriteLine(count);",
-        "prompt": "Что появится в консоли?",
-        "explanation": "После уменьшения проверка должна разрешить следующую итерацию с value = 0. Строгий > её исключает.",
-        "challengeResult": "19",
+        "challengeCode": "int value = 0;\nint count = 0;\ndo\n{\n    count++;\n    value -= 2;\n} while (value >= 0);\nConsole.WriteLine(count);",
+        "challengeResult": "1",
+        "prompt": "Сколько раз выполнится тело do…while?",
+        "kind": "Число итераций",
+        "explanation": "do выполняет тело перед первой проверкой. После уменьшения проверяется value >= 0. Количество проходов: 1.",
         "options": [
-          "19",
-          "20",
-          "18",
-          "38"
+          "1",
+          "2",
+          "0",
+          "3"
         ],
         "correctIndex": 0
       },
       {
-        "challengeCode": "int value = 19;\nint count = 0;\ndo\n{\n    count++;\n    value--;\n} while (value >= 0);\nConsole.WriteLine(count);",
-        "prompt": "Что появится в консоли?",
-        "explanation": "После уменьшения проверка должна разрешить следующую итерацию с value = 0. Строгий > её исключает.",
-        "challengeResult": "20",
+        "challengeCode": "int value = 2;\nint count = 0;\ndo\n{\n    count++;\n    value -= 2;\n} while (value >= 0);\nConsole.WriteLine(count);",
+        "challengeResult": "2",
+        "prompt": "Сколько раз выполнится тело do…while?",
+        "kind": "Число итераций",
+        "explanation": "do выполняет тело перед первой проверкой. После уменьшения проверяется value >= 0. Количество проходов: 2.",
         "options": [
-          "20",
-          "21",
-          "19",
-          "40"
+          "2",
+          "3",
+          "1",
+          "4"
         ],
         "correctIndex": 0
       },
       {
-        "challengeCode": "int value = 20;\nint count = 0;\ndo\n{\n    count++;\n    value--;\n} while (value >= 0);\nConsole.WriteLine(count);",
-        "prompt": "Что появится в консоли?",
-        "explanation": "После уменьшения проверка должна разрешить следующую итерацию с value = 0. Строгий > её исключает.",
-        "challengeResult": "21",
+        "challengeCode": "int value = 3;\nint count = 0;\ndo\n{\n    count++;\n    value -= 2;\n} while (value >= 0);\nConsole.WriteLine(count);",
+        "challengeResult": "2",
+        "prompt": "Сколько раз выполнится тело do…while?",
+        "kind": "Число итераций",
+        "explanation": "do выполняет тело перед первой проверкой. После уменьшения проверяется value >= 0. Количество проходов: 2.",
         "options": [
-          "21",
-          "22",
-          "20",
-          "42"
+          "2",
+          "3",
+          "1",
+          "4"
         ],
         "correctIndex": 0
       },
       {
-        "challengeCode": "int value = 21;\nint count = 0;\ndo\n{\n    count++;\n    value--;\n} while (value >= 0);\nConsole.WriteLine(count);",
-        "prompt": "Что появится в консоли?",
-        "explanation": "После уменьшения проверка должна разрешить следующую итерацию с value = 0. Строгий > её исключает.",
-        "challengeResult": "22",
+        "challengeCode": "int value = 0;\nint count = 0;\ndo\n{\n    count++;\n    value -= 3;\n} while (value >= 0);\nConsole.WriteLine(count);",
+        "challengeResult": "1",
+        "prompt": "Сколько раз выполнится тело do…while?",
+        "kind": "Число итераций",
+        "explanation": "do выполняет тело перед первой проверкой. После уменьшения проверяется value >= 0. Количество проходов: 1.",
         "options": [
-          "22",
-          "23",
-          "21",
-          "44"
+          "1",
+          "2",
+          "0",
+          "3"
         ],
         "correctIndex": 0
       },
       {
-        "challengeCode": "int value = 22;\nint count = 0;\ndo\n{\n    count++;\n    value--;\n} while (value >= 0);\nConsole.WriteLine(count);",
-        "prompt": "Что появится в консоли?",
-        "explanation": "После уменьшения проверка должна разрешить следующую итерацию с value = 0. Строгий > её исключает.",
-        "challengeResult": "23",
+        "challengeCode": "int value = 1;\nint count = 0;\ndo\n{\n    count++;\n    value -= 3;\n} while (value >= 0);\nConsole.WriteLine(count);",
+        "challengeResult": "1",
+        "prompt": "Сколько раз выполнится тело do…while?",
+        "kind": "Число итераций",
+        "explanation": "do выполняет тело перед первой проверкой. После уменьшения проверяется value >= 0. Количество проходов: 1.",
         "options": [
-          "23",
-          "24",
-          "22",
-          "46"
+          "1",
+          "2",
+          "0",
+          "3"
         ],
         "correctIndex": 0
       },
       {
-        "challengeCode": "int value = 23;\nint count = 0;\ndo\n{\n    count++;\n    value--;\n} while (value >= 0);\nConsole.WriteLine(count);",
-        "prompt": "Что появится в консоли?",
-        "explanation": "После уменьшения проверка должна разрешить следующую итерацию с value = 0. Строгий > её исключает.",
-        "challengeResult": "24",
+        "challengeCode": "int value = 2;\nint count = 0;\ndo\n{\n    count++;\n    value -= 3;\n} while (value >= 0);\nConsole.WriteLine(count);",
+        "challengeResult": "1",
+        "prompt": "Сколько раз выполнится тело do…while?",
+        "kind": "Число итераций",
+        "explanation": "do выполняет тело перед первой проверкой. После уменьшения проверяется value >= 0. Количество проходов: 1.",
         "options": [
-          "24",
-          "25",
-          "23",
-          "48"
+          "1",
+          "2",
+          "0",
+          "3"
         ],
         "correctIndex": 0
       },
       {
-        "challengeCode": "int value = 24;\nint count = 0;\ndo\n{\n    count++;\n    value--;\n} while (value >= 0);\nConsole.WriteLine(count);",
-        "prompt": "Что появится в консоли?",
-        "explanation": "После уменьшения проверка должна разрешить следующую итерацию с value = 0. Строгий > её исключает.",
-        "challengeResult": "25",
+        "challengeCode": "int value = 3;\nint count = 0;\ndo\n{\n    count++;\n    value -= 3;\n} while (value >= 0);\nConsole.WriteLine(count);",
+        "challengeResult": "2",
+        "prompt": "Сколько раз выполнится тело do…while?",
+        "kind": "Число итераций",
+        "explanation": "do выполняет тело перед первой проверкой. После уменьшения проверяется value >= 0. Количество проходов: 2.",
         "options": [
-          "25",
-          "26",
-          "24",
-          "50"
+          "2",
+          "3",
+          "1",
+          "4"
         ],
         "correctIndex": 0
       }
     ],
-    "challengeResult": "14",
+    "challengeResult": "1",
     "options": [
-      "14",
-      "15",
-      "13",
-      "28"
+      "1",
+      "2",
+      "0",
+      "3"
     ],
     "correctIndex": 0,
-    "exampleResult": "27"
+    "exampleResult": "1"
   },
   {
     "id": "bank-8-first-index-1",

@@ -55,7 +55,9 @@ const deckLabTags = {
   "methods-refactoring": ["ЛБ 10"],
   "strings-text": ["ЛБ 11"],
   "strings-null": ["ЛБ 11"],
-  "strings-nullable": ["ЛБ 11"]
+  "strings-nullable": ["ЛБ 11"],
+  "debugger-tools": ["ЛБ 12"],
+  "algorithm-checks": ["ЛБ 12"]
 };
 
 const CODE_ANSWER_TIME_MS = 90_000;

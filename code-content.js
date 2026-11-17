@@ -214,6 +214,16 @@ const codeDecks = [
   "id": "lab11-strings-nullable",
   "lab": "ЛБ 11",
   "title": "Поиск и необязательные значения"
+},
+{
+  "id": "lab12-debugger",
+  "lab": "ЛБ 12",
+  "title": "Пауза, шаги и стек вызовов"
+},
+{
+  "id": "lab12-checks",
+  "lab": "ЛБ 12",
+  "title": "Тестовые наборы и причины ошибок"
 }
 ];
 
@@ -29168,5 +29178,407 @@ const codeLessons = [
       "explanation": "Завершение потока — отдельная ситуация. Программа заканчивается до обработки года."
     }
   ]
+},
+{
+  "id": "lab12-breakpoint-before",
+  "codeDeckId": "lab12-debugger",
+  "deckId": "debugger-tools",
+  "term": "Точка останова",
+  "exampleCode": "int total = 2;\nint value = 3;\ntotal += value;\nConsole.WriteLine(total);",
+  "exampleResult": "5",
+  "exampleNote": "До прибавления total равен 2, после — 5. Точка останова перед прибавлением позволяет увидеть исходное состояние.",
+  "kind": "Состояние при отладке",
+  "challengeCode": "int total = 2;\nint value = 3;\n// Точка останова на следующей строке.\ntotal += value;\nConsole.WriteLine(total);",
+  "prompt": "Программа впервые остановилась на строке total += value. Чему сейчас равен total?",
+  "options": [
+    "2",
+    "5",
+    "3",
+    "Переменная ещё не объявлена"
+  ],
+  "correctIndex": 0,
+  "explanation": "Присваивание total = 2 уже выполнено. Строка с прибавлением только предстоит, поэтому total пока равен 2."
+},
+{
+  "id": "lab12-current-instruction",
+  "codeDeckId": "lab12-debugger",
+  "deckId": "debugger-tools",
+  "term": "Текущая инструкция",
+  "exampleCode": "int value = 2;\nvalue *= 2;\nConsole.WriteLine(value);",
+  "exampleResult": "4",
+  "exampleNote": "Шаг через присваивание меняет value с 2 на 4.",
+  "kind": "Состояние при отладке",
+  "challengeCode": "int value = 2;\n// Жёлтая подсветка на следующей строке.\nvalue *= 2;\nConsole.WriteLine(value);",
+  "prompt": "На паузе value равен 2. После одного F10 отладчик остановился перед Console.WriteLine. Чему теперь равен value?",
+  "options": [
+    "4",
+    "2",
+    "0",
+    "8"
+  ],
+  "correctIndex": 0,
+  "explanation": "F10 выполнил value *= 2. Подсвеченная теперь строка вывода ещё не выполнена, но value уже равен 4."
+},
+{
+  "id": "lab12-step-over",
+  "codeDeckId": "lab12-debugger",
+  "deckId": "debugger-tools",
+  "term": "Шаг с обходом (F10)",
+  "exampleCode": "int number = 4;\n// Пауза перед следующей строкой.\nint result = Double(number);\nConsole.WriteLine(result);\nint Double(int value)\n{\n    int result = value * 2;\n    return result;\n}",
+  "exampleResult": "8",
+  "exampleNote": "Double получает 4 и возвращает 8. F10 на строке вызова обычно выполняет вызов целиком.",
+  "kind": "Состояние при отладке",
+  "challengeCode": "int number = 4;\n// Пауза перед следующей строкой.\nint result = Double(number);\nConsole.WriteLine(result);\nint Double(int value)\n{\n    int result = value * 2;\n    return result;\n}",
+  "prompt": "Пауза перед int result = Double(number). Других точек останова нет. Что сделает F10?",
+  "options": [
+    "Выполнит Double и присваивание, затем остановится перед выводом",
+    "Зайдёт в Double и остановится перед умножением",
+    "Пропустит вызов и оставит result равным 0",
+    "Завершит отладку без выполнения метода"
+  ],
+  "correctIndex": 0,
+  "explanation": "Шаг с обходом выполняет вызванный метод. После завершения строки result равен 8, следующая инструкция — Console.WriteLine."
+},
+{
+  "id": "lab12-step-into",
+  "codeDeckId": "lab12-debugger",
+  "deckId": "debugger-tools",
+  "term": "Шаг с заходом (F11)",
+  "exampleCode": "int number = 3;\n// Пауза перед следующей строкой.\nint result = Double(number);\nConsole.WriteLine(result);\nint Double(int value)\n{\n    int result = value * 2;\n    return result;\n}",
+  "exampleResult": "6",
+  "exampleNote": "Аргумент number со значением 3 копируется в параметр value метода Double.",
+  "kind": "Состояние при отладке",
+  "challengeCode": "int number = 3;\n// Пауза перед следующей строкой.\nint result = Double(number);\nConsole.WriteLine(result);\nint Double(int value)\n{\n    int result = value * 2;\n    return result;\n}",
+  "prompt": "После F11 на вызове отладчик вошёл в Double и остановился перед int result = value * 2. Что верно?",
+  "options": [
+    "value равен 3; result вызывающего кода ещё не получил результат вызова",
+    "value равен 6; результат вызова уже присвоен",
+    "value равен 0 до выполнения return",
+    "number и value — одна изменяемая переменная"
+  ],
+  "correctIndex": 0,
+  "explanation": "Параметр value уже получил аргумент 3. Вычисление внутри Double и возврат ещё впереди; присваивание результата вызова пока не завершено."
+},
+{
+  "id": "lab12-step-out",
+  "codeDeckId": "lab12-debugger",
+  "deckId": "debugger-tools",
+  "term": "Шаг с выходом (Shift+F11)",
+  "exampleCode": "int answer = Double(2);\nConsole.WriteLine(answer);\nint Double(int value)\n{\n    int result = value * 2;\n    // Пауза перед return.\n    return result;\n}",
+  "exampleResult": "4",
+  "exampleNote": "return передаёт 4 вызывающему коду; после завершения присваивания answer равен 4.",
+  "kind": "Состояние при отладке",
+  "challengeCode": "int answer = Double(2);\nConsole.WriteLine(answer);\nint Double(int value)\n{\n    int result = value * 2;\n    // Пауза перед return.\n    return result;\n}",
+  "prompt": "Пауза перед return внутри Double. Других точек останова нет. Что делает Shift+F11?",
+  "options": [
+    "Продолжает до возврата из Double в вызывающий код",
+    "Возвращает выполнение к началу Double",
+    "Прерывает программу без возврата результата",
+    "Пропускает return и переходит к следующему методу"
+  ],
+  "correctIndex": 0,
+  "explanation": "Шаг с выходом выполняет оставшуюся часть текущего метода до возврата. После возврата и завершения присваивания answer получит 4."
+},
+{
+  "id": "lab12-continue-debugging",
+  "codeDeckId": "lab12-debugger",
+  "deckId": "debugger-tools",
+  "term": "Продолжение выполнения (F5)",
+  "exampleCode": "for (int i = 0; i < 3; i++)\n{\n    // Точка останова на следующей строке.\n    Console.WriteLine(i);\n}",
+  "exampleResult": "0\n1\n2",
+  "exampleNote": "Одна точка внутри цикла может сработать на каждом проходе.",
+  "kind": "Состояние при отладке",
+  "challengeCode": "for (int i = 0; i < 3; i++)\n{\n    // Точка останова на следующей строке.\n    Console.WriteLine(i);\n}",
+  "prompt": "Первая остановка произошла перед выводом при i = 0. Нажали F5. Других точек нет. При каком i будет следующая остановка на этой строке?",
+  "options": [
+    "1",
+    "0",
+    "2",
+    "3"
+  ],
+  "correctIndex": 0,
+  "explanation": "F5 продолжает выполнение. Вывод 0 и шаг i++ выполнятся, затем точка сработает на следующем проходе при i = 1."
+},
+{
+  "id": "lab12-locals-context",
+  "codeDeckId": "lab12-debugger",
+  "deckId": "debugger-tools",
+  "term": "Локальные переменные (Locals)",
+  "exampleCode": "int value = 4;\nConsole.WriteLine(Change(value));\nint Change(int value)\n{\n    value++;\n    // Пауза перед return, выбран кадр Change.\n    return value;\n}",
+  "exampleResult": "5",
+  "exampleNote": "Параметр int изменяется в своём вызове. Переменная value вызывающего кода остаётся равной 4.",
+  "kind": "Состояние при отладке",
+  "challengeCode": "int value = 4;\nConsole.WriteLine(Change(value));\nint Change(int value)\n{\n    value++;\n    // Пауза перед return, выбран кадр Change.\n    return value;\n}",
+  "prompt": "Выбран текущий кадр Change. На паузе после value++ какое значение value покажет окно Locals этого кадра?",
+  "options": [
+    "5",
+    "4",
+    "0",
+    "Оба value обязательно равны 5"
+  ],
+  "correctIndex": 0,
+  "explanation": "В текущем вызове Change параметр уже увеличен до 5. У вызывающего кода отдельная переменная value со значением 4."
+},
+{
+  "id": "lab12-watch-index",
+  "codeDeckId": "lab12-debugger",
+  "deckId": "debugger-tools",
+  "term": "Контрольные значения (Watch)",
+  "exampleCode": "int[] values = { 2, 4 };\nint i = 0;\nwhile (i < values.Length)\n{\n    i++;\n}\n// Пауза перед выводом.\nConsole.WriteLine(i);",
+  "exampleResult": "2",
+  "exampleNote": "После обхода i равен Length. Значения i и Length доступны, но элемента values[i] уже нет.",
+  "kind": "Состояние при отладке",
+  "challengeCode": "int[] values = { 2, 4 };\nint i = 0;\nwhile (i < values.Length)\n{\n    i++;\n}\n// Пауза перед выводом.\nConsole.WriteLine(i);",
+  "prompt": "Какое выражение в Watch безопасно проверяет допустимость индекса i перед обращением values[i]?",
+  "options": [
+    "i >= 0 && i < values.Length",
+    "values[i] >= 0",
+    "values[i + 1] >= 0",
+    "values[values.Length] >= 0"
+  ],
+  "correctIndex": 0,
+  "explanation": "Проверка границ сама не обращается к массиву. Сейчас i = 2 и Length = 2, поэтому она даст false. Остальные варианты пытаются прочитать несуществующий элемент."
+},
+{
+  "id": "lab12-call-stack",
+  "codeDeckId": "lab12-debugger",
+  "deckId": "debugger-tools",
+  "term": "Стек вызовов",
+  "exampleCode": "// Фрагмент Main и вызываемые методы.\nint[] values = { -2, -1 };\nPrintReport(values);\nvoid PrintReport(int[] data)\n{\n    Console.WriteLine(FindMax(data));\n}\nint FindMax(int[] data)\n{\n    int maximum = data[0];\n    // Пауза перед foreach внутри FindMax.\n    foreach (int value in data)\n    {\n        if (value > maximum)\n            maximum = value;\n    }\n    return maximum;\n}",
+  "exampleResult": "-1",
+  "exampleNote": "Main вызывает PrintReport, а тот — FindMax. Во время FindMax все три вызова ещё не завершены.",
+  "kind": "Состояние при отладке",
+  "challengeCode": "// Фрагмент Main и вызываемые методы.\nint[] values = { -2, -1 };\nPrintReport(values);\nvoid PrintReport(int[] data)\n{\n    Console.WriteLine(FindMax(data));\n}\nint FindMax(int[] data)\n{\n    int maximum = data[0];\n    // Пауза перед foreach внутри FindMax.\n    foreach (int value in data)\n    {\n        if (value > maximum)\n            maximum = value;\n    }\n    return maximum;\n}",
+  "prompt": "Пауза внутри FindMax. Как расположены кадры пользовательского кода в стеке сверху вниз? Служебные кадры не учитывайте.",
+  "options": [
+    "FindMax → PrintReport → Main",
+    "Main → PrintReport → FindMax",
+    "PrintReport → FindMax → Main",
+    "Только FindMax, остальные вызовы уже завершены"
+  ],
+  "correctIndex": 0,
+  "explanation": "Верхний кадр — текущий FindMax. Ниже находится вызвавший его PrintReport, ещё ниже — Main, ожидающий завершения PrintReport."
+},
+{
+  "id": "lab12-stack-frame",
+  "codeDeckId": "lab12-debugger",
+  "deckId": "debugger-tools",
+  "term": "Кадр стека",
+  "exampleCode": "int value = 2;\nConsole.WriteLine(Double(value));\nint Double(int value)\n{\n    value *= 2;\n    // Пауза перед return.\n    return value;\n}",
+  "exampleResult": "4",
+  "exampleNote": "Внутри Double параметр равен 4, а value вызывающего кода остаётся равным 2.",
+  "kind": "Состояние при отладке",
+  "challengeCode": "int value = 2;\nConsole.WriteLine(Double(value));\nint Double(int value)\n{\n    value *= 2;\n    // Пауза перед return.\n    return value;\n}",
+  "prompt": "На паузе внутри Double выбрали кадр вызывающего Main. Что изменилось?",
+  "options": [
+    "Контекст просмотра переменных; выполнение осталось на той же паузе",
+    "Программа вернулась во времени к строке вызова",
+    "Double выполнился повторно",
+    "value внутри Double снова стал равен 2"
+  ],
+  "correctIndex": 0,
+  "explanation": "Выбор кадра показывает состояние соответствующего вызова. Он не выполняет код и не отменяет уже сделанное умножение."
+},
+{
+  "id": "lab12-runtime-error",
+  "codeDeckId": "lab12-checks",
+  "deckId": "algorithm-checks",
+  "term": "Ошибка выполнения",
+  "exampleCode": "int[] values = { 2, 4 };\nConsole.WriteLine(values[values.Length - 1]);",
+  "exampleResult": "4",
+  "exampleNote": "Последний допустимый индекс равен Length - 1.",
+  "kind": "Проверка алгоритма",
+  "challengeCode": "int[] values = { 2, 4 };\nConsole.WriteLine(values[values.Length]);",
+  "prompt": "Код успешно собирается. Что произойдёт при запуске?",
+  "options": [
+    "Ошибка выполнения: IndexOutOfRangeException",
+    "Ошибка компиляции: Length нельзя использовать как индекс",
+    "Успешно выведется 4",
+    "Успешно выведется 0"
+  ],
+  "correctIndex": 0,
+  "explanation": "Length равен 2, но допустимы индексы 0 и 1. Попытка чтения values[2] вызывает исключение во время выполнения."
+},
+{
+  "id": "lab12-logic-error",
+  "codeDeckId": "lab12-checks",
+  "deckId": "algorithm-checks",
+  "term": "Логическая ошибка",
+  "exampleCode": "int[] values = { -3, -1 };\nint maximum = 0;\nforeach (int value in values)\n{\n    if (value > maximum)\n        maximum = value;\n}\nConsole.WriteLine(maximum);",
+  "exampleResult": "0",
+  "exampleNote": "Это намеренно ошибочный поиск максимума. Код выводит 0, хотя правильный максимум массива равен -1.",
+  "kind": "Проверка алгоритма",
+  "challengeCode": "int[] values = { -3, -1 };\nint maximum = 0;\nforeach (int value in values)\n{\n    if (value > maximum)\n        maximum = value;\n}\nConsole.WriteLine(maximum);",
+  "prompt": "Программа должна найти максимум массива. Как классифицировать её поведение?",
+  "options": [
+    "Логическая ошибка: вывод 0, хотя максимум равен -1",
+    "Ошибка компиляции из-за отрицательных чисел",
+    "Ошибка выполнения при первом сравнении",
+    "Ошибки нет: максимум всегда не меньше нуля"
+  ],
+  "correctIndex": 0,
+  "explanation": "Программа выполняется без исключения, но старт с 0 не позволяет выбрать ни одно отрицательное число. Результат расходится с требованием."
+},
+{
+  "id": "lab12-test-set",
+  "codeDeckId": "lab12-checks",
+  "deckId": "algorithm-checks",
+  "term": "Тестовый набор",
+  "exampleCode": "int[] values = { -3, -1 };\nint maximum = 0;\nforeach (int value in values)\n{\n    if (value > maximum)\n        maximum = value;\n}\nConsole.WriteLine(maximum);",
+  "exampleResult": "0",
+  "exampleNote": "Набор из одних отрицательных чисел выявляет неверное начальное значение maximum.",
+  "kind": "Проверка алгоритма",
+  "challengeCode": "int[] values = { -3, -1 };\nint maximum = 0;\nforeach (int value in values)\n{\n    if (value > maximum)\n        maximum = value;\n}\nConsole.WriteLine(maximum);",
+  "prompt": "Какой набор вместо исходного гарантированно выявит ошибку maximum = 0 при поиске максимума?",
+  "options": [
+    "{ -4, -2 }",
+    "{ 1, 2 }",
+    "{ 0, 2 }",
+    "{ 0 }"
+  ],
+  "correctIndex": 0,
+  "explanation": "Для { -4, -2 } ожидается -2, а ошибочный код оставит 0. На трёх остальных наборах старт с 0 не мешает получить правильный максимум."
+},
+{
+  "id": "lab12-expected-result",
+  "codeDeckId": "lab12-checks",
+  "deckId": "algorithm-checks",
+  "term": "Ожидаемый результат",
+  "exampleCode": "int[] values = { -2, 0, 3 };\nint total = 0;\nforeach (int value in values)\n{\n    total += value;\n}\nConsole.WriteLine(total);",
+  "exampleResult": "1",
+  "exampleNote": "Сумма определяется по элементам: -2 + 0 + 3 = 1.",
+  "kind": "Проверка алгоритма",
+  "challengeCode": "int[] values = { -2, 0, 3 };\nint total = 0;\nforeach (int value in values)\n{\n    total += value;\n}\nConsole.WriteLine(total);",
+  "prompt": "Какой ожидаемый результат суммы нужно записать до запуска?",
+  "options": [
+    "1",
+    "3",
+    "5",
+    "0"
+  ],
+  "correctIndex": 0,
+  "explanation": "Каждый элемент включается ровно один раз. Сумма равна 1; это образец для сравнения с фактическим выводом.",
+  "challengeResult": "1"
+},
+{
+  "id": "lab12-actual-result",
+  "codeDeckId": "lab12-checks",
+  "deckId": "algorithm-checks",
+  "term": "Фактический результат",
+  "exampleCode": "int total = 3;\nint count = 2;\ndouble average = total / count;\nConsole.WriteLine(average);",
+  "exampleResult": "1",
+  "exampleNote": "Фактический вывод — 1. Дробная часть теряется при делении int ещё до присваивания в double.",
+  "kind": "Проверка алгоритма",
+  "challengeCode": "int total = 3;\nint count = 2;\ndouble average = total / count;\nConsole.WriteLine(average);",
+  "prompt": "Для среднего ожидается 1,5. Какой фактический результат выведет именно этот код?",
+  "options": [
+    "1",
+    "1.5",
+    "2",
+    "Ошибка выполнения"
+  ],
+  "correctIndex": 0,
+  "explanation": "Оба операнда деления имеют тип int, поэтому 3 / 2 даёт 1. Переменная double получает уже усечённый результат. Для исправления один операнд преобразуют в double до деления.",
+  "challengeResult": "1"
+},
+{
+  "id": "lab12-boundary-zero",
+  "codeDeckId": "lab12-checks",
+  "deckId": "algorithm-checks",
+  "term": "Граничный случай",
+  "exampleCode": "int[] values = { 0 };\nint count = 0;\nforeach (int value in values)\n{\n    if (value <= 0)\n        count++;\n}\nConsole.WriteLine(count);",
+  "exampleResult": "1",
+  "exampleNote": "Намеренно неверное условие считает ноль отрицательным. По требованию для { 0 } должно получиться 0.",
+  "kind": "Проверка алгоритма",
+  "challengeCode": "int[] values = { 0 };\nint count = 0;\nforeach (int value in values)\n{\n    if (value <= 0)\n        count++;\n}\nConsole.WriteLine(count);",
+  "prompt": "Какой минимальный набор проверяет именно ошибочное включение нуля в отрицательные числа?",
+  "options": [
+    "{ 0 }",
+    "{ -1 }",
+    "{ 1 }",
+    "{ -2, 2 }"
+  ],
+  "correctIndex": 0,
+  "explanation": "Ноль лежит на границе условия. На { 0 } ожидается 0 отрицательных, ошибочный код выдаёт 1. На остальных наборах условия < 0 и <= 0 дадут одинаковый ответ."
+},
+{
+  "id": "lab12-counterexample-average",
+  "codeDeckId": "lab12-checks",
+  "deckId": "algorithm-checks",
+  "term": "Контрпример",
+  "exampleCode": "Console.WriteLine(CalculateAverage(new int[] { 1, 2 }));\ndouble CalculateAverage(int[] values)\n{\n    int total = 0;\n    foreach (int value in values)\n        total += value;\n    return total / values.Length;\n}",
+  "exampleResult": "1",
+  "exampleNote": "Для { 1, 2 } правильное среднее равно 1,5, но ошибочный метод возвращает 1.",
+  "kind": "Проверка алгоритма",
+  "challengeCode": "Console.WriteLine(CalculateAverage(new int[] { 1, 2 }));\ndouble CalculateAverage(int[] values)\n{\n    int total = 0;\n    foreach (int value in values)\n        total += value;\n    return total / values.Length;\n}",
+  "prompt": "Какой набор выявляет потерю дробной части в этом методе?",
+  "options": [
+    "{ 1, 2 }",
+    "{ 2, 4 }",
+    "{ -2, 2 }",
+    "{ 4 }"
+  ],
+  "correctIndex": 0,
+  "explanation": "У { 1, 2 } среднее дробное. Остальные наборы имеют целое среднее, поэтому ошибка целочисленного деления на них незаметна."
+},
+{
+  "id": "lab12-recheck",
+  "codeDeckId": "lab12-checks",
+  "deckId": "algorithm-checks",
+  "term": "Повторная проверка после исправления",
+  "exampleCode": "int[] values = { -3, -1 };\nint maximum = values[0];\nforeach (int value in values)\n{\n    if (value > maximum)\n        maximum = value;\n}\nConsole.WriteLine(maximum);",
+  "exampleResult": "-1",
+  "exampleNote": "После исправления начального maximum отрицательный набор проходит. Остальные проверки тоже нужно повторить.",
+  "kind": "Проверка алгоритма",
+  "challengeCode": "int[] values = { -3, -1 };\nint maximum = values[0];\nforeach (int value in values)\n{\n    if (value > maximum)\n        maximum = value;\n}\nConsole.WriteLine(maximum);",
+  "prompt": "Исправленный поиск максимума прошёл этот тест. Как проверить изменение дальше?",
+  "options": [
+    "Повторить прежние обычные и граничные проверки",
+    "Оставить только этот набор: он доказывает правильность для всех данных",
+    "Проверить только сборку: ошибки логики теперь исключены",
+    "Заменить все ожидаемые ответы текущим выводом программы"
+  ],
+  "correctIndex": 0,
+  "explanation": "Успех на одном наборе подтверждает только его. Повторяют прежние проверки, включая один элемент, ноль и обычные данные, чтобы заметить последствия правки."
+},
+{
+  "id": "lab12-precondition-empty",
+  "codeDeckId": "lab12-checks",
+  "deckId": "algorithm-checks",
+  "term": "Предусловие",
+  "exampleCode": "PrintReport(new int[0]);\nvoid PrintReport(int[] values)\n{\n    if (values.Length == 0)\n    {\n        Console.WriteLine(\"Нет измерений\");\n        return;\n    }\n    Console.WriteLine(values[0]);\n}",
+  "exampleResult": "Нет измерений",
+  "exampleNote": "Пустой массив — дополнительная часть ЛБ 12. Проверка должна сработать до вызовов вычислений и чтения первого элемента.",
+  "kind": "Проверка алгоритма",
+  "challengeCode": "PrintReport(new int[0]);\nvoid PrintReport(int[] values)\n{\n    if (values.Length == 0)\n    {\n        Console.WriteLine(\"Нет измерений\");\n        return;\n    }\n    Console.WriteLine(values[0]);\n}",
+  "prompt": "Почему для пустого массива обращение values[0] не выполнится?",
+  "options": [
+    "return завершает PrintReport после сообщения",
+    "У пустого массива values[0] автоматически равен 0",
+    "Console.WriteLine всегда завершает текущий метод",
+    "Length создаёт первый элемент массива"
+  ],
+  "correctIndex": 0,
+  "explanation": "Длина равна 0, поэтому выполняется ветка с сообщением и return. Вычисления для непустого массива не начинаются. В обязательной части лабы пустой массив не требуется."
+},
+{
+  "id": "lab12-diagnose-stack",
+  "codeDeckId": "lab12-checks",
+  "deckId": "algorithm-checks",
+  "term": "Диагностика ошибки",
+  "exampleCode": "// Фрагмент Main и вызываемые методы.\nPrintReport(new int[] { 1, 2 });\nvoid PrintReport(int[] values)\n{\n    Console.WriteLine(CalculateAverage(values));\n}\ndouble CalculateAverage(int[] values)\n{\n    return (double)Sum(values) / values.Length;\n}\nint Sum(int[] values)\n{\n    int total = 0;\n    for (int i = 0; i < values.Length; i++)\n    {\n        total += values[i];\n    }\n    return total;\n}",
+  "exampleResult": "1.5",
+  "exampleNote": "Исправленный Sum обходит два элемента. Преобразование до деления сохраняет среднее 1,5; точка в выводе зависит от культуры среды.",
+  "kind": "Проверка алгоритма",
+  "challengeCode": "// Фрагмент Main и вызываемые методы.\nPrintReport(new int[] { 1, 2 });\nvoid PrintReport(int[] values)\n{\n    Console.WriteLine(CalculateAverage(values));\n}\ndouble CalculateAverage(int[] values)\n{\n    return (double)Sum(values) / values.Length;\n}\nint Sum(int[] values)\n{\n    int total = 0;\n    for (int i = 0; i <= values.Length; i++)\n    {\n        total += values[i];\n    }\n    return total;\n}",
+  "prompt": "Остановка из-за IndexOutOfRangeException произошла в Sum при i = 2. Какую причину нужно исправить первой?",
+  "options": [
+    "Условие i <= values.Length допускает индекс, равный длине",
+    "PrintReport должен вызывать Console.WriteLine дважды",
+    "В CalculateAverage нужно заменить double на int",
+    "Число 2 запрещено хранить в массиве"
+  ],
+  "correctIndex": 0,
+  "explanation": "Верхний кадр и текущая операция показывают причину: при Length = 2 индекс 2 недопустим. Исправляют границу в Sum; строка вызова в PrintReport лишь привела к этому методу."
 }
 ];

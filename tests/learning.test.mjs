@@ -446,7 +446,7 @@ test("cards record repeat and known decisions; quiz mistakes are available as ca
 test("mixed lab practice draws ten distinct questions across decks without lengthening the session", () => {
   const app = setup();
   app.run('shuffle = items => items.map((_, i) => items[(i * 7) % items.length]);');
-  for (let lab = 4; lab <= 10; lab++) {
+  for (let lab = 4; lab <= 12; lab++) {
     app.elements.get("#codeLabSelect").value = `ЛБ ${lab}`;
     app.run('fillCodeDeckSelect()');
     assert.equal(app.elements.get("#codeDeckSelect").value, "all");
@@ -462,21 +462,21 @@ test("mixed lab practice draws ten distinct questions across decks without lengt
 test("error mode draws only five distinct cards from the full selected lab bank", () => {
   const app = setup();
   app.run('shuffle = items => [...items].reverse();');
-  for (const lab of [4, 5, 6, 7, 8, 9, 11]) {
+  for (const lab of [4, 5, 6, 7, 8, 9, 11, 12]) {
     app.elements.get("#bugLabSelect").value = `ЛБ ${lab}`;
     app.run('startBugs()');
     assert.equal(app.run('state.bugSession.cards.length'), 5);
     assert.equal(app.run('new Set(state.bugSession.cards.map(card => card.id)).size'), 5);
     assert.equal(app.run('state.bugSession.cards.every(card => card.lab === els.bugLabSelect.value)'), true);
     if (lab < 11) assert.ok(app.run('state.bugSession.cards.some(card => card.id.startsWith("bank-"))'));
-    else assert.match(html, /<option value="ЛБ 11">ЛБ 11: строки и null<\/option>/);
+    else assert.ok(html.includes(`<option value="ЛБ ${lab}">`));
     app.run('resetMode()');
   }
 });
 
 test("practice lab and deck selectors restrict a session to the selected 5–10 examples", () => {
   const app = setup();
-  for (const lab of ["ЛБ 4", "ЛБ 5", "ЛБ 6", "ЛБ 7", "ЛБ 8", "ЛБ 9", "ЛБ 10", "ЛБ 11"]) {
+  for (const lab of ["ЛБ 4", "ЛБ 5", "ЛБ 6", "ЛБ 7", "ЛБ 8", "ЛБ 9", "ЛБ 10", "ЛБ 11", "ЛБ 12"]) {
     app.elements.get("#codeLabSelect").value = lab;
     app.run('fillCodeDeckSelect()');
     const deckIds = app.run(`codeDecks.filter(deck => deck.lab === ${JSON.stringify(lab)}).map(deck => deck.id)`);
@@ -644,19 +644,21 @@ test("two lessons about one term retain independent mistakes and all worked exam
   assert.equal(reloaded.run('needsReview("code", codeLessons.find(lesson => lesson.id === "more4-overwrite"))'), true);
 });
 
-test("lab 9 is available in cards, quiz and the reference, not only in code practice", () => {
-  const app = setup();
-  for (const selector of ["#cardTopicSelect", "#quizTopicSelect", "#referenceTopicSelect"]) {
-    assert.ok(app.elements.get(selector).innerHTML.includes('value="csharp-methods"'));
+test("labs 9 and 12 are available in cards, quiz and the reference, not only in code practice", () => {
+  for (const [topic, lab, count] of [["csharp-methods", "ЛБ 9", 30], ["csharp-debugging", "ЛБ 12", 20]]) {
+    const app = setup();
+    for (const selector of ["#cardTopicSelect", "#quizTopicSelect", "#referenceTopicSelect"]) {
+      assert.ok(app.elements.get(selector).innerHTML.includes(`value="${topic}"`));
+    }
+    assert.ok(app.elements.get("#referenceTagSelect").innerHTML.includes(`value="${lab}"`));
+    app.elements.get("#cardTopicSelect").value = topic;
+    app.run('fillDeckSelect(els.cardTopicSelect, els.cardDeckSelect); startCards()');
+    assert.equal(app.run('state.cardSession.cards.length'), count);
+    app.run('resetMode()');
+    app.elements.get("#quizTopicSelect").value = topic;
+    app.run('fillDeckSelect(els.quizTopicSelect, els.quizDeckSelect); startQuiz()');
+    assert.equal(app.run('state.quizSession.questions.length'), count);
+    app.elements.get("#referenceTagSelect").value = lab;
+    assert.equal(app.run('getReferenceTerms().length'), count);
   }
-  assert.ok(app.elements.get("#referenceTagSelect").innerHTML.includes('value="ЛБ 9"'));
-  app.elements.get("#cardTopicSelect").value = "csharp-methods";
-  app.run('fillDeckSelect(els.cardTopicSelect, els.cardDeckSelect); startCards()');
-  assert.equal(app.run('state.cardSession.cards.length'), 30);
-  app.run('resetMode()');
-  app.elements.get("#quizTopicSelect").value = "csharp-methods";
-  app.run('fillDeckSelect(els.quizTopicSelect, els.quizDeckSelect); startQuiz()');
-  assert.equal(app.run('state.quizSession.questions.length'), 30);
-  app.elements.get("#referenceTagSelect").value = "ЛБ 9";
-  assert.equal(app.run('getReferenceTerms().length'), 30);
 });

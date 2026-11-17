@@ -14,7 +14,7 @@
       name="description"
       content="Карточки, тесты и справочник по базовым IT-терминам для студентов перед изучением C#."
     >
-    <link rel="stylesheet" href="styles.css?v=0911ce18cb5d">
+    <link rel="stylesheet" href="styles.css?v=4580614745bf">
   </head>
   <body>
     <div class="app-shell">
@@ -217,7 +217,7 @@
                 <p class="eyebrow">Практика</p>
                 <h2>Понимаю код</h2>
               </div>
-              <p class="settings-description">В тренировке — 10 случайных вопросов из всех колод выбранной лабораторной. Можно выбрать отдельную колоду. Если в подборке или списке ошибок меньше вопросов, покажем все. На каждый ответ — 90 секунд. Код показан как текст и не запускается на сайте.</p>
+              <p class="settings-description">В тренировке — до 10 случайных вопросов выбранной лабораторной. Для зачёта нужно не менее 50% правильных от числа заданий: обычно 5 из 10. Тренировка завершается сразу после достижения порога или когда набрать его уже невозможно. Можно выбрать отдельную колоду или повторение ошибок. На ответ — 90 секунд.</p>
               <label>
                 Лабораторная работа
                 <select id="codeLabSelect">
@@ -242,7 +242,7 @@
 
             <section class="study-panel">
               <div class="session-bar">
-                <span id="codeProgress">Выберите подборку</span>
+                <span id="codeProgress" aria-live="polite">Выберите подборку</span>
                 <div class="progress-track" aria-hidden="true"><span id="codeProgressFill"></span></div>
               </div>
               <article class="quiz-card">
@@ -316,7 +316,7 @@ class Program
                 <p class="eyebrow">Читаем и исправляем</p>
                 <h2>Найди ошибку</h2>
               </div>
-              <p class="settings-description">В тренировке — 5 случайных карточек из запаса выбранной лабораторной. В каждой одна намеренная ошибка. Найдите её и сформулируйте исправление, затем откройте решение. В режиме повторения карточек может быть меньше. Таймера нет.</p>
+              <p class="settings-description">В тренировке — 5 случайных карточек выбранной лабораторной. Для зачёта отметьте 3 ошибки как найденные самостоятельно. После 3 отметок «Нашёл сам» или 3 «Нужно повторить» попытка завершается. В коротком повторении из 1–2 карточек оценка не выставляется. Таймера нет.</p>
               <label>
                 Лабораторная работа
                 <select id="bugLabSelect">
@@ -335,7 +335,7 @@ class Program
             </aside>
             <section class="study-panel">
               <div class="session-bar">
-                <span id="bugProgress">Выберите лабораторную</span>
+                <span id="bugProgress" aria-live="polite">Выберите лабораторную</span>
                 <div class="progress-track" aria-hidden="true"><span id="bugProgressFill"></span></div>
               </div>
               <article class="quiz-card bug-card">
@@ -495,11 +495,11 @@ git push · git fetch origin · git pull --ff-only</pre>
       </form>
     </dialog>
 
-    <script src="terms-content.js?v=0911ce18cb5d"></script>
-    <script src="code-content.js?v=0911ce18cb5d"></script>
-    <script src="bug-content.js?v=0911ce18cb5d"></script>
-    <script src="terminal-engine.js?v=0911ce18cb5d"></script>
-    <script src="terminal.js?v=0911ce18cb5d"></script>
-    <script src="app.js?v=0911ce18cb5d"></script>
+    <script src="terms-content.js?v=4580614745bf"></script>
+    <script src="code-content.js?v=4580614745bf"></script>
+    <script src="bug-content.js?v=4580614745bf"></script>
+    <script src="terminal-engine.js?v=4580614745bf"></script>
+    <script src="terminal.js?v=4580614745bf"></script>
+    <script src="app.js?v=4580614745bf"></script>
   </body>
 </html>

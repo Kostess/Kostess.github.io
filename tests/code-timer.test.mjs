@@ -40,7 +40,7 @@ function setup() {
   const context = vm.createContext({
     CODE_ANSWER_TIME_MS: 90_000,
     state: { codeSession: null, codeTimerId: null }, els,
-    codeLessons: [question, question], deckLabTags: {}, shuffle: items => items,
+    codeLessons: [question, question, question, question], deckLabTags: {}, shuffle: items => items,
     randomItem: items => items[0],
     codeDecks: [{ id: "test-deck", lab: "ЛБ 7", title: "Циклы" }],
     recordLearningAnswer() {}, needsReview: () => false,
@@ -89,8 +89,6 @@ test("accepts one answer before the deadline and gives the next question a fresh
   assert.equal(app.els.codeTimer.textContent, "Осталось: 1:30");
   assert.equal(app.intervals.size, 1);
   app.context.handleCodeAnswer(0);
-  app.context.state.codeSession.index += 1;
-  app.context.renderCodeQuestion();
   assert.equal(app.context.state.codeSession, null);
   assert.equal(app.els.codeTimer.hidden, true);
   assert.equal(app.intervals.size, 0);

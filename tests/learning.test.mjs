@@ -218,6 +218,87 @@ test("sandbox keeps file changes and command history until its environment is re
   assert.match(ui.command("cat note.txt"), /Файл не найден/);
 });
 
+function answerPractice(app, correct, timeout = false) {
+  app.run(`handleCodeAnswer(${correct ? 'state.codeSession.questions[state.codeSession.index].correctIndex' : '(state.codeSession.questions[state.codeSession.index].correctIndex + 1) % 4'}, ${timeout})`);
+  if (app.run('state.codeSession !== null')) app.elements.get("#nextCodeBtn").click();
+}
+
+test("code practice stops at five correct answers and retains the last explanation", () => {
+  const app = setup();
+  const intervalsBefore = app.intervals.size;
+  app.run('startCode()');
+  for (let i = 0; i < 4; i++) answerPractice(app, true);
+  assert.notEqual(app.run('state.codeSession'), null);
+  assert.match(app.elements.get("#codeProgress").textContent, /Верно: 4.*Неверно: 0/);
+  const explanation = app.run('state.codeSession.questions[state.codeSession.index].explanation');
+  answerPractice(app, true);
+  assert.equal(app.run('state.codeSession'), null);
+  assert.equal(app.run('state.activeMode'), null);
+  assert.equal(app.elements.get("#codeType").textContent, "Зачёт");
+  assert.match(app.elements.get("#codeQuestion").textContent, /Правильных: 5.*Неправильных: 0.*Без ответа: 5/);
+  assert.ok(app.elements.get("#codeFeedback").textContent.includes(explanation));
+  assert.equal(app.elements.get("#codeSnippet").hidden, false);
+  assert.ok(app.elements.get("#codeAnswerGrid").children.every(button => button.disabled));
+  assert.equal(app.elements.get("#nextCodeBtn").hidden, true);
+  assert.equal(app.intervals.size, intervalsBefore);
+  assert.equal(app.run('Object.values(learningProgress).reduce((sum, item) => sum + item.attempts, 0)'), 5);
+  app.run('handleCodeAnswer(0)');
+  app.elements.get("#nextCodeBtn").click();
+  assert.equal(app.run('Object.values(learningProgress).reduce((sum, item) => sum + item.attempts, 0)'), 5);
+});
+
+test("five mistakes still allow 50 percent; the sixth mistake including timeout ends practice", () => {
+  const app = setup();
+  app.run('startCode()');
+  for (let i = 0; i < 5; i++) answerPractice(app, false);
+  assert.equal(app.run('state.codeSession.wrong'), 5);
+  for (let i = 0; i < 5; i++) answerPractice(app, true);
+  assert.equal(app.elements.get("#codeType").textContent, "Зачёт");
+  assert.match(app.elements.get("#codeQuestion").textContent, /Правильных: 5.*Неправильных: 5.*Без ответа: 0/);
+  app.run('startCode()');
+  for (let i = 0; i < 5; i++) answerPractice(app, false);
+  answerPractice(app, false, true);
+  assert.equal(app.run('state.codeSession'), null);
+  assert.equal(app.elements.get("#codeType").textContent, "Незачёт");
+  assert.match(app.elements.get("#codeQuestion").textContent, /Правильных: 0.*Неправильных: 6.*Без ответа: 4/);
+  assert.match(app.elements.get("#codeFeedback").textContent, /Время вышло/);
+});
+
+test("short practice uses the ceiling of half its questions for the passing threshold", () => {
+  const app = setup();
+  app.run('startCode(); state.codeSession.questions = state.codeSession.questions.slice(0, 7);');
+  for (let i = 0; i < 3; i++) answerPractice(app, true);
+  assert.notEqual(app.run('state.codeSession'), null);
+  answerPractice(app, true);
+  assert.equal(app.elements.get("#codeType").textContent, "Зачёт");
+  assert.match(app.elements.get("#codeQuestion").textContent, /Правильных: 4.*Без ответа: 3/);
+});
+
+test("error practice stops at three self-found errors or when three are unattainable", () => {
+  for (const known of [true, false]) {
+    const app = setup();
+    app.run('startBugs()');
+    for (let i = 0; i < 2; i++) app.run(`flipBugCard(); markBugCard(${known})`);
+    assert.notEqual(app.run('state.bugSession'), null);
+    app.run(`flipBugCard(); markBugCard(${known})`);
+    assert.equal(app.run('state.bugSession'), null);
+    assert.equal(app.elements.get("#bugTitle").textContent, known ? "Зачёт" : "Незачёт");
+    assert.match(app.elements.get("#bugPrompt").textContent, /Без ответа: 2/);
+    assert.equal(app.run('Object.values(learningProgress).reduce((sum, item) => sum + item.attempts, 0)'), 3);
+    app.run('flipBugCard(); markBugCard(true)');
+    assert.equal(app.run('Object.values(learningProgress).reduce((sum, item) => sum + item.attempts, 0)'), 3);
+  }
+  const app = setup();
+  app.run('startBugs()');
+  for (const known of [false, false, true, true, true]) app.run(`flipBugCard(); markBugCard(${known})`);
+  assert.equal(app.elements.get("#bugTitle").textContent, "Зачёт");
+  assert.match(app.elements.get("#bugPrompt").textContent, /нашёл сам — 3, нужно повторить — 2/);
+  app.run('startBugs(); state.bugSession.cards = state.bugSession.cards.slice(0, 2); renderBugCard();');
+  app.run('flipBugCard(); markBugCard(false); flipBugCard(); markBugCard(true);');
+  assert.equal(app.elements.get("#bugTitle").textContent, "Повторение завершено");
+  assert.match(app.elements.get("#bugSessionNote").textContent, /оценка не выставляется/);
+});
+
 test("error cards reveal corrections on demand and require a reveal before grading", () => {
   const app = setup();
   const intervalsBefore = app.intervals.size;
@@ -238,14 +319,14 @@ test("error cards reveal corrections on demand and require a reveal before gradi
   assert.equal(app.elements.get("#bugFixedCode").innerHTML, "");
   app.run('markBugCard(false)');
   assert.equal(app.run('Object.values(learningProgress)[0].attempts'), 1);
-  for (let i = 0; i < 4; i++) {
+  for (let i = 0; i < 3; i++) {
     app.elements.get("#flipBugBtn").click();
     app.elements.get("#bugKnownBtn").click();
   }
   assert.equal(app.run('state.bugSession'), null);
   assert.equal(app.run('state.activeMode'), null);
   assert.equal(app.elements.get("#bugProgressFill").style.width, "100%");
-  assert.match(app.elements.get("#bugPrompt").textContent, /нашёл сам — 4, нужно повторить — 1/);
+  assert.match(app.elements.get("#bugPrompt").textContent, /нашёл сам — 3, нужно повторить — 1.*Без ответа: 1/);
   const reload = setup(app.storage);
   reload.elements.get("#bugMistakesOnly").checked = true;
   reload.run('startBugs()');
@@ -429,7 +510,7 @@ test("quiz deduplicates repeated terms and reference preserves literal generic t
 
 test("whitespace-sensitive answers remain distinct and grading uses the original values", () => {
   const app = setup();
-  app.run('state.codeSession = { questions: [codeLessons.find(lesson => lesson.id === "lab11-10")], index: 0, correct: 0 }; renderCodeQuestion();');
+  app.run('state.codeSession = { questions: [codeLessons.find(lesson => lesson.id === "lab11-10")], index: 0, correct: 0, wrong: 0, completed: 0 }; renderCodeQuestion();');
   const options = app.elements.get("#codeAnswerGrid").children.map(button => button.textContent);
   assert.equal(app.elements.get("#codeAnswerHint").hidden, false);
   assert.ok(options.includes('"Война␠␠␠и␠␠мир"'));
@@ -438,7 +519,9 @@ test("whitespace-sensitive answers remain distinct and grading uses the original
   assert.equal(app.run('formatCodeAnswer("  Код  ", true)'), '"␠␠Код␠␠"');
   assert.equal(app.run('formatCodeAnswer("", true)'), '""');
   app.run('handleCodeAnswer(state.codeSession.questions[0].correctIndex)');
-  assert.equal(app.run("state.codeSession.correct"), 1);
+  assert.equal(app.run("state.codeSession"), null);
+  assert.equal(app.elements.get("#codeType").textContent, "Зачёт");
+  assert.match(app.elements.get("#codeQuestion").textContent, /Правильных: 1.*Неправильных: 0/);
   app.run("resetMode()");
   assert.equal(app.elements.get("#codeAnswerHint").hidden, true);
 });

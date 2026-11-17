@@ -840,9 +840,20 @@ function startCode() {
     return;
   }
   state.activeMode = "code";
-  state.codeSession = { questions: questions.map(createCodeQuestion), index: 0, correct: 0, answered: false };
+  state.codeSession = { questions: questions.map(createCodeQuestion), index: 0, correct: 0, wrong: 0, completed: 0, answered: false };
   updateCodeRefactorTask();
   renderCodeQuestion();
+}
+
+function codeOutcome(session) {
+  const required = Math.ceil(session.questions.length / 2);
+  if (session.correct >= required) return true;
+  if (session.correct + session.questions.length - session.completed < required) return false;
+  return null;
+}
+
+function codeScore(session) {
+  return `Верно: ${session.correct} · Неверно: ${session.wrong} · Для зачёта: ${Math.ceil(session.questions.length / 2)}`;
 }
 
 function renderCodeQuestion() {
@@ -859,7 +870,7 @@ function renderCodeQuestion() {
 
   const question = session.questions[session.index];
   session.answered = false;
-  els.codeProgress.textContent = `Задание ${session.index + 1} из ${session.questions.length}`;
+  els.codeProgress.textContent = `Задание ${session.index + 1} из ${session.questions.length} · ${codeScore(session)}`;
   els.codeProgressFill.style.width = `${Math.round(session.index / session.questions.length * 100)}%`;
   const deck = codeDecks.find(deck => deck.id === question.codeDeckId);
   els.codeType.textContent = `${deck?.title || "Практика"} · ${question.kind} · ${question.term}`;
@@ -898,7 +909,10 @@ function handleCodeAnswer(index, timedOut = false) {
   recordLearningAnswer("code", question, isCorrect);
   if (isCorrect) {
     session.correct += 1;
+  } else {
+    session.wrong += 1;
   }
+  session.completed += 1;
 
   [...els.codeAnswerGrid.children].forEach((button, optionIndex) => {
     button.disabled = true;
@@ -909,25 +923,38 @@ function handleCodeAnswer(index, timedOut = false) {
   els.codeTimer.classList.toggle("is-urgent", timedOut);
   const correctAnswer = formatCodeAnswer(question.options[question.correctIndex], codeAnswersNeedWhitespace(question.options));
   els.codeFeedback.textContent = `${timedOut ? "Время вышло. " : ""}${isCorrect ? "Верно." : `Правильный ответ: ${correctAnswer}.`} ${question.explanation}`;
+  els.codeProgress.textContent = `Ответов: ${session.completed} из ${session.questions.length} · ${codeScore(session)}`;
+  els.codeProgressFill.style.width = `${Math.round(session.completed / session.questions.length * 100)}%`;
+  if (codeOutcome(session) !== null) {
+    finishCode(true);
+    return;
+  }
   els.nextCodeBtn.textContent = session.index === session.questions.length - 1 ? "Показать итог" : "Следующее задание";
   els.nextCodeBtn.hidden = false;
 }
 
-function finishCode() {
+function finishCode(keepAnswer = false) {
+  const session = state.codeSession;
+  if (!session) return;
   stopCodeTimer();
   els.codeTimer.hidden = true;
-  const session = state.codeSession;
-  const percent = Math.round(session.correct / session.questions.length * 100);
-  els.codeProgress.textContent = "Практика завершена";
+  const passed = codeOutcome(session) === true;
+  const lastFeedback = keepAnswer ? ` Последний ответ: ${els.codeFeedback.textContent}` : "";
+  const remaining = session.questions.length - session.completed;
+  els.codeProgress.textContent = `Практика завершена · ${passed ? "Зачёт" : "Незачёт"}`;
   els.codeProgressFill.style.width = "100%";
-  els.codeType.textContent = "Итог";
-  els.codeAnswerHint.hidden = true;
-  els.codeQuestion.textContent = `${session.correct} из ${session.questions.length} правильных ответов (${percent}%).`;
-  els.codeSnippet.hidden = true;
-  els.codeAnswerGrid.replaceChildren();
-  els.codeFeedback.textContent = percent >= 80
-    ? "Хорошо! Теперь попробуйте объяснить эти примеры своими словами."
-    : "Откройте примеры в справочнике и пройдите подборку ещё раз.";
+  els.codeType.textContent = passed ? "Зачёт" : "Незачёт";
+  els.codeQuestion.textContent = `Правильных: ${session.correct}. Неправильных: ${session.wrong}. Без ответа: ${remaining}.`;
+  if (!keepAnswer) {
+    els.codeAnswerHint.hidden = true;
+    els.codeSnippet.hidden = true;
+    els.codeInput.hidden = true;
+    els.codeAnswerGrid.replaceChildren();
+  }
+  els.codeFeedback.textContent = (passed
+    ? `Набран порог: ${Math.ceil(session.questions.length / 2)} правильных из ${session.questions.length} (не менее 50%).`
+    : `Порог ${Math.ceil(session.questions.length / 2)} правильных из ${session.questions.length} уже недостижим.`) +
+    (remaining ? " Остальные задания проходить не требуется." : "") + lastFeedback;
   els.nextCodeBtn.hidden = true;
   state.activeMode = null;
   state.codeSession = null;
@@ -971,9 +998,9 @@ function startBugs() {
 function renderBugCard() {
   const session = state.bugSession;
   if (!session) return resetBugsUi();
-  if (session.index >= session.cards.length) return finishBugs();
+  if (session.index >= session.cards.length || bugOutcome(session) !== null) return finishBugs();
   const card = session.cards[session.index];
-  els.bugProgress.textContent = `${card.lab} · Карточка ${session.index + 1} из ${session.cards.length}`;
+  els.bugProgress.textContent = `${card.lab} · Карточка ${session.index + 1} из ${session.cards.length} · Нашёл сам: ${session.known} · Нужно повторить: ${session.repeated}`;
   els.bugProgressFill.style.width = `${Math.round(session.index / session.cards.length * 100)}%`;
   els.bugTitle.textContent = card.title;
   els.bugPrompt.textContent = card.prompt;
@@ -1021,14 +1048,28 @@ function markBugCard(known) {
   renderBugCard();
 }
 
+function bugOutcome(session) {
+  // A review containing fewer than three cards cannot satisfy the assessment rule.
+  if (session.cards.length < 3) return null;
+  if (session.known >= 3) return true;
+  if (session.known + session.cards.length - session.index < 3) return false;
+  return null;
+}
+
 function finishBugs() {
   const session = state.bugSession;
+  if (!session) return;
+  const passed = bugOutcome(session);
   resetBugsUi();
   els.bugProgress.textContent = "Тренировка завершена";
   els.bugProgressFill.style.width = "100%";
-  els.bugTitle.textContent = "Готово";
-  els.bugPrompt.textContent = `По вашей оценке: нашёл сам — ${session.known}, нужно повторить — ${session.repeated}.`;
-  els.bugSessionNote.textContent = "Ответы учтены в прогрессе. Для повторения включите фильтр «Только на повторение».";
+  els.bugTitle.textContent = passed === null ? "Повторение завершено" : passed ? "Зачёт" : "Незачёт";
+  els.bugPrompt.textContent = `По вашей оценке: нашёл сам — ${session.known}, нужно повторить — ${session.repeated}. Без ответа: ${session.cards.length - session.index}.`;
+  els.bugSessionNote.textContent = (passed === null
+    ? "В коротком повторении оценка не выставляется: для зачёта нужно самостоятельно найти 3 ошибки."
+    : passed ? "Вы отметили 3 ошибки как найденные самостоятельно. Тренировка завершена."
+    : "Самостоятельно найти 3 ошибки в этой попытке уже невозможно. Тренировка завершена.") +
+    " Ответы учтены в прогрессе. Для повторения включите фильтр «Только на повторение».";
   state.activeMode = null;
   state.bugSession = null;
 }

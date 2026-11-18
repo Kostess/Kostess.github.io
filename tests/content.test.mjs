@@ -46,6 +46,18 @@ test("all answer versions stay visually distinct after browser whitespace collap
   }
 });
 
+test("every practice version states a choice and explains the order of multiline answers", () => {
+  for (const lesson of lessons) {
+    for (const version of [lesson, ...(lesson.variants || [])]) {
+      assert.ok(Object.hasOwn(version, "prompt"), `${lesson.id}: version inherits a possibly unrelated instruction`);
+      assert.match(version.prompt, /Выберите/, `${lesson.id}: missing answer action`);
+      if (version.options[version.correctIndex].includes("\n")) {
+        assert.match(version.prompt, /порядк|перв|затем/, `${lesson.id}: unspecified output order`);
+      }
+    }
+  }
+});
+
 test("labs 4 through 12 have separate practice questions", () => {
   const lab4 = lessons.filter((lesson) => ["variables-values", "csharp-data-types", "typing-and-output"].includes(lesson.deckId));
   const lab5 = lessons.filter((lesson) => lesson.deckId === "input-operations-conversions");
@@ -141,7 +153,10 @@ test("fill-in questions have a single placeholder, four choices and an executabl
   for (const lesson of questions) {
     assert.equal(lesson.challengeCode.split("/* ??? */").length, 2, lesson.id);
     assert.ok(lesson.solutionResult !== undefined, lesson.id);
-    assert.ok(lesson.prompt.includes(lesson.solutionResult), lesson.id);
+    assert.ok(lesson.prompt.includes("/* ??? */"), lesson.id);
+    for (const line of lesson.solutionResult.split("\n")) {
+      assert.ok(lesson.prompt.includes(line), lesson.id);
+    }
   }
 });
 

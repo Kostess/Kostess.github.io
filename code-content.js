@@ -224,6 +224,21 @@ const codeDecks = [
   "id": "lab12-checks",
   "lab": "ЛБ 12",
   "title": "Тестовые наборы и причины ошибок"
+},
+{
+  "id": "lab13-exception-flow",
+  "lab": "ЛБ 13",
+  "title": "try, catch, finally и throw"
+},
+{
+  "id": "lab13-exception-types",
+  "lab": "ЛБ 13",
+  "title": "Типы исключений и выбор обработчика"
+},
+{
+  "id": "lab13-booking-state",
+  "lab": "ЛБ 13",
+  "title": "Ввод, бронирование и сохранение остатка"
 }
 ];
 
@@ -29654,5 +29669,850 @@ const codeLessons = [
   ],
   "correctIndex": 0,
   "explanation": "Верхний кадр и текущая операция показывают причину: при Length = 2 индекс 2 недопустим. Исправляют границу в Sum; строка вызова в PrintReport лишь привела к этому методу."
+},
+{
+  "id": "lab13-exception",
+  "codeDeckId": "lab13-exception-flow",
+  "deckId": "exceptions-flow",
+  "term": "Исключение",
+  "exampleCode": "int divisor = 0;\ntry\n{\n    Console.WriteLine(4 / divisor);\n}\ncatch (DivideByZeroException)\n{\n    Console.WriteLine(\"Деление на ноль\");\n}",
+  "exampleResult": "Деление на ноль",
+  "exampleNote": "При выполнении деления переменная divisor равна 0. Возникает DivideByZeroException, и сообщение выводит подходящий catch.",
+  "kind": "Что выведет код?",
+  "challengeCode": "int divisor = 0;\ntry\n{\n    Console.WriteLine(4 / divisor);\n}\ncatch (DivideByZeroException)\n{\n    Console.WriteLine(\"Деление на ноль\");\n}",
+  "prompt": "Выберите полный вывод показанного кода в консоль. Строки в ответе идут в порядке вывода.",
+  "options": [
+    "Деление на ноль",
+    "0",
+    "4",
+    "Ничего не выведется"
+  ],
+  "correctIndex": 0,
+  "challengeResult": "Деление на ноль",
+  "explanation": "При выполнении деления переменная divisor равна 0. Возникает DivideByZeroException, и сообщение выводит подходящий catch."
+},
+{
+  "id": "lab13-try-interrupted",
+  "codeDeckId": "lab13-exception-flow",
+  "deckId": "exceptions-flow",
+  "term": "try",
+  "exampleCode": "try\n{\n    Console.WriteLine(\"A\");\n    throw new InvalidOperationException();\n    Console.WriteLine(\"B\");\n}\ncatch (InvalidOperationException)\n{\n    Console.WriteLine(\"C\");\n}\nConsole.WriteLine(\"E\");",
+  "exampleResult": "A\nC\nE",
+  "exampleNote": "A выводится до throw. Оставшаяся строка B в try пропускается. Затем выполняются catch с C и строка E после конструкции.",
+  "kind": "Что выведет код?",
+  "challengeCode": "try\n{\n    Console.WriteLine(\"A\");\n    throw new InvalidOperationException();\n    Console.WriteLine(\"B\");\n}\ncatch (InvalidOperationException)\n{\n    Console.WriteLine(\"C\");\n}\nConsole.WriteLine(\"E\");",
+  "prompt": "Выберите полный вывод показанного кода в консоль. Строки в ответе идут в порядке вывода.",
+  "options": [
+    "A\nC\nE",
+    "A\nB\nC\nE",
+    "A\nC",
+    "Ничего не выведется"
+  ],
+  "correctIndex": 0,
+  "challengeResult": "A\nC\nE",
+  "explanation": "A выводится до throw. Оставшаяся строка B в try пропускается. Затем выполняются catch с C и строка E после конструкции."
+},
+{
+  "id": "lab13-catch",
+  "codeDeckId": "lab13-exception-flow",
+  "deckId": "exceptions-flow",
+  "term": "catch",
+  "exampleCode": "try\n{\n    Console.WriteLine(int.Parse(\"abc\"));\n}\ncatch (FormatException)\n{\n    Console.WriteLine(\"Формат\");\n}\nConsole.WriteLine(\"После\");",
+  "exampleResult": "Формат\nПосле",
+  "exampleNote": "Parse не получает число из abc. catch обрабатывает FormatException, после него выполняется строка «После».",
+  "kind": "Что выведет код?",
+  "challengeCode": "try\n{\n    Console.WriteLine(int.Parse(\"abc\"));\n}\ncatch (FormatException)\n{\n    Console.WriteLine(\"Формат\");\n}\nConsole.WriteLine(\"После\");",
+  "prompt": "Выберите полный вывод показанного кода в консоль. Строки в ответе идут в порядке вывода.",
+  "options": [
+    "Формат\nПосле",
+    "0\nПосле",
+    "Формат",
+    "Ничего не выведется"
+  ],
+  "correctIndex": 0,
+  "challengeResult": "Формат\nПосле",
+  "explanation": "Parse не получает число из abc. catch обрабатывает FormatException, после него выполняется строка «После»."
+},
+{
+  "id": "lab13-finally-success",
+  "codeDeckId": "lab13-exception-flow",
+  "deckId": "exceptions-flow",
+  "term": "finally",
+  "exampleCode": "try\n{\n    Console.WriteLine(\"A\");\n}\ncatch (InvalidOperationException)\n{\n    Console.WriteLine(\"C\");\n}\nfinally\n{\n    Console.WriteLine(\"F\");\n}\nConsole.WriteLine(\"E\");",
+  "exampleResult": "A\nF\nE",
+  "exampleNote": "Исключения нет, поэтому catch пропускается. finally выполняется и после успешного try, затем выводится E.",
+  "kind": "Что выведет код?",
+  "challengeCode": "try\n{\n    Console.WriteLine(\"A\");\n}\ncatch (InvalidOperationException)\n{\n    Console.WriteLine(\"C\");\n}\nfinally\n{\n    Console.WriteLine(\"F\");\n}\nConsole.WriteLine(\"E\");",
+  "prompt": "Выберите полный вывод показанного кода в консоль. Строки в ответе идут в порядке вывода.",
+  "options": [
+    "A\nF\nE",
+    "A\nE",
+    "A\nC\nF\nE",
+    "Ничего не выведется"
+  ],
+  "correctIndex": 0,
+  "challengeResult": "A\nF\nE",
+  "explanation": "Исключения нет, поэтому catch пропускается. finally выполняется и после успешного try, затем выводится E."
+},
+{
+  "id": "lab13-throw-method",
+  "codeDeckId": "lab13-exception-flow",
+  "deckId": "exceptions-flow",
+  "term": "throw",
+  "exampleCode": "try\n{\n    Reject();\n    Console.WriteLine(\"Успех\");\n}\ncatch (InvalidOperationException)\n{\n    Console.WriteLine(\"Отказ\");\n}\nConsole.WriteLine(\"После\");\nvoid Reject()\n{\n    throw new InvalidOperationException(\"Операция недоступна\");\n}",
+  "exampleResult": "Отказ\nПосле",
+  "exampleNote": "Reject выбрасывает исключение, поэтому нормальный возврат к строке «Успех» не происходит. Подходящий catch находится у вызывающего кода.",
+  "kind": "Что выведет код?",
+  "challengeCode": "try\n{\n    Reject();\n    Console.WriteLine(\"Успех\");\n}\ncatch (InvalidOperationException)\n{\n    Console.WriteLine(\"Отказ\");\n}\nConsole.WriteLine(\"После\");\nvoid Reject()\n{\n    throw new InvalidOperationException(\"Операция недоступна\");\n}",
+  "prompt": "Выберите полный вывод показанного кода в консоль. Строки в ответе идут в порядке вывода.",
+  "options": [
+    "Отказ\nПосле",
+    "Успех\nПосле",
+    "Отказ\nУспех\nПосле",
+    "Ничего не выведется"
+  ],
+  "correctIndex": 0,
+  "challengeResult": "Отказ\nПосле",
+  "explanation": "Reject выбрасывает исключение, поэтому нормальный возврат к строке «Успех» не происходит. Подходящий catch находится у вызывающего кода."
+},
+{
+  "id": "lab13-new-without-throw",
+  "codeDeckId": "lab13-exception-flow",
+  "deckId": "exceptions-flow",
+  "term": "new (объект исключения)",
+  "exampleCode": "var problem = new InvalidOperationException(\"Мест нет\");\nConsole.WriteLine(\"Объект создан\");",
+  "exampleResult": "Объект создан",
+  "exampleNote": "new создаёт объект. Пока нет throw, поиск catch не начинается и следующая инструкция выполняется.",
+  "kind": "Что выведет код?",
+  "challengeCode": "var problem = new InvalidOperationException(\"Мест нет\");\nConsole.WriteLine(\"Объект создан\");",
+  "prompt": "Выберите полный вывод показанного кода в консоль. Строки в ответе идут в порядке вывода.",
+  "options": [
+    "Объект создан",
+    "Мест нет",
+    "InvalidOperationException",
+    "Ничего не выведется"
+  ],
+  "correctIndex": 0,
+  "challengeResult": "Объект создан",
+  "explanation": "new создаёт объект. Пока нет throw, поиск catch не начинается и следующая инструкция выполняется."
+},
+{
+  "id": "lab13-type-dispatch",
+  "codeDeckId": "lab13-exception-flow",
+  "deckId": "exceptions-flow",
+  "term": "Тип исключения",
+  "exampleCode": "string source = \"0\";\ntry\n{\n    int divisor = int.Parse(source);\n    Console.WriteLine(12 / divisor);\n}\ncatch (FormatException)\n{\n    Console.WriteLine(\"Формат\");\n}\ncatch (OverflowException)\n{\n    Console.WriteLine(\"Диапазон int\");\n}\ncatch (DivideByZeroException)\n{\n    Console.WriteLine(\"Деление на ноль\");\n}\nfinally\n{\n    Console.WriteLine(\"Попытка\");\n}\nConsole.WriteLine(\"После\");",
+  "exampleResult": "Деление на ноль\nПопытка\nПосле",
+  "exampleNote": "Строка 0 успешно преобразуется в int. Деление вызывает DivideByZeroException. После соответствующего catch выполняются finally и строка после конструкции.",
+  "kind": "Что выведет код?",
+  "challengeCode": "string source = \"0\";\ntry\n{\n    int divisor = int.Parse(source);\n    Console.WriteLine(12 / divisor);\n}\ncatch (FormatException)\n{\n    Console.WriteLine(\"Формат\");\n}\ncatch (OverflowException)\n{\n    Console.WriteLine(\"Диапазон int\");\n}\ncatch (DivideByZeroException)\n{\n    Console.WriteLine(\"Деление на ноль\");\n}\nfinally\n{\n    Console.WriteLine(\"Попытка\");\n}\nConsole.WriteLine(\"После\");",
+  "prompt": "Выберите полный вывод показанного кода в консоль. Строки в ответе идут в порядке вывода.",
+  "options": [
+    "Деление на ноль\nПопытка\nПосле",
+    "Формат\nПопытка\nПосле",
+    "0\nПопытка\nПосле",
+    "Ничего не выведется"
+  ],
+  "correctIndex": 0,
+  "challengeResult": "Деление на ноль\nПопытка\nПосле",
+  "explanation": "Строка 0 успешно преобразуется в int. Деление вызывает DivideByZeroException. После соответствующего catch выполняются finally и строка после конструкции.",
+  "variants": [
+    {
+      "challengeCode": "string source = \"3\";\ntry\n{\n    int divisor = int.Parse(source);\n    Console.WriteLine(12 / divisor);\n}\ncatch (FormatException)\n{\n    Console.WriteLine(\"Формат\");\n}\ncatch (OverflowException)\n{\n    Console.WriteLine(\"Диапазон int\");\n}\ncatch (DivideByZeroException)\n{\n    Console.WriteLine(\"Деление на ноль\");\n}\nfinally\n{\n    Console.WriteLine(\"Попытка\");\n}\nConsole.WriteLine(\"После\");",
+      "challengeResult": "4\nПопытка\nПосле",
+      "prompt": "Выберите полный вывод показанного кода в консоль. Строки в ответе идут в порядке вывода.",
+      "options": [
+        "4\nПопытка\nПосле",
+        "Деление на ноль\nПопытка\nПосле",
+        "Попытка\nПосле",
+        "Формат\nПопытка\nПосле"
+      ],
+      "correctIndex": 0,
+      "explanation": "Parse возвращает 3, деление даёт 4. Ни один catch не выполняется, но finally и строка после конструкции выполняются."
+    },
+    {
+      "challengeCode": "string source = \"три\";\ntry\n{\n    int divisor = int.Parse(source);\n    Console.WriteLine(12 / divisor);\n}\ncatch (FormatException)\n{\n    Console.WriteLine(\"Формат\");\n}\ncatch (OverflowException)\n{\n    Console.WriteLine(\"Диапазон int\");\n}\ncatch (DivideByZeroException)\n{\n    Console.WriteLine(\"Деление на ноль\");\n}\nfinally\n{\n    Console.WriteLine(\"Попытка\");\n}\nConsole.WriteLine(\"После\");",
+      "challengeResult": "Формат\nПопытка\nПосле",
+      "prompt": "Выберите полный вывод показанного кода в консоль. Строки в ответе идут в порядке вывода.",
+      "options": [
+        "Формат\nПопытка\nПосле",
+        "Деление на ноль\nПопытка\nПосле",
+        "Попытка\nПосле",
+        "Ничего не выведется"
+      ],
+      "correctIndex": 0,
+      "explanation": "Parse выбрасывает FormatException. Деление не начинается; после обработчика идут finally и строка после конструкции."
+    },
+    {
+      "challengeCode": "string source = \"2147483648\";\ntry\n{\n    int divisor = int.Parse(source);\n    Console.WriteLine(12 / divisor);\n}\ncatch (FormatException)\n{\n    Console.WriteLine(\"Формат\");\n}\ncatch (OverflowException)\n{\n    Console.WriteLine(\"Диапазон int\");\n}\ncatch (DivideByZeroException)\n{\n    Console.WriteLine(\"Деление на ноль\");\n}\nfinally\n{\n    Console.WriteLine(\"Попытка\");\n}\nConsole.WriteLine(\"После\");",
+      "challengeResult": "Диапазон int\nПопытка\nПосле",
+      "prompt": "Выберите полный вывод показанного кода в консоль. Строки в ответе идут в порядке вывода.",
+      "options": [
+        "Диапазон int\nПопытка\nПосле",
+        "Деление на ноль\nПопытка\nПосле",
+        "Попытка\nПосле",
+        "Формат\nПопытка\nПосле"
+      ],
+      "correctIndex": 0,
+      "explanation": "Запись числа верна по формату, но значение больше int.MaxValue. Parse выбрасывает OverflowException; затем выполняются finally и строка после конструкции."
+    }
+  ]
+},
+{
+  "id": "lab13-propagation",
+  "codeDeckId": "lab13-exception-flow",
+  "deckId": "exceptions-flow",
+  "term": "Распространение исключения",
+  "exampleCode": "try\n{\n    Console.WriteLine(GetAbsolute(120));\n}\ncatch (ArgumentOutOfRangeException)\n{\n    Console.WriteLine(\"Аргумент\");\n}\nConsole.WriteLine(\"Продолжаем\");\nint GetAbsolute(int value)\n{\n    if (value < -100 || value > 100)\n        throw new ArgumentOutOfRangeException(nameof(value), \"Допустимо от -100 до 100\");\n    return value < 0 ? -value : value;\n}",
+  "exampleResult": "Аргумент\nПродолжаем",
+  "exampleNote": "120 вне допустимого диапазона. Исключение из GetAbsolute перехватывает вызывающий код; обычного результата у этого вызова нет.",
+  "kind": "Что выведет код?",
+  "challengeCode": "try\n{\n    Console.WriteLine(GetAbsolute(120));\n}\ncatch (ArgumentOutOfRangeException)\n{\n    Console.WriteLine(\"Аргумент\");\n}\nConsole.WriteLine(\"Продолжаем\");\nint GetAbsolute(int value)\n{\n    if (value < -100 || value > 100)\n        throw new ArgumentOutOfRangeException(nameof(value), \"Допустимо от -100 до 100\");\n    return value < 0 ? -value : value;\n}",
+  "prompt": "Выберите полный вывод показанного кода в консоль. Строки в ответе идут в порядке вывода.",
+  "options": [
+    "Аргумент\nПродолжаем",
+    "120\nПродолжаем",
+    "Аргумент",
+    "Ничего не выведется"
+  ],
+  "correctIndex": 0,
+  "challengeResult": "Аргумент\nПродолжаем",
+  "explanation": "120 вне допустимого диапазона. Исключение из GetAbsolute перехватывает вызывающий код; обычного результата у этого вызова нет."
+},
+{
+  "id": "lab13-first-catch",
+  "codeDeckId": "lab13-exception-flow",
+  "deckId": "exceptions-flow",
+  "term": "Первый подходящий catch",
+  "exampleCode": "try\n{\n    throw new FormatException();\n}\ncatch (FormatException)\n{\n    Console.WriteLine(\"Конкретный\");\n}\ncatch (Exception)\n{\n    Console.WriteLine(\"Общий\");\n}",
+  "exampleResult": "Конкретный",
+  "exampleNote": "FormatException подходит первому catch. Общий catch(Exception) для того же исключения уже не выполняется.",
+  "kind": "Что выведет код?",
+  "challengeCode": "try\n{\n    throw new FormatException();\n}\ncatch (FormatException)\n{\n    Console.WriteLine(\"Конкретный\");\n}\ncatch (Exception)\n{\n    Console.WriteLine(\"Общий\");\n}",
+  "prompt": "Выберите полный вывод показанного кода в консоль. Строки в ответе идут в порядке вывода.",
+  "options": [
+    "Конкретный",
+    "Конкретный\nОбщий",
+    "Общий",
+    "Ничего не выведется"
+  ],
+  "correctIndex": 0,
+  "challengeResult": "Конкретный",
+  "explanation": "FormatException подходит первому catch. Общий catch(Exception) для того же исключения уже не выполняется."
+},
+{
+  "id": "lab13-after-catch",
+  "codeDeckId": "lab13-exception-flow",
+  "deckId": "exceptions-flow",
+  "term": "Продолжение после catch",
+  "exampleCode": "int value = 5;\ntry\n{\n    value = int.Parse(\"abc\");\n}\ncatch (FormatException)\n{\n    Console.WriteLine(\"Ошибка\");\n}\nConsole.WriteLine(value);",
+  "exampleResult": "Ошибка\n5",
+  "exampleNote": "Parse выбрасывает исключение до присваивания. После обработки программа не повторяет Parse, а продолжает после catch; value остаётся равным 5.",
+  "kind": "Что выведет код?",
+  "challengeCode": "int value = 5;\ntry\n{\n    value = int.Parse(\"abc\");\n}\ncatch (FormatException)\n{\n    Console.WriteLine(\"Ошибка\");\n}\nConsole.WriteLine(value);",
+  "prompt": "Выберите полный вывод показанного кода в консоль. Строки в ответе идут в порядке вывода.",
+  "options": [
+    "Ошибка\n5",
+    "Ошибка\n0",
+    "Ошибка\nОшибка",
+    "Ничего не выведется"
+  ],
+  "correctIndex": 0,
+  "challengeResult": "Ошибка\n5",
+  "explanation": "Parse выбрасывает исключение до присваивания. После обработки программа не повторяет Parse, а продолжает после catch; value остаётся равным 5."
+},
+{
+  "id": "lab13-base-exception",
+  "codeDeckId": "lab13-exception-types",
+  "deckId": "exceptions-types",
+  "term": "Exception",
+  "exampleCode": "try\n{\n    throw new InvalidOperationException();\n}\ncatch (FormatException)\n{\n    Console.WriteLine(\"Конкретный\");\n}\ncatch (Exception)\n{\n    Console.WriteLine(\"Общий\");\n}",
+  "exampleResult": "Общий",
+  "exampleNote": "InvalidOperationException не подходит catch(FormatException), но является производным типом Exception. Выполняется общий обработчик, расположенный последним.",
+  "kind": "Что выведет код?",
+  "challengeCode": "try\n{\n    throw new InvalidOperationException();\n}\ncatch (FormatException)\n{\n    Console.WriteLine(\"Конкретный\");\n}\ncatch (Exception)\n{\n    Console.WriteLine(\"Общий\");\n}",
+  "prompt": "Выберите полный вывод показанного кода в консоль. Строки в ответе идут в порядке вывода.",
+  "options": [
+    "Общий",
+    "Конкретный",
+    "Конкретный\nОбщий",
+    "Ничего не выведется"
+  ],
+  "correctIndex": 0,
+  "challengeResult": "Общий",
+  "explanation": "InvalidOperationException не подходит catch(FormatException), но является производным типом Exception. Выполняется общий обработчик, расположенный последним."
+},
+{
+  "id": "lab13-format-type",
+  "codeDeckId": "lab13-exception-types",
+  "deckId": "exceptions-types",
+  "term": "FormatException",
+  "exampleCode": "try\n{\n    Console.WriteLine(int.Parse(\"abc\"));\n}\ncatch (FormatException)\n{\n    Console.WriteLine(\"Формат\");\n}\nConsole.WriteLine(\"После\");",
+  "exampleResult": "Формат\nПосле",
+  "exampleNote": "abc не является записью целого числа. Возникает FormatException, а не ошибка диапазона.",
+  "kind": "Что выведет код?",
+  "challengeCode": "try\n{\n    Console.WriteLine(int.Parse(\"abc\"));\n}\ncatch (FormatException)\n{\n    Console.WriteLine(\"Формат\");\n}\nConsole.WriteLine(\"После\");",
+  "prompt": "Выберите полный вывод показанного кода в консоль. Строки в ответе идут в порядке вывода.",
+  "options": [
+    "Формат\nПосле",
+    "0\nПосле",
+    "После",
+    "Ничего не выведется"
+  ],
+  "correctIndex": 0,
+  "challengeResult": "Формат\nПосле",
+  "explanation": "abc не является записью целого числа. Возникает FormatException, а не ошибка диапазона."
+},
+{
+  "id": "lab13-overflow-type",
+  "codeDeckId": "lab13-exception-types",
+  "deckId": "exceptions-types",
+  "term": "OverflowException",
+  "exampleCode": "try\n{\n    Console.WriteLine(int.Parse(\"2147483648\"));\n}\ncatch (OverflowException)\n{\n    Console.WriteLine(\"Диапазон int\");\n}",
+  "exampleResult": "Диапазон int",
+  "exampleNote": "Число записано цифрами, но на единицу больше максимального int. Parse сообщает об этом через OverflowException.",
+  "kind": "Что выведет код?",
+  "challengeCode": "try\n{\n    Console.WriteLine(int.Parse(\"2147483648\"));\n}\ncatch (OverflowException)\n{\n    Console.WriteLine(\"Диапазон int\");\n}",
+  "prompt": "Выберите полный вывод показанного кода в консоль. Строки в ответе идут в порядке вывода.",
+  "options": [
+    "Диапазон int",
+    "2147483648",
+    "Формат",
+    "Ничего не выведется"
+  ],
+  "correctIndex": 0,
+  "challengeResult": "Диапазон int",
+  "explanation": "Число записано цифрами, но на единицу больше максимального int. Parse сообщает об этом через OverflowException."
+},
+{
+  "id": "lab13-divide-type",
+  "codeDeckId": "lab13-exception-types",
+  "deckId": "exceptions-types",
+  "term": "DivideByZeroException",
+  "exampleCode": "int divisor = 0;\ntry\n{\n    Console.WriteLine(4 / divisor);\n}\ncatch (DivideByZeroException)\n{\n    Console.WriteLine(\"Деление на ноль\");\n}",
+  "exampleResult": "Деление на ноль",
+  "exampleNote": "При целочисленном делении на переменную с нулём возникает DivideByZeroException. Значение переменной известно при выполнении.",
+  "kind": "Что выведет код?",
+  "challengeCode": "int divisor = 0;\ntry\n{\n    Console.WriteLine(4 / divisor);\n}\ncatch (DivideByZeroException)\n{\n    Console.WriteLine(\"Деление на ноль\");\n}",
+  "prompt": "Выберите полный вывод показанного кода в консоль. Строки в ответе идут в порядке вывода.",
+  "options": [
+    "Деление на ноль",
+    "0",
+    "4",
+    "Ничего не выведется"
+  ],
+  "correctIndex": 0,
+  "challengeResult": "Деление на ноль",
+  "explanation": "При целочисленном делении на переменную с нулём возникает DivideByZeroException. Значение переменной известно при выполнении."
+},
+{
+  "id": "lab13-argument-range",
+  "codeDeckId": "lab13-exception-types",
+  "deckId": "exceptions-types",
+  "term": "ArgumentOutOfRangeException",
+  "exampleCode": "int available = 4;\ntry\n{\n    available = ReserveSeats(available, 0);\n}\ncatch (ArgumentOutOfRangeException)\n{\n    Console.WriteLine(\"Аргумент\");\n}\ncatch (InvalidOperationException)\n{\n    Console.WriteLine(\"Мест нет\");\n}\nConsole.WriteLine(available);\nint ReserveSeats(int available, int requested)\n{\n    if (requested <= 0)\n        throw new ArgumentOutOfRangeException(nameof(requested), \"Нужно положительное количество\");\n    if (requested > available)\n        throw new InvalidOperationException(\"Мест недостаточно\");\n    return available - requested;\n}",
+  "exampleResult": "Аргумент\n4",
+  "exampleNote": "Нулевой запрос нарушает проверку requested <= 0 и вызывает ArgumentOutOfRangeException. Присваивание нового остатка не происходит.",
+  "kind": "Что выведет код?",
+  "challengeCode": "int available = 4;\ntry\n{\n    available = ReserveSeats(available, 0);\n}\ncatch (ArgumentOutOfRangeException)\n{\n    Console.WriteLine(\"Аргумент\");\n}\ncatch (InvalidOperationException)\n{\n    Console.WriteLine(\"Мест нет\");\n}\nConsole.WriteLine(available);\nint ReserveSeats(int available, int requested)\n{\n    if (requested <= 0)\n        throw new ArgumentOutOfRangeException(nameof(requested), \"Нужно положительное количество\");\n    if (requested > available)\n        throw new InvalidOperationException(\"Мест недостаточно\");\n    return available - requested;\n}",
+  "prompt": "Выберите полный вывод показанного кода в консоль. Строки в ответе идут в порядке вывода.",
+  "options": [
+    "Аргумент\n4",
+    "Мест нет\n4",
+    "0",
+    "Ничего не выведется"
+  ],
+  "correctIndex": 0,
+  "challengeResult": "Аргумент\n4",
+  "explanation": "Нулевой запрос нарушает проверку requested <= 0 и вызывает ArgumentOutOfRangeException. Присваивание нового остатка не происходит."
+},
+{
+  "id": "lab13-invalid-state",
+  "codeDeckId": "lab13-exception-types",
+  "deckId": "exceptions-types",
+  "term": "InvalidOperationException",
+  "exampleCode": "int available = 2;\ntry\n{\n    available = ReserveSeats(available, 3);\n}\ncatch (ArgumentOutOfRangeException)\n{\n    Console.WriteLine(\"Аргумент\");\n}\ncatch (InvalidOperationException)\n{\n    Console.WriteLine(\"Мест нет\");\n}\nConsole.WriteLine(available);\nint ReserveSeats(int available, int requested)\n{\n    if (requested <= 0)\n        throw new ArgumentOutOfRangeException(nameof(requested), \"Нужно положительное количество\");\n    if (requested > available)\n        throw new InvalidOperationException(\"Мест недостаточно\");\n    return available - requested;\n}",
+  "exampleResult": "Мест нет\n2",
+  "exampleNote": "Запрос положительный, но мест недостаточно. ReserveSeats выбрасывает InvalidOperationException, и прежний остаток 2 сохраняется.",
+  "kind": "Что выведет код?",
+  "challengeCode": "int available = 2;\ntry\n{\n    available = ReserveSeats(available, 3);\n}\ncatch (ArgumentOutOfRangeException)\n{\n    Console.WriteLine(\"Аргумент\");\n}\ncatch (InvalidOperationException)\n{\n    Console.WriteLine(\"Мест нет\");\n}\nConsole.WriteLine(available);\nint ReserveSeats(int available, int requested)\n{\n    if (requested <= 0)\n        throw new ArgumentOutOfRangeException(nameof(requested), \"Нужно положительное количество\");\n    if (requested > available)\n        throw new InvalidOperationException(\"Мест недостаточно\");\n    return available - requested;\n}",
+  "prompt": "Выберите полный вывод показанного кода в консоль. Строки в ответе идут в порядке вывода.",
+  "options": [
+    "Мест нет\n2",
+    "Аргумент\n2",
+    "-1",
+    "Ничего не выведется"
+  ],
+  "correctIndex": 0,
+  "challengeResult": "Мест нет\n2",
+  "explanation": "Запрос положительный, но мест недостаточно. ReserveSeats выбрасывает InvalidOperationException, и прежний остаток 2 сохраняется."
+},
+{
+  "id": "lab13-nameof",
+  "codeDeckId": "lab13-exception-types",
+  "deckId": "exceptions-types",
+  "term": "nameof",
+  "exampleCode": "int requested = 0;\nConsole.WriteLine(nameof(requested));",
+  "exampleResult": "requested",
+  "exampleNote": "nameof возвращает имя символа, а не его текущее значение. Поэтому выводится requested, хотя число в переменной равно 0.",
+  "kind": "Что выведет код?",
+  "challengeCode": "int requested = 0;\nConsole.WriteLine(nameof(requested));",
+  "prompt": "Выберите полный вывод показанного кода в консоль. Строки в ответе идут в порядке вывода.",
+  "options": [
+    "requested",
+    "0",
+    "nameof(requested)",
+    "Ничего не выведется"
+  ],
+  "correctIndex": 0,
+  "challengeResult": "requested",
+  "explanation": "nameof возвращает имя символа, а не его текущее значение. Поэтому выводится requested, хотя число в переменной равно 0."
+},
+{
+  "id": "lab13-message",
+  "codeDeckId": "lab13-exception-types",
+  "deckId": "exceptions-types",
+  "term": "Message",
+  "exampleCode": "try\n{\n    throw new InvalidOperationException(\"Мест недостаточно\");\n}\ncatch (InvalidOperationException ex)\n{\n    Console.WriteLine(ex.Message);\n}",
+  "exampleResult": "Мест недостаточно",
+  "exampleNote": "ex хранит пойманный объект. Для этого InvalidOperationException свойство Message возвращает переданный текст сообщения.",
+  "kind": "Что выведет код?",
+  "challengeCode": "try\n{\n    throw new InvalidOperationException(\"Мест недостаточно\");\n}\ncatch (InvalidOperationException ex)\n{\n    Console.WriteLine(ex.Message);\n}",
+  "prompt": "Выберите полный вывод показанного кода в консоль. Строки в ответе идут в порядке вывода.",
+  "options": [
+    "Мест недостаточно",
+    "InvalidOperationException",
+    "ex.Message",
+    "Ничего не выведется"
+  ],
+  "correctIndex": 0,
+  "challengeResult": "Мест недостаточно",
+  "explanation": "ex хранит пойманный объект. Для этого InvalidOperationException свойство Message возвращает переданный текст сообщения."
+},
+{
+  "id": "lab13-catch-order",
+  "codeDeckId": "lab13-exception-types",
+  "deckId": "exceptions-types",
+  "term": "Порядок catch",
+  "exampleCode": "try\n{\n    throw new FormatException();\n}\ncatch (FormatException)\n{\n    Console.WriteLine(\"Конкретный\");\n}\ncatch (Exception)\n{\n    Console.WriteLine(\"Общий\");\n}",
+  "exampleResult": "Конкретный",
+  "exampleNote": "Конкретный обработчик расположен до общего, поэтому программа собирается и перехватывает FormatException первым catch.",
+  "kind": "Порядок обработчиков",
+  "challengeCode": "try\n{\n    throw new FormatException();\n}\ncatch (Exception)\n{\n    Console.WriteLine(\"Конкретный\");\n}\ncatch (FormatException)\n{\n    Console.WriteLine(\"Общий\");\n}",
+  "prompt": "В показанном коде общий catch стоит перед конкретным. Выберите порядок обработчиков, при котором программа скомпилируется и FormatException попадёт в свой конкретный catch.",
+  "options": [
+    "Сначала catch (FormatException), затем catch (Exception)",
+    "Сначала catch (Exception), затем catch (FormatException)",
+    "Два catch (Exception) подряд",
+    "Порядок не влияет на сборку"
+  ],
+  "correctIndex": 0,
+  "explanation": "Exception уже охватывает FormatException. После общего обработчика конкретный становится недостижимым; компилятор отклоняет такой порядок."
+},
+{
+  "id": "lab13-unhandled",
+  "codeDeckId": "lab13-exception-types",
+  "deckId": "exceptions-types",
+  "term": "Необработанное исключение",
+  "exampleCode": "try\n{\n    Console.WriteLine(int.Parse(\"abc\"));\n}\ncatch (FormatException)\n{\n    Console.WriteLine(\"Формат\");\n}\nConsole.WriteLine(\"После\");",
+  "exampleResult": "Формат\nПосле",
+  "exampleNote": "При подходящем catch исключение обработано и вывод продолжается.",
+  "kind": "Найдите результат выполнения",
+  "challengeCode": "try\n{\n    Console.WriteLine(int.Parse(\"abc\"));\n}\ncatch (DivideByZeroException)\n{\n    Console.WriteLine(\"Формат\");\n}\nConsole.WriteLine(\"После\");",
+  "prompt": "Во всём примере есть только показанный catch. Выберите, что произойдёт при int.Parse(\"abc\") и выполнится ли строка «После».",
+  "options": [
+    "Необработанное FormatException; строка «После» не выполнится",
+    "Выведется «Формат», затем «После»",
+    "Выведется только «После»",
+    "Код не скомпилируется"
+  ],
+  "correctIndex": 0,
+  "explanation": "Parse выбрасывает FormatException, а catch ожидает DivideByZeroException. Подходящего обработчика нет, поэтому обычное выполнение до строки «После» не доходит."
+},
+{
+  "id": "lab13-tryparse-input",
+  "codeDeckId": "lab13-booking-state",
+  "deckId": "exceptions-validation-state",
+  "term": "Проверка формата ввода",
+  "exampleCode": "#nullable enable\nstring? input = Console.ReadLine();\nif (input == null)\n{\n    Console.WriteLine(\"Конец ввода\");\n    return;\n}\nif (!int.TryParse(input, out int requested))\n{\n    Console.WriteLine(\"Формат\");\n    return;\n}\nConsole.WriteLine(requested);",
+  "exampleResult": "Формат",
+  "exampleNote": "TryParse возвращает false для неверного формата и значения вне int. При завершённом входном потоке программа выходит ещё до преобразования.",
+  "kind": "Что выведет код?",
+  "challengeCode": "#nullable enable\nstring? input = Console.ReadLine();\nif (input == null)\n{\n    Console.WriteLine(\"Конец ввода\");\n    return;\n}\nif (!int.TryParse(input, out int requested))\n{\n    Console.WriteLine(\"Формат\");\n    return;\n}\nConsole.WriteLine(requested);",
+  "prompt": "Используйте ввод, указанный под кодом. Выберите, что программа выведет в консоль.",
+  "options": [
+    "Формат",
+    "0",
+    "OverflowException",
+    "Ничего не выведется"
+  ],
+  "correctIndex": 0,
+  "challengeResult": "Формат",
+  "explanation": "TryParse возвращает false для неверного формата и значения вне int. При завершённом входном потоке программа выходит ещё до преобразования.",
+  "exampleInput": "abc",
+  "challengeInput": "2147483648",
+  "variants": [
+    {
+      "challengeCode": "#nullable enable\nstring? input = Console.ReadLine();\nif (input == null)\n{\n    Console.WriteLine(\"Конец ввода\");\n    return;\n}\nif (!int.TryParse(input, out int requested))\n{\n    Console.WriteLine(\"Формат\");\n    return;\n}\nConsole.WriteLine(requested);",
+      "challengeInput": "abc",
+      "challengeResult": "Формат",
+      "prompt": "Используйте ввод, указанный под кодом. Выберите, что программа выведет в консоль.",
+      "options": [
+        "Формат",
+        "0",
+        "Конец ввода",
+        "Ничего не выведется"
+      ],
+      "correctIndex": 0,
+      "explanation": "Нечисловой ввод даёт false без исключения преобразования."
+    },
+    {
+      "challengeCode": "#nullable enable\nstring? input = Console.ReadLine();\nif (input == null)\n{\n    Console.WriteLine(\"Конец ввода\");\n    return;\n}\nif (!int.TryParse(input, out int requested))\n{\n    Console.WriteLine(\"Формат\");\n    return;\n}\nConsole.WriteLine(requested);",
+      "challengeInput": "",
+      "challengeResult": "Формат",
+      "prompt": "Используйте ввод, указанный под кодом. Выберите, что программа выведет в консоль.",
+      "options": [
+        "Формат",
+        "0",
+        "Конец ввода",
+        "Ничего не выведется"
+      ],
+      "correctIndex": 0,
+      "explanation": "Enter возвращает пустую строку. Это не null; TryParse возвращает false."
+    },
+    {
+      "challengeCode": "#nullable enable\nstring? input = Console.ReadLine();\nif (input == null)\n{\n    Console.WriteLine(\"Конец ввода\");\n    return;\n}\nif (!int.TryParse(input, out int requested))\n{\n    Console.WriteLine(\"Формат\");\n    return;\n}\nConsole.WriteLine(requested);",
+      "challengeInput": "3",
+      "challengeResult": "3",
+      "prompt": "Используйте ввод, указанный под кодом. Выберите, что программа выведет в консоль.",
+      "options": [
+        "3",
+        "Формат",
+        "0",
+        "Конец ввода"
+      ],
+      "correctIndex": 0,
+      "explanation": "TryParse успешно получает 3, поэтому выводится requested."
+    },
+    {
+      "challengeCode": "#nullable enable\nstring? input = Console.ReadLine();\nif (input == null)\n{\n    Console.WriteLine(\"Конец ввода\");\n    return;\n}\nif (!int.TryParse(input, out int requested))\n{\n    Console.WriteLine(\"Формат\");\n    return;\n}\nConsole.WriteLine(requested);",
+      "challengeInput": null,
+      "challengeResult": "Конец ввода",
+      "prompt": "Используйте ввод, указанный под кодом. Выберите, что программа выведет в консоль.",
+      "options": [
+        "Конец ввода",
+        "Формат",
+        "0",
+        "Ничего не выведется"
+      ],
+      "correctIndex": 0,
+      "explanation": "ReadLine вернул null. Ранний выход выполняется до TryParse."
+    }
+  ]
+},
+{
+  "id": "lab13-argument-check-fill",
+  "codeDeckId": "lab13-booking-state",
+  "deckId": "exceptions-validation-state",
+  "term": "Проверка аргументов метода",
+  "exampleCode": "int available = 3;\ntry\n{\n    available = ReserveSeats(available, 0);\n}\ncatch (ArgumentOutOfRangeException)\n{\n    Console.WriteLine(\"Аргумент\");\n}\ncatch (InvalidOperationException)\n{\n    Console.WriteLine(\"Мест нет\");\n}\nConsole.WriteLine(available);\nint ReserveSeats(int available, int requested)\n{\n    if (requested <= 0)\n        throw new ArgumentOutOfRangeException(nameof(requested), \"Нужно положительное количество\");\n    if (requested > available)\n        throw new InvalidOperationException(\"Мест недостаточно\");\n    return available - requested;\n}",
+  "exampleResult": "Аргумент\n3",
+  "exampleNote": "Корректная проверка исключает и нулевые, и отрицательные запросы до вычисления остатка.",
+  "kind": "Заполните пропуск",
+  "challengeCode": "int available = 3;\ntry\n{\n    available = ReserveSeats(available, 0);\n}\ncatch (ArgumentOutOfRangeException)\n{\n    Console.WriteLine(\"Аргумент\");\n}\ncatch (InvalidOperationException)\n{\n    Console.WriteLine(\"Мест нет\");\n}\nConsole.WriteLine(available);\nint ReserveSeats(int available, int requested)\n{\n    if (/* ??? */)\n        throw new ArgumentOutOfRangeException(nameof(requested), \"Нужно положительное количество\");\n    if (requested > available)\n        throw new InvalidOperationException(\"Мест недостаточно\");\n    return available - requested;\n}",
+  "prompt": "Выберите условие вместо /* ??? */, чтобы отклонять все requested <= 0. При показанном вызове должны вывестись строки «Аргумент», затем «3».",
+  "options": [
+    "requested <= 0",
+    "requested < 0",
+    "requested > available",
+    "requested == available"
+  ],
+  "correctIndex": 0,
+  "explanation": "Корректная проверка исключает и нулевые, и отрицательные запросы до вычисления остатка.",
+  "solutionResult": "Аргумент\n3"
+},
+{
+  "id": "lab13-reserve-result",
+  "codeDeckId": "lab13-booking-state",
+  "deckId": "exceptions-validation-state",
+  "term": "ReserveSeats",
+  "exampleCode": "Console.WriteLine(ReserveSeats(10, 3));\nint ReserveSeats(int available, int requested)\n{\n    if (requested <= 0)\n        throw new ArgumentOutOfRangeException(nameof(requested), \"Нужно положительное количество\");\n    if (requested > available)\n        throw new InvalidOperationException(\"Мест недостаточно\");\n    return available - requested;\n}",
+  "exampleResult": "7",
+  "exampleNote": "Обе проверки пройдены. Метод возвращает 10 - 3 = 7; вывод выполняет вызывающий код.",
+  "kind": "Что выведет код?",
+  "challengeCode": "Console.WriteLine(ReserveSeats(10, 3));\nint ReserveSeats(int available, int requested)\n{\n    if (requested <= 0)\n        throw new ArgumentOutOfRangeException(nameof(requested), \"Нужно положительное количество\");\n    if (requested > available)\n        throw new InvalidOperationException(\"Мест недостаточно\");\n    return available - requested;\n}",
+  "prompt": "Выберите полный вывод показанного кода в консоль. Строки в ответе идут в порядке вывода.",
+  "options": [
+    "7",
+    "10",
+    "3",
+    "Ничего не выведется"
+  ],
+  "correctIndex": 0,
+  "challengeResult": "7",
+  "explanation": "Обе проверки пройдены. Метод возвращает 10 - 3 = 7; вывод выполняет вызывающий код."
+},
+{
+  "id": "lab13-state-success",
+  "codeDeckId": "lab13-booking-state",
+  "deckId": "exceptions-validation-state",
+  "term": "Состояние программы",
+  "exampleCode": "int available = 4;\ntry\n{\n    available = ReserveSeats(available, 2);\n}\ncatch (ArgumentOutOfRangeException)\n{\n    Console.WriteLine(\"Аргумент\");\n}\ncatch (InvalidOperationException)\n{\n    Console.WriteLine(\"Мест нет\");\n}\nConsole.WriteLine(available);\nint ReserveSeats(int available, int requested)\n{\n    if (requested <= 0)\n        throw new ArgumentOutOfRangeException(nameof(requested), \"Нужно положительное количество\");\n    if (requested > available)\n        throw new InvalidOperationException(\"Мест недостаточно\");\n    return available - requested;\n}",
+  "exampleResult": "2",
+  "exampleNote": "Метод возвращает новый остаток 2. Только после возврата он записывается в available, а затем выводится.",
+  "kind": "Что выведет код?",
+  "challengeCode": "int available = 4;\ntry\n{\n    available = ReserveSeats(available, 2);\n}\ncatch (ArgumentOutOfRangeException)\n{\n    Console.WriteLine(\"Аргумент\");\n}\ncatch (InvalidOperationException)\n{\n    Console.WriteLine(\"Мест нет\");\n}\nConsole.WriteLine(available);\nint ReserveSeats(int available, int requested)\n{\n    if (requested <= 0)\n        throw new ArgumentOutOfRangeException(nameof(requested), \"Нужно положительное количество\");\n    if (requested > available)\n        throw new InvalidOperationException(\"Мест недостаточно\");\n    return available - requested;\n}",
+  "prompt": "Выберите полный вывод показанного кода в консоль. Строки в ответе идут в порядке вывода.",
+  "options": [
+    "2",
+    "4",
+    "6",
+    "Ничего не выведется"
+  ],
+  "correctIndex": 0,
+  "challengeResult": "2",
+  "explanation": "Метод возвращает новый остаток 2. Только после возврата он записывается в available, а затем выводится."
+},
+{
+  "id": "lab13-assign-after-success",
+  "codeDeckId": "lab13-booking-state",
+  "deckId": "exceptions-validation-state",
+  "term": "Сохранение результата после успеха",
+  "exampleCode": "int available = 4;\ntry\n{\n    available = ReserveSeats(available, 6);\n}\ncatch (ArgumentOutOfRangeException)\n{\n    Console.WriteLine(\"Аргумент\");\n}\ncatch (InvalidOperationException)\n{\n    Console.WriteLine(\"Мест нет\");\n}\nConsole.WriteLine(available);\nint ReserveSeats(int available, int requested)\n{\n    if (requested <= 0)\n        throw new ArgumentOutOfRangeException(nameof(requested), \"Нужно положительное количество\");\n    if (requested > available)\n        throw new InvalidOperationException(\"Мест недостаточно\");\n    return available - requested;\n}",
+  "exampleResult": "Мест нет\n4",
+  "exampleNote": "Правая часть присваивания выбрасывает исключение. Запись в available не выполняется; после catch в ней остаётся 4.",
+  "kind": "Что выведет код?",
+  "challengeCode": "int available = 4;\ntry\n{\n    available = ReserveSeats(available, 6);\n}\ncatch (ArgumentOutOfRangeException)\n{\n    Console.WriteLine(\"Аргумент\");\n}\ncatch (InvalidOperationException)\n{\n    Console.WriteLine(\"Мест нет\");\n}\nConsole.WriteLine(available);\nint ReserveSeats(int available, int requested)\n{\n    if (requested <= 0)\n        throw new ArgumentOutOfRangeException(nameof(requested), \"Нужно положительное количество\");\n    if (requested > available)\n        throw new InvalidOperationException(\"Мест недостаточно\");\n    return available - requested;\n}",
+  "prompt": "Выберите полный вывод показанного кода в консоль. Строки в ответе идут в порядке вывода.",
+  "options": [
+    "Мест нет\n4",
+    "Мест нет\n0",
+    "Мест нет\n-2",
+    "Ничего не выведется"
+  ],
+  "correctIndex": 0,
+  "challengeResult": "Мест нет\n4",
+  "explanation": "Правая часть присваивания выбрасывает исключение. Запись в available не выполняется; после catch в ней остаётся 4."
+},
+{
+  "id": "lab13-no-rollback",
+  "codeDeckId": "lab13-booking-state",
+  "deckId": "exceptions-validation-state",
+  "term": "Отсутствие автоматического отката",
+  "exampleCode": "int value = 5;\ntry\n{\n    value = 9;\n    throw new InvalidOperationException();\n}\ncatch (InvalidOperationException)\n{\n    Console.WriteLine(\"Ошибка\");\n}\nConsole.WriteLine(value);",
+  "exampleResult": "Ошибка\n9",
+  "exampleNote": "Присваивание 9 выполнено до throw. catch перехватывает исключение, но автоматически не возвращает прежнее значение 5.",
+  "kind": "Что выведет код?",
+  "challengeCode": "int value = 5;\ntry\n{\n    value = 9;\n    throw new InvalidOperationException();\n}\ncatch (InvalidOperationException)\n{\n    Console.WriteLine(\"Ошибка\");\n}\nConsole.WriteLine(value);",
+  "prompt": "Выберите полный вывод показанного кода в консоль. Строки в ответе идут в порядке вывода.",
+  "options": [
+    "Ошибка\n9",
+    "Ошибка\n5",
+    "Ошибка\n0",
+    "Ничего не выведется"
+  ],
+  "correctIndex": 0,
+  "challengeResult": "Ошибка\n9",
+  "explanation": "Присваивание 9 выполнено до throw. catch перехватывает исключение, но автоматически не возвращает прежнее значение 5."
+},
+{
+  "id": "lab13-retry-loop",
+  "codeDeckId": "lab13-booking-state",
+  "deckId": "exceptions-validation-state",
+  "term": "Повторная попытка",
+  "exampleCode": "int available = 4;\nint attempts = 0;\nforeach (int requested in new int[] { 0, 2 })\n{\n    try\n    {\n        available = ReserveSeats(available, requested);\n    }\n    catch (ArgumentOutOfRangeException)\n    {\n        Console.WriteLine(\"Аргумент\");\n    }\n    finally\n    {\n        attempts++;\n    }\n    Console.WriteLine($\"{available} {attempts}\");\n}\nint ReserveSeats(int available, int requested)\n{\n    if (requested <= 0)\n        throw new ArgumentOutOfRangeException(nameof(requested), \"Нужно положительное количество\");\n    if (requested > available)\n        throw new InvalidOperationException(\"Мест недостаточно\");\n    return available - requested;\n}",
+  "exampleResult": "Аргумент\n4 1\n2 2",
+  "exampleNote": "Первая заявка 0 отклоняется и оставляет 4 места. Следующая итерация, организованная foreach, обрабатывает 2 и сохраняет остаток 2. finally увеличивает attempts при обоих вызовах.",
+  "kind": "Что выведет код?",
+  "challengeCode": "int available = 4;\nint attempts = 0;\nforeach (int requested in new int[] { 0, 2 })\n{\n    try\n    {\n        available = ReserveSeats(available, requested);\n    }\n    catch (ArgumentOutOfRangeException)\n    {\n        Console.WriteLine(\"Аргумент\");\n    }\n    finally\n    {\n        attempts++;\n    }\n    Console.WriteLine($\"{available} {attempts}\");\n}\nint ReserveSeats(int available, int requested)\n{\n    if (requested <= 0)\n        throw new ArgumentOutOfRangeException(nameof(requested), \"Нужно положительное количество\");\n    if (requested > available)\n        throw new InvalidOperationException(\"Мест недостаточно\");\n    return available - requested;\n}",
+  "prompt": "Выберите полный вывод показанного кода в консоль. Строки в ответе идут в порядке вывода.",
+  "options": [
+    "Аргумент\n4 1\n2 2",
+    "Аргумент\n4 1",
+    "Аргумент\n2 1\n0 2",
+    "Ничего не выведется"
+  ],
+  "correctIndex": 0,
+  "challengeResult": "Аргумент\n4 1\n2 2",
+  "explanation": "Первая заявка 0 отклоняется и оставляет 4 места. Следующая итерация, организованная foreach, обрабатывает 2 и сохраняет остаток 2. finally увеличивает attempts при обоих вызовах."
+},
+{
+  "id": "lab13-empty-catch",
+  "codeDeckId": "lab13-booking-state",
+  "deckId": "exceptions-validation-state",
+  "term": "Пустой обработчик",
+  "exampleCode": "try\n{\n    throw new InvalidOperationException(\"Мест нет\");\n}\ncatch (InvalidOperationException)\n{\n    // Ошибка скрыта: сообщения нет.\n}\nConsole.WriteLine(\"После\");",
+  "exampleResult": "После",
+  "exampleNote": "Пустой обработчик перехватывает исключение без сообщения. Программа продолжится, но пользователь не узнает об отказе. В задаче нужно сообщать причину.",
+  "kind": "Что выведет код?",
+  "challengeCode": "try\n{\n    throw new InvalidOperationException(\"Мест нет\");\n}\ncatch (InvalidOperationException)\n{\n    // Ошибка скрыта: сообщения нет.\n}\nConsole.WriteLine(\"После\");",
+  "prompt": "Выберите полный вывод показанного кода в консоль. Строки в ответе идут в порядке вывода.",
+  "options": [
+    "После",
+    "Мест нет\nПосле",
+    "Мест нет",
+    "Ничего не выведется"
+  ],
+  "correctIndex": 0,
+  "challengeResult": "После",
+  "explanation": "Пустой обработчик перехватывает исключение без сообщения. Программа продолжится, но пользователь не узнает об отказе. В задаче нужно сообщать причину."
+},
+{
+  "id": "lab13-input-before-try",
+  "codeDeckId": "lab13-booking-state",
+  "deckId": "exceptions-validation-state",
+  "term": "Разделение проверки и обработки",
+  "exampleCode": "#nullable enable\nstring? input = Console.ReadLine();\nif (input == null)\n{\n    Console.WriteLine(\"Конец ввода\");\n    return;\n}\nif (input.Trim().Equals(\"выход\", StringComparison.OrdinalIgnoreCase))\n{\n    Console.WriteLine(\"Выход\");\n    return;\n}\nif (!int.TryParse(input, out int requested))\n{\n    Console.WriteLine(\"Формат\");\n    return;\n}\nint available = 4;\ntry\n{\n    available = ReserveSeats(available, requested);\n    Console.WriteLine(\"Успех\");\n}\ncatch (ArgumentOutOfRangeException)\n{\n    Console.WriteLine(\"Аргумент\");\n}\ncatch (InvalidOperationException)\n{\n    Console.WriteLine(\"Мест нет\");\n}\nfinally\n{\n    Console.WriteLine(\"Попытка\");\n}\nConsole.WriteLine(available);\nint ReserveSeats(int available, int requested)\n{\n    if (requested <= 0)\n        throw new ArgumentOutOfRangeException(nameof(requested), \"Нужно положительное количество\");\n    if (requested > available)\n        throw new InvalidOperationException(\"Мест недостаточно\");\n    return available - requested;\n}",
+  "exampleResult": "Успех\nПопытка\n2",
+  "exampleNote": "Ввод 2 проходит TryParse, поэтому вызывается ReserveSeats. После успеха finally выводит «Попытка», затем выводится остаток 2. В этом отдельном фрагменте начальный остаток равен 4.",
+  "kind": "Что выведет код?",
+  "challengeCode": "#nullable enable\nstring? input = Console.ReadLine();\nif (input == null)\n{\n    Console.WriteLine(\"Конец ввода\");\n    return;\n}\nif (input.Trim().Equals(\"выход\", StringComparison.OrdinalIgnoreCase))\n{\n    Console.WriteLine(\"Выход\");\n    return;\n}\nif (!int.TryParse(input, out int requested))\n{\n    Console.WriteLine(\"Формат\");\n    return;\n}\nint available = 4;\ntry\n{\n    available = ReserveSeats(available, requested);\n    Console.WriteLine(\"Успех\");\n}\ncatch (ArgumentOutOfRangeException)\n{\n    Console.WriteLine(\"Аргумент\");\n}\ncatch (InvalidOperationException)\n{\n    Console.WriteLine(\"Мест нет\");\n}\nfinally\n{\n    Console.WriteLine(\"Попытка\");\n}\nConsole.WriteLine(available);\nint ReserveSeats(int available, int requested)\n{\n    if (requested <= 0)\n        throw new ArgumentOutOfRangeException(nameof(requested), \"Нужно положительное количество\");\n    if (requested > available)\n        throw new InvalidOperationException(\"Мест недостаточно\");\n    return available - requested;\n}",
+  "prompt": "Используйте ввод, указанный под кодом. Это одна попытка с начальным остатком 4. Выберите все строки вывода в порядке появления.",
+  "options": [
+    "Успех\nПопытка\n2",
+    "Успех\n2",
+    "Формат\nПопытка\n4",
+    "Ничего не выведется"
+  ],
+  "correctIndex": 0,
+  "challengeResult": "Успех\nПопытка\n2",
+  "explanation": "Ввод 2 проходит TryParse, поэтому вызывается ReserveSeats. После успеха finally выводит «Попытка», затем выводится остаток 2. В этом отдельном фрагменте начальный остаток равен 4.",
+  "exampleInput": "2",
+  "challengeInput": "2",
+  "variants": [
+    {
+      "challengeCode": "#nullable enable\nstring? input = Console.ReadLine();\nif (input == null)\n{\n    Console.WriteLine(\"Конец ввода\");\n    return;\n}\nif (input.Trim().Equals(\"выход\", StringComparison.OrdinalIgnoreCase))\n{\n    Console.WriteLine(\"Выход\");\n    return;\n}\nif (!int.TryParse(input, out int requested))\n{\n    Console.WriteLine(\"Формат\");\n    return;\n}\nint available = 4;\ntry\n{\n    available = ReserveSeats(available, requested);\n    Console.WriteLine(\"Успех\");\n}\ncatch (ArgumentOutOfRangeException)\n{\n    Console.WriteLine(\"Аргумент\");\n}\ncatch (InvalidOperationException)\n{\n    Console.WriteLine(\"Мест нет\");\n}\nfinally\n{\n    Console.WriteLine(\"Попытка\");\n}\nConsole.WriteLine(available);\nint ReserveSeats(int available, int requested)\n{\n    if (requested <= 0)\n        throw new ArgumentOutOfRangeException(nameof(requested), \"Нужно положительное количество\");\n    if (requested > available)\n        throw new InvalidOperationException(\"Мест недостаточно\");\n    return available - requested;\n}",
+      "challengeInput": "-2",
+      "challengeResult": "Аргумент\nПопытка\n4",
+      "prompt": "Используйте ввод, указанный под кодом. Это одна попытка с начальным остатком 4. Выберите все строки вывода в порядке появления.",
+      "options": [
+        "Аргумент\nПопытка\n4",
+        "Формат\nПопытка\n4",
+        "Успех\nПопытка\n4",
+        "Попытка\n4"
+      ],
+      "correctIndex": 0,
+      "explanation": "Отрицательная строка -2 корректно преобразуется в int. Метод отклоняет requested <= 0 через ArgumentOutOfRangeException; finally выполняется, а остаток 4 сохраняется."
+    },
+    {
+      "challengeCode": "#nullable enable\nstring? input = Console.ReadLine();\nif (input == null)\n{\n    Console.WriteLine(\"Конец ввода\");\n    return;\n}\nif (input.Trim().Equals(\"выход\", StringComparison.OrdinalIgnoreCase))\n{\n    Console.WriteLine(\"Выход\");\n    return;\n}\nif (!int.TryParse(input, out int requested))\n{\n    Console.WriteLine(\"Формат\");\n    return;\n}\nint available = 4;\ntry\n{\n    available = ReserveSeats(available, requested);\n    Console.WriteLine(\"Успех\");\n}\ncatch (ArgumentOutOfRangeException)\n{\n    Console.WriteLine(\"Аргумент\");\n}\ncatch (InvalidOperationException)\n{\n    Console.WriteLine(\"Мест нет\");\n}\nfinally\n{\n    Console.WriteLine(\"Попытка\");\n}\nConsole.WriteLine(available);\nint ReserveSeats(int available, int requested)\n{\n    if (requested <= 0)\n        throw new ArgumentOutOfRangeException(nameof(requested), \"Нужно положительное количество\");\n    if (requested > available)\n        throw new InvalidOperationException(\"Мест недостаточно\");\n    return available - requested;\n}",
+      "challengeInput": "abc",
+      "challengeResult": "Формат",
+      "prompt": "Используйте ввод, указанный под кодом. Это одна попытка с начальным остатком 4. Выберите все строки вывода в порядке появления.",
+      "options": [
+        "Формат",
+        "Формат\nПопытка\n4",
+        "Успех\nПопытка\n4",
+        "Попытка\n4"
+      ],
+      "correctIndex": 0,
+      "explanation": "Неверный формат отсекается до try. ReserveSeats не вызывается, finally этой конструкции не начинается."
+    },
+    {
+      "challengeCode": "#nullable enable\nstring? input = Console.ReadLine();\nif (input == null)\n{\n    Console.WriteLine(\"Конец ввода\");\n    return;\n}\nif (input.Trim().Equals(\"выход\", StringComparison.OrdinalIgnoreCase))\n{\n    Console.WriteLine(\"Выход\");\n    return;\n}\nif (!int.TryParse(input, out int requested))\n{\n    Console.WriteLine(\"Формат\");\n    return;\n}\nint available = 4;\ntry\n{\n    available = ReserveSeats(available, requested);\n    Console.WriteLine(\"Успех\");\n}\ncatch (ArgumentOutOfRangeException)\n{\n    Console.WriteLine(\"Аргумент\");\n}\ncatch (InvalidOperationException)\n{\n    Console.WriteLine(\"Мест нет\");\n}\nfinally\n{\n    Console.WriteLine(\"Попытка\");\n}\nConsole.WriteLine(available);\nint ReserveSeats(int available, int requested)\n{\n    if (requested <= 0)\n        throw new ArgumentOutOfRangeException(nameof(requested), \"Нужно положительное количество\");\n    if (requested > available)\n        throw new InvalidOperationException(\"Мест недостаточно\");\n    return available - requested;\n}",
+      "challengeInput": "0",
+      "challengeResult": "Аргумент\nПопытка\n4",
+      "prompt": "Используйте ввод, указанный под кодом. Это одна попытка с начальным остатком 4. Выберите все строки вывода в порядке появления.",
+      "options": [
+        "Аргумент\nПопытка\n4",
+        "Формат\nПопытка\n4",
+        "Успех\nПопытка\n4",
+        "Попытка\n4"
+      ],
+      "correctIndex": 0,
+      "explanation": "Ноль является корректным int, но недопустимым запросом. Метод выбрасывает ArgumentOutOfRangeException, finally выполняется, остаток 4 сохраняется."
+    },
+    {
+      "challengeCode": "#nullable enable\nstring? input = Console.ReadLine();\nif (input == null)\n{\n    Console.WriteLine(\"Конец ввода\");\n    return;\n}\nif (input.Trim().Equals(\"выход\", StringComparison.OrdinalIgnoreCase))\n{\n    Console.WriteLine(\"Выход\");\n    return;\n}\nif (!int.TryParse(input, out int requested))\n{\n    Console.WriteLine(\"Формат\");\n    return;\n}\nint available = 4;\ntry\n{\n    available = ReserveSeats(available, requested);\n    Console.WriteLine(\"Успех\");\n}\ncatch (ArgumentOutOfRangeException)\n{\n    Console.WriteLine(\"Аргумент\");\n}\ncatch (InvalidOperationException)\n{\n    Console.WriteLine(\"Мест нет\");\n}\nfinally\n{\n    Console.WriteLine(\"Попытка\");\n}\nConsole.WriteLine(available);\nint ReserveSeats(int available, int requested)\n{\n    if (requested <= 0)\n        throw new ArgumentOutOfRangeException(nameof(requested), \"Нужно положительное количество\");\n    if (requested > available)\n        throw new InvalidOperationException(\"Мест недостаточно\");\n    return available - requested;\n}",
+      "challengeInput": "6",
+      "challengeResult": "Мест нет\nПопытка\n4",
+      "prompt": "Используйте ввод, указанный под кодом. Это одна попытка с начальным остатком 4. Выберите все строки вывода в порядке появления.",
+      "options": [
+        "Мест нет\nПопытка\n4",
+        "Формат\nПопытка\n4",
+        "Успех\nПопытка\n4",
+        "Попытка\n4"
+      ],
+      "correctIndex": 0,
+      "explanation": "Шесть больше четырёх свободных мест. InvalidOperationException обрабатывается, finally выполняется, остаток не меняется."
+    },
+    {
+      "challengeCode": "#nullable enable\nstring? input = Console.ReadLine();\nif (input == null)\n{\n    Console.WriteLine(\"Конец ввода\");\n    return;\n}\nif (input.Trim().Equals(\"выход\", StringComparison.OrdinalIgnoreCase))\n{\n    Console.WriteLine(\"Выход\");\n    return;\n}\nif (!int.TryParse(input, out int requested))\n{\n    Console.WriteLine(\"Формат\");\n    return;\n}\nint available = 4;\ntry\n{\n    available = ReserveSeats(available, requested);\n    Console.WriteLine(\"Успех\");\n}\ncatch (ArgumentOutOfRangeException)\n{\n    Console.WriteLine(\"Аргумент\");\n}\ncatch (InvalidOperationException)\n{\n    Console.WriteLine(\"Мест нет\");\n}\nfinally\n{\n    Console.WriteLine(\"Попытка\");\n}\nConsole.WriteLine(available);\nint ReserveSeats(int available, int requested)\n{\n    if (requested <= 0)\n        throw new ArgumentOutOfRangeException(nameof(requested), \"Нужно положительное количество\");\n    if (requested > available)\n        throw new InvalidOperationException(\"Мест недостаточно\");\n    return available - requested;\n}",
+      "challengeInput": " ВЫХОД ",
+      "challengeResult": "Выход",
+      "prompt": "Используйте ввод, указанный под кодом. Это одна попытка с начальным остатком 4. Выберите все строки вывода в порядке появления.",
+      "options": [
+        "Выход",
+        "Формат\nПопытка\n4",
+        "Успех\nПопытка\n4",
+        "Попытка\n4"
+      ],
+      "correctIndex": 0,
+      "explanation": "Trim убирает крайние пробелы, сравнение не учитывает регистр. Команда завершает фрагмент до TryParse и try."
+    },
+    {
+      "challengeCode": "#nullable enable\nstring? input = Console.ReadLine();\nif (input == null)\n{\n    Console.WriteLine(\"Конец ввода\");\n    return;\n}\nif (input.Trim().Equals(\"выход\", StringComparison.OrdinalIgnoreCase))\n{\n    Console.WriteLine(\"Выход\");\n    return;\n}\nif (!int.TryParse(input, out int requested))\n{\n    Console.WriteLine(\"Формат\");\n    return;\n}\nint available = 4;\ntry\n{\n    available = ReserveSeats(available, requested);\n    Console.WriteLine(\"Успех\");\n}\ncatch (ArgumentOutOfRangeException)\n{\n    Console.WriteLine(\"Аргумент\");\n}\ncatch (InvalidOperationException)\n{\n    Console.WriteLine(\"Мест нет\");\n}\nfinally\n{\n    Console.WriteLine(\"Попытка\");\n}\nConsole.WriteLine(available);\nint ReserveSeats(int available, int requested)\n{\n    if (requested <= 0)\n        throw new ArgumentOutOfRangeException(nameof(requested), \"Нужно положительное количество\");\n    if (requested > available)\n        throw new InvalidOperationException(\"Мест недостаточно\");\n    return available - requested;\n}",
+      "challengeInput": null,
+      "challengeResult": "Конец ввода",
+      "prompt": "Используйте ввод, указанный под кодом. Это одна попытка с начальным остатком 4. Выберите все строки вывода в порядке появления.",
+      "options": [
+        "Конец ввода",
+        "Формат\nПопытка\n4",
+        "Успех\nПопытка\n4",
+        "Попытка\n4"
+      ],
+      "correctIndex": 0,
+      "explanation": "Конец потока проверяется до Trim. Нет вызова метода и сообщения finally."
+    },
+    {
+      "challengeCode": "#nullable enable\nstring? input = Console.ReadLine();\nif (input == null)\n{\n    Console.WriteLine(\"Конец ввода\");\n    return;\n}\nif (input.Trim().Equals(\"выход\", StringComparison.OrdinalIgnoreCase))\n{\n    Console.WriteLine(\"Выход\");\n    return;\n}\nif (!int.TryParse(input, out int requested))\n{\n    Console.WriteLine(\"Формат\");\n    return;\n}\nint available = 4;\ntry\n{\n    available = ReserveSeats(available, requested);\n    Console.WriteLine(\"Успех\");\n}\ncatch (ArgumentOutOfRangeException)\n{\n    Console.WriteLine(\"Аргумент\");\n}\ncatch (InvalidOperationException)\n{\n    Console.WriteLine(\"Мест нет\");\n}\nfinally\n{\n    Console.WriteLine(\"Попытка\");\n}\nConsole.WriteLine(available);\nint ReserveSeats(int available, int requested)\n{\n    if (requested <= 0)\n        throw new ArgumentOutOfRangeException(nameof(requested), \"Нужно положительное количество\");\n    if (requested > available)\n        throw new InvalidOperationException(\"Мест недостаточно\");\n    return available - requested;\n}",
+      "challengeInput": "",
+      "challengeResult": "Формат",
+      "prompt": "Используйте ввод, указанный под кодом. Это одна попытка с начальным остатком 4. Выберите все строки вывода в порядке появления.",
+      "options": [
+        "Формат",
+        "Формат\nПопытка\n4",
+        "Успех\nПопытка\n4",
+        "Попытка\n4"
+      ],
+      "correctIndex": 0,
+      "explanation": "Пустая строка после Enter не является null. TryParse отклоняет её до try, поэтому finally не выполняется."
+    },
+    {
+      "challengeCode": "#nullable enable\nstring? input = Console.ReadLine();\nif (input == null)\n{\n    Console.WriteLine(\"Конец ввода\");\n    return;\n}\nif (input.Trim().Equals(\"выход\", StringComparison.OrdinalIgnoreCase))\n{\n    Console.WriteLine(\"Выход\");\n    return;\n}\nif (!int.TryParse(input, out int requested))\n{\n    Console.WriteLine(\"Формат\");\n    return;\n}\nint available = 4;\ntry\n{\n    available = ReserveSeats(available, requested);\n    Console.WriteLine(\"Успех\");\n}\ncatch (ArgumentOutOfRangeException)\n{\n    Console.WriteLine(\"Аргумент\");\n}\ncatch (InvalidOperationException)\n{\n    Console.WriteLine(\"Мест нет\");\n}\nfinally\n{\n    Console.WriteLine(\"Попытка\");\n}\nConsole.WriteLine(available);\nint ReserveSeats(int available, int requested)\n{\n    if (requested <= 0)\n        throw new ArgumentOutOfRangeException(nameof(requested), \"Нужно положительное количество\");\n    if (requested > available)\n        throw new InvalidOperationException(\"Мест недостаточно\");\n    return available - requested;\n}",
+      "challengeInput": "2147483648",
+      "challengeResult": "Формат",
+      "prompt": "Используйте ввод, указанный под кодом. Это одна попытка с начальным остатком 4. Выберите все строки вывода в порядке появления.",
+      "options": [
+        "Формат",
+        "Формат\nПопытка\n4",
+        "Успех\nПопытка\n4",
+        "Попытка\n4"
+      ],
+      "correctIndex": 0,
+      "explanation": "TryParse возвращает false для числа вне int без OverflowException. Вызов ReserveSeats и finally пропускаются."
+    }
+  ]
+},
+{
+  "id": "lab13-cancel-optional",
+  "codeDeckId": "lab13-booking-state",
+  "deckId": "exceptions-validation-state",
+  "term": "Отмена бронирования",
+  "exampleCode": "try\n{\n    Console.WriteLine(ReturnSeats(8, 2));\n}\ncatch (ArgumentOutOfRangeException)\n{\n    Console.WriteLine(\"Возврат недопустим\");\n}\nint ReturnSeats(int available, int returned)\n{\n    if (returned <= 0 || available + returned > 10)\n        throw new ArgumentOutOfRangeException(nameof(returned));\n    return available + returned;\n}",
+  "exampleResult": "10",
+  "exampleNote": "Дополнительное задание: вернуть 2 места при остатке 8 разрешено, потому что итог равен исходной вместимости 10 и не превышает её.",
+  "kind": "Что выведет код?",
+  "challengeCode": "try\n{\n    Console.WriteLine(ReturnSeats(8, 2));\n}\ncatch (ArgumentOutOfRangeException)\n{\n    Console.WriteLine(\"Возврат недопустим\");\n}\nint ReturnSeats(int available, int returned)\n{\n    if (returned <= 0 || available + returned > 10)\n        throw new ArgumentOutOfRangeException(nameof(returned));\n    return available + returned;\n}",
+  "prompt": "Дополнительная часть лабы: отмена бронирования. Выберите, что выведет вызов ReturnSeats(8, 2), если максимальная вместимость равна 10.",
+  "options": [
+    "10",
+    "8",
+    "Возврат недопустим",
+    "Ничего не выведется"
+  ],
+  "correctIndex": 0,
+  "challengeResult": "10",
+  "explanation": "Дополнительное задание: вернуть 2 места при остатке 8 разрешено, потому что итог равен исходной вместимости 10 и не превышает её."
 }
 ];

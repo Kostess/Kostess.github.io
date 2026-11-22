@@ -559,7 +559,7 @@ test("cards record repeat and known decisions; quiz mistakes are available as ca
 test("mixed lab practice draws ten distinct questions across decks without lengthening the session", () => {
   const app = setup();
   app.run('shuffle = items => items.map((_, i) => items[(i * 7) % items.length]);');
-  for (let lab = 4; lab <= 12; lab++) {
+  for (let lab = 4; lab <= 13; lab++) {
     app.elements.get("#codeLabSelect").value = `ЛБ ${lab}`;
     app.run('fillCodeDeckSelect()');
     assert.equal(app.elements.get("#codeDeckSelect").value, "all");
@@ -575,7 +575,7 @@ test("mixed lab practice draws ten distinct questions across decks without lengt
 test("error mode draws only five distinct cards from the full selected lab bank", () => {
   const app = setup();
   app.run('shuffle = items => [...items].reverse();');
-  for (const lab of [4, 5, 6, 7, 8, 9, 11, 12]) {
+  for (const lab of [4, 5, 6, 7, 8, 9, 11, 12, 13]) {
     app.elements.get("#bugLabSelect").value = `ЛБ ${lab}`;
     app.run('startBugs()');
     assert.equal(app.run('state.bugSession.cards.length'), 5);
@@ -589,7 +589,7 @@ test("error mode draws only five distinct cards from the full selected lab bank"
 
 test("practice lab and deck selectors restrict a session to the selected 5–10 examples", () => {
   const app = setup();
-  for (const lab of ["ЛБ 4", "ЛБ 5", "ЛБ 6", "ЛБ 7", "ЛБ 8", "ЛБ 9", "ЛБ 10", "ЛБ 11", "ЛБ 12"]) {
+  for (const lab of ["ЛБ 4", "ЛБ 5", "ЛБ 6", "ЛБ 7", "ЛБ 8", "ЛБ 9", "ЛБ 10", "ЛБ 11", "ЛБ 12", "ЛБ 13"]) {
     app.elements.get("#codeLabSelect").value = lab;
     app.run('fillCodeDeckSelect()');
     const deckIds = app.run(`codeDecks.filter(deck => deck.lab === ${JSON.stringify(lab)}).map(deck => deck.id)`);
@@ -757,8 +757,8 @@ test("two lessons about one term retain independent mistakes and all worked exam
   assert.equal(reloaded.run('needsReview("code", codeLessons.find(lesson => lesson.id === "more4-overwrite"))'), true);
 });
 
-test("labs 9 and 12 are available in cards, quiz and the reference, not only in code practice", () => {
-  for (const [topic, lab, count] of [["csharp-methods", "ЛБ 9", 30], ["csharp-debugging", "ЛБ 12", 20]]) {
+test("labs 9, 12 and 13 are available in cards, quiz and the reference, not only in code practice", () => {
+  for (const [topic, lab, count] of [["csharp-methods", "ЛБ 9", 30], ["csharp-debugging", "ЛБ 12", 20], ["csharp-exceptions", "ЛБ 13", 30]]) {
     const app = setup();
     for (const selector of ["#cardTopicSelect", "#quizTopicSelect", "#referenceTopicSelect"]) {
       assert.ok(app.elements.get(selector).innerHTML.includes(`value="${topic}"`));

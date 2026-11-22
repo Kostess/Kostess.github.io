@@ -57,7 +57,10 @@ const deckLabTags = {
   "strings-null": ["ЛБ 11"],
   "strings-nullable": ["ЛБ 11"],
   "debugger-tools": ["ЛБ 12"],
-  "algorithm-checks": ["ЛБ 12"]
+  "algorithm-checks": ["ЛБ 12"],
+  "exceptions-flow": ["ЛБ 13"],
+  "exceptions-types": ["ЛБ 13"],
+  "exceptions-validation-state": ["ЛБ 13"]
 };
 
 const CODE_ANSWER_TIME_MS = 90_000;

@@ -60,7 +60,10 @@ const deckLabTags = {
   "algorithm-checks": ["ЛБ 12"],
   "exceptions-flow": ["ЛБ 13"],
   "exceptions-types": ["ЛБ 13"],
-  "exceptions-validation-state": ["ЛБ 13"]
+  "exceptions-validation-state": ["ЛБ 13"],
+  "text-files-io": ["ЛБ 14"],
+  "text-files-paths-arrays": ["ЛБ 14"],
+  "text-files-recovery": ["ЛБ 14"]
 };
 
 const CODE_ANSWER_TIME_MS = 90_000;

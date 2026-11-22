@@ -26,7 +26,7 @@ try {
 `);
 
   const checks = lessons.flatMap(lesson => [
-    { id: lesson.id, code: lesson.exampleCode, result: lesson.exampleResult, input: lesson.exampleInput },
+    { id: lesson.id, code: lesson.exampleCode, result: lesson.exampleResult, input: lesson.exampleInput, pathResult: lesson.examplePathResult },
     ...(lesson.challengeResult === undefined ? [] : [{
       id: `${lesson.id}:challenge`, code: lesson.challengeCode,
       result: lesson.challengeResult, input: lesson.challengeInput
@@ -45,22 +45,29 @@ try {
   const calls = checks.map((check) => `
 Check(${JSON.stringify(check.id)}, ${JSON.stringify(check.result)}, ${JSON.stringify(check.input === null ? "" : (check.input ?? "") + "\n")}, () => {
 ${check.code}
-});`).join("\n");
+}, ${JSON.stringify(check.pathResult ?? null)});`).join("\n");
 
   writeFileSync(join(scratch, "Program.cs"), `
 using System;
 using System.IO;
 using System.Globalization;
 
-void Check(string id, string expected, string input, Action example)
+string fixtureRoot = Path.Combine(Environment.CurrentDirectory, "cases");
+int fixtureNumber = 0;
+void Check(string id, string expected, string input, Action example, string expectedPath)
 {
     var previousOut = Console.Out;
     var previousIn = Console.In;
     var previousCulture = CultureInfo.CurrentCulture;
+    var previousDirectory = Environment.CurrentDirectory;
+    var caseDirectory = Path.Combine(fixtureRoot, (fixtureNumber++).ToString(CultureInfo.InvariantCulture));
+    Directory.CreateDirectory(caseDirectory);
     using var output = new StringWriter(CultureInfo.InvariantCulture);
     using var inputReader = new StringReader(input);
     try
     {
+        Environment.CurrentDirectory = caseDirectory;
+        if (expectedPath != null) expected = expectedPath == "." ? Environment.CurrentDirectory : Path.GetFullPath(expectedPath);
         Console.SetOut(output);
         Console.SetIn(inputReader);
         CultureInfo.CurrentCulture = CultureInfo.InvariantCulture;
@@ -71,6 +78,7 @@ void Check(string id, string expected, string input, Action example)
         Console.SetOut(previousOut);
         Console.SetIn(previousIn);
         CultureInfo.CurrentCulture = previousCulture;
+        Environment.CurrentDirectory = previousDirectory;
     }
     var actual = output.ToString().TrimEnd('\\r', '\\n').Replace("\\r\\n", "\\n");
     if (actual != expected)
@@ -81,6 +89,7 @@ Console.WriteLine("Verified ${lessons.length} C# examples and ${checks.length - 
 `);
 
   const result = spawnSync("dotnet", ["run", "--project", scratch, "--configuration", "Release", "--verbosity", "quiet"], {
+    cwd: scratch,
     encoding: "utf8",
     timeout: 120000
   });

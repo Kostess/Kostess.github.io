@@ -239,6 +239,21 @@ const codeDecks = [
   "id": "lab13-booking-state",
   "lab": "ЛБ 13",
   "title": "Ввод, бронирование и сохранение остатка"
+},
+{
+  "id": "lab14-file-io",
+  "lab": "ЛБ 14",
+  "title": "Чтение, запись и перезапись файла"
+},
+{
+  "id": "lab14-paths-arrays",
+  "lab": "ЛБ 14",
+  "title": "Пути и массив строк"
+},
+{
+  "id": "lab14-load-save-errors",
+  "lab": "ЛБ 14",
+  "title": "Список покупок и ошибки файлов"
 }
 ];
 
@@ -30514,5 +30529,761 @@ const codeLessons = [
   "correctIndex": 0,
   "challengeResult": "10",
   "explanation": "Дополнительное задание: вернуть 2 места при остатке 8 разрешено, потому что итог равен исходной вместимости 10 и не превышает её."
+},
+{
+  "id": "lab14-text-file",
+  "codeDeckId": "lab14-file-io",
+  "deckId": "text-files-io",
+  "term": "Текстовый файл",
+  "exampleCode": "File.WriteAllText(\"demo.txt\", \"A\\nB\");\nConsole.WriteLine(File.ReadAllLines(\"demo.txt\").Length);",
+  "exampleResult": "2",
+  "exampleNote": "В строке A\\nB два текстовых ряда. ReadAllLines возвращает два элемента, хотя файл был записан одним WriteAllText.",
+  "kind": "Что выведет код?",
+  "challengeCode": "File.WriteAllText(\"demo.txt\", \"A\\nB\");\nConsole.WriteLine(File.ReadAllLines(\"demo.txt\").Length);",
+  "prompt": "Выберите полный вывод показанного кода в консоль. Строки в ответе идут в порядке вывода.",
+  "options": [
+    "2",
+    "1",
+    "3",
+    "Ошибка компиляции"
+  ],
+  "correctIndex": 0,
+  "challengeResult": "2",
+  "explanation": "В строке A\\nB два текстовых ряда. ReadAllLines возвращает два элемента, хотя файл был записан одним WriteAllText."
+},
+{
+  "id": "lab14-read-text",
+  "codeDeckId": "lab14-file-io",
+  "deckId": "text-files-io",
+  "term": "File.ReadAllText",
+  "exampleCode": "File.WriteAllText(\"demo.txt\", \"A\\nB\");\nstring text = File.ReadAllText(\"demo.txt\");\nConsole.WriteLine(text.Length);",
+  "exampleResult": "3",
+  "exampleNote": "В файл явно записан один символ переноса \\n между A и B. ReadAllText сохраняет его в строке: всего три символа.",
+  "kind": "Что выведет код?",
+  "challengeCode": "File.WriteAllText(\"demo.txt\", \"A\\nB\");\nstring text = File.ReadAllText(\"demo.txt\");\nConsole.WriteLine(text.Length);",
+  "prompt": "Выберите полный вывод показанного кода в консоль. Строки в ответе идут в порядке вывода.",
+  "options": [
+    "3",
+    "2",
+    "1",
+    "Ошибка компиляции"
+  ],
+  "correctIndex": 0,
+  "challengeResult": "3",
+  "explanation": "В файл явно записан один символ переноса \\n между A и B. ReadAllText сохраняет его в строке: всего три символа."
+},
+{
+  "id": "lab14-write-text",
+  "codeDeckId": "lab14-file-io",
+  "deckId": "text-files-io",
+  "term": "File.WriteAllText",
+  "exampleCode": "File.WriteAllText(\"demo.txt\", \"Старое\");\nFile.WriteAllText(\"demo.txt\", \"Чай\");\nConsole.WriteLine(File.ReadAllText(\"demo.txt\"));",
+  "exampleResult": "Чай",
+  "exampleNote": "Вторая запись заменяет прежний текст целиком. В файле остаётся только «Чай».",
+  "kind": "Что выведет код?",
+  "challengeCode": "File.WriteAllText(\"demo.txt\", \"Старое\");\nFile.WriteAllText(\"demo.txt\", \"Чай\");\nConsole.WriteLine(File.ReadAllText(\"demo.txt\"));",
+  "prompt": "Выберите полный вывод показанного кода в консоль. Строки в ответе идут в порядке вывода.",
+  "options": [
+    "Чай",
+    "СтароеЧай",
+    "Старое\nЧай",
+    "Ошибка компиляции"
+  ],
+  "correctIndex": 0,
+  "challengeResult": "Чай",
+  "explanation": "Вторая запись заменяет прежний текст целиком. В файле остаётся только «Чай»."
+},
+{
+  "id": "lab14-read-lines",
+  "codeDeckId": "lab14-file-io",
+  "deckId": "text-files-io",
+  "term": "File.ReadAllLines",
+  "exampleCode": "File.WriteAllLines(\"demo.txt\", new string[] { \"Яблоки\", \"Чай\" });\nstring[] lines = File.ReadAllLines(\"demo.txt\");\nConsole.WriteLine(lines.Length);",
+  "exampleResult": "2",
+  "exampleNote": "WriteAllLines записывает две строки. ReadAllLines возвращает string[] из двух элементов без символов конца строки.",
+  "kind": "Что выведет код?",
+  "challengeCode": "File.WriteAllLines(\"demo.txt\", new string[] { \"Яблоки\", \"Чай\" });\nstring[] lines = File.ReadAllLines(\"demo.txt\");\nConsole.WriteLine(lines.Length);",
+  "prompt": "Выберите полный вывод показанного кода в консоль. Строки в ответе идут в порядке вывода.",
+  "options": [
+    "2",
+    "1",
+    "3",
+    "Ошибка компиляции"
+  ],
+  "correctIndex": 0,
+  "challengeResult": "2",
+  "explanation": "WriteAllLines записывает две строки. ReadAllLines возвращает string[] из двух элементов без символов конца строки.",
+  "variants": [
+    {
+      "challengeCode": "File.WriteAllLines(\"demo.txt\", Array.Empty<string>());\nstring[] lines = File.ReadAllLines(\"demo.txt\");\nConsole.WriteLine(lines.Length);",
+      "challengeResult": "0",
+      "prompt": "Выберите полный вывод показанного кода в консоль. Строки в ответе идут в порядке вывода.",
+      "options": [
+        "0",
+        "1",
+        "2",
+        "Ошибка компиляции"
+      ],
+      "correctIndex": 0,
+      "explanation": "После записи и чтения количество элементов совпадает с числом переданных строк: 0."
+    },
+    {
+      "challengeCode": "File.WriteAllLines(\"demo.txt\", new string[] { \"Рис\" });\nstring[] lines = File.ReadAllLines(\"demo.txt\");\nConsole.WriteLine(lines.Length);",
+      "challengeResult": "1",
+      "prompt": "Выберите полный вывод показанного кода в консоль. Строки в ответе идут в порядке вывода.",
+      "options": [
+        "1",
+        "2",
+        "3",
+        "Ошибка компиляции"
+      ],
+      "correctIndex": 0,
+      "explanation": "После записи и чтения количество элементов совпадает с числом переданных строк: 1."
+    },
+    {
+      "challengeCode": "File.WriteAllLines(\"demo.txt\", new string[] { \"Чай\", \"Рис\", \"Сок\" });\nstring[] lines = File.ReadAllLines(\"demo.txt\");\nConsole.WriteLine(lines.Length);",
+      "challengeResult": "3",
+      "prompt": "Выберите полный вывод показанного кода в консоль. Строки в ответе идут в порядке вывода.",
+      "options": [
+        "3",
+        "4",
+        "5",
+        "Ошибка компиляции"
+      ],
+      "correctIndex": 0,
+      "explanation": "После записи и чтения количество элементов совпадает с числом переданных строк: 3."
+    }
+  ]
+},
+{
+  "id": "lab14-write-lines",
+  "codeDeckId": "lab14-file-io",
+  "deckId": "text-files-io",
+  "term": "File.WriteAllLines",
+  "exampleCode": "string[] items = { \"Яблоки\", \"Чай\" };\nFile.WriteAllLines(\"shopping.txt\", items);\nstring[] restored = File.ReadAllLines(\"shopping.txt\");\nConsole.WriteLine(restored[1]);",
+  "exampleResult": "Чай",
+  "exampleNote": "Каждый элемент записан отдельной строкой. Второй элемент восстановленного массива имеет индекс 1 и содержит «Чай».",
+  "kind": "Что выведет код?",
+  "challengeCode": "string[] items = { \"Яблоки\", \"Чай\" };\nFile.WriteAllLines(\"shopping.txt\", items);\nstring[] restored = File.ReadAllLines(\"shopping.txt\");\nConsole.WriteLine(restored[1]);",
+  "prompt": "Выберите полный вывод показанного кода в консоль. Строки в ответе идут в порядке вывода.",
+  "options": [
+    "Чай",
+    "Яблоки",
+    "Яблоки|Чай",
+    "Ошибка компиляции"
+  ],
+  "correctIndex": 0,
+  "challengeResult": "Чай",
+  "explanation": "Каждый элемент записан отдельной строкой. Второй элемент восстановленного массива имеет индекс 1 и содержит «Чай»."
+},
+{
+  "id": "lab14-overwrite",
+  "codeDeckId": "lab14-file-io",
+  "deckId": "text-files-io",
+  "term": "Перезапись файла",
+  "exampleCode": "File.WriteAllLines(\"shopping.txt\", new string[] { \"Яблоки\", \"Чай\" });\nFile.WriteAllLines(\"shopping.txt\", new string[] { \"Рис\" });\nConsole.WriteLine(File.ReadAllLines(\"shopping.txt\").Length);",
+  "exampleResult": "1",
+  "exampleNote": "Второй WriteAllLines заменяет две старые покупки массивом из одной строки. Добавления к старому содержимому нет.",
+  "kind": "Что выведет код?",
+  "challengeCode": "File.WriteAllLines(\"shopping.txt\", new string[] { \"Яблоки\", \"Чай\" });\nFile.WriteAllLines(\"shopping.txt\", new string[] { \"Рис\" });\nConsole.WriteLine(File.ReadAllLines(\"shopping.txt\").Length);",
+  "prompt": "Выберите полный вывод показанного кода в консоль. Строки в ответе идут в порядке вывода.",
+  "options": [
+    "1",
+    "2",
+    "3",
+    "Ошибка компиляции"
+  ],
+  "correctIndex": 0,
+  "challengeResult": "1",
+  "explanation": "Второй WriteAllLines заменяет две старые покупки массивом из одной строки. Добавления к старому содержимому нет.",
+  "variants": [
+    {
+      "challengeCode": "File.WriteAllLines(\"shopping.txt\", new string[] { \"Яблоки\", \"Чай\" });\nFile.WriteAllLines(\"shopping.txt\", new string[] { \"Чай\", \"Рис\" });\nConsole.WriteLine(File.ReadAllLines(\"shopping.txt\").Length);",
+      "challengeResult": "2",
+      "prompt": "Выберите полный вывод показанного кода в консоль. Строки в ответе идут в порядке вывода.",
+      "options": [
+        "2",
+        "4",
+        "3",
+        "Ошибка компиляции"
+      ],
+      "correctIndex": 0,
+      "explanation": "В файле остаётся только второй массив. После чтения его длина равна 2."
+    },
+    {
+      "challengeCode": "File.WriteAllLines(\"shopping.txt\", new string[] { \"Яблоки\", \"Чай\" });\nFile.WriteAllLines(\"shopping.txt\", Array.Empty<string>());\nConsole.WriteLine(File.ReadAllLines(\"shopping.txt\").Length);",
+      "challengeResult": "0",
+      "prompt": "Выберите полный вывод показанного кода в консоль. Строки в ответе идут в порядке вывода.",
+      "options": [
+        "0",
+        "2",
+        "1",
+        "Ошибка компиляции"
+      ],
+      "correctIndex": 0,
+      "explanation": "В файле остаётся только второй массив. После чтения его длина равна 0."
+    },
+    {
+      "challengeCode": "File.WriteAllLines(\"shopping.txt\", new string[] { \"Яблоки\", \"Чай\" });\nFile.WriteAllLines(\"shopping.txt\", new string[] { \"Рис\", \"Сок\", \"Соль\" });\nConsole.WriteLine(File.ReadAllLines(\"shopping.txt\").Length);",
+      "challengeResult": "3",
+      "prompt": "Выберите полный вывод показанного кода в консоль. Строки в ответе идут в порядке вывода.",
+      "options": [
+        "3",
+        "5",
+        "4",
+        "Ошибка компиляции"
+      ],
+      "correctIndex": 0,
+      "explanation": "В файле остаётся только второй массив. После чтения его длина равна 3."
+    }
+  ]
+},
+{
+  "id": "lab14-missing-file",
+  "codeDeckId": "lab14-file-io",
+  "deckId": "text-files-io",
+  "term": "Отсутствующий файл",
+  "exampleCode": "// В рабочей папке нет missing.txt.\nstring[] items = Array.Empty<string>();\ntry\n{\n    items = File.ReadAllLines(\"missing.txt\");\n}\ncatch (FileNotFoundException)\n{\n    Console.WriteLine(\"Пустой список\");\n}\nConsole.WriteLine(items.Length);",
+  "exampleResult": "Пустой список\n0",
+  "exampleNote": "ReadAllLines не создаёт отсутствующий файл. FileNotFoundException перехватывается, и исходный пустой массив остаётся доступным.",
+  "kind": "Что выведет код?",
+  "challengeCode": "// В рабочей папке нет missing.txt.\nstring[] items = Array.Empty<string>();\ntry\n{\n    items = File.ReadAllLines(\"missing.txt\");\n}\ncatch (FileNotFoundException)\n{\n    Console.WriteLine(\"Пустой список\");\n}\nConsole.WriteLine(items.Length);",
+  "prompt": "Выберите полный вывод показанного кода в консоль. Строки в ответе идут в порядке вывода.",
+  "options": [
+    "Пустой список\n0",
+    "0",
+    "Пустой список\n1",
+    "Ошибка компиляции"
+  ],
+  "correctIndex": 0,
+  "challengeResult": "Пустой список\n0",
+  "explanation": "ReadAllLines не создаёт отсутствующий файл. FileNotFoundException перехватывается, и исходный пустой массив остаётся доступным."
+},
+{
+  "id": "lab14-empty-file",
+  "codeDeckId": "lab14-file-io",
+  "deckId": "text-files-io",
+  "term": "Пустой файл",
+  "exampleCode": "File.WriteAllText(\"demo.txt\", \"\");\nstring[] items = File.ReadAllLines(\"demo.txt\");\nConsole.WriteLine(items.Length);",
+  "exampleResult": "0",
+  "exampleNote": "Файл существует, но пуст. Чтение успешно возвращает массив длиной 0 без FileNotFoundException.",
+  "kind": "Что выведет код?",
+  "challengeCode": "File.WriteAllText(\"demo.txt\", \"\");\nstring[] items = File.ReadAllLines(\"demo.txt\");\nConsole.WriteLine(items.Length);",
+  "prompt": "Выберите полный вывод показанного кода в консоль. Строки в ответе идут в порядке вывода.",
+  "options": [
+    "0",
+    "1",
+    "FileNotFoundException",
+    "Ошибка компиляции"
+  ],
+  "correctIndex": 0,
+  "challengeResult": "0",
+  "explanation": "Файл существует, но пуст. Чтение успешно возвращает массив длиной 0 без FileNotFoundException."
+},
+{
+  "id": "lab14-empty-line",
+  "codeDeckId": "lab14-file-io",
+  "deckId": "text-files-io",
+  "term": "Строка текстового файла",
+  "exampleCode": "File.WriteAllText(\"demo.txt\", \"A\\n\\nB\");\nstring[] lines = File.ReadAllLines(\"demo.txt\");\nConsole.WriteLine(lines.Length);\nConsole.WriteLine(lines[1].Length);",
+  "exampleResult": "3\n0",
+  "exampleNote": "Между A и B есть пустая строка. Получаются три элемента; длина среднего элемента равна 0. Здесь \\n — явно записанный перенос.",
+  "kind": "Что выведет код?",
+  "challengeCode": "File.WriteAllText(\"demo.txt\", \"A\\n\\nB\");\nstring[] lines = File.ReadAllLines(\"demo.txt\");\nConsole.WriteLine(lines.Length);\nConsole.WriteLine(lines[1].Length);",
+  "prompt": "Выберите полный вывод показанного кода в консоль. Строки в ответе идут в порядке вывода.",
+  "options": [
+    "3\n0",
+    "2\n1",
+    "3\n1",
+    "Ошибка компиляции"
+  ],
+  "correctIndex": 0,
+  "challengeResult": "3\n0",
+  "explanation": "Между A и B есть пустая строка. Получаются три элемента; длина среднего элемента равна 0. Здесь \\n — явно записанный перенос."
+},
+{
+  "id": "lab14-persisted-version",
+  "codeDeckId": "lab14-file-io",
+  "deckId": "text-files-io",
+  "term": "Сохранение между запусками",
+  "exampleCode": "string[] items = { \"Яблоки\", \"Чай\" };\nFile.WriteAllLines(\"shopping.txt\", items);\nitems = new string[] { \"Хлеб\" };\nitems = File.ReadAllLines(\"shopping.txt\");\nConsole.WriteLine(string.Join(\"|\", items));",
+  "exampleResult": "Яблоки|Чай",
+  "exampleNote": "Присваивание другого массива меняет память, но не файл. Повторное чтение возвращает ранее сохранённые две покупки.",
+  "kind": "Что выведет код?",
+  "challengeCode": "string[] items = { \"Яблоки\", \"Чай\" };\nFile.WriteAllLines(\"shopping.txt\", items);\nitems = new string[] { \"Хлеб\" };\nitems = File.ReadAllLines(\"shopping.txt\");\nConsole.WriteLine(string.Join(\"|\", items));",
+  "prompt": "Выберите полный вывод показанного кода в консоль. Строки в ответе идут в порядке вывода.",
+  "options": [
+    "Яблоки|Чай",
+    "Хлеб",
+    "Яблоки|Чай|Хлеб",
+    "Ошибка компиляции"
+  ],
+  "correctIndex": 0,
+  "challengeResult": "Яблоки|Чай",
+  "explanation": "Присваивание другого массива меняет память, но не файл. Повторное чтение возвращает ранее сохранённые две покупки."
+},
+{
+  "id": "lab14-relative-path",
+  "codeDeckId": "lab14-paths-arrays",
+  "deckId": "text-files-paths-arrays",
+  "term": "Относительный путь",
+  "exampleCode": "File.WriteAllLines(\"shopping.txt\", new string[] { \"Чай\" });\nConsole.WriteLine(File.ReadAllLines(\"shopping.txt\").Length);",
+  "exampleResult": "1",
+  "exampleNote": "Запись и чтение используют одно относительное имя в текущей рабочей папке.",
+  "kind": "Определите путь",
+  "challengeCode": "File.WriteAllLines(\"shopping.txt\", new string[] { \"Чай\" });",
+  "prompt": "Выберите папку, относительно которой программа определит путь shopping.txt в показанном вызове.",
+  "options": [
+    "Текущая рабочая папка программы",
+    "Всегда папка, где лежит Program.cs",
+    "Всегда bin",
+    "Всегда папка загрузок пользователя"
+  ],
+  "correctIndex": 0,
+  "explanation": "Относительное имя вычисляется от Environment.CurrentDirectory. Рабочая папка зависит от способа запуска."
+},
+{
+  "id": "lab14-absolute-path",
+  "codeDeckId": "lab14-paths-arrays",
+  "deckId": "text-files-paths-arrays",
+  "term": "Абсолютный путь",
+  "exampleCode": "Console.WriteLine(Path.GetFullPath(\"shopping.txt\"));",
+  "exampleResult": "Полный путь к shopping.txt в рабочей папке программы.",
+  "exampleNote": "Полный путь зависит от рабочей папки. Здесь нельзя заранее назвать одну папку bin для всех способов запуска.",
+  "kind": "Определите путь",
+  "challengeCode": "// Windows. Рабочая папка: C:\\Study\\FileLab\nConsole.WriteLine(Path.GetFullPath(\"shopping.txt\"));",
+  "prompt": "В этом вопросе программа работает в Windows, текущая рабочая папка — C:\\Study\\FileLab. Выберите полный путь, который будет выведен.",
+  "options": [
+    "C:\\Study\\FileLab\\shopping.txt",
+    "C:\\Study\\FileLab\\bin\\shopping.txt",
+    "C:\\shopping.txt",
+    "shopping.txt"
+  ],
+  "correctIndex": 0,
+  "explanation": "Полный путь зависит от рабочей папки. Здесь нельзя заранее назвать одну папку bin для всех способов запуска.",
+  "examplePathResult": "shopping.txt"
+},
+{
+  "id": "lab14-working-folder",
+  "codeDeckId": "lab14-paths-arrays",
+  "deckId": "text-files-paths-arrays",
+  "term": "Рабочая папка программы",
+  "exampleCode": "Console.WriteLine(Path.GetFullPath(\"demo.txt\"));",
+  "exampleResult": "Полный путь к demo.txt в текущей рабочей папке.",
+  "exampleNote": "Один и тот же относительный путь может указывать на разные файлы при разных рабочих папках.",
+  "kind": "Определите путь",
+  "challengeCode": "Console.WriteLine(Path.GetFullPath(\"demo.txt\"));",
+  "prompt": "Показанный код запустили дважды с разными рабочими папками. Выберите, что может измениться в его выводе.",
+  "options": [
+    "Полный путь к demo.txt",
+    "Строковый литерал demo.txt в исходном коде",
+    "Название метода GetFullPath",
+    "Тип результата метода станет string[]"
+  ],
+  "correctIndex": 0,
+  "explanation": "Один и тот же относительный путь может указывать на разные файлы при разных рабочих папках.",
+  "examplePathResult": "demo.txt"
+},
+{
+  "id": "lab14-current-directory",
+  "codeDeckId": "lab14-paths-arrays",
+  "deckId": "text-files-paths-arrays",
+  "term": "Environment.CurrentDirectory",
+  "exampleCode": "Console.WriteLine(Environment.CurrentDirectory);",
+  "exampleResult": "Полный путь текущей рабочей папки программы.",
+  "exampleNote": "CurrentDirectory сообщает рабочую папку, а не имя файла исходного кода или приложения.",
+  "kind": "Определите путь",
+  "challengeCode": "Console.WriteLine(Environment.CurrentDirectory);",
+  "prompt": "Выберите, что выведет Environment.CurrentDirectory в показанной строке.",
+  "options": [
+    "Полный путь текущей рабочей папки",
+    "Имя Program.cs",
+    "Содержимое shopping.txt",
+    "Имя исполняемого файла без пути"
+  ],
+  "correctIndex": 0,
+  "explanation": "CurrentDirectory сообщает рабочую папку, а не имя файла исходного кода или приложения.",
+  "examplePathResult": "."
+},
+{
+  "id": "lab14-get-full-path",
+  "codeDeckId": "lab14-paths-arrays",
+  "deckId": "text-files-paths-arrays",
+  "term": "Path.GetFullPath",
+  "exampleCode": "string relative = \"shopping.txt\";\nstring absolute = Path.GetFullPath(relative);\nConsole.WriteLine(relative);",
+  "exampleResult": "shopping.txt",
+  "exampleNote": "GetFullPath возвращает новую строку полного пути. Переменная relative по-прежнему хранит исходное относительное имя.",
+  "kind": "Что выведет код?",
+  "challengeCode": "string relative = \"shopping.txt\";\nstring absolute = Path.GetFullPath(relative);\nConsole.WriteLine(relative);",
+  "prompt": "Выберите полный вывод показанного кода в консоль. Строки в ответе идут в порядке вывода.",
+  "options": [
+    "shopping.txt",
+    "absolute",
+    "Полный путь вместо relative",
+    "Ошибка компиляции"
+  ],
+  "correctIndex": 0,
+  "challengeResult": "shopping.txt",
+  "explanation": "GetFullPath возвращает новую строку полного пути. Переменная relative по-прежнему хранит исходное относительное имя."
+},
+{
+  "id": "lab14-string-array",
+  "codeDeckId": "lab14-paths-arrays",
+  "deckId": "text-files-paths-arrays",
+  "term": "string[]",
+  "exampleCode": "File.WriteAllLines(\"shopping.txt\", new string[] { \"Яблоки\", \"Чай\" });\nstring[] items = File.ReadAllLines(\"shopping.txt\");\nConsole.WriteLine(items[0]);",
+  "exampleResult": "Яблоки",
+  "exampleNote": "Результат ReadAllLines — массив строк. По индексу 0 находится название первой покупки.",
+  "kind": "Что выведет код?",
+  "challengeCode": "File.WriteAllLines(\"shopping.txt\", new string[] { \"Яблоки\", \"Чай\" });\nstring[] items = File.ReadAllLines(\"shopping.txt\");\nConsole.WriteLine(items[0]);",
+  "prompt": "Выберите полный вывод показанного кода в консоль. Строки в ответе идут в порядке вывода.",
+  "options": [
+    "Яблоки",
+    "Чай",
+    "2",
+    "Ошибка компиляции"
+  ],
+  "correctIndex": 0,
+  "challengeResult": "Яблоки",
+  "explanation": "Результат ReadAllLines — массив строк. По индексу 0 находится название первой покупки."
+},
+{
+  "id": "lab14-empty-array",
+  "codeDeckId": "lab14-paths-arrays",
+  "deckId": "text-files-paths-arrays",
+  "term": "Array.Empty<string>()",
+  "exampleCode": "string[] items = Array.Empty<string>();\nConsole.WriteLine(items.Length);",
+  "exampleResult": "0",
+  "exampleNote": "Пустой массив существует и имеет Length = 0. В отличие от null, чтение его Length безопасно.",
+  "kind": "Что выведет код?",
+  "challengeCode": "string[] items = Array.Empty<string>();\nConsole.WriteLine(items.Length);",
+  "prompt": "Выберите полный вывод показанного кода в консоль. Строки в ответе идут в порядке вывода.",
+  "options": [
+    "0",
+    "1",
+    "NullReferenceException",
+    "Ошибка компиляции"
+  ],
+  "correctIndex": 0,
+  "challengeResult": "0",
+  "explanation": "Пустой массив существует и имеет Length = 0. В отличие от null, чтение его Length безопасно."
+},
+{
+  "id": "lab14-expand-array",
+  "codeDeckId": "lab14-paths-arrays",
+  "deckId": "text-files-paths-arrays",
+  "term": "Увеличение массива",
+  "exampleCode": "string[] items = { \"Чай\" };\nstring[] expanded = new string[items.Length + 1];\nArray.Copy(items, expanded, items.Length);\nexpanded[items.Length] = \"Рис\";\nitems = expanded;\nConsole.WriteLine(string.Join(\"|\", items));",
+  "exampleResult": "Чай|Рис",
+  "exampleNote": "Создаётся массив длиной 2, копируется старая покупка, новая помещается по индексу прежней длины 1. Затем items указывает на новый массив.",
+  "kind": "Что выведет код?",
+  "challengeCode": "string[] items = { \"Чай\" };\nstring[] expanded = new string[items.Length + 1];\nArray.Copy(items, expanded, items.Length);\nexpanded[items.Length] = \"Рис\";\nitems = expanded;\nConsole.WriteLine(string.Join(\"|\", items));",
+  "prompt": "Выберите полный вывод показанного кода в консоль. Строки в ответе идут в порядке вывода.",
+  "options": [
+    "Чай|Рис",
+    "Чай",
+    "Рис|Чай",
+    "Ошибка компиляции"
+  ],
+  "correctIndex": 0,
+  "challengeResult": "Чай|Рис",
+  "explanation": "Создаётся массив длиной 2, копируется старая покупка, новая помещается по индексу прежней длины 1. Затем items указывает на новый массив."
+},
+{
+  "id": "lab14-copy-elements",
+  "codeDeckId": "lab14-paths-arrays",
+  "deckId": "text-files-paths-arrays",
+  "term": "Копирование при расширении",
+  "exampleCode": "string[] items = { \"Яблоки\", \"Чай\" };\nstring[] expanded = new string[items.Length + 1];\nArray.Copy(items, expanded, items.Length);\nConsole.WriteLine(expanded[1]);",
+  "exampleResult": "Чай",
+  "exampleNote": "Копируются оба исходных элемента в том же порядке. Вторая ячейка expanded получает «Чай».",
+  "kind": "Что выведет код?",
+  "challengeCode": "string[] items = { \"Яблоки\", \"Чай\" };\nstring[] expanded = new string[items.Length + 1];\nArray.Copy(items, expanded, items.Length);\nConsole.WriteLine(expanded[1]);",
+  "prompt": "Выберите полный вывод показанного кода в консоль. Строки в ответе идут в порядке вывода.",
+  "options": [
+    "Чай",
+    "Яблоки",
+    "2",
+    "Ошибка компиляции"
+  ],
+  "correctIndex": 0,
+  "challengeResult": "Чай",
+  "explanation": "Копируются оба исходных элемента в том же порядке. Вторая ячейка expanded получает «Чай»."
+},
+{
+  "id": "lab14-replace-array-reference",
+  "codeDeckId": "lab14-paths-arrays",
+  "deckId": "text-files-paths-arrays",
+  "term": "Замена ссылки на массив",
+  "exampleCode": "string[] items = { \"Чай\" };\nstring[] expanded = new string[items.Length + 1];\nArray.Copy(items, expanded, items.Length);\nexpanded[items.Length] = \"Рис\";\nConsole.WriteLine(items.Length);\nitems = expanded;\nConsole.WriteLine(items.Length);",
+  "exampleResult": "1\n2",
+  "exampleNote": "Создание expanded не меняет длину старого массива. До замены ссылки items.Length равен 1, после items = expanded — 2.",
+  "kind": "Что выведет код?",
+  "challengeCode": "string[] items = { \"Чай\" };\nstring[] expanded = new string[items.Length + 1];\nArray.Copy(items, expanded, items.Length);\nexpanded[items.Length] = \"Рис\";\nConsole.WriteLine(items.Length);\nitems = expanded;\nConsole.WriteLine(items.Length);",
+  "prompt": "Выберите полный вывод показанного кода в консоль. Строки в ответе идут в порядке вывода.",
+  "options": [
+    "1\n2",
+    "2\n2",
+    "1\n1",
+    "Ошибка компиляции"
+  ],
+  "correctIndex": 0,
+  "challengeResult": "1\n2",
+  "explanation": "Создание expanded не меняет длину старого массива. До замены ссылки items.Length равен 1, после items = expanded — 2."
+},
+{
+  "id": "lab14-first-load",
+  "codeDeckId": "lab14-load-save-errors",
+  "deckId": "text-files-recovery",
+  "term": "FileNotFoundException",
+  "exampleCode": "// В рабочей папке нет shopping.txt.\nif (!LoadList(\"shopping.txt\", out string[] items)) return;\nConsole.WriteLine(items.Length);\nbool LoadList(string path, out string[] items)\n{\n    items = Array.Empty<string>();\n    try\n    {\n        items = File.ReadAllLines(path);\n        return true;\n    }\n    catch (FileNotFoundException)\n    {\n        Console.WriteLine(\"Первый запуск\");\n        return true;\n    }\n    catch (UnauthorizedAccessException)\n    {\n        Console.WriteLine(\"Ошибка доступа\");\n        return false;\n    }\n    catch (IOException)\n    {\n        Console.WriteLine(\"Ошибка чтения\");\n        return false;\n    }\n}",
+  "exampleResult": "Первый запуск\n0",
+  "exampleNote": "FileNotFoundException считается первым запуском. LoadList возвращает true и пустой массив, поэтому выполнение продолжается.",
+  "kind": "Что выведет код?",
+  "challengeCode": "// В рабочей папке нет shopping.txt.\nif (!LoadList(\"shopping.txt\", out string[] items)) return;\nConsole.WriteLine(items.Length);\nbool LoadList(string path, out string[] items)\n{\n    items = Array.Empty<string>();\n    try\n    {\n        items = File.ReadAllLines(path);\n        return true;\n    }\n    catch (FileNotFoundException)\n    {\n        Console.WriteLine(\"Первый запуск\");\n        return true;\n    }\n    catch (UnauthorizedAccessException)\n    {\n        Console.WriteLine(\"Ошибка доступа\");\n        return false;\n    }\n    catch (IOException)\n    {\n        Console.WriteLine(\"Ошибка чтения\");\n        return false;\n    }\n}",
+  "prompt": "Выберите полный вывод показанного кода в консоль. Строки в ответе идут в порядке вывода.",
+  "options": [
+    "Первый запуск\n0",
+    "Ошибка чтения",
+    "Первый запуск\n1",
+    "Ошибка компиляции"
+  ],
+  "correctIndex": 0,
+  "challengeResult": "Первый запуск\n0",
+  "explanation": "FileNotFoundException считается первым запуском. LoadList возвращает true и пустой массив, поэтому выполнение продолжается."
+},
+{
+  "id": "lab14-io-read-error",
+  "codeDeckId": "lab14-load-save-errors",
+  "deckId": "text-files-recovery",
+  "term": "IOException",
+  "exampleCode": "// Каталога no-folder нет.\ntry\n{\n    File.ReadAllLines(\"no-folder/shopping.txt\");\n}\ncatch (FileNotFoundException)\n{\n    Console.WriteLine(\"Первый запуск\");\n}\ncatch (IOException)\n{\n    Console.WriteLine(\"Ошибка чтения\");\n    return;\n}\nConsole.WriteLine(\"Меню\");",
+  "exampleResult": "Ошибка чтения",
+  "exampleNote": "Здесь отсутствует сам каталог. Ошибка ввода-вывода обрабатывается общим IOException, после сообщения запуск прекращается до меню.",
+  "kind": "Что выведет код?",
+  "challengeCode": "// Каталога no-folder нет.\ntry\n{\n    File.ReadAllLines(\"no-folder/shopping.txt\");\n}\ncatch (FileNotFoundException)\n{\n    Console.WriteLine(\"Первый запуск\");\n}\ncatch (IOException)\n{\n    Console.WriteLine(\"Ошибка чтения\");\n    return;\n}\nConsole.WriteLine(\"Меню\");",
+  "prompt": "Выберите полный вывод показанного кода в консоль. Строки в ответе идут в порядке вывода.",
+  "options": [
+    "Ошибка чтения",
+    "Первый запуск\nМеню",
+    "Ошибка чтения\nМеню",
+    "Ошибка компиляции"
+  ],
+  "correctIndex": 0,
+  "challengeResult": "Ошибка чтения",
+  "explanation": "Здесь отсутствует сам каталог. Ошибка ввода-вывода обрабатывается общим IOException, после сообщения запуск прекращается до меню."
+},
+{
+  "id": "lab14-access-error",
+  "codeDeckId": "lab14-load-save-errors",
+  "deckId": "text-files-recovery",
+  "term": "UnauthorizedAccessException",
+  "exampleCode": "try\n{\n    // Учебная модель отказа доступа при чтении.\n    throw new UnauthorizedAccessException(\"Нет доступа\");\n}\ncatch (UnauthorizedAccessException)\n{\n    Console.WriteLine(\"Ошибка доступа\");\n    return;\n}\ncatch (IOException)\n{\n    Console.WriteLine(\"Ошибка чтения\");\n    return;\n}\nConsole.WriteLine(\"Меню\");",
+  "exampleResult": "Ошибка доступа",
+  "exampleNote": "Отказ доступа в этом учебном примере смоделирован throw. Выполняется его отдельный catch, и return не допускает перехода к меню.",
+  "kind": "Что выведет код?",
+  "challengeCode": "try\n{\n    // Учебная модель отказа доступа при чтении.\n    throw new UnauthorizedAccessException(\"Нет доступа\");\n}\ncatch (UnauthorizedAccessException)\n{\n    Console.WriteLine(\"Ошибка доступа\");\n    return;\n}\ncatch (IOException)\n{\n    Console.WriteLine(\"Ошибка чтения\");\n    return;\n}\nConsole.WriteLine(\"Меню\");",
+  "prompt": "В примере ошибка доступа смоделирована через throw. Выберите полный вывод в консоль.",
+  "options": [
+    "Ошибка доступа",
+    "Ошибка чтения",
+    "Ошибка доступа\nМеню",
+    "Ошибка компиляции"
+  ],
+  "correctIndex": 0,
+  "challengeResult": "Ошибка доступа",
+  "explanation": "Отказ доступа в этом учебном примере смоделирован throw. Выполняется его отдельный catch, и return не допускает перехода к меню."
+},
+{
+  "id": "lab14-file-catch-order",
+  "codeDeckId": "lab14-load-save-errors",
+  "deckId": "text-files-recovery",
+  "term": "Порядок обработчиков файловых ошибок",
+  "exampleCode": "// Файла missing.txt нет.\ntry\n{\n    File.ReadAllLines(\"missing.txt\");\n}\ncatch (FileNotFoundException)\n{\n    Console.WriteLine(\"Первый запуск\");\n}\ncatch (IOException)\n{\n    Console.WriteLine(\"Ошибка чтения\");\n}",
+  "exampleResult": "Первый запуск",
+  "exampleNote": "Отсутствие файла обрабатывается конкретным типом до общего IOException.",
+  "kind": "Выберите обработчики",
+  "challengeCode": "// Файла missing.txt нет.\ntry\n{\n    File.ReadAllLines(\"missing.txt\");\n}\ncatch (IOException)\n{\n    Console.WriteLine(\"Первый запуск\");\n}\ncatch (FileNotFoundException)\n{\n    Console.WriteLine(\"Ошибка чтения\");\n}",
+  "prompt": "Нужно отдельно обработать первый запуск без файла и остальные ошибки ввода-вывода. Выберите порядок catch, при котором код соберётся и сохранит это различие.",
+  "options": [
+    "Сначала FileNotFoundException, затем IOException",
+    "Сначала IOException, затем FileNotFoundException",
+    "Два catch(IOException) подряд",
+    "Достаточно catch(FormatException)"
+  ],
+  "correctIndex": 0,
+  "explanation": "FileNotFoundException является разновидностью IOException. После общего catch конкретный уже недостижим, что вызывает ошибку компиляции."
+},
+{
+  "id": "lab14-load-before-menu",
+  "codeDeckId": "lab14-load-save-errors",
+  "deckId": "text-files-recovery",
+  "term": "Загрузка перед меню",
+  "exampleCode": "File.WriteAllLines(\"shopping.txt\", new string[] { \"Яблоки\", \"Чай\" });\nif (!LoadList(\"shopping.txt\", out string[] items)) return;\nConsole.WriteLine(\"Меню\");\nConsole.WriteLine(items.Length);\nbool LoadList(string path, out string[] items)\n{\n    items = Array.Empty<string>();\n    try\n    {\n        items = File.ReadAllLines(path);\n        return true;\n    }\n    catch (FileNotFoundException)\n    {\n        Console.WriteLine(\"Первый запуск\");\n        return true;\n    }\n    catch (UnauthorizedAccessException)\n    {\n        Console.WriteLine(\"Ошибка доступа\");\n        return false;\n    }\n    catch (IOException)\n    {\n        Console.WriteLine(\"Ошибка чтения\");\n        return false;\n    }\n}",
+  "exampleResult": "Меню\n2",
+  "exampleNote": "Файл заранее содержит две покупки. Загрузка завершается до показа меню; после неё items содержит восстановленные данные.",
+  "kind": "Что выведет код?",
+  "challengeCode": "File.WriteAllLines(\"shopping.txt\", new string[] { \"Яблоки\", \"Чай\" });\nif (!LoadList(\"shopping.txt\", out string[] items)) return;\nConsole.WriteLine(\"Меню\");\nConsole.WriteLine(items.Length);\nbool LoadList(string path, out string[] items)\n{\n    items = Array.Empty<string>();\n    try\n    {\n        items = File.ReadAllLines(path);\n        return true;\n    }\n    catch (FileNotFoundException)\n    {\n        Console.WriteLine(\"Первый запуск\");\n        return true;\n    }\n    catch (UnauthorizedAccessException)\n    {\n        Console.WriteLine(\"Ошибка доступа\");\n        return false;\n    }\n    catch (IOException)\n    {\n        Console.WriteLine(\"Ошибка чтения\");\n        return false;\n    }\n}",
+  "prompt": "Выберите полный вывод показанного кода в консоль. Строки в ответе идут в порядке вывода.",
+  "options": [
+    "Меню\n2",
+    "Меню\n0",
+    "Первый запуск\nМеню\n0",
+    "Ошибка компиляции"
+  ],
+  "correctIndex": 0,
+  "challengeResult": "Меню\n2",
+  "explanation": "Файл заранее содержит две покупки. Загрузка завершается до показа меню; после неё items содержит восстановленные данные."
+},
+{
+  "id": "lab14-stop-on-read-error",
+  "codeDeckId": "lab14-load-save-errors",
+  "deckId": "text-files-recovery",
+  "term": "Прекращение запуска при ошибке чтения",
+  "exampleCode": "File.WriteAllLines(\"shopping.txt\", new string[] { \"Чай\" });\n// Каталога no-folder нет; эта загрузка завершится ошибкой.\nif (!LoadList(\"no-folder/shopping.txt\", out string[] items)) return;\nFile.WriteAllLines(\"shopping.txt\", items);\nConsole.WriteLine(\"Меню\");\nbool LoadList(string path, out string[] items)\n{\n    items = Array.Empty<string>();\n    try\n    {\n        items = File.ReadAllLines(path);\n        return true;\n    }\n    catch (FileNotFoundException)\n    {\n        Console.WriteLine(\"Первый запуск\");\n        return true;\n    }\n    catch (UnauthorizedAccessException)\n    {\n        Console.WriteLine(\"Ошибка доступа\");\n        return false;\n    }\n    catch (IOException)\n    {\n        Console.WriteLine(\"Ошибка чтения\");\n        return false;\n    }\n}",
+  "exampleResult": "Ошибка чтения",
+  "exampleNote": "LoadList сообщает об иной ошибке чтения и возвращает false. Вызывающий код прекращает запуск, не доходит до записи пустого массива и сохраняет прежний shopping.txt.",
+  "kind": "Что выведет код?",
+  "challengeCode": "File.WriteAllLines(\"shopping.txt\", new string[] { \"Чай\" });\n// Каталога no-folder нет; эта загрузка завершится ошибкой.\nif (!LoadList(\"no-folder/shopping.txt\", out string[] items)) return;\nFile.WriteAllLines(\"shopping.txt\", items);\nConsole.WriteLine(\"Меню\");\nbool LoadList(string path, out string[] items)\n{\n    items = Array.Empty<string>();\n    try\n    {\n        items = File.ReadAllLines(path);\n        return true;\n    }\n    catch (FileNotFoundException)\n    {\n        Console.WriteLine(\"Первый запуск\");\n        return true;\n    }\n    catch (UnauthorizedAccessException)\n    {\n        Console.WriteLine(\"Ошибка доступа\");\n        return false;\n    }\n    catch (IOException)\n    {\n        Console.WriteLine(\"Ошибка чтения\");\n        return false;\n    }\n}",
+  "prompt": "Выберите полный вывод показанного кода в консоль. Строки в ответе идут в порядке вывода.",
+  "options": [
+    "Ошибка чтения",
+    "Ошибка чтения\nМеню",
+    "Первый запуск\nМеню",
+    "Ошибка компиляции"
+  ],
+  "correctIndex": 0,
+  "challengeResult": "Ошибка чтения",
+  "explanation": "LoadList сообщает об иной ошибке чтения и возвращает false. Вызывающий код прекращает запуск, не доходит до записи пустого массива и сохраняет прежний shopping.txt."
+},
+{
+  "id": "lab14-save-by-command",
+  "codeDeckId": "lab14-load-save-errors",
+  "deckId": "text-files-recovery",
+  "term": "Сохранение по команде",
+  "exampleCode": "File.WriteAllLines(\"shopping.txt\", new string[] { \"Чай\" });\nstring[] items = { \"Чай\", \"Рис\" };\nstring command = \"0\";\nif (command == \"3\")\n{\n    File.WriteAllLines(\"shopping.txt\", items);\n}\n// После проверки команды исследуем сохранённую версию.\nConsole.WriteLine(string.Join(\"|\", File.ReadAllLines(\"shopping.txt\")));",
+  "exampleResult": "Чай",
+  "exampleNote": "Условие сохранения ложно: command равна 0. Добавленная только в памяти покупка «Рис» не попала в файл. Последняя строка специально читает файл для проверки результата этого фрагмента.",
+  "kind": "Что выведет код?",
+  "challengeCode": "File.WriteAllLines(\"shopping.txt\", new string[] { \"Чай\" });\nstring[] items = { \"Чай\", \"Рис\" };\nstring command = \"0\";\nif (command == \"3\")\n{\n    File.WriteAllLines(\"shopping.txt\", items);\n}\n// После проверки команды исследуем сохранённую версию.\nConsole.WriteLine(string.Join(\"|\", File.ReadAllLines(\"shopping.txt\")));",
+  "prompt": "Показан фрагмент решения о сохранении, а последняя строка проверяет файл. Выберите, какие сохранённые покупки она выведет при command = \"0\".",
+  "options": [
+    "Чай",
+    "Чай|Рис",
+    "Рис",
+    "Ошибка компиляции"
+  ],
+  "correctIndex": 0,
+  "challengeResult": "Чай",
+  "explanation": "Условие сохранения ложно: command равна 0. Добавленная только в памяти покупка «Рис» не попала в файл. Последняя строка специально читает файл для проверки результата этого фрагмента."
+},
+{
+  "id": "lab14-save-success-after-write",
+  "codeDeckId": "lab14-load-save-errors",
+  "deckId": "text-files-recovery",
+  "term": "Подтверждение успешной записи",
+  "exampleCode": "string[] items = { \"Чай\", \"Рис\" };\n// Каталога no-folder нет.\nSaveList(\"no-folder/shopping.txt\", items);\nConsole.WriteLine(\"Меню\");\nbool SaveList(string path, string[] items)\n{\n    try\n    {\n        File.WriteAllLines(path, items);\n        Console.WriteLine(\"Сохранено\");\n        return true;\n    }\n    catch (UnauthorizedAccessException)\n    {\n        Console.WriteLine(\"Ошибка доступа\");\n        return false;\n    }\n    catch (IOException)\n    {\n        Console.WriteLine(\"Ошибка записи\");\n        return false;\n    }\n}",
+  "exampleResult": "Ошибка записи\nМеню",
+  "exampleNote": "Запись не завершается из-за отсутствующего каталога. Сообщение «Сохранено» после File.WriteAllLines пропускается. Ошибка обработана, вызывающий код может снова показать меню.",
+  "kind": "Что выведет код?",
+  "challengeCode": "string[] items = { \"Чай\", \"Рис\" };\n// Каталога no-folder нет.\nSaveList(\"no-folder/shopping.txt\", items);\nConsole.WriteLine(\"Меню\");\nbool SaveList(string path, string[] items)\n{\n    try\n    {\n        File.WriteAllLines(path, items);\n        Console.WriteLine(\"Сохранено\");\n        return true;\n    }\n    catch (UnauthorizedAccessException)\n    {\n        Console.WriteLine(\"Ошибка доступа\");\n        return false;\n    }\n    catch (IOException)\n    {\n        Console.WriteLine(\"Ошибка записи\");\n        return false;\n    }\n}",
+  "prompt": "Выберите полный вывод показанного кода в консоль. Строки в ответе идут в порядке вывода.",
+  "options": [
+    "Ошибка записи\nМеню",
+    "Сохранено\nМеню",
+    "Сохранено\nОшибка записи\nМеню",
+    "Ошибка компиляции"
+  ],
+  "correctIndex": 0,
+  "challengeResult": "Ошибка записи\nМеню",
+  "explanation": "Запись не завершается из-за отсутствующего каталога. Сообщение «Сохранено» после File.WriteAllLines пропускается. Ошибка обработана, вызывающий код может снова показать меню."
+},
+{
+  "id": "lab14-save-retry-memory",
+  "codeDeckId": "lab14-load-save-errors",
+  "deckId": "text-files-recovery",
+  "term": "Сохранение списка при ошибке записи",
+  "exampleCode": "string[] items = { \"Чай\", \"Рис\" };\n// Первая попытка неудачна: каталога no-folder нет.\nSaveList(\"no-folder/shopping.txt\", items);\n// Повторная попытка с доступным путём и тем же массивом.\nSaveList(\"shopping.txt\", items);\nConsole.WriteLine(string.Join(\"|\", File.ReadAllLines(\"shopping.txt\")));\nbool SaveList(string path, string[] items)\n{\n    try\n    {\n        File.WriteAllLines(path, items);\n        Console.WriteLine(\"Сохранено\");\n        return true;\n    }\n    catch (UnauthorizedAccessException)\n    {\n        Console.WriteLine(\"Ошибка доступа\");\n        return false;\n    }\n    catch (IOException)\n    {\n        Console.WriteLine(\"Ошибка записи\");\n        return false;\n    }\n}",
+  "exampleResult": "Ошибка записи\nСохранено\nЧай|Рис",
+  "exampleNote": "Неудачная запись не очищает items. Повторная попытка сохраняет тот же список целиком и сообщает об успехе после записи.",
+  "kind": "Что выведет код?",
+  "challengeCode": "string[] items = { \"Чай\", \"Рис\" };\n// Первая попытка неудачна: каталога no-folder нет.\nSaveList(\"no-folder/shopping.txt\", items);\n// Повторная попытка с доступным путём и тем же массивом.\nSaveList(\"shopping.txt\", items);\nConsole.WriteLine(string.Join(\"|\", File.ReadAllLines(\"shopping.txt\")));\nbool SaveList(string path, string[] items)\n{\n    try\n    {\n        File.WriteAllLines(path, items);\n        Console.WriteLine(\"Сохранено\");\n        return true;\n    }\n    catch (UnauthorizedAccessException)\n    {\n        Console.WriteLine(\"Ошибка доступа\");\n        return false;\n    }\n    catch (IOException)\n    {\n        Console.WriteLine(\"Ошибка записи\");\n        return false;\n    }\n}",
+  "prompt": "Выберите полный вывод показанного кода в консоль. Строки в ответе идут в порядке вывода.",
+  "options": [
+    "Ошибка записи\nСохранено\nЧай|Рис",
+    "Ошибка записи\nСохранено",
+    "Ошибка записи\nЧай|Рис",
+    "Ошибка компиляции"
+  ],
+  "correctIndex": 0,
+  "challengeResult": "Ошибка записи\nСохранено\nЧай|Рис",
+  "explanation": "Неудачная запись не очищает items. Повторная попытка сохраняет тот же список целиком и сообщает об успехе после записи."
+},
+{
+  "id": "lab14-validate-name",
+  "codeDeckId": "lab14-load-save-errors",
+  "deckId": "text-files-recovery",
+  "term": "Проверка названия покупки",
+  "exampleCode": "#nullable enable\nstring[] items = { \"Чай\" };\nstring? input = Console.ReadLine();\nif (input == null)\n{\n    Console.WriteLine(\"Конец ввода\");\n    return;\n}\nint previousCount = items.Length;\nitems = AddItem(items, input);\nif (items.Length == previousCount)\n    Console.WriteLine(\"Название пустое\");\nelse\n    Console.WriteLine(string.Join(\"|\", items));\nstring[] AddItem(string[] items, string name)\n{\n    name = name.Trim();\n    if (string.IsNullOrWhiteSpace(name)) return items;\n    string[] expanded = new string[items.Length + 1];\n    Array.Copy(items, expanded, items.Length);\n    expanded[items.Length] = name;\n    return expanded;\n}",
+  "exampleResult": "Чай|Яблоки",
+  "exampleNote": "AddItem убирает пробелы по краям. Пустое после проверки название не добавляется; null отдельно обрабатывается до вызова метода.",
+  "kind": "Что выведет код?",
+  "challengeCode": "#nullable enable\nstring[] items = { \"Чай\" };\nstring? input = Console.ReadLine();\nif (input == null)\n{\n    Console.WriteLine(\"Конец ввода\");\n    return;\n}\nint previousCount = items.Length;\nitems = AddItem(items, input);\nif (items.Length == previousCount)\n    Console.WriteLine(\"Название пустое\");\nelse\n    Console.WriteLine(string.Join(\"|\", items));\nstring[] AddItem(string[] items, string name)\n{\n    name = name.Trim();\n    if (string.IsNullOrWhiteSpace(name)) return items;\n    string[] expanded = new string[items.Length + 1];\n    Array.Copy(items, expanded, items.Length);\n    expanded[items.Length] = name;\n    return expanded;\n}",
+  "prompt": "Используйте ввод, указанный под кодом. Выберите результат проверки и добавления покупки, который будет выведен в консоль.",
+  "options": [
+    "Название пустое",
+    "Чай|  ",
+    "Чай",
+    "Ошибка компиляции"
+  ],
+  "correctIndex": 0,
+  "challengeResult": "Название пустое",
+  "explanation": "AddItem убирает пробелы по краям. Пустое после проверки название не добавляется; null отдельно обрабатывается до вызова метода.",
+  "exampleInput": " Яблоки ",
+  "challengeInput": "   ",
+  "variants": [
+    {
+      "challengeCode": "#nullable enable\nstring[] items = { \"Чай\" };\nstring? input = Console.ReadLine();\nif (input == null)\n{\n    Console.WriteLine(\"Конец ввода\");\n    return;\n}\nint previousCount = items.Length;\nitems = AddItem(items, input);\nif (items.Length == previousCount)\n    Console.WriteLine(\"Название пустое\");\nelse\n    Console.WriteLine(string.Join(\"|\", items));\nstring[] AddItem(string[] items, string name)\n{\n    name = name.Trim();\n    if (string.IsNullOrWhiteSpace(name)) return items;\n    string[] expanded = new string[items.Length + 1];\n    Array.Copy(items, expanded, items.Length);\n    expanded[items.Length] = name;\n    return expanded;\n}",
+      "challengeInput": "",
+      "challengeResult": "Название пустое",
+      "prompt": "Используйте ввод, указанный под кодом. Выберите результат проверки и добавления покупки, который будет выведен в консоль.",
+      "options": [
+        "Название пустое",
+        "Чай",
+        "Чай|Рис",
+        "Конец ввода"
+      ],
+      "correctIndex": 0,
+      "explanation": "Enter возвращает пустую строку. AddItem сохраняет прежний массив без добавления покупки."
+    },
+    {
+      "challengeCode": "#nullable enable\nstring[] items = { \"Чай\" };\nstring? input = Console.ReadLine();\nif (input == null)\n{\n    Console.WriteLine(\"Конец ввода\");\n    return;\n}\nint previousCount = items.Length;\nitems = AddItem(items, input);\nif (items.Length == previousCount)\n    Console.WriteLine(\"Название пустое\");\nelse\n    Console.WriteLine(string.Join(\"|\", items));\nstring[] AddItem(string[] items, string name)\n{\n    name = name.Trim();\n    if (string.IsNullOrWhiteSpace(name)) return items;\n    string[] expanded = new string[items.Length + 1];\n    Array.Copy(items, expanded, items.Length);\n    expanded[items.Length] = name;\n    return expanded;\n}",
+      "challengeInput": " Рис ",
+      "challengeResult": "Чай|Рис",
+      "prompt": "Используйте ввод, указанный под кодом. Выберите результат проверки и добавления покупки, который будет выведен в консоль.",
+      "options": [
+        "Чай|Рис",
+        "Чай",
+        "Название пустое",
+        "Конец ввода"
+      ],
+      "correctIndex": 0,
+      "explanation": "Крайние пробелы удаляются, а «Рис» добавляется после «Чай»."
+    },
+    {
+      "challengeCode": "#nullable enable\nstring[] items = { \"Чай\" };\nstring? input = Console.ReadLine();\nif (input == null)\n{\n    Console.WriteLine(\"Конец ввода\");\n    return;\n}\nint previousCount = items.Length;\nitems = AddItem(items, input);\nif (items.Length == previousCount)\n    Console.WriteLine(\"Название пустое\");\nelse\n    Console.WriteLine(string.Join(\"|\", items));\nstring[] AddItem(string[] items, string name)\n{\n    name = name.Trim();\n    if (string.IsNullOrWhiteSpace(name)) return items;\n    string[] expanded = new string[items.Length + 1];\n    Array.Copy(items, expanded, items.Length);\n    expanded[items.Length] = name;\n    return expanded;\n}",
+      "challengeInput": null,
+      "challengeResult": "Конец ввода",
+      "prompt": "Используйте ввод, указанный под кодом. Выберите результат проверки и добавления покупки, который будет выведен в консоль.",
+      "options": [
+        "Конец ввода",
+        "Чай",
+        "Чай|Рис",
+        "Название пустое"
+      ],
+      "correctIndex": 0,
+      "explanation": "Конец потока проверяется до вызова AddItem; программа завершает фрагмент."
+    }
+  ]
 }
 ];

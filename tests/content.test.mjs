@@ -17,8 +17,8 @@ const terms = new Set(topics.flatMap((topic) =>
 ));
 
 test("all code lessons link to real glossary terms", () => {
-  assert.equal(terms.size, 366);
-  assert.equal(lessons.length, 448);
+  assert.equal(terms.size, 396);
+  assert.equal(lessons.length, 478);
   assert.equal(new Set(lessons.map((lesson) => lesson.id)).size, lessons.length);
   for (const lesson of lessons) {
     assert.ok(terms.has(`${lesson.deckId}:${lesson.term}`), `${lesson.id} is not linked to a term`);
@@ -58,7 +58,7 @@ test("every practice version states a choice and explains the order of multiline
   }
 });
 
-test("labs 4 through 13 have separate practice questions", () => {
+test("labs 4 through 14 have separate practice questions", () => {
   const lab4 = lessons.filter((lesson) => ["variables-values", "csharp-data-types", "typing-and-output"].includes(lesson.deckId));
   const lab5 = lessons.filter((lesson) => lesson.deckId === "input-operations-conversions");
   const lab6 = lessons.filter((lesson) => ["conditions-logic", "branching-menu"].includes(lesson.deckId));
@@ -73,6 +73,7 @@ test("labs 4 through 13 have separate practice questions", () => {
   assert.equal(lessons.filter(lesson => lesson.codeDeckId.startsWith("lab11-")).length, 30);
   assert.equal(lessons.filter(lesson => lesson.codeDeckId.startsWith("lab12-")).length, 20);
   assert.equal(lessons.filter(lesson => lesson.codeDeckId.startsWith("lab13-")).length, 30);
+  assert.equal(lessons.filter(lesson => lesson.codeDeckId.startsWith("lab14-")).length, 30);
   assert.deepEqual(Array.from(tags["conditions-logic"]), ["ЛБ 6"]);
   assert.deepEqual(Array.from(tags["branching-menu"]), ["ЛБ 6"]);
   assert.deepEqual(Array.from(tags["loops-basics"]), ["ЛБ 7"]);
@@ -110,7 +111,7 @@ test("lab 6 first deck balances boolean answers in base questions and across alt
 });
 
 test("each practice deck has 5–10 examples, one lab, and every lesson belongs to exactly one deck", () => {
-  assert.equal(codeDecks.length, 48);
+  assert.equal(codeDecks.length, 51);
   assert.equal(new Set(codeDecks.map(deck => deck.id)).size, codeDecks.length);
   for (const deck of codeDecks) {
     const members = lessons.filter(lesson => lesson.codeDeckId === deck.id);
@@ -134,13 +135,14 @@ test("practice only uses introduced syntax and early labs have no branching", ()
       const code = [lesson.exampleCode, version.challengeCode].join("\n");
       const lab = codeDecks.find(deck => deck.id === lesson.codeDeckId).lab;
       assert.doesNotMatch(code, /GetType|InvariantCulture|:D\d/, lesson.id);
-      if (lab !== "ЛБ 13") assert.doesNotMatch(code, /\b(try|catch|finally|throw)\b/, lesson.id);
-      if (!["ЛБ 11", "ЛБ 12", "ЛБ 13"].includes(lab)) assert.doesNotMatch(code, /string\?|\bnull\b/, lesson.id);
+      if (!["ЛБ 13", "ЛБ 14"].includes(lab)) assert.doesNotMatch(code, /\b(try|catch|finally|throw)\b/, lesson.id);
+      if (!["ЛБ 11", "ЛБ 12", "ЛБ 13", "ЛБ 14"].includes(lab)) assert.doesNotMatch(code, /string\?|\bnull\b/, lesson.id);
       assert.doesNotMatch(code, /\bMath\.|\bOrderBy\b|\bToArray\b|\bList</, lesson.id);
-      if (lab !== "ЛБ 10") assert.doesNotMatch(code, /\bArray\./, lesson.id);
-      if (!["ЛБ 8", "ЛБ 10", "ЛБ 11", "ЛБ 12", "ЛБ 13"].includes(lab)) assert.doesNotMatch(code, /\bforeach\b|\bnew\s+\w+\s*\[/, lesson.id);
-      if (!["ЛБ 8", "ЛБ 9", "ЛБ 10", "ЛБ 11", "ЛБ 12", "ЛБ 13"].includes(lab)) assert.doesNotMatch(code, /TryParse|\bout\b/, lesson.id);
-      if (!["ЛБ 9", "ЛБ 10", "ЛБ 11", "ЛБ 12", "ЛБ 13"].includes(lab)) assert.doesNotMatch(code, /:F2|\b(?:void|int|bool|double|decimal)\s+\w+\s*\(/, lesson.id);
+      if (!["ЛБ 10", "ЛБ 14"].includes(lab)) assert.doesNotMatch(code, /\bArray\./, lesson.id);
+      if (lab !== "ЛБ 14") assert.doesNotMatch(code, /\bFile\.|\bPath\.|\bEnvironment\.CurrentDirectory/, lesson.id);
+      if (!["ЛБ 8", "ЛБ 10", "ЛБ 11", "ЛБ 12", "ЛБ 13", "ЛБ 14"].includes(lab)) assert.doesNotMatch(code, /\bforeach\b|\bnew\s+\w+\s*\[/, lesson.id);
+      if (!["ЛБ 8", "ЛБ 9", "ЛБ 10", "ЛБ 11", "ЛБ 12", "ЛБ 13", "ЛБ 14"].includes(lab)) assert.doesNotMatch(code, /TryParse|\bout\b/, lesson.id);
+      if (!["ЛБ 9", "ЛБ 10", "ЛБ 11", "ЛБ 12", "ЛБ 13", "ЛБ 14"].includes(lab)) assert.doesNotMatch(code, /:F2|\b(?:void|int|bool|double|decimal)\s+\w+\s*\(/, lesson.id);
       if (["ЛБ 4", "ЛБ 5"].includes(lab)) {
         const syntax = code.replaceAll("/* ??? */", "").replace(/"(?:\\.|[^"\\])*"|'(?:\\.|[^'\\])*'/g, "");
         assert.doesNotMatch(syntax, /\bif\b|\belse\b|\bswitch\b|\?/, lesson.id);
@@ -163,7 +165,7 @@ test("fill-in questions have a single placeholder, four choices and an executabl
 });
 
 test("alternative questions have distinct code, four unique options, and verified result metadata", () => {
-  assert.equal(lessons.filter(lesson => lesson.variants?.length).length, 168);
+  assert.equal(lessons.filter(lesson => lesson.variants?.length).length, 171);
   let alternatives = 0;
   for (const lesson of lessons) {
     const versionKey = version => JSON.stringify([version.challengeCode,
@@ -179,7 +181,7 @@ test("alternative questions have distinct code, four unique options, and verifie
       assert.ok(variant.explanation, lesson.id);
     }
   }
-  assert.equal(alternatives, 1512);
+  assert.equal(alternatives, 1521);
 });
 
 test("new mixed decks change results and keep eight hidden versions per question", () => {
@@ -245,4 +247,26 @@ test("lab 13 separates input rejection, method errors and finally with explicit 
   assert.equal(cases.get("2"), "Успех\nПопытка\n2");
   const optional = lessons.find(lesson => lesson.id === "lab13-cancel-optional");
   assert.match(optional.prompt, /Дополнительная/);
+});
+
+test("lab 14 covers file methods, working-directory examples and all name-input states", () => {
+  const topic = topics.find(topic => topic.id === "csharp-text-files");
+  assert.equal(topic.decks.length, 3);
+  assert.ok(topic.decks.every(deck => deck.terms.length === 10));
+  for (const deck of topic.decks) assert.deepEqual(Array.from(tags[deck.id]), ["ЛБ 14"]);
+  const names = topic.decks.flatMap(deck => deck.terms.map(item => item.term));
+  for (const term of ["File.ReadAllText", "File.WriteAllText", "File.ReadAllLines", "File.WriteAllLines", "Path.GetFullPath", "Array.Empty<string>()", "FileNotFoundException", "IOException", "UnauthorizedAccessException"]) {
+    assert.ok(names.includes(term), term);
+  }
+  for (const lesson of lessons.filter(lesson => lesson.examplePathResult !== undefined)) {
+    assert.ok(lesson.id.startsWith("lab14-"));
+    assert.match(lesson.examplePathResult, /^(?:\.|[A-Za-z0-9_-]+\.txt)$/);
+    assert.match(lesson.exampleCode, /Path\.GetFullPath|Environment\.CurrentDirectory/);
+  }
+  const name = lessons.find(lesson => lesson.id === "lab14-validate-name");
+  const versions = new Map([name, ...name.variants].map(version => [version.challengeInput, version.challengeResult]));
+  assert.equal(versions.get("   "), "Название пустое");
+  assert.equal(versions.get(""), "Название пустое");
+  assert.equal(versions.get(null), "Конец ввода");
+  assert.equal(versions.get(" Рис "), "Чай|Рис");
 });

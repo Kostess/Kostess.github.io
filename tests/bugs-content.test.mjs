@@ -9,10 +9,10 @@ const topics = vm.runInNewContext(`${read("terms-content.js")}\ntopics`);
 const terms = new Set(topics.flatMap(topic => topic.decks.flatMap(deck =>
   deck.terms.map(item => `${deck.id}:${item.term}`))));
 
-test("225 error cards have stable IDs, glossary links, and twenty-five cards per supported lab", () => {
-  assert.equal(cards.length, 225);
-  assert.equal(new Set(cards.map(card => card.id)).size, 225);
-  for (const lab of [4, 5, 6, 7, 8, 9, 11, 12, 13]) {
+test("250 error cards have stable IDs, glossary links, and twenty-five cards per supported lab", () => {
+  assert.equal(cards.length, 250);
+  assert.equal(new Set(cards.map(card => card.id)).size, 250);
+  for (const lab of [4, 5, 6, 7, 8, 9, 11, 12, 13, 14]) {
     assert.equal(cards.filter(card => card.lab === `ЛБ ${lab}`).length, 25);
   }
   for (const card of cards) {
@@ -35,6 +35,7 @@ test("each correction changes exactly the highlighted line and respects the cour
     const lab = Number(card.lab.replace(/\D/g, ""));
     assert.doesNotMatch(source, /\b(class|ref)\b/, card.id);
     if (lab < 13) assert.doesNotMatch(source, /\b(try|catch|finally|throw)\b/, card.id);
+    if (lab < 14) assert.doesNotMatch(source, /\bFile\.|\bPath\.|\bEnvironment\.CurrentDirectory/, card.id);
     if (lab < 12) assert.doesNotMatch(source, /\bforeach\b/, card.id);
     if (lab < 11) assert.doesNotMatch(source, /\bnull\b|string\?/, card.id);
     if (lab <= 5) assert.doesNotMatch(source, /\b(if|switch|for|while)\b/, card.id);

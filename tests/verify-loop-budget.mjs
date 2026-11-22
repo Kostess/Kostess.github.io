@@ -54,10 +54,11 @@ var references = ((string)AppContext.GetData("TRUSTED_PLATFORM_ASSEMBLIES"))
     .Distinct().Select(path => MetadataReference.CreateFromFile(path)).ToArray();
 using var document = JsonDocument.Parse(File.ReadAllText("checks.json"));
 var failures = new List<string>();
+int fixtureNumber = 0;
 foreach (var check in document.RootElement.EnumerateArray())
 {
     string id = check.GetProperty("id").GetString();
-    var tree = CSharpSyntaxTree.ParseText("using System;\n" + check.GetProperty("code").GetString());
+    var tree = CSharpSyntaxTree.ParseText("using System;\nusing System.IO;\n" + check.GetProperty("code").GetString());
     var rewriter = new LoopRewriter();
     var root = (CSharpSyntaxNode)rewriter.Visit(tree.GetRoot());
     var compilation = CSharpCompilation.Create("Loop_" + Guid.NewGuid().ToString("N"),
@@ -71,16 +72,20 @@ foreach (var check in document.RootElement.EnumerateArray())
     var loader = new AssemblyLoadContext("loop", isCollectible: true);
     var previousOut = Console.Out;
     var previousIn = Console.In;
+    var previousDirectory = Environment.CurrentDirectory;
+    var caseDirectory = Path.Combine(previousDirectory, "cases", (fixtureNumber++).ToString(CultureInfo.InvariantCulture));
+    Directory.CreateDirectory(caseDirectory);
     using var input = new StringReader(check.GetProperty("input").GetString());
     try
     {
+        Environment.CurrentDirectory = caseDirectory;
         var entry = loader.LoadFromStream(binary).EntryPoint;
         Console.SetOut(TextWriter.Null);
         Console.SetIn(input);
         entry.Invoke(null, entry.GetParameters().Length == 0 ? null : new object[] { Array.Empty<string>() });
     }
     catch (Exception error) { throw new Exception(id, error); }
-    finally { Console.SetOut(previousOut); Console.SetIn(previousIn); loader.Unload(); }
+    finally { Console.SetOut(previousOut); Console.SetIn(previousIn); Environment.CurrentDirectory = previousDirectory; loader.Unload(); }
     int budget = check.GetProperty("budget").GetInt32();
     int work = LoopWorkProbe.Counts.Sum();
     if (work > budget) failures.Add(id + ": " + work + " body executions, budget " + budget);

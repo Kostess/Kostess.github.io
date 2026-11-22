@@ -40,7 +40,7 @@ foreach (var card in document.RootElement.EnumerateArray())
     {
         string code = card.GetProperty(fixedVersion ? "fixedCode" : "brokenCode").GetString();
         var compilation = CSharpCompilation.Create("Card_" + Guid.NewGuid().ToString("N"),
-            new[] { CSharpSyntaxTree.ParseText("using System;\n" + code) }, references,
+            new[] { CSharpSyntaxTree.ParseText("using System;\nusing System.IO;\n" + code) }, references,
             new CSharpCompilationOptions(OutputKind.ConsoleApplication));
         using var binary = new MemoryStream();
         var result = compilation.Emit(binary);
@@ -53,17 +53,21 @@ foreach (var card in document.RootElement.EnumerateArray())
         binary.Position = 0;
         var loader = new AssemblyLoadContext("card", isCollectible: true);
         var previousOut = Console.Out;
+        var previousDirectory = Environment.CurrentDirectory;
+        var caseDirectory = Path.Combine(previousDirectory, "cases", checkedCards + (fixedVersion ? "-fixed" : "-broken"));
+        Directory.CreateDirectory(caseDirectory);
         using var output = new StringWriter(CultureInfo.InvariantCulture);
         Exception failure = null;
         try
         {
+            Environment.CurrentDirectory = caseDirectory;
             var assembly = loader.LoadFromStream(binary);
             var entry = assembly.EntryPoint;
             Console.SetOut(output);
             entry.Invoke(null, entry.GetParameters().Length == 0 ? null : new object[] { Array.Empty<string>() });
         }
         catch (TargetInvocationException error) { failure = error.InnerException; }
-        finally { Console.SetOut(previousOut); loader.Unload(); }
+        finally { Console.SetOut(previousOut); Environment.CurrentDirectory = previousDirectory; loader.Unload(); }
         if (!fixedVersion && kind == "runtime")
         {
             string expectedType = card.GetProperty("exceptionType").GetString();

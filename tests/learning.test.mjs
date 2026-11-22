@@ -274,6 +274,119 @@ test("short practice uses the ceiling of half its questions for the passing thre
   assert.match(app.elements.get("#codeQuestion").textContent, /Правильных: 4.*Без ответа: 3/);
 });
 
+test("answer visibility and deferred feedback work independently in all four combinations", () => {
+  for (const hideAnswers of [false, true]) for (const deferResults of [false, true]) {
+    const app = setup();
+    app.elements.get("#codeHideAnswers").checked = hideAnswers;
+    app.elements.get("#codeDeferResults").checked = deferResults;
+    app.elements.get("#startCodeBtn").click();
+    assert.equal(app.elements.get("#codeAnswerGrid").children.length, hideAnswers ? 0 : 4);
+    assert.equal(app.elements.get("#showCodeAnswersBtn").hidden, !hideAnswers);
+    assert.equal(app.elements.get("#codeHideAnswers").disabled, true);
+    assert.equal(app.elements.get("#codeDeferResults").disabled, true);
+    if (hideAnswers) app.elements.get("#showCodeAnswersBtn").click();
+    const explanation = app.run('state.codeSession.questions[0].explanation');
+    const wrong = app.run('(state.codeSession.questions[0].correctIndex + 1) % 4');
+    app.elements.get("#codeAnswerGrid").children[wrong].click();
+    assert.equal(app.run('state.codeSession.completed'), 1);
+    const buttons = app.elements.get("#codeAnswerGrid").children;
+    assert.ok(buttons.every(button => button.disabled));
+    if (deferResults) {
+      assert.ok(buttons.every(button => !button.classList.contains("is-correct") && !button.classList.contains("is-wrong")));
+      assert.ok(buttons[wrong].classList.contains("is-selected"));
+      assert.doesNotMatch(app.elements.get("#codeProgress").textContent, /Верно:|Неверно:/);
+      assert.ok(!app.elements.get("#codeFeedback").textContent.includes(explanation));
+      assert.match(app.elements.get("#codeFeedback").textContent, /Ответ сохранён/);
+    } else {
+      assert.ok(buttons[wrong].classList.contains("is-wrong"));
+      assert.ok(app.elements.get("#codeFeedback").textContent.includes(explanation));
+    }
+    app.elements.get("#nextCodeBtn").click();
+    assert.equal(app.elements.get("#codeAnswerGrid").children.length, hideAnswers ? 0 : 4);
+    assert.equal(app.elements.get("#codeReview").hidden, true);
+    app.run('resetMode()');
+    assert.equal(app.elements.get("#showCodeAnswersBtn").hidden, true);
+    assert.equal(app.elements.get("#codeHideAnswers").disabled, false);
+    assert.equal(app.elements.get("#codeDeferResults").disabled, false);
+  }
+});
+
+function visibleText(node) {
+  return [node.textContent, ...node.children.map(visibleText)].join("\n");
+}
+
+test("deferred grading completes every question before revealing the score and the full review", () => {
+  for (const correct of [true, false]) {
+    const app = setup();
+    app.elements.get("#codeDeferResults").checked = true;
+    app.run('startCode()');
+    // Changes to the controls after starting cannot change this attempt's rules.
+    app.elements.get("#codeDeferResults").checked = false;
+    const expected = [];
+    for (let i = 0; i < 10; i++) {
+      assert.notEqual(app.run('state.codeSession'), null);
+      assert.equal(app.elements.get("#codeReviewList").children.length, 0);
+      assert.doesNotMatch(app.elements.get("#codeProgress").textContent, /Верно:|Неверно:/);
+      const question = app.run('state.codeSession.questions[state.codeSession.index]');
+      const index = correct ? question.correctIndex : (question.correctIndex + 1) % 4;
+      expected.push({ code: question.challengeCode, prompt: question.prompt, explanation: question.explanation });
+      app.elements.get("#codeAnswerGrid").children[index].click();
+      if (i < 9) {
+        assert.notEqual(app.run('state.codeSession'), null);
+        assert.ok(!app.elements.get("#codeFeedback").textContent.includes(question.explanation));
+        app.elements.get("#nextCodeBtn").click();
+      }
+    }
+    assert.equal(app.run('state.codeSession'), null);
+    assert.equal(app.elements.get("#codeType").textContent, correct ? "Зачёт" : "Незачёт");
+    assert.match(app.elements.get("#codeQuestion").textContent, correct
+      ? /Правильных: 10.*Неправильных: 0.*Без ответа: 0/ : /Правильных: 0.*Неправильных: 10.*Без ответа: 0/);
+    assert.equal(app.elements.get("#codeReview").hidden, false);
+    assert.equal(app.elements.get("#codeReviewList").children.length, 10);
+    for (const [index, item] of app.elements.get("#codeReviewList").children.entries()) {
+      const text = visibleText(item);
+      assert.ok(text.includes(expected[index].code));
+      assert.ok(text.includes(expected[index].prompt));
+      assert.ok(text.includes(expected[index].explanation));
+      assert.match(text, /Ваш ответ:.*\nПравильный ответ:/s);
+    }
+    assert.equal(app.run('Object.values(learningProgress).reduce((sum, item) => sum + item.attempts, 0)'), 10);
+    app.run('startCode()');
+    assert.equal(app.elements.get("#codeReview").hidden, true);
+    assert.equal(app.elements.get("#codeReviewList").children.length, 0);
+  }
+});
+
+test("combined hidden modes review timeouts and significant whitespace and clear results on exit", () => {
+  const app = setup();
+  app.elements.get("#codeHideAnswers").checked = true;
+  app.elements.get("#codeDeferResults").checked = true;
+  app.run(`startCode(); state.codeSession.questions = state.codeSession.questions.slice(0, 2).map(question => ({
+    ...question, challengeCode: 'Console.WriteLine(" A ");', challengeInput: " ",
+    options: [" A ", "A", " A", "A "], correctIndex: 0
+  })); renderCodeQuestion();`);
+  app.run('handleCodeAnswer(null, true)');
+  assert.equal(app.elements.get("#codeAnswerGrid").children.length, 0);
+  app.elements.get("#nextCodeBtn").click();
+  app.elements.get("#showCodeAnswersBtn").click();
+  const oldButton = app.elements.get("#codeAnswerGrid").children[0];
+  oldButton.click();
+  assert.equal(app.run('state.codeSession'), null);
+  const [timeout, answered] = app.elements.get("#codeReviewList").children;
+  assert.match(visibleText(timeout), /Время вышло.*Ваш ответ: не дан/s);
+  assert.match(visibleText(answered), /Ваш ответ: "␠A␠".*Правильный ответ: "␠A␠"/s);
+  assert.ok(visibleText(answered).includes('Console.WriteLine(" A ");'));
+  assert.match(visibleText(answered), /Ввод:/);
+  app.run('startCode()');
+  oldButton.click();
+  assert.equal(app.run('state.codeSession.completed'), 0);
+  assert.equal(app.elements.get("#codeReviewList").children.length, 0);
+  app.run('resetMode()');
+  assert.equal(app.elements.get("#codeReview").hidden, true);
+  assert.equal(app.elements.get("#codeReviewList").children.length, 0);
+  assert.equal(app.elements.get("#showCodeAnswersBtn").hidden, true);
+});
+
 test("error practice stops at three self-found errors or when three are unattainable", () => {
   for (const known of [true, false]) {
     const app = setup();
@@ -510,7 +623,7 @@ test("quiz deduplicates repeated terms and reference preserves literal generic t
 
 test("whitespace-sensitive answers remain distinct and grading uses the original values", () => {
   const app = setup();
-  app.run('state.codeSession = { questions: [codeLessons.find(lesson => lesson.id === "lab11-10")], index: 0, correct: 0, wrong: 0, completed: 0 }; renderCodeQuestion();');
+  app.run('state.codeSession = { questions: [codeLessons.find(lesson => lesson.id === "lab11-10")], index: 0, correct: 0, wrong: 0, completed: 0, responses: [] }; renderCodeQuestion();');
   const options = app.elements.get("#codeAnswerGrid").children.map(button => button.textContent);
   assert.equal(app.elements.get("#codeAnswerHint").hidden, false);
   assert.ok(options.includes('"Война␠␠␠и␠␠мир"'));

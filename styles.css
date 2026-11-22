@@ -1191,6 +1191,43 @@ dialog::backdrop {
 }
 .review-setting input { width: auto; min-height: auto; }
 
+.practice-setting-hint {
+  margin: -6px 0 12px;
+  color: var(--muted);
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+#codeScreen [hidden] { display: none; }
+
+.answer-option.is-selected {
+  border-color: var(--text);
+  outline: 2px solid var(--text);
+  outline-offset: -2px;
+}
+
+.code-review { margin-top: 24px; }
+.code-review h2 { margin-bottom: 14px; }
+.code-review-item {
+  margin-top: 12px;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface-2);
+  overflow-wrap: anywhere;
+}
+.code-review-item summary { cursor: pointer; font-weight: 800; }
+.code-review-item p { margin-top: 14px; line-height: 1.6; }
+.code-review-item pre {
+  margin-top: 14px;
+  padding: 14px;
+  background: var(--surface);
+  border-radius: var(--radius);
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.code-review-answer { white-space: pre-wrap; }
+
 .bug-code-line { display: block; white-space: pre; }
 .bug-line-number { display: inline-block; width: 3ch; margin-right: 1ch; color: #8ca499; user-select: none; }
 .bug-code-line.is-corrected { background: #234f3a; box-shadow: inset 3px 0 #8be6c0; }

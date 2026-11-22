@@ -111,6 +111,12 @@ const els = {
   codeDeckSelect: document.querySelector("#codeDeckSelect"),
   codeRefactorTask: document.querySelector("#codeRefactorTask"),
   startCodeBtn: document.querySelector("#startCodeBtn"),
+  codeHideAnswers: document.querySelector("#codeHideAnswers"),
+  codeDeferResults: document.querySelector("#codeDeferResults"),
+  showCodeAnswersBtn: document.querySelector("#showCodeAnswersBtn"),
+  codeHiddenAnswersNote: document.querySelector("#codeHiddenAnswersNote"),
+  codeReview: document.querySelector("#codeReview"),
+  codeReviewList: document.querySelector("#codeReviewList"),
   codeProgress: document.querySelector("#codeProgress"),
   codeTimer: document.querySelector("#codeTimer"),
   codeProgressFill: document.querySelector("#codeProgressFill"),
@@ -764,6 +770,13 @@ function resetCodeUi() {
   els.codeQuestion.textContent = "Нажмите «Начать практику», когда будете готовы.";
   els.codeSnippet.hidden = true;
   els.codeAnswerGrid.replaceChildren();
+  els.codeAnswerGrid.hidden = false;
+  els.showCodeAnswersBtn.hidden = true;
+  els.codeHiddenAnswersNote.hidden = true;
+  els.codeReview.hidden = true;
+  els.codeReviewList.replaceChildren();
+  els.codeHideAnswers.disabled = false;
+  els.codeDeferResults.disabled = false;
   els.codeAnswerHint.hidden = true;
   els.codeFeedback.textContent = "";
   els.nextCodeBtn.hidden = true;
@@ -842,7 +855,14 @@ function startCode() {
     return;
   }
   state.activeMode = "code";
-  state.codeSession = { questions: questions.map(createCodeQuestion), index: 0, correct: 0, wrong: 0, completed: 0, answered: false };
+  state.codeSession = {
+    questions: questions.map(createCodeQuestion), index: 0, correct: 0, wrong: 0, completed: 0, answered: false,
+    hideAnswers: els.codeHideAnswers.checked, deferResults: els.codeDeferResults.checked, responses: []
+  };
+  els.codeHideAnswers.disabled = true;
+  els.codeDeferResults.disabled = true;
+  els.codeReview.hidden = true;
+  els.codeReviewList.replaceChildren();
   updateCodeRefactorTask();
   renderCodeQuestion();
 }
@@ -855,7 +875,42 @@ function codeOutcome(session) {
 }
 
 function codeScore(session) {
+  if (session.deferResults) return "Проверка — после завершения всей подборки";
   return `Верно: ${session.correct} · Неверно: ${session.wrong} · Для зачёта: ${Math.ceil(session.questions.length / 2)}`;
+}
+
+function renderCodeAnswers() {
+  const session = state.codeSession;
+  const question = session.questions[session.index];
+  const questionIndex = session.index;
+  session.answersRevealed = true;
+  els.showCodeAnswersBtn.hidden = true;
+  els.codeHiddenAnswersNote.hidden = true;
+  els.codeAnswerGrid.hidden = false;
+  els.codeAnswerGrid.replaceChildren();
+  const markWhitespace = codeAnswersNeedWhitespace(question.options);
+  els.codeAnswerHint.hidden = !markWhitespace;
+  question.options.forEach((option, index) => {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "answer-option";
+    button.textContent = formatCodeAnswer(option, markWhitespace);
+    button.addEventListener("click", () => {
+      if (state.codeSession === session && session.index === questionIndex) handleCodeAnswer(index);
+    });
+    els.codeAnswerGrid.append(button);
+  });
+}
+
+function showCodeAnswers() {
+  const session = state.codeSession;
+  if (!session || session.answered || session.answersRevealed) return;
+  if (Date.now() >= session.deadline) {
+    handleCodeAnswer(null, true);
+    return;
+  }
+  renderCodeAnswers();
+  els.codeAnswerGrid.children[0]?.focus();
 }
 
 function renderCodeQuestion() {
@@ -872,6 +927,7 @@ function renderCodeQuestion() {
 
   const question = session.questions[session.index];
   session.answered = false;
+  session.answersRevealed = !session.hideAnswers;
   els.codeProgress.textContent = `Задание ${session.index + 1} из ${session.questions.length} · ${codeScore(session)}`;
   els.codeProgressFill.style.width = `${Math.round(session.index / session.questions.length * 100)}%`;
   const deck = codeDecks.find(deck => deck.id === question.codeDeckId);
@@ -884,17 +940,11 @@ function renderCodeQuestion() {
   els.codeFeedback.textContent = "";
   els.nextCodeBtn.hidden = true;
   els.codeAnswerGrid.replaceChildren();
-  const markWhitespace = codeAnswersNeedWhitespace(question.options);
-  els.codeAnswerHint.hidden = !markWhitespace;
-
-  question.options.forEach((option, index) => {
-    const button = document.createElement("button");
-    button.type = "button";
-    button.className = "answer-option";
-    button.textContent = formatCodeAnswer(option, markWhitespace);
-    button.addEventListener("click", () => handleCodeAnswer(index));
-    els.codeAnswerGrid.append(button);
-  });
+  els.codeAnswerGrid.hidden = session.hideAnswers;
+  els.codeAnswerHint.hidden = true;
+  els.showCodeAnswersBtn.hidden = !session.hideAnswers;
+  els.codeHiddenAnswersNote.hidden = !session.hideAnswers;
+  if (!session.hideAnswers) renderCodeAnswers();
   startCodeTimer();
 }
 
@@ -904,6 +954,7 @@ function handleCodeAnswer(index, timedOut = false) {
     return;
   }
   timedOut = timedOut || Date.now() >= session.deadline;
+  if (!timedOut && (!session.answersRevealed || !Number.isInteger(index) || index < 0 || index >= 4)) return;
   stopCodeTimer();
   const question = session.questions[session.index];
   session.answered = true;
@@ -915,19 +966,27 @@ function handleCodeAnswer(index, timedOut = false) {
     session.wrong += 1;
   }
   session.completed += 1;
+  session.responses.push({ questionIndex: session.index, selectedIndex: timedOut ? null : index, timedOut, correct: isCorrect });
+  els.showCodeAnswersBtn.hidden = true;
+  els.codeHiddenAnswersNote.hidden = true;
+  if (!session.answersRevealed && !session.deferResults) renderCodeAnswers();
 
   [...els.codeAnswerGrid.children].forEach((button, optionIndex) => {
     button.disabled = true;
-    button.classList.toggle("is-correct", optionIndex === question.correctIndex);
-    button.classList.toggle("is-wrong", !timedOut && optionIndex === index && !isCorrect);
+    button.classList.toggle("is-correct", !session.deferResults && optionIndex === question.correctIndex);
+    button.classList.toggle("is-wrong", !session.deferResults && !timedOut && optionIndex === index && !isCorrect);
+    button.classList.toggle("is-selected", session.deferResults && !timedOut && optionIndex === index);
+    button.setAttribute("aria-pressed", String(!timedOut && optionIndex === index));
   });
   els.codeTimer.textContent = timedOut ? "Время вышло: 0:00" : "Ответ принят";
   els.codeTimer.classList.toggle("is-urgent", timedOut);
   const correctAnswer = formatCodeAnswer(question.options[question.correctIndex], codeAnswersNeedWhitespace(question.options));
-  els.codeFeedback.textContent = `${timedOut ? "Время вышло. " : ""}${isCorrect ? "Верно." : `Правильный ответ: ${correctAnswer}.`} ${question.explanation}`;
+  els.codeFeedback.textContent = session.deferResults
+    ? `${timedOut ? "Время вышло." : "Ответ сохранён."} Проверка появится после завершения всей подборки.`
+    : `${timedOut ? "Время вышло. " : ""}${isCorrect ? "Верно." : `Правильный ответ: ${correctAnswer}.`} ${question.explanation}`;
   els.codeProgress.textContent = `Ответов: ${session.completed} из ${session.questions.length} · ${codeScore(session)}`;
   els.codeProgressFill.style.width = `${Math.round(session.completed / session.questions.length * 100)}%`;
-  if (codeOutcome(session) !== null) {
+  if (session.deferResults ? session.completed === session.questions.length : codeOutcome(session) !== null) {
     finishCode(true);
     return;
   }
@@ -935,10 +994,58 @@ function handleCodeAnswer(index, timedOut = false) {
   els.nextCodeBtn.hidden = false;
 }
 
+function renderCodeReview(session) {
+  els.codeReviewList.replaceChildren();
+  for (const response of session.responses) {
+    const question = session.questions[response.questionIndex];
+    const item = document.createElement("details");
+    item.className = "code-review-item";
+    const summary = document.createElement("summary");
+    summary.textContent = `Задание ${response.questionIndex + 1} — ${response.timedOut ? "Время вышло" : response.correct ? "Верно" : "Неверно"}`;
+    item.append(summary);
+    const prompt = document.createElement("p");
+    prompt.textContent = question.prompt;
+    item.append(prompt);
+    const code = document.createElement("pre");
+    code.textContent = question.challengeCode;
+    item.append(code);
+    if (question.challengeInput !== undefined) {
+      const input = document.createElement("p");
+      input.textContent = describeCodeInput(question.challengeInput);
+      item.append(input);
+    }
+    const markWhitespace = codeAnswersNeedWhitespace(question.options);
+    const selected = document.createElement("p");
+    selected.className = "code-review-answer";
+    selected.textContent = response.timedOut ? "Ваш ответ: не дан (время вышло)."
+      : `Ваш ответ: ${formatCodeAnswer(question.options[response.selectedIndex], markWhitespace)}`;
+    item.append(selected);
+    const correct = document.createElement("p");
+    correct.className = "code-review-answer";
+    correct.textContent = `Правильный ответ: ${formatCodeAnswer(question.options[question.correctIndex], markWhitespace)}`;
+    item.append(correct);
+    if (markWhitespace) {
+      const hint = document.createElement("p");
+      hint.textContent = els.codeAnswerHint.textContent;
+      item.append(hint);
+    }
+    const explanation = document.createElement("p");
+    explanation.textContent = question.explanation;
+    item.append(explanation);
+    els.codeReviewList.append(item);
+  }
+  els.codeReview.hidden = false;
+}
+
 function finishCode(keepAnswer = false) {
   const session = state.codeSession;
   if (!session) return;
   stopCodeTimer();
+  if (session.deferResults) keepAnswer = false;
+  els.codeHideAnswers.disabled = false;
+  els.codeDeferResults.disabled = false;
+  els.showCodeAnswersBtn.hidden = true;
+  els.codeHiddenAnswersNote.hidden = true;
   els.codeTimer.hidden = true;
   const passed = codeOutcome(session) === true;
   const lastFeedback = keepAnswer ? ` Последний ответ: ${els.codeFeedback.textContent}` : "";
@@ -955,8 +1062,11 @@ function finishCode(keepAnswer = false) {
   }
   els.codeFeedback.textContent = (passed
     ? `Набран порог: ${Math.ceil(session.questions.length / 2)} правильных из ${session.questions.length} (не менее 50%).`
-    : `Порог ${Math.ceil(session.questions.length / 2)} правильных из ${session.questions.length} уже недостижим.`) +
+    : session.deferResults
+      ? `Для зачёта нужно ${Math.ceil(session.questions.length / 2)} правильных из ${session.questions.length}.`
+      : `Порог ${Math.ceil(session.questions.length / 2)} правильных из ${session.questions.length} уже недостижим.`) +
     (remaining ? " Остальные задания проходить не требуется." : "") + lastFeedback;
+  if (session.deferResults) renderCodeReview(session);
   els.nextCodeBtn.hidden = true;
   state.activeMode = null;
   state.codeSession = null;
@@ -1214,6 +1324,7 @@ function wireEvents() {
   els.startQuizBtn.addEventListener("click", startQuiz);
   els.nextQuizBtn.addEventListener("click", nextQuizQuestion);
   els.startCodeBtn.addEventListener("click", startCode);
+  els.showCodeAnswersBtn.addEventListener("click", showCodeAnswers);
   els.startBugsBtn.addEventListener("click", startBugs);
   els.flipBugBtn.addEventListener("click", flipBugCard);
   els.bugKnownBtn.addEventListener("click", () => markBugCard(true));
